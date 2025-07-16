@@ -58,7 +58,7 @@ public interface \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzX
 
   int \u0023\u003Dz6BuO4fnhj6SX(
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
+    IPointSeries _param2,
     double _param3,
     double _param4);
 

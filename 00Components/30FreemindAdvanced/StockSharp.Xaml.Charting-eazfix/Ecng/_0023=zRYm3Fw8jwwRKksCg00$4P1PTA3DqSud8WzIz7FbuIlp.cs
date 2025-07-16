@@ -21,7 +21,7 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
   }
 
   public override void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,

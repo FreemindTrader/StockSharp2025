@@ -13,5 +13,5 @@ public interface \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKr
 
   byte[] \u0023\u003DzXgTbLkAgh1Pd(out int _param1);
 
-  \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003Dz8hY71usSYcKH();
+  IImageByte \u0023\u003Dz8hY71usSYcKH();
 }

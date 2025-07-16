@@ -13,7 +13,7 @@ using System.Linq;
 namespace StockSharp.Charting;
 
 public sealed class TimeSpanAxis : 
-  \u0023\u003Dzv8\u00244HkchJrALy0ZPvOtbXZjKloG7lJww3\u00248riNI9I7z_
+  TimeSpanAxisBase
 {
   
   private static readonly List<Type> \u0023\u003DzVGdWd1PKAs\u00242 = ((IEnumerable<Type>) new Type[1]

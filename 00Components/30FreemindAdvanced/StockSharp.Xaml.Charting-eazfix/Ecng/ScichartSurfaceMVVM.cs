@@ -343,13 +343,13 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
   private void \u0023\u003Dz0FfA4J7ON5133\u00246jKg\u003D\u003D()
   {
-    foreach (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd1 in this.XAxises.OfType<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>())
+    foreach (AxisBase axF9ZgQ7NbH9KsEjd1 in this.XAxises.OfType<AxisBase>())
     {
       if (axF9ZgQ7NbH9KsEjd1.Tag is IChartAxis tag)
       {
         \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR g72ZksY7iW1Jk3iR = \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003DzYMTYgq1xYsSy(this.GetRootElement(), tag.Group, this.PaneGroupSuffix, tag.AxisType);
-        dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd2 = axF9ZgQ7NbH9KsEjd1;
-        DependencyProperty zWl3LbWhL1z0D = dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzWl3LbWhL1z0D;
+        AxisBase axF9ZgQ7NbH9KsEjd2 = axF9ZgQ7NbH9KsEjd1;
+        DependencyProperty zWl3LbWhL1z0D = AxisBase.\u0023\u003DzWl3LbWhL1z0D;
         \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR dataObject = g72ZksY7iW1Jk3iR;
         string path;
         if (g72ZksY7iW1Jk3iR.\u0023\u003DzOdcnf0c\u003D() != ChartAxisType.CategoryDateTime)
@@ -1150,7 +1150,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     {
       if (this._variableSome3535.Chart == null)
         return;
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz68iph80\u003D(this._variableSome3535.ParentViewModel?.RemoveAxisCommand, this._variableSome3535.ResetAxisTimeZoneCommand, this._variableSome3535.Chart);
+      AxisBase axF9ZgQ7NbH9KsEjd = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz68iph80\u003D(this._variableSome3535.ParentViewModel?.RemoveAxisCommand, this._variableSome3535.ResetAxisTimeZoneCommand, this._variableSome3535.Chart);
       axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003Dzfi9Y8f8VaR3y);
       this.\u0023\u003Dz_liTKnA\u003D.Add((IAxis) axF9ZgQ7NbH9KsEjd);
       if (this.\u0023\u003Dz_liTKnA\u003D != this._variableSome3535.XAxises)
@@ -1288,7 +1288,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     public void \u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D()
     {
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd target = (dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<IAxis>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<IAxis, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
+      AxisBase target = (AxisBase) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<IAxis>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<IAxis, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
       if (target == null)
         return;
       target.PropertyChanged -= new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003Dzfi9Y8f8VaR3y);

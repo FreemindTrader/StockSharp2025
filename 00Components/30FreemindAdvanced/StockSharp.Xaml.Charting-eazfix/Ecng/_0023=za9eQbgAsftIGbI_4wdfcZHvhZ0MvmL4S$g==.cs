@@ -655,7 +655,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
 
   public void \u0023\u003Dzs15X3Ar32F1\u0024(
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1 = default (\u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D),
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2 = null)
+    IPointSeries _param2 = null)
   {
     throw new NotImplementedException();
   }

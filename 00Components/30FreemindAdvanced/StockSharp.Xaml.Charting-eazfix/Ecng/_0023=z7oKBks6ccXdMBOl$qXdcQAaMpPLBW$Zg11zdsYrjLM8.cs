@@ -6,13 +6,13 @@
 
 #nullable disable
 public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zdsYrjLM8bZVDWXNrQdoNZBGie1gx2fksrDdDUggZqAqbq4tJvbNkZldr8SUXJLe1VOgX3osK0 : 
-  \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D
+  IScanlineCache
 {
   private int \u0023\u003Dz_yS_hpC\u0024Bvok;
   private int \u0023\u003Dz_TCtD0vLATv8;
   private int \u0023\u003DzFfSb8y0\u003D;
   private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte> \u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D> \u0023\u003DzDfv8Db0RWqZH;
+  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan> \u0023\u003DzDfv8Db0RWqZH;
   private int \u0023\u003DzJZMDU99kHHNc;
   private int \u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
 
@@ -20,10 +20,10 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
   {
     this.\u0023\u003Dz_TCtD0vLATv8 = 2147483632;
     this.\u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte>(1000);
-    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D>(1000);
+    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan>(1000);
   }
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
+  public ScanlineSpan \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
   {
     ++this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
     return this.\u0023\u003DzDfv8Db0RWqZH.\u0023\u003DzvsnCYl4\u003D()[this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D - 1];
@@ -94,7 +94,7 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
 
   public int \u0023\u003DzAK83aWWCVpNB() => this.\u0023\u003DzJZMDU99kHHNc;
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzoLjFgpI\u003D()
+  public ScanlineSpan \u0023\u003DzoLjFgpI\u003D()
   {
     this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D = 1;
     return this.\u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D();

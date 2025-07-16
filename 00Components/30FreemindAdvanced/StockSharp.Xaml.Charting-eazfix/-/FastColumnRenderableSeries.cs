@@ -36,21 +36,21 @@ public sealed class FastColumnRenderableSeries :
   }
 
   protected override double \u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     IComparable comparable = (IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[_param1.\u0023\u003DzSkvCFWUKQ7Fw()];
     return comparable.ToDouble().CompareTo(this.ZeroLineY) <= 0 ? comparable.ToDouble() : this.ZeroLineY;
   }
 
   protected override double \u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     IComparable comparable = (IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[_param1.\u0023\u003DzSkvCFWUKQ7Fw()];
     return comparable.ToDouble().CompareTo(this.ZeroLineY) <= 0 ? this.ZeroLineY : comparable.ToDouble();
   }
 
   protected override double \u0023\u003Dz6bPMsvVWiXoq(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
+    IPointSeries _param1,
     IRenderPassData _param2)
   {
     return (double) this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), _param1, this.DataPointWidth);

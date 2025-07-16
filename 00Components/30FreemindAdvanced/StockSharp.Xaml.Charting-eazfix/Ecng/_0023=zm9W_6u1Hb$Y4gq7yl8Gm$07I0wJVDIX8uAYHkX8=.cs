@@ -16,7 +16,7 @@ public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAYHk
 
   public \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAYHkX8\u003D(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.AccumulatedValue = _param2.\u0023\u003Dzd9IAScWutAfJ();

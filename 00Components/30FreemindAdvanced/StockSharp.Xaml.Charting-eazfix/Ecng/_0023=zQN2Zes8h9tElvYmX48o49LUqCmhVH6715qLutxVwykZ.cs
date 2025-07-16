@@ -20,7 +20,7 @@ public sealed class \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykZRNhs
   private double \u0023\u003Dz3pnuiA4Q_FASlCqt\u0024A\u003D\u003D;
   private double \u0023\u003DzzdvrpOh0No6Ai91homCqCt0\u003D;
   private bool \u0023\u003DzHW7wtR0XhSpe;
-  private \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzCqYOe0trxscF;
+  private Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzCqYOe0trxscF;
 
   public \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykZRNhszysZjrqoQNirgMq_Duw\u003D\u003D()
   {
@@ -95,31 +95,31 @@ public sealed class \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykZRNhs
 
   public void \u0023\u003DzVawdK5C5Lyf_(int _param1)
   {
-    this.\u0023\u003DzCqYOe0trxscF = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+    this.\u0023\u003DzCqYOe0trxscF = (Path.\u0023\u003Dz9kUnn38\u003D) 1;
     this.\u0023\u003Dz3pnuiA4Q_FASlCqt\u0024A\u003D\u003D = this.\u0023\u003DzkgaJZyDfrXK1;
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
     out double _param1,
     out double _param2)
   {
     _param1 = 0.0;
     _param2 = 0.0;
-    if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzVHztYKNVoUMf(this.\u0023\u003DzCqYOe0trxscF))
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+    if (Path.\u0023\u003DzVHztYKNVoUMf(this.\u0023\u003DzCqYOe0trxscF))
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 0;
     if (this.\u0023\u003Dz3pnuiA4Q_FASlCqt\u0024A\u003D\u003D >= this.\u0023\u003Dz4mpK8XD8ymIf - this.\u0023\u003DzzdvrpOh0No6Ai91homCqCt0\u003D / 4.0)
     {
       _param1 = this.\u0023\u003DzrIkLzeqoxnP3 + Math.Cos(this.\u0023\u003Dz4mpK8XD8ymIf) * this.\u0023\u003Dzj\u0024q52o2CPaka;
       _param2 = this.\u0023\u003DziWyZZmhhyH7J + Math.Sin(this.\u0023\u003Dz4mpK8XD8ymIf) * this.\u0023\u003Dzry2_NEbHbTsJ;
-      this.\u0023\u003DzCqYOe0trxscF = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
+      this.\u0023\u003DzCqYOe0trxscF = (Path.\u0023\u003Dz9kUnn38\u003D) 0;
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 2;
     }
     _param1 = this.\u0023\u003DzrIkLzeqoxnP3 + Math.Cos(this.\u0023\u003Dz3pnuiA4Q_FASlCqt\u0024A\u003D\u003D) * this.\u0023\u003Dzj\u0024q52o2CPaka;
     _param2 = this.\u0023\u003DziWyZZmhhyH7J + Math.Sin(this.\u0023\u003Dz3pnuiA4Q_FASlCqt\u0024A\u003D\u003D) * this.\u0023\u003Dzry2_NEbHbTsJ;
     this.\u0023\u003Dz3pnuiA4Q_FASlCqt\u0024A\u003D\u003D += this.\u0023\u003DzzdvrpOh0No6Ai91homCqCt0\u003D;
     int zCqYoe0trxscF = (int) this.\u0023\u003DzCqYOe0trxscF;
-    this.\u0023\u003DzCqYOe0trxscF = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
-    return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) zCqYoe0trxscF;
+    this.\u0023\u003DzCqYOe0trxscF = (Path.\u0023\u003Dz9kUnn38\u003D) 2;
+    return (Path.\u0023\u003Dz9kUnn38\u003D) zCqYoe0trxscF;
   }
 
   private void \u0023\u003DzO3\u0024NMwQ\u003D(

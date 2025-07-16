@@ -7,15 +7,15 @@
 #nullable disable
 public abstract class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerRnFnKJZv3yJKLQRpJ
 {
-  private \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzghUNz5ah9mSI;
+  private RGBA_Bytes \u0023\u003DzghUNz5ah9mSI;
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz6NUrJ5Q\u003D()
+  public RGBA_Bytes \u0023\u003Dz6NUrJ5Q\u003D()
   {
     return this.\u0023\u003DzghUNz5ah9mSI;
   }
 
   public void \u0023\u003Dz6NUrJ5Q\u003D(
-    \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI _param1)
+    IColorType _param1)
   {
     this.\u0023\u003DzghUNz5ah9mSI = _param1.\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
   }

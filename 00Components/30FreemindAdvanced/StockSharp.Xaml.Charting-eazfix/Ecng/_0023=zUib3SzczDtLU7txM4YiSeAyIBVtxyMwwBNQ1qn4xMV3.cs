@@ -5,8 +5,8 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public interface \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D : 
-  \u0023\u003DzK11CXzkQ3m66hjsjmkZfa0IWmA\u00243ulgdIko0_SngtdwYu9Bqqu0Oiz8B0NcmOMpUiw\u003D\u003D
+public interface IImageFloat : 
+  IImage
 {
   int \u0023\u003DzzzpYZKdbZZc8Pfg5Vw\u003D\u003D();
 
@@ -28,11 +28,11 @@ public interface \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G
   void \u0023\u003DzLWpPHs7BoU1N(int _param1, int _param2, float[] _param3, int _param4);
 
   void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1);
+    IImageFloat _param1);
 
   void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2,
+    IImageFloat _param1,
+    RectangleInt _param2,
     int _param3,
     int _param4);
 

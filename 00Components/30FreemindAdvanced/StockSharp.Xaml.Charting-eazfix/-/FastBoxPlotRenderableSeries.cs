@@ -51,18 +51,18 @@ public sealed class FastBoxPlotRenderableSeries :
     }
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, _param2, false);
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy1, _param2);
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, _param2, false);
+    HitTestInfo zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy1, _param2);
     double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV() ? Math.Abs(zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxZfJER0dbHuS().Y - _param1.Y) : Math.Abs(zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxZfJER0dbHuS().X - _param1.X);
     if (!zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D())
     {
       bool flag1 = num1 < this.\u0023\u003DzcaynwI5AMDdY(zldchDrVsrVyHh6WyiGy2) / this.DataPointWidth / 2.0;
-      ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local = ref zldchDrVsrVyHh6WyiGy2;
+      ref HitTestInfo local = ref zldchDrVsrVyHh6WyiGy2;
       bool flag2;
       zldchDrVsrVyHh6WyiGy2.\u0023\u003DzkNMVgQ88lfxP(flag2 = flag1);
       int num2 = flag2 ? 1 : 0;
@@ -72,25 +72,25 @@ public sealed class FastBoxPlotRenderableSeries :
   }
 
   public override \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D((IRenderableSeries) this, _param1);
   }
 
   protected override double \u0023\u003DzcaynwI5AMDdY(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return (double) this.\u0023\u003DzmZ8\u0024YArgrhlI;
   }
 
   protected override double \u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return _param1.Minimum.ToDouble();
   }
 
   protected override double \u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return _param1.Maximum.ToDouble();
   }
@@ -111,7 +111,7 @@ public sealed class FastBoxPlotRenderableSeries :
     this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy>("BoxDataSeries");
     \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX rl6ViWfvaAkhbRvgtX = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() as \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX;
     int num2 = rl6ViWfvaAkhbRvgtX.\u0023\u003DzlpVGw6E\u003D();
-    this.\u0023\u003DzmZ8\u0024YArgrhlI = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) rl6ViWfvaAkhbRvgtX, this.DataPointWidth);
+    this.\u0023\u003DzmZ8\u0024YArgrhlI = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), (IPointSeries) rl6ViWfvaAkhbRvgtX, this.DataPointWidth);
     using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity, (double[]) null, PenLineCap.Round))
     {
       using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) (this.StrokeThickness + 1), this.Opacity, (double[]) null, PenLineCap.Round))

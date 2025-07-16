@@ -40,7 +40,7 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
   public double \u0023\u003Dz\u0024rRwq4PtSMIR() => this.\u0023\u003DzT\u0024kqKKwnFTS7;
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<ulong> _param1,
+    ISeriesColumn<ulong> _param1,
     ulong _param2,
     bool _param3)
   {
@@ -50,7 +50,7 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
   }
 
   public override void \u0023\u003DzeU6gWqHRfREz(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<ulong> _param1,
+    ISeriesColumn<ulong> _param1,
     int _param2,
     IEnumerable<ulong> _param3,
     bool _param4)
@@ -61,7 +61,7 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
   }
 
   public override void \u0023\u003Dzs9WSchJIpnF0(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<ulong> _param1,
+    ISeriesColumn<ulong> _param1,
     int _param2,
     ulong _param3,
     bool _param4)
@@ -72,7 +72,7 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
   }
 
   public override void \u0023\u003DzPY2yStN8KbO\u0024(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<ulong> _param1,
+    ISeriesColumn<ulong> _param1,
     int _param2,
     int _param3,
     IEnumerable<ulong> _param4,

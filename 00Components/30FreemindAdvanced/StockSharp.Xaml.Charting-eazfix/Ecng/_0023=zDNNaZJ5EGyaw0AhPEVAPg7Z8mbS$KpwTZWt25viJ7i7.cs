@@ -9,20 +9,20 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7Cs2nsClfvy_gfLwFrBQ9ZT_tF0rKuWxNyucg3oQ\u003D\u003D(
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2,
+  RGBA_Bytes _param1,
+  RGBA_Bytes _param2,
   int _param3) : \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvLY8yONCumZs0tA6xU
 {
   
-  private \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzpeQE1xWK5wG1 = _param1;
+  private RGBA_Bytes \u0023\u003DzpeQE1xWK5wG1 = _param1;
   
-  private \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz4_SsfE6CBcUJ = _param2;
+  private RGBA_Bytes \u0023\u003Dz4_SsfE6CBcUJ = _param2;
   
   private int \u0023\u003DzE8qDEoWQ1KEt = _param3;
 
   public \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7Cs2nsClfvy_gfLwFrBQ9ZT_tF0rKuWxNyucg3oQ\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2)
+    RGBA_Bytes _param1,
+    RGBA_Bytes _param2)
     : this(_param1, _param2, 256 /*0x0100*/)
   {
   }
@@ -31,7 +31,7 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7Cs2ns
 
   
   [IndexerName("#=zMRIb09I=")]
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D this[
+  public RGBA_Bytes this[
     int _param1]
   {
     get
@@ -41,15 +41,15 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7Cs2ns
   }
 
   public void \u0023\u003DzP7DRUPjNkOt\u0024(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2)
+    RGBA_Bytes _param1,
+    RGBA_Bytes _param2)
   {
     this.\u0023\u003DzP7DRUPjNkOt\u0024(_param1, _param2, 256 /*0x0100*/);
   }
 
   public void \u0023\u003DzP7DRUPjNkOt\u0024(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2,
+    RGBA_Bytes _param1,
+    RGBA_Bytes _param2,
     int _param3)
   {
     this.\u0023\u003DzpeQE1xWK5wG1 = _param1;

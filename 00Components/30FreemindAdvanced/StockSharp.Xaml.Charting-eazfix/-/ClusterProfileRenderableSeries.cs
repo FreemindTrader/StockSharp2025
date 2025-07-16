@@ -302,19 +302,19 @@ public sealed class ClusterProfileRenderableSeries :
     }
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(
+  protected override HitTestInfo \u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3)
   {
     ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t z1ShH2k5rZQh = this.\u0023\u003Dz1ShH2k5rZ_Qh;
     int num1 = _param2.\u0023\u003DzSkvCFWUKQ7Fw();
     if (!(this.DataSeries is TimeframeSegmentDataSeries dataSeries) || dataSeries.Count < 1 || z1ShH2k5rZQh == null || num1 < 0 || num1 >= dataSeries.Count)
-      return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+      return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     double num2 = z1ShH2k5rZQh.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D((double) num1);
     double num3 = num2 + z1ShH2k5rZQh.\u0023\u003DzfuDyOX2LBzuJ;
     if (_param1.X < num2 || _param1.X > num3)
-      return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+      return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     _param2.\u0023\u003Dzo2ftAfxjqC04(new Point(num3, _param2.\u0023\u003DzxZfJER0dbHuS().Y));
     return _param2;
   }

@@ -5,18 +5,18 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public sealed class \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpNbZIUVxkWTxK3pIZp6tgC1ZHqroM6sqxFolxiA\u003D\u003D
+public sealed class LiberationSansFont
 {
-  private static \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D \u0023\u003DzX41sU_w\u003D;
+  private static TypeFace \u0023\u003DzX41sU_w\u003D;
 
-  public static \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D \u0023\u003DzFvAsfEI\u003D()
+  public static TypeFace \u0023\u003DzFvAsfEI\u003D()
   {
-    if (\u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpNbZIUVxkWTxK3pIZp6tgC1ZHqroM6sqxFolxiA\u003D\u003D.\u0023\u003DzX41sU_w\u003D == null)
+    if (LiberationSansFont.\u0023\u003DzX41sU_w\u003D == null)
     {
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpNbZIUVxkWTxK3pIZp6tgC1ZHqroM6sqxFolxiA\u003D\u003D.\u0023\u003DzX41sU_w\u003D = new \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D();
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpNbZIUVxkWTxK3pIZp6tgC1ZHqroM6sqxFolxiA\u003D\u003D.\u0023\u003DzX41sU_w\u003D.\u0023\u003DzitHctvSMcYYt(\u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpNbZIUVxkWTxK3pIZp6tgC1ZHqroM6sqxFolxiA\u003D\u003D.\u0023\u003Dzq6AEaKs\u003D());
+      LiberationSansFont.\u0023\u003DzX41sU_w\u003D = new TypeFace();
+      LiberationSansFont.\u0023\u003DzX41sU_w\u003D.\u0023\u003DzitHctvSMcYYt(LiberationSansFont.\u0023\u003Dzq6AEaKs\u003D());
     }
-    return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x9YUGzXHp7B7Q2U5iFrp_HSpNbZIUVxkWTxK3pIZp6tgC1ZHqroM6sqxFolxiA\u003D\u003D.\u0023\u003DzX41sU_w\u003D;
+    return LiberationSansFont.\u0023\u003DzX41sU_w\u003D;
   }
 
   private static string \u0023\u003Dzq6AEaKs\u003D()

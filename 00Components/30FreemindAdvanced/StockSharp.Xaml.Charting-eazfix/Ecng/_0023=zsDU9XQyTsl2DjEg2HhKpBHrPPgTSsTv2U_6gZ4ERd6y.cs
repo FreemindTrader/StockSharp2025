@@ -14,7 +14,7 @@ public sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf\u
   
   private \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D \u0023\u003DzK3L_6jB1hKFR;
   
-  private \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq \u0023\u003DzeUisW3maAY9U;
+  private Graphics2D \u0023\u003DzeUisW3maAY9U;
   
   protected public uint[] \u0023\u003DzcNkyaHI7GTSW;
 
@@ -27,7 +27,7 @@ public sealed class \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6yzf\u
   {
     base.\u0023\u003DzSgMgi9QlqY9x();
     this.\u0023\u003DzcNkyaHI7GTSW = new uint[this.\u0023\u003DzRIsZuY3LT4U\u0024.PixelWidth];
-    this.\u0023\u003DzK3L_6jB1hKFR = new \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D(this.\u0023\u003DzRIsZuY3LT4U\u0024.PixelWidth, this.\u0023\u003DzRIsZuY3LT4U\u0024.PixelHeight, 32 /*0x20*/, (\u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0IIMw_vgUHCtHi5cN88nyND2bXVqyA2T5fC());
+    this.\u0023\u003DzK3L_6jB1hKFR = new \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D(this.\u0023\u003DzRIsZuY3LT4U\u0024.PixelWidth, this.\u0023\u003DzRIsZuY3LT4U\u0024.PixelHeight, 32 /*0x20*/, (IBlenderByte) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0IIMw_vgUHCtHi5cN88nyND2bXVqyA2T5fC());
     this.\u0023\u003DzeUisW3maAY9U = this.\u0023\u003DzK3L_6jB1hKFR.\u0023\u003Dz9Yt\u0024vKcgxNiu();
   }
 

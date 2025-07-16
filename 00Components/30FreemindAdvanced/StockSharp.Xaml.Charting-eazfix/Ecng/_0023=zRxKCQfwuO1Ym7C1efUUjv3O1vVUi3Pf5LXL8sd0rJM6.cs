@@ -12,11 +12,11 @@ public interface \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv3O1vVUi3Pf5LXL8sd0rJM6VVvs3KX
   void \u0023\u003Dzz_ASabQ\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param3);
+    Path.\u0023\u003Dz9kUnn38\u003D _param3);
 
   void \u0023\u003DzMIaGPiDXTQIE(int _param1);
 
-  \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz83gaT64\u003D(
+  Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz83gaT64\u003D(
     ref double _param1,
     ref double _param2);
 

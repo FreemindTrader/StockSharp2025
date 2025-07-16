@@ -18,7 +18,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries.SegmentDataSeries;
 
 public class TimeframeSegmentDataSeries : 
   BindableObject ,
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>,
+  IDataSeries<DateTime, double>,
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
   \u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D
@@ -48,9 +48,9 @@ public class TimeframeSegmentDataSeries :
     get => this._segmentDates.\u0023\u003Dzq2zVESXBEvJM();
   }
 
-  public \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D DataSeriesType
+  public DataSeriesType DataSeriesType
   {
-    get => (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 9;
+    get => (DataSeriesType) 9;
   }
 
   public TimeSpan? Timeframe { get; }
@@ -138,7 +138,7 @@ public class TimeframeSegmentDataSeries :
     get => (IList) this.XValues;
   }
 
-  IList<DateTime> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EXValues
+  IList<DateTime> IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EXValues
   {
     get => this.XValues;
   }
@@ -148,7 +148,7 @@ public class TimeframeSegmentDataSeries :
     get => (IList) this._yValues;
   }
 
-  IList<double> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EYValues
+  IList<double> IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EYValues
   {
     get => (IList<double>) this._yValues;
   }
@@ -469,17 +469,17 @@ label_8:
     return (IRange) new DoubleRange(tuple.Item1, tuple.Item2);
   }
 
-  public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
+  public IPointSeries ToPointSeries(
+    ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis,
     bool? dataIsDisplayedAs2D,
     IRange visibleXRange,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D factory,
+    IPointResamplerFactory factory,
     object pointSeriesArg = null)
   {
-    return !pointRange.IsDefined ? (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) null : (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) new \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D(this.Segments.\u0023\u003DzRr4AYdnHaTxa(), pointRange, visibleXRange, (double) (this._element.PriceStep ?? 0.000001M));
+    return !pointRange.IsDefined ? (IPointSeries) null : (IPointSeries) new \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D(this.Segments.\u0023\u003DzRr4AYdnHaTxa(), pointRange, visibleXRange, (double) (this._element.PriceStep ?? 0.000001M));
   }
 
   public CandlePriceLevel GetVolumeByPrice(double price, double priceStep)
@@ -522,7 +522,7 @@ label_8:
   {
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EAppend(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EAppend(
     DateTime dt,
     params double[] yValues)
   {
@@ -546,26 +546,26 @@ label_8:
     set => throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemove(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemove(
     DateTime x)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveAt(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveAt(
     int index)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveRange(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveRange(
     int startIndex,
     int count)
   {
     throw new NotImplementedException();
   }
 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EClone()
+  IDataSeries<DateTime, double> IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EClone()
   {
     throw new NotImplementedException();
   }
@@ -600,9 +600,9 @@ label_8:
   {
   }
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
+    ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis)
@@ -610,10 +610,10 @@ label_8:
     throw new NotImplementedException();
   }
 
-  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
+  HitTestInfo \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
     int index)
   {
-    return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
   }
 
   private sealed class \u0023\u003DzV\u0024R8yw8\u003D(TimeframeSegmentDataSeries _param1) : 

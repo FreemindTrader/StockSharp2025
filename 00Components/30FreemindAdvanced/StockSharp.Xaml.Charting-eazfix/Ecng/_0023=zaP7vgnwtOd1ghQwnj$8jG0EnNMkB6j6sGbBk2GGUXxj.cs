@@ -7,14 +7,14 @@
 #nullable disable
 public sealed class \u0023\u003DzaP7vgnwtOd1ghQwnj\u00248jG0EnNMkB6j6sGbBk2GGUXxjpTlrktA2EC\u0024ljoyQE
 {
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D> \u0023\u003DzsSva0obPyFyB;
+  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<RGBA_Bytes> \u0023\u003DzsSva0obPyFyB;
 
   public \u0023\u003DzaP7vgnwtOd1ghQwnj\u00248jG0EnNMkB6j6sGbBk2GGUXxjpTlrktA2EC\u0024ljoyQE()
   {
-    this.\u0023\u003DzsSva0obPyFyB = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D>((int) byte.MaxValue);
+    this.\u0023\u003DzsSva0obPyFyB = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<RGBA_Bytes>((int) byte.MaxValue);
   }
 
-  public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D> \u0023\u003DzKnc8rgNrrJG854yemQ\u003D\u003D(
+  public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<RGBA_Bytes> \u0023\u003DzKnc8rgNrrJG854yemQ\u003D\u003D(
     int _param1)
   {
     if (_param1 > this.\u0023\u003DzsSva0obPyFyB.\u0023\u003DzdTxNrgQ\u003D())
@@ -22,7 +22,7 @@ public sealed class \u0023\u003DzaP7vgnwtOd1ghQwnj\u00248jG0EnNMkB6j6sGbBk2GGUXx
     return this.\u0023\u003DzsSva0obPyFyB;
   }
 
-  public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D> \u0023\u003DzmiTEKiA\u003D()
+  public \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<RGBA_Bytes> \u0023\u003DzmiTEKiA\u003D()
   {
     return this.\u0023\u003DzsSva0obPyFyB;
   }

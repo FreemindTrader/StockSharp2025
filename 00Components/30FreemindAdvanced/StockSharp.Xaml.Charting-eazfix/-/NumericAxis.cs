@@ -126,12 +126,12 @@ public class NumericAxis :
     for (int index = 0; index < length; ++index)
     {
       IRenderableSeries uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[index];
-      \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = _param1.\u0023\u003Dz4nxjMSnapDjJ[index];
+      IPointSeries ftrixUnpTllY1PkTyq = _param1.\u0023\u003Dz4nxjMSnapDjJ[index];
       if (uhIm4pSg8PxqhyA71 != null && ftrixUnpTllY1PkTyq != null && !(uhIm4pSg8PxqhyA71.get_YAxisId() != this.Id))
       {
         \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ns01UjmP40FpxAl2jmQ = _param1.\u0023\u003Dzoc6wScE\u003D[index];
         IndexRange  g8Oq2rGx6KyfAreq = _param1.\u0023\u003Dz8O95DKv93zY9[index];
-        DoubleRange klqcJ87Zm8UwE3WEjd1 = ns01UjmP40FpxAl2jmQ.get_DataSeriesType() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 1 || g8Oq2rGx6KyfAreq.Diff.CompareTo(1000) >= 0 ? ftrixUnpTllY1PkTyq.\u0023\u003DzxNQHuqrEvxH2() : ns01UjmP40FpxAl2jmQ.GetWindowedYRange(new IndexRange (g8Oq2rGx6KyfAreq.Min, g8Oq2rGx6KyfAreq.Max)).AsDoubleRange();
+        DoubleRange klqcJ87Zm8UwE3WEjd1 = ns01UjmP40FpxAl2jmQ.get_DataSeriesType() != (DataSeriesType) 1 || g8Oq2rGx6KyfAreq.Diff.CompareTo(1000) >= 0 ? ftrixUnpTllY1PkTyq.\u0023\u003DzxNQHuqrEvxH2() : ns01UjmP40FpxAl2jmQ.GetWindowedYRange(new IndexRange (g8Oq2rGx6KyfAreq.Min, g8Oq2rGx6KyfAreq.Max)).AsDoubleRange();
         string key = string.Empty;
         if (uhIm4pSg8PxqhyA71 is \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D)
         {
@@ -208,7 +208,7 @@ public class NumericAxis :
 
   public override void \u0023\u003Dzs15X3Ar32F1\u0024(
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1 = default (\u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D),
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2 = null)
+    IPointSeries _param2 = null)
   {
     this.\u0023\u003DzvScByjqid0AM = base.\u0023\u003Dz0RktzzbyC\u002468();
     \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D rfw9WrzF8qIcTicp0wQ = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D.OfType<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D>().FirstOrDefault<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D>();

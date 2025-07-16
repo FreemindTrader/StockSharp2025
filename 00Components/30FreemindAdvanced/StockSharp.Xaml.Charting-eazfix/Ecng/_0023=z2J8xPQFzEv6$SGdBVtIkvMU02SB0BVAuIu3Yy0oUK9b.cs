@@ -13,7 +13,7 @@ using System.Runtime.CompilerServices;
 
 #nullable enable
 public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D : 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
+  IPointSeries
 {
   private readonly 
   #nullable disable

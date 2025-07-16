@@ -45,7 +45,7 @@ public sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ
     this.\u0023\u003Dz2KSNnSqX5ag9 = 0;
     this.\u0023\u003Dz7DCXdiOu1t7pVIakI9J4Z\u0024c\u003D = 0;
     this.\u0023\u003DzRMW8\u0024UklYRyZFNMJBw\u003D\u003D = 0;
-    this.\u0023\u003DztgAjJuk\u003D((\u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D) _param2);
+    this.\u0023\u003DztgAjJuk\u003D((IImageByte) _param2);
   }
 
   ~\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ2IziWohYgJvXhRNocRw\u003D\u003D()
@@ -56,7 +56,7 @@ public sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ
   }
 
   public void \u0023\u003DztgAjJuk\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003DzDlwWn9FvhBBB = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzWpDhW47ZWd5f((double) _param1.Height);
     this.\u0023\u003DzfKsXfd89zAXB = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzWpDhW47ZWd5f((double) _param1.Width);
@@ -110,7 +110,7 @@ public sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ
   public double \u0023\u003DzCIN619c\u003D() => (double) this.\u0023\u003DzDlwWn9FvhBBB;
 
   public void \u0023\u003Dz\u00246e75ZE\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4)

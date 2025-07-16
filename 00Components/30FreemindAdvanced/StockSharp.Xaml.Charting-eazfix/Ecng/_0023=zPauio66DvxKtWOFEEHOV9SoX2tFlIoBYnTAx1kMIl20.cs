@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 #nullable disable
 public sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9SoX2tFlIoBYnTAx1kMIl2000aB2dZP5Hp06qfODZ0uWlg\u003D\u003D : 
   IDisposable,
-  \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D
+  ISprite2D
 {
   
   private readonly WriteableBitmap \u0023\u003DzpnLYJ1Q\u003D;
@@ -27,7 +27,7 @@ public sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9SoX2tFlIoBYnTAx1kMIl2000aB
     WriteableBitmap _param1)
   {
     this.\u0023\u003DzpnLYJ1Q\u003D = _param1;
-    this.\u0023\u003DzK3L_6jB1hKFR = new \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D(_param1.PixelWidth, _param1.PixelHeight, 32 /*0x20*/, (\u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0IIMw_vgUHCtHi5cN88nyND2bXVqyA2T5fC());
+    this.\u0023\u003DzK3L_6jB1hKFR = new \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D(_param1.PixelWidth, _param1.PixelHeight, 32 /*0x20*/, (IBlenderByte) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0IIMw_vgUHCtHi5cN88nyND2bXVqyA2T5fC());
     using (BitmapContext bitmapContext = this.\u0023\u003DzpnLYJ1Q\u003D.\u0023\u003DzjnjmjBtrwZM5((\u0023\u003DzJZzdBuNdGPIV6c3AUcyRfoP2Syvy\u0024BgFeX2EQXJ3KFLxo_iOGyvT1XIHK5BB) 0))
     {
       fixed (byte* numPtr = &this.\u0023\u003DzK3L_6jB1hKFR.\u0023\u003Dz9b1_JhA\u003D()[0])

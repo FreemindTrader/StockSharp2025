@@ -24,7 +24,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
 
   public \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.MinimumValue = Convert.ToDouble((object) _param2.Minimum);

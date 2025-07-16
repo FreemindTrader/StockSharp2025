@@ -184,7 +184,7 @@ public class CursorModifier :
   protected override IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new CursorModifier.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new CursorModifier.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       _variableSome3535 = this
@@ -364,7 +364,7 @@ public class CursorModifier :
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public CursorModifier _variableSome3535;
 
-    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public HitTestInfo \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DznVLFa68vHPHy(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);

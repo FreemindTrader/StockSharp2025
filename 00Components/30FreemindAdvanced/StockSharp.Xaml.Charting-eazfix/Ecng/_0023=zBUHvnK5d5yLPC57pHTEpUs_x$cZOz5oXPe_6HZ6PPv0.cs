@@ -10,25 +10,25 @@ using System;
 public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv0g0VAgCXbN\u0024kvBDdEW : 
   \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerRnFnKJZv3yJKLQRpJ
 {
-  private \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003DzegTLEtYkn1Xk;
+  private IImageByte \u0023\u003DzegTLEtYkn1Xk;
   private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ2IziWohYgJvXhRNocRw\u003D\u003D \u0023\u003Dzv8zN_0vlssXJ;
   private int \u0023\u003Dzd7Ch78N2\u0024CEF;
   private double \u0023\u003DzpIkTrpHGJNon;
-  private \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzI89dEGml\u0024B4z;
+  private RectangleInt \u0023\u003DzI89dEGml\u0024B4z;
 
   public \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv0g0VAgCXbN\u0024kvBDdEW(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
+    IImageByte _param1,
     \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ2IziWohYgJvXhRNocRw\u003D\u003D _param2)
   {
     this.\u0023\u003DzegTLEtYkn1Xk = _param1;
     this.\u0023\u003Dzv8zN_0vlssXJ = _param2;
     this.\u0023\u003Dzd7Ch78N2\u0024CEF = 0;
     this.\u0023\u003DzpIkTrpHGJNon = 1.0;
-    this.\u0023\u003DzI89dEGml\u0024B4z = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, 0, 0);
+    this.\u0023\u003DzI89dEGml\u0024B4z = new RectangleInt(0, 0, 0, 0);
   }
 
   public void \u0023\u003DzotQWOIc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003DzegTLEtYkn1Xk = _param1;
   }
@@ -87,7 +87,7 @@ public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv
   }
 
   public void \u0023\u003Dz\u00246e75ZE\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4)
@@ -99,7 +99,7 @@ public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv
     int _param1,
     int _param2,
     uint _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     throw new NotImplementedException();
@@ -109,7 +109,7 @@ public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv
     int _param1,
     int _param2,
     uint _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     throw new NotImplementedException();

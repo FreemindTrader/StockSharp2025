@@ -337,17 +337,17 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_uBH6
   public void \u0023\u003DzNVaj9ergOekrrLbWLQ\u003D\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param3)
+    Path.\u0023\u003Dz9kUnn38\u003D _param3)
   {
-    if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzxoYPNFH0kpDd(_param3))
+    if (Path.\u0023\u003DzxoYPNFH0kpDd(_param3))
     {
       this.\u0023\u003Dz5vxB7hs\u003D(false);
       this.\u0023\u003DzAcNdpbnU8gEt(_param1, _param2);
     }
-    else if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzsA8XKCU7FXBwlN_B6w\u003D\u003D(_param3))
+    else if (Path.\u0023\u003DzsA8XKCU7FXBwlN_B6w\u003D\u003D(_param3))
     {
-      this.\u0023\u003Dz5vxB7hs\u003D(\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzK1y4UbNBWTXd(_param3));
-      if (!\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzK1y4UbNBWTXd(_param3))
+      this.\u0023\u003Dz5vxB7hs\u003D(Path.\u0023\u003DzK1y4UbNBWTXd(_param3));
+      if (!Path.\u0023\u003DzK1y4UbNBWTXd(_param3))
         return;
       this.\u0023\u003Dz_udhSki6JNxe(this.\u0023\u003Dz0TSvb7PdghSI, this.\u0023\u003Dzm1Oo\u002446Mw4uy);
     }
@@ -356,33 +356,33 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_uBH6
   }
 
   public void \u0023\u003DzR7pES1JXr5Q9(
-    \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D _param1)
+    IVertexSource _param1)
   {
     this.\u0023\u003DzR7pES1JXr5Q9(_param1, 0);
   }
 
   public void \u0023\u003DzR7pES1JXr5Q9(
-    \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D _param1,
+    IVertexSource _param1,
     int _param2)
   {
     _param1.\u0023\u003DzVawdK5C5Lyf_(_param2);
     double num1;
     double num2;
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D z9kUnn38;
-    while (!\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzVHztYKNVoUMf(z9kUnn38 = _param1.\u0023\u003DzxfekdAs1X3YM(out num1, out num2)))
+    Path.\u0023\u003Dz9kUnn38\u003D z9kUnn38;
+    while (!Path.\u0023\u003DzVHztYKNVoUMf(z9kUnn38 = _param1.\u0023\u003DzxfekdAs1X3YM(out num1, out num2)))
       this.\u0023\u003DzNVaj9ergOekrrLbWLQ\u003D\u003D(num1, num2, z9kUnn38);
     this.\u0023\u003Dz5vxB7hs\u003D(false);
   }
 
   public void \u0023\u003DzafR2X_lhWKg9(
-    \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param2,
+    IVertexSource _param1,
+    RGBA_Bytes[] _param2,
     int[] _param3,
     int _param4)
   {
     for (int index = 0; index < _param4; ++index)
     {
-      this.\u0023\u003DzegTLEtYkn1Xk.\u0023\u003Dz6NUrJ5Q\u003D((\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI) _param2[index]);
+      this.\u0023\u003DzegTLEtYkn1Xk.\u0023\u003Dz6NUrJ5Q\u003D((IColorType) _param2[index]);
       this.\u0023\u003DzR7pES1JXr5Q9(_param1, _param3[index]);
     }
   }

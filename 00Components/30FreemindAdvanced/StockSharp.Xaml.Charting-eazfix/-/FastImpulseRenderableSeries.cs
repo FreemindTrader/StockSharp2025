@@ -34,16 +34,16 @@ public sealed class FastImpulseRenderableSeries :
     return \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D((IComparable) Math.Min(abyLt9clZggmJsWhw.Min.ToDouble(), val2), (IComparable) Math.Max(abyLt9clZggmJsWhw.Max.ToDouble(), val2));
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
     double num1 = this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2 - (double) this.StrokeThickness / 2.0);
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, num1, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, true);
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, num1, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, true);
     if (!zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzmh1LiTa467ce())
     {
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, false);
+      HitTestInfo zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, false);
       if (!zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzmh1LiTa467ce() && zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw() != -1 && this.DataSeries.\u0023\u003DzPqsSI6C5MOOb().Count != 0)
       {
         double num2 = ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw()]).ToDouble();
@@ -95,7 +95,7 @@ public sealed class FastImpulseRenderableSeries :
     IRenderPassData _param2)
   {
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity))

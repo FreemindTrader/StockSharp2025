@@ -13,10 +13,10 @@ public interface \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47
 
   void \u0023\u003DzXiQrjbw\u003D();
 
-  \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D();
+  ITransform \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D();
 
   void \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1);
+    ITransform _param1);
 
   void \u0023\u003DzSOOEB2keHYTJkN1g7T7GOos\u003D(double _param1, double _param2, int _param3);
 

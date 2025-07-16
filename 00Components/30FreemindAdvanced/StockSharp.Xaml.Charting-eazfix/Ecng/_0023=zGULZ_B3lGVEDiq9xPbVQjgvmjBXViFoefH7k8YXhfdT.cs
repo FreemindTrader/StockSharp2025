@@ -8,27 +8,27 @@
 public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAasIOppKfaJ8_zxxVQenXg\u003D\u003D : 
   \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GFfexjP4JI2sgmYygvp7gvAFg\u003D\u003D
 {
-  private \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzIvf0fGm5UadN;
+  private RectangleInt \u0023\u003DzIvf0fGm5UadN;
 
   public \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAasIOppKfaJ8_zxxVQenXg\u003D\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
     : base(_param1)
   {
-    this.\u0023\u003DzIvf0fGm5UadN = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, _param1.Width - 1, _param1.Height - 1);
+    this.\u0023\u003DzIvf0fGm5UadN = new RectangleInt(0, 0, _param1.Width - 1, _param1.Height - 1);
   }
 
   public override void \u0023\u003DzwGTxcjtWPAOb(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     base.\u0023\u003DzwGTxcjtWPAOb(_param1);
-    this.\u0023\u003DzIvf0fGm5UadN = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, _param1.Width - 1, _param1.Height - 1);
+    this.\u0023\u003DzIvf0fGm5UadN = new RectangleInt(0, 0, _param1.Width - 1, _param1.Height - 1);
   }
 
   public bool \u0023\u003DzI7XtJBES5uqX(int _param1, int _param2, int _param3, int _param4)
   {
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(_param1, _param2, _param3, _param4);
+    RectangleInt xvhBayrK2CmzoKas = new RectangleInt(_param1, _param2, _param3, _param4);
     xvhBayrK2CmzoKas.\u0023\u003DzO3\u0024NMwQ\u003D();
-    if (xvhBayrK2CmzoKas.\u0023\u003DzPHB5nPY\u003D(new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, this.Width - 1, this.Height - 1)))
+    if (xvhBayrK2CmzoKas.\u0023\u003DzPHB5nPY\u003D(new RectangleInt(0, 0, this.Width - 1, this.Height - 1)))
     {
       this.\u0023\u003DzIvf0fGm5UadN = xvhBayrK2CmzoKas;
       return true;
@@ -75,7 +75,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     return _param1 >= this.\u0023\u003DzIvf0fGm5UadN.\u0023\u003DzP4R7yU0\u003D && _param2 >= this.\u0023\u003DzIvf0fGm5UadN.\u0023\u003DzRNV_Dpk\u003D && _param1 <= this.\u0023\u003DzIvf0fGm5UadN.\u0023\u003Dzp55dtus\u003D && _param2 <= this.\u0023\u003DzIvf0fGm5UadN.\u0023\u003DzSzOWcj8\u003D;
   }
 
-  public \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzbRHAWK1yd7\u00242()
+  public RectangleInt \u0023\u003DzbRHAWK1yd7\u00242()
   {
     return this.\u0023\u003DzIvf0fGm5UadN;
   }
@@ -100,7 +100,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     return this.\u0023\u003DzIvf0fGm5UadN.\u0023\u003DzSzOWcj8\u003D;
   }
 
-  public \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzG2hDaohxD94m5lhGOQ\u003D\u003D()
+  public RectangleInt \u0023\u003DzG2hDaohxD94m5lhGOQ\u003D\u003D()
   {
     return this.\u0023\u003DzIvf0fGm5UadN;
   }
@@ -126,9 +126,9 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
   }
 
   public void \u0023\u003DzS3VDevc\u003D(
-    \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI _param1)
+    IColorType _param1)
   {
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D nwsEwePinXgsJj4Q = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(_param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D(), _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D(), _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D(), _param1.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D());
+    RGBA_Bytes nwsEwePinXgsJj4Q = new RGBA_Bytes(_param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D(), _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D(), _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D(), _param1.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D());
     if (this.Width == 0)
       return;
     for (int index = 0; index < this.Height; ++index)
@@ -146,18 +146,18 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     base.\u0023\u003DzLWpPHs7BoU1N(_param1, _param2, _param3, _param4);
   }
 
-  public override \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzFiIk5SM\u003D(
+  public override RGBA_Bytes \u0023\u003DzFiIk5SM\u003D(
     int _param1,
     int _param2)
   {
-    return !this.\u0023\u003DzHzs\u0024qbI0q05\u0024(_param1, _param2) ? new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D() : base.\u0023\u003DzFiIk5SM\u003D(_param1, _param2);
+    return !this.\u0023\u003DzHzs\u0024qbI0q05\u0024(_param1, _param2) ? new RGBA_Bytes() : base.\u0023\u003DzFiIk5SM\u003D(_param1, _param2);
   }
 
   public override void \u0023\u003DzIw2\u00246wVb_WCdm8lNiA\u003D\u003D(
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     if (_param1 > _param3)
     {
@@ -178,7 +178,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     if (_param2 > _param3)
     {
@@ -199,7 +199,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     if (_param1 > _param3)
@@ -221,7 +221,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     if (_param2 > _param3)
@@ -243,7 +243,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -270,7 +270,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -297,7 +297,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     if (_param2 > this.\u0023\u003DzXAiUnNdKWTQu() || _param2 < this.\u0023\u003DzlKJuvbCCF6NL())
@@ -324,7 +324,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     if (_param1 > this.\u0023\u003Dz8zeNC1AAl5kt() || _param1 < this.\u0023\u003DztOKmm78IPiiJ())
@@ -351,7 +351,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,
@@ -381,15 +381,15 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
   }
 
   public void \u0023\u003DzTMGYcms3hj4T(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
-    this.\u0023\u003DzCadMMgc\u003D(_param1, new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, _param1.Width, _param1.Height), 0, 0);
+    this.\u0023\u003DzCadMMgc\u003D(_param1, new RectangleInt(0, 0, _param1.Width, _param1.Height), 0, 0);
   }
 
   public override void \u0023\u003DzR2zHA_0\u003D(
     int _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3)
+    RGBA_Bytes _param3)
   {
     if ((long) (uint) _param1 >= (long) this.Width || (long) (uint) _param2 >= (long) this.Height)
       return;
@@ -397,28 +397,28 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2,
+    IImageByte _param1,
+    RectangleInt _param2,
     int _param3,
     int _param4)
   {
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas1 = _param2;
+    RectangleInt xvhBayrK2CmzoKas1 = _param2;
     xvhBayrK2CmzoKas1.\u0023\u003DznR9\u00242Eg\u003D(_param3, _param4);
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas2 = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas();
+    RectangleInt xvhBayrK2CmzoKas2 = new RectangleInt();
     if (!xvhBayrK2CmzoKas2.\u0023\u003DzvBhLthYerYntQLEPioo2lZw\u003D(xvhBayrK2CmzoKas1, this.\u0023\u003DzIvf0fGm5UadN))
       return;
     xvhBayrK2CmzoKas2.\u0023\u003DznR9\u00242Eg\u003D(-_param3, -_param4);
     base.\u0023\u003DzCadMMgc\u003D(_param1, xvhBayrK2CmzoKas2, _param3, _param4);
   }
 
-  public \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzH6f1Ws0uS7YO\u0024nKhcQ\u003D\u003D(
-    ref \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1,
-    ref \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2,
+  public RectangleInt \u0023\u003DzH6f1Ws0uS7YO\u0024nKhcQ\u003D\u003D(
+    ref RectangleInt _param1,
+    ref RectangleInt _param2,
     int _param3,
     int _param4)
   {
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas1 = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, 0, 0);
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas xvhBayrK2CmzoKas2 = this.\u0023\u003DzbRHAWK1yd7\u00242();
+    RectangleInt xvhBayrK2CmzoKas1 = new RectangleInt(0, 0, 0, 0);
+    RectangleInt xvhBayrK2CmzoKas2 = this.\u0023\u003DzbRHAWK1yd7\u00242();
     ++xvhBayrK2CmzoKas2.\u0023\u003Dzp55dtus\u003D;
     ++xvhBayrK2CmzoKas2.\u0023\u003DzSzOWcj8\u003D;
     if (_param2.\u0023\u003DzP4R7yU0\u003D < 0)
@@ -462,7 +462,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAas
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,

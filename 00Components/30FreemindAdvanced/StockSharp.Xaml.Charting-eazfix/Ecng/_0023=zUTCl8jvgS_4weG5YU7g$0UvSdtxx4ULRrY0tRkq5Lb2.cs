@@ -8,8 +8,8 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D : 
-  \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI
+public struct RGBA_Bytes : 
+  IColorType
 {
   
   public byte \u0023\u003DzcdKuX48ZXN_S;
@@ -20,35 +20,35 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
   
   public byte \u0023\u003DzKCqGEcs\u003D;
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DziT5e12c\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DziT5e12c\u003D = new RGBA_Bytes((int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzmQK\u0024Ms_\u0024kEI_ = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(225, 225, 225, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzmQK\u0024Ms_\u0024kEI_ = new RGBA_Bytes(225, 225, 225, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz3jsTr080\u00242a0 = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(125, 125, 125, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003Dz3jsTr080\u00242a0 = new RGBA_Bytes(125, 125, 125, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzXMsQczM\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, 0, 0, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzXMsQczM\u003D = new RGBA_Bytes(0, 0, 0, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzr\u0024CAwAU\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, 0, 0, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003Dzr\u0024CAwAU\u003D = new RGBA_Bytes((int) byte.MaxValue, 0, 0, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzQ11P_zRSPdMN = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, (int) sbyte.MaxValue, 0, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzQ11P_zRSPdMN = new RGBA_Bytes((int) byte.MaxValue, (int) sbyte.MaxValue, 0, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz8Nx8mZ4\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, (int) byte.MaxValue, 0, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003Dz8Nx8mZ4\u003D = new RGBA_Bytes(0, (int) byte.MaxValue, 0, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzCfZb6Vg\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, 0, (int) byte.MaxValue, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzCfZb6Vg\u003D = new RGBA_Bytes(0, 0, (int) byte.MaxValue, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzeSZjfwP9PT8\u0024 = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(75, 0, 130, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzeSZjfwP9PT8\u0024 = new RGBA_Bytes(75, 0, 130, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz\u0024wMcc5BFs9G_ = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(143, 0, (int) byte.MaxValue, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003Dz\u0024wMcc5BFs9G_ = new RGBA_Bytes(143, 0, (int) byte.MaxValue, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzokZEel\u0024u0c1N = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzokZEel\u0024u0c1N = new RGBA_Bytes(0, (int) byte.MaxValue, (int) byte.MaxValue, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzeoCalpffM4n8 = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, 0, (int) byte.MaxValue, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzeoCalpffM4n8 = new RGBA_Bytes((int) byte.MaxValue, 0, (int) byte.MaxValue, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzD0g4s6O4aQOc = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) byte.MaxValue, (int) byte.MaxValue, 0, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003DzD0g4s6O4aQOc = new RGBA_Bytes((int) byte.MaxValue, (int) byte.MaxValue, 0, (int) byte.MaxValue);
   
-  public static readonly \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz97mMp8zEecupEsHcfw\u003D\u003D = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(154, 205, 50, (int) byte.MaxValue);
+  public static readonly RGBA_Bytes \u0023\u003Dz97mMp8zEecupEsHcfw\u003D\u003D = new RGBA_Bytes(154, 205, 50, (int) byte.MaxValue);
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     int _param1,
     int _param2,
     int _param3)
@@ -56,7 +56,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
   {
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     int _param1,
     int _param2,
     int _param3,
@@ -68,7 +68,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzKCqGEcs\u003D = (byte) _param4;
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     double _param1,
     double _param2,
     double _param3,
@@ -80,7 +80,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzKCqGEcs\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param4 * (double) byte.MaxValue);
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     double _param1,
     double _param2,
     double _param3)
@@ -91,7 +91,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzKCqGEcs\u003D = byte.MaxValue;
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param1,
     double _param2)
   {
@@ -101,14 +101,14 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzKCqGEcs\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+  public RGBA_Bytes(
+    RGBA_Bytes _param1)
     : this(_param1, (int) _param1.\u0023\u003DzKCqGEcs\u003D)
   {
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+  public RGBA_Bytes(
+    RGBA_Bytes _param1,
     int _param2)
   {
     this.\u0023\u003Dz4WHdt9g\u003D = _param1.\u0023\u003Dz4WHdt9g\u003D;
@@ -117,7 +117,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzKCqGEcs\u003D = (byte) _param2;
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     uint _param1)
   {
     this.\u0023\u003Dz4WHdt9g\u003D = (byte) (_param1 >> 16 /*0x10*/);
@@ -126,7 +126,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzKCqGEcs\u003D = (byte) (_param1 >> 24);
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(
+  public RGBA_Bytes(
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param1)
   {
     this.\u0023\u003Dz4WHdt9g\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
@@ -175,22 +175,22 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
   }
 
   public static bool operator ==(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param0,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+    RGBA_Bytes _param0,
+    RGBA_Bytes _param1)
   {
     return (int) _param0.\u0023\u003Dz4WHdt9g\u003D == (int) _param1.\u0023\u003Dz4WHdt9g\u003D && (int) _param0.\u0023\u003DzoRsAtmfOFDZe == (int) _param1.\u0023\u003DzoRsAtmfOFDZe && (int) _param0.\u0023\u003DzcdKuX48ZXN_S == (int) _param1.\u0023\u003DzcdKuX48ZXN_S && (int) _param0.\u0023\u003DzKCqGEcs\u003D == (int) _param1.\u0023\u003DzKCqGEcs\u003D;
   }
 
   public static bool operator !=(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param0,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+    RGBA_Bytes _param0,
+    RGBA_Bytes _param1)
   {
     return (int) _param0.\u0023\u003Dz4WHdt9g\u003D != (int) _param1.\u0023\u003Dz4WHdt9g\u003D || (int) _param0.\u0023\u003DzoRsAtmfOFDZe != (int) _param1.\u0023\u003DzoRsAtmfOFDZe || (int) _param0.\u0023\u003DzcdKuX48ZXN_S != (int) _param1.\u0023\u003DzcdKuX48ZXN_S || (int) _param0.\u0023\u003DzKCqGEcs\u003D != (int) _param1.\u0023\u003DzKCqGEcs\u003D;
   }
 
   public override bool Equals(object _param1)
   {
-    return _param1.GetType() == typeof (\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D) && this == (\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D) _param1;
+    return _param1.GetType() == typeof (RGBA_Bytes) && this == (RGBA_Bytes) _param1;
   }
 
   public override int GetHashCode()
@@ -203,7 +203,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     return new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D((float) this.\u0023\u003Dz4WHdt9g\u003D / (float) byte.MaxValue, (float) this.\u0023\u003DzoRsAtmfOFDZe / (float) byte.MaxValue, (float) this.\u0023\u003DzcdKuX48ZXN_S / (float) byte.MaxValue, (float) this.\u0023\u003DzKCqGEcs\u003D / (float) byte.MaxValue);
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D()
+  public RGBA_Bytes \u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D()
   {
     return this;
   }
@@ -213,11 +213,11 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003Dz4WHdt9g\u003D = this.\u0023\u003DzoRsAtmfOFDZe = this.\u0023\u003DzcdKuX48ZXN_S = this.\u0023\u003DzKCqGEcs\u003D = (byte) 0;
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz04GA0by_Hduv0gSskg\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+  public RGBA_Bytes \u0023\u003Dz04GA0by_Hduv0gSskg\u003D\u003D(
+    RGBA_Bytes _param1,
     double _param2)
   {
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D nwsEwePinXgsJj4Q = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D();
+    RGBA_Bytes nwsEwePinXgsJj4Q = new RGBA_Bytes();
     int num = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * 256.0);
     nwsEwePinXgsJj4Q.\u0023\u003DzD9hXShMMhqxP5ayUkQ\u003D\u003D((int) (byte) (this.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() + ((_param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() - this.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D()) * num >> 8)));
     nwsEwePinXgsJj4Q.\u0023\u003DzSqu7zYTdQL7FVU\u0024pkQ\u003D\u003D((int) (byte) (this.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() + ((_param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() - this.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D()) * num >> 8)));
@@ -226,11 +226,11 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     return nwsEwePinXgsJj4Q;
   }
 
-  public static \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D operator +(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param0,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+  public static RGBA_Bytes operator +(
+    RGBA_Bytes _param0,
+    RGBA_Bytes _param1)
   {
-    return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D()
+    return new RGBA_Bytes()
     {
       \u0023\u003Dz4WHdt9g\u003D = (int) _param0.\u0023\u003Dz4WHdt9g\u003D + (int) _param1.\u0023\u003Dz4WHdt9g\u003D > (int) byte.MaxValue ? byte.MaxValue : (byte) ((int) _param0.\u0023\u003Dz4WHdt9g\u003D + (int) _param1.\u0023\u003Dz4WHdt9g\u003D),
       \u0023\u003DzoRsAtmfOFDZe = (int) _param0.\u0023\u003DzoRsAtmfOFDZe + (int) _param1.\u0023\u003DzoRsAtmfOFDZe > (int) byte.MaxValue ? byte.MaxValue : (byte) ((int) _param0.\u0023\u003DzoRsAtmfOFDZe + (int) _param1.\u0023\u003DzoRsAtmfOFDZe),
@@ -239,11 +239,11 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     };
   }
 
-  public static \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D operator -(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param0,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+  public static RGBA_Bytes operator -(
+    RGBA_Bytes _param0,
+    RGBA_Bytes _param1)
   {
-    return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D()
+    return new RGBA_Bytes()
     {
       \u0023\u003Dz4WHdt9g\u003D = (int) _param0.\u0023\u003Dz4WHdt9g\u003D - (int) _param1.\u0023\u003Dz4WHdt9g\u003D < 0 ? (byte) 0 : (byte) ((int) _param0.\u0023\u003Dz4WHdt9g\u003D - (int) _param1.\u0023\u003Dz4WHdt9g\u003D),
       \u0023\u003DzoRsAtmfOFDZe = (int) _param0.\u0023\u003DzoRsAtmfOFDZe - (int) _param1.\u0023\u003DzoRsAtmfOFDZe < 0 ? (byte) 0 : (byte) ((int) _param0.\u0023\u003DzoRsAtmfOFDZe - (int) _param1.\u0023\u003DzoRsAtmfOFDZe),
@@ -252,12 +252,12 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     };
   }
 
-  public static \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D operator *(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param0,
+  public static RGBA_Bytes operator *(
+    RGBA_Bytes _param0,
     double _param1)
   {
     float num = (float) _param1;
-    return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D()
+    return new RGBA_Bytes(new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D()
     {
       \u0023\u003Dz4WHdt9g\u003D = (float) _param0.\u0023\u003Dz4WHdt9g\u003D / (float) byte.MaxValue * num,
       \u0023\u003DzoRsAtmfOFDZe = (float) _param0.\u0023\u003DzoRsAtmfOFDZe / (float) byte.MaxValue * num,
@@ -267,7 +267,7 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
   }
 
   public void \u0023\u003DzObQSsmE\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+    RGBA_Bytes _param1,
     int _param2)
   {
     if (_param2 == (int) byte.MaxValue)
@@ -309,22 +309,22 @@ public struct \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkH
     this.\u0023\u003DzeSyb0eNYy90rJiPexQ\u003D\u003D((int) _param1.\u0023\u003DzKiES5cU\u003D((int) (byte) this.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()));
   }
 
-  public static \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI \u0023\u003DznZzeZSJZAeyh()
+  public static IColorType \u0023\u003DznZzeZSJZAeyh()
   {
-    return (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI) new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(0, 0, 0, 0);
+    return (IColorType) new RGBA_Bytes(0, 0, 0, 0);
   }
 
-  public static \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DztVdII\u0024xdxiL2(
+  public static RGBA_Bytes \u0023\u003DztVdII\u0024xdxiL2(
     int _param0)
   {
-    return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(_param0 >> 16 /*0x10*/ & (int) byte.MaxValue, _param0 >> 8 & (int) byte.MaxValue, _param0 & (int) byte.MaxValue);
+    return new RGBA_Bytes(_param0 >> 16 /*0x10*/ & (int) byte.MaxValue, _param0 >> 8 & (int) byte.MaxValue, _param0 & (int) byte.MaxValue);
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz100Ut9M\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+  public RGBA_Bytes \u0023\u003Dz100Ut9M\u003D(
+    RGBA_Bytes _param1,
     double _param2)
   {
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D nwsEwePinXgsJj4Q = new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(this);
+    RGBA_Bytes nwsEwePinXgsJj4Q = new RGBA_Bytes(this);
     return this * (1.0 - _param2) + _param1 * _param2;
   }
 }

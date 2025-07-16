@@ -217,7 +217,7 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgD
       List<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D> list = tuple.Item2.Where<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>(\u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343383.\u0023\u003DzVCaCeyhgY8BAMJLqvA\u003D\u003D ?? (\u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343383.\u0023\u003DzVCaCeyhgY8BAMJLqvA\u003D\u003D = new Func<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D, bool>(\u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzKvZiVbfxf45ElrF4TNmmFrQ\u003D))).ToList<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D>();
       foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in list)
       {
-        \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = s1JolYrWoYpqmQ6ug.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+        IPointSeries ftrixUnpTllY1PkTyq = s1JolYrWoYpqmQ6ug.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
         if (ftrixUnpTllY1PkTyq != null)
         {
           int index = ftrixUnpTllY1PkTyq.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzFH1yjjY\u003D<double>(true, (IComparable) _param2, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 0);
@@ -245,9 +245,9 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgD
     return this.\u0023\u003DzaqOTdcE2Qrcnms5YPQ\u003D\u003D(_param1)[0].get_Spacing();
   }
 
-  public override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dznnv4eJBaYYey(
+  public override HitTestInfo \u0023\u003Dznnv4eJBaYYey(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     \u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D _param4)
   {
@@ -266,7 +266,7 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgD
       _param2.\u0023\u003Dzo2ftAfxjqC04(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD39it_JzJq2Auui18\u003D.\u0023\u003Dzop6vn0GowyiR(point2, flag1));
       _param2.\u0023\u003Dzn3o1RS9wuET8(\u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzwAiTZQA\u003D(point2, _param1) < _param3);
       double num6 = flag1 ? Math.Abs(num5 - _param1.Y) : Math.Abs(num5 - _param1.X);
-      ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local = ref _param2;
+      ref HitTestInfo local = ref _param2;
       bool flag2;
       _param2.\u0023\u003DzkNMVgQ88lfxP(flag2 = num6 < num2 / 2.0);
       int num7 = flag2 ? 1 : 0;

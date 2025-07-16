@@ -13,11 +13,11 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxj
   \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D
 {
   private readonly int \u0023\u003DzEMN\u0024erw\u003D;
-  private \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D \u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D;
+  private ResamplingMode \u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D;
 
   public \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxjpqw\u003D\u003D(
     int _param1,
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param2)
+    ResamplingMode _param2)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) _param1, "resolution").\u0023\u003DzIR3Z_Ken7pfcXCwNTw\u003D\u003D((IComparable) 2);
     this.\u0023\u003DzEMN\u0024erw\u003D = _param1;
@@ -28,7 +28,7 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxj
   public int \u0023\u003Dz4EvVhZjEuLza() => this.\u0023\u003DzEMN\u0024erw\u003D;
 
   [SpecialName]
-  public \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D \u0023\u003DzCRtaRLiel\u0024uAEyXXM45e2ic\u003D()
+  public ResamplingMode \u0023\u003DzCRtaRLiel\u0024uAEyXXM45e2ic\u003D()
   {
     return this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D;
   }
@@ -41,7 +41,7 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxj
   }
 
   public \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D \u0023\u003Dz8WtlTZw\u003D(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1)
+    ResamplingMode _param1)
   {
     this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D = _param1;
     return (\u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D) this;
@@ -71,13 +71,13 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u01lCRN7eX_KrOuehBwLhBVnxxj
       }
       return (IList) numArray;
     }
-    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D.ToString().StartsWith(\u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax.ToString()))
+    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D.ToString().StartsWith(ResamplingMode.MinMax.ToString()))
       return this.\u0023\u003Dz1rpjJBfXHa0JqL21PwrWh4g\u003D(_param1, _param2.Min, _param2.Max, _param3);
-    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min)
+    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == ResamplingMode.Min)
       return this.\u0023\u003DzMtxfw8w31lZlw_y5Aw\u003D\u003D(_param1, _param2.Min, _param2.Max, _param3);
-    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max)
+    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == ResamplingMode.Max)
       return this.\u0023\u003DzHGrIGwQMCG00iPvblg\u003D\u003D(_param1, _param2.Min, _param2.Max, _param3);
-    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid)
+    if (this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D == ResamplingMode.Mid)
       return this.\u0023\u003DztccTtmWKXlfE6hK7TQ\u003D\u003D(_param1, _param2.Min, _param2.Max, _param3);
     throw new Exception($"Resampling Mode {this.\u0023\u003DzZFxstdRmX5NLF0pSzR4qYMQ\u003D} has not been handled");
   }

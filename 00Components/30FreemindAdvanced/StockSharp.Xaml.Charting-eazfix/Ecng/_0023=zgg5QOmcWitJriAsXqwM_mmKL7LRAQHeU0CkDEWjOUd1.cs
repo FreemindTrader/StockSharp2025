@@ -61,36 +61,36 @@ public static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11Ejb
 
   public static \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
     this IRenderableSeries _param0,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg;
     switch (_param1.\u0023\u003DzRkghOq8y7ncj())
     {
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 1:
+      case (DataSeriesType) 1:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 2:
+      case (DataSeriesType) 2:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 3:
+      case (DataSeriesType) 3:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzupHrUO0UFO07vWyNRguf_6KxLa4699odrw\u003D\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 4:
+      case (DataSeriesType) 4:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 6:
+      case (DataSeriesType) 6:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAYHkX8\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 7:
+      case (DataSeriesType) 7:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzCp5d2Zte2oCosmmx2S7no7oM806RFMQA4oT0jRI\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 8:
+      case (DataSeriesType) 8:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_LKq7HenVQrw\u003D\u003D(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 9:
+      case (DataSeriesType) 9:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc(_param0, _param1);
         break;
-      case (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 10:
+      case (DataSeriesType) 10:
         vdj8C0KctI6r27Gg = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd(_param0, _param1);
         break;
       default:
@@ -102,7 +102,7 @@ public static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11Ejb
 
   public static Color \u0023\u003Dz3_4\u0024b5dxRhLlXyFK3Q\u003D\u003D(
     this IRenderableSeries _param0,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = _param0.get_PaletteProvider();
     Color color1 = _param0.SeriesColor;
@@ -117,7 +117,7 @@ public static class \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11Ejb
     if (_param0.get_PaletteProvider() != null)
     {
       Color? nullable1 = new Color?();
-      Color? nullable2 = _param1.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 1 ? (_param1.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 3 ? paletteProvider.\u0023\u003DzP50Orng\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003Dzd9IAScWutAfJ().ToDouble()) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003Dzd9IAScWutAfJ().ToDouble(), _param1.ZValue.ToDouble())) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003DzlVz0JivzQhAY().ToDouble(), _param1.\u0023\u003Dzk8BrWRwbV\u0024Y\u0024().ToDouble(), _param1.\u0023\u003Dz89dSIjCLFKC0().ToDouble(), _param1.\u0023\u003DzrRG8qdg_pzoL().ToDouble());
+      Color? nullable2 = _param1.\u0023\u003DzRkghOq8y7ncj() != (DataSeriesType) 1 ? (_param1.\u0023\u003DzRkghOq8y7ncj() != (DataSeriesType) 3 ? paletteProvider.\u0023\u003DzP50Orng\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003Dzd9IAScWutAfJ().ToDouble()) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003Dzd9IAScWutAfJ().ToDouble(), _param1.ZValue.ToDouble())) : paletteProvider.\u0023\u003DzLCyKrYI\u003D(_param0, _param1.\u0023\u003DztryT5H42SVj8().ToDouble(), _param1.\u0023\u003DzlVz0JivzQhAY().ToDouble(), _param1.\u0023\u003Dzk8BrWRwbV\u0024Y\u0024().ToDouble(), _param1.\u0023\u003Dz89dSIjCLFKC0().ToDouble(), _param1.\u0023\u003DzrRG8qdg_pzoL().ToDouble());
       color1 = nullable2.HasValue ? nullable2.Value : color1;
     }
     return color1;

@@ -10,14 +10,14 @@ using System.Collections.Generic;
 public sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0dt0x2zghwBF1DAivUVDEn7coBcjNqBuDHl_IoPu1NHN4q\u0024VzS_q2MH
 {
   private static \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0dt0x2zghwBF1DAivUVDEn7coBcjNqBuDHl_IoPu1NHN4q\u0024VzS_q2MH \u0023\u003DzvEBAW1o\u003D;
-  private Dictionary<\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D, Dictionary<double, Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D>>> \u0023\u003Dz\u00249vPgNaQTtLB = new Dictionary<\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D, Dictionary<double, Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D>>>();
+  private Dictionary<TypeFace, Dictionary<double, Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D>>> \u0023\u003Dz\u00249vPgNaQTtLB = new Dictionary<TypeFace, Dictionary<double, Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D>>>();
 
   private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0dt0x2zghwBF1DAivUVDEn7coBcjNqBuDHl_IoPu1NHN4q\u0024VzS_q2MH()
   {
   }
 
   public static Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D> \u0023\u003DznNqOFnTOtMUM(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeQQey4VixhEfLv3WEbdfJtrVw\u003D\u003D _param0,
+    TypeFace _param0,
     double _param1)
   {
     Dictionary<double, Dictionary<char, \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D>> dictionary1;

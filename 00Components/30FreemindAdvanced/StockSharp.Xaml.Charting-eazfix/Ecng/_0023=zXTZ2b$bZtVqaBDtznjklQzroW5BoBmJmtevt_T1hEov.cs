@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public interface \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D
+public interface ITransform
 {
   void \u0023\u003DzhA5n1D0\u003D(ref double _param1, ref double _param2);
 }

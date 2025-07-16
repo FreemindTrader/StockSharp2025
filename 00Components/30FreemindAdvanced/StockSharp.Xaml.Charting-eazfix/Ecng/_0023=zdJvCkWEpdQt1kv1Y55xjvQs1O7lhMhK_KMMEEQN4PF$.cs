@@ -259,7 +259,7 @@ public sealed class \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u002
     double _param2,
     double _param3)
   {
-    _param1.\u0023\u003DzObQSsmE\u003D(new dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd(_param2, _param3));
+    _param1.\u0023\u003DzObQSsmE\u003D(new Vector2(_param2, _param3));
   }
 
   private void \u0023\u003Dz6irdLhKVo90EhbqvOw\u003D\u003D(

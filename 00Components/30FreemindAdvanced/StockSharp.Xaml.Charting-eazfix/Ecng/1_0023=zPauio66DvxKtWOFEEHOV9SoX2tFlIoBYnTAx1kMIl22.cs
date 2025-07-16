@@ -10,23 +10,23 @@ using System;
 public sealed class \u0023\u003DzPauio66DvxKtWOFEEHOV9SoX2tFlIoBYnTAx1kMIl22T3I94knCn3cCNsJ0Q : 
   \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerRnFnKJZv3yJKLQRpJ
 {
-  private \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003DzTHetl5qECmCj;
+  private IImageByte \u0023\u003DzTHetl5qECmCj;
   private \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGLBk7pXAGd\u00242IV5d6o6Os2AavA\u003D\u003D \u0023\u003DzDWcG2S0QMbmm;
-  private \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzOuMxlnooysYl05knOw\u003D\u003D;
+  private RectangleInt \u0023\u003DzOuMxlnooysYl05knOw\u003D\u003D;
   private bool \u0023\u003DzaHu3bqnfI\u0024R3;
 
   public \u0023\u003DzPauio66DvxKtWOFEEHOV9SoX2tFlIoBYnTAx1kMIl22T3I94knCn3cCNsJ0Q(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
+    IImageByte _param1,
     \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGLBk7pXAGd\u00242IV5d6o6Os2AavA\u003D\u003D _param2)
   {
     this.\u0023\u003DzTHetl5qECmCj = _param1;
     this.\u0023\u003DzDWcG2S0QMbmm = _param2;
-    this.\u0023\u003DzOuMxlnooysYl05knOw\u003D\u003D = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, 0, 0);
+    this.\u0023\u003DzOuMxlnooysYl05knOw\u003D\u003D = new RectangleInt(0, 0, 0, 0);
     this.\u0023\u003DzaHu3bqnfI\u0024R3 = false;
   }
 
   public void \u0023\u003DzotQWOIc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003DzTHetl5qECmCj = _param1;
   }

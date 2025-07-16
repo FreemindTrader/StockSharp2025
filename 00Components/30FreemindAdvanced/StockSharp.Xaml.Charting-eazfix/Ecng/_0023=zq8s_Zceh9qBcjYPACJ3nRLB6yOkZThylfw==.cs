@@ -36,7 +36,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
   
   private bool \u0023\u003DznkfEoFr8zh4Cq3PUWdbHj5k\u003D;
   
-  private \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D \u0023\u003DzYpAapsQ5ph\u0024Fz\u0024QW29lAZ8huNfaT95Ph4Q\u003D\u003D;
+  private ResamplingMode \u0023\u003DzYpAapsQ5ph\u0024Fz\u0024QW29lAZ8huNfaT95Ph4Q\u003D\u003D;
   
   private readonly object \u0023\u003DzTHDpVqL3PQeslcVw73Y\u0024d38\u003D;
   
@@ -158,7 +158,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     set => this.\u0023\u003DznkfEoFr8zh4Cq3PUWdbHj5k\u003D = value;
   }
 
-  public \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D ResamplingMode
+  public ResamplingMode ResamplingMode
   {
     get => this.\u0023\u003DzYpAapsQ5ph\u0024Fz\u0024QW29lAZ8huNfaT95Ph4Q\u003D\u003D;
     set => this.\u0023\u003DzYpAapsQ5ph\u0024Fz\u0024QW29lAZ8huNfaT95Ph4Q\u003D\u003D = value;
@@ -286,7 +286,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     set => this.\u0023\u003DzPLg_3LuBugD5T43IfVvWRrI\u003D = value;
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+  public HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1,
     bool _param2,
     double? _param3)
@@ -306,14 +306,14 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     this.\u0023\u003DzxZnVF9e_Olw9LuFVWAjGc3e_XlJ2yyzlwQ\u003D\u003D = _param1;
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+  public HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1,
     bool _param2 = false)
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+  public HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1,
     double _param2,
     bool _param3 = false)
@@ -321,7 +321,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     throw new NotImplementedException();
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DznVLFa68vHPHy(
+  public HitTestInfo \u0023\u003DznVLFa68vHPHy(
     Point _param1,
     bool _param2 = false)
   {
@@ -329,7 +329,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
   }
 
   public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     throw new NotImplementedException();
   }

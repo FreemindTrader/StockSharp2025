@@ -14,7 +14,7 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xf3Snq_5g10Q3H7nB4_DWy9d8U
   \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D(_param1, _param2, _param3)
 {
   public override void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,

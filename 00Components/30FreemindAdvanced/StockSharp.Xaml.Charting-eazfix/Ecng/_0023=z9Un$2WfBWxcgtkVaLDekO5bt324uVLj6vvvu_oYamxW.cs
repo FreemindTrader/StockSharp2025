@@ -11,8 +11,8 @@ public sealed class \u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO5bt324uVLj6vvvu_oYamx
   private byte[] \u0023\u003Dzz4UoRxITY5g\u0024;
 
   public \u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO5bt324uVLj6vvvu_oYamxWfKZJqA7XWueY_TW6QxtgNQQ\u003D\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2)
+    IImageByte _param1,
+    RGBA_Bytes _param2)
     : base(_param1)
   {
     this.\u0023\u003Dzz4UoRxITY5g\u0024 = new byte[4];

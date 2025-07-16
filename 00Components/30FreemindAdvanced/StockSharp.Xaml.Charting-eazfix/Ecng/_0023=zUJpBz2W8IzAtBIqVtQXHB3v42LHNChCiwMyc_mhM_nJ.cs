@@ -6,22 +6,22 @@
 
 #nullable disable
 public sealed class \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB3v42LHNChCiwMyc_mhM_nJgX2NQAB9o1T4SlQbf8OpLyJGvcS0\u003D : 
-  \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D
+  IScanlineCache
 {
   private int \u0023\u003Dz_TCtD0vLATv8;
   private int \u0023\u003DzFfSb8y0\u003D;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D> \u0023\u003DzDfv8Db0RWqZH;
+  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan> \u0023\u003DzDfv8Db0RWqZH;
   private int \u0023\u003DzJZMDU99kHHNc;
   private int \u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
 
   public \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB3v42LHNChCiwMyc_mhM_nJgX2NQAB9o1T4SlQbf8OpLyJGvcS0\u003D()
   {
     this.\u0023\u003Dz_TCtD0vLATv8 = 2147483632;
-    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<\u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D>(1000);
+    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan>(1000);
     this.\u0023\u003DzJZMDU99kHHNc = 0;
   }
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
+  public ScanlineSpan \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
   {
     ++this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
     return this.\u0023\u003DzDfv8Db0RWqZH.\u0023\u003DzvsnCYl4\u003D()[this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D - 1];
@@ -81,7 +81,7 @@ public sealed class \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB3v42LHNChCiwMyc_mhM_nJgX2N
 
   public int \u0023\u003DzAK83aWWCVpNB() => this.\u0023\u003DzJZMDU99kHHNc;
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzoLjFgpI\u003D()
+  public ScanlineSpan \u0023\u003DzoLjFgpI\u003D()
   {
     this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D = 1;
     return this.\u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D();

@@ -5,6 +5,6 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public enum \u0023\u003DzPauio66DvxKtWOFEEHOV9SoX2tFlIoBYnTAx1kMIl228ZAWhzY9O7fhRnITl
+public enum Baseline
 {
 }

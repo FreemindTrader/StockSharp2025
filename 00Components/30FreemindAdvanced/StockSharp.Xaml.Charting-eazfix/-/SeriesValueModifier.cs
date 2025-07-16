@@ -239,7 +239,7 @@ public sealed class SeriesValueModifier :
       AxisMarkerAnnotation markerAnnotation = (AxisMarkerAnnotation) this.\u0023\u003DzJVKVgJSKleLL[key];
       IRange visibleRange = key.XAxis.VisibleRange;
       IndexRange  indicesRange = key.get_DataSeries().GetIndicesRange(visibleRange);
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+      HitTestInfo zldchDrVsrVyHh6WyiGy = HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
       IComparable comparable1 = key.get_DataSeries().get_LatestYValue();
       bool isDefined = indicesRange.IsDefined;
       if (isDefined)

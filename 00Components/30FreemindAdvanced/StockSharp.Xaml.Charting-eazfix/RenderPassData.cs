@@ -13,14 +13,14 @@ public sealed class RenderPassData  :
   private readonly IndexRange  \u0023\u003DzbP\u0024wPAKWrqQo;
   private readonly \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003Dz3xMK\u0024SZfrioHTxzBrYzwG1s\u003D;
   private readonly \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003Dzf5rU85ZYrc0IBtt5wAF9LFw\u003D;
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz6leEYQVpwDm8;
+  private readonly IPointSeries \u0023\u003Dz6leEYQVpwDm8;
   private readonly \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J;
 
   public RenderPassData (
     IndexRange  _param1,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param2,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param4,
+    IPointSeries _param4,
     \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D _param5)
   {
     this.\u0023\u003DzbP\u0024wPAKWrqQo = _param1;
@@ -49,7 +49,7 @@ public sealed class RenderPassData  :
   }
 
   [SpecialName]
-  public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzSKfyjpipx8dI()
+  public IPointSeries \u0023\u003DzSKfyjpipx8dI()
   {
     return this.\u0023\u003Dz6leEYQVpwDm8;
   }

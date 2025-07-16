@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 #nullable disable
 public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D : 
-  \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D
+  IPointResamplerFactory
 {
   private static readonly Dictionary<Type, Dictionary<Type, \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D>> \u0023\u003Dznl_Lbq9eCNm0DjL0BA\u003D\u003D = new Dictionary<Type, Dictionary<Type, \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D>>();
 
@@ -181,8 +181,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz\u00242BDuv7itdlocAQ5v9x29HOZV0yR : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -200,20 +200,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, ulong>(doubleList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, ulong>(doubleList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -224,7 +224,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -318,10 +318,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -350,10 +350,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -382,10 +382,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -417,10 +417,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -576,7 +576,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -585,8 +585,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz\u0024Yt8kJjRhcWrV_hplKnNuiRBEvRU : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -604,20 +604,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, ushort>(sbyteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, ushort>(sbyteList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -628,7 +628,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -722,10 +722,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -754,10 +754,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -786,10 +786,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -821,10 +821,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -980,7 +980,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -989,8 +989,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz\u0024bWNGDaPZX8uPsXnjTmOYi0\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -1008,20 +1008,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, int>(doubleList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, int>(doubleList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -1032,7 +1032,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -1126,10 +1126,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -1158,10 +1158,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -1190,10 +1190,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -1225,10 +1225,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -1384,7 +1384,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -1393,8 +1393,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz\u0024iVmBKrBa7aCssq7TYknqCg\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -1412,20 +1412,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, byte>(shortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, byte>(shortList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -1436,7 +1436,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -1530,10 +1530,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -1562,10 +1562,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -1594,10 +1594,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -1629,10 +1629,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -1788,7 +1788,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -1797,8 +1797,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz0NmucFFR3CPW0V1zOfSx2GWq9HOc : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -1816,20 +1816,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, short>(timeSpanList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, short>(timeSpanList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -1840,7 +1840,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -1934,10 +1934,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -1966,10 +1966,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -1998,10 +1998,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -2033,10 +2033,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -2192,7 +2192,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -2204,8 +2204,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz3ZncGR5D5TAoZBW36gIWea8YcPlc : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -2223,20 +2223,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, ushort>(ulongList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, ushort>(ulongList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -2247,7 +2247,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -2341,10 +2341,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -2373,10 +2373,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -2405,10 +2405,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -2440,10 +2440,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -2599,7 +2599,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -2608,8 +2608,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz3fG20UI0Pi\u0024ZwGxKAdVozs9EcuFe : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -2627,20 +2627,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, float>(ulongList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, float>(ulongList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -2651,7 +2651,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -2745,10 +2745,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -2777,10 +2777,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -2809,10 +2809,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -2844,10 +2844,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -3003,7 +3003,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -3012,8 +3012,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz47veNV8n3KevYM8jcmr4Vcg707Dz : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -3031,20 +3031,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, uint>(ulongList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, uint>(ulongList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -3055,7 +3055,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -3149,10 +3149,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -3181,10 +3181,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -3213,10 +3213,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -3248,10 +3248,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -3407,7 +3407,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -3416,8 +3416,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz4oBr09GOX48Pj8joAy6VOhvFXYec : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -3435,20 +3435,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, short>(longList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, short>(longList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -3459,7 +3459,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -3553,10 +3553,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -3585,10 +3585,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -3617,10 +3617,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -3652,10 +3652,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -3811,7 +3811,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -3820,8 +3820,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz51lnVGfIkQadYbDb_ahaaBa5fyF\u0024 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -3839,20 +3839,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, ushort>(uintList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, ushort>(uintList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -3863,7 +3863,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -3957,10 +3957,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -3989,10 +3989,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -4021,10 +4021,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -4056,10 +4056,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -4215,7 +4215,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -4224,8 +4224,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz5dJX9tQ\u0024cV\u0024MXBxM\u0024LhyO8ByLZyW : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -4243,20 +4243,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList1, shortList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList1, shortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList1, shortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList1, shortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList1, shortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, short>(shortList1, shortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList1, (IList<double>) shortList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, short>(shortList1, shortList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -4267,7 +4267,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -4361,10 +4361,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -4393,10 +4393,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -4425,10 +4425,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -4460,10 +4460,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -4619,7 +4619,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -4628,8 +4628,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz66U1D7EexvY0AEohceAzMB8\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -4647,20 +4647,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, double>(sbyteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, double>(sbyteList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -4671,7 +4671,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -4765,10 +4765,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -4797,10 +4797,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -4829,10 +4829,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -4864,10 +4864,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -5023,7 +5023,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -5032,8 +5032,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz7SZtMXab0JKb9aC4nccPM3seuOIA : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -5051,20 +5051,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, int>(ulongList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, int>(ulongList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -5075,7 +5075,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -5169,10 +5169,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -5201,10 +5201,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -5233,10 +5233,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -5268,10 +5268,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -5427,7 +5427,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -5436,8 +5436,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz7bHQ9D4WIWW3_H\u0024yBxXqkE8\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -5455,20 +5455,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, double>(floatList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, double>(floatList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -5479,7 +5479,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -5573,10 +5573,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -5605,10 +5605,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -5637,10 +5637,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -5672,10 +5672,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -5831,7 +5831,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -5840,8 +5840,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz7zzzjxShYYvAxuOjxvGgHec\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -5859,20 +5859,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, sbyte>(dateTimeList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, sbyte>(dateTimeList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -5883,7 +5883,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -5977,10 +5977,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -6009,10 +6009,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -6041,10 +6041,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -6076,10 +6076,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -6235,7 +6235,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -6247,8 +6247,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz8W4wlUKAGszsBkUP800V95BDS\u00248R : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -6266,20 +6266,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, long>(dateTimeList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, long>(dateTimeList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -6290,7 +6290,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -6384,10 +6384,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -6416,10 +6416,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -6448,10 +6448,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -6483,10 +6483,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -6642,7 +6642,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -6654,8 +6654,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz8XpSGkLn1I8VBsMRtqRgJjE\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -6673,20 +6673,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, byte>(floatList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, byte>(floatList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -6697,7 +6697,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -6791,10 +6791,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -6823,10 +6823,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -6855,10 +6855,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -6890,10 +6890,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -7049,7 +7049,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -7058,8 +7058,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz98obwwMfV6MGfPFj4l_GAiRYCTZb : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -7077,20 +7077,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, uint>(timeSpanList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, uint>(timeSpanList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -7101,7 +7101,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -7195,10 +7195,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -7227,10 +7227,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -7259,10 +7259,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -7294,10 +7294,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -7453,7 +7453,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -7465,8 +7465,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz9FekVkI1bNLpk7wctmAvwJk\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -7484,20 +7484,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, double>(dateTimeList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, double>(dateTimeList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -7508,7 +7508,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -7602,10 +7602,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -7634,10 +7634,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -7666,10 +7666,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -7701,10 +7701,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -7860,7 +7860,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -7872,8 +7872,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz9NbFNf\u0024Rc74LOnofo6vE1jM\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -7891,20 +7891,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, byte>(sbyteList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, byte>(sbyteList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -7915,7 +7915,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8009,10 +8009,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8041,10 +8041,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8073,10 +8073,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8108,10 +8108,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8267,7 +8267,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -8276,8 +8276,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzAFocLestvXBVM3RZRtRpliKLl_At : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -8295,20 +8295,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, uint>(dateTimeList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, uint>(dateTimeList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -8319,7 +8319,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -8413,10 +8413,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -8445,10 +8445,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -8477,10 +8477,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -8512,10 +8512,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -8671,7 +8671,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -8683,8 +8683,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzBddyWZjx5s4rOdruPhzsZ0s\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -8702,20 +8702,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, byte>(intList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, byte>(intList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -8726,7 +8726,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8820,10 +8820,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8852,10 +8852,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8884,10 +8884,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -8919,10 +8919,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -9078,7 +9078,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -9087,8 +9087,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzBpLEJ7VnNq1m6UjokdglXtc\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -9106,20 +9106,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, double>(timeSpanList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, double>(timeSpanList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -9130,7 +9130,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -9224,10 +9224,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -9256,10 +9256,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -9288,10 +9288,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -9323,10 +9323,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -9482,7 +9482,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -9494,8 +9494,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzCIt1inXU519mleh0uRt6htyzAUr8 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -9513,20 +9513,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, ulong>(intList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, ulong>(intList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -9537,7 +9537,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -9631,10 +9631,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -9663,10 +9663,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -9695,10 +9695,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -9730,10 +9730,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -9889,7 +9889,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -9898,8 +9898,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzCsvsN8m1xkp2GUMWdwpNABOjzOGy : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -9917,20 +9917,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, ulong>(uintList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, ulong>(uintList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -9941,7 +9941,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -10035,10 +10035,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -10067,10 +10067,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -10099,10 +10099,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -10134,10 +10134,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -10293,7 +10293,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -10302,8 +10302,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzDUktGyOtYATscKPzWa8TKcGnfsSc : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -10321,20 +10321,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, int>(sbyteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, int>(sbyteList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -10345,7 +10345,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -10439,10 +10439,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -10471,10 +10471,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -10503,10 +10503,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -10538,10 +10538,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -10697,7 +10697,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -10706,8 +10706,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzEbW9OerTFm3ZwCvmq5EEWzCQ7Q8_ : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -10725,20 +10725,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, short>(dateTimeList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, short>(dateTimeList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -10749,7 +10749,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -10843,10 +10843,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -10875,10 +10875,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -10907,10 +10907,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -10942,10 +10942,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -11101,7 +11101,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -11113,8 +11113,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzEbYwuq2VByc10G4753uqu6kMJpbJ : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -11132,20 +11132,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, byte>(uintList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, byte>(uintList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -11156,7 +11156,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -11250,10 +11250,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -11282,10 +11282,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -11314,10 +11314,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -11349,10 +11349,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -11508,7 +11508,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -11517,8 +11517,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzEs483BII40zEyY8QIqOHUaQ\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -11536,20 +11536,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, sbyte>(byteList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, sbyte>(byteList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -11560,7 +11560,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -11654,10 +11654,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -11686,10 +11686,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -11718,10 +11718,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -11753,10 +11753,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -11912,7 +11912,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -11921,8 +11921,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzFGSMEpXckys5dOMtWJbTeqKfZ_vr : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -11940,20 +11940,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, short>(uintList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, short>(uintList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -11964,7 +11964,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12058,10 +12058,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12090,10 +12090,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12122,10 +12122,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12157,10 +12157,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12316,7 +12316,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -12325,8 +12325,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzG7yFi7kU4A8nU9IbcZF_RMQhlKRN : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -12344,20 +12344,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, short>(ulongList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, short>(ulongList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -12368,7 +12368,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12462,10 +12462,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12494,10 +12494,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12526,10 +12526,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12561,10 +12561,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -12720,7 +12720,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -12729,8 +12729,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzGQjB6o63Iw204rt6Qgf5W5w\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -12748,20 +12748,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList1, sbyteList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList1, sbyteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList1, sbyteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList1, sbyteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList1, sbyteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, sbyte>(sbyteList1, sbyteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList1, (IList<double>) sbyteList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, sbyte>(sbyteList1, sbyteList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -12772,7 +12772,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -12866,10 +12866,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -12898,10 +12898,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -12930,10 +12930,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -12965,10 +12965,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -13124,7 +13124,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -13133,8 +13133,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzH1fYVkc1spFpzuH\u0024dbY8FNU\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -13152,20 +13152,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, sbyte>(timeSpanList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, sbyte>(timeSpanList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -13176,7 +13176,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -13270,10 +13270,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -13302,10 +13302,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -13334,10 +13334,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -13369,10 +13369,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -13528,7 +13528,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -13540,8 +13540,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzHEDAYF5ahLF_tWts6a1ALZw\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -13559,20 +13559,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, float>(shortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, float>(shortList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -13583,7 +13583,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -13677,10 +13677,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -13709,10 +13709,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -13741,10 +13741,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -13776,10 +13776,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -13935,7 +13935,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -13944,8 +13944,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzHMNWya\u00247tfiD9vVFx\u0024uNBZs\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -13963,20 +13963,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList1, floatList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList1, floatList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList1, floatList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList1, floatList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList1, floatList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, float>(floatList1, floatList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList1, (IList<double>) floatList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, float>(floatList1, floatList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -13987,7 +13987,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14081,10 +14081,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14113,10 +14113,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14145,10 +14145,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14180,10 +14180,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14339,7 +14339,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -14348,8 +14348,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzHxXOKY8ynUzEcvm5s7\u0024d_dY\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -14367,20 +14367,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, float>(intList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, float>(intList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -14391,7 +14391,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14485,10 +14485,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14517,10 +14517,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14549,10 +14549,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14584,10 +14584,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -14743,7 +14743,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -14752,8 +14752,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzI6l2eyHzboJBZZIDUjdv4m74TH8T : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -14771,20 +14771,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, ushort>(byteList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, ushort>(byteList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -14795,7 +14795,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -14889,10 +14889,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -14921,10 +14921,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -14953,10 +14953,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -14988,10 +14988,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -15147,7 +15147,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -15156,8 +15156,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzI8Oxudy9X5vOtiMDMBexhjz1Lgct : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -15175,20 +15175,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, int>(timeSpanList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, int>(timeSpanList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -15199,7 +15199,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -15293,10 +15293,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -15325,10 +15325,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -15357,10 +15357,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -15392,10 +15392,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -15551,7 +15551,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -15563,8 +15563,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzJJyU_t1qk2UBI1DHNXkaGWIKbmUa : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -15582,20 +15582,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList1, ulongList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList1, ulongList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList1, ulongList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList1, ulongList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList1, ulongList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, ulong>(ulongList1, ulongList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList1, (IList<double>) ulongList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, ulong>(ulongList1, ulongList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -15606,7 +15606,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -15700,10 +15700,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -15732,10 +15732,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -15764,10 +15764,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -15799,10 +15799,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -15958,7 +15958,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -15967,8 +15967,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzJLbPe6jQXPo2XgEJzguNbeRh6cF0 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -15986,20 +15986,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, double>(uintList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, double>(uintList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -16010,7 +16010,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -16104,10 +16104,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -16136,10 +16136,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -16168,10 +16168,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -16203,10 +16203,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -16362,7 +16362,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -16371,8 +16371,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzJOnfyClDa1BVav\u0024AxAyXKyJcskMn : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -16390,20 +16390,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, ulong>(floatList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, ulong>(floatList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -16414,7 +16414,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -16508,10 +16508,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -16540,10 +16540,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -16572,10 +16572,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -16607,10 +16607,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -16766,7 +16766,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -16775,8 +16775,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzKGh2u\u0024Dd6o6NN3TUTDLKakA\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -16794,20 +16794,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, byte>(dateTimeList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, byte>(dateTimeList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -16818,7 +16818,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -16912,10 +16912,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -16944,10 +16944,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -16976,10 +16976,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -17011,10 +17011,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -17170,7 +17170,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -17182,8 +17182,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzKKjnF8rfx\u0024Rjw0edNNG9ZQEufBv2 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -17201,20 +17201,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, uint>(longList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, uint>(longList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -17225,7 +17225,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -17319,10 +17319,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -17351,10 +17351,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -17383,10 +17383,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -17418,10 +17418,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -17577,7 +17577,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -17586,8 +17586,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzKXk1_Mx_ZhCqkjkpvRH7CLI\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -17605,20 +17605,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, int>(floatList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, int>(floatList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -17629,7 +17629,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -17723,10 +17723,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -17755,10 +17755,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -17787,10 +17787,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -17822,10 +17822,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -17981,7 +17981,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -17990,8 +17990,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzKaUkoa2q9ZIDDj3B1QX4cus\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -18009,20 +18009,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, short>(doubleList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, short>(doubleList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -18033,7 +18033,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -18127,10 +18127,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -18159,10 +18159,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -18191,10 +18191,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -18226,10 +18226,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -18385,7 +18385,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -18394,8 +18394,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzKhELEWAjAcDX5p4wTly\u0024ECeoJKTr : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -18413,20 +18413,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, ulong>(shortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, ulong>(shortList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -18437,7 +18437,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18531,10 +18531,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18563,10 +18563,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18595,10 +18595,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18630,10 +18630,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18789,7 +18789,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -18798,8 +18798,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzKtTGDsvfJ_kiPDHYpDSG9XC_c4ED : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -18817,20 +18817,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, ulong>(longList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, ulong>(longList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -18841,7 +18841,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18935,10 +18935,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18967,10 +18967,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -18999,10 +18999,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -19034,10 +19034,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -19193,7 +19193,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -19202,8 +19202,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzLKXTC09XqAY9gDNlqpvfR4F5f3W8 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -19221,20 +19221,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, long>(sbyteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, long>(sbyteList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -19245,7 +19245,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -19339,10 +19339,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -19371,10 +19371,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -19403,10 +19403,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -19438,10 +19438,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -19597,7 +19597,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -19606,8 +19606,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzLPtrhm6H3PfzTCVFeZSSb4ivTwA5 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -19625,20 +19625,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, uint>(ushortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, uint>(ushortList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -19649,7 +19649,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -19743,10 +19743,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -19775,10 +19775,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -19807,10 +19807,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -19842,10 +19842,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -20001,7 +20001,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -20010,8 +20010,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzLYm690S0XqjLwz6pJG0vpohr2L\u0024d : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -20029,20 +20029,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, int>(longList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, int>(longList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -20053,7 +20053,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20147,10 +20147,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20179,10 +20179,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20211,10 +20211,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20246,10 +20246,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20405,7 +20405,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -20414,8 +20414,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzMBy4Q_PoufoibaILVjbbnig\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -20433,20 +20433,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, double>(shortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, double>(shortList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -20457,7 +20457,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -20551,10 +20551,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -20583,10 +20583,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -20615,10 +20615,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -20650,10 +20650,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -20809,7 +20809,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -20818,8 +20818,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzMJsBWEGB7ErjllOKqmy\u0024wb1d1swh : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -20837,20 +20837,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList1, intList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList1, intList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList1, intList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList1, intList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList1, intList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, int>(intList1, intList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList1, (IList<double>) intList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, int>(intList1, intList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -20861,7 +20861,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20955,10 +20955,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -20987,10 +20987,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -21019,10 +21019,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -21054,10 +21054,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -21213,7 +21213,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -21222,8 +21222,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzMsoG1FNlGplSWlpW1_QfMrUGiwyR : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -21241,20 +21241,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, long>(timeSpanList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, long>(timeSpanList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -21265,7 +21265,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -21359,10 +21359,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -21391,10 +21391,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -21423,10 +21423,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -21458,10 +21458,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -21617,7 +21617,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -21629,8 +21629,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzNBw16R1lRV30XNeRBIx36Nc\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -21648,20 +21648,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, double>(byteList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, double>(byteList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -21672,7 +21672,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -21766,10 +21766,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -21798,10 +21798,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -21830,10 +21830,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -21865,10 +21865,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -22024,7 +22024,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -22033,8 +22033,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzNdknVmJ7FGnovtZqKkiCIPeQvEQh : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -22052,20 +22052,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, uint>(intList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, uint>(intList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -22076,7 +22076,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -22170,10 +22170,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -22202,10 +22202,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -22234,10 +22234,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -22269,10 +22269,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -22428,7 +22428,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -22437,8 +22437,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzNkLzZX7D10QuTLEXT9NZjBAxOzFV : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -22456,20 +22456,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, double>(ushortList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, double>(ushortList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -22480,7 +22480,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -22574,10 +22574,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -22606,10 +22606,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -22638,10 +22638,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -22673,10 +22673,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -22832,7 +22832,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -22841,8 +22841,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzOf7GYr5UugmT3PBs3H3s4McGcDo5 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -22860,20 +22860,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, long>(uintList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, long>(uintList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -22884,7 +22884,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -22978,10 +22978,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -23010,10 +23010,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -23042,10 +23042,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -23077,10 +23077,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -23236,7 +23236,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -23245,8 +23245,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzOm4OF5dacZjzNGdF4o55yNwzDSE5 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -23264,20 +23264,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, int>(ushortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, int>(ushortList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -23288,7 +23288,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -23382,10 +23382,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -23414,10 +23414,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -23446,10 +23446,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -23481,10 +23481,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -23640,7 +23640,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -23649,8 +23649,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzPQWRY4WgD\u0024xT3wEIXGuSaRA\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -23668,20 +23668,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, float>(longList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, float>(longList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -23692,7 +23692,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -23786,10 +23786,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -23818,10 +23818,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -23850,10 +23850,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -23885,10 +23885,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -24044,7 +24044,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -24053,8 +24053,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzPQu4I0RlLe9qA0Ia0dXnZV4\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -24072,20 +24072,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, double>(longList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, double>(longList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -24096,7 +24096,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24190,10 +24190,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24222,10 +24222,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24254,10 +24254,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24289,10 +24289,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24448,7 +24448,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -24457,8 +24457,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzQi8Q4ITf2IGGycqSUjUs0AljkxoN : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -24476,20 +24476,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, double>(ulongList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, double>(ulongList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -24500,7 +24500,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24594,10 +24594,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24626,10 +24626,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24658,10 +24658,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24693,10 +24693,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -24852,7 +24852,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -24861,8 +24861,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzRUIHlEgQsu0t3tZw9IFMKMk\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -24880,20 +24880,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList1, byteList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList1, byteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList1, byteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList1, byteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList1, byteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, byte>(byteList1, byteList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList1, (IList<double>) byteList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, byte>(byteList1, byteList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -24904,7 +24904,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -24998,10 +24998,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -25030,10 +25030,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -25062,10 +25062,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -25097,10 +25097,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -25256,7 +25256,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -25265,8 +25265,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzS4Y9QFJf81cnz24xOub6Yk0\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -25284,20 +25284,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, sbyte>(floatList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, sbyte>(floatList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -25308,7 +25308,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -25402,10 +25402,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -25434,10 +25434,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -25466,10 +25466,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -25501,10 +25501,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -25660,7 +25660,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -25669,8 +25669,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzTVyPVQFq3s\u0024Z3rUom5P_BIsgZGkQ : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -25688,20 +25688,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, long>(shortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, long>(shortList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -25712,7 +25712,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -25806,10 +25806,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -25838,10 +25838,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -25870,10 +25870,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -25905,10 +25905,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -26064,7 +26064,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -26073,8 +26073,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzUR0TyabgbXNWvgO3gUiCyWdfR\u0024kF : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -26092,20 +26092,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, uint>(floatList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, uint>(floatList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -26116,7 +26116,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -26210,10 +26210,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -26242,10 +26242,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -26274,10 +26274,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -26309,10 +26309,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -26468,7 +26468,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -26477,8 +26477,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzWHhWI4XqT\u00241On\u00245hyW1qVkrRpNhH : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -26496,20 +26496,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, sbyte>(ushortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, sbyte>(ushortList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -26520,7 +26520,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -26614,10 +26614,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -26646,10 +26646,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -26678,10 +26678,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -26713,10 +26713,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -26872,7 +26872,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -26881,8 +26881,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzXOw\u0024mYUyH6YZh3veBdfzDx4GrpPd : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -26900,20 +26900,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, ulong>(timeSpanList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, ulong>(timeSpanList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -26924,7 +26924,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -27018,10 +27018,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -27050,10 +27050,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -27082,10 +27082,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -27117,10 +27117,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -27276,7 +27276,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -27288,8 +27288,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzYHQpq_VpkmjButHmGPcpmJLQ31_l : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -27307,20 +27307,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, ushort>(timeSpanList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, ushort>(timeSpanList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -27331,7 +27331,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -27425,10 +27425,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -27457,10 +27457,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -27489,10 +27489,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -27524,10 +27524,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -27683,7 +27683,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -27695,8 +27695,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzYqgIwHd_JaQqFR45_teyinXjsgra : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -27714,20 +27714,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, float>(uintList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, float>(uintList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -27738,7 +27738,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -27832,10 +27832,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -27864,10 +27864,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -27896,10 +27896,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -27931,10 +27931,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -28090,7 +28090,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -28099,8 +28099,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzZ9hPIy6KaQhaiK0ln4j20hIcYbxb : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -28118,20 +28118,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, sbyte>(longList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, sbyte>(longList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -28142,7 +28142,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -28236,10 +28236,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -28268,10 +28268,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -28300,10 +28300,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -28335,10 +28335,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -28494,7 +28494,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -28503,8 +28503,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzZEZLJ2Hkudts2tbURONoGg0z8BWk : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -28522,20 +28522,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, long>(ushortList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, long>(ushortList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -28546,7 +28546,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -28640,10 +28640,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -28672,10 +28672,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -28704,10 +28704,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -28739,10 +28739,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -28898,7 +28898,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -28907,8 +28907,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzZKjxakm_YacqM_vz11wo7z8\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -28926,20 +28926,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList1, doubleList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList1, doubleList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList1, doubleList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList1, doubleList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList1, doubleList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, double>(doubleList1, doubleList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList1, doubleList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, double>(doubleList1, doubleList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -28950,7 +28950,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -29044,10 +29044,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -29076,10 +29076,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -29108,10 +29108,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -29143,10 +29143,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -29302,7 +29302,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -29311,8 +29311,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzZhKHkHbtKYPCi5skn44PGXZBovae : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -29330,20 +29330,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, ulong>(ushortList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, ulong>(ushortList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -29354,7 +29354,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -29448,10 +29448,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -29480,10 +29480,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -29512,10 +29512,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -29547,10 +29547,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -29706,7 +29706,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -29715,8 +29715,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dz_DjoJ83qQwT1DRP_Ohhlp5yTtNZA : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -29734,20 +29734,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList1, uintList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList1, uintList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList1, uintList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList1, uintList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList1, uintList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, uint>(uintList1, uintList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList1, (IList<double>) uintList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, uint>(uintList1, uintList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -29758,7 +29758,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -29852,10 +29852,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -29884,10 +29884,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -29916,10 +29916,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -29951,10 +29951,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -30110,7 +30110,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -30119,8 +30119,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzaDbZbDrINhiAG7g32KEwbtLuJzdN : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -30138,20 +30138,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList1, longList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList1, longList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList1, longList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList1, longList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList1, longList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, long>(longList1, longList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList1, (IList<double>) longList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, long>(longList1, longList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -30162,7 +30162,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -30256,10 +30256,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -30288,10 +30288,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -30320,10 +30320,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -30355,10 +30355,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -30514,7 +30514,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -30523,8 +30523,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzaNXjdZL1pgpee2ib\u0024MSZcLXrJJYJ : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -30542,20 +30542,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, int>(dateTimeList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, int>(dateTimeList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -30566,7 +30566,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -30660,10 +30660,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -30692,10 +30692,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -30724,10 +30724,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -30759,10 +30759,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -30918,7 +30918,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -30930,8 +30930,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzaXkK8MWVQrszOIFXLoBQclzihger : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -30949,20 +30949,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, ushort>(doubleList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, ushort>(doubleList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -30973,7 +30973,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31067,10 +31067,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31099,10 +31099,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31131,10 +31131,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31166,10 +31166,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31325,7 +31325,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -31334,8 +31334,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzaciOdR7dHZ9SMOpuYyt1fAF1Tlgn : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -31353,20 +31353,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, byte>(ushortList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, byte>(ushortList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -31377,7 +31377,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -31471,10 +31471,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -31503,10 +31503,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -31535,10 +31535,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -31570,10 +31570,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -31729,7 +31729,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -31738,8 +31738,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzafGcZiUFYEKOBEgsNSsqhcmFSK4z : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -31757,20 +31757,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, ushort>(intList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, ushort>(intList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -31781,7 +31781,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31875,10 +31875,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31907,10 +31907,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31939,10 +31939,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -31974,10 +31974,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -32133,7 +32133,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -32142,8 +32142,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzajTbZZPjkbaQc0fqnbjaTJOlclaI : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -32161,20 +32161,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, uint>(byteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, uint>(byteList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -32185,7 +32185,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -32279,10 +32279,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -32311,10 +32311,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -32343,10 +32343,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -32378,10 +32378,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -32537,7 +32537,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -32546,8 +32546,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzbHtBHB8yQwqvWLJLiw4Yg2E\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -32565,20 +32565,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, byte>(longList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, byte>(longList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -32589,7 +32589,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -32683,10 +32683,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -32715,10 +32715,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -32747,10 +32747,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -32782,10 +32782,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -32941,7 +32941,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -32950,8 +32950,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzcY9rhNdHNdQnwS\u0024OAbCbF4klF4LT : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -32969,20 +32969,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, uint>(sbyteList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, uint>(sbyteList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -32993,7 +32993,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -33087,10 +33087,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -33119,10 +33119,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -33151,10 +33151,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -33186,10 +33186,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -33345,7 +33345,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -33354,8 +33354,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzca\u00244j7bUhzl20YicUy1ON08\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -33373,20 +33373,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, byte>(doubleList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, byte>(doubleList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -33397,7 +33397,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -33491,10 +33491,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -33523,10 +33523,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -33555,10 +33555,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -33590,10 +33590,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -33749,7 +33749,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -33758,8 +33758,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzdCukxoAYeGIadgPAa_j2eNM\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -33777,20 +33777,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, long>(byteList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, long>(byteList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -33801,7 +33801,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -33895,10 +33895,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -33927,10 +33927,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -33959,10 +33959,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -33994,10 +33994,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -34153,7 +34153,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -34162,8 +34162,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dze1pdB7Bh8OQ7ZYXgZV8Rddo\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -34181,20 +34181,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, float>(sbyteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, float>(sbyteList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -34205,7 +34205,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -34299,10 +34299,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -34331,10 +34331,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -34363,10 +34363,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -34398,10 +34398,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -34557,7 +34557,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -34566,8 +34566,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dze9pvPmLFYjKAgXnMrI\u0024GnMbqOkox : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -34585,20 +34585,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, short>(ushortList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, short>(ushortList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -34609,7 +34609,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -34703,10 +34703,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -34735,10 +34735,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -34767,10 +34767,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -34802,10 +34802,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -34961,7 +34961,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -34970,8 +34970,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzeWc7kmAedOMbnnWW2zklUx7gerUy : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -34989,20 +34989,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(longList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(longList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(longList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(longList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(longList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, ushort>(longList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<long, double>(longList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<long, ushort>(longList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -35013,7 +35013,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<long> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -35107,10 +35107,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<long> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -35139,10 +35139,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<long> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -35171,10 +35171,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<long> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -35206,10 +35206,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<long> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -35365,7 +35365,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(long _param0) => (double) _param0;
@@ -35374,8 +35374,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzevUU7H5azefMrJ5e6iO3Vf06aB3y : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -35393,20 +35393,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, sbyte>(ulongList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, sbyte>(ulongList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -35417,7 +35417,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -35511,10 +35511,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -35543,10 +35543,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -35575,10 +35575,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -35610,10 +35610,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -35769,7 +35769,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -35778,8 +35778,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzfuLDgPAOVAXkhxwX2duVAObXlyAE : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -35797,20 +35797,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, ulong>(dateTimeList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, ulong>(dateTimeList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -35821,7 +35821,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -35915,10 +35915,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -35947,10 +35947,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -35979,10 +35979,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36014,10 +36014,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36173,7 +36173,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -36185,8 +36185,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzg7nogpm1_Owwh8Fg9BCuv3D45_Gt : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -36204,20 +36204,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, ulong>(byteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, ulong>(byteList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -36228,7 +36228,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36322,10 +36322,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36354,10 +36354,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36386,10 +36386,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36421,10 +36421,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -36580,7 +36580,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -36589,8 +36589,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzgZuBvpH9B_QiK5lopLfM6RC4X3M4 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -36608,20 +36608,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, byte>(ulongList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, byte>(ulongList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -36632,7 +36632,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -36726,10 +36726,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -36758,10 +36758,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -36790,10 +36790,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -36825,10 +36825,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -36984,7 +36984,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -36993,8 +36993,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzgnJ5UiTgF8zd7JibZrDdBMlkBVBe : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -37012,20 +37012,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, long>(intList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, long>(intList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -37036,7 +37036,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -37130,10 +37130,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -37162,10 +37162,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -37194,10 +37194,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -37229,10 +37229,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -37388,7 +37388,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -37397,8 +37397,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzhA5CBj6ts5vLNaOI6Xk6gVGHuF1U : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -37416,20 +37416,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, short>(sbyteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, short>(sbyteList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -37440,7 +37440,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37534,10 +37534,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37566,10 +37566,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37598,10 +37598,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37633,10 +37633,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37792,7 +37792,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -37801,8 +37801,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzhMl2PjMhoZ6lXX62g89Y154\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -37820,20 +37820,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, short>(floatList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, short>(floatList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -37844,7 +37844,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37938,10 +37938,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -37970,10 +37970,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -38002,10 +38002,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -38037,10 +38037,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -38196,7 +38196,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -38205,8 +38205,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DziN8gRZqpcQ4X6\u0024suGYe_acU\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -38224,20 +38224,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, int>(byteList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, int>(byteList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -38248,7 +38248,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -38342,10 +38342,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -38374,10 +38374,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -38406,10 +38406,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -38441,10 +38441,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -38600,7 +38600,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -38609,8 +38609,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DziY9hZ7bsMjFJPJb5xCs\u0024iOlJ0eLB : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -38628,20 +38628,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, ushort>(shortList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, ushort>(shortList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -38652,7 +38652,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -38746,10 +38746,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -38778,10 +38778,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -38810,10 +38810,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -38845,10 +38845,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -39004,7 +39004,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -39013,8 +39013,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzioh6oXg4YhVesxSK0YCJYw0\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -39032,20 +39032,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, float>(doubleList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, float>(doubleList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -39056,7 +39056,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -39150,10 +39150,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -39182,10 +39182,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -39214,10 +39214,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -39249,10 +39249,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -39408,7 +39408,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -39417,8 +39417,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzj28DaQnut4Chts\u00247ySIyFAg0Hmcq : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -39436,20 +39436,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, short>(intList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, short>(intList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -39460,7 +39460,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -39554,10 +39554,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -39586,10 +39586,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -39618,10 +39618,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -39653,10 +39653,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -39812,7 +39812,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -39821,8 +39821,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzjDjFktex9lKRbPvtVye5OsfVX6yl : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -39840,20 +39840,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(sbyteList, ulongList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(sbyteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(sbyteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(sbyteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(sbyteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, ulong>(sbyteList, ulongList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<sbyte, double>(sbyteList, (IList<double>) ulongList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<sbyte, ulong>(sbyteList, ulongList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -39864,7 +39864,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<sbyte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -39958,10 +39958,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<sbyte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -39990,10 +39990,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<sbyte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -40022,10 +40022,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<sbyte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -40057,10 +40057,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<sbyte> _param1,
       IList<ulong> _param2,
       IndexRange  _param3,
@@ -40216,7 +40216,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
@@ -40225,8 +40225,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzk3koOfs1IwDjDuLDgRgc9SnGJCpk : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -40244,20 +40244,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, float>(ushortList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, float>(ushortList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -40268,7 +40268,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -40362,10 +40362,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -40394,10 +40394,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -40426,10 +40426,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -40461,10 +40461,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -40620,7 +40620,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -40629,8 +40629,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzkkEvt9a_Z\u00249uNc3SxQUh241mo5gn : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -40648,20 +40648,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, ushort>(floatList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, ushort>(floatList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -40672,7 +40672,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -40766,10 +40766,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -40798,10 +40798,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -40830,10 +40830,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -40865,10 +40865,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -41024,7 +41024,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -41033,8 +41033,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzkwF5RdUcGKVzblczLSKdsLnZGMc\u0024 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -41052,20 +41052,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, sbyte>(shortList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, sbyte>(shortList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -41076,7 +41076,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -41170,10 +41170,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -41202,10 +41202,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -41234,10 +41234,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -41269,10 +41269,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -41428,7 +41428,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -41437,8 +41437,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzlbDAIatmKOKxdsovX1zQSgqYmoRI : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -41456,20 +41456,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, ushortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, ushort>(dateTimeList, ushortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) ushortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, ushort>(dateTimeList, ushortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -41480,7 +41480,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -41574,10 +41574,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -41606,10 +41606,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -41638,10 +41638,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -41673,10 +41673,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -41832,7 +41832,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -41844,8 +41844,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzlq6MxFOtg\u0024FUWGMA\u00242guv7Z\u0024_k4N : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -41863,20 +41863,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, sbyte>(intList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, sbyte>(intList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -41887,7 +41887,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -41981,10 +41981,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -42013,10 +42013,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -42045,10 +42045,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -42080,10 +42080,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -42239,7 +42239,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -42248,8 +42248,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzmAXPTvS\u0024DE62nZam2C6c6zE\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -42267,20 +42267,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, long>(doubleList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, long>(doubleList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -42291,7 +42291,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -42385,10 +42385,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -42417,10 +42417,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -42449,10 +42449,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -42484,10 +42484,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -42643,7 +42643,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -42652,8 +42652,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzmp67Wut9n9D6hvD\u0024HFHG_j0\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -42671,20 +42671,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, byteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, byte>(timeSpanList, byteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) byteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, byte>(timeSpanList, byteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -42695,7 +42695,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -42789,10 +42789,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -42821,10 +42821,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -42853,10 +42853,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -42888,10 +42888,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<byte> _param2,
       IndexRange  _param3,
@@ -43047,7 +43047,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -43059,8 +43059,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DznEwntj3mfGMIMkKZjj4raDVxI_a8 : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -43078,20 +43078,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, int>(uintList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, int>(uintList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -43102,7 +43102,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -43196,10 +43196,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -43228,10 +43228,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -43260,10 +43260,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -43295,10 +43295,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -43454,7 +43454,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -43463,8 +43463,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DznK78LcbmPeQjvhLBcaKKee0\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -43482,20 +43482,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, sbyte>(doubleList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, sbyte>(doubleList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -43506,7 +43506,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -43600,10 +43600,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -43632,10 +43632,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -43664,10 +43664,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -43699,10 +43699,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -43858,7 +43858,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -43867,8 +43867,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DznR1gPcmZuenfYdeOlI7U8KM\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -43886,20 +43886,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(timeSpanList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(timeSpanList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(timeSpanList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(timeSpanList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(timeSpanList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, float>(timeSpanList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TimeSpan, double>(timeSpanList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TimeSpan, float>(timeSpanList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -43910,7 +43910,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<TimeSpan> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44004,10 +44004,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<TimeSpan> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44036,10 +44036,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<TimeSpan> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44068,10 +44068,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<TimeSpan> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44103,10 +44103,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<TimeSpan> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44262,7 +44262,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(TimeSpan _param0)
@@ -44274,8 +44274,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DznSwJJ9isJ0W861mUNh8g0M0\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -44293,20 +44293,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, shortList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, short>(byteList, shortList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) shortList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, short>(byteList, shortList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -44317,7 +44317,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -44411,10 +44411,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -44443,10 +44443,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -44475,10 +44475,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -44510,10 +44510,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<short> _param2,
       IndexRange  _param3,
@@ -44669,7 +44669,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -44678,8 +44678,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzqs8WyeayI0d\u0024zX43Crlmmxg\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -44697,20 +44697,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(byteList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(byteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(byteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(byteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(byteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, float>(byteList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<byte, double>(byteList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<byte, float>(byteList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -44721,7 +44721,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<byte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44815,10 +44815,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<byte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44847,10 +44847,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<byte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44879,10 +44879,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<byte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -44914,10 +44914,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<byte> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -45073,7 +45073,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(byte _param0) => (double) _param0;
@@ -45082,8 +45082,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzs\u0024zGRICwyZubMZFbsHg9oKM\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -45101,20 +45101,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(dateTimeList, floatList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(dateTimeList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(dateTimeList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(dateTimeList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(dateTimeList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, float>(dateTimeList, floatList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<DateTime, double>(dateTimeList, (IList<double>) floatList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<DateTime, float>(dateTimeList, floatList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -45125,7 +45125,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<DateTime> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -45219,10 +45219,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<DateTime> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -45251,10 +45251,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<DateTime> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -45283,10 +45283,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<DateTime> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -45318,10 +45318,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<DateTime> _param1,
       IList<float> _param2,
       IndexRange  _param3,
@@ -45477,7 +45477,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0)
@@ -45489,8 +45489,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzs6GLwSd4Bv2ddgBcaJDgW7Sg4_7X : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -45508,20 +45508,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ulongList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ulongList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ulongList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ulongList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ulongList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, long>(ulongList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ulong, double>(ulongList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ulong, long>(ulongList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -45532,7 +45532,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ulong> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -45626,10 +45626,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ulong> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -45658,10 +45658,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ulong> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -45690,10 +45690,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ulong> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -45725,10 +45725,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ulong> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -45884,7 +45884,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ulong _param0) => (double) _param0;
@@ -45893,8 +45893,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzt1NfLsDULgN7a1Y2BTCZYg1gyYXV : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -45912,20 +45912,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, intList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, int>(shortList, intList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) intList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, int>(shortList, intList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -45936,7 +45936,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -46030,10 +46030,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -46062,10 +46062,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -46094,10 +46094,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -46129,10 +46129,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<int> _param2,
       IndexRange  _param3,
@@ -46288,7 +46288,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;
@@ -46297,8 +46297,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzt4KTVckKtLomSueCk3IxXkc\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -46316,20 +46316,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(intList, doubleList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(intList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(intList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(intList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(intList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, double>(intList, doubleList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<int, double>(intList, doubleList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<int, double>(intList, doubleList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -46340,7 +46340,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<int> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -46434,10 +46434,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add(num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<int> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -46466,10 +46466,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<int> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -46498,10 +46498,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<int> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -46533,10 +46533,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<int> _param1,
       IList<double> _param2,
       IndexRange  _param3,
@@ -46692,7 +46692,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
@@ -46701,8 +46701,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DztdvUUFAdxvDCjBUtC7tje54\u003D : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -46720,20 +46720,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(floatList, longList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(floatList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(floatList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(floatList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(floatList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, long>(floatList, longList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<float, double>(floatList, (IList<double>) longList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<float, long>(floatList, longList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -46744,7 +46744,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<float> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -46838,10 +46838,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<float> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -46870,10 +46870,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<float> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -46902,10 +46902,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<float> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -46937,10 +46937,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<float> _param1,
       IList<long> _param2,
       IndexRange  _param3,
@@ -47096,7 +47096,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(float _param0) => (double) _param0;
@@ -47105,8 +47105,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzuuZ4ftvb9nHOb0Dz4\u0024\u00241KxrwfeIz : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -47124,20 +47124,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(ushortList1, ushortList2, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(ushortList1, ushortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(ushortList1, ushortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(ushortList1, ushortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(ushortList1, ushortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, ushort>(ushortList1, ushortList2, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<ushort, double>(ushortList1, (IList<double>) ushortList2, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<ushort, ushort>(ushortList1, ushortList2, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -47148,7 +47148,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<ushort> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -47242,10 +47242,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<ushort> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -47274,10 +47274,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<ushort> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -47306,10 +47306,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<ushort> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -47341,10 +47341,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<ushort> _param1,
       IList<ushort> _param2,
       IndexRange  _param3,
@@ -47500,7 +47500,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
@@ -47509,8 +47509,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzvKdk6eFbYrk5jPvaG3v2_bP3LULY : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -47528,20 +47528,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(doubleList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(doubleList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(doubleList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(doubleList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(doubleList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, uint>(doubleList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<double, double>(doubleList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<double, uint>(doubleList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -47552,7 +47552,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<double> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -47646,10 +47646,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<double> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -47678,10 +47678,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<double> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -47710,10 +47710,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<double> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -47745,10 +47745,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<double> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -47904,7 +47904,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(double _param0) => _param0;
@@ -47913,8 +47913,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003Dzx44Pbls_5Hb9Vg011lNnxYi8GMaI : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -47932,20 +47932,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(uintList, sbyteList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(uintList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(uintList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(uintList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(uintList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, sbyte>(uintList, sbyteList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<uint, double>(uintList, (IList<double>) sbyteList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<uint, sbyte>(uintList, sbyteList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -47956,7 +47956,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<uint> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -48050,10 +48050,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<uint> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -48082,10 +48082,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<uint> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -48114,10 +48114,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<uint> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -48149,10 +48149,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<uint> _param1,
       IList<sbyte> _param2,
       IndexRange  _param3,
@@ -48308,7 +48308,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(uint _param0) => (double) _param0;
@@ -48317,8 +48317,8 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
   private sealed class \u0023\u003DzzVlS\u0024hC0wTLFYQbIWmmBCtzjAaCu : 
     \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D
   {
-    public sealed override \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-      \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+    public sealed override IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+      ResamplingMode _param1,
       IndexRange  _param2,
       int _param3,
       bool _param4,
@@ -48336,20 +48336,20 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         return this.\u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(shortList, uintList, _param2, _param5);
       switch (_param1)
       {
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMax:
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Nyquist:
+        case ResamplingMode.MinMax:
+        case ResamplingMode.Nyquist:
           return this.\u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(shortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid:
+        case ResamplingMode.Mid:
           return this.\u0023\u003DzhlUaPdy8IiRn(shortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max:
+        case ResamplingMode.Max:
           return this.\u0023\u003Dz_g5B1cytNizJ(shortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Min:
+        case ResamplingMode.Min:
           return this.\u0023\u003Dz2sn08DYUhZy6(shortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Cluster2D:
+        case ResamplingMode.Cluster2D:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, uint>(shortList, uintList, _param2, _param3, _param5);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.MinMaxWithUnevenSpacing:
+        case ResamplingMode.MinMaxWithUnevenSpacing:
           return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<short, double>(shortList, (IList<double>) uintList, _param2, _param3, _param5, _param11);
-        case \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto:
+        case ResamplingMode.Auto:
           if (_param10.GetValueOrDefault())
             return \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<short, uint>(shortList, uintList, _param2, _param3, _param5);
           if (_param9.GetValueOrDefault() | _param5)
@@ -48360,7 +48360,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
       }
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
+    private unsafe IPointSeries \u0023\u003DzFMTOBgXgg\u0024f6qAsE1w\u003D\u003D(
       IList<short> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -48454,10 +48454,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         mkleCtJgtGqo7Zpw2.Add((double) num5);
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_g5B1cytNizJ(
+    private IPointSeries \u0023\u003Dz_g5B1cytNizJ(
       IList<short> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -48486,10 +48486,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz2sn08DYUhZy6(
+    private IPointSeries \u0023\u003Dz2sn08DYUhZy6(
       IList<short> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -48518,10 +48518,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzhlUaPdy8IiRn(
+    private IPointSeries \u0023\u003DzhlUaPdy8IiRn(
       IList<short> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -48553,10 +48553,10 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
         }
       }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
-    private unsafe \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
+    private unsafe IPointSeries \u0023\u003DzBP86wx1rir8jttaPl0D9kIg\u003D(
       IList<short> _param1,
       IList<uint> _param2,
       IndexRange  _param3,
@@ -48712,7 +48712,7 @@ public sealed class \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHd
               }
             }
       p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-      return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+      return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
     }
 
     private static double \u0023\u003DzkUwF72z8\u0024rM9(short _param0) => (double) _param0;

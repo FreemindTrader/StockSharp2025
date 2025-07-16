@@ -42,7 +42,7 @@ public sealed class FastXORenderableSeries :
     \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D _param3)
   {
     bool flag1 = _param2.\u0023\u003DzDoU1CJhSUWFV();
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     double xoBoxSize = this.XOBoxSize;
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     if (num1 == 1 || xoBoxSize <= 0.0)

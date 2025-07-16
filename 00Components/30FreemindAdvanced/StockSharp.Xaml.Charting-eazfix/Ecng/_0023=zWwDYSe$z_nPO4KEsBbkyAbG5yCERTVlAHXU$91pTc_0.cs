@@ -8,61 +8,61 @@
 public sealed class \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAbG5yCERTVlAHXU\u002491pTc_0\u00249S_IJjqm2RooF3Z3GCGxsWTMKbR2A7YAC\u0024bSIDB2QLk\u003D : 
   \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D
 {
-  private \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzYmPlTO0s8S1n;
+  private RGBA_Bytes \u0023\u003DzYmPlTO0s8S1n;
 
   public \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAbG5yCERTVlAHXU\u002491pTc_0\u00249S_IJjqm2RooF3Z3GCGxsWTMKbR2A7YAC\u0024bSIDB2QLk\u003D(
     \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D _param1,
-    \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI _param2,
+    IColorType _param2,
     \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT _param3)
     : base(_param1, _param3, (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeTxLdSjL9CR9M_QGcrFkI\u0024EwQ\u003D\u003D) null)
   {
     this.\u0023\u003DzYmPlTO0s8S1n = _param2.\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
   }
 
-  public \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI \u0023\u003Dz4HRkN3FxIt\u0024y()
+  public IColorType \u0023\u003Dz4HRkN3FxIt\u0024y()
   {
-    return (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI) this.\u0023\u003DzYmPlTO0s8S1n;
+    return (IColorType) this.\u0023\u003DzYmPlTO0s8S1n;
   }
 
   public void \u0023\u003Dz4HRkN3FxIt\u0024y(
-    \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI _param1)
+    IColorType _param1)
   {
     this.\u0023\u003DzYmPlTO0s8S1n = _param1.\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
   }
 
   public override void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,
     int _param5)
   {
     \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D ppsbKthY7Nkewpng = (\u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D) this.\u0023\u003DzXfsXM99CTPMy().\u0023\u003Dz8hY71usSYcKH();
-    if (this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D.GetType() == typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D) && ((\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D) this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D).\u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D().GetType() == typeof (\u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D) && ((\u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D) ((\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D) this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D).\u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()).\u0023\u003Dz\u0024ZPx7vNrsbrB())
+    if (this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D.GetType() == typeof (\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D) && ((\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D) this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D).\u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D().GetType() == typeof (Affine) && ((Affine) ((\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D) this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D).\u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()).\u0023\u003Dz\u0024ZPx7vNrsbrB())
     {
       int num1;
       byte[] numArray1 = ppsbKthY7Nkewpng.\u0023\u003DznPLKTp_rfCU9(_param3, _param4, out num1);
       do
       {
-        ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local1 = ref _param1[_param2];
+        ref RGBA_Bytes local1 = ref _param1[_param2];
         byte[] numArray2 = numArray1;
         int index1 = num1;
         int num2 = index1 + 1;
         int num3 = (int) numArray2[index1];
         local1.\u0023\u003DzcdKuX48ZXN_S = (byte) num3;
-        ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local2 = ref _param1[_param2];
+        ref RGBA_Bytes local2 = ref _param1[_param2];
         byte[] numArray3 = numArray1;
         int index2 = num2;
         int num4 = index2 + 1;
         int num5 = (int) numArray3[index2];
         local2.\u0023\u003DzoRsAtmfOFDZe = (byte) num5;
-        ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local3 = ref _param1[_param2];
+        ref RGBA_Bytes local3 = ref _param1[_param2];
         byte[] numArray4 = numArray1;
         int index3 = num4;
         int num6 = index3 + 1;
         int num7 = (int) numArray4[index3];
         local3.\u0023\u003Dz4WHdt9g\u003D = (byte) num7;
-        ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local4 = ref _param1[_param2];
+        ref RGBA_Bytes local4 = ref _param1[_param2];
         byte[] numArray5 = numArray1;
         int index4 = num6;
         num1 = index4 + 1;
@@ -155,20 +155,20 @@ public sealed class \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAbG5yCERTVlAHXU\u00249
           num13 &= (int) byte.MaxValue;
           int num21 = (256 /*0x0100*/ - num12) * (256 /*0x0100*/ - num13);
           if (num21 > (int) byte.MaxValue)
-            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (\u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D) ppsbKthY7Nkewpng, num10, num11, num14, num15, num21);
+            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (IImageByte) ppsbKthY7Nkewpng, num10, num11, num14, num15, num21);
           int num22 = num14 + 1;
           int num23 = num12 * (256 /*0x0100*/ - num13);
           if (num23 > (int) byte.MaxValue)
-            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (\u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D) ppsbKthY7Nkewpng, num10, num11, num22, num15, num23);
+            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (IImageByte) ppsbKthY7Nkewpng, num10, num11, num22, num15, num23);
           int num24 = num22 - 1;
           int num25 = num15 + 1;
           int num26 = (256 /*0x0100*/ - num12) * num13;
           if (num26 > (int) byte.MaxValue)
-            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (\u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D) ppsbKthY7Nkewpng, num10, num11, num24, num25, num26);
+            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (IImageByte) ppsbKthY7Nkewpng, num10, num11, num24, num25, num26);
           int num27 = num24 + 1;
           int num28 = num12 * num13;
           if (num28 > (int) byte.MaxValue)
-            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (\u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D) ppsbKthY7Nkewpng, num10, num11, num27, num25, num28);
+            this.\u0023\u003DzvarNhRFp_fcR(numArray6, z4Whdt9g, zoRsAtmfOfdZe, zcdKuX48ZxnS, zKcqGecs, (IImageByte) ppsbKthY7Nkewpng, num10, num11, num27, num25, num28);
           numArray6[0] >>= 16 /*0x10*/;
           numArray6[1] >>= 16 /*0x10*/;
           numArray6[2] >>= 16 /*0x10*/;
@@ -191,7 +191,7 @@ public sealed class \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAbG5yCERTVlAHXU\u00249
     int _param3,
     int _param4,
     int _param5,
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param6,
+    IImageByte _param6,
     int _param7,
     int _param8,
     int _param9,

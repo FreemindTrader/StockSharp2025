@@ -175,7 +175,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     return ((\u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D) this.DataSeries)?.get_Timeframe();
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
@@ -359,14 +359,14 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     }
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dzr7PRxQcLL3EF(
+  protected override HitTestInfo \u0023\u003Dzr7PRxQcLL3EF(
     Point _param1,
     double _param2,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param3,
     bool _param4)
   {
     if (!(this.DataSeries is TimeframeSegmentDataSeries dataSeries) || dataSeries.Count < 1)
-      return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+      return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     double num1 = (double) (this.PriceStep ?? 0.000001M);
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
@@ -376,11 +376,11 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     double num3 = Math.Abs(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(1.0) - xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(0.0));
     double num4 = Math.Abs(xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(key) - xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(key + num1));
     if (num3 < 1.0 || num4 < 1.0)
-      return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+      return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     Tuple<double, CandlePriceLevel> tuple;
     if (this.ShowHorizontalVolumes && this.\u0023\u003Dzwzwqm6ek0X1oFaJOBAtZrz4\u003D.TryGetValue(key, out tuple) && _param1.X <= tuple.Item1)
     {
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D();
+      HitTestInfo zldchDrVsrVyHh6WyiGy = new HitTestInfo();
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzOCYm7g4gfYSc(dataSeries.SeriesName);
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzQ9xCEGz0Gl\u0024q(dataSeries.DataSeriesType);
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzBswzhzuQHrrX((IComparable) key);
@@ -390,12 +390,12 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
       return zldchDrVsrVyHh6WyiGy;
     }
     if (index < 0 || index >= dataSeries.Count)
-      return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+      return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj segment = dataSeries.Segments[index];
     CandlePriceLevel candlePriceLevel = segment.\u0023\u003DzHH6Br74\u003D(num2, num1);
     if (((CandlePriceLevel) ref candlePriceLevel).TotalVolume == 0M)
-      return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D();
+      return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = new HitTestInfo();
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzOCYm7g4gfYSc(dataSeries.SeriesName);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzQ9xCEGz0Gl\u0024q(dataSeries.DataSeriesType);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz2Iv\u0024sxQuGDBR((IComparable) segment.\u0023\u003Dzg86amuQ\u003D());
@@ -408,13 +408,13 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzA4iUVKOE1DJm((IComparable) segment.\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D());
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzAvOnsWR70_Q9((IComparable) segment.\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D());
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz566Xwh\u0024CapeW((IComparable) segment.\u0023\u003DznrHfMbDuUs5Ac94Iyw\u003D\u003D());
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
+    HitTestInfo zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
     return this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy2, _param2);
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(
+  protected override HitTestInfo \u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3)
   {
     return _param2;

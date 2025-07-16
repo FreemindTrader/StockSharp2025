@@ -167,7 +167,7 @@ public sealed class \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AjEqCz
     }
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
     out double _param1,
     out double _param2)
   {
@@ -175,21 +175,21 @@ public sealed class \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AjEqCz
     {
       _param1 = 0.0;
       _param2 = 0.0;
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 0;
     }
     if (this.\u0023\u003DzWiFSa2\u0024o8viR == this.\u0023\u003DzdfIXiUfrx8sS)
     {
       _param1 = this.\u0023\u003Dz0TSvb7PdghSI;
       _param2 = this.\u0023\u003Dzm1Oo\u002446Mw4uy;
       --this.\u0023\u003DzWiFSa2\u0024o8viR;
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 1;
     }
     if (this.\u0023\u003DzWiFSa2\u0024o8viR == 0)
     {
       _param1 = this.\u0023\u003DzaDVeTRUY6dqI;
       _param2 = this.\u0023\u003DzuhVMXs0eA6iJ;
       --this.\u0023\u003DzWiFSa2\u0024o8viR;
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 2;
     }
     this.\u0023\u003DzWYndTuds7\u0024Yf += this.\u0023\u003DzPOAUtcXGvFAR;
     this.\u0023\u003DzTPVp5n0ryn49 += this.\u0023\u003DzczoUR1_9JEKr;
@@ -200,6 +200,6 @@ public sealed class \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AjEqCz
     _param1 = this.\u0023\u003DzWYndTuds7\u0024Yf;
     _param2 = this.\u0023\u003DzTPVp5n0ryn49;
     --this.\u0023\u003DzWiFSa2\u0024o8viR;
-    return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
+    return (Path.\u0023\u003Dz9kUnn38\u003D) 2;
   }
 }

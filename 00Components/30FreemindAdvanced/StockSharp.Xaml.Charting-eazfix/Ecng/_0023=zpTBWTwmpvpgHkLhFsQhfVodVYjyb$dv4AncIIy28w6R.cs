@@ -20,7 +20,7 @@ public sealed class \u0023\u003DzpTBWTwmpvpgHkLhFsQhfVodVYjyb\u0024dv4AncIIy28w6
   }
 
   public override void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,
@@ -69,7 +69,7 @@ public sealed class \u0023\u003DzpTBWTwmpvpgHkLhFsQhfVodVYjyb\u0024dv4AncIIy28w6
       int num26 = num23 >> 16 /*0x10*/;
       int num27 = num24 >> 16 /*0x10*/;
       int num28 = num25 >> 16 /*0x10*/;
-      \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D nwsEwePinXgsJj4Q;
+      RGBA_Bytes nwsEwePinXgsJj4Q;
       nwsEwePinXgsJj4Q.\u0023\u003Dz4WHdt9g\u003D = (byte) num26;
       nwsEwePinXgsJj4Q.\u0023\u003DzoRsAtmfOFDZe = (byte) num27;
       nwsEwePinXgsJj4Q.\u0023\u003DzcdKuX48ZXN_S = (byte) num28;

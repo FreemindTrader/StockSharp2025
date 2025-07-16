@@ -114,9 +114,9 @@ public abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswS
   public abstract void \u0023\u003DzNi0XCnZpx1ge(
     IRenderContext2D _param1);
 
-  public virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dznnv4eJBaYYey(
+  public virtual HitTestInfo \u0023\u003Dznnv4eJBaYYey(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     T _param4)
   {
@@ -137,7 +137,7 @@ public abstract class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM6CrNZf0Y\u0024AoldqYWswS
         {
           IRange abyLt9clZggmJsWhw = this.\u0023\u003Dz7rfbi2bO7HOZ(_param4, new Func<T, double>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzA7RktUSISABNMw2sUfBVsa8\u003D));
           _param2.\u0023\u003DzMG0PUrAJ2_dYZ38QT2CTbNc\u003D((double) _param2.\u0023\u003Dzd9IAScWutAfJ() / (double) abyLt9clZggmJsWhw.Diff * 100.0);
-          _param2.\u0023\u003DzQ9xCEGz0Gl\u0024q((\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 8);
+          _param2.\u0023\u003DzQ9xCEGz0Gl\u0024q((DataSeriesType) 8);
         }
         _param2.\u0023\u003Dz3JT1kQLA9WwW((IComparable) tuple.Item1);
       }

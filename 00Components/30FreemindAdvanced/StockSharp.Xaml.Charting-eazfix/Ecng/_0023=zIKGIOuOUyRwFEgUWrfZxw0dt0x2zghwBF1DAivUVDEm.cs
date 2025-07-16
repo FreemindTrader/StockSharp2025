@@ -183,14 +183,14 @@ public sealed class \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw0dt0x2zghwBF1DAivUVDEmUDEW
     return (this.\u0023\u003DzDs6ZvbbSVPIx + this.\u0023\u003Dze7t73d4uoe74) * 0.5;
   }
 
-  public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003DzGWFxTCQy2F7QCSTJMw\u003D\u003D()
+  public Affine \u0023\u003DzGWFxTCQy2F7QCSTJMw\u003D\u003D()
   {
-    return \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dzi7nEj5k\u003D(-this.\u0023\u003DzkEfMPsn3fwSy, -this.\u0023\u003DzAABxd5e\u0024aXpk) * \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dz46p4Z_Q\u003D(this.\u0023\u003DzDs6ZvbbSVPIx, this.\u0023\u003Dze7t73d4uoe74) * \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dzi7nEj5k\u003D(this.\u0023\u003DzhLwMOi809Hrj, this.\u0023\u003DzpvLp9jAApyYH);
+    return Affine.\u0023\u003Dzi7nEj5k\u003D(-this.\u0023\u003DzkEfMPsn3fwSy, -this.\u0023\u003DzAABxd5e\u0024aXpk) * Affine.\u0023\u003Dz46p4Z_Q\u003D(this.\u0023\u003DzDs6ZvbbSVPIx, this.\u0023\u003Dze7t73d4uoe74) * Affine.\u0023\u003Dzi7nEj5k\u003D(this.\u0023\u003DzhLwMOi809Hrj, this.\u0023\u003DzpvLp9jAApyYH);
   }
 
-  public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003DzR_6Lm43sBL2qqBnJgAv1eF4\u003D()
+  public Affine \u0023\u003DzR_6Lm43sBL2qqBnJgAv1eF4\u003D()
   {
-    return \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dz46p4Z_Q\u003D(this.\u0023\u003DzDs6ZvbbSVPIx, this.\u0023\u003Dze7t73d4uoe74);
+    return Affine.\u0023\u003Dz46p4Z_Q\u003D(this.\u0023\u003DzDs6ZvbbSVPIx, this.\u0023\u003Dze7t73d4uoe74);
   }
 
   private void \u0023\u003DzquimCTk\u003D()

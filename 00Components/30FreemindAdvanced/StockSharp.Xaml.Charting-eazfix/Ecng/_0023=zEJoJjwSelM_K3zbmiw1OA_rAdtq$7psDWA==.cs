@@ -21,7 +21,7 @@ public sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u
 
   public \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.Y1Value = _param2.\u0023\u003DzpV2MuX1Y\u0024EoN();

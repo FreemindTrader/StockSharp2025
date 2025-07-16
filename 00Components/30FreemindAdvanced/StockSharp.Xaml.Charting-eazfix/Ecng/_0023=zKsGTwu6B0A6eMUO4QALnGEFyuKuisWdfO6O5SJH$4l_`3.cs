@@ -8,13 +8,13 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public interface \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vSJGnVw\u003D\u003D<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D, \u0023\u003DzPqz5cUs\u003D> : 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>,
+public interface \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vSJGnVw\u003D\u003D<TX, TY, \u0023\u003DzPqz5cUs\u003D> : 
+  IDataSeries<TX, TY>,
   \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhip318DMhXaWOsdXxIKq2Zfn_,
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
-  where \u0023\u003DzulcL8RA\u003D : IComparable
-  where \u0023\u003DzE8zkRfY\u003D : IComparable
+  where TX : IComparable
+  where TY : IComparable
   where \u0023\u003DzPqz5cUs\u003D : IComparable
 {
   IList<\u0023\u003DzPqz5cUs\u003D> ZValues { get; }
@@ -22,30 +22,30 @@ public interface \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vS
   IList<\u0023\u003DzPqz5cUs\u003D> get_ZValues();
 
   void \u0023\u003Dznc8esWY\u003D(
-    \u0023\u003DzulcL8RA\u003D _param1,
-    \u0023\u003DzE8zkRfY\u003D _param2,
+    TX _param1,
+    TY _param2,
     \u0023\u003DzPqz5cUs\u003D _param3);
 
   void \u0023\u003Dznc8esWY\u003D(
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
-    IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param2,
+    IEnumerable<TX> _param1,
+    IEnumerable<TY> _param2,
     IEnumerable<\u0023\u003DzPqz5cUs\u003D> _param3);
 
   void UpdateOrderAdornerLayer(
-    \u0023\u003DzulcL8RA\u003D _param1,
-    \u0023\u003DzE8zkRfY\u003D _param2,
+    TX _param1,
+    TY _param2,
     \u0023\u003DzPqz5cUs\u003D _param3,
     int _param4);
 
   void \u0023\u003DzzfUM_io\u003D(
     int _param1,
-    \u0023\u003DzulcL8RA\u003D _param2,
-    \u0023\u003DzE8zkRfY\u003D _param3,
+    TX _param2,
+    TY _param3,
     \u0023\u003DzPqz5cUs\u003D _param4);
 
   void \u0023\u003DzdG5UbJ7rAsgF(
     int _param1,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param2,
-    IEnumerable<\u0023\u003DzE8zkRfY\u003D> _param3,
+    IEnumerable<TX> _param2,
+    IEnumerable<TY> _param3,
     IEnumerable<\u0023\u003DzPqz5cUs\u003D> _param4);
 }

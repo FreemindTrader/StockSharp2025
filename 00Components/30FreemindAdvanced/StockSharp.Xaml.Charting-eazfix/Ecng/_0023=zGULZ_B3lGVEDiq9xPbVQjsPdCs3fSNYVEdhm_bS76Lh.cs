@@ -16,7 +16,7 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc :
 
   public \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.Level = _param2.\u0023\u003DzsTIRngDzycAM();

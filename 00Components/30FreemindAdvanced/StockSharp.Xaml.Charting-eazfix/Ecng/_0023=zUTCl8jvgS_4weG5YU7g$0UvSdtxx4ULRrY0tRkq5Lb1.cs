@@ -5,12 +5,12 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public sealed class \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb1WxUUMsJoFuIkNAGsBguUdsg\u003D\u003D : 
+public sealed class Stroke : 
   \u0023\u003DzlbJvQa3SY_TV_FXt6bD53CMBdF2GNJJlt9hRdej\u00248efhx\u0024jjy81KmK1T8_Er\u0024OTJnA\u003D\u003D,
-  \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D
+  IVertexSource
 {
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb1WxUUMsJoFuIkNAGsBguUdsg\u003D\u003D(
-    \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D _param1,
+  public Stroke(
+    IVertexSource _param1,
     double _param2 = 1.0)
     : base(_param1, (\u0023\u003DzRxKCQfwuO1Ym7C1efUUjv3O1vVUi3Pf5LXL8sd0rJM6VVvs3KX849wtTPRETymEpxQ\u003D\u003D) new \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID9jodB3jtas3pbWtzhWw\u003D\u003D())
   {

@@ -85,7 +85,7 @@ public sealed class AxisCollection :
 
   public virtual void WriteXml(XmlWriter _param1)
   {
-    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DzT642HR8\u003D(this.OfType<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>(), _param1);
+    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0.\u0023\u003DzFvAsfEI\u003D().\u0023\u003DzT642HR8\u003D(this.OfType<AxisBase>(), _param1);
   }
 
   private void \u0023\u003DzQ66aClkZo__B(object _param1, NotifyCollectionChangedEventArgs _param2)

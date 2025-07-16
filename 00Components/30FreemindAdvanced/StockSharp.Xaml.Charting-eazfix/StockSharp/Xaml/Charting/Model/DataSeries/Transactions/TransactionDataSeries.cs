@@ -17,7 +17,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries.Transactions;
 
 public class TransactionDataSeries : 
   BindableObject ,
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>,
+  IDataSeries<DateTime, double>,
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
 {
@@ -38,9 +38,9 @@ public class TransactionDataSeries :
 
   private IList<DateTime> _dates => this._candlesSeries.XValues;
 
-  public \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D DataSeriesType
+  public DataSeriesType DataSeriesType
   {
-    get => (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 10;
+    get => (DataSeriesType) 10;
   }
 
   public event EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X> DataSeriesChanged;
@@ -112,7 +112,7 @@ public class TransactionDataSeries :
     get => (IList) this.XValues;
   }
 
-  IList<DateTime> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EXValues
+  IList<DateTime> IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EXValues
   {
     get => this.XValues;
   }
@@ -122,7 +122,7 @@ public class TransactionDataSeries :
     get => (IList) this._yValues;
   }
 
-  IList<double> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EYValues
+  IList<double> IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EYValues
   {
     get => (IList<double>) this._yValues;
   }
@@ -326,17 +326,17 @@ public class TransactionDataSeries :
     return (IRange) new DoubleRange(num1, num2);
   }
 
-  public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
+  public IPointSeries ToPointSeries(
+    ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis,
     bool? dataIsDisplayedAs2D,
     IRange visibleXRange,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D factory,
+    IPointResamplerFactory factory,
     object pointSeriesArg = null)
   {
-    return !pointRange.IsDefined ? (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) null : (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D(this._data.\u0023\u003DzRr4AYdnHaTxa(), pointRange, visibleXRange);
+    return !pointRange.IsDefined ? (IPointSeries) null : (IPointSeries) new \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D(this._data.\u0023\u003DzRr4AYdnHaTxa(), pointRange, visibleXRange);
   }
 
   public bool IsSuspended
@@ -370,7 +370,7 @@ public class TransactionDataSeries :
   {
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EAppend(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EAppend(
     DateTime dt,
     params double[] yValues)
   {
@@ -394,26 +394,26 @@ public class TransactionDataSeries :
     set => throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemove(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemove(
     DateTime x)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveAt(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveAt(
     int index)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveRange(
+  void IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002ERemoveRange(
     int startIndex,
     int count)
   {
     throw new NotImplementedException();
   }
 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EClone()
+  IDataSeries<DateTime, double> IDataSeries<DateTime, double>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CSystem\u002EDateTime\u002CSystem\u002EDouble\u003E\u002EClone()
   {
     throw new NotImplementedException();
   }
@@ -448,9 +448,9 @@ public class TransactionDataSeries :
   {
   }
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
+    ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis)
@@ -458,10 +458,10 @@ public class TransactionDataSeries :
     throw new NotImplementedException();
   }
 
-  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
+  HitTestInfo \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
     int index)
   {
-    return \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
   }
 
   [Serializable]

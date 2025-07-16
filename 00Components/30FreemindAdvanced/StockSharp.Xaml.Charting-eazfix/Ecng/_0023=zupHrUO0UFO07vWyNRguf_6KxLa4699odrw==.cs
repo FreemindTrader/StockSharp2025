@@ -16,7 +16,7 @@ public class \u0023\u003DzupHrUO0UFO07vWyNRguf_6KxLa4699odrw\u003D\u003D :
 
   public \u0023\u003DzupHrUO0UFO07vWyNRguf_6KxLa4699odrw\u003D\u003D(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.ZValue = _param2.ZValue;

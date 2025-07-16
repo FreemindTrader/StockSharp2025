@@ -89,12 +89,12 @@ public sealed class StackedMountainRenderableSeries :
     {
       using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity, (double[]) null, PenLineCap.Round))
       {
-        \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq1;
+        IPointSeries ftrixUnpTllY1PkTyq1;
         \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C p09swszfkFaReRy0aAtDn3C = this.\u0023\u003Dz1nUiMgOBlgNRWzTAmQ\u003D\u003D(_param2, out ftrixUnpTllY1PkTyq1);
         \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX sgkqEcPv0Ah3hMaVex = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003Dz3GCmtrCAMr5X(_param1, mz4rNexJsSmCjpOm);
-        \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzUVX2hzSJiUvkgg4NgQ6FCHrRuz_S(_param1, mz4rNexJsSmCjpOm, num1), xrgcdFbSdWgN9GcT8, (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C, mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D(), false, false);
+        \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzUVX2hzSJiUvkgg4NgQ6FCHrRuz_S(_param1, mz4rNexJsSmCjpOm, num1), xrgcdFbSdWgN9GcT8, (IPointSeries) p09swszfkFaReRy0aAtDn3C, mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D(), false, false);
         \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = rhwYsZxA33iRu6Id7J1;
-        \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq2 = ftrixUnpTllY1PkTyq1;
+        IPointSeries ftrixUnpTllY1PkTyq2 = ftrixUnpTllY1PkTyq1;
         \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
         \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
         int num2 = this.IsDigitalLine ? 1 : 0;
@@ -109,7 +109,7 @@ public sealed class StackedMountainRenderableSeries :
 
   private \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN3C \u0023\u003Dz1nUiMgOBlgNRWzTAmQ\u003D\u003D(
     bool _param1,
-    out \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2)
+    out IPointSeries _param2)
   {
     IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
     int num1 = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D();
@@ -147,28 +147,28 @@ public sealed class StackedMountainRenderableSeries :
       p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2] = tuple.Item2;
       --index2;
     }
-    _param2 = (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C2;
+    _param2 = (IPointSeries) p09swszfkFaReRy0aAtDn3C2;
     return p09swszfkFaReRy0aAtDn3C1;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dzr7PRxQcLL3EF(
+  protected override HitTestInfo \u0023\u003Dzr7PRxQcLL3EF(
     Point _param1,
     double _param2,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param3,
     bool _param4)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     if (this.IsVisible)
     {
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = base.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, _param3, _param4);
+      HitTestInfo zldchDrVsrVyHh6WyiGy2 = base.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, _param3, _param4);
       zldchDrVsrVyHh6WyiGy1 = this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003Dznnv4eJBaYYey(_param1, zldchDrVsrVyHh6WyiGy2, _param2, (\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D) this);
     }
     return zldchDrVsrVyHh6WyiGy1;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
+  protected override HitTestInfo \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3)
   {
     if (!_param2.\u0023\u003DzMeGSfVE\u003D())
@@ -187,7 +187,7 @@ public sealed class StackedMountainRenderableSeries :
 
   protected override bool \u0023\u003DzRf_Fn6mPWZva(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     Point _param4,
     Point _param5)

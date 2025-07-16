@@ -130,15 +130,15 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID
   public void \u0023\u003Dzz_ASabQ\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param3)
+    Path.\u0023\u003Dz9kUnn38\u003D _param3)
   {
     this.\u0023\u003DzMBCBPKkO8rfJ = (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 0;
-    if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzxoYPNFH0kpDd(_param3))
+    if (Path.\u0023\u003DzxoYPNFH0kpDd(_param3))
       this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D.\u0023\u003DzTI_2C2gAGMW03CHW9w\u003D\u003D(new \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gz9BuO7gAeqY9kG_DT(_param1, _param2));
-    else if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzepfxPD_ghBSfgm\u0024Sfw\u003D\u003D(_param3))
+    else if (Path.\u0023\u003DzepfxPD_ghBSfgm\u0024Sfw\u003D\u003D(_param3))
       this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D.\u0023\u003DzObQSsmE\u003D(new \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gz9BuO7gAeqY9kG_DT(_param1, _param2));
     else
-      this.\u0023\u003DzXi6EbhHp\u0024X6I = (int) \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzO\u0024WqBPD5Al1I(_param3);
+      this.\u0023\u003DzXi6EbhHp\u0024X6I = (int) Path.\u0023\u003DzO\u0024WqBPD5Al1I(_param3);
   }
 
   public void \u0023\u003DzMIaGPiDXTQIE(int _param1)
@@ -146,7 +146,7 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID
     if (this.\u0023\u003DzMBCBPKkO8rfJ == (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 0)
     {
       this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D.\u0023\u003DzEzdbhJc\u003D(this.\u0023\u003DzXi6EbhHp\u0024X6I != 0);
-      \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzbtI_RyDZ_PUAvoTRMw\u003D\u003D(this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D, this.\u0023\u003Dz5jp8B9xYFR\u0024lqBRuLQ\u003D\u003D, this.\u0023\u003DzXi6EbhHp\u0024X6I);
+      Path.\u0023\u003DzbtI_RyDZ_PUAvoTRMw\u003D\u003D(this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D, this.\u0023\u003Dz5jp8B9xYFR\u0024lqBRuLQ\u003D\u003D, this.\u0023\u003DzXi6EbhHp\u0024X6I);
       if (this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D.\u0023\u003DzG2qqjnQ\u003D() < 3)
         this.\u0023\u003DzXi6EbhHp\u0024X6I = 0;
     }
@@ -155,12 +155,12 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID
     this.\u0023\u003DzEqzTruIreruo\u0024KxVOQ\u003D\u003D = 0;
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz83gaT64\u003D(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz83gaT64\u003D(
     ref double _param1,
     ref double _param2)
   {
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D z9kUnn38 = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
-    while (!\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzVHztYKNVoUMf(z9kUnn38))
+    Path.\u0023\u003Dz9kUnn38\u003D z9kUnn38 = (Path.\u0023\u003Dz9kUnn38\u003D) 2;
+    while (!Path.\u0023\u003DzVHztYKNVoUMf(z9kUnn38))
     {
       switch (this.\u0023\u003DzMBCBPKkO8rfJ)
       {
@@ -170,11 +170,11 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID
         case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 1:
           if (this.\u0023\u003DzoJiurK_NdcUFOnlkElGQpb4\u003D.\u0023\u003DzG2qqjnQ\u003D() < 2 + (this.\u0023\u003DzXi6EbhHp\u0024X6I != 0 ? 1 : 0))
           {
-            z9kUnn38 = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+            z9kUnn38 = (Path.\u0023\u003Dz9kUnn38\u003D) 0;
             continue;
           }
           this.\u0023\u003DzMBCBPKkO8rfJ = this.\u0023\u003DzXi6EbhHp\u0024X6I != 0 ? (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 4 : (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 2;
-          z9kUnn38 = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+          z9kUnn38 = (Path.\u0023\u003Dz9kUnn38\u003D) 1;
           this.\u0023\u003Dzgur30fFAlo4VLq3sOQ\u003D\u003D = 0;
           this.\u0023\u003DzEqzTruIreruo\u0024KxVOQ\u003D\u003D = 0;
           continue;
@@ -214,7 +214,7 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID
           continue;
         case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 5:
           this.\u0023\u003DzMBCBPKkO8rfJ = (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 6;
-          z9kUnn38 = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+          z9kUnn38 = (Path.\u0023\u003Dz9kUnn38\u003D) 1;
           goto case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 6;
         case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 6:
           if (this.\u0023\u003Dzgur30fFAlo4VLq3sOQ\u003D\u003D <= (this.\u0023\u003DzXi6EbhHp\u0024X6I == 0 ? 1 : 0))
@@ -235,18 +235,18 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpEnGQj7r2AsSszBSxOO94iSx6ID
             this.\u0023\u003DzMBCBPKkO8rfJ = this.\u0023\u003DzZu_kYid_Z4aW;
             continue;
           }
-          dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd jnelpsqX4Q78W2Ejd = this.\u0023\u003DzWxMlFxTYNG63xMvCxrYMoH8\u003D[this.\u0023\u003DzEqzTruIreruo\u0024KxVOQ\u003D\u003D++];
+          Vector2 jnelpsqX4Q78W2Ejd = this.\u0023\u003DzWxMlFxTYNG63xMvCxrYMoH8\u003D[this.\u0023\u003DzEqzTruIreruo\u0024KxVOQ\u003D\u003D++];
           _param1 = jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd;
           _param2 = jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd;
           return z9kUnn38;
         case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 8:
           this.\u0023\u003DzMBCBPKkO8rfJ = this.\u0023\u003DzZu_kYid_Z4aW;
-          return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 95;
+          return (Path.\u0023\u003Dz9kUnn38\u003D) 95;
         case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 9:
           this.\u0023\u003DzMBCBPKkO8rfJ = this.\u0023\u003DzZu_kYid_Z4aW;
-          return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 111;
+          return (Path.\u0023\u003Dz9kUnn38\u003D) 111;
         case (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF\u0024ip\u0024yG1wU_uCZBId1ShCl95A\u003D\u003D.\u0023\u003DzKTsH6YfsfjIT) 10:
-          z9kUnn38 = (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+          z9kUnn38 = (Path.\u0023\u003Dz9kUnn38\u003D) 0;
           continue;
         default:
           continue;

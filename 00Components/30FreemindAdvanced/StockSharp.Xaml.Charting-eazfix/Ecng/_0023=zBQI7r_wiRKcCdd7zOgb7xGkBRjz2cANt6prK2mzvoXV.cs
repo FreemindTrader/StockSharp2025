@@ -10,7 +10,7 @@ using System.Xml;
 
 #nullable disable
 public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0 : 
-  \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>
+  \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<AxisBase>
 {
   private static \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0 \u0023\u003Dzj9RABVg\u003D;
 
@@ -43,7 +43,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0 :
   }
 
   public override void \u0023\u003Dz4EJs3pc\u003D(
-    dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd _param1,
+    AxisBase _param1,
     XmlReader _param2)
   {
     base.\u0023\u003Dz4EJs3pc\u003D(_param1, _param2);
@@ -56,11 +56,11 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0 :
   }
 
   public override void \u0023\u003Dz7SZ\u0024Lrw\u003D(
-    dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd _param1,
+    AxisBase _param1,
     XmlWriter _param2)
   {
     base.\u0023\u003Dz7SZ\u0024Lrw\u003D(_param1, _param2);
-    dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axF9ZgQ7NbH9KsEjd = _param1;
+    AxisBase axF9ZgQ7NbH9KsEjd = _param1;
     if (axF9ZgQ7NbH9KsEjd == null || axF9ZgQ7NbH9KsEjd.AutoTicks || _param1.MinorDelta == null || _param1.MajorDelta == null)
       return;
     Type type = _param1.MajorDelta.GetType();

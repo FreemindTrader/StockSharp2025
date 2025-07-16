@@ -8,7 +8,7 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(
+public struct RectangleInt(
   int _param1,
   int _param2,
   int _param3,
@@ -40,7 +40,7 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
 
   public int Height => this.\u0023\u003DzSzOWcj8\u003D - this.\u0023\u003DzRNV_Dpk\u003D;
 
-  public \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzO3\u0024NMwQ\u003D()
+  public RectangleInt \u0023\u003DzO3\u0024NMwQ\u003D()
   {
     if (this.\u0023\u003DzP4R7yU0\u003D > this.\u0023\u003Dzp55dtus\u003D)
     {
@@ -58,7 +58,7 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public bool \u0023\u003DzPHB5nPY\u003D(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1)
+    RectangleInt _param1)
   {
     if (this.\u0023\u003Dzp55dtus\u003D > _param1.\u0023\u003Dzp55dtus\u003D)
       this.\u0023\u003Dzp55dtus\u003D = _param1.\u0023\u003Dzp55dtus\u003D;
@@ -82,8 +82,8 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public bool \u0023\u003DzvBhLthYerYntQLEPioo2lZw\u003D(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2)
+    RectangleInt _param1,
+    RectangleInt _param2)
   {
     this.\u0023\u003DzP4R7yU0\u003D = _param1.\u0023\u003DzP4R7yU0\u003D;
     this.\u0023\u003DzRNV_Dpk\u003D = _param1.\u0023\u003DzRNV_Dpk\u003D;
@@ -101,7 +101,7 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public bool \u0023\u003DzKkTE5vIDCYcx(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1)
+    RectangleInt _param1)
   {
     if (this.\u0023\u003DzP4R7yU0\u003D < _param1.\u0023\u003DzP4R7yU0\u003D)
       this.\u0023\u003DzP4R7yU0\u003D = _param1.\u0023\u003DzP4R7yU0\u003D;
@@ -115,8 +115,8 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public static bool \u0023\u003DzAWAn_7okcxAr(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param0,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1)
+    RectangleInt _param0,
+    RectangleInt _param1)
   {
     int zP4R7yU0 = _param0.\u0023\u003DzP4R7yU0\u003D;
     int zRnvDpk = _param0.\u0023\u003DzRNV_Dpk\u003D;
@@ -134,8 +134,8 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public void \u0023\u003DzoIcYXQymsTCuibRM\u0024AbsiBA4MTxA(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2)
+    RectangleInt _param1,
+    RectangleInt _param2)
   {
     this.\u0023\u003DzP4R7yU0\u003D = _param1.\u0023\u003DzP4R7yU0\u003D;
     this.\u0023\u003DzRNV_Dpk\u003D = _param1.\u0023\u003DzRNV_Dpk\u003D;
@@ -169,9 +169,9 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public static bool \u0023\u003DzKzzHL6MOiRdk(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param0,
-    ref \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1,
-    ref \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2)
+    RectangleInt _param0,
+    ref RectangleInt _param1,
+    ref RectangleInt _param2)
   {
     if (_param2.\u0023\u003DzSzOWcj8\u003D < _param0.\u0023\u003DzSzOWcj8\u003D)
     {
@@ -213,8 +213,8 @@ public struct \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhB
   }
 
   public static bool \u0023\u003DzmqCCXUaWzfQg(
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param0,
-    ref \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1)
+    RectangleInt _param0,
+    ref RectangleInt _param1)
   {
     if (_param1.\u0023\u003DzSzOWcj8\u003D < _param0.\u0023\u003DzSzOWcj8\u003D)
     {

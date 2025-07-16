@@ -7,7 +7,7 @@
 using System.Diagnostics;
 
 #nullable disable
-public struct \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D
+public struct ScanlineSpan
 {
   
   public int \u0023\u003DzwP120vA\u003D;

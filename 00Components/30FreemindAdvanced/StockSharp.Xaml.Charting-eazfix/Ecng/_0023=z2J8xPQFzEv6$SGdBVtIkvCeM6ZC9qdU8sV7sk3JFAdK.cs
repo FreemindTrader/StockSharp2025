@@ -10,21 +10,21 @@ public static class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAd
   public static int \u0023\u003DziL6rhu76I9knzlgj8g\u003D\u003D(
     int _param0,
     int _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2)
+    RectangleInt _param2)
   {
     return (_param0 > _param2.\u0023\u003Dzp55dtus\u003D ? 1 : 0) | (_param1 > _param2.\u0023\u003DzSzOWcj8\u003D ? 2 : 0) | (_param0 < _param2.\u0023\u003DzP4R7yU0\u003D ? 4 : 0) | (_param1 < _param2.\u0023\u003DzRNV_Dpk\u003D ? 8 : 0);
   }
 
   public static int \u0023\u003DzcJaEESjpF38GDdk97hFeZJw\u003D(
     int _param0,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1)
+    RectangleInt _param1)
   {
     return (_param0 > _param1.\u0023\u003Dzp55dtus\u003D ? 1 : 0) | (_param0 < _param1.\u0023\u003DzP4R7yU0\u003D ? 1 : 0) << 2;
   }
 
   public static int \u0023\u003DzKDrhoWJzds7WPcK7r2Px1yQ\u003D(
     int _param0,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param1)
+    RectangleInt _param1)
   {
     return (_param0 > _param1.\u0023\u003DzSzOWcj8\u003D ? 1 : 0) << 1 | (_param0 < _param1.\u0023\u003DzRNV_Dpk\u003D ? 1 : 0) << 3;
   }
@@ -34,7 +34,7 @@ public static class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAd
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param4,
+    RectangleInt _param4,
     int[] _param5,
     int[] _param6)
   {
@@ -204,7 +204,7 @@ public static class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAd
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param4,
+    RectangleInt _param4,
     ref int _param5,
     ref int _param6,
     int _param7)
@@ -234,7 +234,7 @@ public static class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAd
     ref int _param1,
     ref int _param2,
     ref int _param3,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param4)
+    RectangleInt _param4)
   {
     int num1 = \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAdKN9rpOuxmxHM2c\u00242gpc4ND3AkP5K8\u003D.\u0023\u003DziL6rhu76I9knzlgj8g\u003D\u003D(_param0, _param1, _param4);
     int num2 = \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAdKN9rpOuxmxHM2c\u00242gpc4ND3AkP5K8\u003D.\u0023\u003DziL6rhu76I9knzlgj8g\u003D\u003D(_param2, _param3, _param4);

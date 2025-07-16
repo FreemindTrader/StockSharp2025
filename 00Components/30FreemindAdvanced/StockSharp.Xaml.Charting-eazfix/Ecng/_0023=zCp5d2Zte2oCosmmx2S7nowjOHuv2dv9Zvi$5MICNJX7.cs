@@ -6,7 +6,7 @@
 
 #nullable disable
 public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7nowjOHuv2dv9Zvi\u00245MICNJX7KbXfApHHRNYklmtcaw0i5jQ\u003D\u003D : 
-  \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D,
+  IVertexSource,
   \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY1\u0024cle1yli\u0024ugmg0SNqEDTttQ\u003D\u003D
 {
   private \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFBGwEgWF1yTFOI1W1C2hhjL2Ij7\u00245nV82_r \u0023\u003DzPOSD1wNf7oPqpkiKeQ\u003D\u003D;
@@ -102,7 +102,7 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7nowjOHuv2dv9Zvi\u00245MICNJX
       this.\u0023\u003DziXuPq3FDSLhxbgtO0w\u003D\u003D.\u0023\u003DzVawdK5C5Lyf_(_param1);
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
     out double _param1,
     out double _param2)
   {

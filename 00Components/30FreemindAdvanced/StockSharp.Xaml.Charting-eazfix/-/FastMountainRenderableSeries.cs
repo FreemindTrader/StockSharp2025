@@ -34,7 +34,7 @@ public sealed class FastMountainRenderableSeries :
     _someMemebers1234._variableSome3535 = this;
     double num1 = this.\u0023\u003DzNfVFwxaLW3jC(_param2);
     float num2 = (float) this.\u0023\u003DzySDi0_ve2vLaE3cXlA\u003D\u003D();
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     _someMemebers1234.\u0023\u003DzxS8dq0E\u003D = this.SeriesColor;
     _someMemebers1234.\u0023\u003DzWQetKrw\u003D = _param1.\u0023\u003Dze8WyDhI\u003D(this.AreaBrush, this.Opacity, \u0023\u003DzQN2Zes8h9tElvYmX48o49IEXwvVSyIzumkGBhIv4w4j4.PerPrimitive);
     try
@@ -79,7 +79,7 @@ public sealed class FastMountainRenderableSeries :
 
   protected override bool \u0023\u003DzRf_Fn6mPWZva(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     Point _param4,
     Point _param5)

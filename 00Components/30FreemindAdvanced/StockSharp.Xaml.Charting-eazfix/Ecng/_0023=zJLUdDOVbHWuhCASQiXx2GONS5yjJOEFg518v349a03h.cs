@@ -11,13 +11,13 @@ using System.Runtime.CompilerServices;
 public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5 : 
   \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>
 {
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz63SQYF34lutc;
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzkctAaveAJY_W;
+  private readonly IPointSeries \u0023\u003Dz63SQYF34lutc;
+  private readonly IPointSeries \u0023\u003DzkctAaveAJY_W;
 
   public \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3)
+    IPointSeries _param1,
+    IPointSeries _param2,
+    IPointSeries _param3)
     : base(_param1)
   {
     this.\u0023\u003Dz63SQYF34lutc = _param2;

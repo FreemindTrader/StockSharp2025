@@ -23,7 +23,7 @@ public sealed class FastBubbleRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzuajeYkUJAgVf = DependencyProperty.Register(nameof (ZScaleFactor), typeof (double), typeof (FastBubbleRenderableSeries), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(FastBubbleRenderableSeries.OnPropertyChanged)));
   
-  private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003DzjADvNnzgrrZX;
+  private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D> \u0023\u003DzjADvNnzgrrZX;
   
   private Type \u0023\u003DzOHJ1xBv\u0024k2wEJE7MOQ\u003D\u003D;
   
@@ -70,19 +70,19 @@ public sealed class FastBubbleRenderableSeries :
     }
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, _param2, false);
+    HitTestInfo zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, _param2, false);
     return this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy, _param2);
   }
 
   protected override bool \u0023\u003DzO6mZ0OGu\u0024l6W(
     Point _param1,
     Rect _param2,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param3)
+    HitTestInfo _param3)
   {
     double x = _param3.\u0023\u003DzxZfJER0dbHuS().X;
     double y = _param3.\u0023\u003DzxZfJER0dbHuS().Y;
@@ -116,7 +116,7 @@ public sealed class FastBubbleRenderableSeries :
     if (this.\u0023\u003DzjADvNnzgrrZX != null)
     {
       this.\u0023\u003DzjADvNnzgrrZX.Dispose();
-      this.\u0023\u003DzjADvNnzgrrZX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) null;
+      this.\u0023\u003DzjADvNnzgrrZX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D>) null;
     }
     IRenderContext2D mvXdEdq1k7UiFd2I = _param1;
     Ellipse ellipse = new Ellipse();
@@ -140,7 +140,7 @@ public sealed class FastBubbleRenderableSeries :
         Offset = 1.0
       }
     });
-    this.\u0023\u003DzjADvNnzgrrZX = new \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(mvXdEdq1k7UiFd2I.\u0023\u003DzC1WFQPaV7rDp((FrameworkElement) ellipse));
+    this.\u0023\u003DzjADvNnzgrrZX = new \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D>(mvXdEdq1k7UiFd2I.\u0023\u003DzC1WFQPaV7rDp((FrameworkElement) ellipse));
     this.\u0023\u003DzOHJ1xBv\u0024k2wEJE7MOQ\u003D\u003D = type;
   }
 
@@ -194,7 +194,7 @@ public sealed class FastBubbleRenderableSeries :
     DependencyPropertyChangedEventArgs _param1)
   {
     FastBubbleRenderableSeries b5lfOfnUo8w7EyJw = (FastBubbleRenderableSeries) _param0;
-    b5lfOfnUo8w7EyJw.\u0023\u003DzjADvNnzgrrZX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) null;
+    b5lfOfnUo8w7EyJw.\u0023\u003DzjADvNnzgrrZX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D>) null;
     b5lfOfnUo8w7EyJw.\u0023\u003Dzmf\u0024vfR3OJQU9();
   }
 

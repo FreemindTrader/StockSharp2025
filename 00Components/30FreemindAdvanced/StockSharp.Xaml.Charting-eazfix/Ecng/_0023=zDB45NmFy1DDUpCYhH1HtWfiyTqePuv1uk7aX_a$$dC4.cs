@@ -84,7 +84,7 @@ public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0
   }
 
   public void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,

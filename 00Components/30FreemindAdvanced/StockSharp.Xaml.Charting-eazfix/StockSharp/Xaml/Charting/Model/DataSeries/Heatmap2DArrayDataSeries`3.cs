@@ -14,7 +14,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting.Model.DataSeries;
 
 public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> : 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>,
+  IDataSeries<TX, TY>,
   ISuspendable,
   \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
@@ -141,7 +141,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
   {
     get
     {
-      return (IList) ((\u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>) this).get_XValues();
+      return (IList) ((IDataSeries<TX, TY>) this).get_XValues();
     }
   }
 
@@ -149,13 +149,13 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
   {
     get
     {
-      return (IList) ((\u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>) this).get_YValues();
+      return (IList) ((IDataSeries<TX, TY>) this).get_YValues();
     }
   }
 
   public IComparable LatestYValue => (IComparable) null;
 
-  IList<TX> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EXValues
+  IList<TX> IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EXValues
   {
     get
     {
@@ -166,7 +166,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
     }
   }
 
-  IList<TY> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EYValues
+  IList<TY> IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EYValues
   {
     get
     {
@@ -289,9 +289,9 @@ label_9:
     }
   }
 
-  \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EDataSeriesType
+  DataSeriesType \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EDataSeriesType
   {
-    get => (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 7;
+    get => (DataSeriesType) 7;
   }
 
   int? \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFifoCapacity
@@ -322,33 +322,33 @@ label_9:
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EAppend(
+  void IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EAppend(
     TX x,
     params TY[] yValues)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EAppend(
+  void IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EAppend(
     IEnumerable<TX> x,
     params IEnumerable<TY>[] yValues)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002ERemove(
+  void IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002ERemove(
     TX x)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002ERemoveAt(
+  void IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002ERemoveAt(
     int index)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002ERemoveRange(
+  void IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002ERemoveRange(
     int startIndex,
     int count)
   {
@@ -360,28 +360,28 @@ label_9:
     throw new NotImplementedException();
   }
 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY> \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EClone()
+  IDataSeries<TX, TY> IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EClone()
   {
     throw new NotImplementedException();
   }
 
-  TY \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EGetYMinAt(
+  TY IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EGetYMinAt(
     int index,
     TY existingYMin)
   {
     throw new NotImplementedException();
   }
 
-  TY \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EGetYMaxAt(
+  TY IDataSeries<TX, TY>.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u003CTX\u002CTY\u003E\u002EGetYMaxAt(
     int index,
     TY existingYMax)
   {
     throw new NotImplementedException();
   }
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
+    ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis)
@@ -458,17 +458,17 @@ label_9:
     return new IndexRange (0, this.ArrayWidth - 1);
   }
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D resamplingMode,
+  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+    ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
     bool isCategoryAxis,
     bool? dataIsDisplayedAs2D,
     IRange visibleXRange,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D factory,
+    IPointResamplerFactory factory,
     object pointSeriesArg)
   {
-    return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) new \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0nFFXWH2DvMJoLMw\u003D\u003D<TX, TY>((\u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D) this, this._xMapping, this._yMapping);
+    return (IPointSeries) new \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0nFFXWH2DvMJoLMw\u003D\u003D<TX, TY>((\u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D) this, this._xMapping, this._yMapping);
   }
 
   IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
@@ -502,13 +502,13 @@ label_9:
     return this.GetYRange();
   }
 
-  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
+  HitTestInfo \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
     int index)
   {
     return this.GetHitTestInfo(new int?(index), new int?(index));
   }
 
-  private \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D GetHitTestInfo(
+  private HitTestInfo GetHitTestInfo(
     int? xIndex,
     int? yIndex)
   {
@@ -518,9 +518,9 @@ label_9:
       IComparable comparable = (IComparable) null;
       if (flag)
         comparable = (IComparable) this._array2D[yIndex.Value, xIndex.Value];
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D hitTestInfo = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D();
+      HitTestInfo hitTestInfo = new HitTestInfo();
       hitTestInfo.\u0023\u003DzOCYm7g4gfYSc(this.SeriesName);
-      hitTestInfo.\u0023\u003DzQ9xCEGz0Gl\u0024q((\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 7);
+      hitTestInfo.\u0023\u003DzQ9xCEGz0Gl\u0024q((DataSeriesType) 7);
       hitTestInfo.ZValue = comparable;
       hitTestInfo.\u0023\u003Dzn3o1RS9wuET8(flag);
       hitTestInfo.\u0023\u003DzZjtwJshPYJrbgaR43Q\u003D\u003D(flag);
@@ -530,14 +530,14 @@ label_9:
     }
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D ToHitTestInfo(
+  public HitTestInfo ToHitTestInfo(
     double xValue,
     double yValue,
     bool interpolateXy = true)
   {
     int? index1 = this.GetIndex<TX>(this._xMapping, xValue, this.ArrayWidth);
     int? index2 = this.GetIndex<TY>(this._yMapping, yValue, this.ArrayHeight);
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D hitTestInfo = this.GetHitTestInfo(index1, index2);
+    HitTestInfo hitTestInfo = this.GetHitTestInfo(index1, index2);
     if (interpolateXy)
     {
       hitTestInfo.\u0023\u003Dz2Iv\u0024sxQuGDBR((IComparable) xValue);

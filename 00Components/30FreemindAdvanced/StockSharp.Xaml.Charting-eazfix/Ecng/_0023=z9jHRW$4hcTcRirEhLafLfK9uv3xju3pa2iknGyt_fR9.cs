@@ -18,7 +18,7 @@ public struct \u0023\u003Dz9jHRW\u00244hcTcRirEhLafLfK9uv3xju3pa2iknGyt_fR9cko7u
   public void \u0023\u003DzNVaj9ergOekrrLbWLQ\u003D\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param3)
+    Path.\u0023\u003Dz9kUnn38\u003D _param3)
   {
   }
 
@@ -30,10 +30,10 @@ public struct \u0023\u003Dz9jHRW\u00244hcTcRirEhLafLfK9uv3xju3pa2iknGyt_fR9cko7u
   {
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
     ref double _param1,
     ref double _param2)
   {
-    return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+    return (Path.\u0023\u003Dz9kUnn38\u003D) 0;
   }
 }

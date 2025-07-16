@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA63Xmw9vRYpCT9JV8SZY3kgn8mZoVxA\u003D : 
-  \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D
+  IVertexSource
 {
   private double \u0023\u003DzZmbQyxjzvNi8;
   private double \u0023\u003Dz2tv9reoaTTYE;
@@ -153,11 +153,11 @@ public sealed class \u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA6
   }
 
   public int \u0023\u003DzEGfhsgkVtzG9VdWXew\u003D\u003D(
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+    Vector2 _param1)
   {
     int num1 = -1;
     double num2 = double.MaxValue;
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd jnelpsqX4Q78W2Ejd;
+    Vector2 jnelpsqX4Q78W2Ejd;
     jnelpsqX4Q78W2Ejd.dje_z3GBAX47U_ejd = 0.0;
     jnelpsqX4Q78W2Ejd.dje_zLPL6EZPA_ejd = 0.0;
     int val1_1 = 0;
@@ -198,7 +198,7 @@ public sealed class \u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA6
   }
 
   public void \u0023\u003DzY_9dol4\u003D(
-    out dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+    out Vector2 _param1)
   {
     this.\u0023\u003DzY_9dol4\u003D(0, this.\u0023\u003DzMh7LHTs\u003D.Length - 1, out _param1);
   }
@@ -206,7 +206,7 @@ public sealed class \u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA6
   public void \u0023\u003DzY_9dol4\u003D(
     int _param1,
     int _param2,
-    out dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param3)
+    out Vector2 _param3)
   {
     double val1 = 0.0;
     _param3.dje_z3GBAX47U_ejd = 0.0;
@@ -237,7 +237,7 @@ public sealed class \u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA6
     }
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
     out double _param1,
     out double _param2)
   {
@@ -282,7 +282,7 @@ label_10:
           _param1 = this.\u0023\u003Dz2tv9reoaTTYE;
           _param2 = this.\u0023\u003Dze2_ns4lBIl6l;
           this.\u0023\u003DzMBCBPKkO8rfJ = (\u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA63Xmw9vRYpCT9JV8SZY3kgn8mZoVxA\u003D.\u0023\u003DzN1ACYJw\u003D) 3;
-          return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+          return (Path.\u0023\u003Dz9kUnn38\u003D) 1;
         case (\u0023\u003DzrsBC4o\u0024g7WxjjtUiosw1Qroxj9_Wes4a8loY9f2yA63Xmw9vRYpCT9JV8SZY3kgn8mZoVxA\u003D.\u0023\u003DzN1ACYJw\u003D) 3:
           if (this.\u0023\u003DzE1W0GwnT_2bs >= this.\u0023\u003DzTszzlVGDfSYA)
           {
@@ -298,12 +298,12 @@ label_10:
           this.\u0023\u003Dze2_ns4lBIl6l += (double) num6 * this.\u0023\u003DzfHGEmBteOru9w8l\u0024OQ\u003D\u003D;
           _param1 = this.\u0023\u003Dz2tv9reoaTTYE;
           _param2 = this.\u0023\u003Dze2_ns4lBIl6l;
-          return num5 != (sbyte) 0 ? (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1 : (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
+          return num5 != (sbyte) 0 ? (Path.\u0023\u003Dz9kUnn38\u003D) 1 : (Path.\u0023\u003Dz9kUnn38\u003D) 2;
         default:
           throw new Exception("Unknown Status");
       }
     }
-    return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+    return (Path.\u0023\u003Dz9kUnn38\u003D) 0;
   }
 
   private enum \u0023\u003DzN1ACYJw\u003D

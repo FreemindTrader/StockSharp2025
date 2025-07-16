@@ -9,7 +9,7 @@ public interface IRenderPassData
 {
   IndexRange  \u0023\u003DzDVJjfdbDF74N();
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzSKfyjpipx8dI();
+  IPointSeries \u0023\u003DzSKfyjpipx8dI();
 
   bool \u0023\u003DzDoU1CJhSUWFV();
 

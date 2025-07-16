@@ -11,7 +11,7 @@ using System.Windows.Media.Imaging;
 #nullable disable
 public sealed class \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK3Nco\u0024rbGeT_23aNGi1tfLTsAtQ\u003D\u003D : 
   IDisposable,
-  \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D
+  ISprite2D
 {
   
   private readonly WriteableBitmap \u0023\u003DzaL\u0024oZOu2gmct;

@@ -31,7 +31,7 @@ public class FastOhlcRenderableSeries :
   public FastOhlcRenderableSeries()
   {
     this.DefaultStyleKey = (object) typeof (FastOhlcRenderableSeries);
-    this.ResamplingMode = \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid;
+    this.ResamplingMode = ResamplingMode.Mid;
   }
 
   public double DataPointWidth
@@ -72,21 +72,21 @@ public class FastOhlcRenderableSeries :
 
   protected override void \u0023\u003DznYxDSPc3ewIVoqnDfn0cVVg\u003D()
   {
-    this.ResamplingMode = \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Mid;
+    this.ResamplingMode = ResamplingMode.Mid;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, _param2, false);
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy1, _param2);
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, _param2, false);
+    HitTestInfo zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy1, _param2);
     double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV() ? Math.Abs(zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxZfJER0dbHuS().Y - _param1.Y) : Math.Abs(zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxZfJER0dbHuS().X - _param1.X);
     if (!zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D())
     {
       bool flag1 = num1 < this.\u0023\u003DzcaynwI5AMDdY(zldchDrVsrVyHh6WyiGy2) / this.DataPointWidth / 2.0;
-      ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local = ref zldchDrVsrVyHh6WyiGy2;
+      ref HitTestInfo local = ref zldchDrVsrVyHh6WyiGy2;
       bool flag2;
       zldchDrVsrVyHh6WyiGy2.\u0023\u003DzkNMVgQ88lfxP(flag2 = flag1);
       int num2 = flag2 ? 1 : 0;
@@ -96,19 +96,19 @@ public class FastOhlcRenderableSeries :
   }
 
   protected override double \u0023\u003DzcaynwI5AMDdY(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return (double) this.\u0023\u003DzBz9v6qHDJbMP;
   }
 
   protected override double \u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return _param1.\u0023\u003Dz89dSIjCLFKC0().ToDouble();
   }
 
   protected override double \u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return _param1.\u0023\u003Dzk8BrWRwbV\u0024Y\u0024().ToDouble();
   }
@@ -148,7 +148,7 @@ public class FastOhlcRenderableSeries :
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
     \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
@@ -197,7 +197,7 @@ public class FastOhlcRenderableSeries :
     \u0023\u003Dz5Gmvm1KtOlJYFOleRn5\u0024KYUiNQwyvdLt\u0024UF8gTY\u003D _param3)
   {
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     if (num1 == 1)
       return;

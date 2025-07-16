@@ -8,32 +8,32 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public abstract class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqHtfqtJazhWZBigYHx_OlcSfAmDhFjqopC1alblq1qI3TQ\u003D\u003D : 
-  \u0023\u003DzK11CXzkQ3m66hjsjmkZfa0IWmA\u00243ulgdIko0_SngtdwYu9Bqqu0Oiz8B0NcmOMpUiw\u003D\u003D,
-  \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D
+  IImage,
+  IImageFloat
 {
-  protected \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D \u0023\u003DzA9rFeb8jOAqe;
+  protected IImageFloat \u0023\u003DzA9rFeb8jOAqe;
 
   public \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqHtfqtJazhWZBigYHx_OlcSfAmDhFjqopC1alblq1qI3TQ\u003D\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1)
+    IImageFloat _param1)
   {
     this.\u0023\u003DzA9rFeb8jOAqe = _param1;
   }
 
   public virtual void \u0023\u003DzwGTxcjtWPAOb(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1)
+    IImageFloat _param1)
   {
     this.\u0023\u003DzA9rFeb8jOAqe = _param1;
   }
 
   [SpecialName]
-  public virtual dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd \u0023\u003DzSm8CGbTqdI1U()
+  public virtual Vector2 \u0023\u003DzSm8CGbTqdI1U()
   {
     return this.\u0023\u003DzA9rFeb8jOAqe.\u0023\u003DzSm8CGbTqdI1U();
   }
 
   [SpecialName]
   public virtual void \u0023\u003DzEN24ToKSPvcM(
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+    Vector2 _param1)
   {
     this.\u0023\u003DzA9rFeb8jOAqe.\u0023\u003DzEN24ToKSPvcM(_param1);
   }
@@ -52,12 +52,12 @@ public abstract class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqHtfqtJazhWZBigYHx_O
     return this.\u0023\u003DzA9rFeb8jOAqe.\u0023\u003DzY_LHm_Vxz84xXBUPBw\u003D\u003D();
   }
 
-  public virtual \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzFghv7EA\u003D()
+  public virtual RectangleInt \u0023\u003DzFghv7EA\u003D()
   {
     return this.\u0023\u003DzA9rFeb8jOAqe.\u0023\u003DzFghv7EA\u003D();
   }
 
-  public \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq \u0023\u003Dz9Yt\u0024vKcgxNiu()
+  public Graphics2D \u0023\u003Dz9Yt\u0024vKcgxNiu()
   {
     return this.\u0023\u003DzA9rFeb8jOAqe.\u0023\u003Dz9Yt\u0024vKcgxNiu();
   }
@@ -90,14 +90,14 @@ public abstract class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqHtfqtJazhWZBigYHx_O
   }
 
   public virtual void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1)
+    IImageFloat _param1)
   {
     this.\u0023\u003DzA9rFeb8jOAqe.\u0023\u003DzCadMMgc\u003D(_param1);
   }
 
   public virtual void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2,
+    IImageFloat _param1,
+    RectangleInt _param2,
     int _param3,
     int _param4)
   {

@@ -11,22 +11,22 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<TX, TY> : 
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D,
   \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZnF8py_1UHtuLwP\u0024jqT0El1T
-  where \u0023\u003DzulcL8RA\u003D : IComparable
-  where \u0023\u003DzE8zkRfY\u003D : IComparable
+  where TX : IComparable
+  where TY : IComparable
 {
   private readonly int _xAxisCount;
   private readonly \u0023\u003Dzboj3ckhISv7k6koCkTeIfz13hju1HWdmJxf054ica0kRcYMVoV1Kpw0\u003D \u0023\u003DzXfO9DgaVRj7B;
-  private readonly Func<int, \u0023\u003DzulcL8RA\u003D> \u0023\u003Dzkv0SgdOPhi_0;
-  private readonly Func<int, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzyoB24lWE6a_0;
+  private readonly Func<int, TX> \u0023\u003Dzkv0SgdOPhi_0;
+  private readonly Func<int, TY> \u0023\u003DzyoB24lWE6a_0;
   private readonly int \u0023\u003DzqvN2BUtRI\u0024I\u0024;
 
   public \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024(
     \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D _param1,
-    Func<int, \u0023\u003DzulcL8RA\u003D> _param2,
-    Func<int, \u0023\u003DzE8zkRfY\u003D> _param3,
+    Func<int, TX> _param2,
+    Func<int, TY> _param3,
     int _param4)
   {
     this.\u0023\u003DzqvN2BUtRI\u0024I\u0024 = _param1.\u0023\u003DzUOzVYhDwNbf3();
@@ -75,12 +75,12 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u00
   public IList<int> \u0023\u003Dzv5pY0E1wS\u00245oXMKltw\u003D\u003D(
     \u0023\u003DzPlFvps97y7rWR4vc5KUjR5Ch17PMi3H3ortKPxkjv7KR _param1)
   {
-    return (IList<int>) new \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003Dzlzy8GZzVmC8F(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024, this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003DzsqzVNAysbdO6\u0024LhbKg\u003D\u003D(_param1), this._xAxisCount);
+    return (IList<int>) new \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<TX, TY>.\u0023\u003Dzlzy8GZzVmC8F(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024, this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003DzsqzVNAysbdO6\u0024LhbKg\u003D\u003D(_param1), this._xAxisCount);
   }
 
   public IList<double> \u0023\u003Dz9\u0024EVq3uRz9gb()
   {
-    return (IList<double>) new \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D>.\u0023\u003DzabwcW4v2z9DE(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024, this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003Dz4vbsSxWXNPZJ(), this._xAxisCount);
+    return (IList<double>) new \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<TX, TY>.\u0023\u003DzabwcW4v2z9DE(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024, this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003Dz4vbsSxWXNPZJ(), this._xAxisCount);
   }
 
   private sealed class \u0023\u003DzabwcW4v2z9DE : 

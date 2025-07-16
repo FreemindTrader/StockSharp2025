@@ -228,7 +228,7 @@ public abstract class TooltipModifierBase :
   }
 
   protected override bool \u0023\u003DzD5SquRN7M_9c(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     if (_param1.\u0023\u003DzMeGSfVE\u003D())
       return false;

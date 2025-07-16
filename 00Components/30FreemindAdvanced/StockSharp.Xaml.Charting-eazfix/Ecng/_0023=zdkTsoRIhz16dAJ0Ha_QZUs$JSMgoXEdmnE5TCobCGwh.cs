@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGwh7srNhlw\u003D\u003D : 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
+  IPointSeries
 {
   private readonly \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D[] \u0023\u003DzYw05nwk\u003D;
   private readonly DoubleRange \u0023\u003Dz6w5dj1Plgc_m;

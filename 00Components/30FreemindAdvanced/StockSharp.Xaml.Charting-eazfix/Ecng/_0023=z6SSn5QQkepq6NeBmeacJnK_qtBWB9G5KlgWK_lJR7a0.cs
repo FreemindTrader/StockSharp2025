@@ -11,12 +11,12 @@ using System.Runtime.CompilerServices;
 public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x : 
   \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD>
 {
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzA2V_HFN716My;
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzAmGK7ptW3CxB;
+  private readonly IPointSeries \u0023\u003DzA2V_HFN716My;
+  private readonly IPointSeries \u0023\u003DzAmGK7ptW3CxB;
 
   public \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2)
+    IPointSeries _param1,
+    IPointSeries _param2)
     : base(_param1)
   {
     this.\u0023\u003DzA2V_HFN716My = _param1;
@@ -29,12 +29,12 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x :
     return this.\u0023\u003DzA2V_HFN716My.\u0023\u003DzlpVGw6E\u003D();
   }
 
-  public new \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_\u0024BXHQKXpGkf()
+  public new IPointSeries \u0023\u003Dz_\u0024BXHQKXpGkf()
   {
     return this.\u0023\u003DzA2V_HFN716My;
   }
 
-  public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzkXILACWX1Jlw()
+  public IPointSeries \u0023\u003DzkXILACWX1Jlw()
   {
     return this.\u0023\u003DzAmGK7ptW3CxB;
   }

@@ -5,121 +5,121 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public static class \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D
+public static class Path
 {
   public static bool \u0023\u003DzepfxPD_ghBSfgm\u0024Sfw\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 >= (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1 && _param0 < (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 15;
+    return _param0 >= (Path.\u0023\u003Dz9kUnn38\u003D) 1 && _param0 < (Path.\u0023\u003Dz9kUnn38\u003D) 15;
   }
 
   public static bool \u0023\u003Dz4TAcVWk_Aehk(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 >= (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2 && _param0 < (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 15;
+    return _param0 >= (Path.\u0023\u003Dz9kUnn38\u003D) 2 && _param0 < (Path.\u0023\u003Dz9kUnn38\u003D) 15;
   }
 
   public static bool \u0023\u003DzVHztYKNVoUMf(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+    return _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 0;
   }
 
   public static bool \u0023\u003DzxoYPNFH0kpDd(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+    return _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 1;
   }
 
   public static bool \u0023\u003DznOX_AgLzpfBA(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2;
+    return _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 2;
   }
 
   public static bool \u0023\u003Dz66J9SG5cZjBe(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 3 || _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 4;
+    return _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 3 || _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 4;
   }
 
   public static bool \u0023\u003Dz0aznRu7GVN0VG5ZQ0g\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 3;
+    return _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 3;
   }
 
   public static bool \u0023\u003DzBG9tKX3Mm7lvDOFCUQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 4;
+    return _param0 == (Path.\u0023\u003Dz9kUnn38\u003D) 4;
   }
 
   public static bool \u0023\u003DzsA8XKCU7FXBwlN_B6w\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return (_param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 15) == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 15;
+    return (_param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 15) == (Path.\u0023\u003Dz9kUnn38\u003D) 15;
   }
 
   public static bool \u0023\u003DzsnnNWhx8JhO_(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return (_param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) -49) == (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 79;
+    return (_param0 & (Path.\u0023\u003Dz9kUnn38\u003D) -49) == (Path.\u0023\u003Dz9kUnn38\u003D) 79;
   }
 
   public static bool \u0023\u003Dz_ehLmvd\u00248Yxo2S4AIQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzVHztYKNVoUMf(_param0) || \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzxoYPNFH0kpDd(_param0) || \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzsA8XKCU7FXBwlN_B6w\u003D\u003D(_param0);
+    return Path.\u0023\u003DzVHztYKNVoUMf(_param0) || Path.\u0023\u003DzxoYPNFH0kpDd(_param0) || Path.\u0023\u003DzsA8XKCU7FXBwlN_B6w\u003D\u003D(_param0);
   }
 
   public static bool \u0023\u003Dzp16mpm3L25g4(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return (_param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 32 /*0x20*/) != 0;
+    return (_param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 32 /*0x20*/) != 0;
   }
 
   public static bool \u0023\u003DznTDW5xqZCaJN(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return (_param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 16 /*0x10*/) != 0;
+    return (_param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 16 /*0x10*/) != 0;
   }
 
   public static bool \u0023\u003DzpGThG1wMVrtIIb_jVA\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return (_param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 48 /*0x30*/) != 0;
+    return (_param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 48 /*0x30*/) != 0;
   }
 
   public static bool \u0023\u003DzK1y4UbNBWTXd(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return (_param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 64 /*0x40*/) != 0;
+    return (_param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 64 /*0x40*/) != 0;
   }
 
-  public static \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzO\u0024WqBPD5Al1I(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+  public static Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzO\u0024WqBPD5Al1I(
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 64 /*0x40*/;
+    return _param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 64 /*0x40*/;
   }
 
-  public static \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz7l5mLwfq3t9B(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+  public static Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz7l5mLwfq3t9B(
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) -49;
+    return _param0 & (Path.\u0023\u003Dz9kUnn38\u003D) -49;
   }
 
-  public static \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz8bly24Do430y(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param0)
+  public static Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003Dz8bly24Do430y(
+    Path.\u0023\u003Dz9kUnn38\u003D _param0)
   {
-    return _param0 & (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 48 /*0x30*/;
+    return _param0 & (Path.\u0023\u003Dz9kUnn38\u003D) 48 /*0x30*/;
   }
 
   public static void \u0023\u003DzbtI_RyDZ_PUAvoTRMw\u003D\u003D(
     \u0023\u003DzkNYFXojT3SDc_K8aE\u0024Ajg_dUi3E9GqJy4InVE\u0024\u0024Mw_K\u0024X1_XD9dYMcaiKS\u00243 _param0,
     double _param1)
   {
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzbtI_RyDZ_PUAvoTRMw\u003D\u003D(_param0, _param1, 0);
+    Path.\u0023\u003DzbtI_RyDZ_PUAvoTRMw\u003D\u003D(_param0, _param1, 0);
   }
 
   public static void \u0023\u003DzbtI_RyDZ_PUAvoTRMw\u003D\u003D(

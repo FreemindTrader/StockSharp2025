@@ -22,7 +22,7 @@ public sealed class XyScatterRenderableSeries :
   public XyScatterRenderableSeries()
   {
     this.DefaultStyleKey = (object) typeof (XyScatterRenderableSeries);
-    this.SetCurrentValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.None);
+    this.SetCurrentValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) ResamplingMode.None);
   }
 
   public bool DoClusterResampling
@@ -46,7 +46,7 @@ public sealed class XyScatterRenderableSeries :
   {
     XyScatterRenderableSeries.SomeClass34343 zPKCmcad6Nxc5A8A = new XyScatterRenderableSeries.SomeClass34343();
     zPKCmcad6Nxc5A8A._variableSome3535 = this;
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT hw1ki13vvK4WxOgoljkHyInT = this.\u0023\u003Dz_Y6pODRV4VXF();
     if (hw1ki13vvK4WxOgoljkHyInT == null)
@@ -72,7 +72,7 @@ public sealed class XyScatterRenderableSeries :
       \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(sgkqEcPv0Ah3hMaVex, ftrixUnpTllY1PkTyq, mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D());
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)

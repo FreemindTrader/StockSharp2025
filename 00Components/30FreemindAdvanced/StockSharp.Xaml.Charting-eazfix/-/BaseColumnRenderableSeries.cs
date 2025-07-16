@@ -32,7 +32,7 @@ public abstract class BaseColumnRenderableSeries :
 
   protected BaseColumnRenderableSeries()
   {
-    this.SetCurrentValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max);
+    this.SetCurrentValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, (object) ResamplingMode.Max);
   }
 
   [Obsolete("We're sorry! FastColumnRenderableSeries.FillColor is obsolete, please use FillBrush instead", true)]
@@ -102,15 +102,15 @@ public abstract class BaseColumnRenderableSeries :
     }
   }
 
-  public override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+  public override HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1,
     double _param2,
     bool _param3 = false)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     if (this.IsVisible && this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D() != null)
     {
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = base.\u0023\u003DzjuB\u0024Pa8\u003D(_param1, _param2, _param3);
+      HitTestInfo zldchDrVsrVyHh6WyiGy2 = base.\u0023\u003DzjuB\u0024Pa8\u003D(_param1, _param2, _param3);
       \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D b99xo8DgCb3haWTig = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003Dzy9phceyLTfoo();
       _param1 = b99xo8DgCb3haWTig.\u0023\u003Dz8miGAzg\u003D(_param1);
       zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzo2ftAfxjqC04(b99xo8DgCb3haWTig.\u0023\u003Dz8miGAzg\u003D(zldchDrVsrVyHh6WyiGy2.\u0023\u003DzxZfJER0dbHuS()));
@@ -122,19 +122,19 @@ public abstract class BaseColumnRenderableSeries :
     return zldchDrVsrVyHh6WyiGy1;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    HitTestInfo zldchDrVsrVyHh6WyiGy = HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     if (this.IsVisible)
       zldchDrVsrVyHh6WyiGy = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2), (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, false);
     double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV() ? Math.Abs(zldchDrVsrVyHh6WyiGy.\u0023\u003DzxZfJER0dbHuS().Y - _param1.Y) : Math.Abs(zldchDrVsrVyHh6WyiGy.\u0023\u003DzxZfJER0dbHuS().X - _param1.X);
     if (!zldchDrVsrVyHh6WyiGy.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D())
     {
       bool flag1 = num1 < this.\u0023\u003DzcaynwI5AMDdY(zldchDrVsrVyHh6WyiGy) / this.DataPointWidth / 2.0;
-      ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local = ref zldchDrVsrVyHh6WyiGy;
+      ref HitTestInfo local = ref zldchDrVsrVyHh6WyiGy;
       bool flag2;
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzkNMVgQ88lfxP(flag2 = flag1);
       int num2 = flag2 ? 1 : 0;
@@ -144,7 +144,7 @@ public abstract class BaseColumnRenderableSeries :
   }
 
   protected override double \u0023\u003DzcaynwI5AMDdY(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     double num = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV() ? _param1.\u0023\u003DzxZfJER0dbHuS().Y : _param1.\u0023\u003DzxZfJER0dbHuS().X;
     return (double) this.\u0023\u003Dz6bPMsvVWiXoq(_param1.\u0023\u003DzSkvCFWUKQ7Fw(), num);
@@ -171,7 +171,7 @@ public abstract class BaseColumnRenderableSeries :
     IRenderContext2D _param1,
     IRenderPassData _param2)
   {
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     double num2 = this.\u0023\u003Dz6bPMsvVWiXoq(ftrixUnpTllY1PkTyq, _param2);
     int num3 = (int) this.\u0023\u003DzySDi0_ve2vLaE3cXlA\u003D\u003D();
@@ -203,14 +203,14 @@ public abstract class BaseColumnRenderableSeries :
   }
 
   protected virtual double \u0023\u003Dz6bPMsvVWiXoq(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
+    IPointSeries _param1,
     IRenderPassData _param2)
   {
     return (double) this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), _param1, this.DataPointWidth);
   }
 
   protected virtual double \u0023\u003DzD4XI0DECJD7WyZY4ig\u003D\u003D(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
+    IPointSeries _param1,
     IRenderPassData _param2,
     double _param3,
     double _param4,
@@ -230,7 +230,7 @@ public abstract class BaseColumnRenderableSeries :
 
   private void \u0023\u003DzVxZW_xnKZwWj(
     IRenderContext2D _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
+    IPointSeries _param2,
     int _param3,
     int _param4,
     IRenderPassData _param5,
@@ -364,7 +364,7 @@ public abstract class BaseColumnRenderableSeries :
 
   private void \u0023\u003DzpDE77vG_6Io9(
     IRenderContext2D _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
+    IPointSeries _param2,
     int _param3,
     int _param4,
     IRenderPassData _param5,

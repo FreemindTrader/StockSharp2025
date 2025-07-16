@@ -65,13 +65,13 @@ public sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHpj46ZF8SAoZjx91u0WXwd
     this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D = _param1;
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
+  public ITransform \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
   {
     return this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D.\u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D();
   }
 
   public void \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1)
+    ITransform _param1)
   {
     this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D.\u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D(_param1);
   }

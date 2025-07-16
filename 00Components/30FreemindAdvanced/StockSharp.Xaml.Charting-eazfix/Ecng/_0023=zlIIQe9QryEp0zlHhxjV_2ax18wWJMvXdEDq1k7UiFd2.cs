@@ -36,23 +36,23 @@ public interface IRenderContext2D : IDisposable
     double[] _param5,
     PenLineCap _param6);
 
-  \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzC1WFQPaV7rDp(
+  ISprite2D \u0023\u003DzC1WFQPaV7rDp(
     FrameworkElement _param1);
 
   void Clear();
 
   void \u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     Point _param3);
 
   void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     IEnumerable<Point> _param3);
 
   void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     IEnumerable<Rect> _param2);
 
   void \u0023\u003DzVRUUvzhAr5SR(

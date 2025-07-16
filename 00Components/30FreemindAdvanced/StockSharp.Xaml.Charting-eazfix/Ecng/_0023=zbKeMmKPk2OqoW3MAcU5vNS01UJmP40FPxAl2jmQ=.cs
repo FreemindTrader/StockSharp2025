@@ -47,9 +47,9 @@ public interface \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D :
 
   IRange get_YRange();
 
-  \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D DataSeriesType { get; }
+  DataSeriesType DataSeriesType { get; }
 
-  \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D get_DataSeriesType();
+  DataSeriesType get_DataSeriesType();
 
   IList \u0023\u003DzwQnyySN6xaVC();
 
@@ -122,19 +122,19 @@ public interface \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D :
   IndexRange  GetIndicesRange(
     IRange _param1);
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ToPointSeries(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+  IPointSeries ToPointSeries(
+    ResamplingMode _param1,
     IndexRange  _param2,
     int _param3,
     bool _param4,
     bool? _param5,
     IRange _param6,
-    \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6S86EZeND1KSf7Q5ckAbN6LxyEWNToOUjo1\u00243K\u00241Ho2jpA\u003D\u003D _param7,
+    IPointResamplerFactory _param7,
     object _param8);
 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzqBr63KVJqTvw(
+  IPointSeries \u0023\u003DzqBr63KVJqTvw(
     IList _param1,
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param2,
+    ResamplingMode _param2,
     IndexRange  _param3,
     int _param4,
     bool _param5);
@@ -157,7 +157,7 @@ public interface \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D :
     IComparable _param1,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param2);
 
-  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzDKPxuEruV71w(
+  HitTestInfo \u0023\u003DzDKPxuEruV71w(
     int _param1);
 
   void InvalidateParentSurface(

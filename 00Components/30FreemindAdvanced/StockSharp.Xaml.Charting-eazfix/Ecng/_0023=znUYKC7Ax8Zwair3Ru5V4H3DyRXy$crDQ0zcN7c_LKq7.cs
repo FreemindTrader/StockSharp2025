@@ -15,7 +15,7 @@ public sealed class \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_LKq
 
   public \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_LKq7HenVQrw\u003D\u003D(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.Percentage = _param2.\u0023\u003Dz5EzXoGYMBJeG1JPrc\u0024BWrUc\u003D();

@@ -7,9 +7,9 @@
 using System;
 
 #nullable disable
-public interface \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<\u0023\u003DzE8zkRfY\u003D> : 
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
-  where \u0023\u003DzE8zkRfY\u003D : IComparable
+public interface \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<TY> : 
+  IPointSeries
+  where TY : IComparable
 {
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_\u0024BXHQKXpGkf();
+  IPointSeries \u0023\u003Dz_\u0024BXHQKXpGkf();
 }

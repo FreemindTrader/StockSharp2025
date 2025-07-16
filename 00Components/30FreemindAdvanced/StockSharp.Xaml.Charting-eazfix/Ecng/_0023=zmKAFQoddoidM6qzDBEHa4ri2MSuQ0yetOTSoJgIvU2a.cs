@@ -7,7 +7,7 @@
 #nullable disable
 public sealed class \u0023\u003DzmKAFQoddoidM6qzDBEHa4ri2MSuQ0yetOTSoJgIvU2aq4D0lUbhHhxGL2gv6t6L7uw\u003D\u003D
 {
-  public \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzCD_8hV9go_GB;
+  public RectangleInt \u0023\u003DzCD_8hV9go_GB;
   private int \u0023\u003DzrQGe4cfoOivd;
   private int \u0023\u003Dz3TQoxnnGHEBc;
   private int \u0023\u003Dz3Isqyoim1Fc9;
@@ -15,7 +15,7 @@ public sealed class \u0023\u003DzmKAFQoddoidM6qzDBEHa4ri2MSuQ0yetOTSoJgIvU2aq4D0
 
   public \u0023\u003DzmKAFQoddoidM6qzDBEHa4ri2MSuQ0yetOTSoJgIvU2aq4D0lUbhHhxGL2gv6t6L7uw\u003D\u003D()
   {
-    this.\u0023\u003DzCD_8hV9go_GB = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(0, 0, 0, 0);
+    this.\u0023\u003DzCD_8hV9go_GB = new RectangleInt(0, 0, 0, 0);
     this.\u0023\u003DzrQGe4cfoOivd = 0;
     this.\u0023\u003Dz3TQoxnnGHEBc = 0;
     this.\u0023\u003Dz3Isqyoim1Fc9 = 0;
@@ -45,7 +45,7 @@ public sealed class \u0023\u003DzmKAFQoddoidM6qzDBEHa4ri2MSuQ0yetOTSoJgIvU2aq4D0
 
   public void \u0023\u003DzbRHAWK1yd7\u00242(int _param1, int _param2, int _param3, int _param4)
   {
-    this.\u0023\u003DzCD_8hV9go_GB = new \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas(_param1, _param2, _param3, _param4);
+    this.\u0023\u003DzCD_8hV9go_GB = new RectangleInt(_param1, _param2, _param3, _param4);
     this.\u0023\u003DzCD_8hV9go_GB.\u0023\u003DzO3\u0024NMwQ\u003D();
     this.\u0023\u003Dz5GNuuJx_OgDFAyjKZA\u003D\u003D = true;
   }

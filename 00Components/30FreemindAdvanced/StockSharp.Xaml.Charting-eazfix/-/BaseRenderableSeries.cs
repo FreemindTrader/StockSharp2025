@@ -41,7 +41,7 @@ public abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzigzndanwPIFY = DependencyProperty.Register(nameof (SelectedSeriesStyle), typeof (Style), typeof (BaseRenderableSeries), new PropertyMetadata(new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzBLNrrTpkTSKCvEflkQ\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D = DependencyProperty.Register(nameof (ResamplingMode), typeof (\u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Auto, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dz865pKWj8QZ5WemB7jgEn5T0\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D = DependencyProperty.Register(nameof (ResamplingMode), typeof (ResamplingMode), typeof (BaseRenderableSeries), new PropertyMetadata((object) ResamplingMode.Auto, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dz865pKWj8QZ5WemB7jgEn5T0\u003D)));
   
   public static readonly DependencyProperty AntiAliasingProperty = DependencyProperty.Register(nameof (AntiAliasing), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
@@ -283,11 +283,11 @@ public abstract class BaseRenderableSeries :
     }
   }
 
-  public \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D ResamplingMode
+  public ResamplingMode ResamplingMode
   {
     get
     {
-      return (\u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D) this.GetValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D);
+      return (ResamplingMode) this.GetValue(BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D);
     }
     set
     {
@@ -492,7 +492,7 @@ public abstract class BaseRenderableSeries :
 
   public int \u0023\u003Dz6BuO4fnhj6SX(
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
+    IPointSeries _param2,
     double _param3)
   {
     return this.\u0023\u003Dz6BuO4fnhj6SX(_param1, _param2, (double) _param2.\u0023\u003DzlpVGw6E\u003D(), _param3);
@@ -500,7 +500,7 @@ public abstract class BaseRenderableSeries :
 
   public int \u0023\u003Dz6BuO4fnhj6SX(
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param1,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2,
+    IPointSeries _param2,
     double _param3,
     double _param4)
   {
@@ -518,29 +518,29 @@ public abstract class BaseRenderableSeries :
     return !this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV() ? Math.Min(this.\u0023\u003Dz3L36rdwwPqC0.Height + 1.0, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(num)) : Math.Min(this.\u0023\u003Dz3L36rdwwPqC0.Width + 1.0, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(num));
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+  public HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1,
     bool _param2 = false)
   {
     return this.\u0023\u003DzjuB\u0024Pa8\u003D(_param1, 7.07, _param2);
   }
 
-  public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DznVLFa68vHPHy(
+  public HitTestInfo \u0023\u003DznVLFa68vHPHy(
     Point _param1,
     bool _param2 = false)
   {
     this.\u0023\u003DzcqLltIfVVWk84rM\u0024DsHo97I\u003D = true;
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = this.\u0023\u003DzjuB\u0024Pa8\u003D(_param1, 0.0, _param2);
+    HitTestInfo zldchDrVsrVyHh6WyiGy = this.\u0023\u003DzjuB\u0024Pa8\u003D(_param1, 0.0, _param2);
     this.\u0023\u003DzcqLltIfVVWk84rM\u0024DsHo97I\u003D = false;
     return zldchDrVsrVyHh6WyiGy;
   }
 
-  public virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+  public virtual HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
     Point _param1,
     double _param2,
     bool _param3 = false)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    HitTestInfo zldchDrVsrVyHh6WyiGy = HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D() != null && this.DataSeries != null && this.DataSeries.get_HasValues())
     {
       double num = _param2 + (double) this.StrokeThickness / 2.0;
@@ -553,13 +553,13 @@ public abstract class BaseRenderableSeries :
     return zldchDrVsrVyHh6WyiGy;
   }
 
-  protected virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected virtual HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D vworRoy7o1mkbGdjE = _param3 ? (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 2 : (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1;
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, vworRoy7o1mkbGdjE, !this.\u0023\u003DzcqLltIfVVWk84rM\u0024DsHo97I\u003D);
+    HitTestInfo zldchDrVsrVyHh6WyiGy = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, vworRoy7o1mkbGdjE, !this.\u0023\u003DzcqLltIfVVWk84rM\u0024DsHo97I\u003D);
     if (_param3)
       zldchDrVsrVyHh6WyiGy = this.\u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(_param1, zldchDrVsrVyHh6WyiGy, _param2);
     return zldchDrVsrVyHh6WyiGy;
@@ -571,7 +571,7 @@ public abstract class BaseRenderableSeries :
     return (hw1ki13vvK4WxOgoljkHyInT == null || hw1ki13vvK4WxOgoljkHyInT.Height.IsNaN() ? 0 : (!hw1ki13vvK4WxOgoljkHyInT.Width.IsNaN() ? 1 : 0)) == 0 ? _param1 : Math.Max(hw1ki13vvK4WxOgoljkHyInT.Width, hw1ki13vvK4WxOgoljkHyInT.Height) / 2.0 + _param1;
   }
 
-  protected virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dzr7PRxQcLL3EF(
+  protected virtual HitTestInfo \u0023\u003Dzr7PRxQcLL3EF(
     Point _param1,
     double _param2,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param3,
@@ -600,7 +600,7 @@ public abstract class BaseRenderableSeries :
         _param2 = 7.07;
       index = dataSeries.FindClosestPoint(tuple.Item1, tuple.Item2, num3, num1 * _param2);
     }
-    return index == -1 || !((IComparable) dataSeries.\u0023\u003DzPqsSI6C5MOOb()[index]).IsDefined() ? \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D : this.\u0023\u003Dz1i1kPH8eGFmc(index, _param1, _param2, tuple.Item1);
+    return index == -1 || !((IComparable) dataSeries.\u0023\u003DzPqsSI6C5MOOb()[index]).IsDefined() ? HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D : this.\u0023\u003Dz1i1kPH8eGFmc(index, _param1, _param2, tuple.Item1);
   }
 
   protected Tuple<IComparable, IComparable> \u0023\u003Dzs0Y0\u0024lrpmkkQ(Point _param1)
@@ -628,32 +628,32 @@ public abstract class BaseRenderableSeries :
     return new Tuple<IComparable, IComparable>(comparable1, comparable2);
   }
 
-  protected virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz47Cmf38KMhH_(
+  protected virtual HitTestInfo \u0023\u003Dz47Cmf38KMhH_(
     int _param1)
   {
     return this.DataSeries.\u0023\u003DzDKPxuEruV71w(_param1);
   }
 
-  protected \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz1i1kPH8eGFmc(
+  protected HitTestInfo \u0023\u003Dz1i1kPH8eGFmc(
     int _param1,
     Point _param2,
     double _param3,
     IComparable _param4)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = this.\u0023\u003Dz47Cmf38KMhH_(_param1);
+    HitTestInfo zldchDrVsrVyHh6WyiGy = this.\u0023\u003Dz47Cmf38KMhH_(_param1);
     lock (this.DataSeries.get_SyncRoot())
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzZjtwJshPYJrbgaR43Q\u003D\u003D(!this.DataSeries.get_IsSorted() || this.DataSeries.get_HasValues() && _param4.CompareTo(this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[0]) >= 0 && _param4.CompareTo(this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[this.DataSeries.\u0023\u003DzwQnyySN6xaVC().Count - 1]) <= 0);
     double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0 ? q9i0MXI7Qb9c1V6c0.\u0023\u003DzhL6gsJw\u003D((double) _param1) : this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(zldchDrVsrVyHh6WyiGy.\u0023\u003DztryT5H42SVj8().ToDouble());
     double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(zldchDrVsrVyHh6WyiGy.\u0023\u003Dzd9IAScWutAfJ().ToDouble());
     Point point1 = new Point(num1, num2);
     _param2 = this.\u0023\u003Dzop6vn0GowyiR(_param2, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
-    ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local1 = ref zldchDrVsrVyHh6WyiGy;
+    ref HitTestInfo local1 = ref zldchDrVsrVyHh6WyiGy;
     Point point2;
     zldchDrVsrVyHh6WyiGy.\u0023\u003Dz8RUGHczgdGF57F9Tiw\u003D\u003D(point2 = this.\u0023\u003Dzop6vn0GowyiR(point1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV()));
     Point point3 = point2;
     local1.\u0023\u003Dzo2ftAfxjqC04(point3);
-    ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local2 = ref zldchDrVsrVyHh6WyiGy;
-    ref \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D local3 = ref zldchDrVsrVyHh6WyiGy;
+    ref HitTestInfo local2 = ref zldchDrVsrVyHh6WyiGy;
+    ref HitTestInfo local3 = ref zldchDrVsrVyHh6WyiGy;
     int num3;
     bool flag = (num3 = local3.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D() | Math.Abs(num1 - _param2.X) < _param3 ? 1 : 0) != 0;
     local3.\u0023\u003DzZjtwJshPYJrbgaR43Q\u003D\u003D(num3 != 0);
@@ -664,9 +664,9 @@ public abstract class BaseRenderableSeries :
     return zldchDrVsrVyHh6WyiGy;
   }
 
-  protected virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
+  protected virtual HitTestInfo \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3)
   {
     if (!_param2.\u0023\u003DzMeGSfVE\u003D())
@@ -682,9 +682,9 @@ public abstract class BaseRenderableSeries :
     return _param2;
   }
 
-  protected \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
+  protected HitTestInfo \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     Tuple<double, double> _param4,
     Tuple<double, double> _param5)
@@ -765,7 +765,7 @@ public abstract class BaseRenderableSeries :
 
   protected virtual bool \u0023\u003DzRf_Fn6mPWZva(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     Point _param4,
     Point _param5)
@@ -792,9 +792,9 @@ public abstract class BaseRenderableSeries :
     return flag2;
   }
 
-  protected virtual \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(
+  protected virtual HitTestInfo \u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3)
   {
     if (this.DataSeries != null && this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D() != null)
@@ -818,19 +818,19 @@ public abstract class BaseRenderableSeries :
   }
 
   protected virtual double \u0023\u003DzcaynwI5AMDdY(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return 0.0;
   }
 
   protected virtual double \u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return 0.0;
   }
 
   protected virtual double \u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return 0.0;
   }
@@ -838,7 +838,7 @@ public abstract class BaseRenderableSeries :
   protected virtual bool \u0023\u003DzO6mZ0OGu\u0024l6W(
     Point _param1,
     Rect _param2,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param3)
+    HitTestInfo _param3)
   {
     return _param2.Contains(_param1);
   }
@@ -857,7 +857,7 @@ public abstract class BaseRenderableSeries :
   }
 
   public virtual \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D.\u0023\u003DzZZbJdAS6fDJ\u0024(this, _param1);
   }

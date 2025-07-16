@@ -16,7 +16,7 @@ public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyI
   private static byte[] \u0023\u003DzpQ\u0024NBSHbFmS_;
 
   public static bool \u0023\u003DzilOTiYzU6JIQ(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param0,
+    ResamplingMode _param0,
     IndexRange  _param1,
     int _param2)
   {
@@ -25,8 +25,8 @@ public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyI
     return _param0 != 0 & num1 > num2;
   }
 
-  public abstract \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+  public abstract IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+    ResamplingMode _param1,
     IndexRange  _param2,
     int _param3,
     bool _param4,
@@ -134,7 +134,7 @@ public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyI
     return true;
   }
 
-  protected static \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TX, TY>(
+  protected static IPointSeries \u0023\u003DzndP7N51gjHRMsMhJMjJcSFhKis4Nilo5fw\u003D\u003D<TX, TY>(
     IList<TX> _param0,
     IList<TY> _param1,
     IndexRange  _param2,
@@ -177,7 +177,7 @@ public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyI
     if (!flag)
       \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyIo1W\u0024w\u003D\u003D.\u0023\u003DzZIhJt9xKqxB\u0024TUA5APdhn7U\u003D<TX, TY>(e7xPdElYkaLxaZfcJ2, e7xPdElYkaLxaZfcJ1, p09swszfkFaReRy0aAtDn3C, min, max, num1, num2, _param3, _param4);
     p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-    return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+    return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
   }
 
   private static unsafe void \u0023\u003DzZIhJt9xKqxB\u0024TUA5APdhn7U\u003D(
@@ -309,7 +309,7 @@ public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyI
     int dje_z74NFVDWP292AF7Z_ejd,
     int dje_zQXKRAKZG_ejd);
 
-  protected static \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TX, TY>(
+  protected static IPointSeries \u0023\u003DzO_vyIsVdHIlfh82DU1Fga4A\u003D<TX, TY>(
     IList<TX> _param0,
     IList<TY> _param1,
     IndexRange  _param2,
@@ -353,6 +353,6 @@ public abstract class \u0023\u003DzK11CXzkQ3m66hjsjmkZfa7gEpyy6EjdRjsrA1yjQSXVyI
       }
     }
     p09swszfkFaReRy0aAtDn3C.\u0023\u003DzK_5NMsk\u003D();
-    return (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) p09swszfkFaReRy0aAtDn3C;
+    return (IPointSeries) p09swszfkFaReRy0aAtDn3C;
   }
 }

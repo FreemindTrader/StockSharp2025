@@ -18,7 +18,7 @@ public class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbL
   \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT
 {
   
-  private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003DzsNq\u0024KNPdtTXX;
+  private \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D> \u0023\u003DzsNq\u0024KNPdtTXX;
   
   private Type \u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D;
   
@@ -61,7 +61,7 @@ public class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbL
     if (this.\u0023\u003DzsNq\u0024KNPdtTXX == null)
       return;
     this.\u0023\u003DzsNq\u0024KNPdtTXX.Dispose();
-    this.\u0023\u003DzsNq\u0024KNPdtTXX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) null;
+    this.\u0023\u003DzsNq\u0024KNPdtTXX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D>) null;
   }
 
   protected override void \u0023\u003DzdL613chSNlLB(
@@ -99,7 +99,7 @@ public class \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbL
     if (this.\u0023\u003DzsNq\u0024KNPdtTXX != null && !(type != this.\u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D))
       return;
     dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd znetutjmmvvasEjd = dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd.\u0023\u003DzBv1vB\u0024LEKSF4(this.PointMarkerTemplate, (object) this);
-    this.\u0023\u003DzsNq\u0024KNPdtTXX = new \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(_param1.\u0023\u003DzC1WFQPaV7rDp((FrameworkElement) znetutjmmvvasEjd));
+    this.\u0023\u003DzsNq\u0024KNPdtTXX = new \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D>(_param1.\u0023\u003DzC1WFQPaV7rDp((FrameworkElement) znetutjmmvvasEjd));
     this.\u0023\u003DzgKNUlPGQ5SSX = new Rect(0.0, 0.0, (double) this.\u0023\u003DzsNq\u0024KNPdtTXX.\u0023\u003DzQAdOJsjJeOwf().Width, (double) this.\u0023\u003DzsNq\u0024KNPdtTXX.\u0023\u003DzQAdOJsjJeOwf().Height);
     this.\u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D = type;
   }

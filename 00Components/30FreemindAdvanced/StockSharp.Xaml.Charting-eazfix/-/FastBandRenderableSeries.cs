@@ -128,13 +128,13 @@ public sealed class FastBandRenderableSeries :
     this.\u0023\u003DzKku6BxUK5qV2HDtZFsAnu9o\u003D((FrameworkElement) PointMarker.\u0023\u003DzBv1vB\u0024LEKSF4(this.RolloverMarkerTemplate, (object) this));
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2), _param3);
-    zldchDrVsrVyHh6WyiGy.\u0023\u003DzQ9xCEGz0Gl\u0024q((\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 2);
+    HitTestInfo zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dz__R3\u0024ryThR5H(_param1, this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2), _param3);
+    zldchDrVsrVyHh6WyiGy.\u0023\u003DzQ9xCEGz0Gl\u0024q((DataSeriesType) 2);
     if (_param3 && !zldchDrVsrVyHh6WyiGy.\u0023\u003Dzmh1LiTa467ce())
     {
       Tuple<IComparable, IComparable> tuple = this.\u0023\u003Dzs0Y0\u0024lrpmkkQ(_param1);
@@ -160,13 +160,13 @@ public sealed class FastBandRenderableSeries :
     return zldchDrVsrVyHh6WyiGy;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dzr7PRxQcLL3EF(
+  protected override HitTestInfo \u0023\u003Dzr7PRxQcLL3EF(
     Point _param1,
     double _param2,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D _param3,
     bool _param4)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, _param3, _param4);
+    HitTestInfo zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dzr7PRxQcLL3EF(_param1, _param2, _param3, _param4);
     if (!zldchDrVsrVyHh6WyiGy.\u0023\u003DzMeGSfVE\u003D())
     {
       bool flag = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV();
@@ -181,21 +181,21 @@ public sealed class FastBandRenderableSeries :
     return zldchDrVsrVyHh6WyiGy;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
+  protected override HitTestInfo \u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D();
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = new HitTestInfo();
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz2Iv\u0024sxQuGDBR(_param2.\u0023\u003DztryT5H42SVj8());
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzBswzhzuQHrrX(_param2.\u0023\u003DzpV2MuX1Y\u0024EoN());
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzo2ftAfxjqC04(_param2.\u0023\u003DzsTZhf2NJangnoun2zQ\u003D\u003D());
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzV4wgjRUOXtRf(_param2.\u0023\u003DzSkvCFWUKQ7Fw());
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
+    HitTestInfo zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
     Tuple<double, double> tuple1 = this.\u0023\u003Dz0iTacSsYe_3qOn01Ow\u003D\u003D(_param2.\u0023\u003DzSkvCFWUKQ7Fw(), new Func<int, double>(this.\u0023\u003Dz0D9nQXfw9PS9XdbmK6BuM0s6nQRIlp3hKg\u003D\u003D));
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy3 = this.\u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(_param1, _param2, _param3, tuple1, (Tuple<double, double>) null);
+    HitTestInfo zldchDrVsrVyHh6WyiGy3 = this.\u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(_param1, _param2, _param3, tuple1, (Tuple<double, double>) null);
     Tuple<double, double> tuple2 = this.\u0023\u003Dz0iTacSsYe_3qOn01Ow\u003D\u003D(zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw(), new Func<int, double>(this.\u0023\u003Dz_Zd\u0024WqC1Iyyk5s9eL6trPhOVda_6sRI59g\u003D\u003D));
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy4 = this.\u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(_param1, zldchDrVsrVyHh6WyiGy2, _param3, tuple2, (Tuple<double, double>) null);
+    HitTestInfo zldchDrVsrVyHh6WyiGy4 = this.\u0023\u003DzM23In7fqsY8pIBaQVOMv1JE\u003D(_param1, zldchDrVsrVyHh6WyiGy2, _param3, tuple2, (Tuple<double, double>) null);
     zldchDrVsrVyHh6WyiGy3.\u0023\u003Dz3JT1kQLA9WwW(zldchDrVsrVyHh6WyiGy4.\u0023\u003Dzd9IAScWutAfJ());
     zldchDrVsrVyHh6WyiGy3.\u0023\u003Dz8RUGHczgdGF57F9Tiw\u003D\u003D(zldchDrVsrVyHh6WyiGy4.\u0023\u003DzxZfJER0dbHuS());
     zldchDrVsrVyHh6WyiGy3.\u0023\u003Dzn3o1RS9wuET8(zldchDrVsrVyHh6WyiGy3.\u0023\u003Dzmh1LiTa467ce() || zldchDrVsrVyHh6WyiGy4.\u0023\u003Dzmh1LiTa467ce());
@@ -276,9 +276,9 @@ public sealed class FastBandRenderableSeries :
   protected virtual IList<FastBandRenderableSeries.\u0023\u003Dz71mAcyQ\u003D> \u0023\u003DzKNuqvbEQzJvP6cmJXg\u003D\u003D(
     IRenderContext2D _param1,
     IRenderPassData _param2,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3,
+    IPointSeries _param3,
     IBrush2D _param4,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param5,
+    IPointSeries _param5,
     IBrush2D _param6)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param3, "yPointSeries");
@@ -358,7 +358,7 @@ public sealed class FastBandRenderableSeries :
   private void \u0023\u003DzVyzQAuU\u003D(
     int _param1,
     int _param2,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3,
+    IPointSeries _param3,
     IRenderPassData _param4,
     List<Point> _param5)
   {
@@ -369,7 +369,7 @@ public sealed class FastBandRenderableSeries :
   private void \u0023\u003Dz3fxFWrVp1Ljj(
     int _param1,
     int _param2,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param3,
+    IPointSeries _param3,
     IRenderPassData _param4,
     List<Point> _param5)
   {
@@ -401,8 +401,8 @@ public sealed class FastBandRenderableSeries :
   }
 
   private static int \u0023\u003DzaQ9tpxhMknmu(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param0,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1,
+    IPointSeries _param0,
+    IPointSeries _param1,
     int _param2,
     int _param3)
   {

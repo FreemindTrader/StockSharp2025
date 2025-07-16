@@ -9,21 +9,21 @@ using System;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-public abstract class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D<\u0023\u003DzE8zkRfY\u003D> : 
-  \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<\u0023\u003DzE8zkRfY\u003D>,
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ
-  where \u0023\u003DzE8zkRfY\u003D : IComparable
+public abstract class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D<TY> : 
+  \u0023\u003DzJLUdDOVbHWuhCASQiXx2GOKt\u0024mK6FSeHKsHYvxDmsdABmRtdKA\u003D\u003D<TY>,
+  IPointSeries
+  where TY : IComparable
 {
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DzA2V_HFN716My;
+  private readonly IPointSeries \u0023\u003DzA2V_HFN716My;
 
   protected \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249tysDE2RAfvXg\u003D\u003D(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1)
+    IPointSeries _param1)
   {
     this.\u0023\u003DzA2V_HFN716My = _param1;
   }
 
   [SpecialName]
-  public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz_\u0024BXHQKXpGkf()
+  public IPointSeries \u0023\u003Dz_\u0024BXHQKXpGkf()
   {
     return this.\u0023\u003DzA2V_HFN716My;
   }

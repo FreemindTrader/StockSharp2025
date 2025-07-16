@@ -13,7 +13,7 @@ public sealed class \u0023\u003DzP1B35udtO7gPuZCGGUXpBEt89ZoCjzieaKFuxaIhniqhhAS
   \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D(_param1, _param2, (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeTxLdSjL9CR9M_QGcrFkI\u0024EwQ\u003D\u003D) null)
 {
   public override void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,
@@ -33,20 +33,20 @@ public sealed class \u0023\u003DzP1B35udtO7gPuZCGGUXpBEt89ZoCjzieaKFuxaIhniqhhAS
       int num3 = num1 >> 8;
       int num4 = num2 >> 8;
       int num5 = ppsbKthY7Nkewpng.\u0023\u003DzHlHGfKJZNJsq(num3, num4);
-      \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D nwsEwePinXgsJj4Q;
-      ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local1 = ref nwsEwePinXgsJj4Q;
+      RGBA_Bytes nwsEwePinXgsJj4Q;
+      ref RGBA_Bytes local1 = ref nwsEwePinXgsJj4Q;
       byte[] numArray2 = numArray1;
       int index1 = num5;
       int num6 = index1 + 1;
       int num7 = (int) numArray2[index1];
       local1.\u0023\u003DzcdKuX48ZXN_S = (byte) num7;
-      ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local2 = ref nwsEwePinXgsJj4Q;
+      ref RGBA_Bytes local2 = ref nwsEwePinXgsJj4Q;
       byte[] numArray3 = numArray1;
       int index2 = num6;
       int num8 = index2 + 1;
       int num9 = (int) numArray3[index2];
       local2.\u0023\u003DzoRsAtmfOFDZe = (byte) num9;
-      ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local3 = ref nwsEwePinXgsJj4Q;
+      ref RGBA_Bytes local3 = ref nwsEwePinXgsJj4Q;
       byte[] numArray4 = numArray1;
       int index3 = num8;
       int num10 = index3 + 1;

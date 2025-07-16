@@ -23,9 +23,9 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
   }
 
   public \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIlooN_p__NkwlEdlyT\u0024342dv_HVBZ72oDCymVTQ57Q\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3,
+    RGBA_Bytes _param1,
+    RGBA_Bytes _param2,
+    RGBA_Bytes _param3,
     double _param4,
     double _param5,
     double _param6,
@@ -37,9 +37,9 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
   }
 
   public \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIlooN_p__NkwlEdlyT\u0024342dv_HVBZ72oDCymVTQ57Q\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3,
+    RGBA_Bytes _param1,
+    RGBA_Bytes _param2,
+    RGBA_Bytes _param3,
     double _param4,
     double _param5,
     double _param6,
@@ -63,7 +63,7 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
   }
 
   public void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,

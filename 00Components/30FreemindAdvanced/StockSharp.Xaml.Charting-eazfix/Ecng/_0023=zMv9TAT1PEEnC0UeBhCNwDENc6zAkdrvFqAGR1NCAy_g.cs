@@ -17,13 +17,13 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DX
   private \u0023\u003Dz6Nstc7nJIhBo4TjHStFZzVN5Cm5fXKBZqg0aibOWqtqjvKK8et6cWATFdfyGHXuHvNEa\u0024wU\u003D<\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D.\u0023\u003DzdbdSPUs\u003D> \u0023\u003DzR1USoOs\u003D = new \u0023\u003Dz6Nstc7nJIhBo4TjHStFZzVN5Cm5fXKBZqg0aibOWqtqjvKK8et6cWATFdfyGHXuHvNEa\u0024wU\u003D<\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D.\u0023\u003DzdbdSPUs\u003D>(9);
 
   public \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+    RGBA_Bytes _param1)
   {
     this.\u0023\u003DzPAspEbZEGABL = (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D.\u0023\u003DzxYPqrxIZKv2z6x\u0024L4w\u003D\u003D) new \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D.\u0023\u003DzpZ7GHSjoqAMq(_param1);
   }
 
   public \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+    RGBA_Bytes _param1,
     int _param2)
   {
     if (_param2 > 0)
@@ -52,7 +52,7 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DX
     int height = this.\u0023\u003Dz_C2GvAoW3_Hr.Height;
     this.\u0023\u003DzKim1fnDUtYSm2wp2HA\u003D\u003D = new bool[this.\u0023\u003Dz_C2GvAoW3_Hr.Width * this.\u0023\u003Dz_C2GvAoW3_Hr.Height];
     int index1 = this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003DzHlHGfKJZNJsq(_param2, _param3);
-    this.\u0023\u003DzPAspEbZEGABL.\u0023\u003DzaTdnGk0\u003D(new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1 + 2], (int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1 + 1], (int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1]));
+    this.\u0023\u003DzPAspEbZEGABL.\u0023\u003DzaTdnGk0\u003D(new RGBA_Bytes((int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1 + 2], (int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1 + 1], (int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1]));
     this.\u0023\u003DzkCMzu3TL59D3(_param2, _param3);
     while (this.\u0023\u003DzR1USoOs\u003D.\u0023\u003DzlpVGw6E\u003D() > 0)
     {
@@ -112,7 +112,7 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DX
     private int \u0023\u003DzwmJ4VURmDX8KQIBmEDzX2D0\u003D;
 
     public \u0023\u003DzMhJS18N5pZOh(
-      \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+      RGBA_Bytes _param1,
       int _param2)
       : base(_param1)
     {
@@ -136,7 +136,7 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DX
   }
 
   public sealed class \u0023\u003DzpZ7GHSjoqAMq(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1) : 
+    RGBA_Bytes _param1) : 
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D.\u0023\u003DzxYPqrxIZKv2z6x\u0024L4w\u003D\u003D(_param1)
   {
     public override bool \u0023\u003DzwFYZcXZRFii3(byte[] _param1, int _param2)
@@ -147,17 +147,17 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DX
 
   public abstract class \u0023\u003DzxYPqrxIZKv2z6x\u0024L4w\u003D\u003D
   {
-    protected \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzYwGQP0I\u003D;
-    protected \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz50LNEdU\u003D;
+    protected RGBA_Bytes \u0023\u003DzYwGQP0I\u003D;
+    protected RGBA_Bytes \u0023\u003Dz50LNEdU\u003D;
 
     protected \u0023\u003DzxYPqrxIZKv2z6x\u0024L4w\u003D\u003D(
-      \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+      RGBA_Bytes _param1)
     {
       this.\u0023\u003Dz50LNEdU\u003D = _param1;
     }
 
     public void \u0023\u003DzaTdnGk0\u003D(
-      \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+      RGBA_Bytes _param1)
     {
       this.\u0023\u003DzYwGQP0I\u003D = _param1;
     }

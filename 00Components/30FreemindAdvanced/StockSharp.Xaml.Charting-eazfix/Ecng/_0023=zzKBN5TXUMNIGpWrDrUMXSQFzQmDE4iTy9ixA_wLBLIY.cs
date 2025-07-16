@@ -201,7 +201,7 @@ public abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ 
     IAxis dynWmoFzgH4RlWB0lB = this.\u0023\u003DzFLmJq0JJlr0n();
     IRange abyLt9clZggmJsWhw = this.\u0023\u003DzFQz4aIsJtfEk(_param1, _param2, _param3, dynWmoFzgH4RlWB0lB);
     if (dynWmoFzgH4RlWB0lB.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Always)
-      ((DependencyObject) dynWmoFzgH4RlWB0lB).SetValue(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz3kyPJRWoiKq0, (object) this.\u0023\u003Dz6JLjSbJbacdN(abyLt9clZggmJsWhw, dynWmoFzgH4RlWB0lB));
+      ((DependencyObject) dynWmoFzgH4RlWB0lB).SetValue(AxisBase.\u0023\u003Dz3kyPJRWoiKq0, (object) this.\u0023\u003Dz6JLjSbJbacdN(abyLt9clZggmJsWhw, dynWmoFzgH4RlWB0lB));
     else
       dynWmoFzgH4RlWB0lB.VisibleRange = abyLt9clZggmJsWhw;
   }

@@ -30,7 +30,7 @@ public sealed class TransactionSeriesRolloverLabel :
 
   public TransactionSeriesRolloverLabel(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : base(_param1, _param2)
   {
     this.\u0023\u003DzSgRFDbs\u003D = _param2.Transaction;

@@ -39,8 +39,8 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
       ywl94q52Rf8Lm58bmuAsr.\u0023\u003Dz95kJcrQe23xpIQcxtQ\u003D\u003D(out num3, out num4);
       int num5 = (int) num3;
       int num6 = (int) num4;
-      dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd jnelpsqX4Q78W2Ejd1 = new dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd((double) num3, (double) num4);
-      dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd jnelpsqX4Q78W2Ejd2 = new dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd((double) (num5 + num2), (double) (num6 + num2));
+      Vector2 jnelpsqX4Q78W2Ejd1 = new Vector2((double) num3, (double) num4);
+      Vector2 jnelpsqX4Q78W2Ejd2 = new Vector2((double) (num5 + num2), (double) (num6 + num2));
       double num7;
       float num8 = (float) (num7 = 0.0);
       float num9 = (float) num7;

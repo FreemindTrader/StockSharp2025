@@ -37,12 +37,12 @@
 
 //  int StrokeThickness { get; set; }
 
-//  \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D ResamplingMode { get; set; }
+//  ResamplingMode ResamplingMode { get; set; }
 
-//  \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D get_ResamplingMode();
+//  ResamplingMode get_ResamplingMode();
 
 //  void set_ResamplingMode(
-//    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1);
+//    ResamplingMode _param1);
 
 //  object \u0023\u003DzQavr9eonlwL7DeqLQA\u003D\u003D();
 
@@ -101,21 +101,21 @@
 
 //  bool \u0023\u003DztPaciKMZWysZOtqEskMFjk8\u003D();
 
-//  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+//  HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
 //    Point _param1,
 //    bool _param2);
 
-//  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
+//  HitTestInfo \u0023\u003DzjuB\u0024Pa8\u003D(
 //    Point _param1,
 //    double _param2,
 //    bool _param3);
 
-//  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DznVLFa68vHPHy(
+//  HitTestInfo \u0023\u003DznVLFa68vHPHy(
 //    Point _param1,
 //    bool _param2);
 
 //  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
-//    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1);
+//    HitTestInfo _param1);
 
 //  IRange \u0023\u003Dzq3MgExWxza1L();
 

@@ -11,14 +11,14 @@ public interface \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw
 {
   int \u0023\u003Dz4EvVhZjEuLza();
 
-  \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D \u0023\u003DzCRtaRLiel\u0024uAEyXXM45e2ic\u003D();
+  ResamplingMode \u0023\u003DzCRtaRLiel\u0024uAEyXXM45e2ic\u003D();
 
   bool \u0023\u003DzilOTiYzU6JIQ(
     IndexRange  _param1,
     int _param2);
 
   \u0023\u003DzdDznHH56iLab0VjufJI3RuJskE2fScparOvjg7O3kpseA96mXw\u003D\u003D \u0023\u003Dz8WtlTZw\u003D(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1);
+    ResamplingMode _param1);
 
   IList \u0023\u003Dzb0NWmhityJKy(IList _param1, int _param2);
 

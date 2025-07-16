@@ -180,34 +180,34 @@ public sealed class StackedColumnRenderableSeries :
   }
 
   protected override double \u0023\u003DzPADldLd\u0024JydfjzvZWw\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     Tuple<double, double> tuple = this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzEAAzcP_HlZ8b((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) this, _param1.\u0023\u003DzSkvCFWUKQ7Fw());
     return Math.Min(tuple.Item1, tuple.Item2);
   }
 
   protected override double \u0023\u003DzWRZyMoPrv0mW7TClKA\u003D\u003D(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     Tuple<double, double> tuple = this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzEAAzcP_HlZ8b((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) this, _param1.\u0023\u003DzSkvCFWUKQ7Fw());
     return Math.Max(tuple.Item1, tuple.Item2);
   }
 
   protected override double \u0023\u003DzcaynwI5AMDdY(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzcaynwI5AMDdY((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) this, _param1.\u0023\u003DzSkvCFWUKQ7Fw());
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz__R3\u0024ryThR5H(
+  protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
     Point _param1,
     double _param2,
     bool _param3)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D.\u0023\u003Dzz_6Dy9M\u003D;
+    HitTestInfo zldchDrVsrVyHh6WyiGy1 = HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     if (this.IsVisible)
     {
-      \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2), (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, false);
+      HitTestInfo zldchDrVsrVyHh6WyiGy2 = this.\u0023\u003Dzr7PRxQcLL3EF(_param1, this.\u0023\u003Dz1runmyhnjbZYf6YRbnCukUGsf9D0YvUs2A\u003D\u003D(_param2), (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1, false);
       zldchDrVsrVyHh6WyiGy1 = this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003Dznnv4eJBaYYey(_param1, zldchDrVsrVyHh6WyiGy2, _param2, (\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) this);
     }
     return zldchDrVsrVyHh6WyiGy1;

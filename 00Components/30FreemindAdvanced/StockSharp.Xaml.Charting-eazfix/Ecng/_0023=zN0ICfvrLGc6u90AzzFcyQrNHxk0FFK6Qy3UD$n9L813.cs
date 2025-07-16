@@ -27,7 +27,7 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L81
   public \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8()
   {
     this.LabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22mOTs6M1Rc5MHAxGSwybk_pTjg\u003D\u003D();
-    this.SetCurrentValue(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_3Sui7NwtBg1zT9cdY4yX());
+    this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_3Sui7NwtBg1zT9cdY4yX());
   }
 
   private static void \u0023\u003DzUSope7CyybJN14Toh8PD_14\u003D(
@@ -38,7 +38,7 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L81
       return;
     if (l813isRbgur3b1bKa73O8.LogarithmicBase <= 0.0)
       throw new InvalidOperationException($"The value {l813isRbgur3b1bKa73O8.LogarithmicBase} is not a valid base for the LogarithmicNumericAxis.");
-    dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
+    AxisBase.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
   }
 
   [TypeConverter(typeof (\u0023\u003DzQ4iRj1YTApc8D349VbLPORGhNf\u0024GoPfbAl4lXkr2qbdyCeSLr0MtuSBxZdlBDY\u0024hamCa\u0024IQMK2bl))]

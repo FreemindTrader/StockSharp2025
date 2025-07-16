@@ -70,43 +70,43 @@ public class BubbleChart : UserControl, IComponentConnector
       this.\u0023\u003DzQGCmQMjHdLKS = true;
   }
 
-  private sealed class \u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>(
+  private sealed class \u0023\u003Dz3j8PT5y_w1jq<TX>(
     BubbleSeries2D _param1,
-    Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> _param2) : 
-    BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>
-    where \u0023\u003DzulcL8RA\u003D : IComparable
+    Func<TX, SeriesPoint> _param2) : 
+    BubbleChart.IBubbleSeries<TX>
+    where TX : IComparable
   {
     
     private readonly BubbleSeries2D \u0023\u003DzlkmfHYgr1H49 = _param1 ?? throw new ArgumentNullException("series");
     
-    private readonly Func<\u0023\u003DzulcL8RA\u003D, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException("factory");
+    private readonly Func<TX, SeriesPoint> \u0023\u003DzEcmsYfw\u003D = _param2 ?? throw new ArgumentNullException("factory");
 
-    void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(
-      IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
+    void BubbleChart.IBubbleSeries<TX>.\u0023\u003DzGf68ilGq59TJ0aVKr0K_9TbJNTZpqpXQEMLACkc_Y0FCQ79Vng\u003D\u003D(
+      IEnumerable<TX> _param1,
       IEnumerable<double> _param2,
       IEnumerable<double> _param3)
     {
-      BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
+      BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<TX>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<TX>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
       u5Svx6MhYdSkOpoa._variableSome3535 = this;
-      \u0023\u003DzulcL8RA\u003D[] array = _param1.ToArray<\u0023\u003DzulcL8RA\u003D>();
+      TX[] array = _param1.ToArray<TX>();
       u5Svx6MhYdSkOpoa.\u0023\u003Dzj_CDbmQ\u003D = _param2.ToArray<double>();
       u5Svx6MhYdSkOpoa.\u0023\u003Dz4PSczfw\u003D = _param3.ToArray<double>();
-      this.\u0023\u003DzlkmfHYgr1H49.Points.AddRange(((IEnumerable<\u0023\u003DzulcL8RA\u003D>) array).Select<\u0023\u003DzulcL8RA\u003D, SeriesPoint>(new Func<\u0023\u003DzulcL8RA\u003D, int, SeriesPoint>(u5Svx6MhYdSkOpoa.\u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e)));
+      this.\u0023\u003DzlkmfHYgr1H49.Points.AddRange(((IEnumerable<TX>) array).Select<TX, SeriesPoint>(new Func<TX, int, SeriesPoint>(u5Svx6MhYdSkOpoa.\u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e)));
     }
 
-    void BubbleChart.IBubbleSeries<\u0023\u003DzulcL8RA\u003D>.\u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPS150wdkA6rm99k00_RKpVcVh9qnoQ\u003D\u003D()
+    void BubbleChart.IBubbleSeries<TX>.\u0023\u003Dz8B1nlAnvAhBdiQFqFRFmPS150wdkA6rm99k00_RKpVcVh9qnoQ\u003D\u003D()
     {
       this.\u0023\u003DzlkmfHYgr1H49.Points.Clear();
     }
 
     private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
     {
-      public BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<\u0023\u003DzulcL8RA\u003D> _variableSome3535;
+      public BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<TX> _variableSome3535;
       public double[] \u0023\u003Dzj_CDbmQ\u003D;
       public double[] \u0023\u003Dz4PSczfw\u003D;
 
       public SeriesPoint \u0023\u003DzrzDZ5OVIPyBNGNp\u00241sguT43C6ka8toxgnazul1zIRoYJE94gVtBF8ErxvX1e(
-        \u0023\u003DzulcL8RA\u003D _param1,
+        TX _param1,
         int _param2)
       {
         SeriesPoint point = this._variableSome3535.\u0023\u003DzEcmsYfw\u003D(_param1);

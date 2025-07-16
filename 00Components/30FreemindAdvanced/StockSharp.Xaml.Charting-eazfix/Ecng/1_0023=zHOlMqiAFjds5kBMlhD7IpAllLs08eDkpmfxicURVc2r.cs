@@ -6,14 +6,14 @@
 
 #nullable disable
 public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS59tX8kt5NycH1VqhlyHevx6Nj2htV\u0024(
-  \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1) : 
+  IImageByte _param1) : 
   \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GFfexjP4JI2sgmYygvp7gvAFg\u003D\u003D(_param1)
 {
   public override int Width => this.\u0023\u003Dz1tnZb_4PNlXh.Height;
 
   public override int Height => this.\u0023\u003Dz1tnZb_4PNlXh.Width;
 
-  public override \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzFiIk5SM\u003D(
+  public override RGBA_Bytes \u0023\u003DzFiIk5SM\u003D(
     int _param1,
     int _param2)
   {
@@ -33,7 +33,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzWDirdRobfratFs26wg\u003D\u003D(_param2, _param1, _param3, _param4);
   }
@@ -42,7 +42,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzIw2\u00246wVb_WCdm8lNiA\u003D\u003D(_param2, _param1, _param3, _param4);
   }
@@ -51,7 +51,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dzz4pZLJmkX8\u0024Augw7tA\u003D\u003D(_param2, _param1, _param3, _param4, _param5);
@@ -61,7 +61,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzoE1u2venaydfoEqpjg\u003D\u003D(_param2, _param1, _param3, _param4, _param5);
@@ -71,7 +71,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -82,7 +82,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -93,7 +93,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dz1iCm\u00249JJu\u0024SR_MfckQ\u003D\u003D(_param2, _param1, _param3, _param4, _param5);
@@ -103,7 +103,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzWPXGdZTW9yddqSlTow\u003D\u003D(_param2, _param1, _param3, _param4, _param5);
@@ -113,7 +113,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,
@@ -126,7 +126,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2rHrS5
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,

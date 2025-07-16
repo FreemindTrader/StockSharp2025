@@ -11,6 +11,6 @@ using System.Windows;
 #nullable disable
 public class \u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D
 {
-  public readonly Dictionary<\u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003DzrWDYXY9klZwP = new Dictionary<\u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>();
+  public readonly Dictionary<\u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L, ISprite2D> \u0023\u003DzrWDYXY9klZwP = new Dictionary<\u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L, ISprite2D>();
   public Dictionary<Tuple<string, float, FontWeight>, Size> \u0023\u003Dz02RC_lOz3gDS = new Dictionary<Tuple<string, float, FontWeight>, Size>();
 }

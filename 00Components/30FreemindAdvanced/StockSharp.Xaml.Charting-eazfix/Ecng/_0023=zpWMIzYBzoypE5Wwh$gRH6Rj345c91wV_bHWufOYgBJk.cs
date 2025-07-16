@@ -10,7 +10,7 @@ using System;
 public sealed class \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D : 
   \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT
 {
-  private \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzA6knWDzOHW8u;
+  private ITransform \u0023\u003DzA6knWDzOHW8u;
   private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D \u0023\u003Dz_qJgG_H4iKXd;
   private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D \u0023\u003DzCmfG6yExbxuh;
 
@@ -19,13 +19,13 @@ public sealed class \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJ
   }
 
   public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1)
+    ITransform _param1)
   {
     this.\u0023\u003DzA6knWDzOHW8u = _param1;
   }
 
   public \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1,
+    ITransform _param1,
     double _param2,
     double _param3,
     int _param4)
@@ -34,13 +34,13 @@ public sealed class \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJ
     this.\u0023\u003DzoLjFgpI\u003D(_param2, _param3, _param4);
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
+  public ITransform \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
   {
     return this.\u0023\u003DzA6knWDzOHW8u;
   }
 
   public void \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1)
+    ITransform _param1)
   {
     this.\u0023\u003DzA6knWDzOHW8u = _param1;
   }

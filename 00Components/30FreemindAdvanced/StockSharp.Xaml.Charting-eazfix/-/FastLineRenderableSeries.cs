@@ -83,13 +83,13 @@ public sealed class FastLineRenderableSeries :
     return this.SeriesColor.A != (byte) 0 && this.StrokeThickness > 0 || this.PointMarker != null;
   }
 
-  protected override \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dz47Cmf38KMhH_(
+  protected override HitTestInfo \u0023\u003Dz47Cmf38KMhH_(
     int _param1)
   {
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dz47Cmf38KMhH_(_param1);
-    if (zldchDrVsrVyHh6WyiGy.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 1 && zldchDrVsrVyHh6WyiGy.\u0023\u003DzRkghOq8y7ncj() != (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 4)
+    HitTestInfo zldchDrVsrVyHh6WyiGy = base.\u0023\u003Dz47Cmf38KMhH_(_param1);
+    if (zldchDrVsrVyHh6WyiGy.\u0023\u003DzRkghOq8y7ncj() != (DataSeriesType) 1 && zldchDrVsrVyHh6WyiGy.\u0023\u003DzRkghOq8y7ncj() != (DataSeriesType) 4)
       return zldchDrVsrVyHh6WyiGy;
-    zldchDrVsrVyHh6WyiGy.\u0023\u003DzQ9xCEGz0Gl\u0024q((\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 0);
+    zldchDrVsrVyHh6WyiGy.\u0023\u003DzQ9xCEGz0Gl\u0024q((DataSeriesType) 0);
     switch (this.OhlcDrawMode)
     {
       case \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym.Open:
@@ -114,7 +114,7 @@ public sealed class FastLineRenderableSeries :
   {
     FastLineRenderableSeries.\u0023\u003Dz_e22hQeYq_jf714K2eMYR9I\u003D qeYqJf714K2eMyR9I = new FastLineRenderableSeries.\u0023\u003Dz_e22hQeYq_jf714K2eMYR9I\u003D();
     qeYqJf714K2eMyR9I._variableSome3535 = this;
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
+    IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num = this.PaletteProvider != null ? 1 : 0;
     qeYqJf714K2eMyR9I.\u0023\u003DzxS8dq0E\u003D = this.SeriesColor;
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX sgkqEcPv0Ah3hMaVex = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003Dz3GCmtrCAMr5X(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());

@@ -37,7 +37,7 @@ public struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
   
   public IList \u0023\u003Dz9jZG_9RUfbqZ;
   
-  public \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003DznUzlqIN9ReXL;
+  public IPointSeries \u0023\u003DznUzlqIN9ReXL;
   
   public IndexRange  \u0023\u003DzToxB29CkMiO6;
   

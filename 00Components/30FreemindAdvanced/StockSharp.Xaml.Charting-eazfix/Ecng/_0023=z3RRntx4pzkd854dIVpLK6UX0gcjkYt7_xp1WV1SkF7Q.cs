@@ -17,7 +17,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6UX0gcjkYt7_xp1WV1SkF7QpNXu
   private double \u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<int> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
     bool _param3)
   {
@@ -25,7 +25,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6UX0gcjkYt7_xp1WV1SkF7QpNXu
   }
 
   public override void \u0023\u003DzeU6gWqHRfREz(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<int> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
     IEnumerable<int> _param3,
     bool _param4)
@@ -57,7 +57,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6UX0gcjkYt7_xp1WV1SkF7QpNXu
   }
 
   public override void \u0023\u003Dzs9WSchJIpnF0(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<int> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
     int _param3,
     bool _param4)
@@ -117,7 +117,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6UX0gcjkYt7_xp1WV1SkF7QpNXu
   }
 
   public override void \u0023\u003DzPY2yStN8KbO\u0024(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<int> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
     int _param3,
     IEnumerable<int> _param4,
@@ -185,7 +185,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6UX0gcjkYt7_xp1WV1SkF7QpNXu
   }
 
   private void \u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<int> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
     int _param3,
     bool _param4)

@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D : 
-  \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI
+  IColorType
 {
   
   public float \u0023\u003Dz4WHdt9g\u003D;
@@ -178,9 +178,9 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
     return new \u0023\u003Dz7yw\u0024bvWnV1mnwNrOlw\u003D\u003D<float, float, float, float>(this.\u0023\u003DzcdKuX48ZXN_S, this.\u0023\u003DzoRsAtmfOFDZe, this.\u0023\u003Dz4WHdt9g\u003D, this.\u0023\u003DzKCqGEcs\u003D).GetHashCode();
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D()
+  public RGBA_Bytes \u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D()
   {
-    return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D(this.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D(), this.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D(), this.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D(), this.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D());
+    return new RGBA_Bytes(this.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D(), this.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D(), this.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D(), this.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D());
   }
 
   public \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzLtGfTF6UBAlmvu08d_2IGiE\u003D()
@@ -356,8 +356,8 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
     return this;
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz04GA0by_Hduv0gSskg\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+  public RGBA_Bytes \u0023\u003Dz04GA0by_Hduv0gSskg\u003D\u003D(
+    RGBA_Bytes _param1,
     double _param2)
   {
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D af0lRdvTglyLevjU0_1 = _param1.\u0023\u003DzLtGfTF6UBAlmvu08d_2IGiE\u003D();
@@ -369,9 +369,9 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
     return af0lRdvTglyLevjU0_2.\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
   }
 
-  public static \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI \u0023\u003DznZzeZSJZAeyh()
+  public static IColorType \u0023\u003DznZzeZSJZAeyh()
   {
-    return (\u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI) new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 0.0f, 0.0f, 0.0f);
+    return (IColorType) new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D(0.0f, 0.0f, 0.0f, 0.0f);
   }
 
   public static \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003Dzg6rEYmk4owgNsh7u5peDgww\u003D(

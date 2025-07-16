@@ -699,7 +699,7 @@ label_8:
         return false;
       if (this.\u0023\u003DzezsfKEm_Vb7b\u0024HR11w\u003D\u003D.Current is \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D current)
       {
-        \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy1 = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D();
+        HitTestInfo zldchDrVsrVyHh6WyiGy1 = new HitTestInfo();
         zldchDrVsrVyHh6WyiGy1.\u0023\u003DzBswzhzuQHrrX(current.Y1Value);
         zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz3JT1kQLA9WwW(current.YValue);
         zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzo2ftAfxjqC04(current.Xy1Coordinate);
@@ -707,7 +707,7 @@ label_8:
         zldchDrVsrVyHh6WyiGy1.\u0023\u003DzV4wgjRUOXtRf(current.DataSeriesIndex);
         zldchDrVsrVyHh6WyiGy1.\u0023\u003DzQ9xCEGz0Gl\u0024q(current.DataSeriesType);
         zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzn3o1RS9wuET8(current.IsHit);
-        \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
+        HitTestInfo zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
         this.\u0023\u003Dzaev1bhaFFIDX = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D(current.RenderableSeries, zldchDrVsrVyHh6WyiGy2)
         {
           IsFirstSeries = true

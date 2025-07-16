@@ -13,7 +13,7 @@ public interface \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKg1uYp9C5FyfAbaz1_Vr5UELT
 {
   bool \u0023\u003DzRf_Fn6mPWZva(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     Tuple<IComparable, IComparable> _param4,
     \u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D _param5);

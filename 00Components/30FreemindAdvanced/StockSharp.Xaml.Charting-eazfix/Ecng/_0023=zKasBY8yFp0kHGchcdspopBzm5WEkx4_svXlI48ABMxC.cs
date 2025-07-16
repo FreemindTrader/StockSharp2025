@@ -13,7 +13,7 @@ public interface \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32
 
   int \u0023\u003DzUbuaVJkUy0ct();
 
-  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D ToHitTestInfo(
+  HitTestInfo ToHitTestInfo(
     double _param1,
     double _param2,
     bool _param3);

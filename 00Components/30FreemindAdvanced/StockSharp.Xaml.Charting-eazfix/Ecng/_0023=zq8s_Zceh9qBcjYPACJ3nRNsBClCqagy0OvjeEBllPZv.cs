@@ -12,9 +12,9 @@ public interface \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvLY8yONC
   int \u0023\u003DzG2qqjnQ\u003D();
 
   [IndexerName("#=zMRIb09I=")]
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D this[
+  RGBA_Bytes this[
     int _param1] { get; }
 
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz\u0024CeUvME\u003D(
+  RGBA_Bytes \u0023\u003Dz\u0024CeUvME\u003D(
     int _param1);
 }

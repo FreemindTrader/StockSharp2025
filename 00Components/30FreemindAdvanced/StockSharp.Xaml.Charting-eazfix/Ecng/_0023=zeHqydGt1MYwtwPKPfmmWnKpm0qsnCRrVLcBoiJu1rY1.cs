@@ -6,6 +6,6 @@
 
 #nullable disable
 public interface \u0023\u003DzeHqydGt1MYwtwPKPfmmWnKpm0qsnCRrVLcBoiJu1rY1\u0024cle1yli\u0024ugmg0SNqEDTttQ\u003D\u003D : 
-  \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D
+  IVertexSource
 {
 }

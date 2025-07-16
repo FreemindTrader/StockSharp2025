@@ -13,7 +13,7 @@ public sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI_5HM2NK0NfhEmtavzhUov
   \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D(_param1, _param2, (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeTxLdSjL9CR9M_QGcrFkI\u0024EwQ\u003D\u003D) null)
 {
   public override void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,
@@ -29,22 +29,22 @@ public sealed class \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI_5HM2NK0NfhEmtavzhUov
     nbVwaPinzNveauDt.\u0023\u003Dz95kJcrQe23xpIQcxtQ\u003D\u003D(out num1, out num2);
     int num3 = ppsbKthY7Nkewpng.\u0023\u003DzHlHGfKJZNJsq(num1 >> 8, num2 >> 8);
     byte[] numArray1 = ppsbKthY7Nkewpng.\u0023\u003Dz9b1_JhA\u003D();
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D ziT5e12c = \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D.\u0023\u003DziT5e12c\u003D;
+    RGBA_Bytes ziT5e12c = RGBA_Bytes.\u0023\u003DziT5e12c\u003D;
     do
     {
-      ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local1 = ref ziT5e12c;
+      ref RGBA_Bytes local1 = ref ziT5e12c;
       byte[] numArray2 = numArray1;
       int index1 = num3;
       int num4 = index1 + 1;
       int num5 = (int) numArray2[index1];
       local1.\u0023\u003DzcdKuX48ZXN_S = (byte) num5;
-      ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local2 = ref ziT5e12c;
+      ref RGBA_Bytes local2 = ref ziT5e12c;
       byte[] numArray3 = numArray1;
       int index2 = num4;
       int num6 = index2 + 1;
       int num7 = (int) numArray3[index2];
       local2.\u0023\u003DzoRsAtmfOFDZe = (byte) num7;
-      ref \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D local3 = ref ziT5e12c;
+      ref RGBA_Bytes local3 = ref ziT5e12c;
       byte[] numArray4 = numArray1;
       int index3 = num6;
       num3 = index3 + 1;

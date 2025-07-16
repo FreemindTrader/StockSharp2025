@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L : 
-  \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D
+  ITransform
 {
   public static double \u0023\u003Dz1eyFhpSMTHm_HD8RuWbOOmQ\u003D = 1E-14;
   public double \u0023\u003DznfnGDE0\u003D;
@@ -71,7 +71,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     this.\u0023\u003DznfnGDE0\u003D = _param1.\u0023\u003DznfnGDE0\u003D;
     this.\u0023\u003DzAfkM2pE\u003D = _param1.\u0023\u003DzAfkM2pE\u003D;
@@ -230,7 +230,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003DzX\u0024w9L4r3WLsvdIunBQ\u003D\u003D(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     this.\u0023\u003DznfnGDE0\u003D = _param1.\u0023\u003DznfnGDE0\u003D;
     this.\u0023\u003DzAfkM2pE\u003D = _param1.\u0023\u003DzAfkM2pE\u003D;
@@ -295,14 +295,14 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003Dz4KZdcXydKwCA(
     double _param1)
   {
-    this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(\u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003DzaLGLZvY\u003D(_param1));
+    this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(Affine.\u0023\u003DzaLGLZvY\u003D(_param1));
     return this;
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003DzsIyxzg0\u003D(
     double _param1)
   {
-    this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(\u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dz46p4Z_Q\u003D(_param1));
+    this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(Affine.\u0023\u003Dz46p4Z_Q\u003D(_param1));
     return this;
   }
 
@@ -310,7 +310,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
     double _param1,
     double _param2)
   {
-    this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(\u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dz46p4Z_Q\u003D(_param1, _param2));
+    this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(Affine.\u0023\u003Dz46p4Z_Q\u003D(_param1, _param2));
     return this;
   }
 
@@ -331,7 +331,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L jyL42OwdCmNj6K1L = new \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L(this);
     this.\u0023\u003DznfnGDE0\u003D = _param1.\u0023\u003DznfnGDE0\u003D * jyL42OwdCmNj6K1L.\u0023\u003DznfnGDE0\u003D + _param1.\u0023\u003Dz7H3Feas\u003D * jyL42OwdCmNj6K1L.\u0023\u003DzAfkM2pE\u003D + _param1.\u0023\u003DzHye39Qw\u003D * jyL42OwdCmNj6K1L.\u0023\u003DzXjLAKBo\u003D;
@@ -360,7 +360,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003DzM_u6Th2_i20a5ALVPQ\u003D\u003D(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L jyL42OwdCmNj6K1L = new \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L(this);
     this.\u0023\u003DznfnGDE0\u003D = jyL42OwdCmNj6K1L.\u0023\u003DznfnGDE0\u003D * _param1.\u0023\u003DznfnGDE0\u003D + jyL42OwdCmNj6K1L.\u0023\u003Dz7H3Feas\u003D * _param1.\u0023\u003DzAfkM2pE\u003D;
@@ -384,9 +384,9 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003DzvkcjdyAF1BPRRiyZANwyqSrngyN1o5\u0024PrfKaCHTqjxMH(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D yenmDycPb20wrmFW = _param1;
+    Affine yenmDycPb20wrmFW = _param1;
     yenmDycPb20wrmFW.\u0023\u003DzFU8YZw3Q_iPd();
     return this.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(yenmDycPb20wrmFW);
   }
@@ -401,7 +401,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
   }
 
   public \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003Dz1HA5GXQ3TpJIPgkpz0yWo4A\u003D(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L jyL42OwdCmNj6K1L = new \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L(_param1);
     jyL42OwdCmNj6K1L.\u0023\u003DzFU8YZw3Q_iPd();
@@ -448,7 +448,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
 
   public static \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L operator *(
     \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L _param0,
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L jyL42OwdCmNj6K1L = _param0;
     jyL42OwdCmNj6K1L.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(_param1);
@@ -594,7 +594,7 @@ public sealed class \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2D
     double num2 = 0.0;
     double num3 = 1.0;
     double num4 = 1.0;
-    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L jyL42OwdCmNj6K1L = new \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L(this) * \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003DzaLGLZvY\u003D(-this.\u0023\u003DzYskz_Jw\u003D());
+    \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L jyL42OwdCmNj6K1L = new \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L(this) * Affine.\u0023\u003DzaLGLZvY\u003D(-this.\u0023\u003DzYskz_Jw\u003D());
     jyL42OwdCmNj6K1L.\u0023\u003DzhA5n1D0\u003D(ref num1, ref num2);
     jyL42OwdCmNj6K1L.\u0023\u003DzhA5n1D0\u003D(ref num3, ref num4);
     _param1 = num3 - num1;

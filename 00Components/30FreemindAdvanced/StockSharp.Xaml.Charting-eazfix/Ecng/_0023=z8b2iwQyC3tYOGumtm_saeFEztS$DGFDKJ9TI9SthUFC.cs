@@ -10,7 +10,7 @@ public interface \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGV
   void \u0023\u003DzwJ_PjEc\u003D();
 
   void \u0023\u003DzvJVSzbY\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param1,
+    RGBA_Bytes[] _param1,
     int _param2,
     int _param3,
     int _param4,

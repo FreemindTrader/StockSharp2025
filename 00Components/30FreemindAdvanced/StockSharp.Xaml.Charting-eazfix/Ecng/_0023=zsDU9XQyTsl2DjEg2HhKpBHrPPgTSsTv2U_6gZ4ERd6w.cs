@@ -13,5 +13,5 @@ public interface \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zn
 
   float[] \u0023\u003DzXgTbLkAgh1Pd(out int _param1);
 
-  \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D \u0023\u003Dz8hY71usSYcKH();
+  IImageFloat \u0023\u003Dz8hY71usSYcKH();
 }

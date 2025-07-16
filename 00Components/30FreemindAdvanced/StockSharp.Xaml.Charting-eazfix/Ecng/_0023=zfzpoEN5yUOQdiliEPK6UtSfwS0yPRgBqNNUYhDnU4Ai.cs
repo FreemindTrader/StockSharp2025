@@ -51,14 +51,14 @@ public struct \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3c
   }
 
   public \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1)
+    RGBA_Bytes _param1)
   {
     this.\u0023\u003Dz8PXgNcU\u003D = (byte) (_param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() * 77 + _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() * 150 + _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D() * 29 >> 8);
     this.\u0023\u003Dzgzm8ZP4\u003D = (byte) _param1.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D();
   }
 
   public \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+    RGBA_Bytes _param1,
     int _param2)
   {
     this.\u0023\u003Dz8PXgNcU\u003D = (byte) (_param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() * 77 + _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() * 150 + _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D() * 29 >> 8);

@@ -110,10 +110,10 @@ public abstract class VerticalSliceModifierBase :
   }
 
   protected override bool \u0023\u003DzD5SquRN7M_9c(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     bool flag = !_param1.\u0023\u003DzMeGSfVE\u003D() && _param1.\u0023\u003DzxIOIxNIOU4djmPFSiA\u003D\u003D() && _param1.\u0023\u003DzoDOpfzdgHalT() && _param1.\u0023\u003DzxZfJER0dbHuS().X.IsDefined() && _param1.\u0023\u003DzxZfJER0dbHuS().Y.IsDefined();
-    if (_param1.\u0023\u003DzRkghOq8y7ncj() == (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D) 2)
+    if (_param1.\u0023\u003DzRkghOq8y7ncj() == (DataSeriesType) 2)
       flag &= _param1.\u0023\u003DzsTZhf2NJangnoun2zQ\u003D\u003D().Y.IsDefined();
     return flag;
   }
@@ -164,7 +164,7 @@ public abstract class VerticalSliceModifierBase :
   protected override IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new VerticalSliceModifierBase.SomeClass7654()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new VerticalSliceModifierBase.SomeClass7654()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       _variableSome3535 = this
@@ -514,7 +514,7 @@ public abstract class VerticalSliceModifierBase :
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public VerticalSliceModifierBase _variableSome3535;
 
-    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public HitTestInfo \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DznVLFa68vHPHy(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);

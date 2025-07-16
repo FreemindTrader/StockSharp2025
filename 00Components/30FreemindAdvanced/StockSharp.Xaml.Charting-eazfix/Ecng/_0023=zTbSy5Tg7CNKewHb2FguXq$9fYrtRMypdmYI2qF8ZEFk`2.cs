@@ -8,35 +8,35 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public interface \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> : 
+public interface IDataSeries<TX, TY> : 
   ISuspendable,
   \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
-  where \u0023\u003DzulcL8RA\u003D : IComparable
-  where \u0023\u003DzE8zkRfY\u003D : IComparable
+  where TX : IComparable
+  where TY : IComparable
 {
-  IList<\u0023\u003DzulcL8RA\u003D> XValues { get; }
+  IList<TX> XValues { get; }
 
-  IList<\u0023\u003DzulcL8RA\u003D> get_XValues();
+  IList<TX> get_XValues();
 
-  IList<\u0023\u003DzE8zkRfY\u003D> YValues { get; }
+  IList<TY> YValues { get; }
 
-  IList<\u0023\u003DzE8zkRfY\u003D> get_YValues();
+  IList<TY> get_YValues();
 
-  void Append(\u0023\u003DzulcL8RA\u003D _param1, \u0023\u003DzE8zkRfY\u003D[] _param2);
+  void Append(TX _param1, TY[] _param2);
 
   void Append(
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param1,
-    IEnumerable<\u0023\u003DzE8zkRfY\u003D>[] _param2);
+    IEnumerable<TX> _param1,
+    IEnumerable<TY>[] _param2);
 
-  void GuiUpdateAndClear(\u0023\u003DzulcL8RA\u003D _param1);
+  void GuiUpdateAndClear(TX _param1);
 
   void \u0023\u003DzfEbP\u00247w\u003D(int _param1);
 
   void \u0023\u003DzdDirImQ\u003D(int _param1, int _param2);
 
-  \u0023\u003DzTbSy5Tg7CNKewHb2FguXq\u00249fYrtRMypdmYI2qF8ZEFkx<\u0023\u003DzulcL8RA\u003D, \u0023\u003DzE8zkRfY\u003D> \u0023\u003DzQ8SgRgQ\u003D();
+  IDataSeries<TX, TY> \u0023\u003DzQ8SgRgQ\u003D();
 
-  \u0023\u003DzE8zkRfY\u003D GetYMinAt(int _param1, \u0023\u003DzE8zkRfY\u003D _param2);
+  TY GetYMinAt(int _param1, TY _param2);
 
-  \u0023\u003DzE8zkRfY\u003D GetYMaxAt(int _param1, \u0023\u003DzE8zkRfY\u003D _param2);
+  TY GetYMaxAt(int _param1, TY _param2);
 }

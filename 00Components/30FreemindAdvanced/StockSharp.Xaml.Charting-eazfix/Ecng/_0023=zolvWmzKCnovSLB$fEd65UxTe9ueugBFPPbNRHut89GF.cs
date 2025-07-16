@@ -9,43 +9,43 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GFfexjP4JI2sgmYygvp7gvAFg\u003D\u003D : 
-  \u0023\u003DzK11CXzkQ3m66hjsjmkZfa0IWmA\u00243ulgdIko0_SngtdwYu9Bqqu0Oiz8B0NcmOMpUiw\u003D\u003D,
-  \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D
+  IImage,
+  IImageByte
 {
-  protected \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003Dz1tnZb_4PNlXh;
+  protected IImageByte \u0023\u003Dz1tnZb_4PNlXh;
 
   public \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GFfexjP4JI2sgmYygvp7gvAFg\u003D\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh = _param1;
   }
 
-  public \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003DzJFw\u0024Meew18NY()
+  public IImageByte \u0023\u003DzJFw\u0024Meew18NY()
   {
     return this.\u0023\u003Dz1tnZb_4PNlXh;
   }
 
   public void \u0023\u003Dz_\u0024mEIGkza00R(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh = _param1;
   }
 
   public virtual void \u0023\u003DzwGTxcjtWPAOb(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh = _param1;
   }
 
   [SpecialName]
-  public virtual dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd \u0023\u003DzSm8CGbTqdI1U()
+  public virtual Vector2 \u0023\u003DzSm8CGbTqdI1U()
   {
     return this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzSm8CGbTqdI1U();
   }
 
   [SpecialName]
   public virtual void \u0023\u003DzEN24ToKSPvcM(
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+    Vector2 _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzEN24ToKSPvcM(_param1);
   }
@@ -64,28 +64,28 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     return this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzUQ_vSHSpTLEn();
   }
 
-  public virtual \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas \u0023\u003DzFghv7EA\u003D()
+  public virtual RectangleInt \u0023\u003DzFghv7EA\u003D()
   {
     return this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzFghv7EA\u003D();
   }
 
-  public \u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhMudAMKdvrMNDDglbcZ91kqYRNYmqhSBkIjQ8lsq \u0023\u003Dz9Yt\u0024vKcgxNiu()
+  public Graphics2D \u0023\u003Dz9Yt\u0024vKcgxNiu()
   {
     return this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dz9Yt\u0024vKcgxNiu();
   }
 
-  public \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D \u0023\u003DztvwmoyKu8oUlLP4_gA\u003D\u003D()
+  public IBlenderByte \u0023\u003DztvwmoyKu8oUlLP4_gA\u003D\u003D()
   {
     return this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DztvwmoyKu8oUlLP4_gA\u003D\u003D();
   }
 
   public void \u0023\u003DzgDbPoFoJnrrrHveVDA\u003D\u003D(
-    \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D _param1)
+    IBlenderByte _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzgDbPoFoJnrrrHveVDA\u003D\u003D(_param1);
   }
 
-  public virtual \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzFiIk5SM\u003D(
+  public virtual RGBA_Bytes \u0023\u003DzFiIk5SM\u003D(
     int _param1,
     int _param2)
   {
@@ -102,14 +102,14 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
   }
 
   public virtual void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzCadMMgc\u003D(_param1);
   }
 
   public virtual void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
-    \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSRoXVhBAYRK2CMZOKas _param2,
+    IImageByte _param1,
+    RectangleInt _param2,
     int _param3,
     int _param4)
   {
@@ -119,7 +119,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
   public virtual void \u0023\u003DzR2zHA_0\u003D(
     int _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3)
+    RGBA_Bytes _param3)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzR2zHA_0\u003D(_param1, _param2, _param3);
   }
@@ -127,7 +127,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
   public virtual void \u0023\u003Dz1sAbEWOIYGyA(
     int _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3,
+    RGBA_Bytes _param3,
     byte _param4)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dz1sAbEWOIYGyA(_param1, _param2, _param3, _param4);
@@ -137,7 +137,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzIw2\u00246wVb_WCdm8lNiA\u003D\u003D(_param1, _param2, _param3, _param4);
   }
@@ -146,7 +146,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzWDirdRobfratFs26wg\u003D\u003D(_param1, _param2, _param3, _param4);
   }
@@ -155,7 +155,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzoE1u2venaydfoEqpjg\u003D\u003D(_param1, _param2, _param3, _param4, _param5);
@@ -165,7 +165,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dzz4pZLJmkX8\u0024Augw7tA\u003D\u003D(_param1, _param2, _param3, _param4, _param5);
@@ -175,7 +175,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -186,7 +186,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzWPXGdZTW9yddqSlTow\u003D\u003D(_param1, _param2, _param3, _param4, _param5);
@@ -196,7 +196,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dz1iCm\u00249JJu\u0024SR_MfckQ\u003D\u003D(_param1, _param2, _param3, _param4, _param5);
@@ -206,7 +206,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -217,7 +217,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,
@@ -230,7 +230,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,
@@ -274,7 +274,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    Func<int, int, \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D> _param4,
+    Func<int, int, RGBA_Bytes> _param4,
     byte _param5)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003DzoE1u2venaydfoEqpjg\u003D\u003D(_param1, _param2, _param3, _param4, _param5);
@@ -284,7 +284,7 @@ public abstract class \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut8
     int _param1,
     int _param2,
     int _param3,
-    Func<int, int, \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D> _param4,
+    Func<int, int, RGBA_Bytes> _param4,
     byte[] _param5,
     int _param6)
   {

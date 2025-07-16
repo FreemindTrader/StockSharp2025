@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003Dz5hVyTN88kBn45NAfOxK7MGk1SFtL0qwPlUnZ4Oy87Hk5rX6EEv1tGN5zMVU1Lks\u0024ZKxvzS_NKEcJ : 
-  \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D
+  IScanlineCache
 {
   private int \u0023\u003DzI6P8IpE\u003D;
   private bool \u0023\u003DzoDHPXpxKiW4H;
@@ -51,12 +51,12 @@ public sealed class \u0023\u003Dz5hVyTN88kBn45NAfOxK7MGk1SFtL0qwPlUnZ4Oy87Hk5rX6
     throw new NotImplementedException();
   }
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzoLjFgpI\u003D()
+  public ScanlineSpan \u0023\u003DzoLjFgpI\u003D()
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
+  public ScanlineSpan \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
   {
     throw new NotImplementedException();
   }

@@ -5,14 +5,14 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public interface \u0023\u003DzdJvCkWEpdQt1kv1Y55xjvQs1O7lhMhK_KMMEEQN4PF8pm_6qiHiKh2FEigKI
+public interface IColorType
 {
   \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D \u0023\u003DzLtGfTF6UBAlmvu08d_2IGiE\u003D();
 
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
+  RGBA_Bytes \u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
 
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dz04GA0by_Hduv0gSskg\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param1,
+  RGBA_Bytes \u0023\u003Dz04GA0by_Hduv0gSskg\u003D\u003D(
+    RGBA_Bytes _param1,
     double _param2);
 
   int \u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D();

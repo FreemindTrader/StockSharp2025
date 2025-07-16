@@ -25,7 +25,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
   
   private Color \u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D;
   
-  private \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D \u0023\u003Dz6UP\u0024hXi0MzTB;
+  private DataSeriesType \u0023\u003Dz6UP\u0024hXi0MzTB;
   
   private double \u0023\u003DzZn1qtjmkP\u0024rj;
   
@@ -45,7 +45,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
 
   public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D(
     IRenderableSeries _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2)
+    HitTestInfo _param2)
     : this(_param1)
   {
     this.DataSeriesType = _param2.\u0023\u003DzRkghOq8y7ncj();
@@ -69,12 +69,12 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     }
   }
 
-  public \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D DataSeriesType
+  public DataSeriesType DataSeriesType
   {
     get => this.\u0023\u003Dz6UP\u0024hXi0MzTB;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D>(ref this.\u0023\u003Dz6UP\u0024hXi0MzTB, value, nameof (DataSeriesType));
+      this.\u0023\u003DzwGPLgl8\u003D<DataSeriesType>(ref this.\u0023\u003Dz6UP\u0024hXi0MzTB, value, nameof (DataSeriesType));
     }
   }
 

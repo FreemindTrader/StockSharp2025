@@ -55,10 +55,10 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpL_uDziVaCuPSBVlQjlmPZT8 :
     return (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) null;
   }
 
-  public \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzC1WFQPaV7rDp(
+  public ISprite2D \u0023\u003DzC1WFQPaV7rDp(
     FrameworkElement _param1)
   {
-    return (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D) null;
+    return (ISprite2D) null;
   }
 
   public void Clear()
@@ -66,21 +66,21 @@ public sealed class \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpL_uDziVaCuPSBVlQjlmPZT8 :
   }
 
   public void \u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     Point _param3)
   {
   }
 
   public void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     IEnumerable<Point> _param3)
   {
   }
 
   public void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     IEnumerable<Rect> _param2)
   {
   }

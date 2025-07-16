@@ -8,8 +8,8 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D : 
-  \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D
+public struct Affine : 
+  ITransform
 {
   
   public static double \u0023\u003Dz1eyFhpSMTHm_HD8RuWbOOmQ\u003D = 1E-14;
@@ -26,8 +26,8 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
   
   public double \u0023\u003Dz97j43Ok\u003D;
 
-  public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+  public Affine(
+    Affine _param1)
   {
     this.\u0023\u003DznfnGDE0\u003D = _param1.\u0023\u003DznfnGDE0\u003D;
     this.\u0023\u003DzAfkM2pE\u003D = _param1.\u0023\u003DzAfkM2pE\u003D;
@@ -37,7 +37,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
     this.\u0023\u003Dz97j43Ok\u003D = _param1.\u0023\u003Dz97j43Ok\u003D;
   }
 
-  public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(
+  public Affine(
     double _param1,
     double _param2,
     double _param3,
@@ -53,7 +53,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
     this.\u0023\u003Dz97j43Ok\u003D = _param6;
   }
 
-  public \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(
+  public Affine(
     double[] _param1)
   {
     this.\u0023\u003DznfnGDE0\u003D = _param1[0];
@@ -64,9 +64,9 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
     this.\u0023\u003Dz97j43Ok\u003D = _param1[5];
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003Dz_tAu8gs\u003D()
+  public static Affine \u0023\u003Dz_tAu8gs\u003D()
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D()
+    return new Affine()
     {
       \u0023\u003DznfnGDE0\u003D = 1.0,
       \u0023\u003DzAfkM2pE\u003D = 0.0,
@@ -77,43 +77,43 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
     };
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003DzaLGLZvY\u003D(
+  public static Affine \u0023\u003DzaLGLZvY\u003D(
     double _param0)
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(Math.Cos(_param0), Math.Sin(_param0), -Math.Sin(_param0), Math.Cos(_param0), 0.0, 0.0);
+    return new Affine(Math.Cos(_param0), Math.Sin(_param0), -Math.Sin(_param0), Math.Cos(_param0), 0.0, 0.0);
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003Dz46p4Z_Q\u003D(
+  public static Affine \u0023\u003Dz46p4Z_Q\u003D(
     double _param0)
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(_param0, 0.0, 0.0, _param0, 0.0, 0.0);
+    return new Affine(_param0, 0.0, 0.0, _param0, 0.0, 0.0);
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003Dz46p4Z_Q\u003D(
+  public static Affine \u0023\u003Dz46p4Z_Q\u003D(
     double _param0,
     double _param1)
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(_param0, 0.0, 0.0, _param1, 0.0, 0.0);
+    return new Affine(_param0, 0.0, 0.0, _param1, 0.0, 0.0);
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003Dzi7nEj5k\u003D(
+  public static Affine \u0023\u003Dzi7nEj5k\u003D(
     double _param0,
     double _param1)
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(1.0, 0.0, 0.0, 1.0, _param0, _param1);
+    return new Affine(1.0, 0.0, 0.0, 1.0, _param0, _param1);
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003Dzi7nEj5k\u003D(
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param0)
+  public static Affine \u0023\u003Dzi7nEj5k\u003D(
+    Vector2 _param0)
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(1.0, 0.0, 0.0, 1.0, _param0.dje_z3GBAX47U_ejd, _param0.dje_zLPL6EZPA_ejd);
+    return new Affine(1.0, 0.0, 0.0, 1.0, _param0.dje_z3GBAX47U_ejd, _param0.dje_zLPL6EZPA_ejd);
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D \u0023\u003DzZz\u00247Pv4qUCmJJGM7pg\u003D\u003D(
+  public static Affine \u0023\u003DzZz\u00247Pv4qUCmJJGM7pg\u003D\u003D(
     double _param0,
     double _param1)
   {
-    return new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(1.0, Math.Tan(_param1), Math.Tan(_param0), 1.0, 0.0, 0.0);
+    return new Affine(1.0, Math.Tan(_param1), Math.Tan(_param0), 1.0, 0.0, 0.0);
   }
 
   public void \u0023\u003DzDY8llkk\u003D()
@@ -166,7 +166,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
   }
 
   private void \u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+    Affine _param1)
   {
     double num1 = this.\u0023\u003DznfnGDE0\u003D * _param1.\u0023\u003DznfnGDE0\u003D + this.\u0023\u003DzAfkM2pE\u003D * _param1.\u0023\u003Dz7H3Feas\u003D;
     double num2 = this.\u0023\u003Dz7H3Feas\u003D * _param1.\u0023\u003DznfnGDE0\u003D + this.\u0023\u003Dz9HVnJ6Q\u003D * _param1.\u0023\u003Dz7H3Feas\u003D;
@@ -192,20 +192,20 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
     this.\u0023\u003DzHye39Qw\u003D = num3;
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D operator *(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param0,
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1)
+  public static Affine operator *(
+    Affine _param0,
+    Affine _param1)
   {
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D yenmDycPb20wrmFW = new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(_param0);
+    Affine yenmDycPb20wrmFW = new Affine(_param0);
     yenmDycPb20wrmFW.\u0023\u003Dzspof4d_OGC__MOPj8w\u003D\u003D(_param1);
     return yenmDycPb20wrmFW;
   }
 
-  public static \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D operator +(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param0,
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+  public static Affine operator +(
+    Affine _param0,
+    Vector2 _param1)
   {
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D yenmDycPb20wrmFW = new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(_param0);
+    Affine yenmDycPb20wrmFW = new Affine(_param0);
     yenmDycPb20wrmFW.\u0023\u003DzHye39Qw\u003D += _param1.dje_z3GBAX47U_ejd;
     yenmDycPb20wrmFW.\u0023\u003Dz97j43Ok\u003D += _param1.dje_zLPL6EZPA_ejd;
     return yenmDycPb20wrmFW;
@@ -219,13 +219,13 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
   }
 
   public void \u0023\u003DzhA5n1D0\u003D(
-    ref dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+    ref Vector2 _param1)
   {
     this.\u0023\u003DzhA5n1D0\u003D(ref _param1.dje_z3GBAX47U_ejd, ref _param1.dje_zLPL6EZPA_ejd);
   }
 
   public void \u0023\u003DzhA5n1D0\u003D(
-    ref \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEuHQdGn\u0024BlVr_f8qOhYtPerHvaqyP1QAjNMMJBAJ _param1)
+    ref RectangleDouble _param1)
   {
     this.\u0023\u003DzhA5n1D0\u003D(ref _param1.\u0023\u003DzP4R7yU0\u003D, ref _param1.\u0023\u003DzRNV_Dpk\u003D);
     this.\u0023\u003DzhA5n1D0\u003D(ref _param1.\u0023\u003Dzp55dtus\u003D, ref _param1.\u0023\u003DzSzOWcj8\u003D);
@@ -241,7 +241,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
   }
 
   public void \u0023\u003DzsRRTaEpd403\u0024(
-    ref dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1)
+    ref Vector2 _param1)
   {
     this.\u0023\u003DzsRRTaEpd403\u0024(ref _param1.dje_z3GBAX47U_ejd, ref _param1.dje_zLPL6EZPA_ejd);
   }
@@ -265,7 +265,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
 
   public bool \u0023\u003Dz\u0024ZPx7vNrsbrB()
   {
-    return this.\u0023\u003Dz\u0024ZPx7vNrsbrB(\u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003Dz1eyFhpSMTHm_HD8RuWbOOmQ\u003D);
+    return this.\u0023\u003Dz\u0024ZPx7vNrsbrB(Affine.\u0023\u003Dz1eyFhpSMTHm_HD8RuWbOOmQ\u003D);
   }
 
   public bool \u0023\u003Dz\u0024ZPx7vNrsbrB(double _param1)
@@ -274,7 +274,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
   }
 
   public bool \u0023\u003Dz3qn2Xikes7wo(
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D _param1,
+    Affine _param1,
     double _param2)
   {
     return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzIJMcsNznBVx5x4_1Eg\u003D\u003D(this.\u0023\u003DznfnGDE0\u003D, _param1.\u0023\u003DznfnGDE0\u003D, _param2) && \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzIJMcsNznBVx5x4_1Eg\u003D\u003D(this.\u0023\u003DzAfkM2pE\u003D, _param1.\u0023\u003DzAfkM2pE\u003D, _param2) && \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzIJMcsNznBVx5x4_1Eg\u003D\u003D(this.\u0023\u003Dz7H3Feas\u003D, _param1.\u0023\u003Dz7H3Feas\u003D, _param2) && \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzIJMcsNznBVx5x4_1Eg\u003D\u003D(this.\u0023\u003Dz9HVnJ6Q\u003D, _param1.\u0023\u003Dz9HVnJ6Q\u003D, _param2) && \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzIJMcsNznBVx5x4_1Eg\u003D\u003D(this.\u0023\u003DzHye39Qw\u003D, _param1.\u0023\u003DzHye39Qw\u003D, _param2) && \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzIJMcsNznBVx5x4_1Eg\u003D\u003D(this.\u0023\u003Dz97j43Ok\u003D, _param1.\u0023\u003Dz97j43Ok\u003D, _param2);
@@ -303,7 +303,7 @@ public struct \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMD
     double num2 = 0.0;
     double num3 = 1.0;
     double num4 = 1.0;
-    \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D yenmDycPb20wrmFW = new \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D(this) * \u0023\u003DzGEJCq9O47NiPLstzce6jeKFdpdmlN1Sks7H98KXSg9LvtczoYENMDycPB20wrm_F\u0024w\u003D\u003D.\u0023\u003DzaLGLZvY\u003D(-this.\u0023\u003DzYskz_Jw\u003D());
+    Affine yenmDycPb20wrmFW = new Affine(this) * Affine.\u0023\u003DzaLGLZvY\u003D(-this.\u0023\u003DzYskz_Jw\u003D());
     yenmDycPb20wrmFW.\u0023\u003DzhA5n1D0\u003D(ref num1, ref num2);
     yenmDycPb20wrmFW.\u0023\u003DzhA5n1D0\u003D(ref num3, ref num4);
     _param1 = num3 - num1;

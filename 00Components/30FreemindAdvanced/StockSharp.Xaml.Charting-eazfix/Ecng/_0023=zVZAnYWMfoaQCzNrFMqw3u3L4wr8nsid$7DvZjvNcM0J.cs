@@ -10,7 +10,7 @@ using System;
 public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0JGxzNylJSrzd9csvZOKBkbvSNaARA\u003D : 
   \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSS28mTU1\u0024kh32C_bmlBdAw\u0024tw\u003D\u003D
 {
-  private \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003Dzq_GYkpSu5Wgn;
+  private IImageByte \u0023\u003Dzq_GYkpSu5Wgn;
   private uint \u0023\u003DzfFySSudz\u0024SOy;
   private uint \u0023\u003Dzosch78aT\u00245mK;
   public static int \u0023\u003DzC5aH6eUup5RPeQILWA\u003D\u003D = 8;
@@ -18,7 +18,7 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
   public static int \u0023\u003Dz68hARzzl638oLDKc3Q\u003D\u003D = (int) byte.MaxValue;
 
   public \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0JGxzNylJSrzd9csvZOKBkbvSNaARA\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
+    IImageByte _param1,
     uint _param2,
     uint _param3)
   {
@@ -28,7 +28,7 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
   }
 
   public void \u0023\u003DzotQWOIc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003Dzq_GYkpSu5Wgn = _param1;
   }

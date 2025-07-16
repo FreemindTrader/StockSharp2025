@@ -23,7 +23,7 @@ public abstract class BaseMountainRenderableSeries :
 
   protected BaseMountainRenderableSeries()
     {
-        this.SetCurrentValue( BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, ( object ) \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D.Max );
+        this.SetCurrentValue( BaseRenderableSeries.\u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D, ( object ) ResamplingMode.Max );
     }
 
     public Brush AreaBrush

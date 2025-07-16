@@ -11,16 +11,16 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-public struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D
+public struct HitTestInfo
 {
   
   private bool \u0023\u003DzHOLwNuwoYSmR;
   
-  public static readonly \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dzz_6Dy9M\u003D = new \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D(true);
+  public static readonly HitTestInfo \u0023\u003Dzz_6Dy9M\u003D = new HitTestInfo(true);
   
   private string \u0023\u003DzmOTrHiqM7XRZxgQh2Xw3eOc\u003D;
   
-  private \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D \u0023\u003DznZarDQOrqU8Mpl9Hus6N6TE\u003D;
+  private DataSeriesType \u0023\u003DznZarDQOrqU8Mpl9Hus6N6TE\u003D;
   
   private Point \u0023\u003DzkyZE71ovNzJzK27GmjPXFSQ\u003D;
   
@@ -70,7 +70,7 @@ public struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6Wyi
   
   private ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DzJ\u0024LV5GgS6hjNL4Cw\u0024A\u003D\u003D;
 
-  private \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D(bool _param1)
+  private HitTestInfo(bool _param1)
     : this()
   {
     this.\u0023\u003DzHOLwNuwoYSmR = _param1;
@@ -86,13 +86,13 @@ public struct \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6Wyi
     this.\u0023\u003DzmOTrHiqM7XRZxgQh2Xw3eOc\u003D = _param1;
   }
 
-  public readonly \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D \u0023\u003DzRkghOq8y7ncj()
+  public readonly DataSeriesType \u0023\u003DzRkghOq8y7ncj()
   {
     return this.\u0023\u003DznZarDQOrqU8Mpl9Hus6N6TE\u003D;
   }
 
   public void \u0023\u003DzQ9xCEGz0Gl\u0024q(
-    \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSW1J0DiEBQ7p1fR0bYE\u003D _param1)
+    DataSeriesType _param1)
   {
     this.\u0023\u003DznZarDQOrqU8Mpl9Hus6N6TE\u003D = _param1;
   }

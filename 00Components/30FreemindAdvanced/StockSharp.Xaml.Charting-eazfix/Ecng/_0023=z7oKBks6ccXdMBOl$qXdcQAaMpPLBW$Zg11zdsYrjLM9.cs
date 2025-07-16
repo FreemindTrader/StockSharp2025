@@ -7,7 +7,7 @@
 using System.Runtime.CompilerServices;
 
 #nullable disable
-public class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zdsYrjLM9h5WMNGGTiHmJKqNU7lBp281ChPextAQHX
+public class BlenderBaseBGR
 {
   [SpecialName]
   public int \u0023\u003DzVAoYC\u0024MJfjKU3EUhiA\u003D\u003D() => 24;

@@ -139,17 +139,17 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
   private void \u0023\u003DzNVaj9ergOekrrLbWLQ\u003D\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param3)
+    Path.\u0023\u003Dz9kUnn38\u003D _param3)
   {
-    if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzxoYPNFH0kpDd(_param3))
+    if (Path.\u0023\u003DzxoYPNFH0kpDd(_param3))
       this.\u0023\u003DzAcNdpbnU8gEt(_param1, _param2);
-    else if (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzepfxPD_ghBSfgm\u0024Sfw\u003D\u003D(_param3))
+    else if (Path.\u0023\u003DzepfxPD_ghBSfgm\u0024Sfw\u003D\u003D(_param3))
     {
       this.\u0023\u003DzzwT9Ppmp4oNY(_param1, _param2);
     }
     else
     {
-      if (!\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzsnnNWhx8JhO_(_param3))
+      if (!Path.\u0023\u003DzsnnNWhx8JhO_(_param3))
         return;
       this.\u0023\u003DztiwBhDbLuFUOsQrrVw\u003D\u003D.\u0023\u003DzZi1kLvzptRpH(this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D, this.\u0023\u003Dz0TSvb7PdghSI, this.\u0023\u003Dzm1Oo\u002446Mw4uy);
     }
@@ -305,7 +305,7 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
     if (!this.\u0023\u003Dz0YELd17TIkydbHrlQg\u003D\u003D(_param2) || this.\u0023\u003DzpcCgt8rWqHN2twu8sbfNfrI\u003D() <= 0)
       return false;
     \u0023\u003Dz5hVyTN88kBn45NAfOxK7MGk1SFtL0qwPlUnZ4Oy87Hk5rX6EEv1tGN5zMVU1Lks\u0024ZKxvzS_NKEcJ u1LksZkxvzSNkEcJ = new \u0023\u003Dz5hVyTN88kBn45NAfOxK7MGk1SFtL0qwPlUnZ4Oy87Hk5rX6EEv1tGN5zMVU1Lks\u0024ZKxvzS_NKEcJ(_param1);
-    this.\u0023\u003DzVDkk5LAF0tc28W2lbQYHPVM\u003D((\u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D) u1LksZkxvzSNkEcJ, -1);
+    this.\u0023\u003DzVDkk5LAF0tc28W2lbQYHPVM\u003D((IScanlineCache) u1LksZkxvzSNkEcJ, -1);
     return u1LksZkxvzSNkEcJ.\u0023\u003DzMR0uGGc\u003D();
   }
 
@@ -325,13 +325,13 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
   }
 
   public void \u0023\u003DzR7pES1JXr5Q9(
-    \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D _param1)
+    IVertexSource _param1)
   {
     this.\u0023\u003DzR7pES1JXr5Q9(_param1, 0);
   }
 
   public void \u0023\u003DzR7pES1JXr5Q9(
-    \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D _param1,
+    IVertexSource _param1,
     int _param2)
   {
     _param1.\u0023\u003DzVawdK5C5Lyf_(_param2);
@@ -339,8 +339,8 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
       this.\u0023\u003Dzp_DWHgc\u003D();
     double num1;
     double num2;
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D z9kUnn38;
-    while (!\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003DzVHztYKNVoUMf(z9kUnn38 = _param1.\u0023\u003DzxfekdAs1X3YM(out num1, out num2)))
+    Path.\u0023\u003Dz9kUnn38\u003D z9kUnn38;
+    while (!Path.\u0023\u003DzVHztYKNVoUMf(z9kUnn38 = _param1.\u0023\u003DzxfekdAs1X3YM(out num1, out num2)))
       this.\u0023\u003DzNVaj9ergOekrrLbWLQ\u003D\u003D(num1, num2, z9kUnn38);
   }
 
@@ -389,13 +389,13 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
   }
 
   public bool \u0023\u003DzVDkk5LAF0tc28W2lbQYHPVM\u003D(
-    \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D _param1)
+    IScanlineCache _param1)
   {
     throw new NotImplementedException();
   }
 
   public bool \u0023\u003DzVDkk5LAF0tc28W2lbQYHPVM\u003D(
-    \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D _param1,
+    IScanlineCache _param1,
     int _param2)
   {
     int num1 = this.\u0023\u003DzaytbZH\u00245LIlA - 1;

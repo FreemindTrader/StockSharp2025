@@ -5,29 +5,29 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public interface \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D
+public interface IBlenderByte
 {
   int \u0023\u003DzVAoYC\u0024MJfjKU3EUhiA\u003D\u003D();
 
-  \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzk1hQXoI0sJ98Ijd3VA\u003D\u003D(
+  RGBA_Bytes \u0023\u003Dzk1hQXoI0sJ98Ijd3VA\u003D\u003D(
     byte[] _param1,
     int _param2);
 
   void \u0023\u003DzDjUCkxvYu2E5(
     byte[] _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3,
+    RGBA_Bytes _param3,
     int _param4);
 
   void \u0023\u003Dz1sAbEWOIYGyA(
     byte[] _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3);
+    RGBA_Bytes _param3);
 
   void \u0023\u003Dz_A3pQLKo8i_c(
     byte[] _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param3,
+    RGBA_Bytes[] _param3,
     int _param4,
     byte[] _param5,
     int _param6,

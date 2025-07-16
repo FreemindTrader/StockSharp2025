@@ -3,18 +3,18 @@ using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
 
-#nullable disable
-namespace StockSharp.Charting;
-
-public sealed class DataTemplateToObjectConverter : IValueConverter
+namespace StockSharp.Xaml.Charting
 {
-    public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
+    public class DataTemplateToObjectConverter : IValueConverter
     {
-        return ( object ) ( ( ( FrameworkTemplate ) _param1 ).LoadContent() as FrameworkElement );
-    }
+        public object Convert( object value, Type targetType, object parameter, CultureInfo culture )
+        {
+            return ( object ) ( ( ( FrameworkTemplate ) value ).LoadContent() as FrameworkElement );
+        }
 
-    public object ConvertBack( object _param1, Type _param2, object _param3, CultureInfo _param4 )
-    {
-        throw new NotImplementedException();
+        public object ConvertBack( object value, Type targetType, object parameter, CultureInfo culture )
+        {
+            throw new NotImplementedException();
+        }
     }
 }

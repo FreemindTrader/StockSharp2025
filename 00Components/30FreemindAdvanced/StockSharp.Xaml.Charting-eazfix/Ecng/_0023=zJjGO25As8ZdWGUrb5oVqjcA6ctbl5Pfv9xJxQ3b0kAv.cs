@@ -10,7 +10,7 @@ using System;
 public sealed class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcA6ctbl5Pfv9xJxQ3b0kAvQTOWCTIvw4l_8bFKtsi3MiOjbFeGkpqv9S0LsdC0FDa8\u003D : 
   \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR
 {
-  private \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzA6knWDzOHW8u;
+  private ITransform \u0023\u003DzA6knWDzOHW8u;
   private float \u0023\u003DzYBMFaEs\u003D;
   private float \u0023\u003DzilU_n38\u003D;
   private float \u0023\u003DzKPq\u00246sk\u003D;
@@ -21,13 +21,13 @@ public sealed class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcA6ctbl5Pfv9xJxQ3b0kAvQTOW
   }
 
   public \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcA6ctbl5Pfv9xJxQ3b0kAvQTOWCTIvw4l_8bFKtsi3MiOjbFeGkpqv9S0LsdC0FDa8\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1)
+    ITransform _param1)
   {
     this.\u0023\u003DzA6knWDzOHW8u = _param1;
   }
 
   public \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcA6ctbl5Pfv9xJxQ3b0kAvQTOWCTIvw4l_8bFKtsi3MiOjbFeGkpqv9S0LsdC0FDa8\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1,
+    ITransform _param1,
     double _param2,
     double _param3,
     int _param4)
@@ -36,13 +36,13 @@ public sealed class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcA6ctbl5Pfv9xJxQ3b0kAvQTOW
     this.\u0023\u003DzoLjFgpI\u003D(_param2, _param3, _param4);
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
+  public ITransform \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
   {
     return this.\u0023\u003DzA6knWDzOHW8u;
   }
 
   public void \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1)
+    ITransform _param1)
   {
     this.\u0023\u003DzA6knWDzOHW8u = _param1;
   }

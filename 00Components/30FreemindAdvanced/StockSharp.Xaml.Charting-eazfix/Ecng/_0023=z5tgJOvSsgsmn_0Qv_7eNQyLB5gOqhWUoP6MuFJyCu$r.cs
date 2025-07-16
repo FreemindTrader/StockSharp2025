@@ -25,7 +25,7 @@ public sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u0024
     double _param1,
     double _param2,
     double _param3,
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param4,
+    IPointSeries _param4,
     IndexRange  _param5,
     bool _param6,
     IList _param7,

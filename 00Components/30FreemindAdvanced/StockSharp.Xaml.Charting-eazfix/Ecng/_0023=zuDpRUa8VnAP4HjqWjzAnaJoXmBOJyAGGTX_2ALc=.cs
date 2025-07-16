@@ -64,23 +64,23 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     double[] _param5 = null,
     PenLineCap _param6 = PenLineCap.Round);
 
-  public abstract \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzC1WFQPaV7rDp(
+  public abstract ISprite2D \u0023\u003DzC1WFQPaV7rDp(
     FrameworkElement _param1);
 
   public abstract void Clear();
 
   public abstract void \u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     Point _param3);
 
   public abstract void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     IEnumerable<Point> _param3);
 
   public abstract void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     IEnumerable<Rect> _param2);
 
   public abstract void \u0023\u003DzVRUUvzhAr5SR(
@@ -205,12 +205,12 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
   {
     float num1;
     float num2;
-    IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> squxH0BdrCzw3R4A1gs = this.\u0023\u003Dz2Wbt842C_6lU(_param1, _param6, _param5, out num1, out num2, _param7, _param8);
+    IEnumerable<ISprite2D> squxH0BdrCzw3R4A1gs = this.\u0023\u003Dz2Wbt842C_6lU(_param1, _param6, _param5, out num1, out num2, _param7, _param8);
     if ((double) num1 > _param2.Width || (double) num2 > _param2.Height)
       return;
     Point point = \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003DzA\u00249lzz5I37VY(_param2, new Rect(new Size((double) num1, (double) num2)), _param3, _param4);
     double x = point.X;
-    foreach (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D squxH0BdrCzw3R4A1g in squxH0BdrCzw3R4A1gs)
+    foreach (ISprite2D squxH0BdrCzw3R4A1g in squxH0BdrCzw3R4A1gs)
     {
       this.\u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(squxH0BdrCzw3R4A1g, new Rect(0.0, 0.0, (double) squxH0BdrCzw3R4A1g.Width, (double) squxH0BdrCzw3R4A1g.Height), new Point(x, point.Y));
       x += (double) squxH0BdrCzw3R4A1g.Width;
@@ -229,10 +229,10 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
   {
     float num1;
     float num2;
-    IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> squxH0BdrCzw3R4A1gs = this.\u0023\u003Dz2Wbt842C_6lU(_param1, _param6, _param5, out num1, out num2, _param7, _param8);
+    IEnumerable<ISprite2D> squxH0BdrCzw3R4A1gs = this.\u0023\u003Dz2Wbt842C_6lU(_param1, _param6, _param5, out num1, out num2, _param7, _param8);
     Point point = \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.\u0023\u003DzA\u00249lzz5I37VY(_param2, new Rect(new Size((double) num1, (double) num2)), _param3, _param4);
     double x = point.X;
-    foreach (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D squxH0BdrCzw3R4A1g in squxH0BdrCzw3R4A1gs)
+    foreach (ISprite2D squxH0BdrCzw3R4A1g in squxH0BdrCzw3R4A1gs)
     {
       this.\u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(squxH0BdrCzw3R4A1g, new Rect(0.0, 0.0, (double) squxH0BdrCzw3R4A1g.Width, (double) squxH0BdrCzw3R4A1g.Height), new Point(x, point.Y));
       x += (double) squxH0BdrCzw3R4A1g.Width;
@@ -257,7 +257,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
       return size;
     double num1 = double.MinValue;
     double num2 = double.MinValue;
-    foreach (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D squxH0BdrCzw3R4A1g in ((IEnumerable<char>) new char[10]
+    foreach (ISprite2D squxH0BdrCzw3R4A1g in ((IEnumerable<char>) new char[10]
     {
       '0',
       '1',
@@ -269,7 +269,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
       '7',
       '8',
       '9'
-    }).Select<char, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(yeuvfbi2ga1Q3dva4g.\u0023\u003Dzon\u0024_RZacJIPJ ?? (yeuvfbi2ga1Q3dva4g.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<char, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(yeuvfbi2ga1Q3dva4g.\u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D))))
+    }).Select<char, ISprite2D>(yeuvfbi2ga1Q3dva4g.\u0023\u003Dzon\u0024_RZacJIPJ ?? (yeuvfbi2ga1Q3dva4g.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<char, ISprite2D>(yeuvfbi2ga1Q3dva4g.\u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D))))
     {
       if ((double) squxH0BdrCzw3R4A1g.Width > num1)
         num1 = (double) squxH0BdrCzw3R4A1g.Width;
@@ -281,7 +281,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     return size;
   }
 
-  private IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003Dz2Wbt842C_6lU(
+  private IEnumerable<ISprite2D> \u0023\u003Dz2Wbt842C_6lU(
     string _param1,
     float _param2,
     Color _param3,
@@ -301,18 +301,18 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     if (f6r12fDpdxPyyP9aEtuM.\u0023\u003Dz_xu4jb2w_ISy == new FontWeight())
       f6r12fDpdxPyyP9aEtuM.\u0023\u003Dz_xu4jb2w_ISy = FontWeights.Regular;
     f6r12fDpdxPyyP9aEtuM.\u0023\u003DzyvmR52E\u003D = f6r12fDpdxPyyP9aEtuM.\u0023\u003DzyvmR52E\u003D.Round(0.5f);
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D[] array = _param1.Select<char, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(new Func<char, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(f6r12fDpdxPyyP9aEtuM.\u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D)).ToArray<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>();
+    ISprite2D[] array = _param1.Select<char, ISprite2D>(new Func<char, ISprite2D>(f6r12fDpdxPyyP9aEtuM.\u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D)).ToArray<ISprite2D>();
     if (array.Length == 0)
     {
       _param4 = _param5 = 0.0f;
-      return (IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) array;
+      return (IEnumerable<ISprite2D>) array;
     }
-    _param4 = ((IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) array).Sum<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D ?? (\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D = new Func<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D, float>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzzDoSKNsCWFOBbkjLQ9gARTDb9OQE)));
-    _param5 = ((IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) array).Max<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D ?? (\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D = new Func<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D, float>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzAu4dE94x3JUra9eOoSaMbA41EWq5)));
-    return (IEnumerable<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D>) array;
+    _param4 = ((IEnumerable<ISprite2D>) array).Sum<ISprite2D>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D ?? (\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D = new Func<ISprite2D, float>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzzDoSKNsCWFOBbkjLQ9gARTDb9OQE)));
+    _param5 = ((IEnumerable<ISprite2D>) array).Max<ISprite2D>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D ?? (\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.\u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D = new Func<ISprite2D, float>(\u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzAu4dE94x3JUra9eOoSaMbA41EWq5)));
+    return (IEnumerable<ISprite2D>) array;
   }
 
-  private \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(
+  private ISprite2D \u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(
     char _param1,
     string _param2,
     float _param3,
@@ -326,7 +326,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     e2A9Fzw6Nreq9GI2L.\u0023\u003DzG1z2GkU3awEN(_param4);
     e2A9Fzw6Nreq9GI2L.FontSize = _param3;
     \u0023\u003Dzog2RRdwFHTXCAYv8G696lSlkzE2A9FZw6Nreq9_G\u0024I2L key = e2A9Fzw6Nreq9GI2L;
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D squxH0BdrCzw3R4A1g;
+    ISprite2D squxH0BdrCzw3R4A1g;
     if (!this.\u0023\u003Dzwa3i3hwVZeqr.\u0023\u003DzrWDYXY9klZwP.TryGetValue(key, out squxH0BdrCzw3R4A1g))
     {
       TextBlock textBlock = new TextBlock();
@@ -536,19 +536,19 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
   private sealed class SomeClass34343383
   {
     public static readonly \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D.SomeClass34343383();
-    public static Func<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D, float> \u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D;
-    public static Func<\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D, float> \u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D;
+    public static Func<ISprite2D, float> \u0023\u003Dz2evoJ3eFo9o\u0024LSMlgA\u003D\u003D;
+    public static Func<ISprite2D, float> \u0023\u003DzdQzi_BEk7Gw\u0024M9vJMw\u003D\u003D;
     public static Func<Tuple<Point, Point>, Point> \u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D;
     public static Func<Tuple<Point, Point>, Point> \u0023\u003DzyemWZ3TsoGdbt2LrKg\u003D\u003D;
 
     public float \u0023\u003DzzDoSKNsCWFOBbkjLQ9gARTDb9OQE(
-      \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1)
+      ISprite2D _param1)
     {
       return _param1.Width;
     }
 
     public float \u0023\u003DzAu4dE94x3JUra9eOoSaMbA41EWq5(
-      \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1)
+      ISprite2D _param1)
     {
       return _param1.Height;
     }
@@ -572,7 +572,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
     public Color \u0023\u003Dz9GKNZpE\u003D;
 
-    public \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D(
+    public ISprite2D \u0023\u003Dzt2VsFZgiJvx3sBds6JkN7sI\u003D(
       char _param1)
     {
       return this._variableSome3535.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, this.\u0023\u003Dz9GKNZpE\u003D);
@@ -585,9 +585,9 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     public string \u0023\u003Dzz3d39DAyibKX;
     public float \u0023\u003DzyvmR52E\u003D;
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
-    public Func<char, \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D> \u0023\u003Dzon\u0024_RZacJIPJ;
+    public Func<char, ISprite2D> \u0023\u003Dzon\u0024_RZacJIPJ;
 
-    public \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D(
+    public ISprite2D \u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D(
       char _param1)
     {
       return this._variableSome3535.\u0023\u003DzNDXEipsPX5MUibJptw\u003D\u003D(_param1, this.\u0023\u003Dzz3d39DAyibKX, this.\u0023\u003DzyvmR52E\u003D, this.\u0023\u003Dz_xu4jb2w_ISy, Colors.White);

@@ -14,8 +14,8 @@ public struct \u0023\u003DzyhcKXWtKNGzWjpotzZwU9wVOFmoLJFNi\u0024zfKKFcRBh_0q8pJ
   public int \u0023\u003DzECFlF4okJtqtHXaphw\u003D\u003D() => 1;
 
   public void \u0023\u003DzeUPFg7rJt9ihcuMFyw\u003D\u003D(
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[][] _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param2,
+    RGBA_Bytes[][] _param1,
+    RGBA_Bytes[] _param2,
     int _param3,
     int _param4,
     int _param5)
@@ -25,7 +25,7 @@ public struct \u0023\u003DzyhcKXWtKNGzWjpotzZwU9wVOFmoLJFNi\u0024zfKKFcRBh_0q8pJ
 
   public void \u0023\u003DzGEWK0ZYoSQG3uXAlwg\u003D\u003D(
     \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D _param1,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param2,
+    RGBA_Bytes[] _param2,
     int _param3,
     int _param4,
     int _param5)

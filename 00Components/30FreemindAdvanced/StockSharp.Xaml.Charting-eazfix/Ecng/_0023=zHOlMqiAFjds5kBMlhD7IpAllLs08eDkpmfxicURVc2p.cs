@@ -11,7 +11,7 @@ public sealed class \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2p9iuP
   private float[] \u0023\u003Dzz4UoRxITY5g\u0024;
 
   public \u0023\u003DzHOlMqiAFjds5kBMlhD7IpAllLs08eDkpmfxicURVc2p9iuPHD6Jg\u0024iRKO3NN\u0024UN5aqyEPXU\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1,
+    IImageFloat _param1,
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param2)
     : base(_param1)
   {

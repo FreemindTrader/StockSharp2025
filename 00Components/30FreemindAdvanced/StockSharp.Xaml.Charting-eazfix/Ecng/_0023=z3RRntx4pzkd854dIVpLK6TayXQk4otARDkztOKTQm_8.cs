@@ -171,13 +171,13 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6TayXQk4otARDkztOKTQm_8ZIdn
     this.\u0023\u003DzbLcLtFi5pAw7 = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num4, num19, _param3);
   }
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
+  public ITransform \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D()
   {
     throw new NotImplementedException();
   }
 
   public void \u0023\u003DzRLWOoTmSHt4EDNlIQQ\u003D\u003D(
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEovvhMdDh7AlyPpCANOzxM\u0024uOQ\u003D\u003D _param1)
+    ITransform _param1)
   {
     throw new NotImplementedException();
   }

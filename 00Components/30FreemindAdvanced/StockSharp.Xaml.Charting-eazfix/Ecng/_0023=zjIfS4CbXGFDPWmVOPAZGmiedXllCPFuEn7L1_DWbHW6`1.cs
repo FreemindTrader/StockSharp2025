@@ -27,9 +27,9 @@ public interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmiedXllCPFuEn7L1_DWbHW6rxkxNJj
   void \u0023\u003DzNi0XCnZpx1ge(
     IRenderContext2D _param1);
 
-  \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003Dznnv4eJBaYYey(
+  HitTestInfo \u0023\u003Dznnv4eJBaYYey(
     Point _param1,
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param2,
+    HitTestInfo _param2,
     double _param3,
     T _param4);
 

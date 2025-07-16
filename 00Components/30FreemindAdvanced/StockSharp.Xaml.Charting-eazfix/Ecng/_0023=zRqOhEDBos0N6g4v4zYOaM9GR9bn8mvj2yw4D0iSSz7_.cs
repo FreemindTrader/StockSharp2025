@@ -7,8 +7,8 @@
 using System;
 
 #nullable disable
-public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D : 
-  \u0023\u003Dz3uoqT9PJZU9sx1O75XaUu4Mi0dxanfUdCYT_jJrqlP2iRpVei5Um4fSD89q302QL9g\u003D\u003D
+public sealed class Ellipse : 
+  IVertexSource
 {
   public double \u0023\u003Dzu3VuSd0\u003D;
   public double \u0023\u003DzzFs4Jmc\u003D;
@@ -19,7 +19,7 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHG
   private int \u0023\u003DzWiFSa2\u0024o8viR;
   private bool \u0023\u003DzZRnb1mfJfJVT;
 
-  public \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D()
+  public Ellipse()
   {
     this.\u0023\u003Dzu3VuSd0\u003D = 0.0;
     this.\u0023\u003DzzFs4Jmc\u003D = 0.0;
@@ -31,15 +31,15 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHG
     this.\u0023\u003DzZRnb1mfJfJVT = false;
   }
 
-  public \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D(
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1,
+  public Ellipse(
+    Vector2 _param1,
     double _param2)
     : this(_param1.dje_z3GBAX47U_ejd, _param1.dje_zLPL6EZPA_ejd, _param2, _param2)
   {
   }
 
-  public \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D(
-    dje_zJTTBFK72S5XZHAEG5FKM6MZCVKZRVXNZHXZHS5T5L2J2PZXK92HD8UBNMFBZCB729JNELPSQX4Q78W2_ejd _param1,
+  public Ellipse(
+    Vector2 _param1,
     double _param2,
     double _param3,
     int _param4 = 0,
@@ -48,7 +48,7 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHG
   {
   }
 
-  public \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHGTxXzwywvTCxLE07GZsg\u003D\u003D(
+  public Ellipse(
     double _param1,
     double _param2,
     double _param3,
@@ -116,7 +116,7 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHG
 
   public void \u0023\u003DzVawdK5C5Lyf_(int _param1) => this.\u0023\u003DzWiFSa2\u0024o8viR = 0;
 
-  public \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
+  public Path.\u0023\u003Dz9kUnn38\u003D \u0023\u003DzxfekdAs1X3YM(
     out double _param1,
     out double _param2)
   {
@@ -125,17 +125,17 @@ public sealed class \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7_9VHG
     if (this.\u0023\u003DzWiFSa2\u0024o8viR == this.\u0023\u003DzTToRp9n429_k)
     {
       ++this.\u0023\u003DzWiFSa2\u0024o8viR;
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 95;
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 95;
     }
     if (this.\u0023\u003DzWiFSa2\u0024o8viR > this.\u0023\u003DzTToRp9n429_k)
-      return (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 0;
+      return (Path.\u0023\u003Dz9kUnn38\u003D) 0;
     double num = (double) this.\u0023\u003DzWiFSa2\u0024o8viR / (double) this.\u0023\u003DzTToRp9n429_k * 2.0 * Math.PI;
     if (this.\u0023\u003DzZRnb1mfJfJVT)
       num = 2.0 * Math.PI - num;
     _param1 = this.\u0023\u003Dzu3VuSd0\u003D + Math.Cos(num) * this.\u0023\u003DzIE9S2pQt9vrh;
     _param2 = this.\u0023\u003DzzFs4Jmc\u003D + Math.Sin(num) * this.\u0023\u003DzcfwtWFDezFnt;
     ++this.\u0023\u003DzWiFSa2\u0024o8viR;
-    return this.\u0023\u003DzWiFSa2\u0024o8viR != 1 ? (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 2 : (\u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D) 1;
+    return this.\u0023\u003DzWiFSa2\u0024o8viR != 1 ? (Path.\u0023\u003Dz9kUnn38\u003D) 2 : (Path.\u0023\u003Dz9kUnn38\u003D) 1;
   }
 
   private void \u0023\u003DzgZPyrKEmb\u0024lS2eI6EA\u003D\u003D()

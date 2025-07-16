@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 public class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsGW8Eo\u0024qNNchFzm6GiqJLhJL\u0024N\u0024KU\u003D : 
   \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D
 {
-  protected \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D \u0023\u003DzcRozJLFRZ0BY;
+  protected IImageFloat \u0023\u003DzcRozJLFRZ0BY;
   protected int \u0023\u003DzI6P8IpE\u003D;
   protected int \u0023\u003DzgwQEFlDsVMon;
   protected int \u0023\u003DzFfSb8y0\u003D;
@@ -20,13 +20,13 @@ public class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsG
   private int \u0023\u003Dz9LgI12vZMy\u0024F;
 
   public \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsGW8Eo\u0024qNNchFzm6GiqJLhJL\u0024N\u0024KU\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1)
+    IImageFloat _param1)
   {
     this.\u0023\u003DzotQWOIc\u003D(_param1);
   }
 
   private void \u0023\u003DzotQWOIc\u003D(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D _param1)
+    IImageFloat _param1)
   {
     this.\u0023\u003DzcRozJLFRZ0BY = _param1;
     this.\u0023\u003DzDm5AkRtEtmYQ = this.\u0023\u003DzcRozJLFRZ0BY.\u0023\u003Dz9b1_JhA\u003D();
@@ -35,7 +35,7 @@ public class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXfsG
   }
 
   [SpecialName]
-  public \u0023\u003DzUib3SzczDtLU7txM4YiSeAyIBVtxyMwwBNQ1qn4xMV3gcDwD1G4meJ\u0024PCf2w5LQ6sg\u003D\u003D \u0023\u003Dz8hY71usSYcKH()
+  public IImageFloat \u0023\u003Dz8hY71usSYcKH()
   {
     return this.\u0023\u003DzcRozJLFRZ0BY;
   }

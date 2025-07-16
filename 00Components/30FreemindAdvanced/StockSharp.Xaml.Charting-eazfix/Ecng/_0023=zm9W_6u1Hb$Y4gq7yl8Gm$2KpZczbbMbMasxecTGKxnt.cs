@@ -6,13 +6,13 @@
 
 #nullable disable
 public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00242KpZczbbMbMasxecTGKxnt5bT2l7s_zjbEU3l3ty8PLFOQY2AYvJuIy2kooCOncjwSFLeruKsraew\u003D\u003D : 
-  \u0023\u003DzQN2Zes8h9tElvYmX48o49LUqCmhVH6715qLutxVwykbkhQQD\u0024H5YaimuStgFrV95Cs0brS0\u003D
+  IScanlineCache
 {
   private int \u0023\u003Dz_TCtD0vLATv8;
   private int \u0023\u003DzFfSb8y0\u003D;
   private byte[] \u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D;
   private int \u0023\u003DzOWGC0ICdmJEADlDalg\u003D\u003D;
-  private \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D[] \u0023\u003DzDfv8Db0RWqZH;
+  private ScanlineSpan[] \u0023\u003DzDfv8Db0RWqZH;
   private int \u0023\u003DzJZMDU99kHHNc;
   private int \u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
 
@@ -20,10 +20,10 @@ public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00242KpZczbbMbMasxec
   {
     this.\u0023\u003Dz_TCtD0vLATv8 = 2147483632;
     this.\u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D = new byte[1000];
-    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D[1000];
+    this.\u0023\u003DzDfv8Db0RWqZH = new ScanlineSpan[1000];
   }
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
+  public ScanlineSpan \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()
   {
     ++this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
     return this.\u0023\u003DzDfv8Db0RWqZH[this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D - 1];
@@ -34,7 +34,7 @@ public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00242KpZczbbMbMasxec
     int length = _param2 - _param1 + 3;
     if (length > this.\u0023\u003DzDfv8Db0RWqZH.Length)
     {
-      this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D[length];
+      this.\u0023\u003DzDfv8Db0RWqZH = new ScanlineSpan[length];
       this.\u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D = new byte[length];
     }
     this.\u0023\u003Dz_TCtD0vLATv8 = 2147483632;
@@ -114,7 +114,7 @@ public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00242KpZczbbMbMasxec
 
   public int \u0023\u003DzAK83aWWCVpNB() => this.\u0023\u003DzJZMDU99kHHNc;
 
-  public \u0023\u003Dza9eQbgAsftIGbI_4wdfcZFY6vYc_HYGEdLlgutNQnK5Pj3kj4v\u0024AHgO299qs2MDumslM5o0\u003D \u0023\u003DzoLjFgpI\u003D()
+  public ScanlineSpan \u0023\u003DzoLjFgpI\u003D()
   {
     this.\u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D = 1;
     return this.\u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D();

@@ -9,9 +9,9 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 
 #nullable disable
-public abstract class \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<\u0023\u003DzulcL8RA\u003D> : 
-  \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<\u0023\u003DzulcL8RA\u003D>
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+public abstract class \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<TX> : 
+  \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<TX>
+  where TX : IComparable
 {
   private bool \u0023\u003DzK\u00241TDFxphrRsPn8ch6Qgvpw\u003D;
   private bool \u0023\u003Dz1cZLPq2J2qvlWoRmQSiW0nbao8YakgXF\u0024A\u003D\u003D;
@@ -46,27 +46,27 @@ public abstract class \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u002
   }
 
   public abstract void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
-    \u0023\u003DzulcL8RA\u003D _param2,
+    ISeriesColumn<TX> _param1,
+    TX _param2,
     bool _param3);
 
   public abstract void \u0023\u003DzeU6gWqHRfREz(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    ISeriesColumn<TX> _param1,
     int _param2,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param3,
+    IEnumerable<TX> _param3,
     bool _param4);
 
   public abstract void \u0023\u003DzPY2yStN8KbO\u0024(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    ISeriesColumn<TX> _param1,
     int _param2,
     int _param3,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param4,
+    IEnumerable<TX> _param4,
     bool _param5);
 
   public abstract void \u0023\u003Dzs9WSchJIpnF0(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    ISeriesColumn<TX> _param1,
     int _param2,
-    \u0023\u003DzulcL8RA\u003D _param3,
+    TX _param3,
     bool _param4);
 
   public virtual void Clear()

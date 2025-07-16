@@ -12,5 +12,5 @@ public interface \u0023\u003Dz03BSxVLolBnG92GmtCJpdnMMiHKbm0lEfhZ7FHWVfrkoYnq32o
   void \u0023\u003DzNVaj9ergOekrrLbWLQ\u003D\u003D(
     double _param1,
     double _param2,
-    \u0023\u003DzXTZ2b\u0024bZtVqaBDtznjklQzroW5BoBmJmtevt_T1hEos_Jrh53_wPS4I\u003D.\u0023\u003Dz9kUnn38\u003D _param3);
+    Path.\u0023\u003Dz9kUnn38\u003D _param3);
 }

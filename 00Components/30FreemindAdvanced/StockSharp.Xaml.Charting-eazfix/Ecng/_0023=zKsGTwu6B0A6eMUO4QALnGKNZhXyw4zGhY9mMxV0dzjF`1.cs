@@ -8,9 +8,9 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<\u0023\u003DzulcL8RA\u003D> : 
-  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<\u0023\u003DzulcL8RA\u003D>
-  where \u0023\u003DzulcL8RA\u003D : IComparable
+public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<TX> : 
+  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<TX>
+  where TX : IComparable
 {
   public \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE()
   {
@@ -36,33 +36,33 @@ public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJY
   }
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
-    \u0023\u003DzulcL8RA\u003D _param2,
+    ISeriesColumn<TX> _param1,
+    TX _param2,
     bool _param3)
   {
   }
 
   public override void \u0023\u003DzeU6gWqHRfREz(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    ISeriesColumn<TX> _param1,
     int _param2,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param3,
+    IEnumerable<TX> _param3,
     bool _param4)
   {
   }
 
   public override void \u0023\u003Dzs9WSchJIpnF0(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    ISeriesColumn<TX> _param1,
     int _param2,
-    \u0023\u003DzulcL8RA\u003D _param3,
+    TX _param3,
     bool _param4)
   {
   }
 
   public override void \u0023\u003DzPY2yStN8KbO\u0024(
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<\u0023\u003DzulcL8RA\u003D> _param1,
+    ISeriesColumn<TX> _param1,
     int _param2,
     int _param3,
-    IEnumerable<\u0023\u003DzulcL8RA\u003D> _param4,
+    IEnumerable<TX> _param4,
     bool _param5)
   {
   }

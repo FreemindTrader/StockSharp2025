@@ -196,7 +196,7 @@ public sealed class CategoryDateTimeAxis :
 
   public override void \u0023\u003Dzs15X3Ar32F1\u0024(
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1 = default (\u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D),
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2 = null)
+    IPointSeries _param2 = null)
   {
     this.\u0023\u003DzvScByjqid0AM = base.\u0023\u003Dz0RktzzbyC\u002468();
     if (_param2 != null)
@@ -206,7 +206,7 @@ public sealed class CategoryDateTimeAxis :
     else
     {
       this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzJqKipxOjoBSS = false;
-      this.\u0023\u003DzvScByjqid0AM.\u0023\u003DznUzlqIN9ReXL = (\u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ) null;
+      this.\u0023\u003DzvScByjqid0AM.\u0023\u003DznUzlqIN9ReXL = (IPointSeries) null;
     }
     base.\u0023\u003Dzs15X3Ar32F1\u0024(_param1, _param2);
   }
@@ -221,7 +221,7 @@ public sealed class CategoryDateTimeAxis :
   }
 
   private void \u0023\u003DzFDFY\u0024WdH2REe(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1)
+    IPointSeries _param1)
   {
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003DzJqKipxOjoBSS = true;
     this.\u0023\u003DzvScByjqid0AM.\u0023\u003DznUzlqIN9ReXL = _param1;

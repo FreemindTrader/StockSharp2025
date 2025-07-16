@@ -158,7 +158,7 @@ public abstract class InspectSeriesModifierBase :
   protected virtual IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new InspectSeriesModifierBase.SomeClass343()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.SomeClass343()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       _variableSome3535 = this
@@ -169,7 +169,7 @@ public abstract class InspectSeriesModifierBase :
     Point _param1,
     double _param2)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D>(new InspectSeriesModifierBase.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       \u0023\u003DzADxu\u00246OzU_cF = _param2,
@@ -178,7 +178,7 @@ public abstract class InspectSeriesModifierBase :
   }
 
   protected IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
-    Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D> _param1)
+    Func<IRenderableSeries, HitTestInfo> _param1)
   {
     return (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) new InspectSeriesModifierBase.\u0023\u003Dz89RgnopV4nZgv5NePKVh5qU\u003D(-2)
     {
@@ -188,7 +188,7 @@ public abstract class InspectSeriesModifierBase :
   }
 
   protected virtual bool \u0023\u003DzD5SquRN7M_9c(
-    \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D _param1)
+    HitTestInfo _param1)
   {
     return !_param1.\u0023\u003DzMeGSfVE\u003D() && _param1.\u0023\u003Dzmh1LiTa467ce();
   }
@@ -223,9 +223,9 @@ public abstract class InspectSeriesModifierBase :
     
     public InspectSeriesModifierBase _variableSome3535;
     
-    private Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D> \u0023\u003DzMYNk\u0024KRnKslk;
+    private Func<IRenderableSeries, HitTestInfo> \u0023\u003DzMYNk\u0024KRnKslk;
     
-    public Func<IRenderableSeries, \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D> \u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D;
+    public Func<IRenderableSeries, HitTestInfo> \u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D;
     
     private IEnumerator<IRenderableSeries> \u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D;
 
@@ -283,7 +283,7 @@ public abstract class InspectSeriesModifierBase :
           IRenderableSeries current = this.\u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D.Current;
           if (zRrvwDu67s9Rm.\u0023\u003DzaBvGZQmHUOsn(current))
           {
-            \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D zldchDrVsrVyHh6WyiGy = this.\u0023\u003DzMYNk\u0024KRnKslk(current);
+            HitTestInfo zldchDrVsrVyHh6WyiGy = this.\u0023\u003DzMYNk\u0024KRnKslk(current);
             if (zRrvwDu67s9Rm.\u0023\u003DzD5SquRN7M_9c(zldchDrVsrVyHh6WyiGy))
             {
               this.\u0023\u003Dzaev1bhaFFIDX = current.\u0023\u003DzZZbJdAS6fDJ\u0024(zldchDrVsrVyHh6WyiGy);
@@ -365,7 +365,7 @@ label_10:
     #nullable disable
     InspectSeriesModifierBase _variableSome3535;
 
-    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public HitTestInfo \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this._variableSome3535.UseInterpolation);
@@ -378,7 +378,7 @@ label_10:
     public double \u0023\u003DzADxu\u00246OzU_cF;
     public InspectSeriesModifierBase _variableSome3535;
 
-    public \u0023\u003Dzu7d8MJ0yYYsoCxUauUw1x5zQ41nis3yh_pqZLdchDrVSrVYHh6WyiGY\u003D \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
+    public HitTestInfo \u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D(
       IRenderableSeries _param1)
     {
       return _param1.\u0023\u003DzjuB\u0024Pa8\u003D(this.\u0023\u003Dz_hWqBbI\u003D, this.\u0023\u003DzADxu\u00246OzU_cF, this._variableSome3535.UseInterpolation);

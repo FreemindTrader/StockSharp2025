@@ -8,7 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 #nullable disable
-public interface \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQxgil7IMIZzTVOZnJ0QEWy6u<T> : 
+public interface ISeriesColumn<T> : 
   IList<T>,
   ICollection<T>,
   IEnumerable<T>,

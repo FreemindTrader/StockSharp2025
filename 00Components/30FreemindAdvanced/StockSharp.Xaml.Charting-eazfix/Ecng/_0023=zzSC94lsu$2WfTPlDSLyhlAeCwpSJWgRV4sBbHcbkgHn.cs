@@ -17,7 +17,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
   IEnumerator<\u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D>
 {
   
-  private readonly \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dz6leEYQVpwDm8;
+  private readonly IPointSeries \u0023\u003Dz6leEYQVpwDm8;
   
   private readonly int \u0023\u003DztUQ677I\u003D;
   
@@ -30,7 +30,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
   private \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D \u0023\u003DzJe3j2ifNwqKL;
 
   public \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgHna(
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param1)
+    IPointSeries _param1)
   {
     this.\u0023\u003Dz6leEYQVpwDm8 = _param1;
     this.\u0023\u003DztUQ677I\u003D = _param1.\u0023\u003DzlpVGw6E\u003D();

@@ -9,8 +9,8 @@ using System.Collections;
 #nullable disable
 public interface \u0023\u003Dzx24ajpn1eHsuu_VYWsSDOby\u0024vWkeqZwE94P6zz4sY0BD_b\u0024iDA\u003D\u003D
 {
-  \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ \u0023\u003Dzg_KsNhI\u003D(
-    \u0023\u003Dzr3AyUEt11qAsNGjKm7GKWxmriZN_\u0024I_fB5TLZqozNbfOHxiykg\u003D\u003D _param1,
+  IPointSeries \u0023\u003Dzg_KsNhI\u003D(
+    ResamplingMode _param1,
     IndexRange  _param2,
     int _param3,
     bool _param4,

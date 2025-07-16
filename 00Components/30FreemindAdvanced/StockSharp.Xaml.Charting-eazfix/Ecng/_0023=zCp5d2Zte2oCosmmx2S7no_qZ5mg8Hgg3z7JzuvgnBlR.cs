@@ -88,10 +88,10 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxW
     return (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J) new \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_WkCZbC9tNduj5PEZdclZC_JbnzvCt4g3do\u003D(_param1, \u0023\u003DzKX_o18CSOBV8bEiC9p\u0024hcRqT_aFFGC8SXHRDFRNLhT09ZbT5e0zs1o6P3wDxp8X89w\u003D\u003D.\u0023\u003Dz_DB895w\u003D(_param4, _param1), _param3, _param6, _param2, _param4, _param5);
   }
 
-  public override \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D \u0023\u003DzC1WFQPaV7rDp(
+  public override ISprite2D \u0023\u003DzC1WFQPaV7rDp(
     FrameworkElement _param1)
   {
-    return (\u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D) new \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK3Nco\u0024rbGeT_23aNGi1tfLTsAtQ\u003D\u003D(this.\u0023\u003DzNFOu7BeFZYda().\u0023\u003DzuAOGltcBIMXJ(_param1));
+    return (ISprite2D) new \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK3Nco\u0024rbGeT_23aNGi1tfLTsAtQ\u003D\u003D(this.\u0023\u003DzNFOu7BeFZYda().\u0023\u003DzuAOGltcBIMXJ(_param1));
   }
 
   public override void Clear()
@@ -100,7 +100,7 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxW
   }
 
   public override void \u0023\u003Dzjx5oA1ZnAPnihuu9VA\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     Point _param3)
   {
@@ -108,7 +108,7 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxW
   }
 
   public override void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     Rect _param2,
     IEnumerable<Point> _param3)
   {
@@ -123,7 +123,7 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxW
   }
 
   public override void \u0023\u003DzsdRDlCsxeeTGJXELSQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5PVzyNyECV88SquxH0BDrCzw3R4A1g\u003D\u003D _param1,
+    ISprite2D _param1,
     IEnumerable<Rect> _param2)
   {
     WriteableBitmap writeableBitmap = (_param1 as \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTNP2RJkJyBpHnvye19IK3Nco\u0024rbGeT_23aNGi1tfLTsAtQ\u003D\u003D).\u0023\u003DzZin35e8ltnFe();

@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 public class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IbXKr1uUQJhy25OOrcypN2PAALR7DaWZkesO3q0NSOGk1Q\u003D\u003D : 
   \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D
 {
-  protected \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003DzcRozJLFRZ0BY;
+  protected IImageByte \u0023\u003DzcRozJLFRZ0BY;
   protected int \u0023\u003DzI6P8IpE\u003D;
   protected int \u0023\u003DzgwQEFlDsVMon;
   protected int \u0023\u003DzFfSb8y0\u003D;
@@ -20,13 +20,13 @@ public class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IbXKr1uUQJhy25OOrcypN2PAALR7DaWZke
   private int \u0023\u003Dz9LgI12vZMy\u0024F;
 
   public \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IbXKr1uUQJhy25OOrcypN2PAALR7DaWZkesO3q0NSOGk1Q\u003D\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003DzotQWOIc\u003D(_param1);
   }
 
   private void \u0023\u003DzotQWOIc\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003DzcRozJLFRZ0BY = _param1;
     this.\u0023\u003DzDm5AkRtEtmYQ = this.\u0023\u003DzcRozJLFRZ0BY.\u0023\u003Dz9b1_JhA\u003D();
@@ -35,7 +35,7 @@ public class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IbXKr1uUQJhy25OOrcypN2PAALR7DaWZke
   }
 
   [SpecialName]
-  public \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D \u0023\u003Dz8hY71usSYcKH()
+  public IImageByte \u0023\u003Dz8hY71usSYcKH()
   {
     return this.\u0023\u003DzcRozJLFRZ0BY;
   }

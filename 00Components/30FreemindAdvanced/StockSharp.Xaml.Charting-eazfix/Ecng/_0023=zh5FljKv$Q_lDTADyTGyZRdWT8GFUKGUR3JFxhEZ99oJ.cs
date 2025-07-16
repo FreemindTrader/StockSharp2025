@@ -15,7 +15,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
   private static byte \u0023\u003Dz68hARzzl638oLDKc3Q\u003D\u003D = byte.MaxValue;
 
   public \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99oJ\u0024N5dWNqQlx2PfqrfGQo3sPQ\u003D\u003D(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1,
+    IImageByte _param1,
     \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSS28mTU1\u0024kh32C_bmlBdAw\u0024tw\u003D\u003D _param2)
     : base(_param1)
   {
@@ -51,7 +51,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
   }
 
   public void \u0023\u003DzfR8znTYOKNgT(
-    \u0023\u003DzviDbWv7UmJNh\u0024GKRSPGKrhpWi_3XO1_6AkUbgNIlZG1JTfJPF45bQEQe\u0024b9Zb\u0024d8Dw\u003D\u003D _param1)
+    IImageByte _param1)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh = _param1;
   }
@@ -65,7 +65,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
   public void \u0023\u003DzLWpPHs7BoU1N(
     int _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3)
+    RGBA_Bytes _param3)
   {
     this.\u0023\u003Dz1tnZb_4PNlXh.\u0023\u003Dz1sAbEWOIYGyA(_param1, _param2, _param3, this.\u0023\u003DzzO5jLdwolkwL.\u0023\u003Dz\u00246e75ZE\u003D(_param1, _param2));
   }
@@ -74,7 +74,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     throw new NotImplementedException();
   }
@@ -83,7 +83,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     int num = _param3 - _param1 + 1;
@@ -105,7 +105,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4)
+    RGBA_Bytes _param4)
   {
     throw new NotImplementedException();
   }
@@ -114,7 +114,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte _param5)
   {
     throw new NotImplementedException();
@@ -124,7 +124,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -137,7 +137,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param4,
+    RGBA_Bytes _param4,
     byte[] _param5,
     int _param6)
   {
@@ -148,7 +148,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     throw new NotImplementedException();
@@ -158,7 +158,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5)
   {
     throw new NotImplementedException();
@@ -168,7 +168,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,
@@ -181,7 +181,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
     int _param1,
     int _param2,
     int _param3,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param4,
+    RGBA_Bytes[] _param4,
     int _param5,
     byte[] _param6,
     int _param7,

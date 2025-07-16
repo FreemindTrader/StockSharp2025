@@ -8,8 +8,8 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFKIYsXft5eLTliWkXUQgIXSHrvwYO9LatqEd7ov9iUOZdfw\u003D\u003D : 
-  \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zdsYrjLM9h5WMNGGTiHmJKqNU7lBp281ChPextAQHX,
-  \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOESA9yl1dafdSqQDeAMKXaBPbCxPlPQgez5bfFbgS\u0024CknPn64g\u003D
+  BlenderBaseBGR,
+  IBlenderByte
 {
   private \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo0l783DjW2h74dYy0k094dr0Mor7TsgpRyiVdmhwT3f\u0024leflCXc\u003D \u0023\u003DzY\u0024iy3H6MDQlk;
 
@@ -30,17 +30,17 @@ public sealed class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFK
     this.\u0023\u003DzY\u0024iy3H6MDQlk = _param1;
   }
 
-  public \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D \u0023\u003Dzk1hQXoI0sJ98Ijd3VA\u003D\u003D(
+  public RGBA_Bytes \u0023\u003Dzk1hQXoI0sJ98Ijd3VA\u003D\u003D(
     byte[] _param1,
     int _param2)
   {
-    return new \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D((int) _param1[_param2 + 2], (int) _param1[_param2 + 1], (int) _param1[_param2], (int) byte.MaxValue);
+    return new RGBA_Bytes((int) _param1[_param2 + 2], (int) _param1[_param2 + 1], (int) _param1[_param2], (int) byte.MaxValue);
   }
 
   public void \u0023\u003DzDjUCkxvYu2E5(
     byte[] _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3,
+    RGBA_Bytes _param3,
     int _param4)
   {
     _param1[_param2 + 2] = this.\u0023\u003DzY\u0024iy3H6MDQlk.\u0023\u003Dz9YtkX8U\u003D((int) _param3.\u0023\u003Dz4WHdt9g\u003D);
@@ -51,7 +51,7 @@ public sealed class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFK
   public void \u0023\u003Dz1sAbEWOIYGyA(
     byte[] _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D _param3)
+    RGBA_Bytes _param3)
   {
     int num1 = (int) _param1[_param2 + 2];
     int num2 = (int) _param1[_param2 + 1];
@@ -64,7 +64,7 @@ public sealed class \u0023\u003DzvQvE6Bu\u0024W\u00244U309jzRCs4fms0TWWxAeIRqZFK
   public void \u0023\u003Dz_A3pQLKo8i_c(
     byte[] _param1,
     int _param2,
-    \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb2WIbkHw6NWSEwePinXgsJJ4Q\u003D\u003D[] _param3,
+    RGBA_Bytes[] _param3,
     int _param4,
     byte[] _param5,
     int _param6,
