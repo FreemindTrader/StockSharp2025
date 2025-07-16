@@ -411,7 +411,7 @@
                     <DataTemplate>
                         <s:AxisTitleTemplateSelector
                             Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}"
-                            dje_zNJTCVXYXEFW8ZZQ_ejd="{StaticResource DefaultTitleTemplate}"
+                            StringTitleTemplate="{StaticResource DefaultTitleTemplate}"
                             Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=s:AxisTitle}}"
                             IsTabStop="False" />
                     </DataTemplate>

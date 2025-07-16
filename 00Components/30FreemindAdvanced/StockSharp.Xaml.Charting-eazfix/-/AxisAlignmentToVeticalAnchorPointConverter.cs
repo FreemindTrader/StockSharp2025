@@ -10,16 +10,16 @@ public sealed class AxisAlignmentToVeticalAnchorPointConverter :
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
     {
-        AxisAlignment demydmpA2K68QEjd = (AxisAlignment) _param1;
-        VerticalAnchorPoint r852JmG36S4EnausEjd = VerticalAnchorPoint.Center;
-        switch ( demydmpA2K68QEjd )
+        AxisAlignment obj = (AxisAlignment) _param1;
+        VerticalAnchorPoint output = VerticalAnchorPoint.Center;
+        switch ( obj )
         {
             case AxisAlignment.Top:
             case AxisAlignment.Bottom:
-                r852JmG36S4EnausEjd = VerticalAnchorPoint.Top;
+                output = VerticalAnchorPoint.Top;
                 break;
         }
-        return ( object ) r852JmG36S4EnausEjd;
+        return ( object ) output;
     }
 
     public object ConvertBack( object _param1, Type _param2, object _param3, CultureInfo _param4 )

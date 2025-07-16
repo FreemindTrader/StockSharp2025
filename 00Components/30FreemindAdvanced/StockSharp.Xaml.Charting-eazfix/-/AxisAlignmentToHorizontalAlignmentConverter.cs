@@ -10,9 +10,9 @@ public sealed class AxisAlignmentToHorizontalAlignmentConverter : IValueConverte
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
     {
-        AxisAlignment demydmpA2K68QEjd = (AxisAlignment) _param1;
+        AxisAlignment obj = (AxisAlignment) _param1;
         HorizontalAlignment horizontalAlignment = HorizontalAlignment.Left;
-        switch ( demydmpA2K68QEjd )
+        switch ( obj )
         {
             case AxisAlignment.Right:
                 horizontalAlignment = HorizontalAlignment.Right;

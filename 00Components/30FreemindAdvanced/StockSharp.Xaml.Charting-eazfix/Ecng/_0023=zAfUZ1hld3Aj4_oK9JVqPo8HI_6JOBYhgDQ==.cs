@@ -10,7 +10,7 @@ using System.Windows;
 #nullable disable
 public interface \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D
 {
-  DataTemplate \u0023\u003Dzmy_tWbS7jzNB(object _param1, DependencyObject _param2);
+  DataTemplate SelectTemplate(object _param1, DependencyObject _param2);
 
   void \u0023\u003DzPIKAksIWrmT_(EventHandler _param1);
 

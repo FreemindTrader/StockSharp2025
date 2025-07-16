@@ -43,7 +43,7 @@ public class SciChartSurface :
   IXmlSerializable,
   ISuspendable,
   IUltrachartSurfaceBase,
-  \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
+  IUltrachartController,
   ISciChartSurface,
   IInvalidatableElement
 {
@@ -683,32 +683,32 @@ public class SciChartSurface :
     IAxis _param1)
   {
     Tuple<AxisAlignment, bool> tuple = this.\u0023\u003DzbnHWjFJbHdsR(_param1);
-    AxisAlignment demydmpA2K68QEjd = tuple.Item1;
+    AxisAlignment obj = tuple.Item1;
     bool flag = tuple.Item2;
-    if (demydmpA2K68QEjd == _param1.get_AxisAlignment() && flag == _param1.get_IsCenterAxis())
+    if (obj == _param1.get_AxisAlignment() && flag == _param1.get_IsCenterAxis())
       return;
-    this.\u0023\u003DzDhEcdoGF8rbq(_param1, demydmpA2K68QEjd, flag);
+    this.\u0023\u003DzDhEcdoGF8rbq(_param1, obj, flag);
   }
 
   private Tuple<AxisAlignment, bool> \u0023\u003DzbnHWjFJbHdsR(
     IAxis _param1)
   {
-    AxisAlignment demydmpA2K68QEjd = AxisAlignment.Default;
+    AxisAlignment obj = AxisAlignment.Default;
     bool flag = false;
     if (this.\u0023\u003DztKgn6GxCcL\u0024B.Items.Contains((object) _param1))
-      demydmpA2K68QEjd = AxisAlignment.Left;
+      obj = AxisAlignment.Left;
     else if (this.\u0023\u003DzK\u0024t4oL\u0024CAaKU.Items.Contains((object) _param1))
-      demydmpA2K68QEjd = AxisAlignment.Right;
+      obj = AxisAlignment.Right;
     else if (this.\u0023\u003DzGFGsUr_xxE4H.Items.Contains((object) _param1))
-      demydmpA2K68QEjd = AxisAlignment.Top;
+      obj = AxisAlignment.Top;
     else if (this.\u0023\u003Dz0YK5mfh0G_wP.Items.Contains((object) _param1))
-      demydmpA2K68QEjd = AxisAlignment.Bottom;
+      obj = AxisAlignment.Bottom;
     else if (this.\u0023\u003Dz1mGpFN8tTa5PB1b5eA\u003D\u003D.Items.Contains((object) _param1) || this.\u0023\u003DzkW\u0024qJVeNKX1VtemTog\u003D\u003D.Items.Contains((object) _param1))
     {
-      demydmpA2K68QEjd = _param1.get_AxisAlignment();
+      obj = _param1.get_AxisAlignment();
       flag = true;
     }
-    return new Tuple<AxisAlignment, bool>(demydmpA2K68QEjd, flag);
+    return new Tuple<AxisAlignment, bool>(obj, flag);
   }
 
   private void \u0023\u003Dzk084l\u00247aS4G3()
@@ -732,7 +732,7 @@ public class SciChartSurface :
 
   public virtual void ZoomExtents() => this.ZoomExtents(TimeSpan.Zero);
 
-  public void \u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(TimeSpan _param1)
+  public void AnimateZoomExtents(TimeSpan _param1)
   {
     this.ZoomExtents(_param1);
   }
@@ -792,18 +792,18 @@ public class SciChartSurface :
       this.ZoomExtentsY((IDictionary<string, IRange>) null, TimeSpan.Zero);
   }
 
-  public void \u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(TimeSpan _param1)
+  public void AnimateZoomExtentsY(TimeSpan _param1)
   {
     using (this.SuspendUpdates())
       this.ZoomExtentsY((IDictionary<string, IRange>) null, _param1);
   }
 
-  public void \u0023\u003Dz8zwqAzdRsuc\u0024()
+  public void ZoomExtentsX()
   {
     this.\u0023\u003Dz9l24o\u0024KwqoZC(TimeSpan.Zero);
   }
 
-  public void \u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(TimeSpan _param1)
+  public void AnimateZoomExtentsX(TimeSpan _param1)
   {
     this.\u0023\u003Dz9l24o\u0024KwqoZC(_param1);
   }
@@ -1037,8 +1037,8 @@ public class SciChartSurface :
     _param1.\u0023\u003Dz\u0024mpHDOeBCMkH(_param2);
     if (_param1.get_AxisAlignment() == AxisAlignment.Default)
     {
-      AxisAlignment demydmpA2K68QEjd = _param1.\u0023\u003DzFrVmckt\u0024NpG6() ? AxisAlignment.Bottom : AxisAlignment.Right;
-      ((DependencyObject) _param1).SetCurrentValue(AxisBase.\u0023\u003DzfMY988N0StOA, (object) demydmpA2K68QEjd);
+      AxisAlignment obj = _param1.\u0023\u003DzFrVmckt\u0024NpG6() ? AxisAlignment.Bottom : AxisAlignment.Right;
+      ((DependencyObject) _param1).SetCurrentValue(AxisBase.\u0023\u003DzfMY988N0StOA, (object) obj);
     }
     else
       this.\u0023\u003DzU8nRfCfIU\u0024K_(_param1, _param1.get_AxisAlignment(), _param1.get_IsCenterAxis());
@@ -1254,7 +1254,7 @@ public class SciChartSurface :
   {
     AxisArea yg78Km6T7DkngtaEjd = this.\u0023\u003Dz5v44edx1gaaI(_param1, _param2, _param3);
     if (yg78Km6T7DkngtaEjd != null && _param1.get_ParentSurface() != null)
-      yg78Km6T7DkngtaEjd.\u0023\u003DzXp3QEOzPyMYR((object) _param1);
+      yg78Km6T7DkngtaEjd.SafeRemoveItem((object) _param1);
     this.\u0023\u003Dzd54ofk38XbF1j_bR\u0024w\u003D\u003D();
   }
 
@@ -1836,7 +1836,7 @@ public class SciChartSurface :
 
   private void \u0023\u003DzS2ufUgCmj4iLhzxXcG9wL_0\u003D(object _param1)
   {
-    this.\u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(TimeSpan.FromMilliseconds(500.0));
+    this.AnimateZoomExtents(TimeSpan.FromMilliseconds(500.0));
   }
 
   private void \u0023\u003Dz6fV1owXqTlzBWkKTRBWCs_aD\u0024Qt79YCLHsMl_d0\u003D(

@@ -145,7 +145,7 @@ public sealed class SeriesInfoTemplateSelector :
     }
   }
 
-  public override DataTemplate \u0023\u003Dzmy_tWbS7jzNB(object _param1, DependencyObject _param2)
+  public override DataTemplate SelectTemplate(object _param1, DependencyObject _param2)
   {
     switch (_param1)
     {
@@ -166,7 +166,7 @@ public sealed class SeriesInfoTemplateSelector :
       case TransactionSeriesRolloverLabel _:
         return this.TransactionSeriesTemplate;
       default:
-        return base.\u0023\u003Dzmy_tWbS7jzNB(_param1, _param2);
+        return base.SelectTemplate(_param1, _param2);
     }
   }
 }

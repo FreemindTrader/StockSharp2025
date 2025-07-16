@@ -1,2372 +1,2415 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.AxisBase
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
+﻿using StockSharp.Xaml.Charting.Common.Databinding;
+using StockSharp.Xaml.Charting.Common.Extensions;
+using StockSharp.Xaml.Charting.Common.Helpers;
+using StockSharp.Xaml.Charting.Licensing;
+using StockSharp.Xaml.Charting.Model.DataSeries;
+using StockSharp.Xaml.Charting.Numerics;
+using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
+using StockSharp.Xaml.Charting.Numerics.CoordinateProviders;
+using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
+using StockSharp.Xaml.Charting.Rendering.Common;
+using StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer;
+using StockSharp.Xaml.Charting.Themes;
+using StockSharp.Xaml.Charting.Utility;
+using StockSharp.Xaml.Charting.Visuals.Annotations;
+using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using StockSharp.Xaml.Licensing.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 
-#nullable enable
-namespace StockSharp.Charting.Visuals.Axes;
+namespace StockSharp.Xaml.Charting.Visuals.Axes;
 
-[TemplatePart(Name = "PART_AxisCanvas", Type = typeof(IAxisPanel))]
-[TemplatePart(Name = "PART_ModifierAxisCanvas", Type = typeof(AxisCanvas))]
-[TemplatePart(Name = "PART_AxisContainer", Type = typeof(StackPanel))]
-[TemplatePart(Name = "PART_AxisRenderSurface", Type = typeof(HighSpeedRenderSurface))]
-public abstract class AxisBase : ContentControl, IDrawable, IXmlSerializable, INotifyPropertyChanged, IAxisParams, ISuspendable, IInvalidatableElement, IAxis, IHitTestable
+[TemplatePart( Name = "PART_AxisCanvas", Type = typeof( IAxisPanel ) )]
+[TemplatePart( Name = "PART_ModifierAxisCanvas", Type = typeof( AxisCanvas ) )]
+[TemplatePart( Name = "PART_AxisContainer", Type = typeof( StackPanel ) )]
+[TemplatePart( Name = "PART_AxisRenderSurface", Type = typeof( HighSpeedRenderSurface ) )]
+public abstract class AxisBase : ContentControl, IAxis, IAxisParams, IHitTestable, ISuspendable, IInvalidatableElement, IDrawable, INotifyPropertyChanged, IXmlSerializable
 {
-    public static readonly 
-  #nullable disable
-  DependencyProperty \u0023\u003DzfolHRDLbOj27 = DependencyProperty.Register(nameof (TickCoordinatesProvider), typeof (\u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA), typeof (AxisBase),
-
-    new PropertyMetadata(
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzQsSOj9uli6iK)));
-
-  public static readonly DependencyProperty \u0023\u003DzclwKGsykhg0_ = DependencyProperty.Register(nameof (IsStaticAxis), typeof (bool), typeof (AxisBase),
-
-    new PropertyMetadata((object) false, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003Dz1UOyXOfHyEI9)));
-
-  public static readonly DependencyProperty \u0023\u003DzVliJ8IIRU5CI = DependencyProperty.Register(nameof (IsPrimaryAxis), typeof (bool), typeof (AxisBase),
-
-    new PropertyMetadata((object) false, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzTs\u0024_r2pUSNyL)));
-
-  public static readonly DependencyProperty \u0023\u003DzcwiMJ7NmMskq = DependencyProperty.Register(nameof (IsCenterAxis), typeof (bool), typeof (AxisBase),
-
-    new PropertyMetadata((object) false, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzIgRO8VI5TESl1w9T\u0024A\u003D\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzHM9KAGx9Av_I = DependencyProperty.Register(nameof (AxisMode), typeof (\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3), typeof (AxisBase),
-
-    new PropertyMetadata((object) \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3.Linear));
-
-  public static readonly DependencyProperty \u0023\u003DzKm2_RDWENeyO = DependencyProperty.Register(nameof (AutoRange), typeof (AutoRange), typeof (AxisBase),
-
-    new PropertyMetadata((object) AutoRange.Once, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzuTkKbr18L_Ur = DependencyProperty.Register(nameof (MajorDelta), typeof (IComparable), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003Dzdg3vng1nptYM = DependencyProperty.Register(nameof (MinorDelta), typeof (IComparable), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzEt7Ui3H_z_JvbwmWQQ\u003D\u003D = DependencyProperty.Register(nameof (MinorsPerMajor), typeof (int), typeof (AxisBase),
-
-    new PropertyMetadata((object) 5, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003Dz3kyPJRWoiKq0 = DependencyProperty.Register(nameof (GrowBy), typeof (IRange<double>), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzWl3LbWhL1z0D = DependencyProperty.Register(nameof (VisibleRange), typeof (IRange), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DziB9pY7CleJnqmfAdVQ\u003D\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzW7Xl\u00245Sj1hV\u0024 = DependencyProperty.Register(nameof (VisibleRangeLimit), typeof (IRange), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003Dzqd3jzsY7FQsh5XQziA\u003D\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzxPOeDpgt9hi7h0ryrw\u003D\u003D = DependencyProperty.Register(nameof (VisibleRangeLimitMode), typeof (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQBfb77y0xl0\u00246w\u003D\u003D), typeof (AxisBase),
-
-    new PropertyMetadata((object) \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQBfb77y0xl0\u00246w\u003D\u003D.MinMax));
-
-  public static readonly DependencyProperty \u0023\u003DzGqv7OFBibgO2 = DependencyProperty.Register(nameof (AnimatedVisibleRange), typeof (IRange), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzHggGkMOQckHdkG7xQA\u003D\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzeSOZpsJteV_v = DependencyProperty.Register("VisibleRangePoint", typeof (Point), typeof (AxisBase),
-
-    new PropertyMetadata((object) 
-
-    new Point(),
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003Dz10or8z86voVPLuMIHw\u003D\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzFb1oVqzbThlVLIru\u0024A\u003D\u003D = DependencyProperty.Register(nameof (AutoAlignVisibleRange), typeof (bool), typeof (AxisBase),
-
-    new PropertyMetadata((object) false, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzpEX3tswlNvij = DependencyProperty.Register(nameof (MaxAutoTicks), typeof (int), typeof (AxisBase),
-
-    new PropertyMetadata((object) 10, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003Dz4PN8nI\u0024I1O63 = DependencyProperty.Register(nameof (AutoTicks), typeof (bool), typeof (AxisBase),
-
-    new PropertyMetadata((object) true, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003Dz1bLZaITSYGdx = DependencyProperty.Register(nameof (TickProvider), typeof (ITickProvider), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzQikQKvMZp1xk)));
-
-  public static readonly DependencyProperty \u0023\u003DzjWJEoVoxRw8F = DependencyProperty.Register(nameof (MinimalZoomConstrain), typeof (IComparable), typeof (AxisBase),
-
-    new PropertyMetadata((object) null));
-
-  public static readonly DependencyProperty \u0023\u003DzXMV_skc\u003D = DependencyProperty.Register(nameof (Orientation), typeof (Orientation), typeof (AxisBase),
-
-    new PropertyMetadata((object) Orientation.Horizontal, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzcZqyvQl0j0My)));
-
-  public static readonly DependencyProperty \u0023\u003DzfMY988N0StOA = DependencyProperty.Register(nameof (AxisAlignment), typeof (AxisAlignment), typeof (AxisBase),
-
-    new PropertyMetadata((object) AxisAlignment.Default, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzoqG1CE2rlL_j)));
-
-  public static readonly DependencyProperty \u0023\u003DzD\u0024wXQ8E\u003D = DependencyProperty.Register(nameof (Id), typeof (string), typeof (AxisBase),
-
-    new PropertyMetadata((object) "DefaultAxisId", 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzhYW6tiLSC0eZ = DependencyProperty.Register(nameof (FlipCoordinates), typeof (bool), typeof (AxisBase),
-
-    new PropertyMetadata((object) false, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzxtYfETQdftTw)));
-
-  public static readonly DependencyProperty \u0023\u003Dzbkm16i6vgFnk = DependencyProperty.Register(nameof (LabelProvider), typeof (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzGSdejefFTNCn)));
-
-  public static readonly DependencyProperty \u0023\u003Dzol64nomnhHp\u0024 = DependencyProperty.Register(nameof (DefaultLabelProvider), typeof (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH), typeof (AxisBase),
-
-    new PropertyMetadata((PropertyChangedCallback) null));
-
-  public static readonly DependencyProperty \u0023\u003DzALRRz3KBB3Uz = DependencyProperty.Register(nameof (TextFormatting), typeof (string), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzkAJ7QX7sBa0Q = DependencyProperty.Register(nameof (CursorTextFormatting), typeof (string), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzecHk\u0024RsxluvB = DependencyProperty.Register(nameof (AxisTitle), typeof (string), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-
-  public static readonly DependencyProperty \u0023\u003DzX3RG9MW1gXPS = DependencyProperty.Register(nameof (TitleStyle), typeof (Style), typeof (AxisBase),
-
-    new PropertyMetadata((object) null, 
-
-    new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzkSXCm31bzQFm = DependencyProperty.Register(nameof (TitleFontWeight), typeof (FontWeight), typeof (AxisBase), new PropertyMetadata((object) FontWeights.Normal, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003Dzm\u0024Un1mDjW9dY = DependencyProperty.Register(nameof (TitleFontSize), typeof (double), typeof (AxisBase), new PropertyMetadata((object) 12.0, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003Dzf2R4YGdWLzHd = DependencyProperty.Register(nameof (TickTextBrush), typeof (Brush), typeof (AxisBase), new PropertyMetadata(new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(nameof (StrokeThickness), typeof (double), typeof (AxisBase), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D = DependencyProperty.Register(nameof (MajorTickLineStyle), typeof (Style), typeof (AxisBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D = DependencyProperty.Register(nameof (MinorTickLineStyle), typeof (Style), typeof (AxisBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003Dz6E17UGyH3Hxe = DependencyProperty.Register(nameof (DrawMajorTicks), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzHxEy7A8kQeb2 = DependencyProperty.Register(nameof (DrawMinorTicks), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003Dz\u0024geG9XF9qNM9 = DependencyProperty.Register(nameof (DrawLabels), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzDDf\u0024Sa19KecVtCNmpA\u003D\u003D = DependencyProperty.Register(nameof (MajorGridLineStyle), typeof (Style), typeof (AxisBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzAak9t33M4Bx00JH4Xw\u003D\u003D = DependencyProperty.Register(nameof (MinorGridLineStyle), typeof (Style), typeof (AxisBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D = DependencyProperty.Register(nameof (DrawMajorGridLines), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D = DependencyProperty.Register(nameof (DrawMinorGridLines), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003Dz7NskrrDUwGfd = DependencyProperty.Register(nameof (DrawMajorBands), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzdsaZczkKof25 = DependencyProperty.Register(nameof (AxisBandsFill), typeof (Color), typeof (AxisBase), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzGW4hK41x8a8n = DependencyProperty.Register(nameof (TickLabelStyle), typeof (Style), typeof (AxisBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzVEJ5y7o\u003D = DependencyProperty.Register(nameof (Scrollbar), typeof (UltrachartScrollbar), typeof (AxisBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzO13xWFct\u0024F9n)));
-  
-  public static readonly DependencyProperty \u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D = DependencyProperty.Register(nameof (IsLabelCullingEnabled), typeof (bool), typeof (AxisBase), new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
-  
-  private EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> \u0023\u003Dz7F6WbE57tL8z;
-  
-  private EventHandler<EventArgs> \u0023\u003DzrN9MkyArV3jJ;
-  
-  private IServiceContainer \u0023\u003Dzg8Ufa_EMXfJU;
-  
-  protected \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D;
-  
-  protected \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c \u0023\u003DzuybmMyI_5LK1k3IeW5QCm9nPtLE9;
-  
-  private ISciChartSurface _drawingSurface;
-  
-  private IAxisPanel \u0023\u003DzdEt8bikGsITl;
-  
-  private ModifierAxisCanvas \u0023\u003DzoN4RYgKqEhkM;
-  
-  private bool \u0023\u003DzpRrgz6k\u0024zI7k = true;
-  
-  private \u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D \u0023\u003DzPfs\u0024IokVcdkx;
-  
-  private TickCoordinates \u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D;
-  
-  private float \u0023\u003DzRwEA_2Y\u003D;
-  
-  private AxisAlignmentToVeticalAnchorPointConverter \u0023\u003DzPtp9VPqrocT6wwO0v3a5T4g\u003D = new AxisAlignmentToVeticalAnchorPointConverter();
-  
-  private AxisAlignmentToHorizontalAnchorPointConverter \u0023\u003DzxYGXaxJiTgX47NaKGbeZjRI\u003D = new AxisAlignmentToHorizontalAnchorPointConverter();
-  
-  private bool \u0023\u003Dz1itgeDqdlQvE;
-  
-  private IRange \u0023\u003Dz6xb\u0024Nc\u0024kmU3q;
-  
-  private IRange \u0023\u003DztSt_uW5MzG6UbffWGg\u003D\u003D;
-  
-  private Point \u0023\u003DzcVHdIBCOOjXh;
-  
-  private static readonly int[] \u0023\u003DzHqisnGuYfim9SENYmhFqfGUvEnuX = new int[5]
-  {
-    2,
-    4,
-    8,
-    16 /*0x10*/,
-    32 /*0x20*/
-  };
-  
-  private StackPanel \u0023\u003DzgTtVLFnthbIz;
-  
-  protected Line \u0023\u003DzeEl93ifUiK4P = new Line();
-
-  protected AxisBase()
-  {
-    this.DefaultStyleKey = (object) typeof (AxisBase);
-    this.\u0023\u003DztSt_uW5MzG6UbffWGg\u003D\u003D = this.\u0023\u003Dz6xb\u0024Nc\u0024kmU3q = this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D();
-    this.SetCurrentValue(AxisBase.\u0023\u003DzfolHRDLbOj27, (object) new \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u003D\u003D());
-    this.\u0023\u003DzqV3Pli9MtvTJ();
-    this.SizeChanged += new SizeChangedEventHandler(this.\u0023\u003DzyYNf6TD2aRpOQ6mbk8EVPH8\u003D);
-  }
-
-  public AxisBase(
-    IAxisPanel _param1)
-    : this()
-  {
-    this.\u0023\u003DzdEt8bikGsITl = _param1;
-  }
-
-  public event PropertyChangedEventHandler PropertyChanged;
-
-  [CompilerGenerated]
-  [SpecialName]
-  public void \u0023\u003Dzf1TnIHLmqeNf(
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> _param1)
-  {
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> eventHandler = this.\u0023\u003Dz7F6WbE57tL8z;
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> comparand;
-    do
-    {
-      comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D>>(ref this.\u0023\u003Dz7F6WbE57tL8z, comparand + _param1, comparand);
-    }
-    while (eventHandler != comparand);
-  }
-
-  [CompilerGenerated]
-  [SpecialName]
-  public void \u0023\u003DzO6DAydbqJOaS(
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> _param1)
-  {
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> eventHandler = this.\u0023\u003Dz7F6WbE57tL8z;
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> comparand;
-    do
-    {
-      comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D>>(ref this.\u0023\u003Dz7F6WbE57tL8z, comparand - _param1, comparand);
-    }
-    while (eventHandler != comparand);
-  }
-
-  [CompilerGenerated]
-  [SpecialName]
-  public void \u0023\u003DzF_\u0024wky5\u0024qiYa(EventHandler<EventArgs> _param1)
-  {
-    EventHandler<EventArgs> eventHandler = this.\u0023\u003DzrN9MkyArV3jJ;
-    EventHandler<EventArgs> comparand;
-    do
-    {
-      comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<EventArgs>>(ref this.\u0023\u003DzrN9MkyArV3jJ, comparand + _param1, comparand);
-    }
-    while (eventHandler != comparand);
-  }
-
-  [CompilerGenerated]
-  [SpecialName]
-  public void \u0023\u003DzwG_uRQ_EmTwc(EventHandler<EventArgs> _param1)
-  {
-    EventHandler<EventArgs> eventHandler = this.\u0023\u003DzrN9MkyArV3jJ;
-    EventHandler<EventArgs> comparand;
-    do
-    {
-      comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<EventArgs>>(ref this.\u0023\u003DzrN9MkyArV3jJ, comparand - _param1, comparand);
-    }
-    while (eventHandler != comparand);
-  }
-
-  private void \u0023\u003DzqV3Pli9MtvTJ()
-  {
-    this.\u0023\u003DzPfs\u0024IokVcdkx = this.\u0023\u003DzPfs\u0024IokVcdkx ?? (this is NumericAxis ? (\u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D) new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D<NumericTickLabel>(this.MaxAutoTicks, new Func<DefaultTickLabel, DefaultTickLabel>(this.\u0023\u003DzxKKlOa0jEDmy)) : (\u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D) new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jPftG0_W7FEYnx3n6zcWwRAFpj8yug\u003D\u003D<DefaultTickLabel>(this.MaxAutoTicks, new Func<DefaultTickLabel, DefaultTickLabel>(this.\u0023\u003DzxKKlOa0jEDmy)));
-  }
-
-  private DefaultTickLabel \u0023\u003DzxKKlOa0jEDmy(
-    DefaultTickLabel _param1)
-  {
-    _param1.DataContext = (object) null;
-    _param1.SetBinding(DefaultTickLabel.\u0023\u003DzQinmCMXtHUjS, (BindingBase) new Binding("TickTextBrush")
-    {
-      Source = (object) this
-    });
-    _param1.SetBinding(DefaultTickLabel.\u0023\u003DzvGz4ypP\u00247z4yXGlavw\u003D\u003D, (BindingBase) new Binding("AxisAlignment")
-    {
-      Source = (object) this,
-      Converter = (IValueConverter) this.\u0023\u003DzxYGXaxJiTgX47NaKGbeZjRI\u003D
-    });
-    _param1.SetBinding(DefaultTickLabel.\u0023\u003DzLgY36yN4n7OLzzEgDw\u003D\u003D, (BindingBase) new Binding("AxisAlignment")
-    {
-      Source = (object) this,
-      Converter = (IValueConverter) this.\u0023\u003DzPtp9VPqrocT6wwO0v3a5T4g\u003D
-    });
-    _param1.SetBinding(FrameworkElement.StyleProperty, (BindingBase) new Binding("TickLabelStyle")
-    {
-      Source = (object) this
-    });
-    return _param1;
-  }
-
-  bool IAxis.\u0023\u003DzlbW67NDum9APBLuSxcbgNCIOZEiJNed4Aa\u0024MIGodDWjPqbL6pQ\u003D\u003D()
-  {
-    return this.IsXAxis;
-  }
-
-  void IAxis.\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26r0giLofWLxZZe_B2vedqow4qy1QEg\u003D\u003D(
-    bool _param1)
-  {
-    this.IsXAxis = _param1;
-  }
-
-  public bool IsXAxis
-  {
-    get => this.\u0023\u003DzpRrgz6k\u0024zI7k;
-    private set
-    {
-      this.\u0023\u003DzpRrgz6k\u0024zI7k = value;
-      this.OnPropertyChanged(nameof (IsXAxis));
-    }
-  }
-
-  public virtual bool IsHorizontalAxis => this.Orientation == Orientation.Horizontal;
-
-  public bool IsAxisFlipped => this.IsHorizontalAxis != this.IsXAxis;
-
-  public bool IsLabelCullingEnabled
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D, (object) value);
-    }
-  }
-
-  public bool IsCenterAxis
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzcwiMJ7NmMskq);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzcwiMJ7NmMskq, (object) value);
-    }
-  }
-
-  public bool IsPrimaryAxis
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzVliJ8IIRU5CI);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzVliJ8IIRU5CI, (object) value);
-    }
-  }
-
-  public bool IsStaticAxis
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzclwKGsykhg0_);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzclwKGsykhg0_, (object) value);
-    }
-  }
-
-  public bool AutoAlignVisibleRange
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzFb1oVqzbThlVLIru\u0024A\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzFb1oVqzbThlVLIru\u0024A\u003D\u003D, (object) value);
-    }
-  }
-
-  public bool HasValidVisibleRange => this.\u0023\u003DzwzofU1mfo8hC();
-
-  public bool HasDefaultVisibleRange
-  {
-    get
-    {
-      IRange abyLt9clZggmJsWhw = this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D();
-      return this.VisibleRange.Equals((object) abyLt9clZggmJsWhw) && this.\u0023\u003DztSt_uW5MzG6UbffWGg\u003D\u003D.Equals((object) abyLt9clZggmJsWhw);
-    }
-  }
-
-  double IDrawable.\u0023\u003DzEa5ACpOap4rFIaHj5p9yfH70ARbSZe0FxQ0q\u00240QfMpnPN_04zQ\u003D\u003D()
-  {
-    return this.ActualWidth;
-  }
-
-  void IDrawable.\u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI4gQW2p5XnENj22E0ug7VJ0RyC3hMw\u003D\u003D(
-    double _param1)
-  {
-  }
-
-  double IDrawable.\u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6ZE9YOd5sMhl\u0024Z\u0024xSADAZlqXzWzlvA\u003D\u003D()
-  {
-    return this.ActualHeight;
-  }
-
-  void IDrawable.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntaAE_X2h6PHbsMnRBK9cYE8yLrOBvg\u003D\u003D(
-    double _param1)
-  {
-  }
-
-  public ISciChartSurface ParentSurface
-  {
-    get => this._drawingSurface;
-    set
-    {
-      this._drawingSurface = value;
-      if (this._drawingSurface != null && this._drawingSurface.Services() != null)
-        this.Services = this._drawingSurface.Services();
-      this.OnPropertyChanged(nameof (ParentSurface));
-    }
-  }
-
-  public IServiceContainer Services
-  {
-    get => this.\u0023\u003Dzg8Ufa_EMXfJU;
-    set => this.\u0023\u003Dzg8Ufa_EMXfJU = value;
-  }
-
-  public string AxisTitle
-  {
-    get
-    {
-      return (string) this.GetValue(AxisBase.\u0023\u003DzecHk\u0024RsxluvB);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzecHk\u0024RsxluvB, (object) value);
-    }
-  }
-
-  public Style TitleStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisBase.\u0023\u003DzX3RG9MW1gXPS);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzX3RG9MW1gXPS, (object) value);
-    }
-  }
-
-  public FontWeight TitleFontWeight
-  {
-    get
-    {
-      return (FontWeight) this.GetValue(AxisBase.\u0023\u003DzkSXCm31bzQFm);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzkSXCm31bzQFm, (object) value);
-    }
-  }
-
-  public double TitleFontSize
-  {
-    get
-    {
-      return (double) this.GetValue(AxisBase.\u0023\u003Dzm\u0024Un1mDjW9dY);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dzm\u0024Un1mDjW9dY, (object) value);
-    }
-  }
-
-  public string TextFormatting
-  {
-    get
-    {
-      return (string) this.GetValue(AxisBase.\u0023\u003DzALRRz3KBB3Uz);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzALRRz3KBB3Uz, (object) value);
-    }
-  }
-
-  public string CursorTextFormatting
-  {
-    get
-    {
-      return (string) this.GetValue(AxisBase.\u0023\u003DzkAJ7QX7sBa0Q);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzkAJ7QX7sBa0Q, (object) value);
-    }
-  }
-
-  public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH LabelProvider
-  {
-    get
-    {
-      return (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) this.GetValue(AxisBase.\u0023\u003Dzbkm16i6vgFnk);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dzbkm16i6vgFnk, (object) value);
-    }
-  }
-
-  public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH DefaultLabelProvider
-  {
-    get
-    {
-      return (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) this.GetValue(AxisBase.\u0023\u003Dzol64nomnhHp\u0024);
-    }
-    protected set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dzol64nomnhHp\u0024, (object) value);
-    }
-  }
-
-  [Obsolete("We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead")]
-  public \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3 AxisMode
-  {
-    get
-    {
-      throw new Exception("We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead");
-    }
-    set
-    {
-      throw new Exception("We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead");
-    }
-  }
-
-  public AutoRange AutoRange
-  {
-    get
-    {
-      return (AutoRange) this.GetValue(AxisBase.\u0023\u003DzKm2_RDWENeyO);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzKm2_RDWENeyO, (object) value);
-    }
-  }
-
-  [TypeConverter(typeof (StringToDoubleRangeTypeConverter))]
-  public IRange<double> GrowBy
-  {
-    get
-    {
-      return (IRange<double>) this.GetValue(AxisBase.\u0023\u003Dz3kyPJRWoiKq0);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz3kyPJRWoiKq0, (object) value);
-    }
-  }
-
-  public bool FlipCoordinates
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzhYW6tiLSC0eZ);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzhYW6tiLSC0eZ, (object) value);
-    }
-  }
-
-  public IComparable MajorDelta
-  {
-    get
-    {
-      return (IComparable) this.GetValue(AxisBase.\u0023\u003DzuTkKbr18L_Ur);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzuTkKbr18L_Ur, (object) value);
-    }
-  }
-
-  public int MinorsPerMajor
-  {
-    get
-    {
-      return (int) this.GetValue(AxisBase.\u0023\u003DzEt7Ui3H_z_JvbwmWQQ\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzEt7Ui3H_z_JvbwmWQQ\u003D\u003D, (object) value);
-    }
-  }
-
-  public int MaxAutoTicks
-  {
-    get
-    {
-      return (int) this.GetValue(AxisBase.\u0023\u003DzpEX3tswlNvij);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzpEX3tswlNvij, (object) value);
-    }
-  }
-
-  public bool AutoTicks
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003Dz4PN8nI\u0024I1O63);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz4PN8nI\u0024I1O63, (object) value);
-    }
-  }
-
-  public ITickProvider TickProvider
-  {
-    get
-    {
-      return (ITickProvider) this.GetValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) value);
-    }
-  }
-
-  public \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA TickCoordinatesProvider
-  {
-    get
-    {
-      return (\u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA) this.GetValue(AxisBase.\u0023\u003DzfolHRDLbOj27);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzfolHRDLbOj27, (object) value);
-    }
-  }
-
-  public IComparable MinorDelta
-  {
-    get
-    {
-      return (IComparable) this.GetValue(AxisBase.\u0023\u003Dzdg3vng1nptYM);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dzdg3vng1nptYM, (object) value);
-    }
-  }
-
-  public Brush TickTextBrush
-  {
-    get
-    {
-      return (Brush) this.GetValue(AxisBase.\u0023\u003Dzf2R4YGdWLzHd);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dzf2R4YGdWLzHd, (object) value);
-    }
-  }
-
-  [Obsolete("MajorLineStroke is obsolete, please use MajorTickLineStyle instead", true)]
-  public Brush MajorLineStroke
-  {
-    get => (Brush) null;
-    set
-    {
-      throw new Exception("MajorLineStroke is obsolete, please use MajorTickLineStyle instead");
-    }
-  }
-
-  [Obsolete("MinorLineStroke is obsolete, please use MajorTickLineStyle instead", true)]
-  public Brush MinorLineStroke
-  {
-    get => (Brush) null;
-    set
-    {
-      throw new Exception("MinorLineStroke is obsolete, please use MajorTickLineStyle instead");
-    }
-  }
-
-  public Style MajorTickLineStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisBase.\u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D, (object) value);
-    }
-  }
-
-  public Style MinorTickLineStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisBase.\u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D, (object) value);
-    }
-  }
-
-  public Style MajorGridLineStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisBase.\u0023\u003DzDDf\u0024Sa19KecVtCNmpA\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzDDf\u0024Sa19KecVtCNmpA\u003D\u003D, (object) value);
-    }
-  }
-
-  public Style MinorGridLineStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisBase.\u0023\u003DzAak9t33M4Bx00JH4Xw\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzAak9t33M4Bx00JH4Xw\u003D\u003D, (object) value);
-    }
-  }
-
-  public bool DrawMinorTicks
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzHxEy7A8kQeb2);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzHxEy7A8kQeb2, (object) value);
-    }
-  }
-
-  public bool DrawLabels
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003Dz\u0024geG9XF9qNM9);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz\u0024geG9XF9qNM9, (object) value);
-    }
-  }
-
-  public bool DrawMajorTicks
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003Dz6E17UGyH3Hxe);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz6E17UGyH3Hxe, (object) value);
-    }
-  }
-
-  public bool DrawMajorGridLines
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D, (object) value);
-    }
-  }
-
-  public bool DrawMinorGridLines
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D, (object) value);
-    }
-  }
-
-  public bool DrawMajorBands
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisBase.\u0023\u003Dz7NskrrDUwGfd);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003Dz7NskrrDUwGfd, (object) value);
-    }
-  }
-
-  public Color AxisBandsFill
-  {
-    get
-    {
-      return (Color) this.GetValue(AxisBase.\u0023\u003DzdsaZczkKof25);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzdsaZczkKof25, (object) value);
-    }
-  }
-
-  public Orientation Orientation
-  {
-    get
-    {
-      return (Orientation) this.GetValue(AxisBase.\u0023\u003DzXMV_skc\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzXMV_skc\u003D, (object) value);
-    }
-  }
-
-  public AxisAlignment AxisAlignment
-  {
-    get
-    {
-      return (AxisAlignment) this.GetValue(AxisBase.\u0023\u003DzfMY988N0StOA);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzfMY988N0StOA, (object) value);
-    }
-  }
-
-  public string Id
-  {
-    get
-    {
-      return (string) this.GetValue(AxisBase.\u0023\u003DzD\u0024wXQ8E\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzD\u0024wXQ8E\u003D, (object) value);
-    }
-  }
-
-  public double StrokeThickness
-  {
-    get
-    {
-      return (double) this.GetValue(AxisBase.StrokeThicknessProperty);
-    }
-    set
-    {
-      this.SetValue(AxisBase.StrokeThicknessProperty, (object) value);
-    }
-  }
-
-  public Style TickLabelStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisBase.\u0023\u003DzGW4hK41x8a8n);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzGW4hK41x8a8n, (object) value);
-    }
-  }
-
-  public UltrachartScrollbar Scrollbar
-  {
-    get
-    {
-      return (UltrachartScrollbar) this.GetValue(AxisBase.\u0023\u003DzVEJ5y7o\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzVEJ5y7o\u003D, (object) value);
-    }
-  }
-
-  public bool IsSuspended
-  {
-    get
-    {
-      return UpdateSuspender.\u0023\u003DzY5RcByYV3P6y((ISuspendable) this);
-    }
-  }
-
-  public IAnnotationCanvas ModifierAxisCanvas
-  {
-    get
-    {
-      return (IAnnotationCanvas) this.\u0023\u003DzoN4RYgKqEhkM;
-    }
-  }
-
-  protected \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D \u0023\u003DzTRL\u0024Xy0vYDigfJ9YNg\u003D\u003D()
-  {
-    return this.ParentSurface == null ? (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D) null : this.ParentSurface.\u0023\u003DzTRL\u0024Xy0vYDigfJ9YNg\u003D\u003D();
-  }
-
-  protected IRenderSurface \u0023\u003Dz\u0024XHewofFXjwz()
-  {
-    return this.ParentSurface == null ? (IRenderSurface) null : this.ParentSurface.get_RenderSurface();
-  }
-
-  public virtual bool IsCategoryAxis => false;
-
-  public virtual bool IsLogarithmicAxis => false;
-
-  public virtual bool IsPolarAxis => false;
-
-  [TypeConverter(typeof (StringToDoubleRangeTypeConverter))]
-  public IRange AnimatedVisibleRange
-  {
-    get
-    {
-      return (IRange) this.GetValue(AxisBase.\u0023\u003DzGqv7OFBibgO2);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzGqv7OFBibgO2, (object) value);
-    }
-  }
-
-  [TypeConverter(typeof (StringToDoubleRangeTypeConverter))]
-  public IRange VisibleRange
-  {
-    get
-    {
-      return (IRange) this.GetValue(AxisBase.\u0023\u003DzWl3LbWhL1z0D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzWl3LbWhL1z0D, (object) value);
-    }
-  }
-
-  [TypeConverter(typeof (StringToDoubleRangeTypeConverter))]
-  public IRange VisibleRangeLimit
-  {
-    get
-    {
-      return (IRange) this.GetValue(AxisBase.\u0023\u003DzW7Xl\u00245Sj1hV\u0024);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzW7Xl\u00245Sj1hV\u0024, (object) value);
-    }
-  }
-
-  public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQBfb77y0xl0\u00246w\u003D\u003D VisibleRangeLimitMode
-  {
-    get
-    {
-      return (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQBfb77y0xl0\u00246w\u003D\u003D) this.GetValue(AxisBase.\u0023\u003DzxPOeDpgt9hi7h0ryrw\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzxPOeDpgt9hi7h0ryrw\u003D\u003D, (object) value);
-    }
-  }
-
-  public IComparable MinimalZoomConstrain
-  {
-    get
-    {
-      return (IComparable) this.GetValue(AxisBase.\u0023\u003DzjWJEoVoxRw8F);
-    }
-    set
-    {
-      this.SetValue(AxisBase.\u0023\u003DzjWJEoVoxRw8F, (object) value);
-    }
-  }
-
-  public IRange DataRange
-  {
-    get => this.\u0023\u003Dzd6x7lH_dQH0I();
-  }
-
-  public IAxisPanel \u0023\u003DzhFAmpLNTPh4n()
-  {
-    return this.\u0023\u003DzdEt8bikGsITl;
-  }
-
-  public StackPanel \u0023\u003DzMUpWftuaeZ8o() => this.\u0023\u003DzgTtVLFnthbIz;
-
-  public \u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D \u0023\u003Dzjk5IewFx\u0024KZ81I_BPQ\u003D\u003D()
-  {
-    return this.\u0023\u003DzPfs\u0024IokVcdkx;
-  }
-
-  public virtual double CurrentDatapointPixelSize => double.NaN;
-
-  [Obsolete("AxisBase.GetPointRange is obsolete, please call DataSeries.GetIndicesRange(VisibleRange) instead", true)]
-  public \u0023\u003Dz59_koqr2EQdapDcFKycZuFSiStoJv1Yg1g\u003D\u003D \u0023\u003Dz53g0bO2haOY4()
-  {
-    throw new NotSupportedException("AxisBase.GetPointRange is obsolete, please call DataSeries.GetIndicesRange(VisibleRange) instead");
-  }
-
-  public abstract IRange \u0023\u003DzspbjXJnVtbB\u0024();
-
-  public abstract IRange \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D();
-
-  public abstract IRange \u0023\u003DzzMId\u0024f67Wftb(
-    \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1);
-
-  protected virtual IRange \u0023\u003Dzd6x7lH_dQH0I()
-  {
-    if (this.ParentSurface == null || this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
-      return (IRange) null;
-    return !this.IsXAxis ? this.\u0023\u003DzoWnNnPa93Kn8() : this.\u0023\u003DzfHPjUn3EtpHl();
-  }
-
-  private IRange \u0023\u003DzfHPjUn3EtpHl()
-  {
-    IRange abyLt9clZggmJsWhw1 = (IRange) null;
-    foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DznfjxYadwxaoyd16Alq7avE0\u003D)))
-    {
-      IRange abyLt9clZggmJsWhw2 = s1JolYrWoYpqmQ6ug.\u0023\u003Dzq3MgExWxza1L();
-      if (abyLt9clZggmJsWhw2 != null && abyLt9clZggmJsWhw2.IsDefined)
-      {
-        DoubleRange klqcJ87Zm8UwE3WEjd = abyLt9clZggmJsWhw2.AsDoubleRange();
-        abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw1 == null ? (IRange) klqcJ87Zm8UwE3WEjd : klqcJ87Zm8UwE3WEjd.\u0023\u003DzeiifnZI\u003D(abyLt9clZggmJsWhw1);
-      }
-    }
-    return abyLt9clZggmJsWhw1;
-  }
-
-  private IRange \u0023\u003DzoWnNnPa93Kn8()
-  {
-    IRange abyLt9clZggmJsWhw = (IRange) null;
-    foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzApQq1pC_4pCnMbzX7sr8AII\u003D)))
-    {
-      IRange yrange = s1JolYrWoYpqmQ6ug.get_DataSeries().get_YRange();
-      if (yrange != null && yrange.IsDefined)
-      {
-        DoubleRange klqcJ87Zm8UwE3WEjd = yrange.AsDoubleRange();
-        abyLt9clZggmJsWhw = abyLt9clZggmJsWhw == null ? (IRange) klqcJ87Zm8UwE3WEjd : klqcJ87Zm8UwE3WEjd.\u0023\u003DzeiifnZI\u003D(abyLt9clZggmJsWhw);
-      }
-    }
-    return abyLt9clZggmJsWhw;
-  }
-
-  public virtual IRange \u0023\u003DzFwoMKP9juTnt()
-  {
-    IRange abyLt9clZggmJsWhw1 = (IRange) new DoubleRange(double.NaN, double.NaN);
-    if (this.ParentSurface != null && !this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
-    {
-      if (this.IsXAxis)
-      {
-        abyLt9clZggmJsWhw1 = this.\u0023\u003DzfHPjUn3EtpHl() ?? abyLt9clZggmJsWhw1;
-        if (abyLt9clZggmJsWhw1.IsZero)
-          abyLt9clZggmJsWhw1 = this.\u0023\u003DzsB7Y9t30CQ63(abyLt9clZggmJsWhw1);
-        if (this.GrowBy != null)
+    public static readonly DependencyProperty TickCoordinatesProviderProperty = DependencyProperty.Register(
+        nameof(TickCoordinatesProvider),
+        typeof(ITickCoordinatesProvider),
+        typeof(AxisBase),
+        new PropertyMetadata(new PropertyChangedCallback(AxisBase.OnTickCoordinatesProviderChanged)));
+    public static readonly DependencyProperty IsStaticAxisProperty = DependencyProperty.Register(
+        nameof(IsStaticAxis),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) false, new PropertyChangedCallback(AxisBase.OnIsStaticAxisChanged)));
+    public static readonly DependencyProperty IsPrimaryAxisProperty = DependencyProperty.Register(
+        nameof(IsPrimaryAxis),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) false, new PropertyChangedCallback(AxisBase.OnIsPrimaryAxisChanged)));
+    public static readonly DependencyProperty IsCenterAxisProperty = DependencyProperty.Register(
+        nameof(IsCenterAxis),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata(
+            (object) false,
+            new PropertyChangedCallback(AxisBase.OnIsCenterAxisDependencyPropertyChanged)));
+    [Obsolete(
+        "We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead")]
+    public static readonly DependencyProperty AxisModeProperty = DependencyProperty.Register(
+        nameof(AxisMode),
+        typeof(AxisMode),
+        typeof(AxisBase),
+        new PropertyMetadata((object) AxisMode.Linear));
+    public static readonly DependencyProperty AutoRangeProperty = DependencyProperty.Register(
+        nameof(AutoRange),
+        typeof(AutoRange),
+        typeof(AxisBase),
+        new PropertyMetadata((object) AutoRange.Once, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MajorDeltaProperty = DependencyProperty.Register(
+        nameof(MajorDelta),
+        typeof(IComparable),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MinorDeltaProperty = DependencyProperty.Register(
+        nameof(MinorDelta),
+        typeof(IComparable),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MinorsPerMajorProperty = DependencyProperty.Register(
+        nameof(MinorsPerMajor),
+        typeof(int),
+        typeof(AxisBase),
+        new PropertyMetadata((object) 5, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty GrowByProperty = DependencyProperty.Register(
+        nameof(GrowBy),
+        typeof(IRange<double>),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty VisibleRangeProperty = DependencyProperty.Register(
+        nameof(VisibleRange),
+        typeof(IRange),
+        typeof(AxisBase),
+        new PropertyMetadata(
+            (object) null,
+            new PropertyChangedCallback(AxisBase.OnVisibleRangeDependencyPropertyChanged)));
+    public static readonly DependencyProperty VisibleRangeLimitProperty = DependencyProperty.Register(
+        nameof(VisibleRangeLimit),
+        typeof(IRange),
+        typeof(AxisBase),
+        new PropertyMetadata(
+            (object) null,
+            new PropertyChangedCallback(AxisBase.OnVisibleRangeLimitDependencyPropertyChanged)));
+    public static readonly DependencyProperty VisibleRangeLimitModeProperty = DependencyProperty.Register(
+        nameof(VisibleRangeLimitMode),
+        typeof(RangeClipMode),
+        typeof(AxisBase),
+        new PropertyMetadata((object) RangeClipMode.MinMax));
+    public static readonly DependencyProperty AnimatedVisibleRangeProperty = DependencyProperty.Register(
+        nameof(AnimatedVisibleRange),
+        typeof(IRange),
+        typeof(AxisBase),
+        new PropertyMetadata(
+            (object) null,
+            new PropertyChangedCallback(AxisBase.OnAnimatedVisibleRangeDependencyPropertyChanged)));
+    public static readonly DependencyProperty VisibleRangePointProperty = DependencyProperty.Register(
+        "VisibleRangePoint",
+        typeof(Point),
+        typeof(AxisBase),
+        new PropertyMetadata(
+            (object) new Point(),
+            new PropertyChangedCallback(AxisBase.OnVisibleRangePointDependencyPropertyChanged)));
+    public static readonly DependencyProperty AutoAlignVisibleRangeProperty = DependencyProperty.Register(
+        nameof(AutoAlignVisibleRange),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) false, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MaxAutoTicksProperty = DependencyProperty.Register(
+        nameof(MaxAutoTicks),
+        typeof(int),
+        typeof(AxisBase),
+        new PropertyMetadata((object) 10, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty AutoTicksProperty = DependencyProperty.Register(
+        nameof(AutoTicks),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty TickProviderProperty = DependencyProperty.Register(
+        nameof(TickProvider),
+        typeof(ITickProvider),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.OnTickProviderChanged)));
+    public static readonly DependencyProperty MinimalZoomConstrainProperty = DependencyProperty.Register(
+        nameof(MinimalZoomConstrain),
+        typeof(IComparable),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null));
+    public static readonly DependencyProperty OrientationProperty = DependencyProperty.Register(
+        nameof(Orientation),
+        typeof(Orientation),
+        typeof(AxisBase),
+        new PropertyMetadata(
+            (object) Orientation.Horizontal,
+            new PropertyChangedCallback(AxisBase.OnOrientationChanged)));
+    public static readonly DependencyProperty AxisAlignmentProperty = DependencyProperty.Register(
+        nameof(AxisAlignment),
+        typeof(AxisAlignment),
+        typeof(AxisBase),
+        new PropertyMetadata((object) AxisAlignment.Default, new PropertyChangedCallback(AxisBase.OnAlignmentChanged)));
+    public static readonly DependencyProperty IdProperty = DependencyProperty.Register(
+        nameof(Id),
+        typeof(string),
+        typeof(AxisBase),
+        new PropertyMetadata((object) nameof(DefaultAxisId), new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty FlipCoordinatesProperty = DependencyProperty.Register(
+        nameof(FlipCoordinates),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) false, new PropertyChangedCallback(AxisBase.OnFlipCoordinatesChanged)));
+    public static readonly DependencyProperty LabelProviderProperty = DependencyProperty.Register(
+        nameof(LabelProvider),
+        typeof(ILabelProvider),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.OnLabelProviderChanged)));
+    public static readonly DependencyProperty DefaultLabelProviderProperty = DependencyProperty.Register(
+        nameof(DefaultLabelProvider),
+        typeof(ILabelProvider),
+        typeof(AxisBase),
+        new PropertyMetadata((PropertyChangedCallback) null));
+    public static readonly DependencyProperty TextFormattingProperty = DependencyProperty.Register(
+        nameof(TextFormatting),
+        typeof(string),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty CursorTextFormattingProperty = DependencyProperty.Register(
+        nameof(CursorTextFormatting),
+        typeof(string),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty AxisTitleProperty = DependencyProperty.Register(
+        nameof(AxisTitle),
+        typeof(string),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty TitleStyleProperty = DependencyProperty.Register(
+        nameof(TitleStyle),
+        typeof(Style),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty TitleFontWeightProperty = DependencyProperty.Register(
+        nameof(TitleFontWeight),
+        typeof(FontWeight),
+        typeof(AxisBase),
+        new PropertyMetadata((object) FontWeights.Normal, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty TitleFontSizeProperty = DependencyProperty.Register(
+        nameof(TitleFontSize),
+        typeof(double),
+        typeof(AxisBase),
+        new PropertyMetadata((object) 12.0, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty TickTextBrushProperty = DependencyProperty.Register(
+        nameof(TickTextBrush),
+        typeof(Brush),
+        typeof(AxisBase),
+        new PropertyMetadata(new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty StrokeThicknessProperty = DependencyProperty.Register(
+        nameof(StrokeThickness),
+        typeof(double),
+        typeof(AxisBase),
+        new PropertyMetadata((object) 1.0, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MajorTickLineStyleProperty = DependencyProperty.Register(
+        nameof(MajorTickLineStyle),
+        typeof(Style),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MinorTickLineStyleProperty = DependencyProperty.Register(
+        nameof(MinorTickLineStyle),
+        typeof(Style),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty DrawMajorTicksProperty = DependencyProperty.Register(
+        nameof(DrawMajorTicks),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty DrawMinorTicksProperty = DependencyProperty.Register(
+        nameof(DrawMinorTicks),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty DrawLabelsProperty = DependencyProperty.Register(
+        nameof(DrawLabels),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MajorGridLineStyleProperty = DependencyProperty.Register(
+        nameof(MajorGridLineStyle),
+        typeof(Style),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty MinorGridLineStyleProperty = DependencyProperty.Register(
+        nameof(MinorGridLineStyle),
+        typeof(Style),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty DrawMajorGridLinesProperty = DependencyProperty.Register(
+        nameof(DrawMajorGridLines),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty DrawMinorGridLinesProperty = DependencyProperty.Register(
+        nameof(DrawMinorGridLines),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty DrawMajorBandsProperty = DependencyProperty.Register(
+        nameof(DrawMajorBands),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) false, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty AxisBandsFillProperty = DependencyProperty.Register(
+        nameof(AxisBandsFill),
+        typeof(Color),
+        typeof(AxisBase),
+        new PropertyMetadata((object) new Color(), new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty TickLabelStyleProperty = DependencyProperty.Register(
+        nameof(TickLabelStyle),
+        typeof(Style),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    public static readonly DependencyProperty ScrollbarProperty = DependencyProperty.Register(
+        nameof(Scrollbar),
+        typeof(UltrachartScrollbar),
+        typeof(AxisBase),
+        new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.OnScrollBarChanged)));
+    public static readonly DependencyProperty IsLabelCullingEnabledProperty = DependencyProperty.Register(
+        nameof(IsLabelCullingEnabled),
+        typeof(bool),
+        typeof(AxisBase),
+        new PropertyMetadata((object) true, new PropertyChangedCallback(AxisBase.InvalidateParent)));
+    private static readonly int[] LabelCullingDistances = new int[5] { 2, 4, 8, 16, 32 };
+    private bool _isXAxis = true;
+    private AxisAlignmentToVeticalAnchorPointConverter _axisAlignmentToVerticalAnchorPointConverter = new AxisAlignmentToVeticalAnchorPointConverter(
+        );
+    private AxisAlignmentToHorizontalAnchorPointConverter _axisAlignmentToHorizontalAnchorPointConverter = new AxisAlignmentToHorizontalAnchorPointConverter(
+        );
+    protected System.Windows.Shapes.Line LineToStyle = new System.Windows.Shapes.Line();
+    private IServiceContainer _serviceContainer;
+    protected ICoordinateCalculator<double> _currentCoordinateCalculator;
+    protected IAxisInteractivityHelper _currentInteractivityHelper;
+    private ILabelProvider _defaultLabelProvider;
+    private ISciChartSurface _parentSurface;
+    private IAxisPanel _axisPanel;
+    private StockSharp.Xaml.Charting.Themes.ModifierAxisCanvas _modifierAxisCanvas;
+    private ITickLabelsPool _labelsPool;
+    private TickCoordinates _tickCoords;
+    private float _offset;
+    private bool _isAnimationChange;
+    private IRange _lastValidRange;
+    private IRange _secondLastValidRange;
+    private Point _fromPoint;
+    public const string DefaultAxisId = "DefaultAxisId";
+    protected const int MinDistanceToBounds = 1;
+    protected const double ZeroRangeGrowBy = 0.01;
+    private StackPanel _axisContainer;
+
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public event EventHandler<EventArgs> Arranged;
+
+    public event EventHandler<VisibleRangeChangedEventArgs> VisibleRangeChanged;
+
+    public event EventHandler<EventArgs> DataRangeChanged;
+
+    protected AxisBase()
+    {
+        DefaultStyleKey = typeof( AxisBase );
+        _secondLastValidRange = _lastValidRange = GetDefaultNonZeroRange();
+        SetCurrentValue( AxisBase.TickCoordinatesProviderProperty, new DefaultTickCoordinatesProvider() );
+        InitializeLabelsPool();
+        SizeChanged += ( SizeChangedEventHandler ) ( ( s, e ) => InvalidateElement() );
+    }
+
+    internal AxisBase( IAxisPanel axisPanel ) : this()
+    {
+        _axisPanel = axisPanel;
+    }
+
+    private void InitializeLabelsPool()
+    {
+        _labelsPool = _labelsPool ??
+            ( this is NumericAxis
+                ? ( ITickLabelsPool ) new StockSharp.Xaml.Charting.Visuals.Axes.TickLabelsPool<NumericTickLabel>(
+                    MaxAutoTicks,
+                    new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) )
+                : ( ITickLabelsPool ) new StockSharp.Xaml.Charting.Visuals.Axes.TickLabelsPool<DefaultTickLabel>(
+                    MaxAutoTicks,
+                    new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) ) );
+    }
+
+    private DefaultTickLabel ApplyStyle( DefaultTickLabel defaultTickLabel )
+    {
+        defaultTickLabel.DataContext = null;
+        defaultTickLabel.SetBinding(
+            DefaultTickLabel.DefaultForegroundProperty,
+            ( BindingBase ) new Binding( "TickTextBrush" ) { Source = this } );
+        defaultTickLabel.SetBinding(
+            DefaultTickLabel.DefaultHorizontalAnchorPointProperty,
+            ( BindingBase ) new Binding( "AxisAlignment" )
+            {
+                Source = this,
+                Converter = ( IValueConverter ) _axisAlignmentToHorizontalAnchorPointConverter
+            } );
+        defaultTickLabel.SetBinding(
+            DefaultTickLabel.DefaultVerticalAnchorPointProperty,
+            ( BindingBase ) new Binding( "AxisAlignment" )
+            {
+                Source = this,
+                Converter = ( IValueConverter ) _axisAlignmentToVerticalAnchorPointConverter
+            } );
+        defaultTickLabel.SetBinding(
+            FrameworkElement.StyleProperty,
+            ( BindingBase ) new Binding( "TickLabelStyle" ) { Source = this } );
+        return defaultTickLabel;
+    }
+
+    internal bool IsLicenseValid
+    {
+        get;
+        set;
+    }
+
+    bool IAxis.IsXAxis
+    {
+        get
         {
-          double num = this.IsLogarithmicAxis ? ((\u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D) this).get_LogarithmicBase() : 0.0;
-          abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw1.GrowBy(this.GrowBy.Min, this.GrowBy.Max, this.IsLogarithmicAxis, num);
+            return IsXAxis;
         }
-        if (this.VisibleRangeLimit != null)
-          abyLt9clZggmJsWhw1.\u0023\u003DzJIqIiUw\u003D((IRange) this.VisibleRangeLimit.AsDoubleRange(), this.VisibleRangeLimitMode);
-      }
-      else
-        abyLt9clZggmJsWhw1 = this.\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D((IDictionary<string, IRange>) null);
-    }
-    IRange abyLt9clZggmJsWhw2 = this.VisibleRange == null || !this.VisibleRange.IsDefined ? this.\u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D() : this.VisibleRange;
-    return abyLt9clZggmJsWhw1 == null || !abyLt9clZggmJsWhw1.IsDefined ? (IRange) abyLt9clZggmJsWhw2.AsDoubleRange() : abyLt9clZggmJsWhw1;
-  }
-
-  protected virtual IRange \u0023\u003DzsB7Y9t30CQ63(
-    IRange _param1)
-  {
-    return _param1.GrowBy(0.01, 0.01);
-  }
-
-  public IRange \u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(
-    IDictionary<string, IRange> _param1)
-  {
-    IRange abyLt9clZggmJsWhw1 = (IRange) new DoubleRange(double.NaN, double.NaN);
-    if (this.ParentSurface != null && !this.ParentSurface.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
-    {
-      foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzaUGqhuODC_LS7GO3CfQn3j4SMN4z8jTtuw\u003D\u003D)))
-      {
-        IRange abyLt9clZggmJsWhw2 = _param1 == null || !_param1.ContainsKey(s1JolYrWoYpqmQ6ug.get_XAxisId()) ? (s1JolYrWoYpqmQ6ug.XAxis ?? this.ParentSurface.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C(s1JolYrWoYpqmQ6ug.get_XAxisId(), false))?.VisibleRange : _param1[s1JolYrWoYpqmQ6ug.get_XAxisId()];
-        if (abyLt9clZggmJsWhw2 != null && abyLt9clZggmJsWhw2.IsDefined)
+        set
         {
-          DoubleRange klqcJ87Zm8UwE3WEjd = s1JolYrWoYpqmQ6ug.\u0023\u003DzxNQHuqrEvxH2(abyLt9clZggmJsWhw2, this.IsLogarithmicAxis).AsDoubleRange();
-          if (klqcJ87Zm8UwE3WEjd.IsDefined)
-            abyLt9clZggmJsWhw1 = klqcJ87Zm8UwE3WEjd.\u0023\u003DzeiifnZI\u003D(abyLt9clZggmJsWhw1);
+            IsXAxis = value;
         }
-      }
-      if (abyLt9clZggmJsWhw1.IsZero)
-        abyLt9clZggmJsWhw1 = this.\u0023\u003DzsB7Y9t30CQ63(abyLt9clZggmJsWhw1);
-      if (this.GrowBy != null)
-      {
-        double num = this.IsLogarithmicAxis ? ((\u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D) this).get_LogarithmicBase() : 0.0;
-        abyLt9clZggmJsWhw1 = abyLt9clZggmJsWhw1 != null ? abyLt9clZggmJsWhw1.GrowBy(this.GrowBy.Min, this.GrowBy.Max, this.IsLogarithmicAxis, num) : (IRange) null;
-      }
-      if (this.VisibleRangeLimit != null)
-        abyLt9clZggmJsWhw1.\u0023\u003DzJIqIiUw\u003D((IRange) this.VisibleRangeLimit.AsDoubleRange(), this.VisibleRangeLimitMode);
     }
-    return abyLt9clZggmJsWhw1 == null || !abyLt9clZggmJsWhw1.IsDefined ? (this.VisibleRange != null ? (IRange) this.VisibleRange.AsDoubleRange() : (IRange) null) : abyLt9clZggmJsWhw1;
-  }
 
-  public void \u0023\u003DzquLnA5Y\u003D(
-    double _param1,
-    ClipMode _param2)
-  {
-    this.\u0023\u003DzquLnA5Y\u003D(_param1, _param2, TimeSpan.Zero);
-  }
-
-  public void \u0023\u003DzquLnA5Y\u003D(
-    double _param1,
-    ClipMode _param2,
-    TimeSpan _param3)
-  {
-    \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c txZaHyXliZ9wXjzC = this.\u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0();
-    if (txZaHyXliZ9wXjzC == null)
-      return;
-    IRange abyLt9clZggmJsWhw1 = txZaHyXliZ9wXjzC.\u0023\u003DzquLnA5Y\u003D(this.VisibleRange, _param1);
-    IRange abyLt9clZggmJsWhw2 = abyLt9clZggmJsWhw1;
-    if (_param2 != ClipMode.None)
+    public bool IsXAxis
     {
-      IRange abyLt9clZggmJsWhw3 = this.\u0023\u003DzFwoMKP9juTnt();
-      abyLt9clZggmJsWhw2 = txZaHyXliZ9wXjzC.\u0023\u003DzoaHKvRB3HZP3(abyLt9clZggmJsWhw1, abyLt9clZggmJsWhw3, _param2);
-    }
-    IRange abyLt9clZggmJsWhw4 = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(this.VisibleRange, abyLt9clZggmJsWhw2.Min, abyLt9clZggmJsWhw2.Max);
-    this.\u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D(abyLt9clZggmJsWhw4);
-    this.\u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D(abyLt9clZggmJsWhw4, _param3);
-  }
-
-  protected void \u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D(
-    IRange _param1)
-  {
-    if (this.VisibleRangeLimit == null)
-      return;
-    _param1.\u0023\u003DzJIqIiUw\u003D(this.VisibleRangeLimit, this.VisibleRangeLimitMode);
-  }
-
-  public void \u0023\u003Dz\u00248pSPh2nSp0Q(int _param1)
-  {
-    this.\u0023\u003Dz\u00248pSPh2nSp0Q(_param1, TimeSpan.Zero);
-  }
-
-  public virtual void \u0023\u003Dz\u00248pSPh2nSp0Q(int _param1, TimeSpan _param2)
-  {
-    throw new InvalidOperationException("ScrollByDataPoints is only valid CategoryDateTimeAxis");
-  }
-
-  public void \u0023\u003DzQdR08KQ\u003D(double _param1, double _param2)
-  {
-    this.\u0023\u003DzQdR08KQ\u003D(_param1, _param2, TimeSpan.Zero);
-  }
-
-  public void \u0023\u003DzQdR08KQ\u003D(double _param1, double _param2, TimeSpan _param3)
-  {
-    IRange abyLt9clZggmJsWhw = this.\u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0().\u0023\u003DzQdR08KQ\u003D(this.VisibleRange, _param1, _param2);
-    this.\u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D(abyLt9clZggmJsWhw);
-    this.\u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D(abyLt9clZggmJsWhw, _param3);
-  }
-
-  public void \u0023\u003Dz40HnRQM\u003D(double _param1, double _param2)
-  {
-    this.\u0023\u003Dz40HnRQM\u003D(_param1, _param2, TimeSpan.Zero);
-  }
-
-  public void \u0023\u003Dz40HnRQM\u003D(double _param1, double _param2, TimeSpan _param3)
-  {
-    \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c txZaHyXliZ9wXjzC = this.\u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0();
-    if (txZaHyXliZ9wXjzC == null)
-      return;
-    IRange abyLt9clZggmJsWhw = txZaHyXliZ9wXjzC.\u0023\u003Dz40HnRQM\u003D(this.VisibleRange, _param1, _param2);
-    this.\u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D(abyLt9clZggmJsWhw);
-    this.\u0023\u003DzB4GssLEPDUHfRR_NuUKVKvc\u003D(abyLt9clZggmJsWhw, _param3);
-  }
-
-  [Obsolete("AxisBase.ScrollTo is obsolete, please call AxisBase.Scroll(pixelsToScroll) instead")]
-  public virtual void \u0023\u003DzSYETXFE\u003D(
-    IRange _param1,
-    double _param2)
-  {
-    this.\u0023\u003DzCIPDlIJQeLiZ(_param1, _param2, (IRange) null);
-  }
-
-  public virtual void \u0023\u003DzCIPDlIJQeLiZ(
-    IRange _param1,
-    double _param2,
-    IRange _param3)
-  {
-    IRange abyLt9clZggmJsWhw1 = this.\u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0().\u0023\u003DzquLnA5Y\u003D(this.VisibleRange, _param2);
-    IRange abyLt9clZggmJsWhw2;
-    if (_param3 == null)
-    {
-      abyLt9clZggmJsWhw2 = abyLt9clZggmJsWhw1;
-    }
-    else
-    {
-      DoubleRange klqcJ87Zm8UwE3WEjd = abyLt9clZggmJsWhw1.AsDoubleRange();
-      abyLt9clZggmJsWhw2 = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(this.VisibleRange, klqcJ87Zm8UwE3WEjd.Min, klqcJ87Zm8UwE3WEjd.Max, _param3);
-    }
-    if (!this.\u0023\u003Dz2OKbyRBzRCBL(abyLt9clZggmJsWhw2))
-      return;
-    this.VisibleRange = abyLt9clZggmJsWhw2;
-  }
-
-  public virtual bool \u0023\u003Dz2OKbyRBzRCBL(
-    IRange _param1)
-  {
-    return this.\u0023\u003Dz9yvpaTXy3ucx(_param1) && _param1.IsDefined && _param1.Min.CompareTo((object) _param1.Max) <= 0;
-  }
-
-  public abstract bool \u0023\u003Dz9yvpaTXy3ucx(
-    IRange _param1);
-
-  public XmlSchema GetSchema() => (XmlSchema) null;
-
-  public virtual void ReadXml(XmlReader _param1)
-  {
-    if (_param1.MoveToContent() != XmlNodeType.Element || !(_param1.LocalName == ((object) this).GetType().Name))
-      return;
-    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz4EJs3pc\u003D(this, _param1);
-  }
-
-  public virtual void WriteXml(XmlWriter _param1)
-  {
-    \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xGkBRjz2cANt6prK2mzvoXV0.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz7SZ\u0024Lrw\u003D(this, _param1);
-  }
-
-  public abstract IAxis \u0023\u003DzQ8SgRgQ\u003D();
-
-  public virtual void \u0023\u003DzQ4klw1orSVl\u0024(Type _param1)
-  {
-    List<Type> source = this.\u0023\u003DzvwDcRtQA0c4T();
-    if (!source.Contains(_param1))
-      throw new InvalidOperationException($"{((object) this).GetType().Name} does not support the type {_param1}. Supported types include {string.Join(", ", source.Select<Type, string>(AxisBase.SomeClass34343383.\u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D ?? (AxisBase.SomeClass34343383.\u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D = new Func<Type, string>(AxisBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D))).ToArray<string>())}");
-  }
-
-  protected abstract List<Type> \u0023\u003DzvwDcRtQA0c4T();
-
-  public void \u0023\u003DzpTR8\u0024ECbZOHX()
-  {
-    if (!this.AutoTicks && (this.MajorDelta == null || this.MajorDelta.Equals(AxisBase.\u0023\u003DzuTkKbr18L_Ur.GetMetadata(typeof (AxisBase)).DefaultValue) || this.MinorDelta == null || this.MinorDelta.Equals(AxisBase.\u0023\u003Dzdg3vng1nptYM.GetMetadata(typeof (AxisBase)).DefaultValue)))
-      throw new InvalidOperationException("The MinDelta, MaxDelta properties have to be set if AutoTicks == False.");
-  }
-
-  public void \u0023\u003DzqFIyyIbnwGLq(Cursor _param1)
-  {
-    this.SetCurrentValue(FrameworkElement.CursorProperty, (object) _param1);
-  }
-
-  public void Clear()
-  {
-    if (this.\u0023\u003DzhFAmpLNTPh4n() == null)
-      return;
-    this.\u0023\u003DzhFAmpLNTPh4n().ClearLabels();
-  }
-
-  public \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c \u0023\u003DzLwX32hiDT0l2MBUaLIQGQLie6ie0()
-  {
-    return this.\u0023\u003DzuybmMyI_5LK1k3IeW5QCm9nPtLE9;
-  }
-
-  public virtual \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D()
-  {
-    this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D = (this.Services == null ? (\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7WIKy8yFmS0qz5aG2LjQ9ZhaLqHaajO4_nAIgryYYasWa8dMpfY\u003D) new \u0023\u003DzPql\u0024onrPHiHfWZj7w2jaKmkEzvtrSPmPXCypCYSvlJxk\u0024K3oG\u0024G8T9G0Kw\u0024aeAQVBAnAZzg\u003D() : this.Services.GetService<\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7WIKy8yFmS0qz5aG2LjQ9ZhaLqHaajO4_nAIgryYYasWa8dMpfY\u003D>()).GetMath(this.\u0023\u003Dz0RktzzbyC\u002468());
-    this.\u0023\u003DzuybmMyI_5LK1k3IeW5QCm9nPtLE9 = (\u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c) new \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZWo1GN8_OWPxtqME(this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D);
-    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D;
-  }
-
-  public virtual void \u0023\u003Dzs15X3Ar32F1\u0024(
-    \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1 = default (\u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D),
-    \u0023\u003DzAJ2g5KE5bawCuhjG0TamYmz92FTRIX_UnpTLlY1PkTYQ _param2 = null)
-  {
-    this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-  }
-
-  public virtual \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
-  {
-    IRenderSurface n9miZzngvjW54Qe0d7 = this.\u0023\u003Dz\u0024XHewofFXjwz();
-    DoubleRange klqcJ87Zm8UwE3WEjd = (this.VisibleRange ?? (IRange) new DoubleRange(double.NaN, double.NaN)).AsDoubleRange();
-    int num = this.IsHorizontalAxis ? (int) this.ActualWidth : (int) this.ActualHeight;
-    if ((double) Math.Abs(num) < double.Epsilon && n9miZzngvjW54Qe0d7 != null)
-      num = this.IsHorizontalAxis ? (int) n9miZzngvjW54Qe0d7.ActualWidth : (int) n9miZzngvjW54Qe0d7.ActualHeight;
-    \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY vcA0rHxkV5W8VrNvy = new \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY()
-    {
-      \u0023\u003DztJAA1uMf9_P8 = this.FlipCoordinates,
-      \u0023\u003DzFA18Bsxthn7B = this.IsXAxis,
-      \u0023\u003Dz_jNjf7U\u003D = this.IsHorizontalAxis,
-      \u0023\u003Dzk0u64hpXv585 = klqcJ87Zm8UwE3WEjd.Max.ToDouble(),
-      \u0023\u003DzBeOlCgb3wUDW = klqcJ87Zm8UwE3WEjd.Min.ToDouble(),
-      \u0023\u003DznR9\u00242Eg\u003D = this.\u0023\u003Dz4wEfDhMr\u0024V6c(),
-      \u0023\u003DzdTxNrgQ\u003D = (double) num,
-      \u0023\u003Dz_WzdhI8nAiba = double.NaN
-    };
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ns01UjmP40FpxAl2jmQ = this.\u0023\u003DznRkNg0BYTU_8();
-    if (ns01UjmP40FpxAl2jmQ != null)
-    {
-      vcA0rHxkV5W8VrNvy.\u0023\u003Dz9jZG_9RUfbqZ = ns01UjmP40FpxAl2jmQ.\u0023\u003DzwQnyySN6xaVC();
-      vcA0rHxkV5W8VrNvy.\u0023\u003DzYlmrR5WNSPuW = ns01UjmP40FpxAl2jmQ.get_IsSorted();
-    }
-    return vcA0rHxkV5W8VrNvy;
-  }
-
-  public virtual double \u0023\u003Dz4wEfDhMr\u0024V6c()
-  {
-    double num = 0.0;
-    if (this.\u0023\u003Dz\u0024XHewofFXjwz() != null)
-    {
-      Rect rect = this.\u0023\u003DzdC9whUui_gN\u0024((IHitTestable) this.\u0023\u003Dz\u0024XHewofFXjwz());
-      num = Rect.op_Equality(rect, Rect.Empty) ? 0.0 : (this.IsHorizontalAxis ? rect.X : rect.Y);
-    }
-    return num;
-  }
-
-  private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DznRkNg0BYTU_8()
-  {
-    if (this.ParentSurface?.get_RenderableSeries() == null)
-      return (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) null;
-    IRenderableSeries[] array = this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzT1eqMAzRyPWuBr9AGC0GrIg\u003D)).ToArray<IRenderableSeries>();
-    return (((IEnumerable<IRenderableSeries>) array).FirstOrDefault<IRenderableSeries>(AxisBase.SomeClass34343383.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D ?? (AxisBase.SomeClass34343383.\u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D = new Func<IRenderableSeries, bool>(AxisBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D))) ?? \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<IRenderableSeries>(array))?.get_DataSeries();
-  }
-
-  protected virtual void OnPropertyChanged(string _param1)
-  {
-    PropertyChangedEventHandler zUapFgog = this.\u0023\u003DzUApFgog\u003D;
-    if (zUapFgog == null)
-      return;
-    zUapFgog((object) this, new PropertyChangedEventArgs(_param1));
-  }
-
-  public void DecrementSuspend()
-  {
-  }
-
-  public IUpdateSuspender SuspendUpdates()
-  {
-    return (IUpdateSuspender) new UpdateSuspender((ISuspendable) this);
-  }
-
-  public void ResumeUpdates(
-    IUpdateSuspender _param1)
-  {
-    if (!_param1.ResumeTargetOnDispose)
-      return;
-    this.InvalidateElement();
-  }
-
-  public void InvalidateElement()
-  {
-    this.InvalidateMeasure();
-    this.InvalidateArrange();
-    if (this.ParentSurface == null)
-      return;
-    this.ParentSurface.InvalidateElement();
-  }
-
-  public virtual \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
-    Point _param1)
-  {
-    return this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() == null ? (\u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D) null : this.\u0023\u003DzjuB\u0024Pa8\u003D(this.GetDataValue(this.IsHorizontalAxis ? _param1.X : _param1.Y));
-  }
-
-  public virtual \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D \u0023\u003DzjuB\u0024Pa8\u003D(
-    IComparable _param1)
-  {
-    string str1 = this.\u0023\u003DzRDs3D1Q\u003D(_param1);
-    string str2 = this.\u0023\u003DzRQVMnjXxoCTF(_param1, true);
-    return new \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u0024XPj7JdmPvp0w\u003D()
-    {
-      AxisId = this.Id,
-      DataValue = _param1,
-      AxisAlignment = this.AxisAlignment,
-      AxisFormattedDataValue = str1,
-      CursorFormattedDataValue = str2,
-      AxisTitle = this.AxisTitle,
-      IsHorizontal = this.IsHorizontalAxis,
-      IsXAxis = this.IsXAxis
-    };
-  }
-
-  [Obsolete("The FormatText method which takes a format string is obsolete. Please use the method overload with one argument instead.", true)]
-  public virtual string \u0023\u003DzRDs3D1Q\u003D(IComparable _param1, string _param2)
-  {
-    throw new NotSupportedException("The FormatText method which takes a format string is obsolete. Please use the method overload with one argument instead.");
-  }
-
-  public virtual string \u0023\u003DzRDs3D1Q\u003D(IComparable _param1)
-  {
-    return this.LabelProvider == null ? _param1.ToString() : this.LabelProvider.\u0023\u003DzkqN2vZ4\u003D(_param1);
-  }
-
-  public virtual string \u0023\u003DzRQVMnjXxoCTF(IComparable _param1, bool _param2)
-  {
-    return this.LabelProvider == null ? _param1.ToString() : this.LabelProvider.\u0023\u003Dz\u0024WinkXTLMGVP(_param1, _param2);
-  }
-
-  public virtual IComparable GetDataValue(double _param1)
-  {
-    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D == null ? (IComparable) double.NaN : (IComparable) this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.GetDataValue(_param1);
-  }
-
-  public virtual double \u0023\u003DzhL6gsJw\u003D(IComparable _param1)
-  {
-    return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D == null ? double.NaN : this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.ToDouble());
-  }
-
-  public bool IsPointWithinBounds(Point _param1)
-  {
-    return this.\u0023\u003DzbOxVzAyGdX66(this.ParentSurface.\u0023\u003Dzwc4Gzka23TGB().TranslatePoint(_param1, (IHitTestable) this));
-  }
-
-  public Point TranslatePoint(
-    Point _param1,
-    IHitTestable _param2)
-  {
-    return this.\u0023\u003DzaPPLsvfM_Sst(_param1, _param2);
-  }
-
-  public Rect GetBoundsRelativeTo(
-    IHitTestable _param1)
-  {
-    return this.\u0023\u003DzdC9whUui_gN\u0024(_param1);
-  }
-
-  public void OnDraw(
-    IRenderContext2D _param1,
-    IRenderPassData _param2)
-  {
-    if (!this.\u0023\u003DzY8pXafMRsePE())
-      return;
-    using (IUpdateSuspender fq05jnDg3bOrIrgCjote = this.SuspendUpdates())
-    {
-      fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose=false;
-      Stopwatch stopwatch = Stopwatch.StartNew();
-      if (this.LabelProvider != null)
-        this.LabelProvider.\u0023\u003DzI_kEht21kBsX();
-      this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D = this.\u0023\u003DzyPl0NtN\u0024cLlA();
-      this.\u0023\u003Dz0gXNT9nH\u0024Hmh(_param1, this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D);
-      if (this.\u0023\u003DzG64YTDk\u003D())
-        this.\u0023\u003Dz4DqqnUJ6Xy7_(this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D);
-      stopwatch.Stop();
-      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("Drawn {0}: Width={1}, Height={2} in {3}ms", new object[4]
-      {
-        (object) ((object) this).GetType().Name,
-        (object) this.ActualWidth,
-        (object) this.ActualHeight,
-        (object) stopwatch.ElapsedMilliseconds
-      });
-    }
-  }
-
-  private bool \u0023\u003DzY8pXafMRsePE() => !this.IsSuspended && this.\u0023\u003DzwzofU1mfo8hC();
-
-  private bool \u0023\u003DzG64YTDk\u003D()
-  {
-    return this.ParentSurface is SciChartSurface parentSurface && parentSurface.\u0023\u003DzST\u0024t7rI\u003D() && this.\u0023\u003DzST\u0024t7rI\u003D() && this.\u0023\u003DzmqmxAhIhbSX3();
-  }
-
-  private bool \u0023\u003DzwzofU1mfo8hC()
-  {
-    bool flag = this.\u0023\u003Dz2OKbyRBzRCBL(this.VisibleRange) && !this.VisibleRange.IsZero;
-    if (!flag)
-      \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("{0} is not a valid VisibleRange for {1}", new object[2]
-      {
-        (object) this.VisibleRange,
-        (object) ((object) this).GetType()
-      });
-    return flag;
-  }
-
-  protected virtual TickCoordinates \u0023\u003DzyPl0NtN\u0024cLlA()
-  {
-    this.\u0023\u003Dz2RD3F8MtvzO1();
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) this.TickProvider, "TickProvider");
-    IAxisParams iaxnW4w0PxdsBxUkNwS = (IAxisParams) this;
-    double[] numArray = this.TickProvider.\u0023\u003Dzctqa9kMCtfQQ(iaxnW4w0PxdsBxUkNwS);
-    return this.TickCoordinatesProvider.\u0023\u003DzU4j4bt2YhYuc(this.TickProvider.\u0023\u003Dz65PoZl8ZJBOc(iaxnW4w0PxdsBxUkNwS), numArray);
-  }
-
-  protected abstract void \u0023\u003Dz2RD3F8MtvzO1();
-
-  protected abstract \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWu7vteBmpkBQwFYGp0VhHiJ5hoI4CA\u003D\u003D \u0023\u003Dzgy73vTR0r5jyI3j3hAgwZho\u003D();
-
-  protected virtual uint \u0023\u003Dzl02YIEvJDKYh() => (uint) Math.Max(1, this.MaxAutoTicks);
-
-  protected virtual void \u0023\u003Dz0gXNT9nH\u0024Hmh(
-    IRenderContext2D _param1,
-    TickCoordinates _param2)
-  {
-    AxisBase.\u0023\u003DzDHoeMmd6l4_hHMbDXGPPWWY\u003D mmd6l4HHmbDxgppwwy = new AxisBase.\u0023\u003DzDHoeMmd6l4_hHMbDXGPPWWY\u003D();
-    mmd6l4HHmbDxgppwwy._variableSome3535 = this;
-    mmd6l4HHmbDxgppwwy.\u0023\u003DzC8v0b7k\u003D = _param1;
-    mmd6l4HHmbDxgppwwy.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D = _param2;
-    if (mmd6l4HHmbDxgppwwy.\u0023\u003DzC8v0b7k\u003D == null)
-      return;
-    if (this.DrawMinorGridLines && mmd6l4HHmbDxgppwwy.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D().Length != 0)
-      mmd6l4HHmbDxgppwwy.\u0023\u003DzC8v0b7k\u003D.\u0023\u003Dz7eGjoBhvKuFN().\u0023\u003Dz\u0024CeUvME\u003D((\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D) 1).\u0023\u003DzBkxoLC0\u003D(new Action(mmd6l4HHmbDxgppwwy.\u0023\u003Dzdp_WMa5ZvPOgWUt9DZr6s8k\u003D));
-    if (mmd6l4HHmbDxgppwwy.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D().Length == 0)
-      return;
-    if (this.DrawMajorBands)
-      mmd6l4HHmbDxgppwwy.\u0023\u003DzC8v0b7k\u003D.\u0023\u003Dz7eGjoBhvKuFN().\u0023\u003Dz\u0024CeUvME\u003D((\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D) 0).\u0023\u003DzBkxoLC0\u003D(new Action(mmd6l4HHmbDxgppwwy.\u0023\u003Dze0viRyfissfKu5\u0024vH3bBkCo\u003D));
-    if (!this.DrawMajorGridLines)
-      return;
-    mmd6l4HHmbDxgppwwy.\u0023\u003DzC8v0b7k\u003D.\u0023\u003Dz7eGjoBhvKuFN().\u0023\u003Dz\u0024CeUvME\u003D((\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyZMZbx4MhrMzMW0v\u0024xo\u003D) 2).\u0023\u003DzBkxoLC0\u003D(new Action(mmd6l4HHmbDxgppwwy.\u0023\u003DzBzNUoyJKShhwpK03iuRmUkw\u003D));
-  }
-
-  private void \u0023\u003DzShVkWbecUrbY(
-    IRenderContext2D _param1,
-    double[] _param2,
-    float[] _param3)
-  {
-    IRenderSurface n9miZzngvjW54Qe0d7 = this.\u0023\u003Dz\u0024XHewofFXjwz();
-    if (n9miZzngvjW54Qe0d7 == null)
-      return;
-    XyDirection ks34Z259A4NengcEjd = this.IsHorizontalAxis ? XyDirection.XDirection : XyDirection.YDirection;
-    using (IBrush2D xrgcdFbSdWgN9GcT8 = _param1.\u0023\u003Dze8WyDhI\u003D(this.AxisBandsFill, 1.0, new bool?()))
-    {
-      float num1 = (float) this.\u0023\u003Dz4wEfDhMr\u0024V6c();
-      float num2 = this.IsHorizontalAxis ? 0.0f : num1 + (float) this.ActualHeight;
-      float num3 = this.IsHorizontalAxis ? (float) n9miZzngvjW54Qe0d7.ActualWidth : num1;
-      if (this.FlipCoordinates ^ this.IsAxisFlipped)
-        NumberUtil.Swap(ref num2, ref num3);
-      bool flag = this.\u0023\u003DzSoNtv0XsZOx0(_param2[0]) % 2M == 0M;
-      for (int index = 0; index < _param3.Length; ++index)
-      {
-        if (flag)
+        get
         {
-          float num4 = index == 0 ? num2 : _param3[index - 1];
-          float num5 = _param3[index];
-          this.\u0023\u003DzShVkWbecUrbY(_param1, xrgcdFbSdWgN9GcT8, ks34Z259A4NengcEjd, num4, num5);
+            return _isXAxis;
         }
-        flag = !flag;
-      }
-      if (!flag)
-        return;
-      this.\u0023\u003DzShVkWbecUrbY(_param1, xrgcdFbSdWgN9GcT8, ks34Z259A4NengcEjd, num3, ((IEnumerable<float>) _param3).Last<float>());
-    }
-  }
-
-  private void \u0023\u003DzShVkWbecUrbY(
-    IRenderContext2D _param1,
-    IBrush2D _param2,
-    XyDirection _param3,
-    float _param4,
-    float _param5)
-  {
-    IRenderSurface n9miZzngvjW54Qe0d7 = this.\u0023\u003Dz\u0024XHewofFXjwz();
-    if (n9miZzngvjW54Qe0d7 == null)
-      return;
-    Point point1 = _param3 == XyDirection.YDirection ? new Point(0.0, (double) _param4) : new Point((double) _param4, 0.0);
-    Point point2 = _param3 == XyDirection.YDirection ? new Point(n9miZzngvjW54Qe0d7.ActualWidth, (double) _param5) : new Point((double) _param5, n9miZzngvjW54Qe0d7.ActualHeight);
-    _param1.\u0023\u003DzVRUUvzhAr5SR(_param2, point1, point2, 0.0);
-  }
-
-  protected virtual void \u0023\u003DzbUPOl6ZpNIOI(
-    IRenderContext2D _param1,
-    Style _param2,
-    IEnumerable<float> _param3)
-  {
-    XyDirection ks34Z259A4NengcEjd = this.IsHorizontalAxis ? XyDirection.XDirection : XyDirection.YDirection;
-    this.\u0023\u003DzeEl93ifUiK4P.Style = _param2;
-    ThemeManager.SetTheme((DependencyObject) this.\u0023\u003DzeEl93ifUiK4P, ThemeManager.GetTheme((DependencyObject) this));
-    using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = _param1.\u0023\u003DzQCf7bpfi0DqGMauSow\u003D\u003D(this.\u0023\u003DzeEl93ifUiK4P, false))
-    {
-      if (rhwYsZxA33iRu6Id7J == null || rhwYsZxA33iRu6Id7J.Color.A == (byte) 0)
-        return;
-      foreach (float num in _param3)
-        this.\u0023\u003DzbUPOl6ZpNIOI(_param1, rhwYsZxA33iRu6Id7J, ks34Z259A4NengcEjd, num);
-    }
-  }
-
-  protected void \u0023\u003DzbUPOl6ZpNIOI(
-    IRenderContext2D _param1,
-    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param2,
-    XyDirection _param3,
-    float _param4)
-  {
-    IRenderSurface n9miZzngvjW54Qe0d7 = this.\u0023\u003Dz\u0024XHewofFXjwz();
-    if (n9miZzngvjW54Qe0d7 == null)
-      return;
-    float strokeThickness = _param2.StrokeThickness;
-    Point point1 = _param3 == XyDirection.YDirection ? new Point(-(double) strokeThickness, (double) _param4) : new Point((double) _param4, -(double) strokeThickness);
-    Point point2 = _param3 == XyDirection.YDirection ? new Point(n9miZzngvjW54Qe0d7.ActualWidth + (double) strokeThickness, (double) _param4) : new Point((double) _param4, n9miZzngvjW54Qe0d7.ActualHeight + (double) strokeThickness);
-    _param1.\u0023\u003Dzk8_eoWQ\u003D(_param2, point1, point2);
-  }
-
-  protected virtual void \u0023\u003Dz4DqqnUJ6Xy7_(
-    TickCoordinates _param1)
-  {
-    this.\u0023\u003DzRwEA_2Y\u003D = (float) this.\u0023\u003Dz46iyKtU9fraN();
-    this.\u0023\u003DzhFAmpLNTPh4n().DrawTicks(_param1, this.\u0023\u003DzRwEA_2Y\u003D);
-    if (!this.DrawLabels)
-      this.Clear();
-    this.\u0023\u003DzhFAmpLNTPh4n().Invalidate();
-  }
-
-  protected virtual double \u0023\u003Dz46iyKtU9fraN()
-  {
-    return (this.IsHorizontalAxis ? this.BorderThickness.Left : this.BorderThickness.Top) + this.\u0023\u003Dz4wEfDhMr\u0024V6c();
-  }
-
-  protected virtual void \u0023\u003Dzfs4pIWbs5K_L(
-    AxisCanvas _param1,
-    TickCoordinates _param2,
-    float _param3)
-  {
-    double[] numArray1 = _param2.\u0023\u003Dzyqh0CrzbJnzy();
-    float[] numArray2 = _param2.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D();
-    if (numArray1 == null || numArray2 == null)
-      return;
-    int num1 = _param1.Children.Count - numArray2.Length;
-    if (num1 > 0)
-    {
-      using (_param1.SuspendUpdates())
-      {
-        for (int index = num1 - 1; index >= 0; --index)
+        private set
         {
-          int num2 = numArray2.Length + index;
-          this.\u0023\u003DzPHNEYdp5xRAE(_param1, num2);
+            _isXAxis = value;
+            OnPropertyChanged( nameof( IsXAxis ) );
         }
-      }
-    }
-    for (int index = 0; index < numArray2.Length; ++index)
-    {
-      double num3 = numArray1[index];
-      DefaultTickLabel y9QajdhH6H6U9EEjd = index < _param1.Children.Count ? (DefaultTickLabel) _param1.Children[index] : this.\u0023\u003DzPfs\u0024IokVcdkx.\u0023\u003Dza7jLYgw\u003D(new Func<DefaultTickLabel, DefaultTickLabel>(this.\u0023\u003DzxKKlOa0jEDmy));
-      IComparable comparable = this.\u0023\u003Dz3ZiX3E6vqtLl((IComparable) num3);
-      this.\u0023\u003DzvZIFtCqEuXgD(y9QajdhH6H6U9EEjd, comparable);
-      y9QajdhH6H6U9EEjd.\u0023\u003Dz9ak5jfg0CSsoUX9AxQ\u003D\u003D(this.\u0023\u003DzfMip05MguVVjuRKaIlHpAD8\u003D(num3));
-      Point point = this.\u0023\u003DzY0xm0mTfvYAx(_param3, numArray2[index]);
-      y9QajdhH6H6U9EEjd.Position = point;
-      _param1.\u0023\u003DzH0osWQkV_Y8_((object) y9QajdhH6H6U9EEjd, -1);
-    }
-  }
-
-  protected virtual Point \u0023\u003DzY0xm0mTfvYAx(float _param1, float _param2)
-  {
-    float num1 = _param2 - _param1;
-    double num2 = this.IsHorizontalAxis ? (double) num1 : 0.0;
-    return new Point(num2, (double) num1 - num2);
-  }
-
-  protected void \u0023\u003DzPHNEYdp5xRAE(
-    AxisCanvas _param1,
-    int _param2)
-  {
-    DefaultTickLabel child = (DefaultTickLabel) _param1.Children[_param2];
-    _param1.Children.Remove((UIElement) child);
-    this.\u0023\u003DzPfs\u0024IokVcdkx.\u0023\u003DzhggR\u00247o\u003D(child);
-  }
-
-  protected virtual IComparable \u0023\u003Dz3ZiX3E6vqtLl(IComparable _param1) => _param1;
-
-  private void \u0023\u003DzvZIFtCqEuXgD(
-    DefaultTickLabel _param1,
-    IComparable _param2)
-  {
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH labelProvider = this.LabelProvider;
-    if (labelProvider == null)
-      return;
-    _param1.DataContext = _param1.DataContext == null ? (object) labelProvider.\u0023\u003DzILIqSWE\u003D(_param2) : (object) labelProvider.\u0023\u003Dz9xSd9Yg\u003D((\u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D) _param1.DataContext, _param2);
-  }
-
-  private int \u0023\u003DzfMip05MguVVjuRKaIlHpAD8\u003D(double _param1)
-  {
-    return ((IEnumerable<int>) AxisBase.\u0023\u003DzHqisnGuYfim9SENYmhFqfGUvEnuX).Count<int>(new Func<int, bool>(new AxisBase.\u0023\u003Dzztvqky7ki\u0024I\u0024g1MAJ0wAGaM\u003D()
-    {
-      \u0023\u003DzvQ3M6iJZUC74 = this.\u0023\u003DzSoNtv0XsZOx0(_param1)
-    }.\u0023\u003DzzR02vPcj7iEpCu37cNMcNoyJfLDl));
-  }
-
-  private Decimal \u0023\u003DzSoNtv0XsZOx0(double _param1)
-  {
-    if (this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D rhlv23xRdw41lF5j1sXe)
-      _param1 = (double) rhlv23xRdw41lF5j1sXe.\u0023\u003DzFk6sufr\u0024co4e((IComparable) _param1);
-    double num1 = this.MajorDelta.ToDouble();
-    if (this.IsLogarithmicAxis)
-    {
-      \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D tmjze8uJg3v1qUa6q9M = this as \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D;
-      _param1 = Math.Log(_param1, tmjze8uJg3v1qUa6q9M.get_LogarithmicBase());
-    }
-    double num2 = _param1 / num1;
-    if (num2 >= (double) int.MaxValue)
-    {
-      double num3 = num2 / (double) int.MaxValue;
-      num2 = (num3 - (double) (int) num3) * (double) int.MaxValue;
-    }
-    return (Decimal) (int) num2.\u0023\u003DzZsq6ZfbZQvsf();
-  }
-
-  public override void OnApplyTemplate()
-  {
-    base.OnApplyTemplate();
-    this.\u0023\u003DzgTtVLFnthbIz = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<StackPanel>("PART_AxisContainer");
-    this.\u0023\u003DzdEt8bikGsITl = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<IAxisPanel>("PART_AxisCanvas");
-    ((AxisPanel) this.\u0023\u003DzdEt8bikGsITl).AddLabels = new Action<AxisCanvas>(this.\u0023\u003DzrYui6_51Nw2UDAv2Knx8uLQ\u003D);
-    this.\u0023\u003DzoN4RYgKqEhkM = this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<ModifierAxisCanvas>("PART_ModifierAxisCanvas");
-    this.\u0023\u003DzoN4RYgKqEhkM.\u0023\u003DzkF76BMTQOROh(this);
-    if (this.VisibleRange != null)
-      return;
-    this.SetCurrentValue(AxisBase.\u0023\u003DzWl3LbWhL1z0D, (object) this.\u0023\u003DzspbjXJnVtbB\u0024());
-  }
-
-  protected T \u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<T>(string _param1) where T : class
-  {
-    return this.GetTemplateChild(_param1) is T templateChild ? templateChild : throw new InvalidOperationException($"Unable to Apply the Control Template. {_param1} is missing or of the wrong type");
-  }
-
-  private static void \u0023\u003DziB9pY7CleJnqmfAdVQ\u003D\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase.\u0023\u003DzLDVzQHFf5h\u00242oAiW0sh1EFU\u003D ff5h2oAiW0sh1Efu = new AxisBase.\u0023\u003DzLDVzQHFf5h\u00242oAiW0sh1EFU\u003D();
-    ff5h2oAiW0sh1Efu.\u0023\u003Dz6iFJYho\u003D = _param0;
-    ff5h2oAiW0sh1Efu.\u0023\u003Dz1BK01YA\u003D = _param1;
-    AxisBase z6iFjYho = (AxisBase) ff5h2oAiW0sh1Efu.\u0023\u003Dz6iFJYho\u003D;
-    if (!((DispatcherObject) z6iFjYho).Dispatcher.CheckAccess())
-    {
-      Action action = new Action(ff5h2oAiW0sh1Efu.\u0023\u003DzXQKZS2jF76TH5rkf7ZqHY2c\u003D);
-      ((DispatcherObject) z6iFjYho).Dispatcher.BeginInvoke((Delegate) action, Array.Empty<object>());
-    }
-    else
-    {
-      IRange oldValue = ff5h2oAiW0sh1Efu.\u0023\u003Dz1BK01YA\u003D.OldValue as IRange;
-      IRange newValue = ff5h2oAiW0sh1Efu.\u0023\u003Dz1BK01YA\u003D.NewValue as IRange;
-      if (oldValue != null)
-        oldValue.PropertyChanged -= new PropertyChangedEventHandler(z6iFjYho.\u0023\u003DzeHyhwJZa6M2MRbCpsg\u003D\u003D);
-      if (newValue == null)
-        return;
-      if (!z6iFjYho.HasValidVisibleRange || !z6iFjYho.\u0023\u003DzhVh515xbKXIT08tXZA\u003D\u003D())
-        z6iFjYho.\u0023\u003Dz6vyemzFNfHjS();
-      if (!z6iFjYho.HasValidVisibleRange || !z6iFjYho.\u0023\u003DzhVh515xbKXIT08tXZA\u003D\u003D())
-      {
-        z6iFjYho.SetCurrentValue(AxisBase.\u0023\u003DzWl3LbWhL1z0D, (object) z6iFjYho.\u0023\u003Dz6xb\u0024Nc\u0024kmU3q);
-        z6iFjYho.\u0023\u003DzszckdH5oxVmh(newValue);
-      }
-      else
-      {
-        newValue.PropertyChanged += new PropertyChangedEventHandler(z6iFjYho.\u0023\u003DzeHyhwJZa6M2MRbCpsg\u003D\u003D);
-        if (!z6iFjYho.\u0023\u003DzP6Bap0LHVSiA(newValue, oldValue))
-          return;
-        z6iFjYho.\u0023\u003DztSt_uW5MzG6UbffWGg\u003D\u003D = z6iFjYho.\u0023\u003Dz6xb\u0024Nc\u0024kmU3q;
-        z6iFjYho.\u0023\u003Dz6xb\u0024Nc\u0024kmU3q = newValue;
-      }
-    }
-  }
-
-  private void \u0023\u003DzeHyhwJZa6M2MRbCpsg\u003D\u003D(
-    object _param1,
-    PropertyChangedEventArgs _param2)
-  {
-    IComparable comparable1 = this.VisibleRange.Min;
-    IComparable comparable2 = this.VisibleRange.Max;
-    switch (_param2.PropertyName)
-    {
-      case "Min":
-        comparable1 = (IComparable) ((\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D) _param2).\u0023\u003DzPo6XanrX3cHa();
-        break;
-      case "Max":
-        comparable2 = (IComparable) ((\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D) _param2).\u0023\u003DzPo6XanrX3cHa();
-        break;
-    }
-    if (!this.\u0023\u003DzP6Bap0LHVSiA(this.VisibleRange, \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(this.VisibleRange, comparable1, comparable2)))
-      return;
-    BindingExpression bindingExpression = this.GetBindingExpression(AxisBase.\u0023\u003DzWl3LbWhL1z0D);
-    if (bindingExpression == null || bindingExpression.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.Explicit)
-      return;
-    bindingExpression.UpdateSource();
-    bindingExpression.UpdateTarget();
-  }
-
-  private bool \u0023\u003DzP6Bap0LHVSiA(
-    IRange _param1,
-    IRange _param2)
-  {
-    bool flag = false;
-    this.\u0023\u003DzQNsUgFfbQtf8(_param1);
-    if (!_param1.Equals((object) _param2))
-    {
-      this.\u0023\u003Dz_0Le6I5slA7z(new \u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D(_param2, _param1, this.\u0023\u003Dz1itgeDqdlQvE));
-      this.\u0023\u003Dzo1moqKMmSMi6();
-      flag = true;
-    }
-    return flag;
-  }
-
-  private void \u0023\u003DzQNsUgFfbQtf8(
-    IRange _param1)
-  {
-    this.\u0023\u003DzszckdH5oxVmh(_param1);
-    if (_param1.Min.CompareTo((object) _param1.Max) > 0)
-      throw new ArgumentException($"VisibleRange.Min (value={_param1.Min}) must be less than VisibleRange.Max (value={_param1.Max})");
-  }
-
-  protected virtual void \u0023\u003DzszckdH5oxVmh(
-    IRange _param1)
-  {
-    if (!this.\u0023\u003Dz9yvpaTXy3ucx(_param1))
-      throw new InvalidOperationException($"Axis type {((object) this).GetType().Name} requires that VisibleRange is of type {this.VisibleRange.GetType().FullName}");
-  }
-
-  protected virtual void \u0023\u003Dz_0Le6I5slA7z(
-    \u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D _param1)
-  {
-    if (this.ParentSurface != null)
-      this.ParentSurface.get_ViewportManager()?.\u0023\u003Dz_0Le6I5slA7z((IAxis) this);
-    EventHandler<\u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D> z7F6WbE57tL8z = this.\u0023\u003Dz7F6WbE57tL8z;
-    if (z7F6WbE57tL8z == null)
-      return;
-    z7F6WbE57tL8z((object) this, _param1);
-  }
-
-  public static void \u0023\u003Dz2KWD3lC7hdm1(
-    IAxis _param0)
-  {
-    if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd))
-      return;
-    axF9ZgQ7NbH9KsEjd.\u0023\u003DzaNiYNgKj9pMk();
-    axF9ZgQ7NbH9KsEjd.OnPropertyChanged("DataRange");
-  }
-
-  private void \u0023\u003DzaNiYNgKj9pMk()
-  {
-    EventHandler<EventArgs> zrN9MkyArV3jJ = this.\u0023\u003DzrN9MkyArV3jJ;
-    if (zrN9MkyArV3jJ == null)
-      return;
-    zrN9MkyArV3jJ((object) this, EventArgs.Empty);
-  }
-
-  private bool \u0023\u003DzhVh515xbKXIT08tXZA\u003D\u003D()
-  {
-    return this.MinimalZoomConstrain == null || this.VisibleRange.Diff.ToDouble() >= this.MinimalZoomConstrain.ToDouble();
-  }
-
-  protected virtual void \u0023\u003Dz6vyemzFNfHjS()
-  {
-  }
-
-  private static void \u0023\u003Dzqd3jzsY7FQsh5XQziA\u003D\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = (AxisBase) _param0;
-    IRange oldValue = _param1.OldValue as IRange;
-    IRange newValue = _param1.NewValue as IRange;
-    if (oldValue != null)
-      oldValue.PropertyChanged -= new PropertyChangedEventHandler(axF9ZgQ7NbH9KsEjd.\u0023\u003DztlBn8z1iPaTcjuWrqj791sU\u003D);
-    if (newValue == null || axF9ZgQ7NbH9KsEjd.VisibleRange == null)
-      return;
-    newValue.PropertyChanged += new PropertyChangedEventHandler(axF9ZgQ7NbH9KsEjd.\u0023\u003DztlBn8z1iPaTcjuWrqj791sU\u003D);
-    IRange abyLt9clZggmJsWhw = ((IRange) axF9ZgQ7NbH9KsEjd.VisibleRange.Clone()).\u0023\u003DzJIqIiUw\u003D(newValue, axF9ZgQ7NbH9KsEjd.VisibleRangeLimitMode);
-    axF9ZgQ7NbH9KsEjd.SetCurrentValue(AxisBase.\u0023\u003DzWl3LbWhL1z0D, (object) abyLt9clZggmJsWhw);
-  }
-
-  private void \u0023\u003DztlBn8z1iPaTcjuWrqj791sU\u003D(
-    object _param1,
-    PropertyChangedEventArgs _param2)
-  {
-    this.\u0023\u003DzuPwHeHOc6hD2hGW59w\u003D\u003D(this.VisibleRange);
-    BindingExpression bindingExpression = this.GetBindingExpression(AxisBase.\u0023\u003DzW7Xl\u00245Sj1hV\u0024);
-    if (bindingExpression == null || bindingExpression.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.Explicit)
-      return;
-    bindingExpression.UpdateSource();
-    bindingExpression.UpdateTarget();
-  }
-
-  private static void \u0023\u003DzHggGkMOQckHdkG7xQA\u003D\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = (AxisBase) _param0;
-    if (_param1.NewValue == null)
-      return;
-    axF9ZgQ7NbH9KsEjd.\u0023\u003DzwrnVUenT8f7v7FlPviBwd40\u003D((IRange) _param1.NewValue, TimeSpan.FromMilliseconds(500.0));
-  }
-
-  public void \u0023\u003DzwrnVUenT8f7v7FlPviBwd40\u003D(
-    IRange _param1,
-    TimeSpan _param2)
-  {
-    AxisBase.\u0023\u003DzqHEJJ\u0024eT__xlAQw9dK5OGBo\u003D hejjETXlAqw9dK5OgBo1 = new AxisBase.\u0023\u003DzqHEJJ\u0024eT__xlAQw9dK5OGBo\u003D();
-    hejjETXlAqw9dK5OgBo1._variableSome3535 = this;
-    hejjETXlAqw9dK5OgBo1.\u0023\u003DzAHNI_S0\u003D = _param1;
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) hejjETXlAqw9dK5OgBo1.\u0023\u003DzAHNI_S0\u003D, "to");
-    if (!this.HasValidVisibleRange)
-    {
-      this.VisibleRange = hejjETXlAqw9dK5OgBo1.\u0023\u003DzAHNI_S0\u003D;
-    }
-    else
-    {
-      this.\u0023\u003DzcVHdIBCOOjXh = this.\u0023\u003DzfZ0wxly_bFc2(this.VisibleRange);
-      Point point = this.\u0023\u003DzfZ0wxly_bFc2(hejjETXlAqw9dK5OgBo1.\u0023\u003DzAHNI_S0\u003D);
-      AxisBase.\u0023\u003DzqHEJJ\u0024eT__xlAQw9dK5OGBo\u003D hejjETXlAqw9dK5OgBo2 = hejjETXlAqw9dK5OgBo1;
-      PointAnimation pointAnimation = new PointAnimation();
-      pointAnimation.From = new Point?(new Point(0.0, 0.0));
-      pointAnimation.To = new Point?(new Point(point.X - this.\u0023\u003DzcVHdIBCOOjXh.X, point.Y - this.\u0023\u003DzcVHdIBCOOjXh.Y));
-      pointAnimation.Duration = (Duration) _param2;
-      ExponentialEase exponentialEase = new ExponentialEase();
-      exponentialEase.EasingMode = EasingMode.EaseOut;
-      exponentialEase.Exponent = 7.0;
-      pointAnimation.EasingFunction = (IEasingFunction) exponentialEase;
-      hejjETXlAqw9dK5OgBo2.\u0023\u003DzXB4BRQQhi9cE = pointAnimation;
-      hejjETXlAqw9dK5OgBo1.\u0023\u003Dz\u00245UhFnPQKjzF = (IRange) this.VisibleRange.Clone();
-      hejjETXlAqw9dK5OgBo1.\u0023\u003DzXB4BRQQhi9cE.Completed += new EventHandler(hejjETXlAqw9dK5OgBo1.\u0023\u003Dz90gMLvcCBhHezcHa8o6j4QFx83AR);
-      Storyboard.SetTarget((DependencyObject) hejjETXlAqw9dK5OgBo1.\u0023\u003DzXB4BRQQhi9cE, (DependencyObject) this);
-      Storyboard.SetTargetProperty((DependencyObject) hejjETXlAqw9dK5OgBo1.\u0023\u003DzXB4BRQQhi9cE, new PropertyPath("VisibleRangePoint", Array.Empty<object>()));
-      Storyboard storyboard = new Storyboard();
-      storyboard.Duration = (Duration) _param2;
-      storyboard.Children.Add((Timeline) hejjETXlAqw9dK5OgBo1.\u0023\u003DzXB4BRQQhi9cE);
-      this.\u0023\u003Dz1itgeDqdlQvE = true;
-      storyboard.Begin();
-    }
-  }
-
-  private Point \u0023\u003DzfZ0wxly_bFc2(
-    IRange _param1)
-  {
-    DoubleRange klqcJ87Zm8UwE3WEjd = _param1.AsDoubleRange();
-    double a1 = klqcJ87Zm8UwE3WEjd.Min;
-    double a2 = klqcJ87Zm8UwE3WEjd.Max;
-    if (this.IsLogarithmicAxis)
-    {
-      double logarithmicBase = ((\u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D) this).get_LogarithmicBase();
-      a1 = Math.Log(a1, logarithmicBase);
-      a2 = Math.Log(a2, logarithmicBase);
-    }
-    return new Point(a1, a2);
-  }
-
-  private static void \u0023\u003Dz10or8z86voVPLuMIHw\u003D\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase.\u0023\u003DzOspLWCtZ4LQy_hknBYH_r14\u003D ctZ4LqyHknByhR14 = new AxisBase.\u0023\u003DzOspLWCtZ4LQy_hknBYH_r14\u003D();
-    ctZ4LqyHknByhR14.\u0023\u003DzSygYxus\u003D = (Point) _param1.NewValue;
-    ctZ4LqyHknByhR14.\u0023\u003Dzfl\u0024A1s0\u003D = (AxisBase) _param0;
-    ((DispatcherObject) ctZ4LqyHknByhR14.\u0023\u003Dzfl\u0024A1s0\u003D).Dispatcher.\u0023\u003DznvGFbrlLtrNN(new Action(ctZ4LqyHknByhR14.\u0023\u003DzIE9AdC6Gxka684aXOhGqScGsymGy));
-  }
-
-  private static void \u0023\u003DzcZqyvQl0j0My(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd))
-      return;
-    axF9ZgQ7NbH9KsEjd.OnPropertyChanged("IsHorizontalAxis");
-  }
-
-  private static void \u0023\u003DzoqG1CE2rlL_j(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = (AxisBase) _param0;
-    ISciChartSurface parentSurface = axF9ZgQ7NbH9KsEjd.ParentSurface;
-    if (parentSurface != null && !axF9ZgQ7NbH9KsEjd.IsSuspended)
-      parentSurface.\u0023\u003DzOPvUPixjU\u00244Y((IAxis) axF9ZgQ7NbH9KsEjd, (AxisAlignment) _param1.OldValue);
-    AxisBase.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
-  }
-
-  private static void \u0023\u003DzIgRO8VI5TESl1w9T\u0024A\u003D\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = (AxisBase) _param0;
-    ISciChartSurface parentSurface = axF9ZgQ7NbH9KsEjd.ParentSurface;
-    if (parentSurface != null && !axF9ZgQ7NbH9KsEjd.IsSuspended)
-      parentSurface.\u0023\u003DzFrczvpG2vhM5((IAxis) axF9ZgQ7NbH9KsEjd);
-    AxisBase.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
-  }
-
-  protected static void \u0023\u003DzLUQi5D4\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = (AxisBase) _param0;
-    if (!axF9ZgQ7NbH9KsEjd.\u0023\u003DzmqmxAhIhbSX3())
-      return;
-    axF9ZgQ7NbH9KsEjd.\u0023\u003Dzo1moqKMmSMi6();
-  }
-
-  private static void \u0023\u003DzO13xWFct\u0024F9n(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = _param0 as AxisBase;
-    if (!(_param1.NewValue is UltrachartScrollbar newValue))
-      return;
-    newValue.Axis = (IAxis) axF9ZgQ7NbH9KsEjd;
-  }
-
-  private bool \u0023\u003DzmqmxAhIhbSX3() => this.\u0023\u003DzhFAmpLNTPh4n() != null;
-
-  private void \u0023\u003Dzo1moqKMmSMi6()
-  {
-    if (this.Services == null || this.ParentSurface == null || this.ParentSurface.IsSuspended)
-      return;
-    this.Services.GetService<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().\u0023\u003DzosHqOAc\u003D<\u0023\u003DzFphlrC3tGBVP73muJW4N1gQtGNrHdTMuWgCKGfUfH93B>(new \u0023\u003DzFphlrC3tGBVP73muJW4N1gQtGNrHdTMuWgCKGfUfH93B((object) this));
-  }
-
-  private static void \u0023\u003DzGSdejefFTNCn(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = _param0 as AxisBase;
-    if (_param1.NewValue is \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH newValue)
-      newValue.\u0023\u003DzWzUaFxw\u003D((IAxis) axF9ZgQ7NbH9KsEjd);
-    AxisBase.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
-  }
-
-  private static void \u0023\u003DzQikQKvMZp1xk(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    AxisBase axF9ZgQ7NbH9KsEjd = _param0 as AxisBase;
-    if (_param1.NewValue is ITickProvider newValue)
-      newValue.\u0023\u003DzWzUaFxw\u003D((IAxis) axF9ZgQ7NbH9KsEjd);
-    if (_param1.OldValue is ITickProvider oldValue)
-      oldValue.\u0023\u003DzWzUaFxw\u003D((IAxis) null);
-    AxisBase.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
-  }
-
-  private static void \u0023\u003DzTs\u0024_r2pUSNyL(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd) || !axF9ZgQ7NbH9KsEjd.IsPrimaryAxis)
-      return;
-    axF9ZgQ7NbH9KsEjd.InvalidateElement();
-  }
-
-  private static void \u0023\u003DzxtYfETQdftTw(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd))
-      return;
-    if (axF9ZgQ7NbH9KsEjd.FlipCoordinates && axF9ZgQ7NbH9KsEjd.IsCategoryAxis)
-      throw new InvalidOperationException("The CategoryDateTimeAxis type does not support coordinate reversal (FlipCoordinates).");
-    AxisBase.\u0023\u003DzLUQi5D4\u003D(_param0, _param1);
-  }
-
-  private static void \u0023\u003Dz1UOyXOfHyEI9(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd))
-      return;
-    if (axF9ZgQ7NbH9KsEjd.IsStaticAxis && axF9ZgQ7NbH9KsEjd.IsCategoryAxis)
-      throw new InvalidOperationException("The CategoryDateTimeAxis type does not support the Static mode (IsStatic).");
-    axF9ZgQ7NbH9KsEjd.TickCoordinatesProvider = axF9ZgQ7NbH9KsEjd.IsStaticAxis ? (\u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA) new \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZI6sx0QNvBw\u003D\u003D() : (\u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA) new \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u003D\u003D();
-  }
-
-  private static void \u0023\u003DzQsSOj9uli6iK(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisBase axF9ZgQ7NbH9KsEjd))
-      return;
-    axF9ZgQ7NbH9KsEjd.TickCoordinatesProvider.\u0023\u003DzWzUaFxw\u003D((IAxis) axF9ZgQ7NbH9KsEjd);
-  }
-
-  HorizontalAlignment IAxis.\u0023\u003Dz5VLaAZX2bctAcuSoajSAXtBWUytTwKmwegWB430RRP_iyVUjrw\u003D\u003D()
-  {
-    return this.HorizontalAlignment;
-  }
-
-  void IAxis.\u0023\u003DzTbSy5Tg7CNKewHb2FguXqzKcL0mg\u0024lar5H2OZ3W_18PGuoI1WA\u003D\u003D(
-    HorizontalAlignment _param1)
-  {
-    this.HorizontalAlignment = _param1;
-  }
-
-  VerticalAlignment IAxis.\u0023\u003DzSseiGdgwJmJ1pkmz7CEFfx8mbOWyc1wXvn8wBzjwACKu6EY0OQ\u003D\u003D()
-  {
-    return this.VerticalAlignment;
-  }
-
-  void IAxis.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntTNDUky6SmSb6\u0024FDWAQO1Y0HmfujBQ\u003D\u003D(
-    VerticalAlignment _param1)
-  {
-    this.VerticalAlignment = _param1;
-  }
-
-  Visibility IAxis.\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRYwo3gBY9dA\u0024Mbe\u0024dG0As1jePnhZWw\u003D\u003D()
-  {
-    return this.Visibility;
-  }
-
-  void IAxis.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntSyV0Rj0ibC6aIMhpwJ2VCPFsZZaBw\u003D\u003D(
-    Visibility _param1)
-  {
-    this.Visibility = _param1;
-  }
-
-  double IHitTestable.\u0023\u003Dz4lH8q7tXMt_gtLJO2itFk_uTcHPb_FD6TqCanmMNLu1qiOPHXwlPSNY\u003D()
-  {
-    return this.ActualWidth;
-  }
-
-  double IHitTestable.\u0023\u003DzzsyKnUNUDKjF7rDv70izN8J6fpW\u0024OkM14cKsD6c_CdYLZ77RJxzrNo0\u003D()
-  {
-    return this.ActualHeight;
-  }
-
-  private void \u0023\u003DzyYNf6TD2aRpOQ6mbk8EVPH8\u003D(
-    object _param1,
-    SizeChangedEventArgs _param2)
-  {
-    this.InvalidateElement();
-  }
-
-  private bool \u0023\u003DznfjxYadwxaoyd16Alq7avE0\u003D(
-    IRenderableSeries _param1)
-  {
-    if (!(_param1.get_XAxisId() == this.Id) || !_param1.IsVisible)
-      return false;
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = _param1.get_DataSeries();
-    return dataSeries != null && dataSeries.get_HasValues();
-  }
-
-  private bool \u0023\u003DzApQq1pC_4pCnMbzX7sr8AII\u003D(
-    IRenderableSeries _param1)
-  {
-    return _param1.get_YAxisId() == this.Id && _param1.IsVisible && _param1.get_DataSeries() != null;
-  }
-
-  private bool \u0023\u003DzaUGqhuODC_LS7GO3CfQn3j4SMN4z8jTtuw\u003D\u003D(
-    IRenderableSeries _param1)
-  {
-    return _param1.get_YAxisId() == this.Id && _param1.get_DataSeries() != null && _param1.IsVisible && _param1.get_DataSeries().get_HasValues();
-  }
-
-  private bool \u0023\u003DzT1eqMAzRyPWuBr9AGC0GrIg\u003D(
-    IRenderableSeries _param1)
-  {
-    if (!(this.Id == (this.IsXAxis ? _param1.get_XAxisId() : _param1.get_YAxisId())))
-      return false;
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = _param1.get_DataSeries();
-    return dataSeries != null && dataSeries.get_HasValues();
-  }
-
-  private void \u0023\u003DzrYui6_51Nw2UDAv2Knx8uLQ\u003D(
-    AxisCanvas _param1)
-  {
-    if (!this.\u0023\u003DzY8pXafMRsePE() || !this.\u0023\u003DzG64YTDk\u003D())
-      return;
-    this.\u0023\u003Dzfs4pIWbs5K_L(_param1, this.\u0023\u003DzpjNghke0G7gqMkLYiA\u003D\u003D, this.\u0023\u003DzRwEA_2Y\u003D);
-  }
-
-  [Serializable]
-  private sealed class SomeClass34343383
-  {
-    public static readonly AxisBase.SomeClass34343383 SomeMethond0343 = new AxisBase.SomeClass34343383();
-    public static Func<Type, string> \u0023\u003Dzp0nohgqqqt9t7iBsrQ\u003D\u003D;
-    public static Func<IRenderableSeries, bool> \u0023\u003Dz\u0024PljuUuhiNN4HlDDAw\u003D\u003D;
-
-    public string \u0023\u003Dz2GlstDm2igpkLb8awKHhDD0\u003D(Type _param1) => _param1.Name;
-
-    public bool \u0023\u003DzdmoJgxczu_t0o8hq6gcvIsE\u003D(
-      IRenderableSeries _param1)
-    {
-      return _param1.get_DataSeries() is IOhlcDataSeries;
-    }
-  }
-
-  private sealed class \u0023\u003DzDHoeMmd6l4_hHMbDXGPPWWY\u003D
-  {
-    public AxisBase _variableSome3535;
-    public IRenderContext2D \u0023\u003DzC8v0b7k\u003D;
-    public TickCoordinates \u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D;
-
-    public void \u0023\u003Dzdp_WMa5ZvPOgWUt9DZr6s8k\u003D()
-    {
-      // ISSUE: explicit non-virtual call
-      this._variableSome3535.\u0023\u003DzbUPOl6ZpNIOI(this.\u0023\u003DzC8v0b7k\u003D, __nonvirtual (this._variableSome3535.MinorGridLineStyle), (IEnumerable<float>) this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D());
     }
 
-    public void \u0023\u003Dze0viRyfissfKu5\u0024vH3bBkCo\u003D()
+    public virtual bool IsHorizontalAxis
     {
-      this._variableSome3535.\u0023\u003DzShVkWbecUrbY(this.\u0023\u003DzC8v0b7k\u003D, this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dzyqh0CrzbJnzy(), this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D());
+        get
+        {
+            return Orientation == Orientation.Horizontal;
+        }
     }
 
-    public void \u0023\u003DzBzNUoyJKShhwpK03iuRmUkw\u003D()
+    public bool IsAxisFlipped
     {
-      // ISSUE: explicit non-virtual call
-      this._variableSome3535.\u0023\u003DzbUPOl6ZpNIOI(this.\u0023\u003DzC8v0b7k\u003D, __nonvirtual (this._variableSome3535.MajorGridLineStyle), (IEnumerable<float>) this.\u0023\u003DzN30aRBOHzzD9WoflAw\u003D\u003D.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D());
+        get
+        {
+            return IsHorizontalAxis != IsXAxis;
+        }
     }
-  }
 
-  private sealed class \u0023\u003DzLDVzQHFf5h\u00242oAiW0sh1EFU\u003D
-  {
-    public DependencyObject \u0023\u003Dz6iFJYho\u003D;
-    public DependencyPropertyChangedEventArgs \u0023\u003Dz1BK01YA\u003D;
-
-    public void \u0023\u003DzXQKZS2jF76TH5rkf7ZqHY2c\u003D()
+    public bool IsLabelCullingEnabled
     {
-      AxisBase.\u0023\u003DziB9pY7CleJnqmfAdVQ\u003D\u003D(this.\u0023\u003Dz6iFJYho\u003D, this.\u0023\u003Dz1BK01YA\u003D);
+        get
+        {
+            return ( bool ) GetValue( AxisBase.IsLabelCullingEnabledProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.IsLabelCullingEnabledProperty, value );
+        }
     }
-  }
 
-  private sealed class \u0023\u003DzOspLWCtZ4LQy_hknBYH_r14\u003D
-  {
-    public AxisBase \u0023\u003Dzfl\u0024A1s0\u003D;
-    public Point \u0023\u003DzSygYxus\u003D;
-
-    public void \u0023\u003DzIE9AdC6Gxka684aXOhGqScGsymGy()
+    public bool IsCenterAxis
     {
-      if (this.\u0023\u003Dzfl\u0024A1s0\u003D.VisibleRange == null)
-        return;
-      double y1 = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003DzcVHdIBCOOjXh.X + this.\u0023\u003DzSygYxus\u003D.X;
-      double y2 = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003DzcVHdIBCOOjXh.Y + this.\u0023\u003DzSygYxus\u003D.Y;
-      if (this.\u0023\u003Dzfl\u0024A1s0\u003D.IsLogarithmicAxis)
-      {
-        double logarithmicBase = ((\u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D) this.\u0023\u003Dzfl\u0024A1s0\u003D).get_LogarithmicBase();
-        y1 = Math.Pow(logarithmicBase, y1);
-        y2 = Math.Pow(logarithmicBase, y2);
-      }
-      this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz1itgeDqdlQvE = true;
-      this.\u0023\u003Dzfl\u0024A1s0\u003D.VisibleRange = \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003DzLc65\u0024pc\u003D(this.\u0023\u003Dzfl\u0024A1s0\u003D.VisibleRange.GetType(), (IComparable) y1, (IComparable) y2);
+        get
+        {
+            return ( bool ) GetValue( AxisBase.IsCenterAxisProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.IsCenterAxisProperty, value );
+        }
     }
-  }
 
-  private sealed class \u0023\u003DzqHEJJ\u0024eT__xlAQw9dK5OGBo\u003D
-  {
-    public AxisBase _variableSome3535;
-    public IRange \u0023\u003DzAHNI_S0\u003D;
-    public PointAnimation \u0023\u003DzXB4BRQQhi9cE;
-    public IRange \u0023\u003Dz\u00245UhFnPQKjzF;
-
-    public void \u0023\u003Dz90gMLvcCBhHezcHa8o6j4QFx83AR(
-    #nullable enable
-    object? _param1, EventArgs _param2)
+    public bool IsPrimaryAxis
     {
-      // ISSUE: explicit non-virtual call
-      __nonvirtual (this._variableSome3535.VisibleRange) = this.\u0023\u003DzAHNI_S0\u003D;
-      this._variableSome3535.\u0023\u003Dz1itgeDqdlQvE = false;
-      this.\u0023\u003DzXB4BRQQhi9cE.FillBehavior = FillBehavior.Stop;
-      this._variableSome3535.\u0023\u003Dz_0Le6I5slA7z(new \u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D(this.\u0023\u003Dz\u00245UhFnPQKjzF, this.\u0023\u003DzAHNI_S0\u003D, this._variableSome3535.\u0023\u003Dz1itgeDqdlQvE));
+        get
+        {
+            return ( bool ) GetValue( AxisBase.IsPrimaryAxisProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.IsPrimaryAxisProperty, value );
+        }
     }
-  }
 
-  private sealed class \u0023\u003Dzztvqky7ki\u0024I\u0024g1MAJ0wAGaM\u003D
-  {
-    public Decimal \u0023\u003DzvQ3M6iJZUC74;
-
-    public bool \u0023\u003DzzR02vPcj7iEpCu37cNMcNoyJfLDl(int _param1)
+    public bool IsStaticAxis
     {
-      return this.\u0023\u003DzvQ3M6iJZUC74 % (Decimal) _param1 == 0M;
+        get
+        {
+            return ( bool ) GetValue( AxisBase.IsStaticAxisProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.IsStaticAxisProperty, value );
+        }
     }
-  }
+
+    public bool AutoAlignVisibleRange
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.AutoAlignVisibleRangeProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AutoAlignVisibleRangeProperty, value );
+        }
+    }
+
+    public bool HasValidVisibleRange
+    {
+        get
+        {
+            return IsVisibleRangeValid();
+        }
+    }
+
+    public bool HasDefaultVisibleRange
+    {
+        get
+        {
+            IRange defaultNonZeroRange = GetDefaultNonZeroRange();
+            if ( VisibleRange.Equals( defaultNonZeroRange ) )
+                return _secondLastValidRange.Equals( defaultNonZeroRange );
+            return false;
+        }
+    }
+
+    double IDrawable.Width
+    {
+        get
+        {
+            return ActualWidth;
+        }
+        set
+        {
+        }
+    }
+
+    double IDrawable.Height
+    {
+        get
+        {
+            return ActualHeight;
+        }
+        set
+        {
+        }
+    }
+
+    public ISciChartSurface ParentSurface
+    {
+        get
+        {
+            return _parentSurface;
+        }
+        set
+        {
+            _parentSurface = value;
+            if ( _parentSurface != null && _parentSurface.Services != null )
+                Services = _parentSurface.Services;
+            OnPropertyChanged( nameof( ParentSurface ) );
+        }
+    }
+
+    public IServiceContainer Services
+    {
+        get
+        {
+            return _serviceContainer;
+        }
+        set
+        {
+            _serviceContainer = value;
+        }
+    }
+
+    public string AxisTitle
+    {
+        get
+        {
+            return ( string ) GetValue( AxisBase.AxisTitleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AxisTitleProperty, value );
+        }
+    }
+
+    public Style TitleStyle
+    {
+        get
+        {
+            return ( Style ) GetValue( AxisBase.TitleStyleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TitleStyleProperty, value );
+        }
+    }
+
+    public FontWeight TitleFontWeight
+    {
+        get
+        {
+            return ( FontWeight ) GetValue( AxisBase.TitleFontWeightProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TitleFontWeightProperty, value );
+        }
+    }
+
+    public double TitleFontSize
+    {
+        get
+        {
+            return ( double ) GetValue( AxisBase.TitleFontSizeProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TitleFontSizeProperty, value );
+        }
+    }
+
+    public string TextFormatting
+    {
+        get
+        {
+            return ( string ) GetValue( AxisBase.TextFormattingProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TextFormattingProperty, value );
+        }
+    }
+
+    public string CursorTextFormatting
+    {
+        get
+        {
+            return ( string ) GetValue( AxisBase.CursorTextFormattingProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.CursorTextFormattingProperty, value );
+        }
+    }
+
+    public ILabelProvider LabelProvider
+    {
+        get
+        {
+            return ( ILabelProvider ) GetValue( AxisBase.LabelProviderProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.LabelProviderProperty, value );
+        }
+    }
+
+    public ILabelProvider DefaultLabelProvider
+    {
+        get
+        {
+            return ( ILabelProvider ) GetValue( AxisBase.DefaultLabelProviderProperty );
+        }
+        protected set
+        {
+            SetValue( AxisBase.DefaultLabelProviderProperty, value );
+        }
+    }
+
+    [Obsolete(
+        "We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead" )]
+    public AxisMode AxisMode
+    {
+        get
+        {
+            throw new Exception(
+                "We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead" );
+        }
+        set
+        {
+            throw new Exception(
+                "We're sorry! AxisBase.AxisMode is obsolete. To create a chart with Logarithmic axis, please the LogarithmicNumericAxis type instead" );
+        }
+    }
+
+    public AutoRange AutoRange
+    {
+        get
+        {
+            return ( AutoRange ) GetValue( AxisBase.AutoRangeProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AutoRangeProperty, value );
+        }
+    }
+
+    [TypeConverter( typeof( StringToDoubleRangeTypeConverter ) )]
+    public IRange<double> GrowBy
+    {
+        get
+        {
+            return ( IRange<double> ) GetValue( AxisBase.GrowByProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.GrowByProperty, value );
+        }
+    }
+
+    public bool FlipCoordinates
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.FlipCoordinatesProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.FlipCoordinatesProperty, value );
+        }
+    }
+
+    public IComparable MajorDelta
+    {
+        get
+        {
+            return ( IComparable ) GetValue( AxisBase.MajorDeltaProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MajorDeltaProperty, value );
+        }
+    }
+
+    public int MinorsPerMajor
+    {
+        get
+        {
+            return ( int ) GetValue( AxisBase.MinorsPerMajorProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MinorsPerMajorProperty, value );
+        }
+    }
+
+    public int MaxAutoTicks
+    {
+        get
+        {
+            return ( int ) GetValue( AxisBase.MaxAutoTicksProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MaxAutoTicksProperty, value );
+        }
+    }
+
+    public bool AutoTicks
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.AutoTicksProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AutoTicksProperty, value );
+        }
+    }
+
+    public ITickProvider TickProvider
+    {
+        get
+        {
+            return ( ITickProvider ) GetValue( AxisBase.TickProviderProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TickProviderProperty, value );
+        }
+    }
+
+    public ITickCoordinatesProvider TickCoordinatesProvider
+    {
+        get
+        {
+            return ( ITickCoordinatesProvider ) GetValue( AxisBase.TickCoordinatesProviderProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TickCoordinatesProviderProperty, value );
+        }
+    }
+
+    public IComparable MinorDelta
+    {
+        get
+        {
+            return ( IComparable ) GetValue( AxisBase.MinorDeltaProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MinorDeltaProperty, value );
+        }
+    }
+
+    public Brush TickTextBrush
+    {
+        get
+        {
+            return ( Brush ) GetValue( AxisBase.TickTextBrushProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TickTextBrushProperty, value );
+        }
+    }
+
+    [Obsolete( "MajorLineStroke is obsolete, please use MajorTickLineStyle instead", true )]
+    public Brush MajorLineStroke
+    {
+        get
+        {
+            return ( Brush ) null;
+        }
+        set
+        {
+            throw new Exception( "MajorLineStroke is obsolete, please use MajorTickLineStyle instead" );
+        }
+    }
+
+    [Obsolete( "MinorLineStroke is obsolete, please use MajorTickLineStyle instead", true )]
+    public Brush MinorLineStroke
+    {
+        get
+        {
+            return ( Brush ) null;
+        }
+        set
+        {
+            throw new Exception( "MinorLineStroke is obsolete, please use MajorTickLineStyle instead" );
+        }
+    }
+
+    public Style MajorTickLineStyle
+    {
+        get
+        {
+            return ( Style ) GetValue( AxisBase.MajorTickLineStyleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MajorTickLineStyleProperty, value );
+        }
+    }
+
+    public Style MinorTickLineStyle
+    {
+        get
+        {
+            return ( Style ) GetValue( AxisBase.MinorTickLineStyleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MinorTickLineStyleProperty, value );
+        }
+    }
+
+    public Style MajorGridLineStyle
+    {
+        get
+        {
+            return ( Style ) GetValue( AxisBase.MajorGridLineStyleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MajorGridLineStyleProperty, value );
+        }
+    }
+
+    public Style MinorGridLineStyle
+    {
+        get
+        {
+            return ( Style ) GetValue( AxisBase.MinorGridLineStyleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MinorGridLineStyleProperty, value );
+        }
+    }
+
+    public bool DrawMinorTicks
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.DrawMinorTicksProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.DrawMinorTicksProperty, value );
+        }
+    }
+
+    public bool DrawLabels
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.DrawLabelsProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.DrawLabelsProperty, value );
+        }
+    }
+
+    public bool DrawMajorTicks
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.DrawMajorTicksProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.DrawMajorTicksProperty, value );
+        }
+    }
+
+    public bool DrawMajorGridLines
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.DrawMajorGridLinesProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.DrawMajorGridLinesProperty, value );
+        }
+    }
+
+    public bool DrawMinorGridLines
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.DrawMinorGridLinesProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.DrawMinorGridLinesProperty, value );
+        }
+    }
+
+    public bool DrawMajorBands
+    {
+        get
+        {
+            return ( bool ) GetValue( AxisBase.DrawMajorBandsProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.DrawMajorBandsProperty, value );
+        }
+    }
+
+    public Color AxisBandsFill
+    {
+        get
+        {
+            return ( Color ) GetValue( AxisBase.AxisBandsFillProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AxisBandsFillProperty, value );
+        }
+    }
+
+    public Orientation Orientation
+    {
+        get
+        {
+            return ( Orientation ) GetValue( AxisBase.OrientationProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.OrientationProperty, value );
+        }
+    }
+
+    public AxisAlignment AxisAlignment
+    {
+        get
+        {
+            return ( AxisAlignment ) GetValue( AxisBase.AxisAlignmentProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AxisAlignmentProperty, value );
+        }
+    }
+
+    public string Id
+    {
+        get
+        {
+            return ( string ) GetValue( AxisBase.IdProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.IdProperty, value );
+        }
+    }
+
+    public double StrokeThickness
+    {
+        get
+        {
+            return ( double ) GetValue( AxisBase.StrokeThicknessProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.StrokeThicknessProperty, value );
+        }
+    }
+
+    public Style TickLabelStyle
+    {
+        get
+        {
+            return ( Style ) GetValue( AxisBase.TickLabelStyleProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.TickLabelStyleProperty, value );
+        }
+    }
+
+    public UltrachartScrollbar Scrollbar
+    {
+        get
+        {
+            return ( UltrachartScrollbar ) GetValue( AxisBase.ScrollbarProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.ScrollbarProperty, value );
+        }
+    }
+
+    public bool IsSuspended
+    {
+        get
+        {
+            return UpdateSuspender.GetIsSuspended( ( ISuspendable ) this );
+        }
+    }
+
+    public IAnnotationCanvas ModifierAxisCanvas
+    {
+        get
+        {
+            return ( IAnnotationCanvas ) _modifierAxisCanvas;
+        }
+    }
+
+    protected IRenderSurface RenderSurface
+    {
+        get
+        {
+            if ( ParentSurface == null )
+                return ( IRenderSurface ) null;
+            return ParentSurface.RenderSurface;
+        }
+    }
+
+    public virtual bool IsCategoryAxis
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+    public virtual bool IsLogarithmicAxis
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+    public virtual bool IsPolarAxis
+    {
+        get
+        {
+            return false;
+        }
+    }
+
+    [TypeConverter( typeof( StringToDoubleRangeTypeConverter ) )]
+    public IRange AnimatedVisibleRange
+    {
+        get
+        {
+            return ( IRange ) GetValue( AxisBase.AnimatedVisibleRangeProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.AnimatedVisibleRangeProperty, value );
+        }
+    }
+
+    [TypeConverter( typeof( StringToDoubleRangeTypeConverter ) )]
+    public IRange VisibleRange
+    {
+        get
+        {
+            return ( IRange ) GetValue( AxisBase.VisibleRangeProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.VisibleRangeProperty, value );
+        }
+    }
+
+    [TypeConverter( typeof( StringToDoubleRangeTypeConverter ) )]
+    public IRange VisibleRangeLimit
+    {
+        get
+        {
+            return ( IRange ) GetValue( AxisBase.VisibleRangeLimitProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.VisibleRangeLimitProperty, value );
+        }
+    }
+
+    public RangeClipMode VisibleRangeLimitMode
+    {
+        get
+        {
+            return ( RangeClipMode ) GetValue( AxisBase.VisibleRangeLimitModeProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.VisibleRangeLimitModeProperty, value );
+        }
+    }
+
+    public IComparable MinimalZoomConstrain
+    {
+        get
+        {
+            return ( IComparable ) GetValue( AxisBase.MinimalZoomConstrainProperty );
+        }
+        set
+        {
+            SetValue( AxisBase.MinimalZoomConstrainProperty, value );
+        }
+    }
+
+    public IRange DataRange
+    {
+        get
+        {
+            return CalculateDataRange();
+        }
+    }
+
+    internal IAxisPanel AxisPanel
+    {
+        get
+        {
+            return _axisPanel;
+        }
+    }
+
+    internal StackPanel AxisContainer
+    {
+        get
+        {
+            return _axisContainer;
+        }
+    }
+
+    internal ITickLabelsPool TickLabelsPool
+    {
+        get
+        {
+            return _labelsPool;
+        }
+    }
+
+    public virtual double CurrentDatapointPixelSize
+    {
+        get
+        {
+            return double.NaN;
+        }
+    }
+
+    [Obsolete( "AxisBase.GetPointRange is obsolete, please call DataSeries.GetIndicesRange(VisibleRange) instead", true )]
+    public IntegerRange GetPointRange()
+    {
+        throw new NotSupportedException(
+            "AxisBase.GetPointRange is obsolete, please call DataSeries.GetIndicesRange(VisibleRange) instead" );
+    }
+
+    public abstract IRange GetUndefinedRange();
+
+    public abstract IRange GetDefaultNonZeroRange();
+
+    public abstract IRange CalculateYRange( RenderPassInfo renderPassInfo );
+
+    protected virtual IRange CalculateDataRange()
+    {
+        if ( ParentSurface == null || ParentSurface.RenderableSeries.IsNullOrEmpty<IRenderableSeries>() )
+            return ( IRange ) null;
+        if ( !IsXAxis )
+            return GetYDataRange();
+        return GetXDataRange();
+    }
+
+    private IRange GetXDataRange()
+    {
+        IRange range = (IRange) null;
+        foreach ( IRenderableSeries renderableSeries in ParentSurface.RenderableSeries
+            .Where<IRenderableSeries>(
+                ( Func<IRenderableSeries, bool> ) ( x =>
+                {
+                    if ( !( x.XAxisId == Id ) || !x.IsVisible )
+                        return false;
+                    IDataSeries dataSeries = x.DataSeries;
+                    if ( dataSeries == null )
+                        return false;
+                    return dataSeries.HasValues;
+                } ) ) )
+        {
+            IRange xrange = renderableSeries.GetXRange();
+            if ( xrange != null && xrange.IsDefined )
+            {
+                DoubleRange doubleRange = xrange.AsDoubleRange();
+                range = range == null ? ( IRange ) doubleRange : doubleRange.Union( range );
+            }
+        }
+        return range;
+    }
+
+    private IRange GetYDataRange()
+    {
+        IRange range = (IRange) null;
+        foreach ( IRenderableSeries renderableSeries in ParentSurface.RenderableSeries
+            .Where<IRenderableSeries>(
+                ( Func<IRenderableSeries, bool> ) ( x =>
+                {
+                    if ( x.YAxisId == Id && x.IsVisible )
+                        return x.DataSeries != null;
+                    return false;
+                } ) ) )
+        {
+            IRange yrange = renderableSeries.DataSeries.YRange;
+            if ( yrange != null && yrange.IsDefined )
+            {
+                DoubleRange doubleRange = yrange.AsDoubleRange();
+                range = range == null ? ( IRange ) doubleRange : doubleRange.Union( range );
+            }
+        }
+        return range;
+    }
+
+    public virtual IRange GetMaximumRange()
+    {
+        IRange range1 = (IRange) new DoubleRange(double.NaN, double.NaN);
+        if ( ParentSurface != null && !ParentSurface.RenderableSeries.IsNullOrEmpty<IRenderableSeries>() )
+        {
+            if ( IsXAxis )
+            {
+                range1 = GetXDataRange() ?? range1;
+                if ( range1.IsZero )
+                    range1 = CoerceZeroRange( range1 );
+                if ( GrowBy != null )
+                {
+                    double logBase = IsLogarithmicAxis ? ((ILogarithmicAxis) this).LogarithmicBase : 0.0;
+                    range1 = range1.GrowBy( GrowBy.Min, GrowBy.Max, IsLogarithmicAxis, logBase );
+                }
+                if ( VisibleRangeLimit != null )
+                    range1.ClipTo( ( IRange ) VisibleRangeLimit.AsDoubleRange(), VisibleRangeLimitMode );
+            }
+            else
+                range1 = GetWindowedYRange( ( IDictionary<string, IRange> ) null );
+        }
+        IRange range2 = VisibleRange == null || !VisibleRange.IsDefined ? GetDefaultNonZeroRange() : VisibleRange;
+        if ( range1 == null || !range1.IsDefined )
+            return ( IRange ) range2.AsDoubleRange();
+        return range1;
+    }
+
+    protected virtual IRange CoerceZeroRange( IRange maximumRange )
+    {
+        return maximumRange.GrowBy( 0.01, 0.01 );
+    }
+
+    public IRange GetWindowedYRange( IDictionary<string, IRange> xRanges )
+    {
+        IRange range = (IRange) new DoubleRange(double.NaN, double.NaN);
+        if ( ParentSurface != null && !ParentSurface.RenderableSeries.IsNullOrEmpty<IRenderableSeries>() )
+        {
+            foreach ( IRenderableSeries renderableSeries in ParentSurface.RenderableSeries
+                .Where<IRenderableSeries>(
+                    ( Func<IRenderableSeries, bool> ) ( x =>
+                    {
+                        if ( x.YAxisId == Id && x.DataSeries != null && x.IsVisible )
+                            return x.DataSeries.HasValues;
+                        return false;
+                    } ) ) )
+            {
+                IRange xRange = xRanges == null || !xRanges.ContainsKey(renderableSeries.XAxisId)
+                    ? (renderableSeries.XAxis ?? ParentSurface.XAxes.GetAxisById(renderableSeries.XAxisId, false))?.VisibleRange
+                    : xRanges[renderableSeries.XAxisId];
+                if ( xRange != null && xRange.IsDefined )
+                {
+                    DoubleRange doubleRange = renderableSeries.GetYRange(xRange, IsLogarithmicAxis).AsDoubleRange();
+                    if ( doubleRange.IsDefined )
+                        range = doubleRange.Union( range );
+                }
+            }
+            if ( range.IsZero )
+                range = CoerceZeroRange( range );
+            if ( GrowBy != null )
+            {
+                double logBase = IsLogarithmicAxis ? ((ILogarithmicAxis) this).LogarithmicBase : 0.0;
+                range = range != null ? range.GrowBy( GrowBy.Min, GrowBy.Max, IsLogarithmicAxis, logBase ) : ( IRange ) null;
+            }
+            if ( VisibleRangeLimit != null )
+                range.ClipTo( ( IRange ) VisibleRangeLimit.AsDoubleRange(), VisibleRangeLimitMode );
+        }
+        if ( range == null || !range.IsDefined )
+            return VisibleRange != null ? ( IRange ) VisibleRange.AsDoubleRange() : ( IRange ) null;
+        return range;
+    }
+
+    public void Scroll( double pixelsToScroll, ClipMode clipMode )
+    {
+        Scroll( pixelsToScroll, clipMode, TimeSpan.Zero );
+    }
+
+    public void Scroll( double pixelsToScroll, ClipMode clipMode, TimeSpan duration )
+    {
+        IAxisInteractivityHelper interactivityHelper = GetCurrentInteractivityHelper();
+        if ( interactivityHelper == null )
+            return;
+        IRange rangeToClip = interactivityHelper.Scroll(VisibleRange, pixelsToScroll);
+        IRange range = rangeToClip;
+        if ( clipMode != ClipMode.None )
+        {
+            IRange maximumRange = GetMaximumRange();
+            range = interactivityHelper.ClipRange( rangeToClip, maximumRange, clipMode );
+        }
+        IRange newRange = RangeFactory.NewWithMinMax(VisibleRange, range.Min, range.Max);
+        TryApplyVisibleRangeLimit( newRange );
+
+        this.TrySetOrAnimateVisibleRange( newRange, duration );
+    }
+
+    protected void TryApplyVisibleRangeLimit( IRange newRange )
+    {
+        if ( VisibleRangeLimit == null )
+            return;
+        newRange.ClipTo( VisibleRangeLimit, VisibleRangeLimitMode );
+    }
+
+    public void ScrollByDataPoints( int pointAmount )
+    {
+        ScrollByDataPoints( pointAmount, TimeSpan.Zero );
+    }
+
+    public virtual void ScrollByDataPoints( int pointAmount, TimeSpan duration )
+    {
+        throw new InvalidOperationException( "ScrollByDataPoints is only valid CategoryDateTimeAxis" );
+    }
+
+    public void Zoom( double fromCoord, double toCoord )
+    {
+        Zoom( fromCoord, toCoord, TimeSpan.Zero );
+    }
+
+    public void Zoom( double fromCoord, double toCoord, TimeSpan duration )
+    {
+        IRange newRange = GetCurrentInteractivityHelper().Zoom(VisibleRange, fromCoord, toCoord);
+        TryApplyVisibleRangeLimit( newRange );
+
+        this.TrySetOrAnimateVisibleRange( newRange, duration );
+    }
+
+    public void ZoomBy( double minFraction, double maxFraction )
+    {
+        ZoomBy( minFraction, maxFraction, TimeSpan.Zero );
+    }
+
+    public void ZoomBy( double minFraction, double maxFraction, TimeSpan duration )
+    {
+        IAxisInteractivityHelper interactivityHelper = GetCurrentInteractivityHelper();
+        if ( interactivityHelper == null )
+            return;
+        IRange newRange = interactivityHelper.ZoomBy(VisibleRange, minFraction, maxFraction);
+        TryApplyVisibleRangeLimit( newRange );
+        this.TrySetOrAnimateVisibleRange( newRange, duration );
+    }
+
+    [Obsolete( "AxisBase.ScrollTo is obsolete, please call AxisBase.Scroll(pixelsToScroll) instead" )]
+    public virtual void ScrollTo( IRange startVisibleRange, double pixelsToScroll )
+    {
+        ScrollToWithLimit( startVisibleRange, pixelsToScroll, ( IRange ) null );
+    }
+
+    public virtual void ScrollToWithLimit( IRange startVisibleRange, double pixelsToScroll, IRange rangeLimit )
+    {
+        IRange range1 = GetCurrentInteractivityHelper().Scroll(VisibleRange, pixelsToScroll);
+        IRange range2;
+        if ( rangeLimit == null )
+        {
+            range2 = range1;
+        }
+        else
+        {
+            DoubleRange doubleRange = range1.AsDoubleRange();
+            range2 = RangeFactory.NewWithMinMax( VisibleRange, doubleRange.Min, doubleRange.Max, rangeLimit );
+        }
+        if ( !IsValidRange( range2 ) )
+            return;
+        VisibleRange = range2;
+    }
+
+    public virtual bool IsValidRange( IRange range )
+    {
+        if ( IsOfValidType( range ) && range.IsDefined )
+            return range.Min.CompareTo( range.Max ) <= 0;
+        return false;
+    }
+
+    public abstract bool IsOfValidType( IRange range );
+
+    public XmlSchema GetSchema()
+    {
+        return ( XmlSchema ) null;
+    }
+
+    public virtual void ReadXml( XmlReader reader )
+    {
+        if ( reader.MoveToContent() != XmlNodeType.Element || !( reader.LocalName == GetType().Name ) )
+            return;
+        AxisSerializationHelper.Instance.DeserializeProperties( this, reader );
+    }
+
+    public virtual void WriteXml( XmlWriter writer )
+    {
+        AxisSerializationHelper.Instance.SerializeProperties( this, writer );
+    }
+
+    public abstract IAxis Clone();
+
+    public virtual void AssertDataType( Type dataType )
+    {
+        List<Type> supportedTypes = GetSupportedTypes();
+        if ( !supportedTypes.Contains( dataType ) )
+            throw new InvalidOperationException(
+                string.Format(
+                    "{0} does not support the type {1}. Supported types include {2}",
+                    GetType().Name,
+                    dataType,
+                    string.Join(
+                        ", ",
+                        supportedTypes.Select<Type, string>( ( Func<Type, string> ) ( x => x.Name ) ).ToArray<string>() ) ) );
+    }
+
+    protected abstract List<Type> GetSupportedTypes();
+
+    public void ValidateAxis()
+    {
+        if ( !AutoTicks &&
+            ( MajorDelta == null ||
+                MajorDelta.Equals( AxisBase.MajorDeltaProperty.GetMetadata( typeof( AxisBase ) ).DefaultValue ) ||
+                ( MinorDelta == null ||
+                    MinorDelta.Equals( AxisBase.MinorDeltaProperty.GetMetadata( typeof( AxisBase ) ).DefaultValue ) ) ) )
+            throw new InvalidOperationException(
+                "The MinDelta, MaxDelta properties have to be set if AutoTicks == False." );
+    }
+
+    public void SetMouseCursor( Cursor cursor )
+    {
+        SetCurrentValue( FrameworkElement.CursorProperty, cursor );
+    }
+
+    public void Clear()
+    {
+        if ( AxisPanel == null )
+            return;
+        AxisPanel.ClearLabels();
+    }
+
+    public IAxisInteractivityHelper GetCurrentInteractivityHelper()
+    {
+        return _currentInteractivityHelper;
+    }
+
+    public virtual ICoordinateCalculator<double> GetCurrentCoordinateCalculator()
+    {
+        _currentCoordinateCalculator = ( Services == null
+            ? ( ICoordinateCalculatorFactory ) new CoordinateCalculatorFactory()
+            : Services.GetService<ICoordinateCalculatorFactory>() ).New( GetAxisParams() );
+        _currentInteractivityHelper = ( IAxisInteractivityHelper ) new AxisInteractivityHelper(
+            _currentCoordinateCalculator );
+        return _currentCoordinateCalculator;
+    }
+
+    public virtual void OnBeginRenderPass(
+        RenderPassInfo renderPassInfo = default( RenderPassInfo ),
+        IPointSeries firstPointSeries = null )
+    {
+        GetCurrentCoordinateCalculator();
+    }
+
+    public virtual AxisParams GetAxisParams()
+    {
+        IRenderSurface renderSurface = RenderSurface;
+        DoubleRange doubleRange = (VisibleRange ?? (IRange) new DoubleRange(double.NaN, double.NaN)).AsDoubleRange();
+        int num = IsHorizontalAxis ? (int) ActualWidth : (int) ActualHeight;
+        if ( ( double ) Math.Abs( num ) < double.Epsilon && renderSurface != null )
+            num = IsHorizontalAxis ? ( int ) renderSurface.ActualWidth : ( int ) renderSurface.ActualHeight;
+        AxisParams axisParams = new AxisParams()
+        {
+            FlipCoordinates = FlipCoordinates,
+            IsXAxis = IsXAxis,
+            IsHorizontal = IsHorizontalAxis,
+            VisibleMax = doubleRange.Max.ToDouble(),
+            VisibleMin = doubleRange.Min.ToDouble(),
+            Offset = GetAxisOffset(),
+            Size = (double) num,
+            DataPointPixelSize = double.NaN
+        };
+        IDataSeries baseDataSeries = GetBaseDataSeries();
+        if ( baseDataSeries != null )
+        {
+            axisParams.BaseXValues = baseDataSeries.XValues;
+            axisParams.IsBaseXValuesSorted = baseDataSeries.IsSorted;
+        }
+        return axisParams;
+    }
+
+    public virtual double GetAxisOffset()
+    {
+        double num = 0.0;
+        if ( RenderSurface != null )
+        {
+            Rect boundsRelativeTo = ElementExtensions.GetBoundsRelativeTo(this, (IHitTestable) RenderSurface);
+            num = boundsRelativeTo == Rect.Empty ? 0.0 : ( IsHorizontalAxis ? boundsRelativeTo.X : boundsRelativeTo.Y );
+        }
+        return num;
+    }
+
+    private IDataSeries GetBaseDataSeries()
+    {
+        IDataSeries dataSeries1 = (IDataSeries) null;
+        if ( ParentSurface != null && ParentSurface.RenderableSeries != null )
+        {
+            IRenderableSeries renderableSeries = IsXAxis
+                ? ParentSurface.RenderableSeries
+                    .FirstOrDefault<IRenderableSeries>(
+                        (Func<IRenderableSeries, bool>) (x =>
+                        {
+                            if(!(x.XAxisId == Id))
+                                return false;
+                            IDataSeries dataSeries2 = x.DataSeries;
+                            if(dataSeries2 == null)
+                                return false;
+                            return dataSeries2.HasValues;
+                        }))
+                : ParentSurface.RenderableSeries
+                    .FirstOrDefault<IRenderableSeries>(
+                        (Func<IRenderableSeries, bool>) (x =>
+                        {
+                            if(!(x.YAxisId == Id))
+                                return false;
+                            IDataSeries dataSeries2 = x.DataSeries;
+                            if(dataSeries2 == null)
+                                return false;
+                            return dataSeries2.HasValues;
+                        }));
+            if ( renderableSeries != null && renderableSeries.DataSeries != null )
+                dataSeries1 = renderableSeries.DataSeries;
+        }
+        return dataSeries1;
+    }
+
+    protected virtual void OnPropertyChanged( string propertyName )
+    {
+        // ISSUE: reference to a compiler-generated field
+        PropertyChangedEventHandler propertyChanged = PropertyChanged;
+        if ( propertyChanged == null )
+            return;
+        propertyChanged( this, new PropertyChangedEventArgs( propertyName ) );
+    }
+
+    public void DecrementSuspend()
+    {
+    }
+
+    public IUpdateSuspender SuspendUpdates()
+    {
+        return ( IUpdateSuspender ) new UpdateSuspender( ( ISuspendable ) this );
+    }
+
+    public void ResumeUpdates( IUpdateSuspender updateSuspender )
+    {
+        if ( !updateSuspender.ResumeTargetOnDispose )
+            return;
+        InvalidateElement();
+    }
+
+    public void InvalidateElement()
+    {
+        InvalidateMeasure();
+        InvalidateArrange();
+        if ( ParentSurface == null )
+            return;
+        ParentSurface.InvalidateElement();
+    }
+
+    public virtual AxisInfo HitTest( Point atPoint )
+    {
+        if ( GetCurrentCoordinateCalculator() == null )
+            return ( AxisInfo ) null;
+        return HitTest( GetDataValue( IsHorizontalAxis ? atPoint.X : atPoint.Y ) );
+    }
+
+    public virtual AxisInfo HitTest( IComparable dataValue )
+    {
+        string str1 = FormatText(dataValue);
+        string str2 = FormatCursorText(dataValue);
+        return new AxisInfo()
+        {
+            AxisId = Id,
+            DataValue = dataValue,
+            AxisAlignment = AxisAlignment,
+            AxisFormattedDataValue = str1,
+            CursorFormattedDataValue = str2,
+            AxisTitle = AxisTitle,
+            IsHorizontal = IsHorizontalAxis,
+            IsXAxis = IsXAxis
+        };
+    }
+
+    [Obsolete(
+        "The FormatText method which takes a format string is obsolete. Please use the method overload with one argument instead.",
+        true )]
+    public virtual string FormatText( IComparable value, string format )
+    {
+        throw new NotSupportedException(
+            "The FormatText method which takes a format string is obsolete. Please use the method overload with one argument instead." );
+    }
+
+    public virtual string FormatText( IComparable value )
+    {
+        if ( LabelProvider == null )
+            return value.ToString();
+        return LabelProvider.FormatLabel( value );
+    }
+
+    public virtual string FormatCursorText( IComparable value )
+    {
+        if ( LabelProvider == null )
+            return value.ToString();
+        return LabelProvider.FormatCursorLabel( value );
+    }
+
+    public virtual IComparable GetDataValue( double pixelCoordinate )
+    {
+        if ( _currentCoordinateCalculator == null )
+            return ( IComparable ) double.NaN;
+        return ( IComparable ) _currentCoordinateCalculator.GetDataValue( pixelCoordinate );
+    }
+
+    public virtual double GetCoordinate( IComparable value )
+    {
+        if ( _currentCoordinateCalculator == null )
+            return double.NaN;
+        return _currentCoordinateCalculator.GetCoordinate( value.ToDouble() );
+    }
+
+    public bool IsPointWithinBounds( Point point )
+    {
+        return ElementExtensions.IsPointWithinBounds(
+            this,
+            ParentSurface.RootGrid.TranslatePoint( point, ( IHitTestable ) this ) );
+    }
+
+    public Point TranslatePoint( Point point, IHitTestable relativeTo )
+    {
+        return ElementExtensions.TranslatePoint( this, point, relativeTo );
+    }
+
+    public Rect GetBoundsRelativeTo( IHitTestable relativeTo )
+    {
+        return ElementExtensions.GetBoundsRelativeTo( this, relativeTo );
+    }
+
+    public void OnDraw( IRenderContext2D renderContext, IRenderPassData renderPassData )
+    {
+        if ( !IsValidForDrawing() )
+            return;
+        using ( IUpdateSuspender updateSuspender = SuspendUpdates() )
+        {
+            updateSuspender.ResumeTargetOnDispose = false;
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            if ( LabelProvider != null )
+                LabelProvider.OnBeginAxisDraw();
+            _tickCoords = CalculateTicks();
+            DrawGridLines( renderContext, _tickCoords );
+            if ( IsShown() )
+                OnDrawAxis( _tickCoords );
+            stopwatch.Stop();
+            UltrachartDebugLogger.Instance
+                .WriteLine(
+                    "Drawn {0}: Width={1}, Height={2} in {3}ms",
+                    GetType().Name,
+                    ActualWidth,
+                    ActualHeight,
+                    stopwatch.ElapsedMilliseconds );
+        }
+    }
+
+    private bool IsValidForDrawing()
+    {
+        if ( !IsSuspended && IsVisibleRangeValid() )
+            return IsLicenseValid;
+        return false;
+    }
+
+    private bool IsShown()
+    {
+        UltrachartSurface parentSurface = ParentSurface as UltrachartSurface;
+        if ( parentSurface != null && parentSurface.IsVisible() && this.IsVisible() )
+            return HasAxisPanel();
+        return false;
+    }
+
+    private bool IsVisibleRangeValid()
+    {
+        bool flag = IsValidRange(VisibleRange) && !VisibleRange.IsZero;
+        if ( !flag )
+            UltrachartDebugLogger.Instance.WriteLine( "{0} is not a valid VisibleRange for {1}", VisibleRange, GetType() );
+        return flag;
+    }
+
+    protected virtual TickCoordinates CalculateTicks()
+    {
+        CalculateDelta();
+        Guard.NotNull( TickProvider, "TickProvider" );
+        IAxisParams axis = (IAxisParams) this;
+        double[] majorTicks = TickProvider.GetMajorTicks(axis);
+        return TickCoordinatesProvider.GetTickCoordinates( TickProvider.GetMinorTicks( axis ), majorTicks );
+    }
+
+    protected abstract void CalculateDelta();
+
+    protected abstract IDeltaCalculator GetDeltaCalculator();
+
+    protected virtual uint GetMaxAutoTicks()
+    {
+        return ( uint ) Math.Max( 1, MaxAutoTicks );
+    }
+
+    protected virtual void DrawGridLines( IRenderContext2D renderContext, TickCoordinates tickCoords )
+    {
+        if ( renderContext == null )
+            return;
+        if ( DrawMinorGridLines && tickCoords.MinorTickCoordinates.Length != 0 )
+            renderContext.Layers[ RenderLayer.AxisMinorGridlines ].Enqueue(
+                ( Action ) ( () => DrawGridLine(
+                    renderContext,
+                    MinorGridLineStyle,
+                    ( IEnumerable<float> ) tickCoords.MinorTickCoordinates ) ) );
+        if ( tickCoords.MajorTickCoordinates.Length == 0 )
+            return;
+        if ( DrawMajorBands )
+            renderContext.Layers[ RenderLayer.AxisBands ].Enqueue(
+                ( Action ) ( () => DrawBand( renderContext, tickCoords.MajorTicks, tickCoords.MajorTickCoordinates ) ) );
+        if ( !DrawMajorGridLines )
+            return;
+        renderContext.Layers[ RenderLayer.AxisMajorGridlines ].Enqueue(
+            ( Action ) ( () => DrawGridLine(
+                renderContext,
+                MajorGridLineStyle,
+                ( IEnumerable<float> ) tickCoords.MajorTickCoordinates ) ) );
+    }
+
+    private void DrawBand( IRenderContext2D renderContext, double[ ] ticks, float[ ] ticksCoords )
+    {
+        IRenderSurface renderSurface = RenderSurface;
+        if ( renderSurface == null )
+            return;
+        XyDirection direction = IsHorizontalAxis ? XyDirection.XDirection : XyDirection.YDirection;
+        using ( IBrush2D brush = renderContext.CreateBrush( AxisBandsFill, 1.0, new bool?() ) )
+        {
+            float axisOffset = (float) GetAxisOffset();
+            float num = IsHorizontalAxis ? 0.0f : axisOffset + (float) ActualHeight;
+            float coord0_1 = IsHorizontalAxis ? (float) renderSurface.ActualWidth : axisOffset;
+            if ( FlipCoordinates ^ IsAxisFlipped )
+                NumberUtil.Swap( ref num, ref coord0_1 );
+            bool flag = GetMajorTickIndex(ticks[0]) % new Decimal(2) == Decimal.Zero;
+            for ( int index = 0 ; index < ticksCoords.Length ; ++index )
+            {
+                if ( flag )
+                {
+                    float coord0_2 = index == 0 ? num : ticksCoords[index - 1];
+                    float ticksCoord = ticksCoords[index];
+                    DrawBand( renderContext, brush, direction, coord0_2, ticksCoord );
+                }
+                flag = !flag;
+            }
+            if ( !flag )
+                return;
+            DrawBand( renderContext, brush, direction, coord0_1, ( ( IEnumerable<float> ) ticksCoords ).Last<float>() );
+        }
+    }
+
+    private void DrawBand(
+        IRenderContext2D renderContext,
+        IBrush2D bandBrush,
+        XyDirection direction,
+        float coord0,
+        float coord1 )
+    {
+        IRenderSurface renderSurface = RenderSurface;
+        if ( renderSurface == null )
+            return;
+        Point pt1 = direction == XyDirection.YDirection
+            ? new Point(0.0, (double) coord0)
+            : new Point((double) coord0, 0.0);
+        Point pt2 = direction == XyDirection.YDirection
+            ? new Point(renderSurface.ActualWidth, (double) coord1)
+            : new Point((double) coord1, renderSurface.ActualHeight);
+        renderContext.FillRectangle( bandBrush, pt1, pt2, 0.0 );
+    }
+
+    protected virtual void DrawGridLine(
+        IRenderContext2D renderContext,
+        Style gridLineStyle,
+        IEnumerable<float> coordsToDraw )
+    {
+        XyDirection direction = IsHorizontalAxis ? XyDirection.XDirection : XyDirection.YDirection;
+        LineToStyle.Style = gridLineStyle;
+        ThemeManager.SetTheme( ( DependencyObject ) LineToStyle, ThemeManager.GetTheme( ( DependencyObject ) this ) );
+        using ( IPen2D styledPen = renderContext.GetStyledPen( LineToStyle, false ) )
+        {
+            if ( styledPen == null || styledPen.Color.A == ( byte ) 0 )
+                return;
+            foreach ( float atPoint in coordsToDraw )
+                DrawGridLine( renderContext, styledPen, direction, atPoint );
+        }
+    }
+
+    protected void DrawGridLine( IRenderContext2D renderContext, IPen2D linePen, XyDirection direction, float atPoint )
+    {
+        IRenderSurface renderSurface = RenderSurface;
+        if ( renderSurface == null )
+            return;
+        float strokeThickness = linePen.StrokeThickness;
+        Point pt1 = direction == XyDirection.YDirection
+            ? new Point(-(double) strokeThickness, (double) atPoint)
+            : new Point((double) atPoint, -(double) strokeThickness);
+        Point pt2 = direction == XyDirection.YDirection
+            ? new Point(renderSurface.ActualWidth + (double) strokeThickness, (double) atPoint)
+            : new Point((double) atPoint, renderSurface.ActualHeight + (double) strokeThickness);
+        renderContext.DrawLine( linePen, pt1, pt2 );
+    }
+
+    protected virtual void OnDrawAxis( TickCoordinates tickCoords )
+    {
+        _offset = ( float ) GetOffsetForLabels();
+        AxisPanel.DrawTicks( tickCoords, _offset );
+        if ( !DrawLabels )
+            Clear();
+        AxisPanel.Invalidate();
+    }
+
+    protected virtual double GetOffsetForLabels()
+    {
+        return ( IsHorizontalAxis ? BorderThickness.Left : BorderThickness.Top ) + GetAxisOffset();
+    }
+
+    protected virtual void DrawTickLabels( AxisCanvas canvas, TickCoordinates tickCoords, float offset )
+    {
+        double[] majorTicks = tickCoords.MajorTicks;
+        float[] majorTickCoordinates = tickCoords.MajorTickCoordinates;
+        if ( majorTicks == null || majorTickCoordinates == null )
+            return;
+        int num = canvas.Children.Count - majorTickCoordinates.Length;
+        if ( num > 0 )
+        {
+            using ( canvas.SuspendUpdates() )
+            {
+                for ( int index1 = num - 1 ; index1 >= 0 ; --index1 )
+                {
+                    int index2 = majorTickCoordinates.Length + index1;
+                    RemoveTickLabel( canvas, index2 );
+                }
+            }
+        }
+        for ( int index = 0 ; index < majorTickCoordinates.Length ; ++index )
+        {
+            double tick = majorTicks[index];
+            DefaultTickLabel label = index < canvas.Children.Count
+                ? (DefaultTickLabel) canvas.Children[index]
+                : _labelsPool.Get(new Func<DefaultTickLabel, DefaultTickLabel>(ApplyStyle));
+            IComparable dataValue = ConvertTickToDataValue((IComparable) tick);
+            UpdateAxisLabel( label, dataValue );
+            label.CullingPriority = CalculateLabelCullingPriority( tick );
+            Point labelPosition = GetLabelPosition(offset, majorTickCoordinates[index]);
+            label.Position = labelPosition;
+            canvas.SafeAddChild( label, -1 );
+        }
+    }
+
+    protected virtual Point GetLabelPosition( float offset, float coords )
+    {
+        float num = coords - offset;
+        double x = IsHorizontalAxis ? (double) num : 0.0;
+        return new Point( x, ( double ) num - x );
+    }
+
+    protected void RemoveTickLabel( AxisCanvas canvas, int index )
+    {
+        DefaultTickLabel child = (DefaultTickLabel) canvas.Children[index];
+        canvas.Children.Remove( ( UIElement ) child );
+        _labelsPool.Put( child );
+    }
+
+    protected virtual IComparable ConvertTickToDataValue( IComparable value )
+    {
+        return value;
+    }
+
+    private void UpdateAxisLabel( DefaultTickLabel label, IComparable value )
+    {
+        ILabelProvider labelProvider = LabelProvider;
+        if ( labelProvider == null )
+            return;
+        label.DataContext = label.DataContext == null
+            ? labelProvider.CreateDataContext( value )
+            : labelProvider.UpdateDataContext( ( ITickLabelViewModel ) label.DataContext, value );
+    }
+
+    private int CalculateLabelCullingPriority( double tick )
+    {
+        Decimal tickNum = GetMajorTickIndex(tick);
+        return ( ( IEnumerable<int> ) AxisBase.LabelCullingDistances ).Count<int>(
+            ( Func<int, bool> ) ( i => tickNum % ( Decimal ) i == Decimal.Zero ) );
+    }
+
+    private Decimal GetMajorTickIndex( double tick )
+    {
+        ICategoryCoordinateCalculator coordinateCalculator = _currentCoordinateCalculator as ICategoryCoordinateCalculator;
+        if ( coordinateCalculator != null )
+            tick = ( double ) coordinateCalculator.TransformDataToIndex( ( IComparable ) tick );
+        double num1 = MajorDelta.ToDouble();
+        if ( IsLogarithmicAxis )
+        {
+            ILogarithmicAxis logarithmicAxis = this as ILogarithmicAxis;
+            tick = Math.Log( tick, logarithmicAxis.LogarithmicBase );
+        }
+        double d = tick / num1;
+        if ( d >= ( double ) int.MaxValue )
+        {
+            double num2 = d / (double) int.MaxValue;
+            d = ( num2 - ( double ) ( int ) num2 ) * ( double ) int.MaxValue;
+        }
+        return ( Decimal ) ( ( int ) d.RoundOff() );
+    }
+
+    public override void OnApplyTemplate()
+    {
+        base.OnApplyTemplate();
+        _axisContainer = GetAndAssertTemplateChild<StackPanel>( "PART_AxisContainer" );
+        _axisPanel = GetAndAssertTemplateChild<IAxisPanel>( "PART_AxisCanvas" );
+        ( ( StockSharp.Xaml.Charting.Themes.AxisPanel ) _axisPanel ).AddLabels = ( Action<AxisCanvas> ) ( canvas =>
+        {
+            if ( !IsValidForDrawing() || !IsShown() )
+                return;
+            DrawTickLabels( canvas, _tickCoords, _offset );
+        } );
+        _modifierAxisCanvas = GetAndAssertTemplateChild<StockSharp.Xaml.Charting.Themes.ModifierAxisCanvas>(
+            "PART_ModifierAxisCanvas" );
+        _modifierAxisCanvas.ParentAxis = this;
+        if ( VisibleRange != null )
+            return;
+        SetCurrentValue( AxisBase.VisibleRangeProperty, GetUndefinedRange() );
+    }
+
+    protected T GetAndAssertTemplateChild<T>( string childName ) where T : class
+    {
+        T templateChild = GetTemplateChild(childName) as T;
+        if ( templateChild != null )
+            return templateChild;
+        throw new InvalidOperationException(
+            string.Format( "Unable to Apply the Control Template. {0} is missing or of the wrong type", childName ) );
+    }
+
+    private static void OnVisibleRangeDependencyPropertyChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = (AxisBase) d;
+        if ( !axisBase.Dispatcher.CheckAccess() )
+        {
+            Action action = (Action) (() => AxisBase.OnVisibleRangeDependencyPropertyChanged(d, e));
+            axisBase.Dispatcher.BeginInvoke( ( Delegate ) action );
+        }
+        else
+        {
+            IRange oldValue = e.OldValue as IRange;
+            IRange newValue = e.NewValue as IRange;
+            if ( oldValue != null )
+                oldValue.PropertyChanged -= new PropertyChangedEventHandler(
+                    axisBase.OnMaxMinVisibleRangePropertiesChanged );
+            if ( newValue == null )
+                return;
+            if ( !axisBase.HasValidVisibleRange || !axisBase.IsVisibleRangeMinimalConstrainValid() )
+                axisBase.CoerceVisibleRange();
+            if ( !axisBase.HasValidVisibleRange || !axisBase.IsVisibleRangeMinimalConstrainValid() )
+            {
+                axisBase.SetCurrentValue( AxisBase.VisibleRangeProperty, axisBase._lastValidRange );
+                axisBase.AssertRangeType( newValue );
+            }
+            else
+            {
+                newValue.PropertyChanged += new PropertyChangedEventHandler(
+                    axisBase.OnMaxMinVisibleRangePropertiesChanged );
+                if ( !axisBase.TryApplyVisibleRange( newValue, oldValue ) )
+                    return;
+                axisBase._secondLastValidRange = axisBase._lastValidRange;
+                axisBase._lastValidRange = newValue;
+            }
+        }
+    }
+
+    private void OnMaxMinVisibleRangePropertiesChanged( object sender, PropertyChangedEventArgs e )
+    {
+        IComparable min = VisibleRange.Min;
+        IComparable max = VisibleRange.Max;
+        string propertyName = e.PropertyName;
+        if ( !( propertyName == "Min" ) )
+        {
+            if ( propertyName == "Max" )
+                max = ( IComparable ) ( ( PropertyChangedEventArgsWithValues ) e ).OldValue;
+        }
+        else
+            min = ( IComparable ) ( ( PropertyChangedEventArgsWithValues ) e ).OldValue;
+        if ( !TryApplyVisibleRange( VisibleRange, RangeFactory.NewWithMinMax( VisibleRange, min, max ) ) )
+            return;
+        BindingExpression bindingExpression = GetBindingExpression(AxisBase.VisibleRangeProperty);
+        if ( bindingExpression == null ||
+            bindingExpression.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.Explicit )
+            return;
+        bindingExpression.UpdateSource();
+        bindingExpression.UpdateTarget();
+    }
+
+    private bool TryApplyVisibleRange( IRange newRange, IRange oldRange )
+    {
+        bool flag = false;
+        ValidateVisibleRange( newRange );
+        if ( !newRange.Equals( oldRange ) )
+        {
+            OnVisibleRangeChanged( new VisibleRangeChangedEventArgs( oldRange, newRange, _isAnimationChange ) );
+            InvalidateParentSurface();
+            flag = true;
+        }
+        return flag;
+    }
+
+    private void ValidateVisibleRange( IRange range )
+    {
+        AssertRangeType( range );
+        if ( range.Min.CompareTo( range.Max ) > 0 )
+            throw new ArgumentException(
+                string.Format(
+                    "VisibleRange.Min (value={0}) must be less than VisibleRange.Max (value={1})",
+                    range.Min,
+                    range.Max ) );
+    }
+
+    protected virtual void AssertRangeType( IRange range )
+    {
+        if ( !IsOfValidType( range ) )
+            throw new InvalidOperationException(
+                string.Format(
+                    "Axis type {0} requires that VisibleRange is of type {1}",
+                    GetType().Name,
+                    VisibleRange.GetType().FullName ) );
+    }
+
+    protected virtual void OnVisibleRangeChanged( VisibleRangeChangedEventArgs args )
+    {
+        if ( ParentSurface != null )
+            ParentSurface.ViewportManager?.OnVisibleRangeChanged( ( IAxis ) this );
+        // ISSUE: reference to a compiler-generated field
+        EventHandler<VisibleRangeChangedEventArgs> visibleRangeChanged = VisibleRangeChanged;
+        if ( visibleRangeChanged == null )
+            return;
+        visibleRangeChanged( this, args );
+    }
+
+    internal static void NotifyDataRangeChanged( IAxis target )
+    {
+        AxisBase axisBase = target as AxisBase;
+        if ( axisBase == null )
+            return;
+        axisBase.OnDataRangeChanged();
+        axisBase.OnPropertyChanged( "DataRange" );
+    }
+
+    private void OnDataRangeChanged()
+    {
+        // ISSUE: reference to a compiler-generated field
+        EventHandler<EventArgs> dataRangeChanged = DataRangeChanged;
+        if ( dataRangeChanged == null )
+            return;
+        dataRangeChanged( this, EventArgs.Empty );
+    }
+
+    private bool IsVisibleRangeMinimalConstrainValid()
+    {
+        if ( MinimalZoomConstrain != null )
+            return VisibleRange.Diff.ToDouble() >= MinimalZoomConstrain.ToDouble();
+        return true;
+    }
+
+    protected virtual void CoerceVisibleRange()
+    {
+    }
+
+    private static void OnVisibleRangeLimitDependencyPropertyChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = (AxisBase) d;
+        IRange oldValue = e.OldValue as IRange;
+        IRange newValue = e.NewValue as IRange;
+        if ( oldValue != null )
+            oldValue.PropertyChanged -= new PropertyChangedEventHandler(
+                axisBase.OnMaxMinVisibleRangeLimitPropertiesChanged );
+        if ( newValue == null || axisBase.VisibleRange == null )
+            return;
+        newValue.PropertyChanged += new PropertyChangedEventHandler( axisBase.OnMaxMinVisibleRangeLimitPropertiesChanged );
+        IRange range = ((IRange) axisBase.VisibleRange.Clone()).ClipTo(newValue, axisBase.VisibleRangeLimitMode);
+        axisBase.SetCurrentValue( AxisBase.VisibleRangeProperty, range );
+    }
+
+    private void OnMaxMinVisibleRangeLimitPropertiesChanged( object sender, PropertyChangedEventArgs e )
+    {
+        TryApplyVisibleRangeLimit( VisibleRange );
+        BindingExpression bindingExpression = GetBindingExpression(AxisBase.VisibleRangeLimitProperty);
+        if ( bindingExpression == null ||
+            bindingExpression.ParentBinding.UpdateSourceTrigger == UpdateSourceTrigger.Explicit )
+            return;
+        bindingExpression.UpdateSource();
+        bindingExpression.UpdateTarget();
+    }
+
+    private static void OnAnimatedVisibleRangeDependencyPropertyChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = (AxisBase) d;
+        if ( e.NewValue == null )
+            return;
+        axisBase.AnimateVisibleRangeTo( ( IRange ) e.NewValue, TimeSpan.FromMilliseconds( 500.0 ) );
+    }
+
+    public void AnimateVisibleRangeTo( IRange to, TimeSpan duration )
+    {
+        Guard.NotNull( to, nameof( to ) );
+        if ( !HasValidVisibleRange )
+        {
+            VisibleRange = to;
+        }
+        else
+        {
+            _fromPoint = TransformRangeToPoint( VisibleRange );
+            Point point = TransformRangeToPoint(to);
+            PointAnimation pointAnimation1 = new PointAnimation();
+            pointAnimation1.From = new Point?( new Point( 0.0, 0.0 ) );
+            pointAnimation1.To = new Point?( new Point( point.X - _fromPoint.X, point.Y - _fromPoint.Y ) );
+            pointAnimation1.Duration = ( Duration ) duration;
+            ExponentialEase exponentialEase = new ExponentialEase();
+            exponentialEase.EasingMode = EasingMode.EaseOut;
+            exponentialEase.Exponent = 7.0;
+            pointAnimation1.EasingFunction = ( IEasingFunction ) exponentialEase;
+            PointAnimation pointAnimation = pointAnimation1;
+            IRange prevRange = (IRange) VisibleRange.Clone();
+            pointAnimation.Completed += ( EventHandler ) ( ( s, e ) =>
+            {
+                VisibleRange = to;
+                _isAnimationChange = false;
+                pointAnimation.FillBehavior = FillBehavior.Stop;
+                OnVisibleRangeChanged( new VisibleRangeChangedEventArgs( prevRange, to, _isAnimationChange ) );
+            } );
+            Storyboard.SetTarget( ( DependencyObject ) pointAnimation, ( DependencyObject ) this );
+            Storyboard.SetTargetProperty(
+                ( DependencyObject ) pointAnimation,
+                new PropertyPath( "VisibleRangePoint", new object[ 0 ] ) );
+            Storyboard storyboard = new Storyboard();
+            storyboard.Duration = ( Duration ) duration;
+            storyboard.Children.Add( ( Timeline ) pointAnimation );
+            _isAnimationChange = true;
+            storyboard.Begin();
+        }
+    }
+
+    private Point TransformRangeToPoint( IRange range )
+    {
+        DoubleRange doubleRange = range.AsDoubleRange();
+        double num1 = doubleRange.Min;
+        double num2 = doubleRange.Max;
+        if ( IsLogarithmicAxis )
+        {
+            double logarithmicBase = ((ILogarithmicAxis) this).LogarithmicBase;
+            num1 = Math.Log( num1, logarithmicBase );
+            num2 = Math.Log( num2, logarithmicBase );
+        }
+        return new Point( num1, num2 );
+    }
+
+    private static void OnVisibleRangePointDependencyPropertyChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e )
+    {
+        Point p = (Point) e.NewValue;
+        AxisBase axis = (AxisBase) d;
+        axis.Dispatcher
+            .BeginInvokeAlways(
+                ( Action ) ( () =>
+                {
+                    if ( axis.VisibleRange == null )
+                        return;
+                    double y1 = axis._fromPoint.X + p.X;
+                    double y2 = axis._fromPoint.Y + p.Y;
+                    if ( axis.IsLogarithmicAxis )
+                    {
+                        double logarithmicBase = ((ILogarithmicAxis) axis).LogarithmicBase;
+                        y1 = Math.Pow( logarithmicBase, y1 );
+                        y2 = Math.Pow( logarithmicBase, y2 );
+                    }
+                    axis._isAnimationChange = true;
+                    axis.VisibleRange = RangeFactory.NewRange(
+                        axis.VisibleRange.GetType(),
+                        ( IComparable ) y1,
+                        ( IComparable ) y2 );
+                } ) );
+    }
+
+    private static void OnOrientationChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        ( d as AxisBase )?.OnPropertyChanged( "IsHorizontalAxis" );
+    }
+
+    private static void OnAlignmentChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = (AxisBase) d;
+        ISciChartSurface parentSurface = axisBase.ParentSurface;
+        if ( parentSurface != null && !axisBase.IsSuspended )
+            parentSurface.OnAxisAlignmentChanged( ( IAxis ) axisBase, ( AxisAlignment ) e.OldValue );
+        AxisBase.InvalidateParent( d, e );
+    }
+
+    private static void OnIsCenterAxisDependencyPropertyChanged(
+        DependencyObject d,
+        DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = (AxisBase) d;
+        ISciChartSurface parentSurface = axisBase.ParentSurface;
+        if ( parentSurface != null && !axisBase.IsSuspended )
+            parentSurface.OnIsCenterAxisChanged( ( IAxis ) axisBase );
+        AxisBase.InvalidateParent( d, e );
+    }
+
+    protected static void InvalidateParent( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = (AxisBase) d;
+        if ( !axisBase.HasAxisPanel() )
+            return;
+        axisBase.InvalidateParentSurface();
+    }
+
+    private static void OnScrollBarChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        UltrachartScrollbar newValue = e.NewValue as UltrachartScrollbar;
+        if ( newValue == null )
+            return;
+        newValue.Axis = ( IAxis ) axisBase;
+    }
+
+    private bool HasAxisPanel()
+    {
+        return AxisPanel != null;
+    }
+
+    private void InvalidateParentSurface()
+    {
+        if ( Services == null || ParentSurface == null || ParentSurface.IsSuspended )
+            return;
+        Services.GetService<IEventAggregator>()
+            .Publish<InvalidateUltrachartMessage>( new InvalidateUltrachartMessage( this ) );
+    }
+
+    private static void OnLabelProviderChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        ( e.NewValue as ILabelProvider )?.Init( ( IAxis ) axisBase );
+        AxisBase.InvalidateParent( d, e );
+    }
+
+    private static void OnTickProviderChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        ( e.NewValue as ITickProvider )?.Init( ( IAxis ) axisBase );
+        ( e.OldValue as ITickProvider )?.Init( ( IAxis ) null );
+        AxisBase.InvalidateParent( d, e );
+    }
+
+    private static void OnIsPrimaryAxisChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        if ( axisBase == null || !axisBase.IsPrimaryAxis )
+            return;
+        axisBase.InvalidateElement();
+    }
+
+    private static void OnFlipCoordinatesChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        if ( axisBase == null )
+            return;
+        if ( axisBase.FlipCoordinates && axisBase.IsCategoryAxis )
+            throw new InvalidOperationException(
+                "The CategoryDateTimeAxis type does not support coordinate reversal (FlipCoordinates)." );
+        AxisBase.InvalidateParent( d, e );
+    }
+
+    private static void OnIsStaticAxisChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        if ( axisBase == null )
+            return;
+        if ( axisBase.IsStaticAxis && axisBase.IsCategoryAxis )
+            throw new InvalidOperationException(
+                "The CategoryDateTimeAxis type does not support the Static mode (IsStatic)." );
+        axisBase.TickCoordinatesProvider = axisBase.IsStaticAxis
+            ? ( ITickCoordinatesProvider ) new StaticTickCoordinatesProvider()
+            : ( ITickCoordinatesProvider ) new DefaultTickCoordinatesProvider();
+    }
+
+    private static void OnTickCoordinatesProviderChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    {
+        AxisBase axisBase = d as AxisBase;
+        axisBase?.TickCoordinatesProvider.Init( ( IAxis ) axisBase );
+    }
+
+    [SpecialName]
+    HorizontalAlignment IAxis.HorizontalAlignment
+    {
+        get
+        {
+            return HorizontalAlignment;
+        }
+
+        set
+        {
+            HorizontalAlignment = value;
+        }
+    }
+
+
+    [SpecialName]
+    VerticalAlignment IAxis.VerticalAlignment
+    {
+        get
+        {
+            return VerticalAlignment;
+        }
+
+        set
+        {
+            VerticalAlignment = value;
+        }
+    }
+
+
+    [SpecialName]
+    Visibility IAxis.Visibility
+    {
+        get
+        {
+            return Visibility;
+        }
+
+        set
+        {
+            Visibility = value;
+        }
+    }
+
+
+    [SpecialName]
+    double IHitTestable.ActualWidth
+    {
+        get
+        {
+            return ActualWidth;
+        }
+    }
+
+    [SpecialName]
+    double IHitTestable.ActualHeight
+    {
+        get
+        {
+            return ActualHeight;
+        }
+    }
 }

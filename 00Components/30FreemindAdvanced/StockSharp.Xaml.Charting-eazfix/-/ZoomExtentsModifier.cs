@@ -86,11 +86,11 @@ public sealed class ZoomExtentsModifier :
       this.ParentSurface.get_ChartModifier().\u0023\u003DzIc5ifvVNpnRzFbQNeA\u003D\u003D();
     TimeSpan timeSpan = this.IsAnimated ? TimeSpan.FromMilliseconds(500.0) : TimeSpan.Zero;
     if (this.XyDirection == XyDirection.XYDirection)
-      this.ParentSurface.\u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(timeSpan);
+      this.ParentSurface.AnimateZoomExtents(timeSpan);
     else if (this.XyDirection == XyDirection.YDirection)
-      this.ParentSurface.\u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(timeSpan);
+      this.ParentSurface.AnimateZoomExtentsY(timeSpan);
     else
-      this.ParentSurface.\u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(timeSpan);
+      this.ParentSurface.AnimateZoomExtentsX(timeSpan);
   }
 
   public TimeSpan DoubleTapThreshold

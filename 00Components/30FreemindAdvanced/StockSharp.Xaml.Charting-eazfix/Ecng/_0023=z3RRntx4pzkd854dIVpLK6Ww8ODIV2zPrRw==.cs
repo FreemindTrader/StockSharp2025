@@ -7,7 +7,7 @@
 #nullable disable
 public interface \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D : 
   ISuspendable,
-  \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
+  IUltrachartController,
   IInvalidatableElement
 {
   IServiceContainer Services();

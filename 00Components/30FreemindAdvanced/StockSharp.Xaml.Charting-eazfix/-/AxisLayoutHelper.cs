@@ -1,117 +1,77 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.AxisLayoutHelper
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
+﻿using StockSharp.Xaml.Charting.Common.Extensions;
+using StockSharp.Xaml.Charting.Visuals.Axes;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 
-#nullable disable
-namespace StockSharp.Charting;
-
-public sealed class AxisLayoutHelper
+namespace StockSharp.Xaml.Charting.Common
 {
-  public static readonly DependencyProperty \u0023\u003DzfMY988N0StOA = DependencyProperty.RegisterAttached("AxisAlignment", typeof (AxisAlignment), typeof (AxisLayoutHelper), new PropertyMetadata((object) AxisAlignment.Default, new PropertyChangedCallback(AxisLayoutHelper.\u0023\u003DzOPvUPixjU\u00244Y)));
-  public static readonly DependencyProperty \u0023\u003DzleqM3VUz5r6I = DependencyProperty.RegisterAttached("IsInsideItem", typeof (bool), typeof (AxisLayoutHelper), new PropertyMetadata((object) false, new PropertyChangedCallback(AxisLayoutHelper.SomeClass34343383.SomeMethond0343.\u0023\u003DzkyaUoNb3_wZaUlrnAd4Di9o\u003D)));
-  public static readonly DependencyProperty \u0023\u003Dzux6qwNDX3dIn = DependencyProperty.RegisterAttached("IsOutsideItem", typeof (bool), typeof (AxisLayoutHelper), new PropertyMetadata((object) false, new PropertyChangedCallback(AxisLayoutHelper.SomeClass34343383.SomeMethond0343.\u0023\u003DzpY7n52ahyqAxE3pQLbGjA5w\u003D)));
-
-  public static AxisAlignment GetAxisAlignment(
-    DependencyObject _param0)
-  {
-    return (AxisAlignment) _param0.GetValue(AxisLayoutHelper.\u0023\u003DzfMY988N0StOA);
-  }
-
-  public static void SetAxisAlignment(
-    DependencyObject _param0,
-    AxisAlignment _param1)
-  {
-    _param0.SetValue(AxisLayoutHelper.\u0023\u003DzfMY988N0StOA, (object) _param1);
-  }
-
-  public static bool GetIsInsideItem(DependencyObject _param0)
-  {
-    return (bool) _param0.GetValue(AxisLayoutHelper.\u0023\u003DzleqM3VUz5r6I);
-  }
-
-  public static void SetIsInsideItem(DependencyObject _param0, bool _param1)
-  {
-    _param0.SetValue(AxisLayoutHelper.\u0023\u003DzleqM3VUz5r6I, (object) _param1);
-  }
-
-  public static bool GetIsOutsideItem(DependencyObject _param0)
-  {
-    return (bool) _param0.GetValue(AxisLayoutHelper.\u0023\u003Dzux6qwNDX3dIn);
-  }
-
-  public static void SetIsOutsideItem(DependencyObject _param0, bool _param1)
-  {
-    _param0.SetValue(AxisLayoutHelper.\u0023\u003Dzux6qwNDX3dIn, (object) _param1);
-  }
-
-  private static void \u0023\u003DzOPvUPixjU\u00244Y(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is StackPanel stackPanel))
-      return;
-    AxisLayoutHelper.\u0023\u003DzZyQWE_89kzT_(stackPanel);
-  }
-
-  public static void \u0023\u003DzZyQWE_89kzT_(StackPanel _param0)
-  {
-    if (_param0.FlowDirection == FlowDirection.RightToLeft)
-      return;
-    AxisAlignment demydmpA2K68QEjd = (AxisAlignment) _param0.GetValue(AxisLayoutHelper.\u0023\u003DzfMY988N0StOA);
-    bool flag = demydmpA2K68QEjd == AxisAlignment.Bottom || demydmpA2K68QEjd == AxisAlignment.Top;
-    _param0.Orientation = flag ? Orientation.Vertical : Orientation.Horizontal;
-    FrameworkElement frameworkElement1 = (FrameworkElement) _param0.Children.\u0023\u003DzjgOr4ajGBpa0(AxisLayoutHelper.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? (AxisLayoutHelper.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Predicate<UIElement>(AxisLayoutHelper.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2eauhM7lKjDd6QTC\u0024t7yLig\u003D)));
-    FrameworkElement frameworkElement2 = (FrameworkElement) _param0.Children.\u0023\u003DzjgOr4ajGBpa0(AxisLayoutHelper.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (AxisLayoutHelper.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Predicate<UIElement>(AxisLayoutHelper.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm8PPAS0ZnW6qP8J6jTtdPT0\u003D)));
-    int num = demydmpA2K68QEjd == AxisAlignment.Left ? 1 : (demydmpA2K68QEjd == AxisAlignment.Top ? 1 : 0);
-    _param0.\u0023\u003DziYdJ\u00246cCiBha((object) frameworkElement1);
-    _param0.\u0023\u003DziYdJ\u00246cCiBha((object) frameworkElement2);
-    if (num != 0)
+    public class AxisLayoutHelper
     {
-      _param0.\u0023\u003DzH0osWQkV_Y8_((object) frameworkElement2, 0);
-      _param0.\u0023\u003DzH0osWQkV_Y8_((object) frameworkElement1, -1);
-    }
-    else
-    {
-      _param0.\u0023\u003DzH0osWQkV_Y8_((object) frameworkElement1, 0);
-      _param0.\u0023\u003DzH0osWQkV_Y8_((object) frameworkElement2, -1);
-    }
-  }
+        public static readonly DependencyProperty AxisAlignmentProperty = DependencyProperty.RegisterAttached("AxisAlignment", typeof (AxisAlignment), typeof (AxisLayoutHelper), new PropertyMetadata((object) AxisAlignment.Default, new PropertyChangedCallback(AxisLayoutHelper.OnAxisAlignmentChanged)));
+        public static readonly DependencyProperty IsInsideItemProperty = DependencyProperty.RegisterAttached("IsInsideItem", typeof (bool), typeof (AxisLayoutHelper), new PropertyMetadata((object) false, (PropertyChangedCallback) ((d, e) => AxisLayoutHelper.OnAxisAlignmentChanged(((FrameworkElement) d).Parent, e))));
+        public static readonly DependencyProperty IsOutsideItemProperty = DependencyProperty.RegisterAttached("IsOutsideItem", typeof (bool), typeof (AxisLayoutHelper), new PropertyMetadata((object) false, (PropertyChangedCallback) ((d, e) => AxisLayoutHelper.OnAxisAlignmentChanged(((FrameworkElement) d).Parent, e))));
 
-  [Serializable]
-  private sealed class SomeClass34343383
-  {
-    public static readonly AxisLayoutHelper.SomeClass34343383 SomeMethond0343 = new AxisLayoutHelper.SomeClass34343383();
-    public static Predicate<UIElement> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
-    public static Predicate<UIElement> \u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D;
+        public static AxisAlignment GetAxisAlignment( DependencyObject obj )
+        {
+            return ( AxisAlignment ) obj.GetValue( AxisLayoutHelper.AxisAlignmentProperty );
+        }
 
-    public bool \u0023\u003Dz2eauhM7lKjDd6QTC\u0024t7yLig\u003D(UIElement _param1)
-    {
-      return (bool) _param1.GetValue(AxisLayoutHelper.\u0023\u003DzleqM3VUz5r6I);
-    }
+        public static void SetAxisAlignment( DependencyObject obj, AxisAlignment value )
+        {
+            obj.SetValue( AxisLayoutHelper.AxisAlignmentProperty, ( object ) value );
+        }
 
-    public bool \u0023\u003Dzm8PPAS0ZnW6qP8J6jTtdPT0\u003D(UIElement _param1)
-    {
-      return (bool) _param1.GetValue(AxisLayoutHelper.\u0023\u003Dzux6qwNDX3dIn);
-    }
+        public static bool GetIsInsideItem( DependencyObject obj )
+        {
+            return ( bool ) obj.GetValue( AxisLayoutHelper.IsInsideItemProperty );
+        }
 
-    public void \u0023\u003DzkyaUoNb3_wZaUlrnAd4Di9o\u003D(
-      DependencyObject _param1,
-      DependencyPropertyChangedEventArgs _param2)
-    {
-      AxisLayoutHelper.\u0023\u003DzOPvUPixjU\u00244Y(((FrameworkElement) _param1).Parent, _param2);
-    }
+        public static void SetIsInsideItem( DependencyObject obj, bool value )
+        {
+            obj.SetValue( AxisLayoutHelper.IsInsideItemProperty, ( object ) value );
+        }
 
-    public void \u0023\u003DzpY7n52ahyqAxE3pQLbGjA5w\u003D(
-      DependencyObject _param1,
-      DependencyPropertyChangedEventArgs _param2)
-    {
-      AxisLayoutHelper.\u0023\u003DzOPvUPixjU\u00244Y(((FrameworkElement) _param1).Parent, _param2);
+        public static bool GetIsOutsideItem( DependencyObject obj )
+        {
+            return ( bool ) obj.GetValue( AxisLayoutHelper.IsOutsideItemProperty );
+        }
+
+        public static void SetIsOutsideItem( DependencyObject obj, bool value )
+        {
+            obj.SetValue( AxisLayoutHelper.IsOutsideItemProperty, ( object ) value );
+        }
+
+        private static void OnAxisAlignmentChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+        {
+            StackPanel panel = d as StackPanel;
+            if ( panel == null )
+                return;
+            AxisLayoutHelper.UpdateItemsOrder( panel );
+        }
+
+        internal static void UpdateItemsOrder( StackPanel panel )
+        {
+            if ( panel.FlowDirection == FlowDirection.RightToLeft )
+                return;
+            AxisAlignment axisAlignment = (AxisAlignment) panel.GetValue(AxisLayoutHelper.AxisAlignmentProperty);
+            bool flag = axisAlignment == AxisAlignment.Bottom || axisAlignment == AxisAlignment.Top;
+            panel.Orientation = flag ? Orientation.Vertical : Orientation.Horizontal;
+            FrameworkElement frameworkElement1 = (FrameworkElement) panel.Children.SingleOrDefault((Predicate<UIElement>) (elem => (bool) elem.GetValue(AxisLayoutHelper.IsInsideItemProperty)));
+            FrameworkElement frameworkElement2 = (FrameworkElement) panel.Children.SingleOrDefault((Predicate<UIElement>) (elem => (bool) elem.GetValue(AxisLayoutHelper.IsOutsideItemProperty)));
+            int num = axisAlignment == AxisAlignment.Left ? 1 : (axisAlignment == AxisAlignment.Top ? 1 : 0);
+            panel.SafeRemoveChild( ( object ) frameworkElement1 );
+            panel.SafeRemoveChild( ( object ) frameworkElement2 );
+            if ( num != 0 )
+            {
+                panel.SafeAddChild( ( object ) frameworkElement2, 0 );
+                panel.SafeAddChild( ( object ) frameworkElement1, -1 );
+            }
+            else
+            {
+                panel.SafeAddChild( ( object ) frameworkElement1, 0 );
+                panel.SafeAddChild( ( object ) frameworkElement2, -1 );
+            }
+        }
     }
-  }
 }

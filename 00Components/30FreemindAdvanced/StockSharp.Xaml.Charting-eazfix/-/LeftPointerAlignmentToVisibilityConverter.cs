@@ -34,8 +34,8 @@ public sealed class LeftPointerAlignmentToVisibilityConverter : IValueConverter
 
   public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
   {
-    AxisAlignment demydmpA2K68QEjd = (AxisAlignment) _param1;
-    return (object) (Visibility) (!this.\u0023\u003Dz0T_we1eshhoI() ? (demydmpA2K68QEjd == AxisAlignment.Left || demydmpA2K68QEjd == AxisAlignment.Top ? 0 : 2) : (demydmpA2K68QEjd == AxisAlignment.Left || demydmpA2K68QEjd == AxisAlignment.Top ? 2 : 0));
+    AxisAlignment obj = (AxisAlignment) _param1;
+    return (object) (Visibility) (!this.\u0023\u003Dz0T_we1eshhoI() ? (obj == AxisAlignment.Left || obj == AxisAlignment.Top ? 0 : 2) : (obj == AxisAlignment.Left || obj == AxisAlignment.Top ? 2 : 0));
   }
 
   public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)

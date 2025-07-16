@@ -11,9 +11,9 @@ public sealed class AxisAlignmentToHorizontalAnchorPointConverter :
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
     {
-        AxisAlignment demydmpA2K68QEjd = (AxisAlignment) _param1;
+        AxisAlignment obj = (AxisAlignment) _param1;
         HorizontalAnchorPoint awnnsejcnkX3MwEjd = HorizontalAnchorPoint.Left;
-        switch ( demydmpA2K68QEjd )
+        switch ( obj )
         {
             case AxisAlignment.Top:
             case AxisAlignment.Bottom:

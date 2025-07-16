@@ -11,7 +11,7 @@ public sealed class AxisAlignmentToFlowDirectionConverter :
 {
     public object Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
     {
-        return ( object ) ( FlowDirection ) ( ( AxisAlignment ) _param1 == AxisAlignment.Left ? 1 : 0 );
+        return ( ( AxisAlignment ) _param1 == AxisAlignment.Left ? FlowDirection.RightToLeft : FlowDirection.LeftToRight );
     }
 
     public object ConvertBack( object _param1, Type _param2, object _param3, CultureInfo _param4 )

@@ -52,7 +52,7 @@ public sealed class TooltipControl :
   {
     if (this.Selector == null)
       return;
-    this.ContentTemplate = this.Selector.\u0023\u003Dzmy_tWbS7jzNB(_param1, (DependencyObject) this);
+    this.ContentTemplate = this.Selector.SelectTemplate(_param1, (DependencyObject) this);
   }
 
   private static void \u0023\u003DzYfWGIYVgG9Om(

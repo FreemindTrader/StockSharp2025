@@ -10,33 +10,28 @@ using System.Windows;
 #nullable disable
 namespace StockSharp.Charting;
 
-public sealed class AxisTitleTemplateSelector : 
-  DataTemplateSelector
+public sealed class AxisTitleTemplateSelector : DataTemplateSelector
 {
-  
-  private DataTemplate \u0023\u003DzzOBVI_vgcMJc;
 
-  
-  public DataTemplate dje_zNJTCVXYXEFW8ZZQ_ejd
-  {
-    get => this.\u0023\u003DzzOBVI_vgcMJc;
-    set
+    private DataTemplate _stringTitleTemplate;
+
+
+    public DataTemplate StringTitleTemplate
     {
-      this.\u0023\u003DzzOBVI_vgcMJc = value;
-      this.\u0023\u003DzCZf_oX5aGk\u0024Y();
+        get => this._stringTitleTemplate;
+        set
+        {
+            this._stringTitleTemplate = value;
+            this.UpdateControlTemplate();
+        }
     }
-  }
 
-  public DataTemplate \u0023\u003DzzZucbbFbZqkQ() => this.\u0023\u003DzzOBVI_vgcMJc;
-
-  public void \u0023\u003DzFWzPcBUA\u00249xA(DataTemplate _param1)
-  {
-    this.\u0023\u003DzzOBVI_vgcMJc = _param1;
-    this.\u0023\u003DzCZf_oX5aGk\u0024Y();
-  }
-
-  public override DataTemplate \u0023\u003Dzmy_tWbS7jzNB(object _param1, DependencyObject _param2)
-  {
-    return !(_param1 is string) ? base.\u0023\u003Dzmy_tWbS7jzNB(_param1, _param2) : this.\u0023\u003DzzZucbbFbZqkQ();
-  }
+    public override DataTemplate SelectTemplate( object item, DependencyObject container )
+    {
+        if ( item is string )
+        {
+            return StringTitleTemplate;
+        }
+        return base.SelectTemplate( item, container );
+    }
 }

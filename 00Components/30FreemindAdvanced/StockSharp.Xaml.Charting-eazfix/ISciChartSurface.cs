@@ -1,126 +1,138 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: #=zVWRskdf0yEAwtZYFZxzKpeavUg1Y5II8u0KOV3jCAMd$YpfetQ==
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using \u002D;
-using System;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using SciChart.Charting.Model.ChartSeries;
+using SciChart.Charting.Model.DataSeries;
+using SciChart.Charting.ViewportManagers;
+using SciChart.Charting.Visuals.Axes;
+using SciChart.Charting.Visuals.Events;
+using SciChart.Charting.Visuals;
+using SciChart.Core.Framework;
+using StockSharp.Charting.Visuals;
 
 #nullable disable
-public interface ISciChartSurface : 
-  IDisposable,
-  ISuspendable,
-  IUltrachartSurfaceBase,
-  \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
-  IInvalidatableElement
+namespace StockSharp.Xaml.Charting.Visuals;
+
+public interface ISciChartSurface : ISciChartSurfaceBase, ISuspendable, IInvalidatableElement, IUltrachartController, IDisposable
 {
-  void \u0023\u003DzexJGsaAi6rVI(
-    EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D> _param1);
+    event EventHandler<AxisAlignmentChangedEventArgs> AxisAlignmentChanged;
 
-  void \u0023\u003Dz38JNnebwqLph(
-    EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D> _param1);
+    event EventHandler AnnotationsCollectionNewCollectionAssigned;
 
-  void \u0023\u003DzVms\u0024rml2A7zL1pwmGg\u003D\u003D(EventHandler _param1);
+    event EventHandler YAxesCollectionNewCollectionAssigned;
 
-  void \u0023\u003Dz6gcEAkTU68jnRIWXQQ\u003D\u003D(EventHandler _param1);
+    event EventHandler XAxesCollectionNewCollectionAssigned;
 
-  void \u0023\u003DzLOJcvYqnP9Y4L3YbD2yw_yg\u003D(EventHandler _param1);
+    IChartModifier ChartModifier
+    {
+        get;
+        set;
+    }
 
-  void \u0023\u003DzYo\u0024r0wypzk52wwMTFQ\u0024KNCQ\u003D(EventHandler _param1);
+    AnnotationCollection Annotations
+    {
+        get;
+    }
 
-  void \u0023\u003DzgJ2fVeQPjKRri1qXw3qPlis\u003D(EventHandler _param1);
+    IAxis XAxis
+    {
+        get;
+        set;
+    }
 
-  void \u0023\u003DzxnGwvDMxcoluh8vrt7fwxBo\u003D(EventHandler _param1);
+    IAxis YAxis
+    {
+        get;
+        set;
+    }
 
-  IChartModifier get_ChartModifier();
+    AxisCollection YAxes
+    {
+        get;
+    }
 
-  IChartModifier ChartModifier { get; set; }
+    AxisCollection XAxes
+    {
+        get;
+    }
 
-  void set_ChartModifier(
-    IChartModifier _param1);
+    IGridLinesPanel GridLinesPanel
+    {
+        get;
+    }
 
-  AnnotationCollection get_Annotations();
+    ObservableCollection<IRenderableSeries> RenderableSeries
+    {
+        get;
+    }
 
-  AnnotationCollection Annotations { get; }
+    ObservableCollection<IRenderableSeries> SelectedRenderableSeries
+    {
+        get;
+    }
 
-  IAxis XAxis { get; set; }
+    IMainGrid RootGrid
+    {
+        get;
+    }
 
-  IAxis YAxis { get; set; }
+    IViewportManager ViewportManager
+    {
+        get;
+        set;
+    }
 
-  AxisCollection get_YAxes();
+    IAnnotationCanvas AnnotationOverlaySurface
+    {
+        get;
+    }
 
-  AxisCollection YAxes { get; }
+    IAnnotationCanvas AnnotationUnderlaySurface
+    {
+        get;
+    }
 
-  AxisCollection get_XAxes();
+    Canvas AdornerLayerCanvas
+    {
+        get;
+    }
 
-  AxisCollection XAxes { get; }
+    int LicenseDaysRemaining
+    {
+        get;
+    }
 
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpB4GFFdsIQ_FR8tlLNjHr1X3p7javA\u003D\u003D \u0023\u003DzTRL\u0024Xy0vYDigfJ9YNg\u003D\u003D();
+    ObservableCollection<IChartSeriesViewModel> SeriesSource
+    {
+        get;
+        set;
+    }
 
-  ObservableCollection<IRenderableSeries> RenderableSeries { get; }
+    void ClearSeries();
 
-  ObservableCollection<IRenderableSeries> get_RenderableSeries();
+    Size OnArrangeUltrachart();
 
-  ObservableCollection<IRenderableSeries> SelectedRenderableSeries { get; }
+    [Obsolete( "Obsolete. Please use UltrachartSurface.RootGrid.IsPointWithinBounds instead", true )]
+    bool IsPointWithinBounds( Point point );
 
-  ObservableCollection<IRenderableSeries> get_SelectedRenderableSeries();
+    [Obsolete( "Obsolete. Please use UltrachartSurface.RootGrid.GetBoundsRelativeTo instead", true )]
+    Rect GetBoundsRelativeTo( StockSharp.Charting.Visuals.IHitTestable relativeTo );
 
-  \u0023\u003DzlvwXE9mBO1uItIXfGGLJcGAvOm_MyInBFl6FOhs\u003D \u0023\u003Dzwc4Gzka23TGB();
+    [Obsolete( "Obsolete. Please use UltrachartSurface.RootGrid.TranslatePoint instead", true )]
+    Point TranslatePoint( Point point, StockSharp.Charting.Visuals.IHitTestable relativeTo );
 
-  \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D ViewportManager { get; set; }
+    [Obsolete( "ISciChartSurface.GetWindowedYRange is obsolete. Use IAxis.GetWindowedYRange instead" )]
+    IRange GetWindowedYRange( IAxis yAxis, IRange xRange );
 
-  \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D get_ViewportManager();
+    void OnAxisAlignmentChanged( IAxis axis, AxisAlignment oldValue );
 
-  void set_ViewportManager(
-    \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D _param1);
+    void OnIsCenterAxisChanged( IAxis axis );
 
-  IAnnotationCanvas \u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+    void DetachDataSeries( IDataSeries dataSeries );
 
-  IAnnotationCanvas \u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+    void AttachDataSeries( IDataSeries dataSeries );
 
-  Canvas \u0023\u003DzjEjGZ817bm4EOO82ig\u003D\u003D();
-
-  ObservableCollection<IRenderableSeries> SeriesSource { get; set; }
-
-  ObservableCollection<IRenderableSeries> get_SeriesSource();
-
-  void set_SeriesSource(
-    ObservableCollection<IRenderableSeries> _param1);
-
-  void \u0023\u003Dzqtb9toLjXu0t();
-
-  Size \u0023\u003DzBr6p5Qw\u0024W6BFNGQPNFOKrj0\u003D();
-
-  bool \u0023\u003DzbOxVzAyGdX66(Point _param1);
-
-  Rect \u0023\u003DzdC9whUui_gN\u0024(
-    IHitTestable _param1);
-
-  Point \u0023\u003DzaPPLsvfM_Sst(
-    Point _param1,
-    IHitTestable _param2);
-
-  IRange \u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(
-    IAxis _param1,
-    IRange _param2);
-
-  void \u0023\u003DzOPvUPixjU\u00244Y(
-    IAxis _param1,
-    AxisAlignment _param2);
-
-  void \u0023\u003DzFrczvpG2vhM5(
-    IAxis _param1);
-
-  void \u0023\u003Dzf72QDPKj6m\u0024z(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1);
-
-  void \u0023\u003DzbsWonVbyfEPS(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1);
-
-  BitmapSource \u0023\u003Dz12fMuw\u0024m\u002480t();
+    BitmapSource ExportToBitmapSource();
 }

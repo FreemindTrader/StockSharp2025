@@ -1,458 +1,430 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.AxisPanel
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
+﻿using StockSharp.Xaml.Charting.Common.Extensions;
+using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
+using StockSharp.Xaml.Charting.Rendering;
+using StockSharp.Xaml.Charting.Rendering.Common;
+using StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer;
+using StockSharp.Xaml.Charting.Visuals.Axes;
 using System;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-#nullable disable
-namespace StockSharp.Charting;
-
-public class AxisPanel : 
-  Panel,
-  INotifyPropertyChanged,
-  IAxisPanel
+namespace StockSharp.Xaml.Charting.Themes
 {
-  
-  public static readonly DependencyProperty \u0023\u003Dz\u0024geG9XF9qNM9 = DependencyProperty.Register(nameof (DrawLabels), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
-  
-  public static readonly DependencyProperty \u0023\u003DzHxEy7A8kQeb2 = DependencyProperty.Register(nameof (DrawMinorTicks), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
-  
-  public static readonly DependencyProperty \u0023\u003Dz6E17UGyH3Hxe = DependencyProperty.Register(nameof (DrawMajorTicks), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
-  
-  public static readonly DependencyProperty \u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D = DependencyProperty.Register(nameof (MajorTickLineStyle), typeof (Style), typeof (AxisPanel), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisPanel.\u0023\u003DzFgrLJbyJ32zlIW9T7fzjuLs\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D = DependencyProperty.Register(nameof (MinorTickLineStyle), typeof (Style), typeof (AxisPanel), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisPanel.\u0023\u003DzF9xGIyZlaqWjOY1DXnVnofg\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzfMY988N0StOA = DependencyProperty.Register(nameof (AxisAlignment), typeof (AxisAlignment), typeof (AxisPanel), new PropertyMetadata((object) AxisAlignment.Default, new PropertyChangedCallback(AxisPanel.\u0023\u003DzOPvUPixjU\u00244Y)));
-  
-  public static readonly DependencyProperty \u0023\u003DzQcEu5YLH6ffYkobAOQ\u003D\u003D = DependencyProperty.Register(nameof (AxisLabelToTickIndent), typeof (double), typeof (AxisPanel), new PropertyMetadata((object) 2.0, new PropertyChangedCallback(AxisPanel.\u0023\u003Dz8hrSVP3SyudTZXJD6w\u003D\u003D)));
-  
-  public static readonly DependencyProperty \u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D = DependencyProperty.Register(nameof (IsLabelCullingEnabled), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
-  
-  protected Line \u0023\u003DzeEl93ifUiK4P = new Line();
-  
-  protected Grid \u0023\u003DzDLF9sbNKzh9k;
-  
-  protected Image \u0023\u003DzlbfaVnpq6N5Y;
-  
-  protected AxisTitle \u0023\u003DzNdw5dH7x9p9X;
-  
-  private WriteableBitmap \u0023\u003DzWfNK9E4egtoR;
-  
-  private double \u0023\u003Dzn_2sUEoYYgva;
-  
-  private double \u0023\u003DzC4ZArHFLRr_I;
-  
-  private bool \u0023\u003DzORNmLYbynHFH;
-  
-  private Action<AxisCanvas> \u0023\u003DzLumisCMIlbJuLqsFBA\u003D\u003D;
-
-  public event PropertyChangedEventHandler PropertyChanged;
-
-  public bool IsLabelCullingEnabled
-  {
-    get
+    public class AxisPanel : Panel, IAxisPanel, INotifyPropertyChanged
     {
-      return (bool) this.GetValue(AxisPanel.\u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D);
+        public static readonly DependencyProperty DrawLabelsProperty = DependencyProperty.Register(nameof (DrawLabels), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
+        public static readonly DependencyProperty DrawMinorTicksProperty = DependencyProperty.Register(nameof (DrawMinorTicks), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
+        public static readonly DependencyProperty DrawMajorTicksProperty = DependencyProperty.Register(nameof (DrawMajorTicks), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
+        public static readonly DependencyProperty MajorTickLineStyleProperty = DependencyProperty.Register(nameof (MajorTickLineStyle), typeof (Style), typeof (AxisPanel), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisPanel.OnMajorTickLineStyleDependencyPropertyChanged)));
+        public static readonly DependencyProperty MinorTickLineStyleProperty = DependencyProperty.Register(nameof (MinorTickLineStyle), typeof (Style), typeof (AxisPanel), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisPanel.OnMinorTickLineStyleDependencyPropertyChanged)));
+        public static readonly DependencyProperty AxisAlignmentProperty = DependencyProperty.Register(nameof (AxisAlignment), typeof (AxisAlignment), typeof (AxisPanel), new PropertyMetadata((object) AxisAlignment.Default, new PropertyChangedCallback(AxisPanel.OnAxisAlignmentChanged)));
+        public static readonly DependencyProperty AxisLabelToTickIndentProperty = DependencyProperty.Register(nameof (AxisLabelToTickIndent), typeof (double), typeof (AxisPanel), new PropertyMetadata((object) 2.0, new PropertyChangedCallback(AxisPanel.OnAxisLabelToTickIndentChanged)));
+        public static readonly DependencyProperty IsLabelCullingEnabledProperty = DependencyProperty.Register(nameof (IsLabelCullingEnabled), typeof (bool), typeof (AxisPanel), new PropertyMetadata((object) true));
+        protected Line LineToStyle = new Line();
+        protected Grid _labelsContainer;
+        protected Image _axisImage;
+        protected AxisTitle _axisTitle;
+        private WriteableBitmap _renderWriteableBitmap;
+        private double _minorTickSize;
+        private double _majorTickSize;
+        private bool _isInitialized;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public bool IsLabelCullingEnabled
+        {
+            get
+            {
+                return ( bool ) this.GetValue( AxisPanel.IsLabelCullingEnabledProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.IsLabelCullingEnabledProperty, ( object ) value );
+            }
+        }
+
+        public AxisAlignment AxisAlignment
+        {
+            get
+            {
+                return ( AxisAlignment ) this.GetValue( AxisPanel.AxisAlignmentProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.AxisAlignmentProperty, ( object ) value );
+            }
+        }
+
+        public Style MajorTickLineStyle
+        {
+            get
+            {
+                return ( Style ) this.GetValue( AxisPanel.MajorTickLineStyleProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.MajorTickLineStyleProperty, ( object ) value );
+            }
+        }
+
+        public Style MinorTickLineStyle
+        {
+            get
+            {
+                return ( Style ) this.GetValue( AxisPanel.MinorTickLineStyleProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.MinorTickLineStyleProperty, ( object ) value );
+            }
+        }
+
+        public bool DrawMajorTicks
+        {
+            get
+            {
+                return ( bool ) this.GetValue( AxisPanel.DrawMajorTicksProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.DrawMajorTicksProperty, ( object ) value );
+            }
+        }
+
+        public bool DrawMinorTicks
+        {
+            get
+            {
+                return ( bool ) this.GetValue( AxisPanel.DrawMinorTicksProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.DrawMinorTicksProperty, ( object ) value );
+            }
+        }
+
+        public bool DrawLabels
+        {
+            get
+            {
+                return ( bool ) this.GetValue( AxisPanel.DrawLabelsProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.DrawLabelsProperty, ( object ) value );
+            }
+        }
+
+        public double AxisLabelToTickIndent
+        {
+            get
+            {
+                return ( double ) this.GetValue( AxisPanel.AxisLabelToTickIndentProperty );
+            }
+            set
+            {
+                this.SetValue( AxisPanel.AxisLabelToTickIndentProperty, ( object ) value );
+            }
+        }
+
+        public bool IsHorizontalAxis
+        {
+            get
+            {
+                AxisAlignment axisAlignment = this.AxisAlignment;
+                if ( axisAlignment != AxisAlignment.Bottom )
+                    return axisAlignment == AxisAlignment.Top;
+                return true;
+            }
+        }
+
+        public Thickness LabelToTickIndent
+        {
+            get
+            {
+                return new Thickness( this.AxisAlignment == AxisAlignment.Right ? this.AxisLabelToTickIndent : 0.0, this.AxisAlignment == AxisAlignment.Bottom ? this.AxisLabelToTickIndent : 0.0, this.AxisAlignment == AxisAlignment.Left ? this.AxisLabelToTickIndent : 0.0, this.AxisAlignment == AxisAlignment.Top ? this.AxisLabelToTickIndent : 0.0 );
+            }
+        }
+
+        public double MajorTickSize
+        {
+            get
+            {
+                if ( !this.DrawMajorTicks )
+                    return 0.0;
+                return this._majorTickSize;
+            }
+            private set
+            {
+                if ( value.Equals( this._majorTickSize ) )
+                    return;
+                this._majorTickSize = value;
+                this.OnPropertyChanged( nameof( MajorTickSize ) );
+            }
+        }
+
+        public double MinorTickSize
+        {
+            get
+            {
+                if ( !this.DrawMinorTicks )
+                    return 0.0;
+                return this._minorTickSize;
+            }
+            private set
+            {
+                if ( value.Equals( this._minorTickSize ) )
+                    return;
+                this._minorTickSize = value;
+                this.OnPropertyChanged( nameof( MinorTickSize ) );
+            }
+        }
+
+        public Action<AxisCanvas> AddLabels
+        {
+            get; set;
+        }
+
+        protected override Size MeasureOverride( Size availableSize )
+        {
+            if ( !this._isInitialized )
+            {
+                foreach ( UIElement child in this.Children )
+                    this.Initialize( child );
+            }
+            this.AddTickLabels( this.AddLabels );
+            this._labelsContainer.Measure( availableSize );
+            double num1 = Math.Max(this.MinorTickSize, this.MajorTickSize);
+            Size size;
+            switch ( this.AxisAlignment )
+            {
+                case AxisAlignment.Right:
+                case AxisAlignment.Left:
+                    this._axisImage.Measure( new Size( num1, availableSize.Height ) );
+                    double num2 = num1 + this._labelsContainer.DesiredSize.Width;
+                    this._axisTitle.Measure( new Size( availableSize.Width - num2, availableSize.Height ) );
+                    size = new Size( num2 + this._axisTitle.DesiredSize.Width, this._labelsContainer.DesiredSize.Height );
+                    break;
+                case AxisAlignment.Top:
+                case AxisAlignment.Bottom:
+                    this._axisImage.Measure( new Size( availableSize.Width, num1 ) );
+                    double num3 = num1 + this._labelsContainer.DesiredSize.Height;
+                    this._axisTitle.Measure( new Size( availableSize.Width, availableSize.Height - num3 ) );
+                    size = new Size( this._labelsContainer.DesiredSize.Width, num3 + this._axisTitle.DesiredSize.Height );
+                    break;
+                default:
+                    size = new Size( this._labelsContainer.DesiredSize.Width, this._labelsContainer.DesiredSize.Height );
+                    break;
+            }
+            return size;
+        }
+
+        private void Initialize( UIElement child )
+        {
+            if ( child is Image )
+                this._axisImage = ( Image ) child;
+            if ( child is AxisTitle )
+                this._axisTitle = ( AxisTitle ) child;
+            if ( child is Grid )
+                this._labelsContainer = ( Grid ) child;
+            this._isInitialized = this._axisImage != null && this._axisTitle != null && this._labelsContainer != null;
+        }
+
+        protected override Size ArrangeOverride( Size finalSize )
+        {
+            double num = Math.Max(this.MinorTickSize, this.MajorTickSize);
+            switch ( this.AxisAlignment )
+            {
+                case AxisAlignment.Right:
+                    this._axisImage.Arrange( new Rect( 0.0, 0.0, num, finalSize.Height ) );
+                    this._labelsContainer.Arrange( new Rect( num, 0.0, this._labelsContainer.DesiredSize.Width, finalSize.Height ) );
+                    this._axisTitle.Arrange( new Rect( num + this._labelsContainer.DesiredSize.Width, 0.0, this._axisTitle.DesiredSize.Width, finalSize.Height ) );
+                    break;
+                case AxisAlignment.Left:
+                    double x1 = finalSize.Width - num;
+                    this._axisImage.Arrange( new Rect( x1, 0.0, num, finalSize.Height ) );
+                    double x2 = x1 - this._labelsContainer.DesiredSize.Width;
+                    this._labelsContainer.Arrange( new Rect( x2, 0.0, this._labelsContainer.DesiredSize.Width, finalSize.Height ) );
+                    this._axisTitle.Arrange( new Rect( x2 - this._axisTitle.DesiredSize.Width, 0.0, this._axisTitle.DesiredSize.Width, finalSize.Height ) );
+                    break;
+                case AxisAlignment.Top:
+                    double y1 = finalSize.Height - num;
+                    this._axisImage.Arrange( new Rect( 0.0, y1, finalSize.Width, num ) );
+                    double y2 = y1 - this._labelsContainer.DesiredSize.Height;
+                    this._labelsContainer.Arrange( new Rect( 0.0, y2, finalSize.Width, this._labelsContainer.DesiredSize.Height ) );
+                    this._axisTitle.Arrange( new Rect( 0.0, y2 - this._axisTitle.DesiredSize.Height, finalSize.Width, this._axisTitle.DesiredSize.Height ) );
+                    break;
+                case AxisAlignment.Bottom:
+                    this._axisImage.Arrange( new Rect( 0.0, 0.0, finalSize.Width, num ) );
+                    this._labelsContainer.Arrange( new Rect( 0.0, num, finalSize.Width, this._labelsContainer.DesiredSize.Height ) );
+                    this._axisTitle.Arrange( new Rect( 0.0, num + this._labelsContainer.DesiredSize.Height, finalSize.Width, this._axisTitle.DesiredSize.Height ) );
+                    break;
+            }
+            return finalSize;
+        }
+
+        public void AddTickLabels( Action<AxisCanvas> addOnCanvas )
+        {
+            if ( this._labelsContainer == null || !this.DrawLabels )
+                return;
+            AxisCanvas axisCanvas1 = this._labelsContainer.Children[0].IsVisible() ? (AxisCanvas) this._labelsContainer.Children[1] : (AxisCanvas) this._labelsContainer.Children[0];
+            AxisCanvas axisCanvas2 = this._labelsContainer.Children[0].IsVisible() ? (AxisCanvas) this._labelsContainer.Children[0] : (AxisCanvas) this._labelsContainer.Children[1];
+            axisCanvas1.Visibility = Visibility.Collapsed;
+            axisCanvas1.SizeHeightToContent = this.IsHorizontalAxis;
+            axisCanvas1.SizeWidthToContent = !this.IsHorizontalAxis;
+            addOnCanvas( axisCanvas1 );
+            axisCanvas1.Visibility = Visibility.Visible;
+            axisCanvas2.Visibility = Visibility.Collapsed;
+        }
+
+        public void Invalidate()
+        {
+            this.InvalidateMeasure();
+            this.InvalidateArrange();
+        }
+
+        public virtual void DrawTicks( TickCoordinates tickCoords, float offset )
+        {
+            Size renderContextSize = this.GetRenderContextSize();
+            int width = (int) renderContextSize.Width;
+            int height = (int) renderContextSize.Height;
+            if ( this._renderWriteableBitmap == null || this._renderWriteableBitmap.PixelWidth != width || this._renderWriteableBitmap.PixelHeight != height )
+                this._renderWriteableBitmap = BitmapFactory.New( width, height );
+            if ( this._renderWriteableBitmap == null || this._axisImage == null )
+                return;
+            using ( HsRenderContext renderContext = this._renderWriteableBitmap.GetRenderContext( this._axisImage, ( TextureCacheBase ) null ) )
+            {
+                renderContext.Clear();
+                if ( this.DrawMinorTicks && tickCoords.MinorTickCoordinates != null )
+                    this.DrawTicks( ( IRenderContext2D ) renderContext, this.MinorTickLineStyle, this.MinorTickSize, tickCoords.MinorTickCoordinates, offset );
+                if ( !this.DrawMajorTicks || tickCoords.MajorTickCoordinates == null )
+                    return;
+                this.DrawTicks( ( IRenderContext2D ) renderContext, this.MajorTickLineStyle, this.MajorTickSize, tickCoords.MajorTickCoordinates, offset );
+            }
+        }
+
+        protected virtual Size GetRenderContextSize()
+        {
+            return new Size( this.IsHorizontalAxis ? ( double ) ( int ) this._labelsContainer.ActualWidth : ( double ) ( int ) this.MajorTickSize, this.IsHorizontalAxis ? ( double ) ( int ) this.MajorTickSize : ( double ) ( int ) this._labelsContainer.ActualHeight );
+        }
+
+        protected virtual void DrawTicks( IRenderContext2D renderContext, Style tickStyle, double tickSize, float[ ] tickCoords, float offset )
+        {
+            this.LineToStyle.Style = tickStyle;
+            ThemeManager.SetTheme( ( DependencyObject ) this.LineToStyle, ThemeManager.GetTheme( ( DependencyObject ) this ) );
+            using ( IPen2D styledPen = renderContext.GetStyledPen( this.LineToStyle, false ) )
+            {
+                foreach ( float tickCoord in tickCoords )
+                    this.DrawTick( renderContext, styledPen, tickCoord, offset, tickSize );
+            }
+        }
+
+        private void DrawTick( IRenderContext2D renderContext, IPen2D tickPen, float coord, float offset, double tickSize )
+        {
+            Size viewportSize = renderContext.ViewportSize;
+            float num1 = this.IsHorizontalAxis ? (float) viewportSize.Height : (float) viewportSize.Width;
+            float num2 = coord - offset;
+            float num3 = num2;
+            float num4 = num2;
+            float num5 = 0.0f;
+            float num6 = (float) tickSize;
+            if ( this.AxisAlignment == AxisAlignment.Top || this.AxisAlignment == AxisAlignment.Left )
+            {
+                num6 = num1 - num6;
+                num5 = num1;
+            }
+            Point pt1;
+            Point pt2;
+            if ( this.IsHorizontalAxis )
+            {
+                pt1 = new Point( ( double ) num3, ( double ) num5 );
+                pt2 = new Point( ( double ) num4, ( double ) num6 );
+            }
+            else
+            {
+                pt1 = new Point( ( double ) num5, ( double ) num3 );
+                pt2 = new Point( ( double ) num6, ( double ) num4 );
+            }
+            renderContext.DrawLine( tickPen, pt1, pt2 );
+        }
+
+        public void ClearLabels()
+        {
+            this._labelsContainer.Children.OfType<TickLabelAxisCanvas>().ForEachDo<TickLabelAxisCanvas>( ( Action<TickLabelAxisCanvas> ) ( panel => panel.Children.Clear() ) );
+        }
+
+        protected virtual void OnPropertyChanged( string propertyName )
+        {
+            // ISSUE: reference to a compiler-generated field
+            PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ( propertyChanged == null )
+                return;
+            propertyChanged( ( object ) this, new PropertyChangedEventArgs( propertyName ) );
+        }
+
+        private static void OnAxisAlignmentChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+        {
+            AxisPanel axisPanel = d as AxisPanel;
+            if ( axisPanel == null )
+                return;
+            axisPanel.OnPropertyChanged( "LabelToTickIndent" );
+            axisPanel.OnPropertyChanged( "IsHorizontalAxis" );
+            axisPanel.MajorTickSize = axisPanel.MeasureTickSize( axisPanel.MajorTickLineStyle );
+            axisPanel.MinorTickSize = axisPanel.MeasureTickSize( axisPanel.MinorTickLineStyle );
+            axisPanel.Invalidate();
+        }
+
+        private static void OnMajorTickLineStyleDependencyPropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+        {
+            AxisPanel axisPanel = d as AxisPanel;
+            if ( axisPanel == null )
+                return;
+            Style newValue = (Style) e.NewValue;
+            axisPanel.MajorTickSize = axisPanel.MeasureTickSize( newValue );
+        }
+
+        private static void OnMinorTickLineStyleDependencyPropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+        {
+            AxisPanel axisPanel = d as AxisPanel;
+            if ( axisPanel == null )
+                return;
+            Style newValue = (Style) e.NewValue;
+            axisPanel.MinorTickSize = axisPanel.MeasureTickSize( newValue );
+        }
+
+        private double MeasureTickSize( Style lineStyle )
+        {
+            Line line1 = new Line();
+            line1.Style = lineStyle;
+            Line line2 = line1;
+            if ( !this.IsHorizontalAxis )
+                return line2.X2 + 1.0;
+            return line2.Y2 + 1.0;
+        }
+
+        private static void OnAxisLabelToTickIndentChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+        {
+            ( d as AxisPanel )?.OnPropertyChanged( "LabelToTickIndent" );
+        }
+
+        internal Image AxisImage
+        {
+            get
+            {
+                return this._axisImage;
+            }
+        }
+
+        internal Grid LabelContainer
+        {
+            get
+            {
+                return this._labelsContainer;
+            }
+        }
     }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003DzS8sUIjkEwjmfnx6c5zL2ukc\u003D, (object) value);
-    }
-  }
-
-  public AxisAlignment AxisAlignment
-  {
-    get
-    {
-      return (AxisAlignment) this.GetValue(AxisPanel.\u0023\u003DzfMY988N0StOA);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003DzfMY988N0StOA, (object) value);
-    }
-  }
-
-  public Style MajorTickLineStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisPanel.\u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003Dz14NuCRCkl6TxRd8BEA\u003D\u003D, (object) value);
-    }
-  }
-
-  public Style MinorTickLineStyle
-  {
-    get
-    {
-      return (Style) this.GetValue(AxisPanel.\u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003DziNYhz0DqEHOOjhljjg\u003D\u003D, (object) value);
-    }
-  }
-
-  public bool DrawMajorTicks
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisPanel.\u0023\u003Dz6E17UGyH3Hxe);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003Dz6E17UGyH3Hxe, (object) value);
-    }
-  }
-
-  public bool DrawMinorTicks
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisPanel.\u0023\u003DzHxEy7A8kQeb2);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003DzHxEy7A8kQeb2, (object) value);
-    }
-  }
-
-  public bool DrawLabels
-  {
-    get
-    {
-      return (bool) this.GetValue(AxisPanel.\u0023\u003Dz\u0024geG9XF9qNM9);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003Dz\u0024geG9XF9qNM9, (object) value);
-    }
-  }
-
-  public double AxisLabelToTickIndent
-  {
-    get
-    {
-      return (double) this.GetValue(AxisPanel.\u0023\u003DzQcEu5YLH6ffYkobAOQ\u003D\u003D);
-    }
-    set
-    {
-      this.SetValue(AxisPanel.\u0023\u003DzQcEu5YLH6ffYkobAOQ\u003D\u003D, (object) value);
-    }
-  }
-
-  public bool IsHorizontalAxis
-  {
-    get
-    {
-      AxisAlignment axisAlignment = this.AxisAlignment;
-      return axisAlignment == AxisAlignment.Bottom || axisAlignment == AxisAlignment.Top;
-    }
-  }
-
-  public Thickness LabelToTickIndent
-  {
-    get
-    {
-      return new Thickness(this.AxisAlignment == AxisAlignment.Right ? this.AxisLabelToTickIndent : 0.0, this.AxisAlignment == AxisAlignment.Bottom ? this.AxisLabelToTickIndent : 0.0, this.AxisAlignment == AxisAlignment.Left ? this.AxisLabelToTickIndent : 0.0, this.AxisAlignment == AxisAlignment.Top ? this.AxisLabelToTickIndent : 0.0);
-    }
-  }
-
-  public double MajorTickSize
-  {
-    get => !this.DrawMajorTicks ? 0.0 : this.\u0023\u003DzC4ZArHFLRr_I;
-    private set
-    {
-      if (value.Equals(this.\u0023\u003DzC4ZArHFLRr_I))
-        return;
-      this.\u0023\u003DzC4ZArHFLRr_I = value;
-      this.OnPropertyChanged(nameof (MajorTickSize));
-    }
-  }
-
-  public double MinorTickSize
-  {
-    get => !this.DrawMinorTicks ? 0.0 : this.\u0023\u003Dzn_2sUEoYYgva;
-    private set
-    {
-      if (value.Equals(this.\u0023\u003Dzn_2sUEoYYgva))
-        return;
-      this.\u0023\u003Dzn_2sUEoYYgva = value;
-      this.OnPropertyChanged(nameof (MinorTickSize));
-    }
-  }
-
-  public Action<AxisCanvas> AddLabels
-  {
-    get => this.\u0023\u003DzLumisCMIlbJuLqsFBA\u003D\u003D;
-    set => this.\u0023\u003DzLumisCMIlbJuLqsFBA\u003D\u003D = value;
-  }
-
-  protected override Size MeasureOverride(Size _param1)
-  {
-    if (!this.\u0023\u003DzORNmLYbynHFH)
-    {
-      foreach (UIElement child in this.Children)
-        this.\u0023\u003DzFeNr2Uw\u003D(child);
-    }
-    this.AddTickLabels(this.AddLabels);
-    this.\u0023\u003DzDLF9sbNKzh9k.Measure(_param1);
-    double num1 = Math.Max(this.MinorTickSize, this.MajorTickSize);
-    Size size;
-    switch (this.AxisAlignment)
-    {
-      case AxisAlignment.Right:
-      case AxisAlignment.Left:
-        this.\u0023\u003DzlbfaVnpq6N5Y.Measure(new Size(num1, _param1.Height));
-        double num2 = num1 + this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width;
-        this.\u0023\u003DzNdw5dH7x9p9X.Measure(new Size(_param1.Width - num2, _param1.Height));
-        size = new Size(num2 + this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Width, this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height);
-        break;
-      case AxisAlignment.Top:
-      case AxisAlignment.Bottom:
-        this.\u0023\u003DzlbfaVnpq6N5Y.Measure(new Size(_param1.Width, num1));
-        double num3 = num1 + this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height;
-        this.\u0023\u003DzNdw5dH7x9p9X.Measure(new Size(_param1.Width, _param1.Height - num3));
-        size = new Size(this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width, num3 + this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Height);
-        break;
-      default:
-        size = new Size(this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width, this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height);
-        break;
-    }
-    return size;
-  }
-
-  private void \u0023\u003DzFeNr2Uw\u003D(UIElement _param1)
-  {
-    if (_param1 is Image)
-      this.\u0023\u003DzlbfaVnpq6N5Y = (Image) _param1;
-    if (_param1 is AxisTitle)
-      this.\u0023\u003DzNdw5dH7x9p9X = (AxisTitle) _param1;
-    if (_param1 is Grid)
-      this.\u0023\u003DzDLF9sbNKzh9k = (Grid) _param1;
-    this.\u0023\u003DzORNmLYbynHFH = this.\u0023\u003DzlbfaVnpq6N5Y != null && this.\u0023\u003DzNdw5dH7x9p9X != null && this.\u0023\u003DzDLF9sbNKzh9k != null;
-  }
-
-  protected override Size ArrangeOverride(Size _param1)
-  {
-    double num1 = Math.Max(this.MinorTickSize, this.MajorTickSize);
-    switch (this.AxisAlignment)
-    {
-      case AxisAlignment.Right:
-        this.\u0023\u003DzlbfaVnpq6N5Y.Arrange(new Rect(0.0, 0.0, num1, _param1.Height));
-        this.\u0023\u003DzDLF9sbNKzh9k.Arrange(new Rect(num1, 0.0, this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width, _param1.Height));
-        this.\u0023\u003DzNdw5dH7x9p9X.Arrange(new Rect(num1 + this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width, 0.0, this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Width, _param1.Height));
-        break;
-      case AxisAlignment.Left:
-        double num2 = _param1.Width - num1;
-        this.\u0023\u003DzlbfaVnpq6N5Y.Arrange(new Rect(num2, 0.0, num1, _param1.Height));
-        double num3 = num2 - this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width;
-        this.\u0023\u003DzDLF9sbNKzh9k.Arrange(new Rect(num3, 0.0, this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Width, _param1.Height));
-        this.\u0023\u003DzNdw5dH7x9p9X.Arrange(new Rect(num3 - this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Width, 0.0, this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Width, _param1.Height));
-        break;
-      case AxisAlignment.Top:
-        double num4 = _param1.Height - num1;
-        this.\u0023\u003DzlbfaVnpq6N5Y.Arrange(new Rect(0.0, num4, _param1.Width, num1));
-        double num5 = num4 - this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height;
-        this.\u0023\u003DzDLF9sbNKzh9k.Arrange(new Rect(0.0, num5, _param1.Width, this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height));
-        this.\u0023\u003DzNdw5dH7x9p9X.Arrange(new Rect(0.0, num5 - this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Height, _param1.Width, this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Height));
-        break;
-      case AxisAlignment.Bottom:
-        this.\u0023\u003DzlbfaVnpq6N5Y.Arrange(new Rect(0.0, 0.0, _param1.Width, num1));
-        this.\u0023\u003DzDLF9sbNKzh9k.Arrange(new Rect(0.0, num1, _param1.Width, this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height));
-        this.\u0023\u003DzNdw5dH7x9p9X.Arrange(new Rect(0.0, num1 + this.\u0023\u003DzDLF9sbNKzh9k.DesiredSize.Height, _param1.Width, this.\u0023\u003DzNdw5dH7x9p9X.DesiredSize.Height));
-        break;
-    }
-    return _param1;
-  }
-
-  public void AddTickLabels(
-    Action<AxisCanvas> _param1)
-  {
-    if (this.\u0023\u003DzDLF9sbNKzh9k == null || !this.DrawLabels)
-      return;
-    AxisCanvas quecZ77TxG2K5CaEjd1 = this.\u0023\u003DzDLF9sbNKzh9k.Children[0].\u0023\u003DzST\u0024t7rI\u003D() ? (AxisCanvas) this.\u0023\u003DzDLF9sbNKzh9k.Children[1] : (AxisCanvas) this.\u0023\u003DzDLF9sbNKzh9k.Children[0];
-    AxisCanvas quecZ77TxG2K5CaEjd2 = this.\u0023\u003DzDLF9sbNKzh9k.Children[0].\u0023\u003DzST\u0024t7rI\u003D() ? (AxisCanvas) this.\u0023\u003DzDLF9sbNKzh9k.Children[0] : (AxisCanvas) this.\u0023\u003DzDLF9sbNKzh9k.Children[1];
-    quecZ77TxG2K5CaEjd1.Visibility = Visibility.Collapsed;
-    quecZ77TxG2K5CaEjd1.SizeHeightToContent = this.IsHorizontalAxis;
-    quecZ77TxG2K5CaEjd1.SizeWidthToContent = !this.IsHorizontalAxis;
-    _param1(quecZ77TxG2K5CaEjd1);
-    quecZ77TxG2K5CaEjd1.Visibility = Visibility.Visible;
-    quecZ77TxG2K5CaEjd2.Visibility = Visibility.Collapsed;
-  }
-
-  public void Invalidate()
-  {
-    this.InvalidateMeasure();
-    this.InvalidateArrange();
-  }
-
-  public virtual void DrawTicks(
-    TickCoordinates _param1,
-    float _param2)
-  {
-    Size size = this.\u0023\u003DzR5BsR9jdiJQz();
-    int width = (int) size.Width;
-    int height = (int) size.Height;
-    if (this.\u0023\u003DzWfNK9E4egtoR == null || this.\u0023\u003DzWfNK9E4egtoR.PixelWidth != width || this.\u0023\u003DzWfNK9E4egtoR.PixelHeight != height)
-      this.\u0023\u003DzWfNK9E4egtoR = \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H4mTMLasK3mtdLa7x5wzHVAkgC1CG\u0024N92YKzAECB.GetMath(width, height);
-    if (this.\u0023\u003DzWfNK9E4egtoR == null || this.\u0023\u003DzlbfaVnpq6N5Y == null)
-      return;
-    using (\u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H blRxkxWuDZv6cV0H = this.\u0023\u003DzWfNK9E4egtoR.\u0023\u003Dz1cRMfLZU4Eo2(this.\u0023\u003DzlbfaVnpq6N5Y, (\u0023\u003DzZScQl1C_L0f_XQiTX6oTcyrI5xM77ZuKeI88UaM\u003D) null))
-    {
-      blRxkxWuDZv6cV0H.Clear();
-      if (this.DrawMinorTicks && _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D() != null)
-        this.DrawTicks((IRenderContext2D) blRxkxWuDZv6cV0H, this.MinorTickLineStyle, this.MinorTickSize, _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D(), _param2);
-      if (!this.DrawMajorTicks || _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D() == null)
-        return;
-      this.DrawTicks((IRenderContext2D) blRxkxWuDZv6cV0H, this.MajorTickLineStyle, this.MajorTickSize, _param1.\u0023\u003Dz37wZ\u0024XVBzxVIXk7Ktw\u003D\u003D(), _param2);
-    }
-  }
-
-  protected virtual Size \u0023\u003DzR5BsR9jdiJQz()
-  {
-    return new Size(this.IsHorizontalAxis ? (double) (int) this.\u0023\u003DzDLF9sbNKzh9k.ActualWidth : (double) (int) this.MajorTickSize, this.IsHorizontalAxis ? (double) (int) this.MajorTickSize : (double) (int) this.\u0023\u003DzDLF9sbNKzh9k.ActualHeight);
-  }
-
-  protected virtual void DrawTicks(
-    IRenderContext2D _param1,
-    Style _param2,
-    double _param3,
-    float[] _param4,
-    float _param5)
-  {
-    this.\u0023\u003DzeEl93ifUiK4P.Style = _param2;
-    ThemeManager.SetTheme((DependencyObject) this.\u0023\u003DzeEl93ifUiK4P, ThemeManager.GetTheme((DependencyObject) this));
-    using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = _param1.\u0023\u003DzQCf7bpfi0DqGMauSow\u003D\u003D(this.\u0023\u003DzeEl93ifUiK4P, false))
-    {
-      foreach (float num in _param4)
-        this.\u0023\u003Dz3ZXzqAn7QFK6(_param1, rhwYsZxA33iRu6Id7J, num, _param5, _param3);
-    }
-  }
-
-  private void \u0023\u003Dz3ZXzqAn7QFK6(
-    IRenderContext2D _param1,
-    \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param2,
-    float _param3,
-    float _param4,
-    double _param5)
-  {
-    Size size = _param1.\u0023\u003Dz8DEW4l1E337F();
-    float num1 = this.IsHorizontalAxis ? (float) size.Height : (float) size.Width;
-    float num2;
-    float num3 = num2 = _param3 - _param4;
-    float num4 = 0.0f;
-    float num5 = (float) _param5;
-    if (this.AxisAlignment == AxisAlignment.Top || this.AxisAlignment == AxisAlignment.Left)
-    {
-      num5 = num1 - num5;
-      num4 = num1;
-    }
-    Point point1;
-    Point point2;
-    if (this.IsHorizontalAxis)
-    {
-      point1 = new Point((double) num2, (double) num4);
-      point2 = new Point((double) num3, (double) num5);
-    }
-    else
-    {
-      point1 = new Point((double) num4, (double) num2);
-      point2 = new Point((double) num5, (double) num3);
-    }
-    _param1.\u0023\u003Dzk8_eoWQ\u003D(_param2, point1, point2);
-  }
-
-  public void ClearLabels()
-  {
-    this.\u0023\u003DzDLF9sbNKzh9k.Children.OfType<TickLabelAxisCanvas>().\u0023\u003Dz30RSSSygABj_<TickLabelAxisCanvas>(AxisPanel.SomeClass34343383.\u0023\u003DzUirRmBtkgu2ct\u0024h0\u0024w\u003D\u003D ?? (AxisPanel.SomeClass34343383.\u0023\u003DzUirRmBtkgu2ct\u0024h0\u0024w\u003D\u003D = new Action<TickLabelAxisCanvas>(AxisPanel.SomeClass34343383.SomeMethond0343.\u0023\u003DzYyZ8uO9pMJ7PWhNDjIGZikE\u003D)));
-  }
-
-  protected virtual void OnPropertyChanged(string _param1)
-  {
-    PropertyChangedEventHandler zUapFgog = this.\u0023\u003DzUApFgog\u003D;
-    if (zUapFgog == null)
-      return;
-    zUapFgog((object) this, new PropertyChangedEventArgs(_param1));
-  }
-
-  private static void \u0023\u003DzOPvUPixjU\u00244Y(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisPanel j76J7Ed3DxexqEjd))
-      return;
-    j76J7Ed3DxexqEjd.OnPropertyChanged("LabelToTickIndent");
-    j76J7Ed3DxexqEjd.OnPropertyChanged("IsHorizontalAxis");
-    j76J7Ed3DxexqEjd.MajorTickSize = j76J7Ed3DxexqEjd.\u0023\u003Dz3ZlVQyqyprqK(j76J7Ed3DxexqEjd.MajorTickLineStyle);
-    j76J7Ed3DxexqEjd.MinorTickSize = j76J7Ed3DxexqEjd.\u0023\u003Dz3ZlVQyqyprqK(j76J7Ed3DxexqEjd.MinorTickLineStyle);
-    j76J7Ed3DxexqEjd.Invalidate();
-  }
-
-  private static void \u0023\u003DzFgrLJbyJ32zlIW9T7fzjuLs\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisPanel j76J7Ed3DxexqEjd))
-      return;
-    Style newValue = (Style) _param1.NewValue;
-    j76J7Ed3DxexqEjd.MajorTickSize = j76J7Ed3DxexqEjd.\u0023\u003Dz3ZlVQyqyprqK(newValue);
-  }
-
-  private static void \u0023\u003DzF9xGIyZlaqWjOY1DXnVnofg\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisPanel j76J7Ed3DxexqEjd))
-      return;
-    Style newValue = (Style) _param1.NewValue;
-    j76J7Ed3DxexqEjd.MinorTickSize = j76J7Ed3DxexqEjd.\u0023\u003Dz3ZlVQyqyprqK(newValue);
-  }
-
-  private double \u0023\u003Dz3ZlVQyqyprqK(Style _param1)
-  {
-    Line line1 = new Line();
-    line1.Style = _param1;
-    Line line2 = line1;
-    return !this.IsHorizontalAxis ? line2.X2 + 1.0 : line2.Y2 + 1.0;
-  }
-
-  private static void \u0023\u003Dz8hrSVP3SyudTZXJD6w\u003D\u003D(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    if (!(_param0 is AxisPanel j76J7Ed3DxexqEjd))
-      return;
-    j76J7Ed3DxexqEjd.OnPropertyChanged("LabelToTickIndent");
-  }
-
-  public Image \u0023\u003DzdjbuiJBxjZ2I() => this.\u0023\u003DzlbfaVnpq6N5Y;
-
-  public Grid \u0023\u003Dz8aaJHyxY6f5I() => this.\u0023\u003DzDLF9sbNKzh9k;
-
-  [Serializable]
-  private sealed class SomeClass34343383
-  {
-    public static readonly AxisPanel.SomeClass34343383 SomeMethond0343 = new AxisPanel.SomeClass34343383();
-    public static Action<TickLabelAxisCanvas> \u0023\u003DzUirRmBtkgu2ct\u0024h0\u0024w\u003D\u003D;
-
-    public void \u0023\u003DzYyZ8uO9pMJ7PWhNDjIGZikE\u003D(
-      TickLabelAxisCanvas _param1)
-    {
-      _param1.Children.Clear();
-    }
-  }
 }

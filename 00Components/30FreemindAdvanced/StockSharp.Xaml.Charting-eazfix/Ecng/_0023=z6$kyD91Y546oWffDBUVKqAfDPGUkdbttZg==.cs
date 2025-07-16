@@ -14,7 +14,7 @@ using System.Windows.Threading;
 public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D : 
   \u0023\u003Dz3RRntx4pzkd854dIVpLK6Ww8ODIV2zPrRw\u003D\u003D,
   ISuspendable,
-  \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
+  IUltrachartController,
   IInvalidatableElement
 {
   private ISciChartSurface \u0023\u003Dzk8uzfa2nSBLr;
@@ -99,7 +99,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
     this.\u0023\u003DzJhZ2ohI\u003D(new Action(this.\u0023\u003DzdvsLwG9JnTHhDWI\u0024G3VVNhM\u003D));
   }
 
-  public void \u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(TimeSpan _param1)
+  public void AnimateZoomExtents(TimeSpan _param1)
   {
     \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7654 lvtppRwsYcyoelU8 = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7654();
     lvtppRwsYcyoelU8._variableSome3535 = this;
@@ -116,7 +116,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
     this.\u0023\u003DzJhZ2ohI\u003D(new Action(this.\u0023\u003DzfYn71Dt5n5ePpEUapCPq4H8\u003D));
   }
 
-  public void \u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(TimeSpan _param1)
+  public void AnimateZoomExtentsY(TimeSpan _param1)
   {
     \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass6409 v4vdZv8GtEzAmB0rzFq = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass6409();
     v4vdZv8GtEzAmB0rzFq._variableSome3535 = this;
@@ -126,14 +126,14 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
     this.\u0023\u003DzJhZ2ohI\u003D(new Action(v4vdZv8GtEzAmB0rzFq.\u0023\u003DzRQvEFcONmUBT2PTwERTtLDbqy8es));
   }
 
-  public void \u0023\u003Dz8zwqAzdRsuc\u0024()
+  public void ZoomExtentsX()
   {
     if (!this.\u0023\u003DzWNQ9StWEg__B())
       return;
     this.\u0023\u003DzJhZ2ohI\u003D(new Action(this.\u0023\u003DzvB6dKADvktLSs3oZyccuQt0\u003D));
   }
 
-  public void \u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(TimeSpan _param1)
+  public void AnimateZoomExtentsX(TimeSpan _param1)
   {
     \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7237 doDcwiev7trI4Ny0 = new \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D\u003D.SomeClass7237();
     doDcwiev7trI4Ny0._variableSome3535 = this;
@@ -229,7 +229,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
 
   private void \u0023\u003DzvB6dKADvktLSs3oZyccuQt0\u003D()
   {
-    this.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz8zwqAzdRsuc\u0024();
+    this.\u0023\u003Dzk8uzfa2nSBLr.ZoomExtentsX();
   }
 
   private sealed class SomeClass7654
@@ -239,7 +239,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
 
     public void \u0023\u003Dz5cvR57bCJ\u0024icEF_PguV3F8KMaVLt()
     {
-      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz5v2P2MZQ6Mg5pHstYQ\u003D\u003D(this.\u0023\u003DzXOURnwA\u003D);
+      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.AnimateZoomExtents(this.\u0023\u003DzXOURnwA\u003D);
     }
   }
 
@@ -250,7 +250,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
 
     public void \u0023\u003DzRQvEFcONmUBT2PTwERTtLDbqy8es()
     {
-      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dzlt5y\u0024abM\u0024EiJBWUsR3G_Wrc\u003D(this.\u0023\u003DzXOURnwA\u003D);
+      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.AnimateZoomExtentsY(this.\u0023\u003DzXOURnwA\u003D);
     }
   }
 
@@ -261,7 +261,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
 
     public void \u0023\u003DzxSNk7gqofrWCxdQwCG6opwzg6Kvk()
     {
-      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.\u0023\u003Dz8NovIOacEzVlET_SOgsaL_w\u003D(this.\u0023\u003DzXOURnwA\u003D);
+      this._variableSome3535.\u0023\u003Dzk8uzfa2nSBLr.AnimateZoomExtentsX(this.\u0023\u003DzXOURnwA\u003D);
     }
   }
 }
