@@ -9,12 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8 : 
-  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<DateTime>
+public sealed class ListDateTimeDataDistributionCalculator : 
+  BaseDataDistributionCalculator<DateTime>
 {
   private double \u0023\u003DzT\u0024kqKKwnFTS7 = 1.0;
 
-  public \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8()
+  public ListDateTimeDataDistributionCalculator()
   {
     this.\u0023\u003DzWGTdqe9TpK9M(true);
     this.\u0023\u003DztzlkMHp1fyBYyPnbdOgIwYc\u003D(true);
@@ -100,8 +100,8 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSq
       this.\u0023\u003DztzlkMHp1fyBYyPnbdOgIwYc\u003D(false);
     else if (index > 0)
     {
-      double num3 = \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index - 1]);
-      double num4 = \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]) - num3;
+      double num3 = ListDateTimeDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index - 1]);
+      double num4 = ListDateTimeDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]) - num3;
       if (_param1.Count > 2)
       {
         if (Math.Abs(num4 - this.\u0023\u003DzT\u0024kqKKwnFTS7) > num2)
@@ -142,8 +142,8 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSq
     {
       if (_param2 > 0)
       {
-        double num3 = \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2 - 1]);
-        double num4 = \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2]) - num3;
+        double num3 = ListDateTimeDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2 - 1]);
+        double num4 = ListDateTimeDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2]) - num3;
         if (_param1.Count > 2)
         {
           if (Math.Abs(num4 - this.\u0023\u003DzT\u0024kqKKwnFTS7) > num2)
@@ -161,8 +161,8 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSq
       }
       if (index < _param1.Count - 1)
       {
-        double num5 = \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-        double num6 = \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRCdMKrMreDjPtXN6V8XGu1iePSqRC7yFkF7cx\u0024v8.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index + 1]) - num5;
+        double num5 = ListDateTimeDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
+        double num6 = ListDateTimeDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index + 1]) - num5;
         if (_param1.Count > 2)
         {
           if (Math.Abs(num6 - this.\u0023\u003DzT\u0024kqKKwnFTS7) > num2)

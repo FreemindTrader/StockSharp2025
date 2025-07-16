@@ -37,7 +37,7 @@ public abstract class DataSeries<TX, TY> :
   
   private readonly object myLock = new object();
   
-  private \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<TX> \u0023\u003DzKF7SyeFzhmMUJe1KXX2lKTrpRhKv\u0024hO8LQ\u003D\u003D;
+  private IDataDistributionCalculator<TX> \u0023\u003DzKF7SyeFzhmMUJe1KXX2lKTrpRhKv\u0024hO8LQ\u003D\u003D;
   
   private WeakReference _drawingSurface;
   
@@ -51,7 +51,7 @@ public abstract class DataSeries<TX, TY> :
 
   public object SyncRoot => this.myLock;
 
-  public \u0023\u003DzbZGwufOdFTewaG24h4AgEt0e4y2LR89MbvhnTaKf4YV_es8hzZJVk08\u003D<TX> DataDistributionCalculator
+  public IDataDistributionCalculator<TX> DataDistributionCalculator
   {
     get => this.\u0023\u003DzKF7SyeFzhmMUJe1KXX2lKTrpRhKv\u0024hO8LQ\u003D\u003D;
     set => this.\u0023\u003DzKF7SyeFzhmMUJe1KXX2lKTrpRhKv\u0024hO8LQ\u003D\u003D = value;
@@ -248,7 +248,7 @@ public abstract class DataSeries<TX, TY> :
     {
       this.\u0023\u003Dzz6J3NZIzdU\u0024X();
       this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 3);
-      this.DataDistributionCalculator = \u0023\u003DzzsyKnUNUDKjF7rDv70izNy4bx\u0024saGFs108aHH7lGphGuZX7JpGJEopE\u003D.\u0023\u003DzpxJeWbQ\u003D<TX>(this.IsFifo);
+      this.DataDistributionCalculator = DataDistributionCalculatorFactory.\u0023\u003DzpxJeWbQ\u003D<TX>(this.IsFifo);
       this.DataDistributionCalculator.Clear();
     }
   }

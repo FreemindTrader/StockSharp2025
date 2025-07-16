@@ -9,12 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1 : 
-  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<ulong>
+public sealed class ListUInt64DataDistributionCalculator : 
+  BaseDataDistributionCalculator<ulong>
 {
   private double \u0023\u003DzT\u0024kqKKwnFTS7 = 1.0;
 
-  public \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1()
+  public ListUInt64DataDistributionCalculator()
   {
     this.\u0023\u003DzWGTdqe9TpK9M(true);
     this.\u0023\u003DztzlkMHp1fyBYyPnbdOgIwYc\u003D(true);
@@ -100,8 +100,8 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
       this.\u0023\u003DztzlkMHp1fyBYyPnbdOgIwYc\u003D(false);
     else if (index > 0)
     {
-      double num3 = \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index - 1]);
-      double num4 = \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]) - num3;
+      double num3 = ListUInt64DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index - 1]);
+      double num4 = ListUInt64DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]) - num3;
       if (_param1.Count > 2)
       {
         if (Math.Abs(num4 - this.\u0023\u003DzT\u0024kqKKwnFTS7) > num2)
@@ -142,8 +142,8 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
     {
       if (_param2 > 0)
       {
-        double num3 = \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2 - 1]);
-        double num4 = \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2]) - num3;
+        double num3 = ListUInt64DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2 - 1]);
+        double num4 = ListUInt64DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[_param2]) - num3;
         if (_param1.Count > 2)
         {
           if (Math.Abs(num4 - this.\u0023\u003DzT\u0024kqKKwnFTS7) > num2)
@@ -161,8 +161,8 @@ public sealed class \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1
       }
       if (index < _param1.Count - 1)
       {
-        double num5 = \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
-        double num6 = \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKuLnayWlAZNInqtRIHeaz1QPvttOfqK9rWb6HlC1.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index + 1]) - num5;
+        double num5 = ListUInt64DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index]);
+        double num6 = ListUInt64DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param1[index + 1]) - num5;
         if (_param1.Count > 2)
         {
           if (Math.Abs(num6 - this.\u0023\u003DzT\u0024kqKKwnFTS7) > num2)

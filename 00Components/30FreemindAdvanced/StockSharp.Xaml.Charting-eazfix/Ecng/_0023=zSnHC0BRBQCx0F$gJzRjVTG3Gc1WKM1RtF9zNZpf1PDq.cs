@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 #nullable disable
 public sealed class \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTG3Gc1WKM1RtF9zNZpf1PDqDexfOjWJ4pBM\u003D : 
-  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<TimeSpan>
+  BaseDataDistributionCalculator<TimeSpan>
 {
   private double \u0023\u003DzECK7c5Gz4mSc;
   private double \u0023\u003DzUvUfmcjO8Kin;

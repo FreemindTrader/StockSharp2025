@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 #nullable disable
 public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<TX> : 
-  \u0023\u003DzlalC_BLW58oQFzS2Y8CMpwbBRmxTjoI81dC7J9YT\u0024RWJeZXysfONBiA\u003D<TX>
+  BaseDataDistributionCalculator<TX>
   where TX : IComparable
 {
   public \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE()
