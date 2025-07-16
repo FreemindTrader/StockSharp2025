@@ -11,26 +11,26 @@ using System.Windows;
 namespace SciChart.Charting;
 
 internal sealed class SeriesInfoTemplateSelector : 
-  dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
+  DataTemplateSelector
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzwb\u0024PK7dpToEG8k4U8sMMGck\u003D = DependencyProperty.Register(nameof (HeatmapSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzwb\u0024PK7dpToEG8k4U8sMMGck\u003D = DependencyProperty.Register(nameof (HeatmapSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dz65Bzyn0al\u0024hsexCOwQ\u003D\u003D = DependencyProperty.Register(nameof (BandSeries1Template), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dz65Bzyn0al\u0024hsexCOwQ\u003D\u003D = DependencyProperty.Register(nameof (BandSeries1Template), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzgPAPsf8N0nMyp5a7nA\u003D\u003D = DependencyProperty.Register(nameof (BandSeries2Template), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzgPAPsf8N0nMyp5a7nA\u003D\u003D = DependencyProperty.Register(nameof (BandSeries2Template), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dz9AZw7OdUa6oJtZAFRw\u003D\u003D = DependencyProperty.Register(nameof (BoxPlotSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dz9AZw7OdUa6oJtZAFRw\u003D\u003D = DependencyProperty.Register(nameof (BoxPlotSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzC3AaW5JpRV47dzI1lA\u003D\u003D = DependencyProperty.Register(nameof (OhlcSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzC3AaW5JpRV47dzI1lA\u003D\u003D = DependencyProperty.Register(nameof (OhlcSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dzd4jBbeTPaY\u0024mJnLskQ\u003D\u003D = DependencyProperty.Register(nameof (HlcSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzd4jBbeTPaY\u0024mJnLskQ\u003D\u003D = DependencyProperty.Register(nameof (HlcSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dzfe\u0024ko3ZL7vw86G01kRQRLzirSZJh = DependencyProperty.Register(nameof (OneHundredPercentStackedSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzfe\u0024ko3ZL7vw86G01kRQRLzirSZJh = DependencyProperty.Register(nameof (OneHundredPercentStackedSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dza9CG7f7oerF2rgcRKe1gfOztGAAb = DependencyProperty.Register(nameof (TimeframeSegmentSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dza9CG7f7oerF2rgcRKe1gfOztGAAb = DependencyProperty.Register(nameof (TimeframeSegmentSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzsrZg_F3foQsz = DependencyProperty.Register(nameof (TransactionSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzsrZg_F3foQsz = DependencyProperty.Register(nameof (TransactionSeriesTemplate), typeof (DataTemplate), typeof (SeriesInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
 
   public SeriesInfoTemplateSelector()
   {

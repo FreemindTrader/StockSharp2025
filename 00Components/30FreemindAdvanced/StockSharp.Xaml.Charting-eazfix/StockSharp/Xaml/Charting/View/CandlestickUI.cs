@@ -782,7 +782,7 @@ label_4:
     private void \u0023\u003DzO\u0024GBeNt4gKS5()
     {
       this.IsDark = ChartHelper.CurrChartTheme() == "ExpressionDark";
-      this.\u0023\u003DziWrrroE\u003D = dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.\u0023\u003DzrILtKW7bADnV(ChartHelper.CurrChartTheme());
+      this.\u0023\u003DziWrrroE\u003D = ThemeManager.\u0023\u003DzrILtKW7bADnV(ChartHelper.CurrChartTheme());
     }
 
     public bool IsDark

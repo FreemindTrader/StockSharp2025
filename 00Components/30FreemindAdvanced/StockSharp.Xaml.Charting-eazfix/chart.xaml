@@ -7,7 +7,7 @@
              xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
              xmlns:s="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
              xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
-             s:dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.Theme="{Binding SelectedTheme}">
+             s:ThemeManager.Theme="{Binding SelectedTheme}">
   <FrameworkElement.Resources>
     <Style x:Key="Grpstyle"
            TargetType="{x:Type s:UltrachartGroupPane}">
@@ -70,7 +70,7 @@
       <Setter Property="TextBlock.FontFamily" Value="Consolas"/>
     </Style>
     <s:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
-    <s:dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLELR2Y64AQZB2ZMVREEG3YUEHPNZ_ejd x:Key="UltrachartOverviewVisibilityConverter"/>
+    <s:UltrachartOverviewVisibilityConverter x:Key="UltrachartOverviewVisibilityConverter"/>
   </FrameworkElement.Resources>
   <Grid>
     <Grid.RowDefinitions>
@@ -83,7 +83,7 @@
         <DataTemplate DataType="local:UltrachartPaneViewModel">
           <Grid>
             <li11l:BarManager.DXContextMenu>
-              <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding ParentViewModel}"
+              <s:chartmenu DataContext="{Binding ParentViewModel}"
                                                                           Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"/>
             </li11l:BarManager.DXContextMenu>
             <s:SciChartSurface Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
@@ -129,7 +129,7 @@
       </ItemsControl.ItemTemplate>
     </s:SciChartGroup>
     <s:UltrachartOverview Grid.Row="1" XAxisId="X" VerticalAlignment="Stretch" Height="40"
-                                                                                    s:dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.ItemsControlParentSurface="{Binding Path=., ElementName=ChartGroupEx}">
+                                                                                    s:ItemsControlParentSurface.ItemsControlParentSurface="{Binding Path=., ElementName=ChartGroupEx}">
       <UIElement.Visibility>
         <MultiBinding Converter="{StaticResource UltrachartOverviewVisibilityConverter}">
           <Binding Path="ShowOverview"/>

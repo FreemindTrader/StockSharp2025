@@ -47,7 +47,7 @@
       </Setter.Value>
     </Setter>
   </Style>
-  <ControlTemplate x:Key="{x:Static s:dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd.dje_zXWPHZG4CSS2GQXZJSD75W_ejd}"
+  <ControlTemplate x:Key="{x:Static s:LazyControlTemplate.dje_zXWPHZG4CSS2GQXZJSD75W_ejd}"
                    TargetType="{x:Type s:PointMarker}">
     <Image Stretch="Uniform" Source="{Binding MarkerImageSrc, Mode=OneWay}" Width="{Binding Width}"
            Height="{Binding Height}"/>

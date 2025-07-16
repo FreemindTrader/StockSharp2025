@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
+// Type: -.DataTemplateSelector
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -10,16 +10,17 @@ using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using SciChart.Charting.Common.Helpers;
 
 #nullable disable
 namespace SciChart.Charting;
 
-internal abstract class dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd : 
+internal abstract class DataTemplateSelector : 
   ContentControl,
-  \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D
+  IDataTemplateSelector
 {
   
-  public static readonly DependencyProperty \u0023\u003DzTeFEnJJlKZlL = DependencyProperty.Register(nameof (DefaultTemplate), typeof (DataTemplate), typeof (dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd), new PropertyMetadata((object) null, new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzTeFEnJJlKZlL = DependencyProperty.Register(nameof (DefaultTemplate), typeof (DataTemplate), typeof (DataTemplateSelector), new PropertyMetadata((object) null, new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
   private EventHandler \u0023\u003DzIXxjpEgBlZml;
 
@@ -27,11 +28,11 @@ internal abstract class dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd :
   {
     get
     {
-      return (DataTemplate) this.GetValue(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DzTeFEnJJlKZlL);
+      return (DataTemplate) this.GetValue(DataTemplateSelector.\u0023\u003DzTeFEnJJlKZlL);
     }
     set
     {
-      this.SetValue(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DzTeFEnJJlKZlL, (object) value);
+      this.SetValue(DataTemplateSelector.\u0023\u003DzTeFEnJJlKZlL, (object) value);
     }
   }
 
@@ -93,7 +94,7 @@ internal abstract class dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd :
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    if (!(_param0 is dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd nqccdleuveqzpsrcL4Ejd))
+    if (!(_param0 is DataTemplateSelector nqccdleuveqzpsrcL4Ejd))
       return;
     nqccdleuveqzpsrcL4Ejd.\u0023\u003DzCZf_oX5aGk\u0024Y();
     nqccdleuveqzpsrcL4Ejd.\u0023\u003DzfpkvVDHp_6LL();

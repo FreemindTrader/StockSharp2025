@@ -30,15 +30,15 @@ internal abstract class TooltipModifierBase :
   
   public static readonly DependencyProperty \u0023\u003DzwbBEIdM\u0024iIcr = DependencyProperty.Register(nameof (TooltipLabelTemplate), typeof (ControlTemplate), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003Dzwur\u0024mqt3kPJHpkPRjQ\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DztS0SV\u0024h_UR9naBBpPQ\u003D\u003D = DependencyProperty.Register(nameof (AxisLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003DzbVg\u0024qRIz823IPqWt\u0024A\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DztS0SV\u0024h_UR9naBBpPQ\u003D\u003D = DependencyProperty.Register(nameof (AxisLabelTemplateSelector), typeof (IDataTemplateSelector), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003DzbVg\u0024qRIz823IPqWt\u0024A\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzvNytNs_0PVAQNrNseA\u003D\u003D = DependencyProperty.Register(nameof (TooltipLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003Dzwur\u0024mqt3kPJHpkPRjQ\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzvNytNs_0PVAQNrNseA\u003D\u003D = DependencyProperty.Register(nameof (TooltipLabelTemplateSelector), typeof (IDataTemplateSelector), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003Dzwur\u0024mqt3kPJHpkPRjQ\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dz6XQECdaYmU1_GuzwGA\u003D\u003D = DependencyProperty.Register(nameof (DefaultAxisLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (TooltipModifierBase), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003Dz6XQECdaYmU1_GuzwGA\u003D\u003D = DependencyProperty.Register(nameof (DefaultAxisLabelTemplateSelector), typeof (IDataTemplateSelector), typeof (TooltipModifierBase), new PropertyMetadata((object) null));
   
   public static readonly DependencyProperty \u0023\u003DzClmcjSK4Qv_TawDQNPNUv5c\u003D = DependencyProperty.Register(nameof (DefaultAxisLabelTemplateSelectorStyle), typeof (Style), typeof (TooltipModifierBase), new PropertyMetadata((object) null, new PropertyChangedCallback(TooltipModifierBase.\u0023\u003DzbxLNaq5ZjEofA\u0024XB3WbNaIs\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dz5dHn3Ygiw7f44dBolw\u003D\u003D = DependencyProperty.Register(nameof (DefaultTooltipLabelTemplateSelector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (TooltipModifierBase), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003Dz5dHn3Ygiw7f44dBolw\u003D\u003D = DependencyProperty.Register(nameof (DefaultTooltipLabelTemplateSelector), typeof (IDataTemplateSelector), typeof (TooltipModifierBase), new PropertyMetadata((object) null));
   
   public static readonly DependencyProperty \u0023\u003Dz3WEQAsiyFGgPCmpeo4Tp7eU\u003D = DependencyProperty.Register(nameof (DefaultTooltipLabelTemplateSelectorStyle), typeof (Style), typeof (TooltipModifierBase), new PropertyMetadata((object) null, new PropertyChangedCallback(TooltipModifierBase.\u0023\u003Dz8WfI5kqsN6kmTe6TXhhzlCo\u003D)));
   
@@ -54,10 +54,10 @@ internal abstract class TooltipModifierBase :
   {
     AxisInfoTemplateSelector mfbbgbuclK8X5KcN2Ejd = new AxisInfoTemplateSelector();
     mfbbgbuclK8X5KcN2Ejd.Style = this.DefaultAxisLabelTemplateSelectorStyle;
-    this.DefaultAxisLabelTemplateSelector = (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) mfbbgbuclK8X5KcN2Ejd;
+    this.DefaultAxisLabelTemplateSelector = (IDataTemplateSelector) mfbbgbuclK8X5KcN2Ejd;
     SeriesInfoTemplateSelector p76EcY4XkZ29FaEjd = new SeriesInfoTemplateSelector();
     p76EcY4XkZ29FaEjd.Style = this.DefaultTooltipLabelTemplateSelectorStyle;
-    this.DefaultTooltipLabelTemplateSelector = (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) p76EcY4XkZ29FaEjd;
+    this.DefaultTooltipLabelTemplateSelector = (IDataTemplateSelector) p76EcY4XkZ29FaEjd;
   }
 
   public ShowTooltipOptions ShowTooltipOn
@@ -120,11 +120,11 @@ internal abstract class TooltipModifierBase :
     }
   }
 
-  public \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D AxisLabelTemplateSelector
+  public IDataTemplateSelector AxisLabelTemplateSelector
   {
     get
     {
-      return (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) this.GetValue(TooltipModifierBase.\u0023\u003DztS0SV\u0024h_UR9naBBpPQ\u003D\u003D);
+      return (IDataTemplateSelector) this.GetValue(TooltipModifierBase.\u0023\u003DztS0SV\u0024h_UR9naBBpPQ\u003D\u003D);
     }
     set
     {
@@ -132,11 +132,11 @@ internal abstract class TooltipModifierBase :
     }
   }
 
-  public \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D TooltipLabelTemplateSelector
+  public IDataTemplateSelector TooltipLabelTemplateSelector
   {
     get
     {
-      return (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) this.GetValue(TooltipModifierBase.\u0023\u003DzvNytNs_0PVAQNrNseA\u003D\u003D);
+      return (IDataTemplateSelector) this.GetValue(TooltipModifierBase.\u0023\u003DzvNytNs_0PVAQNrNseA\u003D\u003D);
     }
     set
     {
@@ -144,11 +144,11 @@ internal abstract class TooltipModifierBase :
     }
   }
 
-  public \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D DefaultAxisLabelTemplateSelector
+  public IDataTemplateSelector DefaultAxisLabelTemplateSelector
   {
     get
     {
-      return (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) this.GetValue(TooltipModifierBase.\u0023\u003Dz6XQECdaYmU1_GuzwGA\u003D\u003D);
+      return (IDataTemplateSelector) this.GetValue(TooltipModifierBase.\u0023\u003Dz6XQECdaYmU1_GuzwGA\u003D\u003D);
     }
     protected set
     {
@@ -168,11 +168,11 @@ internal abstract class TooltipModifierBase :
     }
   }
 
-  public \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D DefaultTooltipLabelTemplateSelector
+  public IDataTemplateSelector DefaultTooltipLabelTemplateSelector
   {
     get
     {
-      return (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) this.GetValue(TooltipModifierBase.\u0023\u003Dz5dHn3Ygiw7f44dBolw\u003D\u003D);
+      return (IDataTemplateSelector) this.GetValue(TooltipModifierBase.\u0023\u003Dz5dHn3Ygiw7f44dBolw\u003D\u003D);
     }
     protected set
     {
@@ -377,7 +377,7 @@ internal abstract class TooltipModifierBase :
 
   protected TemplatableControl \u0023\u003DzBv1vB\u0024LEKSF4(
     ControlTemplate _param1,
-    \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D _param2,
+    IDataTemplateSelector _param2,
     object _param3)
   {
     TemplatableControl dsmrbmwzuqJ5Vy6CvzEjd = (TemplatableControl) null;

@@ -335,7 +335,7 @@ internal class AxisPanel :
     float _param5)
   {
     this.\u0023\u003DzeEl93ifUiK4P.Style = _param2;
-    dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.SetTheme((DependencyObject) this.\u0023\u003DzeEl93ifUiK4P, dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd.GetTheme((DependencyObject) this));
+    ThemeManager.SetTheme((DependencyObject) this.\u0023\u003DzeEl93ifUiK4P, ThemeManager.GetTheme((DependencyObject) this));
     using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = _param1.\u0023\u003DzQCf7bpfi0DqGMauSow\u003D\u003D(this.\u0023\u003DzeEl93ifUiK4P, false))
     {
       foreach (float num in _param4)

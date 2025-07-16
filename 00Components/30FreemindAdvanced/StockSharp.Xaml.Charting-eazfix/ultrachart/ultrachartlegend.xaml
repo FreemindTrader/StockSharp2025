@@ -15,7 +15,7 @@
   <FrameworkElement.Resources>
     <s:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <s:ColorToBrushConverter x:Key="ColorToBrushConverter"/>
-    <s:dje_zTYQED6UNCPRW4ZAGFE6CK5DWJPCS3SGKTB2MQGAM2NNWYBMEVZ992Z7LLS2PR94A8Q_ejd x:Key="UltrachartElementToSettingsObjectConverter"/>
+    <s:UltrachartElementToSettingsObjectConverter x:Key="UltrachartElementToSettingsObjectConverter"/>
     <l1li:AreaAxesToBorderColorConverter x:Key="axesToBorderConv"/>
     <l1li:AreaAxesToTooltipConverter x:Key="axesToTooltipConv"/>
     <Popup x:Key="serPopup" VerticalOffset="0" HorizontalOffset="0" Placement="Bottom"

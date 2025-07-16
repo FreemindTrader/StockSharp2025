@@ -11,7 +11,7 @@ using System.Windows;
 namespace SciChart.Charting;
 
 internal sealed class AxisTitleTemplateSelector : 
-  dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
+  DataTemplateSelector
 {
   
   private DataTemplate \u0023\u003DzzOBVI_vgcMJc;

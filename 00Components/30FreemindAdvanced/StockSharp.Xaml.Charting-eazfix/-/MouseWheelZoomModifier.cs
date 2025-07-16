@@ -12,10 +12,10 @@ using System.Windows;
 namespace SciChart.Charting;
 
 internal sealed class MouseWheelZoomModifier : 
-  dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
+  RelativeZoomModifierBase
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzp3T0E8s\u003D = DependencyProperty.Register(nameof (ActionType), typeof (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd), typeof (MouseWheelZoomModifier), new PropertyMetadata((object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Zoom, new PropertyChangedCallback(MouseWheelZoomModifier.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzp3T0E8s\u003D = DependencyProperty.Register(nameof (ActionType), typeof (ActionType), typeof (MouseWheelZoomModifier), new PropertyMetadata((object) ActionType.Zoom, new PropertyChangedCallback(MouseWheelZoomModifier.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm27O\u0024m4PgoEaaJOSFwKn\u0024So\u003D)));
   
   private Action<Point, double> \u0023\u003DzE5Q0sUQO_NoQ;
 
@@ -25,11 +25,11 @@ internal sealed class MouseWheelZoomModifier :
     this.\u0023\u003DzE5Q0sUQO_NoQ = new Action<Point, double>(this.\u0023\u003DzIjNc90j5mMD8);
   }
 
-  public dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd ActionType
+  public ActionType ActionType
   {
     get
     {
-      return (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd) this.GetValue(MouseWheelZoomModifier.\u0023\u003Dzp3T0E8s\u003D);
+      return (ActionType) this.GetValue(MouseWheelZoomModifier.\u0023\u003Dzp3T0E8s\u003D);
     }
     set
     {
@@ -51,17 +51,17 @@ internal sealed class MouseWheelZoomModifier :
     {
       double num = (double) -_param1.\u0023\u003DzDuDuL4DDV5GL() / 120.0;
       XyDirection xyDirection = this.XyDirection;
-      dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd actionType = this.ActionType;
+      ActionType actionType = this.ActionType;
       if (_param1.Modifier() != MouseModifier.None)
       {
-        this.SetCurrentValue(MouseWheelZoomModifier.\u0023\u003Dzp3T0E8s\u003D, (object) dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan);
+        this.SetCurrentValue(MouseWheelZoomModifier.\u0023\u003Dzp3T0E8s\u003D, (object) ActionType.Pan);
         if (_param1.Modifier() == MouseModifier.Ctrl)
-          this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) XyDirection.YDirection);
+          this.SetCurrentValue(RelativeZoomModifierBase.\u0023\u003DzcN3lc2NJhvnw, (object) XyDirection.YDirection);
         else if (_param1.Modifier() == MouseModifier.Shift)
-          this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) XyDirection.XDirection);
+          this.SetCurrentValue(RelativeZoomModifierBase.\u0023\u003DzcN3lc2NJhvnw, (object) XyDirection.XDirection);
       }
       this.\u0023\u003DzE5Q0sUQO_NoQ(this.GetPointRelativeTo(_param1.MousePoint(), (IHitTestable) this.ModifierSurface), num);
-      this.SetCurrentValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) xyDirection);
+      this.SetCurrentValue(RelativeZoomModifierBase.\u0023\u003DzcN3lc2NJhvnw, (object) xyDirection);
       this.SetCurrentValue(MouseWheelZoomModifier.\u0023\u003Dzp3T0E8s\u003D, (object) actionType);
     }
   }
@@ -124,10 +124,10 @@ internal sealed class MouseWheelZoomModifier :
       DependencyPropertyChangedEventArgs _param2)
     {
       MouseWheelZoomModifier kufjwuuvR4YbN3Ejd = _param1 as MouseWheelZoomModifier;
-      dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd newValue = (dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd) _param2.NewValue;
+      ActionType newValue = (ActionType) _param2.NewValue;
       if (kufjwuuvR4YbN3Ejd == null)
         return;
-      kufjwuuvR4YbN3Ejd.\u0023\u003DzE5Q0sUQO_NoQ = newValue == dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd.Pan ? new Action<Point, double>(kufjwuuvR4YbN3Ejd.\u0023\u003Dz6fc78SIV6E\u0024a) : new Action<Point, double>(kufjwuuvR4YbN3Ejd.\u0023\u003DzIjNc90j5mMD8);
+      kufjwuuvR4YbN3Ejd.\u0023\u003DzE5Q0sUQO_NoQ = newValue == ActionType.Pan ? new Action<Point, double>(kufjwuuvR4YbN3Ejd.\u0023\u003Dz6fc78SIV6E\u0024a) : new Action<Point, double>(kufjwuuvR4YbN3Ejd.\u0023\u003DzIjNc90j5mMD8);
     }
   }
 }

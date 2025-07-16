@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd
+// Type: -.ZoomPanModifierBase
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -11,7 +11,7 @@ using System.Windows.Input;
 #nullable disable
 namespace SciChart.Charting;
 
-internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd : 
+internal abstract class ZoomPanModifierBase : 
   ChartModifierBase
 {
   
@@ -19,15 +19,15 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
   
   private Point \u0023\u003DzeDqneUWYjgVB;
   
-  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (XyDirection), typeof (dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd), new PropertyMetadata((object) XyDirection.XYDirection));
+  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (XyDirection), typeof (ZoomPanModifierBase), new PropertyMetadata((object) XyDirection.XYDirection));
   
-  public static readonly DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(nameof (ClipModeX), typeof (ClipMode), typeof (dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd), new PropertyMetadata((object) ClipMode.StretchAtExtents));
+  public static readonly DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(nameof (ClipModeX), typeof (ClipMode), typeof (ZoomPanModifierBase), new PropertyMetadata((object) ClipMode.StretchAtExtents));
   
-  public static readonly DependencyProperty \u0023\u003DzNWOI1oh1IMgh = DependencyProperty.Register(nameof (ZoomExtentsY), typeof (bool), typeof (dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd), new PropertyMetadata((object) true));
+  public static readonly DependencyProperty \u0023\u003DzNWOI1oh1IMgh = DependencyProperty.Register(nameof (ZoomExtentsY), typeof (bool), typeof (ZoomPanModifierBase), new PropertyMetadata((object) true));
   
   private bool \u0023\u003DzFKYv1dU45rO8JWT1sg\u003D\u003D;
 
-  protected dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd()
+  protected ZoomPanModifierBase()
   {
     this.SetCurrentValue(ChartModifierBase.ExecuteOnProperty, (object) ExecuteOn.MouseLeftButton);
     this.\u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(false);
@@ -37,11 +37,11 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
   {
     get
     {
-      return (bool) this.GetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzNWOI1oh1IMgh);
+      return (bool) this.GetValue(ZoomPanModifierBase.\u0023\u003DzNWOI1oh1IMgh);
     }
     set
     {
-      this.SetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzNWOI1oh1IMgh, (object) value);
+      this.SetValue(ZoomPanModifierBase.\u0023\u003DzNWOI1oh1IMgh, (object) value);
     }
   }
 
@@ -49,11 +49,11 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
   {
     get
     {
-      return (XyDirection) this.GetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzcN3lc2NJhvnw);
+      return (XyDirection) this.GetValue(ZoomPanModifierBase.\u0023\u003DzcN3lc2NJhvnw);
     }
     set
     {
-      this.SetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) value);
+      this.SetValue(ZoomPanModifierBase.\u0023\u003DzcN3lc2NJhvnw, (object) value);
     }
   }
 
@@ -61,11 +61,11 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
   {
     get
     {
-      return (ClipMode) this.GetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzxJ9WluMHlZpH);
+      return (ClipMode) this.GetValue(ZoomPanModifierBase.\u0023\u003DzxJ9WluMHlZpH);
     }
     set
     {
-      this.SetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzxJ9WluMHlZpH, (object) value);
+      this.SetValue(ZoomPanModifierBase.\u0023\u003DzxJ9WluMHlZpH, (object) value);
     }
   }
 

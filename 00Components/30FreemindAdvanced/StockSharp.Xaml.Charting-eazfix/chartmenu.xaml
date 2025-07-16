@@ -1,4 +1,4 @@
-<s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd xmlns:s="clr-namespace:-"
+<s:chartmenu xmlns:s="clr-namespace:-"
                                                             xmlns:li11l="clr-namespace:DevExpress.Xpf.Bars;assembly=DevExpress.Xpf.Core.v22.1"
                                                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                                             xmlns:s="clr-namespace:Ecng.Xaml.Converters;assembly=StockSharp.Xaml"
@@ -48,4 +48,4 @@
     <li11l:BarButtonItem Glyph="{l1i11ii111:ThemedIcons Key=Expand}" Command="{Binding UngroupCommand}"
                          Content="{l1i11ii111:Localization GroupUngroup}"/>
   </li11l:PopupMenu.Items>
-</s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd>
+</s:chartmenu>

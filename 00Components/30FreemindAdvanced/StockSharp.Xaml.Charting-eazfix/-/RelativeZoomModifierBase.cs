@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd
+// Type: -.RelativeZoomModifierBase
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -12,11 +12,11 @@ using System.Windows;
 #nullable disable
 namespace SciChart.Charting;
 
-internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd : 
+internal abstract class RelativeZoomModifierBase : 
   ChartModifierBase
 {
   
-  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (XyDirection), typeof (dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd), new PropertyMetadata((object) XyDirection.XYDirection));
+  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (XyDirection), typeof (RelativeZoomModifierBase), new PropertyMetadata((object) XyDirection.XYDirection));
   
   private double \u0023\u003DzgTKlgLAfrwWL;
 
@@ -24,11 +24,11 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
   {
     get
     {
-      return (XyDirection) this.GetValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw);
+      return (XyDirection) this.GetValue(RelativeZoomModifierBase.\u0023\u003DzcN3lc2NJhvnw);
     }
     set
     {
-      this.SetValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw, (object) value);
+      this.SetValue(RelativeZoomModifierBase.\u0023\u003DzcN3lc2NJhvnw, (object) value);
     }
   }
 

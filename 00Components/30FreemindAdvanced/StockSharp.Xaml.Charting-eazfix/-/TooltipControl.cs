@@ -15,7 +15,7 @@ internal sealed class TooltipControl :
   TemplatableControl
 {
   
-  public static readonly DependencyProperty \u0023\u003DzEuuv4pc\u003D = DependencyProperty.Register(nameof (Selector), typeof (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D), typeof (TooltipControl), new PropertyMetadata((object) null, new PropertyChangedCallback(TooltipControl.\u0023\u003DzYfWGIYVgG9Om)));
+  public static readonly DependencyProperty \u0023\u003DzEuuv4pc\u003D = DependencyProperty.Register(nameof (Selector), typeof (IDataTemplateSelector), typeof (TooltipControl), new PropertyMetadata((object) null, new PropertyChangedCallback(TooltipControl.\u0023\u003DzYfWGIYVgG9Om)));
   
   public static readonly DependencyProperty \u0023\u003Dz2CuHKWI5gsAP = DependencyProperty.Register(nameof (SelectorContext), typeof (object), typeof (TooltipControl), new PropertyMetadata(new PropertyChangedCallback(TooltipControl.\u0023\u003DzqdCmf9pyTS3icOrrZA\u003D\u003D)));
 
@@ -24,11 +24,11 @@ internal sealed class TooltipControl :
     this.DefaultStyleKey = (object) typeof (TooltipControl);
   }
 
-  public \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D Selector
+  public IDataTemplateSelector Selector
   {
     get
     {
-      return (\u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D) this.GetValue(TooltipControl.\u0023\u003DzEuuv4pc\u003D);
+      return (IDataTemplateSelector) this.GetValue(TooltipControl.\u0023\u003DzEuuv4pc\u003D);
     }
     set
     {
@@ -61,9 +61,9 @@ internal sealed class TooltipControl :
   {
     if (!(_param0 is TooltipControl cnjeD6UpthjB96FaEjd))
       return;
-    if (_param1.NewValue is \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D newValue)
+    if (_param1.NewValue is IDataTemplateSelector newValue)
       newValue.\u0023\u003DzPIKAksIWrmT_(new EventHandler(cnjeD6UpthjB96FaEjd.\u0023\u003Dzo0Dl\u0024GTImB3r));
-    if (_param1.OldValue is \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo8HI_6JOBYhgDQ\u003D\u003D oldValue)
+    if (_param1.OldValue is IDataTemplateSelector oldValue)
       oldValue.\u0023\u003DzGdEyHkIpEpoz(new EventHandler(cnjeD6UpthjB96FaEjd.\u0023\u003Dzo0Dl\u0024GTImB3r));
     cnjeD6UpthjB96FaEjd.\u0023\u003Dzo0Dl\u0024GTImB3r(cnjeD6UpthjB96FaEjd.SelectorContext);
   }

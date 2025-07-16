@@ -14,7 +14,7 @@ using System.Windows;
 namespace SciChart.Charting;
 
 internal sealed class fxZoomPanModifier : 
-  dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd
+  ZoomPanModifierBase
 {
   
   private 

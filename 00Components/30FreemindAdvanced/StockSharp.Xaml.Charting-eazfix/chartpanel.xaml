@@ -45,7 +45,7 @@
                                     ToolTip="{l1i11ii111:Localization AddPanel}" IsEnabled="{Binding IsInteracted, ElementName=Chart}"
                                     Glyph="{l1i11ii111:ThemedIcons Key=Add}">
             <li11l:BarSplitButtonItem.PopupControl>
-              <s:dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd DataContext="{Binding DataContext, ElementName=Chart}"/>
+              <s:chartmenu DataContext="{Binding DataContext, ElementName=Chart}"/>
             </li11l:BarSplitButtonItem.PopupControl>
           </li11l:BarSplitButtonItem>
           <li11l:BarEditItem x:Name="CandleStyles" EditWidth="120">

@@ -11,12 +11,12 @@ using System.Windows;
 namespace SciChart.Charting;
 
 internal sealed class AxisInfoTemplateSelector : 
-  dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd
+  DataTemplateSelector
 {
   
-  public static readonly DependencyProperty \u0023\u003Dzp\u0024K\u00240nqsvNAg = DependencyProperty.Register(nameof (YAxisDataTemplate), typeof (DataTemplate), typeof (AxisInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzp\u0024K\u00240nqsvNAg = DependencyProperty.Register(nameof (YAxisDataTemplate), typeof (DataTemplate), typeof (AxisInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dzs6wiQBsd7qIb = DependencyProperty.Register(nameof (XAxisDataTemplate), typeof (DataTemplate), typeof (AxisInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
+  public static readonly DependencyProperty \u0023\u003Dzs6wiQBsd7qIb = DependencyProperty.Register(nameof (XAxisDataTemplate), typeof (DataTemplate), typeof (AxisInfoTemplateSelector), new PropertyMetadata(new PropertyChangedCallback(DataTemplateSelector.\u0023\u003DziqhLe0ar\u0024pN3qpBgGFcDfrI\u003D)));
 
   public DataTemplate YAxisDataTemplate
   {
