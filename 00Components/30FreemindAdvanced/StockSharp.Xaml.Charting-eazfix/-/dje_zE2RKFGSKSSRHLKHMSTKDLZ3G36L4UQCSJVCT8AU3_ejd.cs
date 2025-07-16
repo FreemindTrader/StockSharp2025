@@ -12,7 +12,7 @@ using System.Threading;
 using System.Windows;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal static class dje_zE2RKFGSKSSRHLKHMSTKDLZ3G36L4UQCSJVCT8AU3_ejd
 {

@@ -12,10 +12,10 @@ using System.Windows.Media;
 using System.Xml.Serialization;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class StackedColumnRenderableSeries : 
-  dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd,
+  BaseColumnRenderableSeries,
   IDrawable,
   IXmlSerializable,
   \u0023\u003Dz5B3gvTTfbmLYjDPhZPGfZJtupKNFWXP0_On1YUVI0hqJ\u0024lotV9V57okcKlXHXNUKOsbYO\u0024c\u003D,

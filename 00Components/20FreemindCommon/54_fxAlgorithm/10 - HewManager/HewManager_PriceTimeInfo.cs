@@ -58,12 +58,12 @@ namespace fx.Algorithm
 
                     var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.Uptrend : TrendDirection.DownTrend;
 
-                    HHLL hhll1;
+                    HHLL hhs;
                     HHLL hhll2 = default;
 
                     if ( trendDirection == TrendDirection.DownTrend )
                     {
-                        hhll1 = new HHLL( HHLLEnum.HighLow, ( uint ) ( indexOfWaveC - wave024XBarIndex ) );
+                        hhs = new HHLL( HHLLEnum.HighLow, ( uint ) ( indexOfWaveC - wave024XBarIndex ) );
 
                         if ( indexOfWaveB > -1 )
                         {
@@ -72,7 +72,7 @@ namespace fx.Algorithm
                     }
                     else
                     {
-                        hhll1 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( indexOfWaveC - wave024XBarIndex ) );
+                        hhs = new HHLL( HHLLEnum.LowHigh, ( uint ) ( indexOfWaveC - wave024XBarIndex ) );
 
                         if ( indexOfWaveB > -1 )
                         {
@@ -80,7 +80,7 @@ namespace fx.Algorithm
                         }
                     }
 
-                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection, wave024XBarIndex, indexOfWaveC, -1, trendMovedRange, null, hhll1, hhll2 );
+                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection, wave024XBarIndex, indexOfWaveC, -1, trendMovedRange, null, hhs, hhll2 );
 
                     output = priceTimeInfo;
 
@@ -133,18 +133,18 @@ namespace fx.Algorithm
 
                     var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.Uptrend : TrendDirection.DownTrend;
 
-                    HHLL hhll1 = default;
+                    HHLL hhs = default;
                     HHLL hhll2 = default;
 
                     if ( trendDirection == TrendDirection.DownTrend )
                     {
-                        hhll1 = new HHLL( HHLLEnum.HighLow, ( uint ) ( waveABarIndex - wave024XBarIndex ) );
+                        hhs = new HHLL( HHLLEnum.HighLow, ( uint ) ( waveABarIndex - wave024XBarIndex ) );
                     }
                     else
                     {
                         hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( waveABarIndex - wave024XBarIndex ) );
                     }
-                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection, wave024XBarIndex, waveABarIndex, -1, trendMovedRange, null, hhll1, hhll2 );
+                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection, wave024XBarIndex, waveABarIndex, -1, trendMovedRange, null, hhs, hhll2 );
 
                     output = priceTimeInfo;
 
@@ -444,19 +444,19 @@ namespace fx.Algorithm
 
                     var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.Uptrend : TrendDirection.DownTrend;
 
-                    HHLL hhll1 = default;
+                    HHLL hhs = default;
                     HHLL hhll2 = default;
 
                     if ( trendDirection == TrendDirection.DownTrend )
                     {
-                        hhll1 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave1BarIndex - wave0BarIndex ) );
+                        hhs = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave1BarIndex - wave0BarIndex ) );
                     }
                     else
                     {
                         hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave1BarIndex - wave0BarIndex ) );
                     }
 
-                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, -1, trendMovedRange, null, hhll1, hhll2 );
+                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, -1, trendMovedRange, null, hhs, hhll2 );
 
                     output = priceTimeInfo;
 
@@ -539,19 +539,19 @@ namespace fx.Algorithm
 
                 //var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.Uptrend : TrendDirection.DownTrend;
 
-                //HHLL hhll1 = default;
+                //HHLL hhs = default;
                 //HHLL hhll2 = default;
 
                 //if ( trendDirection == TrendDirection.DownTrend )
                 //{
-                //    hhll1 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave3BarIndex - wave0BarIndex ) );
+                //    hhs = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave3BarIndex - wave0BarIndex ) );
                 //}
                 //else
                 //{
                 //    hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave3BarIndex - wave0BarIndex ) );
                 //}
 
-                //var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave3BarIndex, -1, trendMovedRange, null, hhll1, hhll2 );
+                //var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave3BarIndex, -1, trendMovedRange, null, hhs, hhll2 );
 
                 //output = priceTimeInfo;
 
@@ -602,19 +602,19 @@ namespace fx.Algorithm
 
                     var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.Uptrend : TrendDirection.DownTrend;
 
-                    HHLL hhll1 = default;
+                    HHLL hhs = default;
                     HHLL hhll2 = default;
 
                     if ( trendDirection == TrendDirection.DownTrend )
                     {
-                        hhll1 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave3BarIndex - wave0BarIndex ) );
+                        hhs = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave3BarIndex - wave0BarIndex ) );
                     }
                     else
                     {
                         hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave3BarIndex - wave0BarIndex ) );
                     }
 
-                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave3BarIndex, -1, trendMovedRange, null, hhll1, hhll2 );
+                    var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave3BarIndex, -1, trendMovedRange, null, hhs, hhll2 );
 
                     output = priceTimeInfo;
 
@@ -682,21 +682,21 @@ namespace fx.Algorithm
 
                         var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
-                        HHLL hhll1 = default;
+                        HHLL hhs = default;
                         HHLL hhll2 = default;
 
                         if ( trendDirection == TrendDirection.DownTrend )
                         {
-                            hhll1 = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave2BarIndex - wave1BarIndex ) );
                         }
                         else
                         {
-                            hhll1 = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave2BarIndex - wave1BarIndex ) );
                         }
 
-                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, wave2BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
+                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, wave2BarIndex, trendMovedRange, counterTrendMovedRange, hhs, hhll2 );
 
                         output = priceTimeInfo;
 
@@ -777,21 +777,21 @@ namespace fx.Algorithm
 
                         var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
-                        HHLL hhll1 = default;
+                        HHLL hhs = default;
                         HHLL hhll2 = default;
 
                         if ( trendDirection == TrendDirection.DownTrend )
                         {
-                            hhll1 = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave2BarIndex - wave1BarIndex ) );
                         }
                         else
                         {
-                            hhll1 = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave2BarIndex - wave0BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave2BarIndex - wave1BarIndex ) );
                         }
 
-                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, wave2BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
+                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave0BarIndex, wave1BarIndex, wave2BarIndex, trendMovedRange, counterTrendMovedRange, hhs, hhll2 );
 
                         bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave2RetracementLevels );
 
@@ -883,21 +883,21 @@ namespace fx.Algorithm
 
                         var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
-                        HHLL hhll1 = default;
+                        HHLL hhs = default;
                         HHLL hhll2 = default;
 
                         if ( trendDirection == TrendDirection.DownTrend )
                         {
-                            hhll1 = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave4BarIndex - wave3BarIndex ) );
                         }
                         else
                         {
-                            hhll1 = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave4BarIndex - wave3BarIndex ) );
                         }
 
-                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave2BarIndex, bars.GetIndexByTime( wave3BarTime ), wave4BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
+                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave2BarIndex, bars.GetIndexByTime( wave3BarTime ), wave4BarIndex, trendMovedRange, counterTrendMovedRange, hhs, hhll2 );
 
                         bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave4RetracementLevels );
 
@@ -979,21 +979,21 @@ namespace fx.Algorithm
 
                         var trendDirection = ( labelPos == WaveLabelPosition.TOP ) ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
-                        HHLL hhll1 = default;
+                        HHLL hhs = default;
                         HHLL hhll2 = default;
 
                         if ( trendDirection == TrendDirection.DownTrend )
                         {
-                            hhll1 = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.HighHigh, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( wave4BarIndex - wave3BarIndex ) );
                         }
                         else
                         {
-                            hhll1 = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
+                            hhs = new HHLL( HHLLEnum.LowLow, ( uint ) ( wave4BarIndex - wave2BarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.HighLow, ( uint ) ( wave4BarIndex - wave3BarIndex ) );
                         }
 
-                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave2BarIndex, bars.GetIndexByTime( wave3BarTime ), wave4BarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
+                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave2BarIndex, bars.GetIndexByTime( wave3BarTime ), wave4BarIndex, trendMovedRange, counterTrendMovedRange, hhs, hhll2 );
 
                         bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.Wave4RetracementLevels );
 
@@ -1076,21 +1076,21 @@ namespace fx.Algorithm
 
                         var trendDirection = labelPos == WaveLabelPosition.TOP ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
-                        HHLL hhll1 = default;
+                        HHLL hhs = default;
                         HHLL hhll2 = default;
 
                         if ( trendDirection == TrendDirection.DownTrend )
                         {
-                            hhll1 = new HHLL( HHLLEnum.HighHigh, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
+                            hhs = new HHLL( HHLLEnum.HighHigh, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( waveBBarIndex - waveABarIndex ) );
                         }
                         else
                         {
-                            hhll1 = new HHLL( HHLLEnum.LowLow, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
+                            hhs = new HHLL( HHLLEnum.LowLow, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.HighLow, ( uint ) ( waveBBarIndex - waveABarIndex ) );
                         }
 
-                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave024XBarIndex, waveABarIndex, waveBBarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
+                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave024XBarIndex, waveABarIndex, waveBBarIndex, trendMovedRange, counterTrendMovedRange, hhs, hhll2 );
 
                         bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.ABCWaveBRetracementLevels );
 
@@ -1170,21 +1170,21 @@ namespace fx.Algorithm
 
                         var trendDirection = labelPos == WaveLabelPosition.TOP ? TrendDirection.DownTrend : TrendDirection.Uptrend;
 
-                        HHLL hhll1 = default;
+                        HHLL hhs = default;
                         HHLL hhll2 = default;
 
                         if ( trendDirection == TrendDirection.DownTrend )
                         {
-                            hhll1 = new HHLL( HHLLEnum.HighHigh, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
+                            hhs = new HHLL( HHLLEnum.HighHigh, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.LowHigh, ( uint ) ( waveBBarIndex - waveABarIndex ) );
                         }
                         else
                         {
-                            hhll1 = new HHLL( HHLLEnum.LowLow, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
+                            hhs = new HHLL( HHLLEnum.LowLow, ( uint ) ( waveBBarIndex - wave024XBarIndex ) );
                             hhll2 = new HHLL( HHLLEnum.HighLow, ( uint ) ( waveBBarIndex - waveABarIndex ) );
                         }
 
-                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave024XBarIndex, bars.GetIndexByTime( waveAtime ) , waveBBarIndex, trendMovedRange, counterTrendMovedRange, hhll1, hhll2 );
+                        var priceTimeInfo = new WavePriceTimeInfo( trendDirection,  wave024XBarIndex, bars.GetIndexByTime( waveAtime ) , waveBBarIndex, trendMovedRange, counterTrendMovedRange, hhs, hhll2 );
 
                         bool validRetracement = CheckRetracementValue( ratio, GlobalConstants.ABCWaveBRetracementLevels );
 

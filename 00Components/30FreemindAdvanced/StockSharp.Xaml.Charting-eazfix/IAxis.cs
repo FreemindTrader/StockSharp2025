@@ -120,12 +120,12 @@ internal interface IAxis :
 
   void set_MinorGridLineStyle(Style _param1);
 
-  dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd get_AutoRange();
+  AutoRange get_AutoRange();
 
-  dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd AutoRange { get; set; }
+  AutoRange AutoRange { get; set; }
 
   void set_AutoRange(
-    dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd _param1);
+    AutoRange _param1);
 
   string get_TextFormatting();
 
@@ -234,12 +234,12 @@ internal interface IAxis :
   void set_AxisMode(
     \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3 _param1);
 
-  dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd get_AxisAlignment();
+  AxisAlignment get_AxisAlignment();
 
-  dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd AxisAlignment { get; set; }
+  AxisAlignment AxisAlignment { get; set; }
 
   void set_AxisAlignment(
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param1);
+    AxisAlignment _param1);
 
   bool IsCategoryAxis { get; }
 

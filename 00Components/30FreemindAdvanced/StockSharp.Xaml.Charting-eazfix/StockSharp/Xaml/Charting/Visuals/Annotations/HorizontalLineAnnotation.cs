@@ -64,7 +64,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
   }
 
   protected override (double fixedHOffset, double fixedVOffset) MoveAnnotationTo(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     double horizOffset,
     double vertOffset)
   {
@@ -159,7 +159,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<HorizontalLineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
       double num1 = 0.0;
@@ -203,7 +203,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       Point[] pointArray = (Point[]) null;
       switch (this.\u0023\u003Dz_iIh83yfe01U().HorizontalAlignment)
@@ -232,7 +232,7 @@ internal class HorizontalLineAnnotation : LineAnnotationWithLabelsBase
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       bool flag = false;

@@ -1,25 +1,25 @@
-<l1lil:Chart3D xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+<l1lil:Chart3D xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
                xmlns:li1="clr-namespace:DevExpress.Xpf.Charts;assembly=DevExpress.Xpf.Charts.v22.1"
                AspectRatio="5 5 3">
   <li1:Chart3DControl.XAxis>
     <li1:XAxis3D>
       <li1:Axis.Title>
-        <li1:AxisTitle l1llili1:Name="XAxisTitle"/>
+        <li1:AxisTitle x:Name="XAxisTitle"/>
       </li1:Axis.Title>
     </li1:XAxis3D>
   </li1:Chart3DControl.XAxis>
   <li1:Chart3DControl.YAxis>
     <li1:YAxis3D>
       <li1:Axis.Title>
-        <li1:AxisTitle l1llili1:Name="YAxisTitle"/>
+        <li1:AxisTitle x:Name="YAxisTitle"/>
       </li1:Axis.Title>
     </li1:YAxis3D>
   </li1:Chart3DControl.YAxis>
   <li1:Chart3DControl.ZAxis>
     <li1:ZAxis3D>
       <li1:Axis.Title>
-        <li1:AxisTitle l1llili1:Name="ZAxisTitle"/>
+        <li1:AxisTitle x:Name="ZAxisTitle"/>
       </li1:Axis.Title>
     </li1:ZAxis3D>
   </li1:Chart3DControl.ZAxis>
@@ -40,7 +40,7 @@
           </li1:SurfaceSeriesView.FillStyle>
         </li1:SurfaceSeriesView>
       </li1:Series3DBase.View>
-      <li1:SeriesPoint3DStorage l1llili1:Name="Storage"/>
+      <li1:SeriesPoint3DStorage x:Name="Storage"/>
     </li1:Series3D>
   </li1:Series3DStorage>
 </l1lil:Chart3D>

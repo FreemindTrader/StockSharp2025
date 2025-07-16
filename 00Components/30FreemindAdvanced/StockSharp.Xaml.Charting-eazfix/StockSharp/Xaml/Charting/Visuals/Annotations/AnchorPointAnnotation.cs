@@ -17,48 +17,48 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 internal abstract class AnchorPointAnnotation : 
   AnnotationBase,
   IXmlSerializable,
-  \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
+  IPublishMouseEvents,
   IAnnotation,
   IHitTestable,
   IAnchorPointAnnotation
 {
-  public static readonly DependencyProperty HorizontalAnchorPointProperty = DependencyProperty.Register(nameof (HorizontalAnchorPoint), typeof (dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd), typeof (AnchorPointAnnotation), new PropertyMetadata((object) dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd.Left, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
-  public static readonly DependencyProperty VerticalAnchorPointProperty = DependencyProperty.Register(nameof (VerticalAnchorPoint), typeof (dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd), typeof (AnchorPointAnnotation), new PropertyMetadata((object) dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd.Top, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
+  public static readonly DependencyProperty HorizontalAnchorPointProperty = DependencyProperty.Register(nameof (HorizontalAnchorPoint), typeof (HorizontalAnchorPoint), typeof (AnchorPointAnnotation), new PropertyMetadata((object) HorizontalAnchorPoint.Left, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
+  public static readonly DependencyProperty VerticalAnchorPointProperty = DependencyProperty.Register(nameof (VerticalAnchorPoint), typeof (VerticalAnchorPoint), typeof (AnchorPointAnnotation), new PropertyMetadata((object) VerticalAnchorPoint.Top, new PropertyChangedCallback(AnchorPointAnnotation.OnAnchorPointChanged)));
 
   protected AnchorPointAnnotation() => this.IsResizable = false;
 
-  event EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchDown
+  event EventHandler<TouchManipulationEventArgs> IPublishMouseEvents.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchDown
   {
     add => throw new NotImplementedException();
     remove => throw new NotImplementedException();
   }
 
-  event EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchMove
+  event EventHandler<TouchManipulationEventArgs> IPublishMouseEvents.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchMove
   {
     add => throw new NotImplementedException();
     remove => throw new NotImplementedException();
   }
 
-  event EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchUp
+  event EventHandler<TouchManipulationEventArgs> IPublishMouseEvents.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchUp
   {
     add => throw new NotImplementedException();
     remove => throw new NotImplementedException();
   }
 
-  public dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd HorizontalAnchorPoint
+  public HorizontalAnchorPoint HorizontalAnchorPoint
   {
     get
     {
-      return (dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd) this.GetValue(AnchorPointAnnotation.HorizontalAnchorPointProperty);
+      return (HorizontalAnchorPoint) this.GetValue(AnchorPointAnnotation.HorizontalAnchorPointProperty);
     }
     set => this.SetValue(AnchorPointAnnotation.HorizontalAnchorPointProperty, (object) value);
   }
 
-  public dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd VerticalAnchorPoint
+  public VerticalAnchorPoint VerticalAnchorPoint
   {
     get
     {
-      return (dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd) this.GetValue(AnchorPointAnnotation.VerticalAnchorPointProperty);
+      return (VerticalAnchorPoint) this.GetValue(AnchorPointAnnotation.VerticalAnchorPointProperty);
     }
     set => this.SetValue(AnchorPointAnnotation.VerticalAnchorPointProperty, (object) value);
   }
@@ -67,11 +67,11 @@ internal abstract class AnchorPointAnnotation :
   {
     get
     {
-      if (this.AnnotationRoot != null && this.VerticalAnchorPoint != dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd.Top)
+      if (this.AnnotationRoot != null && this.VerticalAnchorPoint != VerticalAnchorPoint.Top)
       {
-        if (this.VerticalAnchorPoint == dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd.Center)
+        if (this.VerticalAnchorPoint == VerticalAnchorPoint.Center)
           return this.AnnotationRoot.ActualHeight * 0.5;
-        if (this.VerticalAnchorPoint == dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd.Bottom)
+        if (this.VerticalAnchorPoint == VerticalAnchorPoint.Bottom)
           return this.AnnotationRoot.ActualHeight;
       }
       return 0.0;
@@ -82,11 +82,11 @@ internal abstract class AnchorPointAnnotation :
   {
     get
     {
-      if (this.AnnotationRoot != null && this.HorizontalAnchorPoint != dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd.Left)
+      if (this.AnnotationRoot != null && this.HorizontalAnchorPoint != HorizontalAnchorPoint.Left)
       {
-        if (this.HorizontalAnchorPoint == dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd.Center)
+        if (this.HorizontalAnchorPoint == HorizontalAnchorPoint.Center)
           return this.AnnotationRoot.ActualWidth * 0.5;
-        if (this.HorizontalAnchorPoint == dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd.Right)
+        if (this.HorizontalAnchorPoint == HorizontalAnchorPoint.Right)
           return this.AnnotationRoot.ActualWidth;
       }
       return 0.0;
@@ -101,8 +101,8 @@ internal abstract class AnchorPointAnnotation :
     ((DispatcherObject) jq9Llz3ahZ2LrQl4.\u0023\u003Dz6iFJYho\u003D).Dispatcher.BeginInvoke((Delegate) new Action(jq9Llz3ahZ2LrQl4.\u0023\u003DzqD_p60kW19tqQsYC8u0B0xg\u003D), (DispatcherPriority) 8, Array.Empty<object>());
   }
 
-  protected \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D GetAnchorAnnotationCoordinates(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D annotationCoordinates)
+  protected AnnotationCoordinates GetAnchorAnnotationCoordinates(
+    AnnotationCoordinates annotationCoordinates)
   {
     annotationCoordinates.\u0023\u003DzS2_K6sVvd5IY -= this.HorizontalOffset;
     annotationCoordinates.\u0023\u003Dz2J4l3QUGwZHE -= this.VerticalOffset;

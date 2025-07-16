@@ -49,7 +49,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
   }
 
   private static void PlaceCustomAnnotation(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     CustomAnnotation annotation)
   {
     coordinates = annotation.GetAnchorAnnotationCoordinates(coordinates);
@@ -60,7 +60,7 @@ internal class CustomAnnotation : AnchorPointAnnotation
   }
 
   private static Point[] CalculateBasePoints(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     CustomAnnotation annotation)
   {
     coordinates = annotation.GetAnchorAnnotationCoordinates(coordinates);
@@ -76,26 +76,26 @@ internal class CustomAnnotation : AnchorPointAnnotation
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<CustomAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       CustomAnnotation.PlaceCustomAnnotation(_param1, this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return CustomAnnotation.CalculateBasePoints(_param1, this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight ? 1 : 0)) == 0;
     }
 
     protected override void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
@@ -127,26 +127,26 @@ internal class CustomAnnotation : AnchorPointAnnotation
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<CustomAnnotation>(_param1)
   {
     protected override bool \u0023\u003DzRe9EEbV7q4ey(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       Size _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.Width || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.Height ? 1 : 0)) == 0;
     }
 
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       CustomAnnotation.PlaceCustomAnnotation(this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1), this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return CustomAnnotation.CalculateBasePoints(this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1), this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     protected override void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       Point _param2,
       Point _param3,
       Size _param4)

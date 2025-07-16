@@ -12,13 +12,13 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
 internal interface IAnchorPointAnnotation : 
   IXmlSerializable,
-  \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
+  IPublishMouseEvents,
   IAnnotation,
   IHitTestable
 {
-  dje_zM9MCUSYCVBVQUAFNW4CK2F33NM7V2VAWDUAE4V6AWNNSEJCNKX3MW_ejd HorizontalAnchorPoint { get; set; }
+  HorizontalAnchorPoint HorizontalAnchorPoint { get; set; }
 
-  dje_z2QKG6FGBPK6Q5G57SD2MV2G2DK6AQNZUDB5H6R852JMG36S4ENAUS_ejd VerticalAnchorPoint { get; set; }
+  VerticalAnchorPoint VerticalAnchorPoint { get; set; }
 
   double VerticalOffset { get; }
 

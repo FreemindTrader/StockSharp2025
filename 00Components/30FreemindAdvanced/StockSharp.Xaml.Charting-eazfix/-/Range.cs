@@ -123,7 +123,7 @@ internal abstract class Range<T> :
         {
             T val = this.dgr;
             this.dgr = value;
-            this.\u0023\u003Dz15moWio\u003D(nameof( Min ), ( object ) zWanvsEc, ( object ) value);
+            this.OnPropertyChanged(nameof( Min ), ( object ) zWanvsEc, ( object ) value);
         }
     }
 
@@ -134,7 +134,7 @@ internal abstract class Range<T> :
         {
             T zjV9csI = this.dgs;
             this.dgs = value;
-            this.\u0023\u003Dz15moWio\u003D(nameof( Max ), ( object ) zjV9csI, ( object ) value);
+            this.OnPropertyChanged(nameof( Max ), ( object ) zjV9csI, ( object ) value);
         }
     }
 

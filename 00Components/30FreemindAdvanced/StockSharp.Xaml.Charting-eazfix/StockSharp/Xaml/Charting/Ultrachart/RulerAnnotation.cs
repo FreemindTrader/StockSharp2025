@@ -110,7 +110,7 @@ internal class RulerAnnotation : AnnotationBase
   }
 
   protected override void MakeVisible(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     base.MakeVisible(coordinates);
     if (this._subscribed)
@@ -227,7 +227,7 @@ internal class RulerAnnotation : AnnotationBase
 
   public override bool IsPointWithinBounds(Point point)
   {
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+    AnnotationCoordinates coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
     return new Rect(new Point(coordinates.\u0023\u003DzS2_K6sVvd5IY, coordinates.\u0023\u003Dz2J4l3QUGwZHE), new Point(coordinates.\u0023\u003Dz6aJoeqoqAzym, coordinates.\u0023\u003DzWp13vlQiZCJc)).Contains(point);
   }
 
@@ -248,7 +248,7 @@ internal class RulerAnnotation : AnnotationBase
   }
 
   private void PlaceAnnotationImpl(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coord)
+    AnnotationCoordinates coord)
   {
     this.UpdateData();
     double length = coord.\u0023\u003DzS2_K6sVvd5IY;
@@ -280,7 +280,7 @@ internal class RulerAnnotation : AnnotationBase
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<RulerAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       this.\u0023\u003Dz_iIh83yfe01U().PlaceAnnotationImpl(_param1);
     }

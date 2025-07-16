@@ -31,12 +31,12 @@ internal sealed class IndexRange  :
 
   private void \u0023\u003DzWzUaFxw\u003D(int _param1, int _param2)
   {
-    ((INotifyPropertyChanged) this).PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003Dz15moWio\u003D);
+    ((INotifyPropertyChanged) this).PropertyChanged += new PropertyChangedEventHandler(this.OnPropertyChanged);
     this.\u0023\u003DzeLxWL8r3I02c = (double) _param1;
     this.\u0023\u003Dz8pG_zbXA5b87 = (double) _param2;
   }
 
-  private void \u0023\u003Dz15moWio\u003D(object _param1, PropertyChangedEventArgs _param2)
+  private void OnPropertyChanged(object _param1, PropertyChangedEventArgs _param2)
   {
     if (_param2.PropertyName != "Min" && _param2.PropertyName != "Max")
       return;

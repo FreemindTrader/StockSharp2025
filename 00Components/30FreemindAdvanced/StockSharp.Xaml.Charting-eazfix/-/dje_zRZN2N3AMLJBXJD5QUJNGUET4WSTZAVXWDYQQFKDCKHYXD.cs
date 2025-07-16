@@ -10,21 +10,21 @@ using System.Diagnostics;
 using System.Windows;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd : 
   ChartModifierBase
 {
   
-  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
+  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (XyDirection), typeof (dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd), new PropertyMetadata((object) XyDirection.XYDirection));
   
   private double \u0023\u003DzgTKlgLAfrwWL;
 
-  public dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd XyDirection
+  public XyDirection XyDirection
   {
     get
     {
-      return (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd) this.GetValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw);
+      return (XyDirection) this.GetValue(dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7XC4_ejd.\u0023\u003DzcN3lc2NJhvnw);
     }
     set
     {
@@ -44,9 +44,9 @@ internal abstract class dje_zRZN2N3AMLJBXJD5QUJNGUET4WSTZAVXWDYQQFKDCKHYXDHP8L7X
 
   protected virtual void \u0023\u003DzIjNc90j5mMD8(Point _param1, double _param2, double _param3)
   {
-    if (this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection || this.XyDirection == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
+    if (this.XyDirection == XyDirection.YDirection || this.XyDirection == XyDirection.XYDirection)
       this.\u0023\u003DzoI7ONAZ_gOY2(this.GrowFactor * _param3, _param1, this.YAxes, "Growing YRange: {0}");
-    if (this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection && this.XyDirection != dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection)
+    if (this.XyDirection != XyDirection.XDirection && this.XyDirection != XyDirection.XYDirection)
       return;
     this.\u0023\u003DzoI7ONAZ_gOY2(this.GrowFactor * _param2, _param1, this.XAxes, "Growing XRange: {0}");
   }

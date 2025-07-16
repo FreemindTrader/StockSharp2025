@@ -165,6 +165,20 @@
 		</Resource>
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="Ecng\Xaml\Charting\ChartModifiers\" />
+		<Folder Include="Ecng\Xaml\Charting\Common\" />
+		<Folder Include="Ecng\Xaml\Charting\Licensing\" />
+		<Folder Include="Ecng\Xaml\Charting\Model\" />
+		<Folder Include="Ecng\Xaml\Charting\Utility\" />
+		<Folder Include="Ecng\Xaml\Charting\Threading\" />
+		<Folder Include="Ecng\Xaml\Charting\Themes\" />
+		<Folder Include="Ecng\Xaml\Charting\StrategyManger\" />
+		<Folder Include="Ecng\Xaml\Charting\Services\" />
+		<Folder Include="Ecng\Xaml\Charting\Rendering\" />
+		<Folder Include="Ecng\Xaml\Charting\Properties\" />
+		<Folder Include="Ecng\Xaml\Charting\Numerics\" />
+		<Folder Include="Ecng\Xaml\Charting\Visuals\Evnts\" />
+		<Folder Include="Converter\" />
 		<Folder Include="Properties\" />
 		<Folder Include="themes\" />
 	</ItemGroup>

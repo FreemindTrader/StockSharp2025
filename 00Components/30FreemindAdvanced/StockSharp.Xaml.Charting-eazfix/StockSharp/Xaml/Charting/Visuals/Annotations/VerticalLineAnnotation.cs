@@ -40,7 +40,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   }
 
   private void ApplyOrientation(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label)
+    AnnotationLabel label)
   {
     if (this.LabelsOrientation == Orientation.Horizontal)
     {
@@ -71,7 +71,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   }
 
   protected override void Attach(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label)
+    AnnotationLabel label)
   {
     base.Attach(label);
     if (this.IsHidden)
@@ -90,7 +90,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   }
 
   protected override void ApplyPlacement(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label,
+    AnnotationLabel label,
     LabelPlacement placement)
   {
     bool flag1 = placement.\u0023\u003DzEiJTKKs\u003D();
@@ -132,7 +132,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   protected override Cursor GetSelectedCursor() => Cursors.SizeWE;
 
   protected override (double fixedHOffset, double fixedVOffset) MoveAnnotationTo(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     double horizOffset,
     double vertOffset)
   {
@@ -212,7 +212,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
   {
     if (!(d is VerticalLineAnnotation verticalLineAnnotation))
       return;
-    foreach (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd annotationLabel in (Collection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) verticalLineAnnotation.AnnotationLabels)
+    foreach (AnnotationLabel annotationLabel in (Collection<AnnotationLabel>) verticalLineAnnotation.AnnotationLabels)
       verticalLineAnnotation.ApplyOrientation(annotationLabel);
     verticalLineAnnotation.MeasureRefresh();
   }
@@ -227,7 +227,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<VerticalLineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
       double num1 = 0.0;
@@ -271,7 +271,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       Point[] pointArray = (Point[]) null;
       switch (this.\u0023\u003Dz_iIh83yfe01U().VerticalAlignment)
@@ -300,7 +300,7 @@ internal class VerticalLineAnnotation : LineAnnotationWithLabelsBase
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       bool flag = false;

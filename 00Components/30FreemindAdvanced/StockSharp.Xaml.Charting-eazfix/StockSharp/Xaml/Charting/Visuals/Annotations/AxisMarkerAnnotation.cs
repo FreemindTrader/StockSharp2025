@@ -24,7 +24,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   public AxisMarkerAnnotation()
   {
     this.DefaultStyleKey = (object) typeof (AxisMarkerAnnotation);
-    this.AnnotationCanvas = \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.YAxis;
+    this.AnnotationCanvas = AnnotationCanvas.YAxis;
   }
 
   public string FormattedValue
@@ -55,7 +55,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   {
     get
     {
-      return this.AnnotationCanvas != \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.YAxis ? this.XAxis : this.YAxis;
+      return this.AnnotationCanvas != AnnotationCanvas.YAxis ? this.XAxis : this.YAxis;
     }
   }
 
@@ -76,7 +76,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
 
   protected override void OnAxisAlignmentChanged(
     IAxis axis,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment)
+    AxisAlignment oldAlignment)
   {
     base.OnAxisAlignmentChanged(axis, oldAlignment);
     Cursor selectedCursor = this.GetSelectedCursor();
@@ -88,14 +88,14 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator)
   {
     base.Update(xCoordinateCalculator, yCoordinateCalculator);
-    if (!(this.Axis is dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd axis))
+    if (!(this.Axis is AxisBase axis))
       return;
     this.AxisInfo = axis.\u0023\u003DzjuB\u0024Pa8\u003D((IComparable) this.GetValue(this.GetBaseProperty()));
   }
 
   private DependencyProperty GetBaseProperty()
   {
-    return this.AnnotationCanvas != \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.XAxis ? AnnotationBase.Y1Property : AnnotationBase.X1Property;
+    return this.AnnotationCanvas != AnnotationCanvas.XAxis ? AnnotationBase.Y1Property : AnnotationBase.X1Property;
   }
 
   protected override Cursor GetSelectedCursor()
@@ -107,7 +107,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     IComparable dataValue,
     double canvasMeasurement,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc,
-    dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd direction)
+    XyDirection direction)
   {
     return base.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction) - coordCalc.\u0023\u003DzV1bNkSgej_yk();
   }
@@ -128,7 +128,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
   private static void PlaceMarker(
     IAxis axis,
     AxisMarkerAnnotation axisMarker,
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     coordinates = axisMarker.GetAnchorAnnotationCoordinates(coordinates);
     Point point = new Point(coordinates.\u0023\u003DzS2_K6sVvd5IY, coordinates.\u0023\u003Dz2J4l3QUGwZHE);
@@ -137,25 +137,25 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       return;
     if (axis.IsHorizontalAxis)
     {
-      DependencyProperty dependencyProperty = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Bottom ? dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzZpWLYz8\u003D : dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzasJeVgQ\u003D;
+      DependencyProperty dependencyProperty = axis.get_AxisAlignment() == AxisAlignment.Bottom ? AxisCanvas.\u0023\u003DzZpWLYz8\u003D : AxisCanvas.\u0023\u003DzasJeVgQ\u003D;
       axisMarker.SetValue(dependencyProperty, (object) 0.0);
-      dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.SetLeft((UIElement) axisMarker, point.X);
+      AxisCanvas.SetLeft((UIElement) axisMarker, point.X);
     }
     else
     {
-      DependencyProperty dependencyProperty = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Right ? dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DztX3bWaM\u003D : dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzQLHMxl4\u003D;
+      DependencyProperty dependencyProperty = axis.get_AxisAlignment() == AxisAlignment.Right ? AxisCanvas.\u0023\u003DztX3bWaM\u003D : AxisCanvas.\u0023\u003DzQLHMxl4\u003D;
       axisMarker.SetValue(dependencyProperty, (object) 0.0);
-      dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.SetTop((UIElement) axisMarker, point.Y);
+      AxisCanvas.SetTop((UIElement) axisMarker, point.Y);
     }
   }
 
   private static void ClearAxisMarkerPlacement(FrameworkElement axisLabel)
   {
-    axisLabel.SetValue(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DztX3bWaM\u003D, (object) double.NaN);
-    axisLabel.SetValue(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzQLHMxl4\u003D, (object) double.NaN);
-    axisLabel.SetValue(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzHEgPKfijwe68, (object) double.NaN);
-    axisLabel.SetValue(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzZpWLYz8\u003D, (object) double.NaN);
-    axisLabel.SetValue(dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.\u0023\u003DzasJeVgQ\u003D, (object) double.NaN);
+    axisLabel.SetValue(AxisCanvas.\u0023\u003DztX3bWaM\u003D, (object) double.NaN);
+    axisLabel.SetValue(AxisCanvas.\u0023\u003DzQLHMxl4\u003D, (object) double.NaN);
+    axisLabel.SetValue(AxisCanvas.\u0023\u003DzHEgPKfijwe68, (object) double.NaN);
+    axisLabel.SetValue(AxisCanvas.\u0023\u003DzZpWLYz8\u003D, (object) double.NaN);
+    axisLabel.SetValue(AxisCanvas.\u0023\u003DzasJeVgQ\u003D, (object) double.NaN);
   }
 
   private static double CalculateNewPosition(
@@ -179,13 +179,13 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<AxisMarkerAnnotation>(_param1)
   {
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return AxisMarkerAnnotation.\u0023\u003Dz38BC6oc3_RZWxnXw6Xnz7zE\u003D.\u0023\u003Dz2j7EMwL\u0024YzHt(_param1, this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     private static Point[] \u0023\u003Dz2j7EMwL\u0024YzHt(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param0,
+      AnnotationCoordinates _param0,
       AxisMarkerAnnotation _param1)
     {
       _param0 = _param1.GetAnchorAnnotationCoordinates(_param0);
@@ -193,7 +193,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       IAxis axis = _param1.Axis;
       if (axis == null)
         return Array.Empty<Point>();
-      \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D modifierSurface = _param1.ModifierSurface;
+      IChartModifierSurface modifierSurface = _param1.ModifierSurface;
       if (axis.IsHorizontalAxis)
       {
         double width = _param1.DesiredSize.Width;
@@ -218,13 +218,13 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       AxisMarkerAnnotation.PlaceMarker(this.\u0023\u003Dz_iIh83yfe01U().Axis, this.\u0023\u003Dz_iIh83yfe01U(), _param1);
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
@@ -244,7 +244,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     protected override void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
@@ -270,15 +270,15 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
         return;
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis.\u0023\u003DzFrVmckt\u0024NpG6())
       {
         AxisMarkerAnnotation.ClearAxisMarkerPlacement((FrameworkElement) this.\u0023\u003Dz_iIh83yfe01U());
-        dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.SetCenterLeft((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003DzS2_K6sVvd5IY);
-        dje_zW53QLLBXPN8WXR6G6DUDNUP6W4AXHHF8QUECZ77TXG2K5CA_ejd.SetBottom((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), 0.0);
+        AxisCanvas.SetCenterLeft((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), _param1.\u0023\u003DzS2_K6sVvd5IY);
+        AxisCanvas.SetBottom((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), 0.0);
       }
       else
       {
@@ -288,7 +288,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
@@ -310,13 +310,13 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis == null)
         return Array.Empty<Point>();
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis.\u0023\u003DzFrVmckt\u0024NpG6())
       {
-        \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
+        AnnotationCoordinates nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
         return new Point[1]
         {
           new Point(nnpojF4sCpkA8pp0g.\u0023\u003DzS2_K6sVvd5IY, nnpojF4sCpkA8pp0g.\u0023\u003Dz2J4l3QUGwZHE)
@@ -328,22 +328,22 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     private static Point[] \u0023\u003Dz2j7EMwL\u0024YzHt(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param0,
+      AnnotationCoordinates _param0,
       AxisMarkerAnnotation _param1)
     {
       _param1.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
       IAxis axis = _param1.Axis;
-      \u0023\u003DzeOTgfMmJN9ezcFvs39Ju8q\u0024wkROgPo2o_c9nq8U\u003D modifierSurface = _param1.ModifierSurface;
+      IChartModifierSurface modifierSurface = _param1.ModifierSurface;
       if (axis.IsHorizontalAxis)
       {
         double num1 = _param0.\u0023\u003DzS2_K6sVvd5IY + _param1.DesiredSize.Width / 2.0;
-        double num2 = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top ? axis.ActualHeight : 0.0;
+        double num2 = axis.get_AxisAlignment() == AxisAlignment.Top ? axis.ActualHeight : 0.0;
         return new Point[1]
         {
           axis.TranslatePoint(new Point(num1, num2), (IHitTestable) modifierSurface)
         };
       }
-      double num3 = axis.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Left ? axis.ActualWidth : 0.0;
+      double num3 = axis.get_AxisAlignment() == AxisAlignment.Left ? axis.ActualWidth : 0.0;
       double num4 = _param0.\u0023\u003Dz2J4l3QUGwZHE + _param1.DesiredSize.Height / 2.0;
       return new Point[1]
       {
@@ -352,7 +352,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     protected override Tuple<Point, Point> \u0023\u003DzQDA5x2uuH9m3(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       double _param2,
       double _param3)
     {
@@ -362,8 +362,8 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
       return new Tuple<Point, Point>(point, point);
     }
 
-    protected override \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D \u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+    protected override AnnotationCoordinates \u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(
+      AnnotationCoordinates _param1)
     {
       if (this.\u0023\u003Dz_iIh83yfe01U().Axis.\u0023\u003DzFrVmckt\u0024NpG6())
         _param1.\u0023\u003Dz2J4l3QUGwZHE = _param1.\u0023\u003DzWp13vlQiZCJc = this.\u0023\u003DzYklHyyiv14LN;
@@ -371,7 +371,7 @@ internal class AxisMarkerAnnotation : AnchorPointAnnotation
     }
 
     public override void \u0023\u003DzuPL3ELSPZybJ(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       double _param2,
       double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)

@@ -17,7 +17,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal abstract class ChartModifierBase : 
   ApiElementBase,
@@ -28,13 +28,13 @@ internal abstract class ChartModifierBase :
   IReceiveMouseEvents 
 {
   
-  public static readonly DependencyProperty \u0023\u003DzkiTDvI_Iu6kL = DependencyProperty.Register(nameof (ReceiveHandledEvents), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) false));
+  public static readonly DependencyProperty ReceiveHandledEventsProperty = DependencyProperty.Register(nameof (ReceiveHandledEvents), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003DzSLZmDSF5TsAu = DependencyProperty.RegisterAttached(nameof (IsEnabled), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartModifierBase.\u0023\u003DzMFI5J30qjapk)));
+  public static readonly DependencyProperty IsEnabledProperty = DependencyProperty.RegisterAttached(nameof (IsEnabled), typeof (bool), typeof (ChartModifierBase), new PropertyMetadata((object) true, new PropertyChangedCallback(ChartModifierBase.\u0023\u003DzMFI5J30qjapk)));
   
-  public static readonly DependencyProperty \u0023\u003DzdfZ5r82v29C_ = DependencyProperty.Register(nameof (ExecuteOn), typeof (ExecuteOn), typeof (ChartModifierBase), new PropertyMetadata((object) ExecuteOn.MouseLeftButton));
+  public static readonly DependencyProperty ExecuteOnProperty = DependencyProperty.Register(nameof (ExecuteOn), typeof (ExecuteOn), typeof (ChartModifierBase), new PropertyMetadata((object) ExecuteOn.MouseLeftButton));
   
-  public static readonly DependencyProperty \u0023\u003DzuabWX4LvY\u0024qS = DependencyProperty.Register(nameof (MouseModifier), typeof (MouseModifier), typeof (ChartModifierBase), new PropertyMetadata((object) MouseModifier.None));
+  public static readonly DependencyProperty MouseModifierProperty = DependencyProperty.Register(nameof (MouseModifier), typeof (MouseModifier), typeof (ChartModifierBase), new PropertyMetadata((object) MouseModifier.None));
   
   private ISciChartSurface \u0023\u003Dz3jEW\u0024apUUb0ZDjNsDQ\u003D\u003D;
   
@@ -86,11 +86,11 @@ internal abstract class ChartModifierBase :
   {
     get
     {
-      return (bool) this.GetValue(ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu);
+      return (bool) this.GetValue(ChartModifierBase.IsEnabledProperty);
     }
     set
     {
-      this.SetValue(ChartModifierBase.\u0023\u003DzSLZmDSF5TsAu, (object) value);
+      this.SetValue(ChartModifierBase.IsEnabledProperty, (object) value);
     }
   }
 
@@ -98,11 +98,11 @@ internal abstract class ChartModifierBase :
   {
     get
     {
-      return (ExecuteOn) this.GetValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_);
+      return (ExecuteOn) this.GetValue(ChartModifierBase.ExecuteOnProperty);
     }
     set
     {
-      this.SetValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) value);
+      this.SetValue(ChartModifierBase.ExecuteOnProperty, (object) value);
     }
   }
 
@@ -110,11 +110,11 @@ internal abstract class ChartModifierBase :
   {
     get
     {
-      return (MouseModifier) this.GetValue(ChartModifierBase.\u0023\u003DzuabWX4LvY\u0024qS);
+      return (MouseModifier) this.GetValue(ChartModifierBase.MouseModifierProperty);
     }
     set
     {
-      this.SetValue(ChartModifierBase.\u0023\u003DzuabWX4LvY\u0024qS, (object) value);
+      this.SetValue(ChartModifierBase.MouseModifierProperty, (object) value);
     }
   }
 
@@ -122,11 +122,11 @@ internal abstract class ChartModifierBase :
   {
     get
     {
-      return (bool) this.GetValue(ChartModifierBase.\u0023\u003DzkiTDvI_Iu6kL);
+      return (bool) this.GetValue(ChartModifierBase.ReceiveHandledEventsProperty);
     }
     set
     {
-      this.SetValue(ChartModifierBase.\u0023\u003DzkiTDvI_Iu6kL, (object) value);
+      this.SetValue(ChartModifierBase.ReceiveHandledEventsProperty, (object) value);
     }
   }
 
@@ -153,7 +153,7 @@ internal abstract class ChartModifierBase :
   {
   }
 
-  public virtual void \u0023\u003DzsXEfcKpqchyX(
+  public virtual void OnModifierMouseDown(
     ModifierMouseArgs _param1)
   {
     this.\u0023\u003DzgBeNpsZ8d\u0024uI = _param1.MouseButtons() == (MouseButtons) 1;
@@ -202,15 +202,15 @@ internal abstract class ChartModifierBase :
       if (this._serviceContainer != null)
       {
         if (this.\u0023\u003DzNJAhntg15gAM != null)
-          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().RemovePropertyEvents<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzNJAhntg15gAM);
+          this._serviceContainer.GetService<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().RemovePropertyEvents<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzNJAhntg15gAM);
         if (this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D != null)
-          this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().RemovePropertyEvents<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D);
+          this._serviceContainer.GetService<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().RemovePropertyEvents<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D);
       }
       this._serviceContainer = value;
       if (this._serviceContainer == null)
         return;
-      this.\u0023\u003DzNJAhntg15gAM = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().AddPropertyEvents<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(new Action<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzY1JcdEJm3Ryc), true);
-      this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D = this._serviceContainer.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().AddPropertyEvents<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(new Action<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzuzARK4K7AoZvKMXK2g\u003D\u003D), true);
+      this.\u0023\u003DzNJAhntg15gAM = this._serviceContainer.GetService<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().AddPropertyEvents<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(new Action<\u0023\u003Dzd9zvJtNUzU9n1Kn1rKAcAUdzyaQmAfsVzCpDWg08TVWt>(this.\u0023\u003DzY1JcdEJm3Ryc), true);
+      this.\u0023\u003DzYGSxD7qIfp16puTVlw\u003D\u003D = this._serviceContainer.GetService<\u0023\u003DzcuCMTJZbjUCQob9tosVG\u0024u_IIwaqHR9EOQ\u003D\u003D>().AddPropertyEvents<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(new Action<\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA_jomZOYO0q8PJEzIbNOUHHd4U5XZg\u003D\u003D>(this.\u0023\u003DzuzARK4K7AoZvKMXK2g\u003D\u003D), true);
     }
   }
 
@@ -232,7 +232,7 @@ internal abstract class ChartModifierBase :
         z3jEwApUub0ZdjNsDq2.MouseEnter += new MouseEventHandler(this.\u0023\u003Dz1RWF4qCdwtL7iWLRBKs1AWljs19M);
         z3jEwApUub0ZdjNsDq2.SelectedRenderableSeries.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003Dz0tZIEaEc845fryC8ai9UjY4Y\u00240TT);
       }
-      this.\u0023\u003Dz15moWio\u003D(nameof (ParentSurface));
+      this.OnPropertyChanged(nameof (ParentSurface));
     }
   }
 
@@ -246,7 +246,7 @@ internal abstract class ChartModifierBase :
     this.\u0023\u003Dz2PHh1f4YKRbtmShpA\u0024Kym4A1qOUa = _param1;
   }
 
-  public Point \u0023\u003DzOaYrn8YGTeR7(
+  public Point GetPointRelativeTo(
     Point _param1,
     IHitTestable _param2)
   {
@@ -332,7 +332,7 @@ internal abstract class ChartModifierBase :
   {
   }
 
-  protected bool \u0023\u003DzK46Xo3q3PoYX(
+  protected bool MatchesExecuteOn(
     MouseButtons _param1,
     ExecuteOn _param2)
   {

@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class FastMountainRenderableSeries : 
   BaseMountainRenderableSeries

@@ -13,7 +13,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd : 
   \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D

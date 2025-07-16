@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal enum dje_z9BFR77JLJVFHSFBQ8JKKJKYW2MP748H2UZ_ejd
 {

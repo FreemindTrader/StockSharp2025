@@ -1,9 +1,9 @@
-<l1lil:ChartCandleElementPicker xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+<l1lil:ChartCandleElementPicker xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                 xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
                                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                                 xmlns:l1i11ii111="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
                                 xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
-                                xmlns:l1ilillll1="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
+                                xmlns:l1ilills="clr-namespace:DevExpress.Xpf.Core;assembly=DevExpress.Xpf.Core.v22.1"
                                 ShowInTaskbar="False" SizeToContent="WidthAndHeight"
                                 Title="{l1i11ii111:Localization SelectCandles}">
   <Grid Margin="5">
@@ -12,8 +12,8 @@
       <RowDefinition Height="5"/>
       <RowDefinition Height="Auto"/>
     </Grid.RowDefinitions>
-    <lll:ComboBoxEditEx l1llili1:Name="ElementsCtrl" MinWidth="250"/>
-    <l1ilillll1:SimpleButton l1llili1:Name="Ok" Grid.Row="2" Width="100" IsDefault="true" IsEnabled="False"
+    <lll:ComboBoxEditEx x:Name="ElementsCtrl" MinWidth="250"/>
+    <l1ilills:SimpleButton x:Name="Ok" Grid.Row="2" Width="100" IsDefault="true" IsEnabled="False"
                              lll:XamlHelper.DialogResult="True" Content="{l1i11ii111:Localization OK}"/>
   </Grid>
 </l1lil:ChartCandleElementPicker>

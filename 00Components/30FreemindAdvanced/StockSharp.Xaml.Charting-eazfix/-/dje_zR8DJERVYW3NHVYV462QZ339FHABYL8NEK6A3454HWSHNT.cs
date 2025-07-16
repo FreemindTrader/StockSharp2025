@@ -14,7 +14,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable enable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd
 {
@@ -37,13 +37,13 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ6
     DependencyPropertyChangedEventArgs _param1)
   {
     dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
-    u5Svx6MhYdSkOpoa.\u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D = (dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd) _param0;
+    u5Svx6MhYdSkOpoa.\u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D = (UltrachartOverview) _param0;
     u5Svx6MhYdSkOpoa.\u0023\u003Dzki8twMk\u003D = (ItemsControl) _param1.NewValue;
     u5Svx6MhYdSkOpoa.\u0023\u003Dzki8twMk\u003D.Loaded += new RoutedEventHandler(u5Svx6MhYdSkOpoa.\u0023\u003Dz0xfb5\u0024uSJ4miTqDRzdsXVbY\u003D);
   }
 
   private static void \u0023\u003DzgCXh\u0024GcoJtLk(
-    dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd _param0,
+    UltrachartOverview _param0,
     ItemsControl _param1)
   {
     PropertyInfo propertyInfo = ((IEnumerable<PropertyInfo>) ((object) _param1).GetType().GetProperties(BindingFlags.Instance | BindingFlags.NonPublic)).FirstOrDefault<PropertyInfo>(dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<PropertyInfo, bool>(dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ63928QBSEB5EHR8WMD3J_ejd.SomeClass34343383.SomeMethond0343.\u0023\u003DznZr9nJa8\u00246cBEfGURUqenkw\u003D)));
@@ -61,7 +61,7 @@ internal sealed class dje_zR8DJERVYW3NHVYV462QZ339FHABYL8NEK6A3454HWSHNTFSSZXTJ6
   private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
   {
     public ItemsControl \u0023\u003Dzki8twMk\u003D;
-    public dje_zT5LWWY2ES5P78EADY3KXQ8WJ3YWFSQBLBPMNGFPE3EC5F696R6DA4LBDRF4Q_ejd \u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D;
+    public UltrachartOverview \u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D;
     public NotifyCollectionChangedEventHandler \u0023\u003DzuAeZVTPDgzYE;
 
     internal void \u0023\u003Dz0xfb5\u0024uSJ4miTqDRzdsXVbY\u003D(

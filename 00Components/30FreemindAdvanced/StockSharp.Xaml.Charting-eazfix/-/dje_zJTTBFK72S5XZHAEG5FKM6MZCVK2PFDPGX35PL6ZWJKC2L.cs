@@ -9,7 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd : 
   ChartModifierBase
@@ -19,7 +19,7 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
   
   private Point \u0023\u003DzeDqneUWYjgVB;
   
-  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
+  public static readonly DependencyProperty \u0023\u003DzcN3lc2NJhvnw = DependencyProperty.Register(nameof (XyDirection), typeof (XyDirection), typeof (dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd), new PropertyMetadata((object) XyDirection.XYDirection));
   
   public static readonly DependencyProperty \u0023\u003DzxJ9WluMHlZpH = DependencyProperty.Register(nameof (ClipModeX), typeof (ClipMode), typeof (dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd), new PropertyMetadata((object) ClipMode.StretchAtExtents));
   
@@ -29,7 +29,7 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
 
   protected dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd()
   {
-    this.SetCurrentValue(ChartModifierBase.\u0023\u003DzdfZ5r82v29C_, (object) ExecuteOn.MouseLeftButton);
+    this.SetCurrentValue(ChartModifierBase.ExecuteOnProperty, (object) ExecuteOn.MouseLeftButton);
     this.\u0023\u003Dz3aV1iPcGyuhxDI4kpQEmSBg\u003D(false);
   }
 
@@ -45,11 +45,11 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
     }
   }
 
-  public dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd XyDirection
+  public XyDirection XyDirection
   {
     get
     {
-      return (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd) this.GetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzcN3lc2NJhvnw);
+      return (XyDirection) this.GetValue(dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LYF5_ejd.\u0023\u003DzcN3lc2NJhvnw);
     }
     set
     {
@@ -75,13 +75,13 @@ internal abstract class dje_zJTTBFK72S5XZHAEG5FKM6MZCVK2PFDPGX35PL6ZWJKC2L5HE3LY
     protected set => this.\u0023\u003DzFKYv1dU45rO8JWT1sg\u003D\u003D = value;
   }
 
-  public override void \u0023\u003DzsXEfcKpqchyX(
+  public override void OnModifierMouseDown(
     ModifierMouseArgs _param1)
   {
-    if (this.IsDragging || !this.\u0023\u003DzK46Xo3q3PoYX(_param1.MouseButtons(), this.ExecuteOn) || this.XAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>() || !_param1.IsMaster() || !this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB()).Contains(_param1.MousePoint()))
+    if (this.IsDragging || !this.MatchesExecuteOn(_param1.MouseButtons(), this.ExecuteOn) || this.XAxes.\u0023\u003DzCCMM80zDpO6N<IAxis>() || !_param1.IsMaster() || !this.ModifierSurface.GetBoundsRelativeTo((IHitTestable) this.\u0023\u003Dzwc4Gzka23TGB()).Contains(_param1.MousePoint()))
       return;
     Point point1 = _param1.MousePoint();
-    base.\u0023\u003DzsXEfcKpqchyX(_param1);
+    base.OnModifierMouseDown(_param1);
     _param1.Handled(true);
     this.\u0023\u003DzNqFH9\u00244\u003D(Cursors.Hand);
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D ao0kEjY6wcnQ6fBfXg = \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D();

@@ -85,9 +85,9 @@ internal class TextAnnotation : AnchorPointAnnotation
     this._inputTextArea.IsEnabled = false;
   }
 
-  private \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D CoerceValues()
+  private AnnotationCoordinates CoerceValues()
   {
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+    AnnotationCoordinates coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
     double z6aJoeqoqAzym = coordinates.\u0023\u003Dz6aJoeqoqAzym;
     double zWp13vlQiZcJc = coordinates.\u0023\u003DzWp13vlQiZCJc;
     Point point = new Point(coordinates.\u0023\u003DzS2_K6sVvd5IY, coordinates.\u0023\u003Dz2J4l3QUGwZHE);
@@ -106,7 +106,7 @@ internal class TextAnnotation : AnchorPointAnnotation
 
   public override bool IsPointWithinBounds(Point point)
   {
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D nnpojF4sCpkA8pp0g = this.CoerceValues();
+    AnnotationCoordinates nnpojF4sCpkA8pp0g = this.CoerceValues();
     return new Rect(new Point(nnpojF4sCpkA8pp0g.\u0023\u003DzS2_K6sVvd5IY, nnpojF4sCpkA8pp0g.\u0023\u003Dz2J4l3QUGwZHE), new Point(nnpojF4sCpkA8pp0g.\u0023\u003Dz6aJoeqoqAzym, nnpojF4sCpkA8pp0g.\u0023\u003DzWp13vlQiZCJc)).Contains(point);
   }
 
@@ -119,7 +119,7 @@ internal class TextAnnotation : AnchorPointAnnotation
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<TextAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       _param1 = this.\u0023\u003Dz_iIh83yfe01U().GetAnchorAnnotationCoordinates(_param1);
       double zS2K6sVvd5Iy = _param1.\u0023\u003DzS2_K6sVvd5IY;
@@ -143,7 +143,7 @@ internal class TextAnnotation : AnchorPointAnnotation
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       _param1 = this.\u0023\u003Dz_iIh83yfe01U().GetAnchorAnnotationCoordinates(_param1);
       if (double.IsNaN(_param1.\u0023\u003Dz6aJoeqoqAzym) || double.IsNaN(_param1.\u0023\u003DzWp13vlQiZCJc))
@@ -155,7 +155,7 @@ internal class TextAnnotation : AnchorPointAnnotation
     }
 
     protected override void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
@@ -196,17 +196,17 @@ internal class TextAnnotation : AnchorPointAnnotation
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<TextAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
+      AnnotationCoordinates nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
       Canvas.SetLeft((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), nnpojF4sCpkA8pp0g.\u0023\u003DzS2_K6sVvd5IY - this.\u0023\u003Dz_iIh83yfe01U().HorizontalOffset);
       Canvas.SetTop((UIElement) this.\u0023\u003Dz_iIh83yfe01U(), nnpojF4sCpkA8pp0g.\u0023\u003Dz2J4l3QUGwZHE - this.\u0023\u003Dz_iIh83yfe01U().VerticalOffset);
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
+      AnnotationCoordinates nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
       return new Point[1]
       {
         new Point(nnpojF4sCpkA8pp0g.\u0023\u003DzS2_K6sVvd5IY - this.\u0023\u003Dz_iIh83yfe01U().HorizontalOffset, nnpojF4sCpkA8pp0g.\u0023\u003Dz2J4l3QUGwZHE - this.\u0023\u003Dz_iIh83yfe01U().VerticalOffset)
@@ -214,14 +214,14 @@ internal class TextAnnotation : AnchorPointAnnotation
     }
 
     protected override bool \u0023\u003DzRe9EEbV7q4ey(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       Size _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.Width || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.Height ? 1 : 0)) == 0;
     }
 
     protected override void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       Point _param2,
       Point _param3,
       Size _param4)

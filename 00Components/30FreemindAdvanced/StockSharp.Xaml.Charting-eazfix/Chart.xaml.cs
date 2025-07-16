@@ -20,7 +20,7 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class Chart : 
   UserControl,

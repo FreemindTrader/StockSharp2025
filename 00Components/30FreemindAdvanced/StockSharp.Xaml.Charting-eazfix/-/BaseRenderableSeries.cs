@@ -16,7 +16,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 [System.Windows.Markup.ContentProperty("PointMarker")]
 internal abstract class BaseRenderableSeries : 
@@ -79,7 +79,7 @@ internal abstract class BaseRenderableSeries :
   
   private IAxis \u0023\u003DzOul945NkfDSk;
   
-  private IServiceContainer \u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
+  private IServiceContainer _serviceContainer;
   
   private int \u0023\u003DzA2CWfbM2026Lwfy5zat1jBh7qfwb5Ci\u0024\u0024A\u003D\u003D;
   
@@ -122,17 +122,17 @@ internal abstract class BaseRenderableSeries :
 
   [CompilerGenerated]
   [SpecialName]
-  public IServiceContainer \u0023\u003Dzu\u0024P3XgkcE7BC()
+  public IServiceContainer Services()
   {
-    return this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D;
+    return this._serviceContainer;
   }
 
   [CompilerGenerated]
   [SpecialName]
-  public void \u0023\u003DzrEoWi5uPS0Yz(
+  public void Services(
     IServiceContainer _param1)
   {
-    this.\u0023\u003Dzi7jlO4\u0024jhl_0oUowGg\u003D\u003D = _param1;
+    this._serviceContainer = _param1;
   }
 
   public double ZeroLineY
@@ -399,8 +399,8 @@ internal abstract class BaseRenderableSeries :
     {
       IAxis dynWmoFzgH4RlWB0lB = _param0;
       _param0 = _param1;
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz2KWD3lC7hdm1(dynWmoFzgH4RlWB0lB);
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003Dz2KWD3lC7hdm1(_param0);
+      AxisBase.\u0023\u003Dz2KWD3lC7hdm1(dynWmoFzgH4RlWB0lB);
+      AxisBase.\u0023\u003Dz2KWD3lC7hdm1(_param0);
     }
     return _param0;
   }
@@ -434,9 +434,9 @@ internal abstract class BaseRenderableSeries :
 
   public virtual void \u0023\u003Dzmf\u0024vfR3OJQU9()
   {
-    if (this.\u0023\u003Dzu\u0024P3XgkcE7BC() == null)
+    if (this.Services() == null)
       return;
-    this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<ISciChartSurface>().InvalidateElement();
+    this.Services().GetService<ISciChartSurface>().InvalidateElement();
   }
 
   protected virtual void \u0023\u003Dzd3otebQ_ivQa()
@@ -893,16 +893,16 @@ internal abstract class BaseRenderableSeries :
     switch (_param1)
     {
       case (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 0:
-        flag = dje_zWLGYTTT5DUFM55EFRPBBAZMZXPXLXXK6XF479D6U5R7JHZFQWRSVK3MYA6SQ_ejd.GetIncludeSeries((DependencyObject) this);
+        flag = RolloverModifier.GetIncludeSeries((DependencyObject) this);
         break;
       case (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 1:
-        flag = dje_zN29EKU2DQXHTNKQ8X5JHMLEL2WYLBY8R3YWYA24CH8SZCCZ_ejd.GetIncludeSeries((DependencyObject) this);
+        flag = CursorModifier.GetIncludeSeries((DependencyObject) this);
         break;
       case (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 2:
-        flag = dje_zHR7NJDL95STD4SWVG26WR43JGQLXY8NHRZ7Q26829WGD2MZ_ejd.GetIncludeSeries((DependencyObject) this);
+        flag = TooltipModifier.GetIncludeSeries((DependencyObject) this);
         break;
       case (\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 3:
-        flag = dje_zW53QLLBXPN8WXR6G6DUDNUP6W2EZEB9SXV35FLJUAR85WHV6RM45V_ejd.GetIncludeSeries((DependencyObject) this);
+        flag = VerticalSliceModifier.GetIncludeSeries((DependencyObject) this);
         break;
     }
     return flag;
@@ -970,12 +970,12 @@ internal abstract class BaseRenderableSeries :
 
   protected internal ISciChartSurface \u0023\u003DzoXzc48\u0024TAMxP()
   {
-    return this.\u0023\u003Dzu\u0024P3XgkcE7BC() == null ? (ISciChartSurface) null : this.\u0023\u003Dzu\u0024P3XgkcE7BC().\u0023\u003Dz2VqWonc\u003D<ISciChartSurface>();
+    return this.Services() == null ? (ISciChartSurface) null : this.Services().GetService<ISciChartSurface>();
   }
 
   protected virtual void \u0023\u003Dz2KqJz\u00247bE2vLRKrYBA\u003D\u003D()
   {
-    this.\u0023\u003Dzt_Bagxe7PabOJPRSBlq7e1s\u003D = (FrameworkElement) dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd.\u0023\u003DzBv1vB\u0024LEKSF4(this.RolloverMarkerTemplate, (object) this);
+    this.\u0023\u003Dzt_Bagxe7PabOJPRSBlq7e1s\u003D = (FrameworkElement) PointMarker.\u0023\u003DzBv1vB\u0024LEKSF4(this.RolloverMarkerTemplate, (object) this);
   }
 
   public XmlSchema GetSchema() => (XmlSchema) null;
@@ -1085,13 +1085,13 @@ internal abstract class BaseRenderableSeries :
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT hw1ki13vvK4WxOgoljkHyInT = (\u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT) null;
     if (_param1 != null)
     {
-      dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd yaN2QmsjaghfxEjd = dje_zCMGSMRQ8TGDWNMJYDMRJLTYQP85CBX8PUB3PLKHRY3KMMPUZVUKR4ZNETUTJMMVVAS_ejd.\u0023\u003DzBv1vB\u0024LEKSF4(_param1, _param2).\u0023\u003DzD_LPZWnSn3m1<dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd>();
+      BasePointMarker yaN2QmsjaghfxEjd = PointMarker.\u0023\u003DzBv1vB\u0024LEKSF4(_param1, _param2).\u0023\u003DzD_LPZWnSn3m1<BasePointMarker>();
       if (yaN2QmsjaghfxEjd == null)
       {
         \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D ri9x59UqhE4ZyklbLq = new \u0023\u003DzAuXtmwo_UFdzWVVSiImlM\u002467cQAcrK8Ri9x59UQHE4_ZyklbLQ\u003D\u003D();
         ri9x59UqhE4ZyklbLq.PointMarkerTemplate = _param1;
         ri9x59UqhE4ZyklbLq.DataContext = _param2;
-        yaN2QmsjaghfxEjd = (dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd) ri9x59UqhE4ZyklbLq;
+        yaN2QmsjaghfxEjd = (BasePointMarker) ri9x59UqhE4ZyklbLq;
       }
       hw1ki13vvK4WxOgoljkHyInT = (\u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT) yaN2QmsjaghfxEjd;
     }
@@ -1103,7 +1103,7 @@ internal abstract class BaseRenderableSeries :
     DependencyPropertyChangedEventArgs _param1)
   {
     BaseRenderableSeries ls4St64EqzfbaEjd = (BaseRenderableSeries) _param0;
-    if (_param1.NewValue is dje_z89FJ3UY6BDUNEYRAHTXB4XHX3L65Z9F7D67T9VT5YAN2QMSJAGHFX_ejd newValue)
+    if (_param1.NewValue is BasePointMarker newValue)
     {
       newValue.DataContext = (object) ls4St64EqzfbaEjd;
       if (newValue.Parent is BaseRenderableSeries parent)

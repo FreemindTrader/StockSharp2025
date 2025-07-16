@@ -166,6 +166,9 @@
         </Resource>
     </ItemGroup>
     <ItemGroup>
+        <Folder Include="Ecng\Xaml\Charting\Converter\" />
+        <Folder Include="Ecng\Xaml\Charting\Utility\Mouse\" />
+        <Folder Include="Ecng\Xaml\Charting\Visuals\Events\" />
         <Folder Include="Properties\" />
         <Folder Include="themes\" />
     </ItemGroup>

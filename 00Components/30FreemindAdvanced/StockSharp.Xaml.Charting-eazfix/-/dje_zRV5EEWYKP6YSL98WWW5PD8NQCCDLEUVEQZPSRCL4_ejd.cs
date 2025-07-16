@@ -12,7 +12,7 @@ using System.Windows;
 using System.Windows.Controls;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal abstract class dje_zRV5EEWYKP6YSL98WWW5PD8NQCCDLEUVEQZPSRCL4_ejd : 
   ContentControl,

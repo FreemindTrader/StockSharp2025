@@ -14,7 +14,7 @@ namespace fx.Definitions
         public RangeEx< double > CounterTrendMovedRange;
         public bool NonOverlapped;
 
-        public HHLL HHLL1;
+        public HHLL HHs;
         public HHLL HHLL2;
 
 
@@ -35,7 +35,7 @@ namespace fx.Definitions
                                     int counterTrendEndTime,
                                     RangeEx<double> trendMovedRange,
                                     RangeEx<double> counterTrendMovedRange,
-                                    HHLL hhll1,
+                                    HHLL hhs,
                                     HHLL hhll2
                                 )
         {
@@ -47,7 +47,7 @@ namespace fx.Definitions
             TrendMoveRange         = trendMovedRange;
             CounterTrendMovedRange = counterTrendMovedRange;
             NonOverlapped          = false;
-            HHLL1                  = hhll1;
+            HHs                  = hhs;
             HHLL2                  = hhll2;
         }
 
@@ -355,7 +355,7 @@ namespace fx.Definitions
                 }
 
                 hashCode = ( hashCode * 53 ) ^ NonOverlapped.GetHashCode();
-                hashCode = ( hashCode * 53 ) ^ EqualityComparer<HHLL>.Default.GetHashCode( HHLL1 );
+                hashCode = ( hashCode * 53 ) ^ EqualityComparer<HHLL>.Default.GetHashCode( HHs );
                 hashCode = ( hashCode * 53 ) ^ EqualityComparer<HHLL>.Default.GetHashCode( HHLL2 );
                 hashCode = ( hashCode * 53 ) ^ RetracementPercentage.GetHashCode();
                 return hashCode;

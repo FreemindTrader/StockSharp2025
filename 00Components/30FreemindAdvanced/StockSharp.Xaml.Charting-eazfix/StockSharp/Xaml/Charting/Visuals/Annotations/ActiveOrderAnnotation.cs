@@ -241,7 +241,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     double num4 = canvas.ActualHeight * num3 * this._scrollTimer.Interval.TotalMilliseconds / 1000.0;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates1 = this.GetCoordinates(canvas, xCalc, yCalc);
+    AnnotationCoordinates coordinates1 = this.GetCoordinates(canvas, xCalc, yCalc);
     if (this.YDragStep > 0.0)
     {
       double coord = num1 > 0 ? canvas.ActualHeight - 1.0 + num4 : -num4;
@@ -255,7 +255,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     {
       this._totalScrollOffset += num4;
       yaxis.\u0023\u003DzquLnA5Y\u003D(num4, ClipMode.None);
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates2 = this.GetCoordinates(canvas, this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+      AnnotationCoordinates coordinates2 = this.GetCoordinates(canvas, this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
       Point point = new Point();
       point.X = coordinates2.\u0023\u003DzS2_K6sVvd5IY;
       point.Y = num1 > 0 ? canvas.ActualHeight - 1.0 : 0.0;
@@ -270,7 +270,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
   }
 
   protected override (double fixedHOffset, double fixedVOffset) MoveAnnotationTo(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     double horizOffset,
     double vertOffset)
   {
@@ -281,8 +281,8 @@ internal class ActiveOrderAnnotation : AnnotationBase
     double coord = coordinates.\u0023\u003Dz2J4l3QUGwZHE + vertOffset;
     if (this.IsDraggingByUser && !this.IsCoordinateValid(coord, canvas.ActualHeight))
     {
-      if (yaxis.get_AutoRange() == dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Always)
-        ((DependencyObject) yaxis).SetCurrentValue(dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd.\u0023\u003DzKm2_RDWENeyO, (object) dje_zYGCX6K4J87LQZ9RSX9K3KJFMDBT5XCBUXSB93QCTSXU83FDJRBTJV_ejd.Once);
+      if (yaxis.get_AutoRange() == AutoRange.Always)
+        ((DependencyObject) yaxis).SetCurrentValue(AxisBase.\u0023\u003DzKm2_RDWENeyO, (object) AutoRange.Once);
       if (!this._isOutOfBounds)
       {
         this._isOutOfBounds = true;
@@ -492,7 +492,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<ActiveOrderAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.\u0023\u003Dz_iIh83yfe01U().GetCanvas(this.\u0023\u003Dz_iIh83yfe01U().AnnotationCanvas);
       double z2J4l3QuGwZhe = _param1.\u0023\u003Dz2J4l3QUGwZHE;
@@ -515,7 +515,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return new Point[1]
       {
@@ -524,7 +524,7 @@ internal class ActiveOrderAnnotation : AnnotationBase
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       return (_param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 || _param1.\u0023\u003Dz2J4l3QUGwZHE > _param2.ActualHeight ? 1 : (_param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth ? 1 : 0)) == 0;

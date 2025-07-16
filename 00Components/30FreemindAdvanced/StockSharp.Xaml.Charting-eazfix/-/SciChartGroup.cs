@@ -18,7 +18,7 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 [TemplatePart(Name = "PART_MainGrid")]
 [TemplatePart(Name = "PART_TabbedContent")]
@@ -187,7 +187,7 @@ internal sealed class SciChartGroup :
       return;
     if (!_param1.\u0023\u003DzR8SPjvFW2FAx())
     {
-      this.RemovePropertyEvents(_param1.PaneElement as dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd);
+      this.RemovePropertyEvents(_param1.PaneElement as UltrachartGroupPane);
       this.\u0023\u003Dzg0gWX4E\u003D.Remove(_param1);
       if (_param1.IsTabbed)
         this.\u0023\u003DzyMYzZrp0NM6I(_param1);
@@ -215,7 +215,7 @@ internal sealed class SciChartGroup :
       return;
     removeItem.Content = (object) null;
     this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D.Items.Remove((object) removeItem);
-    this.\u0023\u003Dz15moWio\u003D("HasTabbedItems");
+    this.OnPropertyChanged("HasTabbedItems");
   }
 
   private void \u0023\u003Dzx3xNOxupdPEo(
@@ -268,11 +268,11 @@ internal sealed class SciChartGroup :
     frameworkElement.DataContext = (object) _param1;
     brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D.ChangeOrientationCommand = (ICommand) new DelegateCommand(new Action(brscvmjvQldNzzKp4.\u0023\u003DzJeMUirilpUA5DzmAPQ\u003D\u003D));
     brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D.ClosePaneCommand = _param1.ClosePaneCommand;
-    dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd bu556QhykV4MlT6VEjd1 = new dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd();
+    UltrachartGroupPane bu556QhykV4MlT6VEjd1 = new UltrachartGroupPane();
     bu556QhykV4MlT6VEjd1.Content = (object) frameworkElement;
     bu556QhykV4MlT6VEjd1.DataContext = (object) brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D;
     bu556QhykV4MlT6VEjd1.Style = this.ItemContainerStyle;
-    dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd bu556QhykV4MlT6VEjd2 = bu556QhykV4MlT6VEjd1;
+    UltrachartGroupPane bu556QhykV4MlT6VEjd2 = bu556QhykV4MlT6VEjd1;
     brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D.PaneElement = (FrameworkElement) bu556QhykV4MlT6VEjd2;
     this.AddPropertyEvents(bu556QhykV4MlT6VEjd2);
     this.\u0023\u003DzSp5oAkvK2sET(brscvmjvQldNzzKp4.\u0023\u003DzKveAMLo\u003D);
@@ -289,7 +289,7 @@ internal sealed class SciChartGroup :
   private void \u0023\u003Dz2u\u0024j6ogJlrTF(
     \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
   {
-    this.\u0023\u003DztUBna_qcuT2H(_param1.PaneElement as dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd);
+    this.\u0023\u003DztUBna_qcuT2H(_param1.PaneElement as UltrachartGroupPane);
     _param1.IsTabbed = true;
     TabItem tabItem = new TabItem();
     tabItem.Header = (object) _param1.PaneViewModel.Title;
@@ -298,7 +298,7 @@ internal sealed class SciChartGroup :
     TabItem newItem = tabItem;
     this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D.Items.Add((object) newItem);
     this.\u0023\u003DzsjTC4Q1Ojm2hhyVspw\u003D\u003D.SelectedItem = (object) newItem;
-    this.\u0023\u003Dz15moWio\u003D("HasTabbedItems");
+    this.OnPropertyChanged("HasTabbedItems");
   }
 
   public void \u0023\u003DzjSk6Jvc\u003D(
@@ -329,14 +329,14 @@ internal sealed class SciChartGroup :
   }
 
   private void AddPropertyEvents(
-    dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd _param1)
+    UltrachartGroupPane _param1)
   {
     _param1.\u0023\u003Dz0hN6sXzm\u0024hNI(new EventHandler<DragDeltaEventArgs>(this.\u0023\u003DztNo2m0eYh0OW));
     _param1.\u0023\u003Dzl15u7RiCXQ5Z\u0024LD2pw\u003D\u003D(new EventHandler<DragCompletedEventArgs>(this.\u0023\u003Dzfjq0gu2RlSgRNsm3XA\u003D\u003D));
   }
 
   private void RemovePropertyEvents(
-    dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd _param1)
+    UltrachartGroupPane _param1)
   {
     _param1.\u0023\u003DztDKfd8Um6eoX(new EventHandler<DragDeltaEventArgs>(this.\u0023\u003DztNo2m0eYh0OW));
     _param1.\u0023\u003DzDSAYx73Sokd65zKLxQ\u003D\u003D(new EventHandler<DragCompletedEventArgs>(this.\u0023\u003Dzfjq0gu2RlSgRNsm3XA\u003D\u003D));
@@ -362,7 +362,7 @@ internal sealed class SciChartGroup :
       this.\u0023\u003Dzerqhc5X832JL = this.\u0023\u003DzzXyefThIl4Ak.PaneElement.ActualHeight;
       this.\u0023\u003DzVi6cjZRqUP3j = this.\u0023\u003Dzerqhc5X832JL + this.\u0023\u003DzBq2lcgtVrsr_.PaneElement.ActualHeight;
       this.\u0023\u003Dzu9zFAJU\u00246XS3lPkdqi1iVcE\u003D = Mouse.GetPosition((IInputElement) this.\u0023\u003DzBq2lcgtVrsr_.PaneElement.GetWindow()).Y;
-      this.\u0023\u003Dzi1vdbCxOaDS\u0024 = ((dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd) this.\u0023\u003DzzXyefThIl4Ak.PaneElement).\u0023\u003DzZcUjmkQY5ewz();
+      this.\u0023\u003Dzi1vdbCxOaDS\u0024 = ((UltrachartGroupPane) this.\u0023\u003DzzXyefThIl4Ak.PaneElement).\u0023\u003DzZcUjmkQY5ewz();
     }
     this.\u0023\u003DzrSLETkwHQoH38mnTuw\u003D\u003D = Mouse.GetPosition((IInputElement) this.\u0023\u003DzBq2lcgtVrsr_.PaneElement.GetWindow()).Y - this.\u0023\u003Dzu9zFAJU\u00246XS3lPkdqi1iVcE\u003D;
     dn1ebi1vn37xdjks.\u0023\u003DzniV7Bbk\u003D = Math.Min(this.\u0023\u003DzVi6cjZRqUP3j - this.\u0023\u003Dzi1vdbCxOaDS\u0024, Math.Max(this.\u0023\u003Dzi1vdbCxOaDS\u0024, this.\u0023\u003Dzerqhc5X832JL - this.\u0023\u003DzrSLETkwHQoH38mnTuw\u003D\u003D));
@@ -392,7 +392,7 @@ internal sealed class SciChartGroup :
   }
 
   private void \u0023\u003DztUBna_qcuT2H(
-    dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd _param1)
+    UltrachartGroupPane _param1)
   {
     SciChartGroup.\u0023\u003DzGiH0nC4VY3PyrCtmlxi83_s\u003D c4Vy3PyrCtmlxi83S = new SciChartGroup.\u0023\u003DzGiH0nC4VY3PyrCtmlxi83_s\u003D();
     c4Vy3PyrCtmlxi83S.\u0023\u003Dz7Ewohnc\u003D = _param1;
@@ -406,7 +406,7 @@ internal sealed class SciChartGroup :
   {
     SciChartGroup.\u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D dltbvS8bNvezolg25s = new SciChartGroup.\u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D();
     dltbvS8bNvezolg25s.\u0023\u003Dz1BK01YA\u003D = _param2;
-    dltbvS8bNvezolg25s.\u0023\u003Dz7Ewohnc\u003D = _param1 as dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd;
+    dltbvS8bNvezolg25s.\u0023\u003Dz7Ewohnc\u003D = _param1 as UltrachartGroupPane;
     if (dltbvS8bNvezolg25s.\u0023\u003Dz7Ewohnc\u003D == null)
       return;
     Size size = dltbvS8bNvezolg25s.\u0023\u003Dz1BK01YA\u003D.NewSize;
@@ -496,16 +496,16 @@ internal sealed class SciChartGroup :
     if (!SciChartGroup.\u0023\u003DzenwCc\u0024sVGsge.TryGetValue(new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D(_param0), out u8drb9mTwzt9HClWjy.\u0023\u003DzUI\u0024BHyM\u003D))
       return;
     \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D[] array = SciChartGroup.\u0023\u003DzenwCc\u0024sVGsge.Where<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>>(new Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, bool>(u8drb9mTwzt9HClWjy.\u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D)).Select<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>(SciChartGroup.SomeClass34343383.\u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D = new Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzlOy_tGKXOJafqoVpt8CsMEw\u003D))).ToArray<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>();
-    u8drb9mTwzt9HClWjy.\u0023\u003DzvoLRTxfFcUlmr5yAvA\u003D\u003D = SciChartGroup.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Left);
-    u8drb9mTwzt9HClWjy.\u0023\u003Dz\u0024cOTYk2PrdR148H8pg\u003D\u003D = SciChartGroup.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Right);
+    u8drb9mTwzt9HClWjy.\u0023\u003DzvoLRTxfFcUlmr5yAvA\u003D\u003D = SciChartGroup.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, AxisAlignment.Left);
+    u8drb9mTwzt9HClWjy.\u0023\u003Dz\u0024cOTYk2PrdR148H8pg\u003D\u003D = SciChartGroup.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, AxisAlignment.Right);
     ((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array).Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface>(SciChartGroup.SomeClass34343383.\u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D = new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzBwZlGEvrpkB3v5dyRDot93k\u003D))).OfType<SciChartSurface>().\u0023\u003Dz30RSSSygABj_<SciChartSurface>(new Action<SciChartSurface>(u8drb9mTwzt9HClWjy.\u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D));
   }
 
   private static double \u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D(
     IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D> _param0,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param1)
+    AxisAlignment _param1)
   {
-    IEnumerable<IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>> source = _param0.Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>>(new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>>(new SciChartGroup.\u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D()
+    IEnumerable<IEnumerable<AxisBase>> source = _param0.Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, IEnumerable<AxisBase>>(new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, IEnumerable<AxisBase>>(new SciChartGroup.\u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D()
     {
       \u0023\u003Dz0V69zGwQUFh\u0024 = _param1
     }.\u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c));
@@ -516,7 +516,7 @@ internal sealed class SciChartGroup :
     }
     else
     {
-      IEnumerable<double> doubles = source.Select<IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>, double>(SciChartGroup.SomeClass34343383.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D = new Func<IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>, double>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzdSRIGGNb5qdTUBnzqEYOgPwXxk0F)));
+      IEnumerable<double> doubles = source.Select<IEnumerable<AxisBase>, double>(SciChartGroup.SomeClass34343383.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D = new Func<IEnumerable<AxisBase>, double>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzdSRIGGNb5qdTUBnzqEYOgPwXxk0F)));
       nullable = doubles != null ? doubles.\u0023\u003DzAAksTMXIKE7d<double>() : new double?();
     }
     return nullable.GetValueOrDefault();
@@ -546,7 +546,7 @@ internal sealed class SciChartGroup :
 
   public event PropertyChangedEventHandler PropertyChanged;
 
-  private void \u0023\u003Dz15moWio\u003D(string _param1)
+  private void OnPropertyChanged(string _param1)
   {
     PropertyChangedEventHandler zUapFgog = this.\u0023\u003DzUApFgog\u003D;
     if (zUapFgog == null)
@@ -575,8 +575,8 @@ internal sealed class SciChartGroup :
     public static Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool> \u0023\u003DzhuuTFZMBN_l8idp5rg\u003D\u003D;
     public static Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D> \u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D;
     public static Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface> \u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D;
-    public static Func<double, dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double> \u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D;
-    public static Func<IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>, double> \u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D;
+    public static Func<double, AxisBase, double> \u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D;
+    public static Func<IEnumerable<AxisBase>, double> \u0023\u003Dz5BIbVz_RRJEtvtlEuw\u003D\u003D;
     public static Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool> \u0023\u003DzR3CtsoKLWrgHqpJ9ew\u003D\u003D;
     public static Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool> \u0023\u003DzF5CGbn39w_V5rzPhsg\u003D\u003D;
 
@@ -617,14 +617,14 @@ internal sealed class SciChartGroup :
     }
 
     internal double \u0023\u003DzdSRIGGNb5qdTUBnzqEYOgPwXxk0F(
-      IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd> _param1)
+      IEnumerable<AxisBase> _param1)
     {
-      return _param1 == null ? 0.0 : _param1.Aggregate<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double>(0.0, SciChartGroup.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<double, dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, double>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzfNlexRlqK5oJ_TYB1GyrgH8eZql\u0024)));
+      return _param1 == null ? 0.0 : _param1.Aggregate<AxisBase, double>(0.0, SciChartGroup.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D ?? (SciChartGroup.SomeClass34343383.\u0023\u003DzQo1YXL32S5xfzg99Jw\u003D\u003D = new Func<double, AxisBase, double>(SciChartGroup.SomeClass34343383.SomeMethond0343.\u0023\u003DzfNlexRlqK5oJ_TYB1GyrgH8eZql\u0024)));
     }
 
     internal double \u0023\u003DzfNlexRlqK5oJ_TYB1GyrgH8eZql\u0024(
       double _param1,
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd _param2)
+      AxisBase _param2)
     {
       return _param1 + _param2.ActualWidth;
     }
@@ -655,7 +655,7 @@ internal sealed class SciChartGroup :
 
   private sealed class \u0023\u003DzGiH0nC4VY3PyrCtmlxi83_s\u003D
   {
-    public dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd \u0023\u003Dz7Ewohnc\u003D;
+    public UltrachartGroupPane \u0023\u003Dz7Ewohnc\u003D;
 
     internal bool \u0023\u003Dzqz62RfBr9ikUsn4dPlrHnzM\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)
@@ -699,7 +699,7 @@ internal sealed class SciChartGroup :
 
   private sealed class \u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D
   {
-    public dje_zP5SLCZMPLKRDSVWETEPWLMZPT8MF3HJBEG329BU556QHYKV4MLT6V_ejd \u0023\u003Dz7Ewohnc\u003D;
+    public UltrachartGroupPane \u0023\u003Dz7Ewohnc\u003D;
     public SizeChangedEventArgs \u0023\u003Dz1BK01YA\u003D;
 
     internal bool \u0023\u003DzINTieIN7VYUpT8jxmoHH8es\u003D(
@@ -728,18 +728,18 @@ internal sealed class SciChartGroup :
 
   private sealed class \u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D
   {
-    public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz0V69zGwQUFh\u0024;
-    public Func<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, bool> \u0023\u003DzoD2HtVGZvKav;
+    public AxisAlignment \u0023\u003Dz0V69zGwQUFh\u0024;
+    public Func<AxisBase, bool> \u0023\u003DzoD2HtVGZvKav;
 
-    internal IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
+    internal IEnumerable<AxisBase> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       AxisCollection yaxes = _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D().get_YAxes();
-      return yaxes == null ? (IEnumerable<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>) null : yaxes.OfType<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>().Where<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
+      return yaxes == null ? (IEnumerable<AxisBase>) null : yaxes.OfType<AxisBase>().Where<AxisBase>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<AxisBase, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
     }
 
     internal bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(
-      dje_zZVEBX5NJ2AQTDXQ94AUTAJRYAXNKUH4NHECKVD8AXF9ZGQ7NBH9KS_ejd _param1)
+      AxisBase _param1)
     {
       return _param1.AxisAlignment == this.\u0023\u003Dz0V69zGwQUFh\u0024;
     }

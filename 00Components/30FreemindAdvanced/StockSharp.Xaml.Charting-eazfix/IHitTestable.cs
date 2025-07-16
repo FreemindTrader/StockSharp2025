@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace SciChart.Core.Framework;
+namespace StockSharp.Charting.Visuals;
 
 //
 // Summary:
@@ -38,7 +38,7 @@ public interface IHitTestable
     //
     // Returns:
     //     The transformed Point
-    Point TranslatePoint( Point point, IHitTestable relativeTo );
+    Point TranslatePoint(Point point, IHitTestable relativeTo);
 
     //
     // Summary:
@@ -51,7 +51,7 @@ public interface IHitTestable
     //
     // Returns:
     //     true if the Point is within the bounds
-    bool IsPointWithinBounds( Point point );
+    bool IsPointWithinBounds(Point point);
 
     //
     // Summary:
@@ -60,5 +60,5 @@ public interface IHitTestable
     //
     // Parameters:
     //   relativeTo:
-    Rect GetBoundsRelativeTo( IHitTestable relativeTo );
+    Rect GetBoundsRelativeTo(IHitTestable relativeTo);
 }

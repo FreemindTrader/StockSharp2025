@@ -10,7 +10,7 @@ using System.Globalization;
 using System.Windows.Data;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class addEllipsisConv : IValueConverter
 {

@@ -45,7 +45,7 @@ internal class BindableObject : INotifyPropertyChanged
         while ( changedEventHandler != comparand );
     }
 
-    protected void \u0023\u003Dz15moWio\u003D(string _param1)
+    protected void OnPropertyChanged(string _param1)
   {
     this.RaisePropertyChangedEvent(new PropertyChangedEventArgs( _param1));
   }
@@ -55,7 +55,7 @@ protected virtual bool \u0023\u003DzwGPLgl8\u003D<T>(ref T _param1, T _param2, s
     if (EqualityComparer<T>.Default.Equals(_param1, _param2))
       return false;
 _param1 = _param2;
-this.\u0023\u003Dz15moWio\u003D(_param3);
+this.OnPropertyChanged(_param3);
 return true;
   }
 
@@ -75,7 +75,7 @@ this.RaisePropertyChangedEvent( new PropertyChangedEventArgs( "Nothing" ) );
     this.\u0023\u003DzHVseJMBq5be1( _param1 );
 }
 
-protected void \u0023\u003Dz15moWio\u003D(string _param1, object _param2, object _param3)
+protected void OnPropertyChanged(string _param1, object _param2, object _param3)
   {
     this.RaisePropertyChangedEvent((PropertyChangedEventArgs) new \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D(_param1, _param2, _param3));
   }

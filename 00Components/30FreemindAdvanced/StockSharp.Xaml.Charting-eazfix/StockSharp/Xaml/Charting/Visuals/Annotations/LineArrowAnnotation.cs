@@ -50,7 +50,7 @@ internal class LineArrowAnnotation : LineAnnotationBase
       return false;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates = this.GetCoordinates(canvas, xCalc, yCalc);
+    AnnotationCoordinates coordinates = this.GetCoordinates(canvas, xCalc, yCalc);
     Point pt1 = new Point(coordinates.\u0023\u003DzS2_K6sVvd5IY, coordinates.\u0023\u003Dz2J4l3QUGwZHE);
     Point pt2 = new Point(coordinates.\u0023\u003Dz6aJoeqoqAzym, coordinates.\u0023\u003DzWp13vlQiZCJc);
     Point[] headPoints = this.GetHeadPoints(pt1, pt2, this.HeadLength, this.HeadWidth);
@@ -73,7 +73,7 @@ internal class LineArrowAnnotation : LineAnnotationBase
   }
 
   private static void PlaceLineArrowAnnotation(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     LineArrowAnnotation annotation)
   {
     annotation._line.X1 = coordinates.\u0023\u003DzS2_K6sVvd5IY;
@@ -95,7 +95,7 @@ internal class LineArrowAnnotation : LineAnnotationBase
   }
 
   private static Point[] CalculateBasePoints(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     return new Point[2]
     {
@@ -114,13 +114,13 @@ internal class LineArrowAnnotation : LineAnnotationBase
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<LineArrowAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       LineArrowAnnotation.PlaceLineArrowAnnotation(_param1, this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return LineArrowAnnotation.CalculateBasePoints(_param1);
     }
@@ -130,13 +130,13 @@ internal class LineArrowAnnotation : LineAnnotationBase
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<LineArrowAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       LineArrowAnnotation.PlaceLineArrowAnnotation(this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1), this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return LineArrowAnnotation.CalculateBasePoints(this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1));
     }

@@ -5,6 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 using \u002D;
+using SciChart.Charting.Visuals.Annotations;
 using StockSharp.Charting;
 using System;
 using System.Collections.Generic;
@@ -22,313 +23,333 @@ using System.Xml.Serialization;
 #nullable disable
 namespace StockSharp.Xaml.Charting.Visuals.Annotations;
 
-internal abstract class AnnotationBase : 
+internal abstract class AnnotationBase :
   ApiElementBase,
   IXmlSerializable,
   ISuspendable,
-  \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV,
+  IPublishMouseEvents,
   IAnnotation,
   IHitTestable
 {
-  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(AnnotationBase.OnXAxisIdChanged)));
-  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(AnnotationBase.OnYAxisIdChanged)));
-  public static readonly DependencyProperty X1Property = DependencyProperty.Register(nameof (X1), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty Y1Property = DependencyProperty.Register(nameof (Y1), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty X2Property = DependencyProperty.Register(nameof (X2), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty Y2Property = DependencyProperty.Register(nameof (Y2), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
-  public static readonly DependencyProperty AnnotationCanvasProperty = DependencyProperty.Register(nameof (AnnotationCanvas), typeof (\u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D), typeof (AnnotationBase), new PropertyMetadata((object) \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.AboveChart, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
-  public static readonly DependencyProperty CoordinateModeProperty = DependencyProperty.Register(nameof (CoordinateMode), typeof (AnnotationCoordinateMode), typeof (AnnotationBase), new PropertyMetadata((object) AnnotationCoordinateMode.Absolute, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
-  public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register(nameof (IsSelected), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsSelectedChanged)));
-  public static readonly DependencyProperty IsEditableProperty = DependencyProperty.Register(nameof (IsEditable), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsEditableChanged)));
-  public static readonly DependencyProperty IsHiddenProperty = DependencyProperty.Register(nameof (IsHidden), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsHiddenChanged)));
-  public static readonly DependencyProperty DragDirectionsProperty = DependencyProperty.Register(nameof (DragDirections), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (AnnotationBase), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
-  public static readonly DependencyProperty ResizeDirectionsProperty = DependencyProperty.Register(nameof (ResizeDirections), typeof (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd), typeof (AnnotationBase), new PropertyMetadata((object) dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XYDirection));
-  public static readonly DependencyProperty CanEditTextProperty = DependencyProperty.Register(nameof (CanEditText), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false));
-  public static readonly DependencyProperty ResizingGripsStyleProperty = DependencyProperty.Register(nameof (ResizingGripsStyle), typeof (Style), typeof (AnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
-  private bool _isAttached;
-  private bool _templateApplied;
-  protected FrameworkElement AnnotationRoot;
-  private bool _isDragging;
-  private bool _isPrimaryDrag;
-  private Point _startPoint;
-  private bool _isMouseLeftDown;
-  private bool _isResizable;
-  private DateTime _mouseLeftDownTimestamp;
-  private \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _startDragAnnotationCoordinates;
-  private IList<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x> _myAdorners = (IList<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>) new List<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>();
-  private IAxis _yAxis;
-  private IAxis _xAxis;
-  private bool _isLoaded;
+    public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(AnnotationBase.OnXAxisIdChanged)));
+    public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (AnnotationBase), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(AnnotationBase.OnYAxisIdChanged)));
+    public static readonly DependencyProperty X1Property = DependencyProperty.Register(nameof (X1), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+    public static readonly DependencyProperty Y1Property = DependencyProperty.Register(nameof (Y1), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+    public static readonly DependencyProperty X2Property = DependencyProperty.Register(nameof (X2), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+    public static readonly DependencyProperty Y2Property = DependencyProperty.Register(nameof (Y2), typeof (IComparable), typeof (AnnotationBase), new PropertyMetadata((object) null, new PropertyChangedCallback(AnnotationBase.OnAnnotationPositionChanged)));
+    public static readonly DependencyProperty AnnotationCanvasProperty = DependencyProperty.Register(nameof (AnnotationCanvas), typeof (AnnotationCanvas), typeof (AnnotationBase), new PropertyMetadata((object) AnnotationCanvas.AboveChart, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
+    public static readonly DependencyProperty CoordinateModeProperty = DependencyProperty.Register(nameof (CoordinateMode), typeof (AnnotationCoordinateMode), typeof (AnnotationBase), new PropertyMetadata((object) AnnotationCoordinateMode.Absolute, new PropertyChangedCallback(AnnotationBase.OnRenderablePropertyChanged)));
+    public static readonly DependencyProperty IsSelectedProperty = DependencyProperty.Register(nameof (IsSelected), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsSelectedChanged)));
+    public static readonly DependencyProperty IsEditableProperty = DependencyProperty.Register(nameof (IsEditable), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsEditableChanged)));
+    public static readonly DependencyProperty IsHiddenProperty = DependencyProperty.Register(nameof (IsHidden), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false, new PropertyChangedCallback(AnnotationBase.OnIsHiddenChanged)));
+    public static readonly DependencyProperty DragDirectionsProperty = DependencyProperty.Register(nameof (DragDirections), typeof (XyDirection), typeof (AnnotationBase), new PropertyMetadata((object) XyDirection.XYDirection));
+    public static readonly DependencyProperty ResizeDirectionsProperty = DependencyProperty.Register(nameof (ResizeDirections), typeof (XyDirection), typeof (AnnotationBase), new PropertyMetadata((object) XyDirection.XYDirection));
+    public static readonly DependencyProperty CanEditTextProperty = DependencyProperty.Register(nameof (CanEditText), typeof (bool), typeof (AnnotationBase), new PropertyMetadata((object) false));
+    public static readonly DependencyProperty ResizingGripsStyleProperty = DependencyProperty.Register(nameof (ResizingGripsStyle), typeof (Style), typeof (AnnotationBase), new PropertyMetadata((PropertyChangedCallback) null));
+    private bool _isAttached;
+    private bool _templateApplied;
+    protected FrameworkElement AnnotationRoot;
+    private bool _isDragging;
+    private bool _isPrimaryDrag;
+    private Point _startPoint;
+    private bool _isMouseLeftDown;
+    private bool _isResizable;
+    private DateTime _mouseLeftDownTimestamp;
+    private AnnotationCoordinates _startDragAnnotationCoordinates;
+    private IList<IAnnotationAdorner> _myAdorners = (IList<IAnnotationAdorner>) new List<IAnnotationAdorner>();
+    private IAxis _yAxis;
+    private IAxis _xAxis;
+    private bool _isLoaded;
 
-  protected AnnotationBase()
-  {
-    this.DefaultStyleKey = (object) typeof (AnnotationBase);
-    this.IsResizable = true;
-  }
+    protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk GetCanvas(
+    AnnotationCanvas annotationCanvas )
+    {
+        if ( this.ParentSurface == null )
+            return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null;
+        switch ( annotationCanvas )
+        {
+            case AnnotationCanvas.AboveChart:
+                return this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+            case AnnotationCanvas.BelowChart:
+                return this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+            case AnnotationCanvas.YAxis:
+                return this.YAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.YAxis.ModifierAxisCanvas;
+            case AnnotationCanvas.XAxis:
+                return this.XAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.XAxis.ModifierAxisCanvas;
+            default:
+                throw new InvalidOperationException( $"Cannot get an annotation surface for AnnotationCanvas.{annotationCanvas}" );
+        }
+    }
 
-  protected Point DragStartPoint => this._startPoint;
+    protected AnnotationBase()
+    {
+        this.DefaultStyleKey = ( object ) typeof( AnnotationBase );
+        this.IsResizable = true;
+    }
 
-  event EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchDown
+    protected Point DragStartPoint => this._startPoint;
+
+    event EventHandler<TouchManipulationEventArgs> IPublishMouseEvents.StockSharp.Xaml.Charting.Utility.Mouse.IPublishMouseEvents.TouchDown
+    {
+        add => throw new NotImplementedException();
+        remove => throw new NotImplementedException();
+    }
+
+    event EventHandler<TouchManipulationEventArgs> IPublishMouseEvents.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchMove
   {
     add => throw new NotImplementedException();
     remove => throw new NotImplementedException();
   }
 
-  event EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchMove
+  event EventHandler<TouchManipulationEventArgs> IPublishMouseEvents.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchUp
   {
     add => throw new NotImplementedException();
-    remove => throw new NotImplementedException();
-  }
-
-  event EventHandler<\u0023\u003DzaDDeYuGlsOp51QXy5MWJZxERLr9hDQLdDJPw_pXdD1WK> \u0023\u003DzQ4iRj1YTApc8D349VbLPOXcxSYN1XwlnLQBsgQeCUZnV.StockSharp\u002EXaml\u002ECharting\u002EUtility\u002EMouse\u002EIPublishMouseEvents\u002ETouchUp
-  {
-    add => throw new NotImplementedException();
-    remove => throw new NotImplementedException();
+remove => throw new NotImplementedException();
   }
 
   public event EventHandler Selected;
 
-  public event EventHandler Unselected;
+public event EventHandler Unselected;
 
-  public event EventHandler<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D> DragStarted;
+public event EventHandler<EventArgs> DragStarted;
 
-  public event EventHandler<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D> DragEnded;
+public event EventHandler<EventArgs> DragEnded;
 
-  public event EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6HbbjLeMvfhhb2s2mR8\u003D> DragDelta;
+public event EventHandler<AnnotationDragDeltaEventArgs> DragDelta;
 
-  public event EventHandler IsHiddenChanged;
+public event EventHandler IsHiddenChanged;
 
-  public event MouseButtonEventHandler MouseMiddleButtonDown;
+public event MouseButtonEventHandler MouseMiddleButtonDown;
 
-  public event MouseButtonEventHandler MouseMiddleButtonUp;
+public event MouseButtonEventHandler MouseMiddleButtonUp;
 
-  private void PreviewMouseUpHandler(object sender, MouseButtonEventArgs e)
-  {
-    if (e.ChangedButton != MouseButton.Middle)
-      return;
+private void PreviewMouseUpHandler( object sender, MouseButtonEventArgs e )
+{
+    if ( e.ChangedButton != MouseButton.Middle )
+        return;
     MouseButtonEventHandler mouseMiddleButtonUp = this.MouseMiddleButtonUp;
-    if (mouseMiddleButtonUp == null)
-      return;
-    mouseMiddleButtonUp(sender, e);
-  }
+    if ( mouseMiddleButtonUp == null )
+        return;
+    mouseMiddleButtonUp( sender, e );
+}
 
-  private void PreviewMouseDownHandler(object sender, MouseButtonEventArgs e)
-  {
-    if (e.ChangedButton != MouseButton.Middle)
-      return;
+private void PreviewMouseDownHandler( object sender, MouseButtonEventArgs e )
+{
+    if ( e.ChangedButton != MouseButton.Middle )
+        return;
     MouseButtonEventHandler middleButtonDown = this.MouseMiddleButtonDown;
-    if (middleButtonDown == null)
-      return;
-    middleButtonDown(sender, e);
-  }
+    if ( middleButtonDown == null )
+        return;
+    middleButtonDown( sender, e );
+}
 
-  public Style ResizingGripsStyle
-  {
-    get => (Style) this.GetValue(AnnotationBase.ResizingGripsStyleProperty);
-    set => this.SetValue(AnnotationBase.ResizingGripsStyleProperty, (object) value);
-  }
+public Style ResizingGripsStyle
+{
+    get => ( Style ) this.GetValue( AnnotationBase.ResizingGripsStyleProperty );
+    set => this.SetValue( AnnotationBase.ResizingGripsStyleProperty, ( object ) value );
+}
 
-  public bool CanEditText
-  {
-    get => (bool) this.GetValue(AnnotationBase.CanEditTextProperty);
-    set => this.SetValue(AnnotationBase.CanEditTextProperty, (object) value);
-  }
+public bool CanEditText
+{
+    get => ( bool ) this.GetValue( AnnotationBase.CanEditTextProperty );
+    set => this.SetValue( AnnotationBase.CanEditTextProperty, ( object ) value );
+}
 
-  public bool IsResizable
-  {
+public bool IsResizable
+{
     get => this._isResizable;
     protected set
     {
-      this._isResizable = value;
-      this.\u0023\u003Dz15moWio\u003D(nameof (IsResizable));
+        this._isResizable = value;
+        this.OnPropertyChanged( nameof( IsResizable ) );
     }
-  }
+}
 
-  public string XAxisId
-  {
-    get => (string) this.GetValue(AnnotationBase.XAxisIdProperty);
-    set => this.SetValue(AnnotationBase.XAxisIdProperty, (object) value);
-  }
+public string XAxisId
+{
+    get => ( string ) this.GetValue( AnnotationBase.XAxisIdProperty );
+    set => this.SetValue( AnnotationBase.XAxisIdProperty, ( object ) value );
+}
 
-  public string YAxisId
-  {
-    get => (string) this.GetValue(AnnotationBase.YAxisIdProperty);
-    set => this.SetValue(AnnotationBase.YAxisIdProperty, (object) value);
-  }
+public string YAxisId
+{
+    get => ( string ) this.GetValue( AnnotationBase.YAxisIdProperty );
+    set => this.SetValue( AnnotationBase.YAxisIdProperty, ( object ) value );
+}
 
-  public dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd DragDirections
-  {
+public XyDirection DragDirections
+{
     get
     {
-      return (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd) this.GetValue(AnnotationBase.DragDirectionsProperty);
+        return ( XyDirection ) this.GetValue( AnnotationBase.DragDirectionsProperty );
     }
-    set => this.SetValue(AnnotationBase.DragDirectionsProperty, (object) value);
-  }
+    set => this.SetValue( AnnotationBase.DragDirectionsProperty, ( object ) value );
+}
 
-  public dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd ResizeDirections
-  {
+public XyDirection ResizeDirections
+{
     get
     {
-      return (dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd) this.GetValue(AnnotationBase.ResizeDirectionsProperty);
+        return ( XyDirection ) this.GetValue( AnnotationBase.ResizeDirectionsProperty );
     }
-    set => this.SetValue(AnnotationBase.ResizeDirectionsProperty, (object) value);
-  }
+    set => this.SetValue( AnnotationBase.ResizeDirectionsProperty, ( object ) value );
+}
 
-  public AnnotationCoordinateMode CoordinateMode
-  {
-    get => (AnnotationCoordinateMode) this.GetValue(AnnotationBase.CoordinateModeProperty);
-    set => this.SetValue(AnnotationBase.CoordinateModeProperty, (object) value);
-  }
+public AnnotationCoordinateMode CoordinateMode
+{
+    get => ( AnnotationCoordinateMode ) this.GetValue( AnnotationBase.CoordinateModeProperty );
+    set => this.SetValue( AnnotationBase.CoordinateModeProperty, ( object ) value );
+}
 
-  public \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D AnnotationCanvas
-  {
+public AnnotationCanvas AnnotationCanvas
+{
     get
     {
-      return (\u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D) this.GetValue(AnnotationBase.AnnotationCanvasProperty);
+        return ( AnnotationCanvas ) this.GetValue( AnnotationBase.AnnotationCanvasProperty );
     }
-    set => this.SetValue(AnnotationBase.AnnotationCanvasProperty, (object) value);
-  }
+    set => this.SetValue( AnnotationBase.AnnotationCanvasProperty, ( object ) value );
+}
 
-  public bool IsSelected
-  {
-    get => (bool) this.GetValue(AnnotationBase.IsSelectedProperty);
-    set => this.SetValue(AnnotationBase.IsSelectedProperty, (object) value);
-  }
+public bool IsSelected
+{
+    get => ( bool ) this.GetValue( AnnotationBase.IsSelectedProperty );
+    set => this.SetValue( AnnotationBase.IsSelectedProperty, ( object ) value );
+}
 
-  public bool IsEditable
-  {
-    get => (bool) this.GetValue(AnnotationBase.IsEditableProperty);
-    set => this.SetValue(AnnotationBase.IsEditableProperty, (object) value);
-  }
+public bool IsEditable
+{
+    get => ( bool ) this.GetValue( AnnotationBase.IsEditableProperty );
+    set => this.SetValue( AnnotationBase.IsEditableProperty, ( object ) value );
+}
 
-  public bool IsHidden
-  {
-    get => (bool) this.GetValue(AnnotationBase.IsHiddenProperty);
-    set => this.SetValue(AnnotationBase.IsHiddenProperty, (object) value);
-  }
+public bool IsHidden
+{
+    get => ( bool ) this.GetValue( AnnotationBase.IsHiddenProperty );
+    set => this.SetValue( AnnotationBase.IsHiddenProperty, ( object ) value );
+}
 
-  [TypeConverter(typeof (\u0023\u003DztorG3HTUDpMsfjPqFEEe9Ofk2uEDAGTcKLRwQVg\u003D))]
-  public IComparable X1
-  {
-    get => (IComparable) this.GetValue(AnnotationBase.X1Property);
-    set => this.SetValue(AnnotationBase.X1Property, (object) value);
-  }
+[TypeConverter( typeof( StringToAnnotationCoordinateConverter ) )]
+public IComparable X1
+{
+    get => ( IComparable ) this.GetValue( AnnotationBase.X1Property );
+    set => this.SetValue( AnnotationBase.X1Property, ( object ) value );
+}
 
-  [TypeConverter(typeof (\u0023\u003DztorG3HTUDpMsfjPqFEEe9Ofk2uEDAGTcKLRwQVg\u003D))]
-  public IComparable X2
-  {
-    get => (IComparable) this.GetValue(AnnotationBase.X2Property);
-    set => this.SetValue(AnnotationBase.X2Property, (object) value);
-  }
+[TypeConverter( typeof( StringToAnnotationCoordinateConverter ) )]
+public IComparable X2
+{
+    get => ( IComparable ) this.GetValue( AnnotationBase.X2Property );
+    set => this.SetValue( AnnotationBase.X2Property, ( object ) value );
+}
 
-  [TypeConverter(typeof (\u0023\u003DztorG3HTUDpMsfjPqFEEe9Ofk2uEDAGTcKLRwQVg\u003D))]
-  public IComparable Y1
-  {
-    get => (IComparable) this.GetValue(AnnotationBase.Y1Property);
-    set => this.SetValue(AnnotationBase.Y1Property, (object) value);
-  }
+[TypeConverter( typeof( StringToAnnotationCoordinateConverter ) )]
+public IComparable Y1
+{
+    get => ( IComparable ) this.GetValue( AnnotationBase.Y1Property );
+    set => this.SetValue( AnnotationBase.Y1Property, ( object ) value );
+}
 
-  [TypeConverter(typeof (\u0023\u003DztorG3HTUDpMsfjPqFEEe9Ofk2uEDAGTcKLRwQVg\u003D))]
-  public IComparable Y2
-  {
-    get => (IComparable) this.GetValue(AnnotationBase.Y2Property);
-    set => this.SetValue(AnnotationBase.Y2Property, (object) value);
-  }
+[TypeConverter( typeof( StringToAnnotationCoordinateConverter ) )]
+public IComparable Y2
+{
+    get => ( IComparable ) this.GetValue( AnnotationBase.Y2Property );
+    set => this.SetValue( AnnotationBase.Y2Property, ( object ) value );
+}
 
-  protected abstract Cursor GetSelectedCursor();
+protected abstract Cursor GetSelectedCursor();
 
-  protected virtual void OnDragStarted()
-  {
-  }
+protected virtual void OnDragStarted()
+{
+}
 
-  protected virtual void OnDragEnded()
-  {
-  }
+protected virtual void OnDragEnded()
+{
+}
 
-  protected virtual void OnDragDelta(double hOffset, double vOffset)
-  {
-  }
+protected virtual void OnDragDelta( double hOffset, double vOffset )
+{
+}
 
-  public void StartDrag(bool isPrimaryDrag)
-  {
+public void StartDrag( bool isPrimaryDrag )
+{
     this._isDragging = true;
     this._isPrimaryDrag = isPrimaryDrag;
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    this._startDragAnnotationCoordinates = this.GetCoordinates(canvas, xCalc, yCalc);
+    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D< double > yCalc = this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D< double > xCalc = this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    this._startDragAnnotationCoordinates = this.GetCoordinates( canvas, xCalc, yCalc );
     this.OnDragStarted();
-    this.RaiseAnnotationDragStarted(this._isPrimaryDrag, false);
-  }
+    this.RaiseAnnotationDragStarted( this._isPrimaryDrag, false );
+}
 
-  public void EndDrag()
-  {
+public void EndDrag()
+{
     this.OnDragEnded();
     bool isPrimaryDrag = this._isPrimaryDrag;
     this._isDragging = this._isPrimaryDrag = false;
-    this.RaiseAnnotationDragEnded(isPrimaryDrag, false);
-  }
+    this.RaiseAnnotationDragEnded( isPrimaryDrag, false );
+}
 
-  public void Drag(double hOffset, double vOffset)
-  {
-    if (!this._isDragging)
-      return;
-    using (this.SuspendUpdates())
-      (hOffset, vOffset) = this.MoveAnnotationTo(this._startDragAnnotationCoordinates, hOffset, vOffset);
-    this.OnDragDelta(hOffset, vOffset);
-    this.RaiseAnnotationDragging(hOffset, vOffset, this._isPrimaryDrag, false);
-  }
+public void Drag( double hOffset, double vOffset )
+{
+    if ( !this._isDragging )
+        return;
+    using ( this.SuspendUpdates() )
+        (hOffset, vOffset) = this.MoveAnnotationTo( this._startDragAnnotationCoordinates, hOffset, vOffset );
+    this.OnDragDelta( hOffset, vOffset );
+    this.RaiseAnnotationDragging( hOffset, vOffset, this._isPrimaryDrag, false );
+}
 
-  public virtual bool CanMultiSelect(
-    IAnnotation[] annotations)
-  {
+public virtual bool CanMultiSelect(
+  IAnnotation[ ] annotations )
+{
     return annotations.Length == 1;
-  }
+}
 
-  public override bool IsAttached
-  {
+public override bool IsAttached
+{
     get => this._isAttached;
     set
     {
-      this._isAttached = value;
-      if (this._templateApplied)
-        return;
-      this.ApplyTemplate();
-      this._templateApplied = true;
+        this._isAttached = value;
+        if ( this._templateApplied )
+            return;
+        this.ApplyTemplate();
+        this._templateApplied = true;
     }
-  }
+}
 
-  public override IAxis YAxis
-  {
-    get => this._yAxis ?? (this._yAxis = this.\u0023\u003Dz4uoxB8oLWxeL(this.YAxisId));
-  }
+public override IAxis YAxis
+{
+    get => this._yAxis ?? ( this._yAxis = this.\u0023\u003Dz4uoxB8oLWxeL(this.YAxisId));
+}
 
-  public override IAxis XAxis
-  {
-    get => this._xAxis ?? (this._xAxis = this.\u0023\u003DzI0EiGDjWkH8S(this.XAxisId));
-  }
+public override IAxis XAxis
+{
+    get => this._xAxis ?? ( this._xAxis = this.\u0023\u003DzI0EiGDjWkH8S(this.XAxisId));
+}
 
-  protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationOverlaySurface
-  {
+protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationOverlaySurface
+{
     get
     {
-      return this.ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+        return this.ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
     }
-  }
+}
 
-  protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationUnderlaySurface
-  {
+protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk AnnotationUnderlaySurface
+{
     get
     {
-      return this.ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+        return this.ParentSurface == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
     }
-  }
+}
 
-  void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnXAxesCollectionChanged(
+void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnXAxesCollectionChanged(
     object sender,
     NotifyCollectionChangedEventArgs args)
   {
-    this.\u0023\u003DzHGGuFpQ\u003D((DispatcherPriority) 8, new Action(new AnnotationBase.\u0023\u003Dzffg\u0024YXBnGm7H\u0024PCqlQv7PCc\u003D()
+    this.\u0023\u003DzHGGuFpQ\u003D((DispatcherPriority) 8, new Action( new AnnotationBase.\u0023\u003Dzffg\u0024YXBnGm7H\u0024PCqlQv7PCc\u003D()
     {
       _variableSome3535 = this,
       \u0023\u003DzwM8aRUE\u003D = sender,
@@ -340,7 +361,7 @@ internal abstract class AnnotationBase :
     object sender,
     NotifyCollectionChangedEventArgs args)
   {
-    this.\u0023\u003DzHGGuFpQ\u003D((DispatcherPriority) 8, new Action(new AnnotationBase.\u0023\u003DzPDNKpHuRG7yCW5JW8_EOM4E\u003D()
+    this.\u0023\u003DzHGGuFpQ\u003D((DispatcherPriority) 8, new Action( new AnnotationBase.\u0023\u003DzPDNKpHuRG7yCW5JW8_EOM4E\u003D()
     {
       _variableSome3535 = this,
       \u0023\u003DzwM8aRUE\u003D = sender,
@@ -351,147 +372,147 @@ internal abstract class AnnotationBase :
   private void OnAxisAlignmentChanged(
     object sender,
     \u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D e)
-  {
-    if (!(e.\u0023\u003DzAz1mGnFFNNic() == this.XAxisId) && !(e.\u0023\u003DzAz1mGnFFNNic() == this.YAxisId))
+{
+    if ( !( e.\u0023\u003DzAz1mGnFFNNic() == this.XAxisId) && !( e.\u0023\u003DzAz1mGnFFNNic() == this.YAxisId))
       return;
-    this.OnAxisAlignmentChanged(e.\u0023\u003DzAz1mGnFFNNic() == this.XAxisId ? this.XAxis : this.YAxis, e.\u0023\u003Dz4LPnYX_iGIbT());
-  }
+    this.OnAxisAlignmentChanged( e.\u0023\u003DzAz1mGnFFNNic() == this.XAxisId ? this.XAxis : this.YAxis, e.\u0023\u003Dz4LPnYX_iGIbT() );
+}
 
-  protected virtual void OnAxisAlignmentChanged(
-    IAxis axis,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment)
-  {
-  }
+protected virtual void OnAxisAlignmentChanged(
+  IAxis axis,
+  AxisAlignment oldAlignment )
+{
+}
 
-  protected virtual void OnXAxesCollectionChanged(
-    object sender,
-    NotifyCollectionChangedEventArgs args)
-  {
-  }
+protected virtual void OnXAxesCollectionChanged(
+  object sender,
+  NotifyCollectionChangedEventArgs args )
+{
+}
 
-  protected virtual void OnYAxesCollectionChanged(
-    object sender,
-    NotifyCollectionChangedEventArgs args)
-  {
-  }
+protected virtual void OnYAxesCollectionChanged(
+  object sender,
+  NotifyCollectionChangedEventArgs args )
+{
+}
 
-  protected virtual void OnYAxisIdChanged()
-  {
-  }
+protected virtual void OnYAxisIdChanged()
+{
+}
 
-  protected virtual void OnXAxisIdChanged()
-  {
-  }
+protected virtual void OnXAxisIdChanged()
+{
+}
 
-  protected virtual void FocusInputTextArea()
-  {
-  }
+protected virtual void FocusInputTextArea()
+{
+}
 
-  protected virtual void RemoveFocusInputTextArea()
-  {
-  }
+protected virtual void RemoveFocusInputTextArea()
+{
+}
 
-  public override void OnAttached()
-  {
-    this.AttachInteractionHandlersTo((FrameworkElement) this);
-    this.Loaded += new RoutedEventHandler(this.OnAnnotationLoaded);
-    this.ParentSurface.\u0023\u003DzexJGsaAi6rVI(new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D>(this.OnAxisAlignmentChanged));
-  }
+public override void OnAttached()
+{
+    this.AttachInteractionHandlersTo( ( FrameworkElement ) this );
+    this.Loaded += new RoutedEventHandler( this.OnAnnotationLoaded );
+    this.ParentSurface.\u0023\u003DzexJGsaAi6rVI( new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D>( this.OnAxisAlignmentChanged ) );
+}
 
-  protected virtual void OnAnnotationLoaded(object sender, RoutedEventArgs e)
-  {
+protected virtual void OnAnnotationLoaded( object sender, RoutedEventArgs e )
+{
     this.PrepareForRendering();
-  }
+}
 
-  private void PrepareForRendering()
-  {
-    if (!this._isLoaded)
-      this._isLoaded = true;
+private void PrepareForRendering()
+{
+    if ( !this._isLoaded )
+        this._isLoaded = true;
     this.Refresh();
     this.PerformFocusOnInputTextArea();
-  }
+}
 
-  protected void PerformFocusOnInputTextArea()
-  {
-    if (this.CanEditText && this.IsSelected)
-      this.FocusInputTextArea();
+protected void PerformFocusOnInputTextArea()
+{
+    if ( this.CanEditText && this.IsSelected )
+        this.FocusInputTextArea();
     else
-      this.RemoveFocusInputTextArea();
-  }
+        this.RemoveFocusInputTextArea();
+}
 
-  protected virtual void AttachInteractionHandlersTo(FrameworkElement source)
-  {
-    source.MouseLeftButtonDown += new MouseButtonEventHandler(this.OnAnnotationMouseDown);
-    source.MouseLeftButtonUp += new MouseButtonEventHandler(this.OnAnnotationMouseUp);
-    source.MouseMove += new MouseEventHandler(this.OnAnnotationMouseMove);
-    source.PreviewMouseDown += new MouseButtonEventHandler(this.PreviewMouseDownHandler);
-    source.PreviewMouseUp += new MouseButtonEventHandler(this.PreviewMouseUpHandler);
-  }
+protected virtual void AttachInteractionHandlersTo( FrameworkElement source )
+{
+    source.MouseLeftButtonDown += new MouseButtonEventHandler( this.OnAnnotationMouseDown );
+    source.MouseLeftButtonUp += new MouseButtonEventHandler( this.OnAnnotationMouseUp );
+    source.MouseMove += new MouseEventHandler( this.OnAnnotationMouseMove );
+    source.PreviewMouseDown += new MouseButtonEventHandler( this.PreviewMouseDownHandler );
+    source.PreviewMouseUp += new MouseButtonEventHandler( this.PreviewMouseUpHandler );
+}
 
-  protected virtual void OnAnnotationMouseDown(object sender, MouseButtonEventArgs e)
-  {
-    if (e.ChangedButton != MouseButton.Left)
-      return;
+protected virtual void OnAnnotationMouseDown( object sender, MouseButtonEventArgs e )
+{
+    if ( e.ChangedButton != MouseButton.Left )
+        return;
     e.Handled = this.TrySelectAnnotation();
-    if (!this.IsSelected || !this.IsEditable)
-      return;
-    this._startPoint = Mouse.GetPosition((IInputElement) (this.\u0023\u003Dzwc4Gzka23TGB() as UIElement));
+    if ( !this.IsSelected || !this.IsEditable )
+        return;
+    this._startPoint = Mouse.GetPosition( ( IInputElement ) ( this.\u0023\u003Dzwc4Gzka23TGB() as UIElement ));
     this._isMouseLeftDown = true;
     this._mouseLeftDownTimestamp = DateTime.UtcNow;
     this.CaptureMouse();
     e.Handled = true;
-  }
+}
 
-  protected virtual void OnAnnotationMouseUp(object sender, MouseButtonEventArgs e)
-  {
-    if (e.ChangedButton != MouseButton.Left)
-      return;
+protected virtual void OnAnnotationMouseUp( object sender, MouseButtonEventArgs e )
+{
+    if ( e.ChangedButton != MouseButton.Left )
+        return;
     this.ReleaseMouseCapture();
     this._isMouseLeftDown = false;
-    if (this._isDragging)
-      this.EndDrag();
+    if ( this._isDragging )
+        this.EndDrag();
     else
-      this.PerformFocusOnInputTextArea();
-  }
+        this.PerformFocusOnInputTextArea();
+}
 
-  protected virtual void OnAnnotationMouseMove(object sender, MouseEventArgs e)
-  {
-    if (!this._isMouseLeftDown || DateTime.UtcNow - this._mouseLeftDownTimestamp < TimeSpan.FromMilliseconds(2.0) || e.LeftButton != MouseButtonState.Pressed)
-      return;
-    if (!this._isDragging)
-      this.StartDrag(true);
+protected virtual void OnAnnotationMouseMove( object sender, MouseEventArgs e )
+{
+    if ( !this._isMouseLeftDown || DateTime.UtcNow - this._mouseLeftDownTimestamp < TimeSpan.FromMilliseconds( 2.0 ) || e.LeftButton != MouseButtonState.Pressed )
+        return;
+    if ( !this._isDragging )
+        this.StartDrag( true );
     Point position = Mouse.GetPosition((IInputElement) (this.\u0023\u003Dzwc4Gzka23TGB() as UIElement));
-    this.Drag(this.DragDirections == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection ? 0.0 : position.X - this._startPoint.X, this.DragDirections == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection ? 0.0 : position.Y - this._startPoint.Y);
-  }
+    this.Drag( this.DragDirections == XyDirection.YDirection ? 0.0 : position.X - this._startPoint.X, this.DragDirections == XyDirection.XDirection ? 0.0 : position.Y - this._startPoint.Y );
+}
 
-  public override void OnDetached()
-  {
-    using (IUpdateSuspender fq05jnDg3bOrIrgCjote = this.SuspendUpdates())
+public override void OnDetached()
+{
+    using ( IUpdateSuspender fq05jnDg3bOrIrgCjote = this.SuspendUpdates() )
     {
-      fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose=false;
-      this.IsSelected = false;
-      this.MakeInvisible();
-      (this.Parent as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk).\u0023\u003DziYdJ\u00246cCiBha((object) this);
-      this.DetachInteractionHandlersFrom((FrameworkElement) this);
-      if (this.ParentSurface != null)
-        this.ParentSurface.\u0023\u003Dz38JNnebwqLph(new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D>(this.OnAxisAlignmentChanged));
-      this.Loaded -= new RoutedEventHandler(this.OnAnnotationLoaded);
+        fq05jnDg3bOrIrgCjote.ResumeTargetOnDispose = false;
+        this.IsSelected = false;
+        this.MakeInvisible();
+        ( this.Parent as \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk).\u0023\u003DziYdJ\u00246cCiBha( ( object ) this );
+        this.DetachInteractionHandlersFrom( ( FrameworkElement ) this );
+        if ( this.ParentSurface != null )
+            this.ParentSurface.\u0023\u003Dz38JNnebwqLph( new EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D>( this.OnAxisAlignmentChanged ) );
+        this.Loaded -= new RoutedEventHandler( this.OnAnnotationLoaded );
     }
-  }
+}
 
-  protected virtual void DetachInteractionHandlersFrom(FrameworkElement source)
-  {
-    source.MouseLeftButtonDown -= new MouseButtonEventHandler(this.OnAnnotationMouseDown);
-    source.MouseLeftButtonUp -= new MouseButtonEventHandler(this.OnAnnotationMouseUp);
-    source.MouseMove -= new MouseEventHandler(this.OnAnnotationMouseMove);
-    source.PreviewMouseDown -= new MouseButtonEventHandler(this.PreviewMouseDownHandler);
-    source.PreviewMouseUp -= new MouseButtonEventHandler(this.PreviewMouseUpHandler);
-  }
+protected virtual void DetachInteractionHandlersFrom( FrameworkElement source )
+{
+    source.MouseLeftButtonDown -= new MouseButtonEventHandler( this.OnAnnotationMouseDown );
+    source.MouseLeftButtonUp -= new MouseButtonEventHandler( this.OnAnnotationMouseUp );
+    source.MouseMove -= new MouseEventHandler( this.OnAnnotationMouseMove );
+    source.PreviewMouseDown -= new MouseButtonEventHandler( this.PreviewMouseDownHandler );
+    source.PreviewMouseUp -= new MouseButtonEventHandler( this.PreviewMouseUpHandler );
+}
 
-  public bool Refresh()
-  {
-    if (this.IsSuspended || !this._isLoaded || !this.IsAttached)
-      return false;
+public bool Refresh()
+{
+    if ( this.IsSuspended || !this._isLoaded || !this.IsAttached )
+        return false;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordinateCalculator = this.XAxis != null ? this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator = this.YAxis != null ? this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
     if (xCoordinateCalculator != null && yCoordinateCalculator != null)
@@ -509,7 +530,7 @@ internal abstract class AnnotationBase :
     canvas.\u0023\u003DzH0osWQkV_Y8_((object) this, -1);
     if (!this._isLoaded)
       return;
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates = this.GetCoordinates(canvas, xCoordinateCalculator, yCoordinateCalculator);
+    AnnotationCoordinates coordinates = this.GetCoordinates(canvas, xCoordinateCalculator, yCoordinateCalculator);
     if (this.IsInBounds(coordinates, canvas))
     {
       if (!this.IsHidden)
@@ -539,23 +560,23 @@ internal abstract class AnnotationBase :
 
   protected void HideAdornerMarkers()
   {
-    foreach (\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x adorner in (IEnumerable<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>) this._myAdorners)
+    foreach (IAnnotationAdorner adorner in (IEnumerable<IAnnotationAdorner>) this._myAdorners)
       adorner.Clear();
   }
 
-  protected IEnumerable<T> GetUsedAdorners<T>(Canvas adornerLayer) where T : \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x
+  protected IEnumerable<T> GetUsedAdorners<T>(Canvas adornerLayer) where T : IAnnotationAdorner
   {
     return (IEnumerable<T>) adornerLayer.Children.OfType<T>().Where<T>((Func<T, bool>) (x => x.\u0023\u003Dzy2oKVLXXOFmI() == this)).ToList<T>();
   }
 
   protected virtual void MakeVisible(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     this.Visibility = Visibility.Visible;
     if (this.AnnotationRoot != null)
     {
       if (!this._isLoaded || Size.op_Equality(this.AnnotationRoot.RenderSize, new Size()))
-        this.AnnotationRoot.\u0023\u003DzI0WdlDcUgrX_();
+        this.AnnotationRoot.MeasureArrange();
       this.PlaceAnnotation(coordinates);
     }
     this.UpdateAdorners();
@@ -566,41 +587,23 @@ internal abstract class AnnotationBase :
     Canvas adornerLayer = this.GetAdornerLayer();
     if (adornerLayer == null)
       return;
-    this.GetUsedAdorners<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(adornerLayer).\u0023\u003Dz30RSSSygABj_<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(AnnotationBase.SomeClass34343383.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D ?? (AnnotationBase.SomeClass34343383.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D = new Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x>(AnnotationBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D)));
+    this.GetUsedAdorners<IAnnotationAdorner>(adornerLayer).\u0023\u003Dz30RSSSygABj_<IAnnotationAdorner>(AnnotationBase.SomeClass34343383.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D ?? (AnnotationBase.SomeClass34343383.\u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D = new Action<IAnnotationAdorner>(AnnotationBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D)));
   }
 
   protected virtual bool IsInBounds(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas)
   {
     return this.GetCurrentPlacementStrategy().\u0023\u003DzxGhbraO0gg9\u0024(coordinates, canvas);
   }
 
   protected virtual void PlaceAnnotation(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     this.GetCurrentPlacementStrategy().\u0023\u003DzNUoYFVRHgzxB(coordinates);
   }
 
-  protected \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk GetCanvas(
-    \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D annotationCanvas)
-  {
-    if (this.ParentSurface == null)
-      return (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null;
-    switch (annotationCanvas)
-    {
-      case \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.AboveChart:
-        return this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
-      case \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.BelowChart:
-        return this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
-      case \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.YAxis:
-        return this.YAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.YAxis.get_ModifierAxisCanvas();
-      case \u0023\u003DzeHqydGt1MYwtwPKPfmmWnMQ7cqtdeTQDwXdpP\u0024g\u003D.XAxis:
-        return this.XAxis == null ? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) null : this.XAxis.get_ModifierAxisCanvas();
-      default:
-        throw new InvalidOperationException($"Cannot get an annotation surface for AnnotationCanvas.{annotationCanvas}");
-    }
-  }
+  
 
   protected virtual \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDgSOEFmb0yDbA4SN8HzRCkq GetCurrentPlacementStrategy()
   {
@@ -619,7 +622,7 @@ internal abstract class AnnotationBase :
     DependencyPropertyChangedEventArgs e)
   {
     ((AnnotationBase) d).Refresh();
-    ((ApiElementBase) d).\u0023\u003Dz15moWio\u003D("PositionChanged");
+    ((ApiElementBase) d).OnPropertyChanged("PositionChanged");
   }
 
   public void UpdatePosition(Point point1, Point point2)
@@ -660,8 +663,8 @@ internal abstract class AnnotationBase :
   {
     if (axis == null)
       throw new ArgumentNullException(nameof (axis));
-    dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd ks34Z259A4NengcEjd = axis.IsHorizontalAxis ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
-    return this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection ? this.FromRelativeCoordinate(coord, axis) : (!(axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0) ? axis.GetDataValue(coord) : (IComparable) (int) q9i0MXI7Qb9c1V6c0.GetDataValue(coord));
+    XyDirection ks34Z259A4NengcEjd = axis.IsHorizontalAxis ? XyDirection.XDirection : XyDirection.YDirection;
+    return this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == XyDirection.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == XyDirection.YDirection ? this.FromRelativeCoordinate(coord, axis) : (!(axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0) ? axis.GetDataValue(coord) : (IComparable) (int) q9i0MXI7Qb9c1V6c0.GetDataValue(coord));
   }
 
   protected virtual IComparable FromRelativeCoordinate(
@@ -679,7 +682,7 @@ internal abstract class AnnotationBase :
   {
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = this.GetCanvas(this.AnnotationCanvas);
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc = axis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
+    XyDirection direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? XyDirection.XDirection : XyDirection.YDirection;
     double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
     return this.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction);
   }
@@ -705,7 +708,7 @@ internal abstract class AnnotationBase :
   {
     if (coordCalc == null)
       return 0.0;
-    dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection : dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection;
+    XyDirection direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? XyDirection.XDirection : XyDirection.YDirection;
     double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
     return this.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction);
   }
@@ -714,11 +717,11 @@ internal abstract class AnnotationBase :
     IComparable dataValue,
     double canvasMeasurement,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc,
-    dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd direction)
+    XyDirection direction)
   {
     if (dataValue == null)
       return double.NaN;
-    if (this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && direction == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && direction == dje_zZ3BFCL96RVMCB9Z2ZSPMCMP45KS34Z259A4NENGC_ejd.YDirection)
+    if (this.CoordinateMode == AnnotationCoordinateMode.Relative || this.CoordinateMode == AnnotationCoordinateMode.RelativeX && direction == XyDirection.XDirection || this.CoordinateMode == AnnotationCoordinateMode.RelativeY && direction == XyDirection.YDirection)
       return dataValue.ToDouble() * canvasMeasurement;
     return coordCalc.\u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t() && dataValue is DateTime ? this.GetCategoryCoordinate(dataValue, coordCalc as \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D) : coordCalc.\u0023\u003DzhL6gsJw\u003D(dataValue.ToDouble());
   }
@@ -740,7 +743,7 @@ internal abstract class AnnotationBase :
     return num6 <= 0.0 ? -1.0 : val1 + num6 * num5;
   }
 
-  protected \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D GetCoordinates(
+  protected AnnotationCoordinates GetCoordinates(
     \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc,
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc)
@@ -748,7 +751,7 @@ internal abstract class AnnotationBase :
     Point coordinates1 = this.ToCoordinates(this.X1, this.Y1, canvas, xCalc, yCalc);
     Point coordinates2 = this.ToCoordinates(this.X2, this.Y2, canvas, xCalc, yCalc);
     double num = 0.0;
-    return new \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D()
+    return new AnnotationCoordinates()
     {
       \u0023\u003DzS2_K6sVvd5IY = coordinates1.X,
       \u0023\u003Dz2J4l3QUGwZHE = coordinates1.Y,
@@ -773,7 +776,7 @@ internal abstract class AnnotationBase :
   }
 
   protected virtual (double fixedHOffset, double fixedVOffset) MoveAnnotationTo(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     double horizOffset,
     double vertOffset)
   {
@@ -793,7 +796,7 @@ internal abstract class AnnotationBase :
   }
 
   protected virtual Point[] GetBasePoints(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     return this.GetCurrentPlacementStrategy().\u0023\u003DzfJgp916l7LbX(coordinates);
   }
@@ -864,7 +867,7 @@ internal abstract class AnnotationBase :
   {
     \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C nqo7rKyswR861f1C = new \u0023\u003DzMoarvB9xsq04k1\u0024YZzaCjHRJN5ZYNqo7rKyswR861f1C((IAnnotation) this);
     nqo7rKyswR861f1C.\u0023\u003Dzbw4WNWtere7d(adornerLayer);
-    this._myAdorners.Add((\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x) nqo7rKyswR861f1C);
+    this._myAdorners.Add((IAnnotationAdorner) nqo7rKyswR861f1C);
   }
 
   protected virtual void RemoveAdorners(Canvas adornerLayer)
@@ -918,18 +921,18 @@ internal abstract class AnnotationBase :
 
   internal void RaiseAnnotationDragStarted(bool isPrimaryDrag, bool isResize)
   {
-    EventHandler<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D> dragStarted = this.DragStarted;
+    EventHandler<EventArgs> dragStarted = this.DragStarted;
     if (dragStarted == null)
       return;
-    dragStarted((object) this, new \u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D(isPrimaryDrag, isResize));
+    dragStarted((object) this, new EventArgs(isPrimaryDrag, isResize));
   }
 
   internal void RaiseAnnotationDragEnded(bool isPrimaryDrag, bool isResize)
   {
-    EventHandler<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D> dragEnded = this.DragEnded;
+    EventHandler<EventArgs> dragEnded = this.DragEnded;
     if (dragEnded == null)
       return;
-    dragEnded((object) this, new \u0023\u003DzYH1zUE63H2wnu5PkgVdj8EceYoYimX3HGDNfbrY\u003D(isPrimaryDrag, isResize));
+    dragEnded((object) this, new EventArgs(isPrimaryDrag, isResize));
   }
 
   internal void RaiseAnnotationDragging(
@@ -938,10 +941,10 @@ internal abstract class AnnotationBase :
     bool isPrimaryDrag,
     bool isResize)
   {
-    EventHandler<\u0023\u003Dzro0Io1hfSw7LlH634iIk6HbbjLeMvfhhb2s2mR8\u003D> dragDelta = this.DragDelta;
+    EventHandler<AnnotationDragDeltaEventArgs> dragDelta = this.DragDelta;
     if (dragDelta == null)
       return;
-    dragDelta((object) this, new \u0023\u003Dzro0Io1hfSw7LlH634iIk6HbbjLeMvfhhb2s2mR8\u003D(isPrimaryDrag, isResize, hOffset, vOffset));
+    dragDelta((object) this, new AnnotationDragDeltaEventArgs(isPrimaryDrag, isResize, hOffset, vOffset));
   }
 
   private static void OnIsSelectedChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
@@ -983,7 +986,7 @@ internal abstract class AnnotationBase :
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = annotationBase.XAxis != null ? annotationBase.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
       \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = annotationBase.YAxis != null ? annotationBase.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk canvas = annotationBase.GetCanvas(annotationBase.AnnotationCanvas);
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates = new \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D();
+      AnnotationCoordinates coordinates = new AnnotationCoordinates();
       if (xCalc != null && yCalc != null && canvas != null)
         coordinates = annotationBase.GetCoordinates(canvas, xCalc, yCalc);
       annotationBase.MakeVisible(coordinates);
@@ -1080,11 +1083,11 @@ internal abstract class AnnotationBase :
   private new sealed class SomeClass34343383
   {
     public static readonly AnnotationBase.SomeClass34343383 SomeMethond0343 = new AnnotationBase.SomeClass34343383();
-    public static Action<\u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x> \u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D;
+    public static Action<IAnnotationAdorner> \u0023\u003DzqG9qUFbTruJKYxlHUw\u003D\u003D;
     public static Action<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D> \u0023\u003Dzv1VAZ\u0024AecqzdKka0gQ\u003D\u003D;
 
     internal void \u0023\u003DzjRwQMrvkACc83ywGyp_nJAU\u003D(
-      \u0023\u003DzFphlrC3tGBVP73muJW4N1sp2o\u0024hCxXn5DXylgtbrM25x _param1)
+      IAnnotationAdorner _param1)
     {
       _param1.\u0023\u003DzGDdLHa8\u003D();
     }
@@ -1117,12 +1120,12 @@ internal abstract class AnnotationBase :
     where T : AnnotationBase
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return (Point[]) null;
     }
@@ -1133,14 +1136,14 @@ internal abstract class AnnotationBase :
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.ActualWidth && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.ActualWidth || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE <= _param2.ActualHeight ? 0 : (_param1.\u0023\u003DzWp13vlQiZCJc > _param2.ActualHeight ? 1 : 0))) == 0;
     }
 
     public override void \u0023\u003DzuPL3ELSPZybJ(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       double _param2,
       double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
@@ -1149,7 +1152,7 @@ internal abstract class AnnotationBase :
     }
 
     protected virtual void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       ref double _param2,
       ref double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
@@ -1215,7 +1218,7 @@ internal abstract class AnnotationBase :
     public \u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D(T _param1)
       : base(_param1)
     {
-      this.\u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J = _param1.Services.\u0023\u003Dz2VqWonc\u003D<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();
+      this.\u0023\u003Dz3JhL3ghZJXhh2PqEiwlNXv1dPT_J = _param1.Services.GetService<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>().\u0023\u003DzhGnS3f5TTzO8();
     }
 
     protected \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dzy9phceyLTfoo()
@@ -1224,12 +1227,12 @@ internal abstract class AnnotationBase :
     }
 
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return (Point[]) null;
     }
@@ -1241,7 +1244,7 @@ internal abstract class AnnotationBase :
     }
 
     public override bool \u0023\u003DzxGhbraO0gg9\u0024(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param2)
     {
       Size size = this.\u0023\u003DzIr6xoc_4P2lw(_param2);
@@ -1255,14 +1258,14 @@ internal abstract class AnnotationBase :
     }
 
     protected virtual bool \u0023\u003DzRe9EEbV7q4ey(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       Size _param2)
     {
       return (_param1.\u0023\u003DzS2_K6sVvd5IY < 0.0 && _param1.\u0023\u003Dz6aJoeqoqAzym < 0.0 || _param1.\u0023\u003DzS2_K6sVvd5IY > _param2.Width && _param1.\u0023\u003Dz6aJoeqoqAzym > _param2.Width || _param1.\u0023\u003Dz2J4l3QUGwZHE < 0.0 && _param1.\u0023\u003DzWp13vlQiZCJc < 0.0 ? 1 : (_param1.\u0023\u003Dz2J4l3QUGwZHE <= _param2.Height ? 0 : (_param1.\u0023\u003DzWp13vlQiZCJc > _param2.Height ? 1 : 0))) == 0;
     }
 
     public override void \u0023\u003DzuPL3ELSPZybJ(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       double _param2,
       double _param3,
       \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk _param4)
@@ -1273,20 +1276,20 @@ internal abstract class AnnotationBase :
     }
 
     protected virtual Tuple<Point, Point> \u0023\u003DzQDA5x2uuH9m3(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       double _param2,
       double _param3)
     {
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
+      AnnotationCoordinates nnpojF4sCpkA8pp0g = this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1);
       return new Tuple<Point, Point>(this.\u0023\u003DztHc_NcH8us53(new Point(nnpojF4sCpkA8pp0g.\u0023\u003DzS2_K6sVvd5IY, nnpojF4sCpkA8pp0g.\u0023\u003Dz2J4l3QUGwZHE), _param2, _param3), this.\u0023\u003DztHc_NcH8us53(new Point(nnpojF4sCpkA8pp0g.\u0023\u003Dz6aJoeqoqAzym, nnpojF4sCpkA8pp0g.\u0023\u003DzWp13vlQiZCJc), _param2, _param3));
     }
 
-    protected virtual \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D \u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+    protected virtual AnnotationCoordinates \u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(
+      AnnotationCoordinates _param1)
     {
       Point point1 = this.\u0023\u003Dzy9phceyLTfoo().\u0023\u003DzsTReN_n58EEf(new Point(_param1.\u0023\u003DzS2_K6sVvd5IY, _param1.\u0023\u003Dz2J4l3QUGwZHE));
       Point point2 = this.\u0023\u003Dzy9phceyLTfoo().\u0023\u003DzsTReN_n58EEf(new Point(_param1.\u0023\u003Dz6aJoeqoqAzym, _param1.\u0023\u003DzWp13vlQiZCJc));
-      return new \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D()
+      return new AnnotationCoordinates()
       {
         \u0023\u003DzS2_K6sVvd5IY = point1.X,
         \u0023\u003Dz2J4l3QUGwZHE = point1.Y,
@@ -1305,7 +1308,7 @@ internal abstract class AnnotationBase :
     }
 
     protected virtual void \u0023\u003Dz1AMMqyD2rBjvD_AwSl5uj2E\u003D(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1,
+      AnnotationCoordinates _param1,
       Point _param2,
       Point _param3,
       Size _param4)

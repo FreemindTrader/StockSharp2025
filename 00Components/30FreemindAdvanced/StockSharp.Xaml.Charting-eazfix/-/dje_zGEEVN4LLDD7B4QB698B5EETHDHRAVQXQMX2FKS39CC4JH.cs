@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Data;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class dje_zGEEVN4LLDD7B4QB698B5EETHDHRAVQXQMX2FKS39CC4JHQ4FEHWLELR2Y64AQZB2ZMVREEG3YUEHPNZ_ejd : 
   IMultiValueConverter

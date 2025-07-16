@@ -1,63 +1,63 @@
-<ResourceDictionary xmlns:l1llili1="http://schemas.microsoft.com/winfx/2006/xaml"
+<ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:llliil11="clr-namespace:-">
-  <SolidColorBrush l1llili1:Key="TickTextBrush" Color="#C4EFD9"/>
-  <SolidColorBrush l1llili1:Key="MajorGridLineBrush" Color="#AAAAFFAA"/>
-  <SolidColorBrush l1llili1:Key="MinorGridLineBrush" Color="#33AAFFAA"/>
-  <LinearGradientBrush l1llili1:Key="UltrachartBackground" StartPoint="0,0" EndPoint="0,1">
+                    xmlns:s="clr-namespace:-">
+  <SolidColorBrush x:Key="TickTextBrush" Color="#C4EFD9"/>
+  <SolidColorBrush x:Key="MajorGridLineBrush" Color="#AAAAFFAA"/>
+  <SolidColorBrush x:Key="MinorGridLineBrush" Color="#33AAFFAA"/>
+  <LinearGradientBrush x:Key="UltrachartBackground" StartPoint="0,0" EndPoint="0,1">
     <GradientStop Offset="0" Color="#FF001309"/>
     <GradientStop Offset="0.2" Color="#FF006531"/>
     <GradientStop Offset="1.0" Color="#FF001309"/>
   </LinearGradientBrush>
-  <SolidColorBrush l1llili1:Key="GridBorderBrush" Color="#FFAAFFAA"/>
-  <SolidColorBrush l1llili1:Key="GridBackgroundBrush" Color="Transparent"/>
-  <SolidColorBrush l1llili1:Key="RolloverLineBrush" Color="#5599EE99"/>
-  <SolidColorBrush l1llili1:Key="CursorLineBrush" Color="#BB99EE99"/>
-  <SolidColorBrush l1llili1:Key="RubberBandFillBrush" Color="#33AAFFAA"/>
-  <SolidColorBrush l1llili1:Key="RubberBandStrokeBrush" Color="#FF99EE99"/>
-  <SolidColorBrush l1llili1:Key="LegendBackgroundBrush" Color="#77FFFFFF"/>
-  <SolidColorBrush l1llili1:Key="LabelBackgroundBrush" Color="#CC006531"/>
-  <SolidColorBrush l1llili1:Key="LabelBorderBrush" Color="#FF99EE99"/>
-  <SolidColorBrush l1llili1:Key="LabelForegroundBrush" Color="#C4EFD9"/>
-  <SolidColorBrush l1llili1:Key="TextAnnotationForeground" Color="#C4EFD9"/>
-  <SolidColorBrush l1llili1:Key="TextAnnotationBackground" Color="#CC006531"/>
-  <Color l1llili1:Key="AxisBandsFill">#22AAFFAA</Color>
-  <Color l1llili1:Key="UpWickColor">#FFFFFFFF</Color>
-  <Color l1llili1:Key="DownWickColor">#FF99EE99</Color>
-  <SolidColorBrush l1llili1:Key="UpBodyBrush" Color="#33FFFFFF"/>
-  <SolidColorBrush l1llili1:Key="DownBodyBrush" Color="#33AAFFAA"/>
-  <Color l1llili1:Key="UpBandSeriesLineColor">#FF52CC54</Color>
-  <Color l1llili1:Key="DownBandSeriesLineColor">#FFE26565</Color>
-  <Color l1llili1:Key="UpBandSeriesFillColor">#9052CC54</Color>
-  <Color l1llili1:Key="DownBandSeriesFillColor">#A0E26565</Color>
-  <SolidColorBrush l1llili1:Key="MountainAreaBrush">#33AAFFAA</SolidColorBrush>
-  <Color l1llili1:Key="MountainLineColor">#FF99EE99</Color>
-  <Color l1llili1:Key="LineSeriesColor">#FFFFFF</Color>
-  <Color l1llili1:Key="ColumnLineColor">#FF99EE99</Color>
-  <SolidColorBrush l1llili1:Key="ColumnFillBrush" Color="#7799EE99"/>
-  <Brush l1llili1:Key="OverviewFillBrush">#7FD3D3D3</Brush>
-  <Brush l1llili1:Key="ScrollbarFillBrush">#7FD3D3D3</Brush>
-  <Style l1llili1:Key="RenderSurfaceStyle"
-         TargetType="{l1llili1:Type llliil11:dje_zYTRT4LDE4QWDRNAUEWB3U5DLKNSTDLHTVGQEZGGZC7KYU3DXH4MC4_ejd}">
+  <SolidColorBrush x:Key="GridBorderBrush" Color="#FFAAFFAA"/>
+  <SolidColorBrush x:Key="GridBackgroundBrush" Color="Transparent"/>
+  <SolidColorBrush x:Key="RolloverLineBrush" Color="#5599EE99"/>
+  <SolidColorBrush x:Key="CursorLineBrush" Color="#BB99EE99"/>
+  <SolidColorBrush x:Key="RubberBandFillBrush" Color="#33AAFFAA"/>
+  <SolidColorBrush x:Key="RubberBandStrokeBrush" Color="#FF99EE99"/>
+  <SolidColorBrush x:Key="LegendBackgroundBrush" Color="#77FFFFFF"/>
+  <SolidColorBrush x:Key="LabelBackgroundBrush" Color="#CC006531"/>
+  <SolidColorBrush x:Key="LabelBorderBrush" Color="#FF99EE99"/>
+  <SolidColorBrush x:Key="LabelForegroundBrush" Color="#C4EFD9"/>
+  <SolidColorBrush x:Key="TextAnnotationForeground" Color="#C4EFD9"/>
+  <SolidColorBrush x:Key="TextAnnotationBackground" Color="#CC006531"/>
+  <Color x:Key="AxisBandsFill">#22AAFFAA</Color>
+  <Color x:Key="UpWickColor">#FFFFFFFF</Color>
+  <Color x:Key="DownWickColor">#FF99EE99</Color>
+  <SolidColorBrush x:Key="UpBodyBrush" Color="#33FFFFFF"/>
+  <SolidColorBrush x:Key="DownBodyBrush" Color="#33AAFFAA"/>
+  <Color x:Key="UpBandSeriesLineColor">#FF52CC54</Color>
+  <Color x:Key="DownBandSeriesLineColor">#FFE26565</Color>
+  <Color x:Key="UpBandSeriesFillColor">#9052CC54</Color>
+  <Color x:Key="DownBandSeriesFillColor">#A0E26565</Color>
+  <SolidColorBrush x:Key="MountainAreaBrush">#33AAFFAA</SolidColorBrush>
+  <Color x:Key="MountainLineColor">#FF99EE99</Color>
+  <Color x:Key="LineSeriesColor">#FFFFFF</Color>
+  <Color x:Key="ColumnLineColor">#FF99EE99</Color>
+  <SolidColorBrush x:Key="ColumnFillBrush" Color="#7799EE99"/>
+  <Brush x:Key="OverviewFillBrush">#7FD3D3D3</Brush>
+  <Brush x:Key="ScrollbarFillBrush">#7FD3D3D3</Brush>
+  <Style x:Key="RenderSurfaceStyle"
+         TargetType="{x:Type s:RenderSurfaceBase}">
     <Setter Property="UIElement.Effect">
       <Setter.Value>
         <DropShadowEffect BlurRadius="8" Direction="0" ShadowDepth="0" Color="#FFAAFFAA"/>
       </Setter.Value>
     </Setter>
   </Style>
-  <LinearGradientBrush l1llili1:Key="DefaultColorMapBrush">
+  <LinearGradientBrush x:Key="DefaultColorMapBrush">
     <GradientStop Offset="0" Color="DarkBlue"/>
     <GradientStop Offset="0.5" Color="CornflowerBlue"/>
     <GradientStop Offset="1" Color="#FF22AA"/>
   </LinearGradientBrush>
-  <Color l1llili1:Key="BoxVolumeTimeframe2Color">#15AAFFAA</Color>
-  <Color l1llili1:Key="BoxVolumeTimeframe2FrameColor">#CCAAFFAA</Color>
-  <Color l1llili1:Key="BoxVolumeTimeframe3Color">#35AAFFAA</Color>
-  <Color l1llili1:Key="BoxVolumeCellFontColor">#BBA4CFB9</Color>
-  <Color l1llili1:Key="BoxVolumeHighVolColor">#FFFFFFFF</Color>
-  <Color l1llili1:Key="ClusterProfileSeparatorLineColor">#CCAAFFAA</Color>
-  <Color l1llili1:Key="ClusterProfileLineColor">#CCAAFFAA</Color>
-  <Color l1llili1:Key="ClusterProfileTextColor">#CC84AF99</Color>
-  <Color l1llili1:Key="ClusterProfileClusterColor">#CCAAFFAA</Color>
-  <Color l1llili1:Key="ClusterProfileClusterMaxColor">#CC84AF99</Color>
+  <Color x:Key="BoxVolumeTimeframe2Color">#15AAFFAA</Color>
+  <Color x:Key="BoxVolumeTimeframe2FrameColor">#CCAAFFAA</Color>
+  <Color x:Key="BoxVolumeTimeframe3Color">#35AAFFAA</Color>
+  <Color x:Key="BoxVolumeCellFontColor">#BBA4CFB9</Color>
+  <Color x:Key="BoxVolumeHighVolColor">#FFFFFFFF</Color>
+  <Color x:Key="ClusterProfileSeparatorLineColor">#CCAAFFAA</Color>
+  <Color x:Key="ClusterProfileLineColor">#CCAAFFAA</Color>
+  <Color x:Key="ClusterProfileTextColor">#CC84AF99</Color>
+  <Color x:Key="ClusterProfileClusterColor">#CCAAFFAA</Color>
+  <Color x:Key="ClusterProfileClusterMaxColor">#CC84AF99</Color>
 </ResourceDictionary>

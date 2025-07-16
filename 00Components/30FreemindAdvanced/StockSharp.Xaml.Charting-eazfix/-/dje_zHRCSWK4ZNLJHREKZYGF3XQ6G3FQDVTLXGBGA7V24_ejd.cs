@@ -14,7 +14,7 @@ using System.Windows;
 using System.Windows.Markup;
 
 #nullable disable
-namespace \u002D;
+namespace SciChart.Charting;
 
 internal sealed class dje_zHRCSWK4ZNLJHREKZYGF3XQ6G3FQDVTLXGBGA7V24_ejd : 
   PopupMenu,

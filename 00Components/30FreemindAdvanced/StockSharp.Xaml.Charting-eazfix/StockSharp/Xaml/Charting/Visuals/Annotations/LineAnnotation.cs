@@ -32,7 +32,7 @@ internal class LineAnnotation : LineAnnotationBase
   }
 
   private static void PlaceLineAnnotation(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates,
+    AnnotationCoordinates coordinates,
     LineAnnotation annotation)
   {
     annotation._line.X1 = coordinates.\u0023\u003DzS2_K6sVvd5IY;
@@ -46,7 +46,7 @@ internal class LineAnnotation : LineAnnotationBase
   }
 
   private static Point[] CalculateBasePoints(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     return new Point[2]
     {
@@ -63,13 +63,13 @@ internal class LineAnnotation : LineAnnotationBase
     AnnotationBase.\u0023\u003DzZ8mHGwKUmQVwqESFtdY8Hx9t4kZY<LineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       LineAnnotation.PlaceLineAnnotation(_param1, this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return LineAnnotation.CalculateBasePoints(_param1);
     }
@@ -79,13 +79,13 @@ internal class LineAnnotation : LineAnnotationBase
     AnnotationBase.\u0023\u003Dzo2w1pth1o\u0024Z9uhNNd3fCWNU\u003D<LineAnnotation>(_param1)
   {
     public override void \u0023\u003DzNUoYFVRHgzxB(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       LineAnnotation.PlaceLineAnnotation(this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1), this.\u0023\u003Dz_iIh83yfe01U());
     }
 
     public override Point[] \u0023\u003DzfJgp916l7LbX(
-      \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D _param1)
+      AnnotationCoordinates _param1)
     {
       return LineAnnotation.CalculateBasePoints(this.\u0023\u003DzRGxj_ocSA6WWU4hH88BXD0c\u003D(_param1));
     }

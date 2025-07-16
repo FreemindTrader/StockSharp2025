@@ -31,12 +31,12 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   public static readonly DependencyProperty LabelValueProperty = DependencyProperty.Register(nameof (LabelValue), typeof (IComparable), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) null));
   public static readonly DependencyProperty LabelTextFormattingProperty = DependencyProperty.Register(nameof (LabelTextFormatting), typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) string.Empty, new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnLabelTextFormattingChanged)));
   public static readonly DependencyProperty FormattedLabelProperty = DependencyProperty.Register(nameof (FormattedLabel), typeof (string), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata((object) string.Empty));
-  public static readonly DependencyProperty AnnotationLabelsProperty = DependencyProperty.Register(nameof (AnnotationLabels), typeof (ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata(new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnAnnotationLabelsChanged)));
+  public static readonly DependencyProperty AnnotationLabelsProperty = DependencyProperty.Register(nameof (AnnotationLabels), typeof (ObservableCollection<AnnotationLabel>), typeof (LineAnnotationWithLabelsBase), new PropertyMetadata(new PropertyChangedCallback(LineAnnotationWithLabelsBase.OnAnnotationLabelsChanged)));
   private \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h _xyValueConverter;
 
   protected LineAnnotationWithLabelsBase()
   {
-    this.AnnotationLabels = new ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>();
+    this.AnnotationLabels = new ObservableCollection<AnnotationLabel>();
     Binding binding = new Binding(nameof (LabelValue))
     {
       Source = (object) this,
@@ -61,11 +61,11 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     get => (string) this.GetValue(LineAnnotationWithLabelsBase.FormattedLabelProperty);
   }
 
-  public ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd> AnnotationLabels
+  public ObservableCollection<AnnotationLabel> AnnotationLabels
   {
     get
     {
-      return (ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) this.GetValue(LineAnnotationWithLabelsBase.AnnotationLabelsProperty);
+      return (ObservableCollection<AnnotationLabel>) this.GetValue(LineAnnotationWithLabelsBase.AnnotationLabelsProperty);
     }
     set => this.SetValue(LineAnnotationWithLabelsBase.AnnotationLabelsProperty, (object) value);
   }
@@ -96,10 +96,10 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   }
 
   protected void AttachLabels(
-    IEnumerable<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd> labels)
+    IEnumerable<AnnotationLabel> labels)
   {
     bool flag = false;
-    foreach (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label in labels)
+    foreach (AnnotationLabel label in labels)
     {
       this.Attach(label);
       flag = label.\u0023\u003DztUuF6EohuIU9();
@@ -110,14 +110,14 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   }
 
   protected void DetachLabels(
-    IEnumerable<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd> labels)
+    IEnumerable<AnnotationLabel> labels)
   {
-    foreach (dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label in labels)
+    foreach (AnnotationLabel label in labels)
       this.Detach(label);
   }
 
   protected virtual void Attach(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label)
+    AnnotationLabel label)
   {
     if (this.IsHidden)
       return;
@@ -154,7 +154,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   private void InvalidateAxisLabels()
   {
     using (this.SuspendUpdates())
-      this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D))).\u0023\u003Dz30RSSSygABj_<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>((Action<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) (label =>
+      this.AnnotationLabels.Where<AnnotationLabel>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D = new Func<AnnotationLabel, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D))).\u0023\u003Dz30RSSSygABj_<AnnotationLabel>((Action<AnnotationLabel>) (label =>
       {
         this.Detach(label);
         this.InvalidateLabel(label);
@@ -162,7 +162,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   }
 
   public void InvalidateLabel(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd annotationLabel)
+    AnnotationLabel annotationLabel)
   {
     if (annotationLabel != null)
       this.Attach(annotationLabel);
@@ -201,7 +201,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
 
   protected override void OnAxisAlignmentChanged(
     IAxis axis,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment)
+    AxisAlignment oldAlignment)
   {
     base.OnAxisAlignmentChanged(axis, oldAlignment);
     this.InvalidateAnnotation();
@@ -210,25 +210,25 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   protected override void MakeInvisible()
   {
     base.MakeInvisible();
-    this.DetachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D))));
+    this.DetachLabels(this.AnnotationLabels.Where<AnnotationLabel>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D = new Func<AnnotationLabel, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D))));
   }
 
   protected override void MakeVisible(
-    \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfNnpojF4sCpkA8pp0g\u003D coordinates)
+    AnnotationCoordinates coordinates)
   {
     base.MakeVisible(coordinates);
     IAxis usedAxis = this.GetUsedAxis();
     if (usedAxis == null || usedAxis.get_ModifierAxisCanvas() == null)
       return;
-    this.AttachLabels(this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D))));
+    this.AttachLabels(this.AnnotationLabels.Where<AnnotationLabel>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<AnnotationLabel, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D))));
   }
 
   public override void OnApplyTemplate()
   {
-    this.DetachLabels((IEnumerable<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) this.AnnotationLabels);
+    this.DetachLabels((IEnumerable<AnnotationLabel>) this.AnnotationLabels);
     this.AnnotationRoot = (FrameworkElement) this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Grid>("PART_LineAnnotationRoot");
     this.\u0023\u003DzkgqGljJ50Pjey0H53Q\u003D\u003D<Line>("PART_GhostLine");
-    this.AttachLabels((IEnumerable<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>) this.AnnotationLabels);
+    this.AttachLabels((IEnumerable<AnnotationLabel>) this.AnnotationLabels);
     this.Refresh();
   }
 
@@ -244,15 +244,15 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     this.GetBindingExpression(LineAnnotationWithLabelsBase.DefaultLabelValueProperty)?.UpdateTarget();
   }
 
-  public dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd AddLabel()
+  public AnnotationLabel AddLabel()
   {
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd c52EkqS76HuN2Ejd = new dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd();
+    AnnotationLabel c52EkqS76HuN2Ejd = new AnnotationLabel();
     Binding binding1 = new Binding("LabelPlacement")
     {
       Source = (object) this,
       Mode = BindingMode.OneWay
     };
-    c52EkqS76HuN2Ejd.SetBinding(dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd.\u0023\u003DzbhlExb5p620n, (BindingBase) binding1);
+    c52EkqS76HuN2Ejd.SetBinding(AnnotationLabel.\u0023\u003DzbhlExb5p620n, (BindingBase) binding1);
     Binding binding2 = new Binding("ContextMenu")
     {
       Source = (object) this,
@@ -271,12 +271,12 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D = this.GetUsedAxis();
     if (dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D == null || dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D.get_ModifierAxisCanvas() == null)
       return;
-    this.AnnotationLabels.Where<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D = new Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY))).\u0023\u003Dz30RSSSygABj_<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(new Action<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>(dltbvS8bNvezolg25s.\u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D));
+    this.AnnotationLabels.Where<AnnotationLabel>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D = new Func<AnnotationLabel, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY))).\u0023\u003Dz30RSSSygABj_<AnnotationLabel>(new Action<AnnotationLabel>(dltbvS8bNvezolg25s.\u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D));
   }
 
   protected virtual void PlaceAxisLabel(
     IAxis axis,
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd axisLabel,
+    AnnotationLabel axisLabel,
     Point offset)
   {
     if (axisLabel.Parent == null)
@@ -289,17 +289,17 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   }
 
   protected virtual void Detach(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label)
+    AnnotationLabel label)
   {
     label.\u0023\u003DzBV_vk9PuzvJU((LineAnnotationWithLabelsBase) null);
     Grid annotationRoot = this.AnnotationRoot as Grid;
-    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk uxEichh7AgNdmShk = this.GetUsedAxis()?.get_ModifierAxisCanvas() ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) (label.Parent as dje_zCCKWRE6ZAZTUZM9ZU5ZMRRYMRCBJV5TT9Z7CKVUJYFUMMKZ_ejd);
+    \u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk uxEichh7AgNdmShk = this.GetUsedAxis()?.get_ModifierAxisCanvas() ?? (\u0023\u003DzNCT3Gnfe2tX07N5vDTkaUhyX2ALXUxEIchh7AgNDmShk) (label.Parent as ModifierAxisCanvas);
     annotationRoot.\u0023\u003DziYdJ\u00246cCiBha((object) label);
     uxEichh7AgNdmShk.\u0023\u003DziYdJ\u00246cCiBha((object) label);
   }
 
   protected virtual void ApplyPlacement(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label,
+    AnnotationLabel label,
     LabelPlacement placement)
   {
     bool flag1 = placement.\u0023\u003DzEiJTKKs\u003D();
@@ -330,7 +330,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   internal virtual LabelPlacement ResolveAutoPlacement() => LabelPlacement.Top;
 
   internal LabelPlacement GetLabelPlacement(
-    dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd label)
+    AnnotationLabel label)
   {
     return label.LabelPlacement == LabelPlacement.Auto ? this.ResolveAutoPlacement() : label.LabelPlacement;
   }
@@ -349,8 +349,8 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     DependencyObject d,
     DependencyPropertyChangedEventArgs e)
   {
-    ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd> newValue = e.NewValue as ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>;
-    ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd> oldValue = e.OldValue as ObservableCollection<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>;
+    ObservableCollection<AnnotationLabel> newValue = e.NewValue as ObservableCollection<AnnotationLabel>;
+    ObservableCollection<AnnotationLabel> oldValue = e.OldValue as ObservableCollection<AnnotationLabel>;
     LineAnnotationWithLabelsBase annotationWithLabelsBase = (LineAnnotationWithLabelsBase) d;
     if (newValue != null)
       newValue.CollectionChanged += new NotifyCollectionChangedEventHandler(annotationWithLabelsBase.OnAnnotationLabelsCollectionChanged);
@@ -363,10 +363,10 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   private void OnAnnotationLabelsChanged(IList newItems, IList oldItems)
   {
     if (newItems != null)
-      this.AttachLabels(newItems.OfType<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>());
+      this.AttachLabels(newItems.OfType<AnnotationLabel>());
     if (oldItems == null)
       return;
-    this.DetachLabels(oldItems.OfType<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd>());
+    this.DetachLabels(oldItems.OfType<AnnotationLabel>());
   }
 
   private void OnAnnotationLabelsCollectionChanged(
@@ -391,16 +391,16 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
       return;
     if (annotationWithLabelsBase.ShowLabel && annotationWithLabelsBase.AnnotationLabels.Count == 0)
     {
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd annotationLabel = annotationWithLabelsBase.AddLabel();
+      AnnotationLabel annotationLabel = annotationWithLabelsBase.AddLabel();
       annotationWithLabelsBase.InvalidateLabel(annotationLabel);
     }
     else
     {
       if (annotationWithLabelsBase.ShowLabel || annotationWithLabelsBase.AnnotationLabels.Count != 1)
         return;
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd annotationLabel = annotationWithLabelsBase.AnnotationLabels[0];
+      AnnotationLabel annotationLabel = annotationWithLabelsBase.AnnotationLabels[0];
       annotationWithLabelsBase.AnnotationLabels.Remove(annotationLabel);
-      annotationWithLabelsBase.InvalidateLabel((dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd) null);
+      annotationWithLabelsBase.InvalidateLabel((AnnotationLabel) null);
     }
   }
 
@@ -408,31 +408,31 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
   private new sealed class SomeClass34343383
   {
     public static readonly LineAnnotationWithLabelsBase.SomeClass34343383 SomeMethond0343 = new LineAnnotationWithLabelsBase.SomeClass34343383();
-    public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D;
-    public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D;
-    public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
-    public static Func<dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd, bool> \u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D;
+    public static Func<AnnotationLabel, bool> \u0023\u003Dz_NsrFZCmUa8QKCiCnA\u003D\u003D;
+    public static Func<AnnotationLabel, bool> \u0023\u003DzRvDbWZIRxYgzjR1S\u0024g\u003D\u003D;
+    public static Func<AnnotationLabel, bool> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
+    public static Func<AnnotationLabel, bool> \u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D;
 
     internal bool \u0023\u003DzCbZnNpb6mEZkqjOkAzkwfSE\u003D(
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd _param1)
+      AnnotationLabel _param1)
     {
       return _param1.\u0023\u003DztUuF6EohuIU9();
     }
 
     internal bool \u0023\u003DzjWiJK\u0024N5Qts4a4OqehmURFQ\u003D(
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd _param1)
+      AnnotationLabel _param1)
     {
       return _param1.\u0023\u003DztUuF6EohuIU9();
     }
 
     internal bool \u0023\u003Dzhg7sTccUaiLYo11XTCsKbp4\u003D(
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd _param1)
+      AnnotationLabel _param1)
     {
       return _param1.Parent == null;
     }
 
     internal bool \u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY(
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd _param1)
+      AnnotationLabel _param1)
     {
       return _param1.\u0023\u003DztUuF6EohuIU9() && _param1.\u0023\u003DzLtJnA4CR3Exc() != null;
     }
@@ -445,7 +445,7 @@ internal abstract class LineAnnotationWithLabelsBase : LineAnnotation
     public Point \u0023\u003Dzze_xX5E\u003D;
 
     internal void \u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D(
-      dje_zN5RZ9FJPADKV6EEGGFEMB6VJK4MEZ85NW8C52EKQS76HUN2_ejd _param1)
+      AnnotationLabel _param1)
     {
       this._variableSome3535.PlaceAxisLabel(this.\u0023\u003Dzfl\u0024A1s0\u003D, _param1, this.\u0023\u003Dzze_xX5E\u003D);
     }

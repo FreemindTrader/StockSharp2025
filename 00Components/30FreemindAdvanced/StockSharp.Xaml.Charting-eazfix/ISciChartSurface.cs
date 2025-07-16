@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 internal interface ISciChartSurface : 
   IDisposable,
   ISuspendable,
-  \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv1ei5a44WdHi6c16UXGWhmY1mMHOZA\u003D\u003D,
+  IUltrachartSurfaceBase,
   \u0023\u003DzUib3SzczDtLU7txM4YiSeNZjP0NRThUE6PRgmDMkI3UwPa6FIQ\u003D\u003D,
   IInvalidatableElement
 {
@@ -111,7 +111,7 @@ internal interface ISciChartSurface :
 
   void \u0023\u003DzOPvUPixjU\u00244Y(
     IAxis _param1,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param2);
+    AxisAlignment _param2);
 
   void \u0023\u003DzFrczvpG2vhM5(
     IAxis _param1);
