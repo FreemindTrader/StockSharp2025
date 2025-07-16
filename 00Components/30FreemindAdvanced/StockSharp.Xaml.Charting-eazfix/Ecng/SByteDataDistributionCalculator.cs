@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: #=zmAi_JN5raoSBYo9w2IEI_xK5zI$VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6
+// Type: #=zKurtFt9p_vSeW$_A_uZkzrpbHRcB0FcJmW38xyGraP4Jkq6kbaLSZKM=
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -8,8 +8,8 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6 : 
-  BaseDataDistributionCalculator<ushort>
+public sealed class SByteDataDistributionCalculator : 
+  BaseDataDistributionCalculator<sbyte>
 {
   private double \u0023\u003DzECK7c5Gz4mSc;
   private double \u0023\u003DzUvUfmcjO8Kin;
@@ -17,37 +17,37 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
   private double \u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    ISeriesColumn<ushort> _param1,
-    ushort _param2,
+    ISeriesColumn<sbyte> _param1,
+    sbyte _param2,
     bool _param3)
   {
-    this.\u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(_param1, _param2, ((ICollection<ushort>) _param1).Count - 1, _param3);
+    this.\u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(_param1, _param2, ((ICollection<sbyte>) _param1).Count - 1, _param3);
   }
 
   public override void \u0023\u003DzeU6gWqHRfREz(
-    ISeriesColumn<ushort> _param1,
+    ISeriesColumn<sbyte> _param1,
     int _param2,
-    IEnumerable<ushort> _param3,
+    IEnumerable<sbyte> _param3,
     bool _param4)
   {
     switch (_param3)
     {
-      case ushort[] numArray2:
-        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<ushort>) _param1, _param2, numArray2, numArray2.Length, _param4);
+      case sbyte[] numArray2:
+        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<sbyte>) _param1, _param2, numArray2, numArray2.Length, _param4);
         break;
-      case IList<ushort> ushortList:
-        int count = ushortList.Count;
-        ushort[] numArray1 = ushortList.\u0023\u003Dz1bvQV4SZTWpA<ushort>();
-        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<ushort>) _param1, _param2, numArray1, count, _param4);
+      case IList<sbyte> sbyteList:
+        int count = sbyteList.Count;
+        sbyte[] numArray1 = sbyteList.\u0023\u003Dz1bvQV4SZTWpA<sbyte>();
+        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<sbyte>) _param1, _param2, numArray1, count, _param4);
         break;
       default:
-        IEnumerable<ushort> ushorts = _param3;
+        IEnumerable<sbyte> sbytes = _param3;
         int num = _param2;
-        using (IEnumerator<ushort> enumerator = ushorts.GetEnumerator())
+        using (IEnumerator<sbyte> enumerator = sbytes.GetEnumerator())
         {
           while (enumerator.MoveNext())
           {
-            ushort current = enumerator.Current;
+            sbyte current = enumerator.Current;
             this.\u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(_param1, current, num, _param4);
             ++num;
           }
@@ -57,21 +57,21 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
   }
 
   public override void \u0023\u003Dzs9WSchJIpnF0(
-    ISeriesColumn<ushort> _param1,
+    ISeriesColumn<sbyte> _param1,
     int _param2,
-    ushort _param3,
+    sbyte _param3,
     bool _param4)
   {
     if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !this.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl())
       return;
-    IList<ushort> ushortList = (IList<ushort>) _param1;
-    int count = ushortList.Count;
+    IList<sbyte> sbyteList = (IList<sbyte>) _param1;
+    int count = sbyteList.Count;
     if (_param2 == 0)
     {
       if (count <= 1)
         return;
-      ushort num1 = ushortList[1];
-      double num2 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(num1) - \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3);
+      sbyte num1 = sbyteList[1];
+      double num2 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(num1) - SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3);
       this.\u0023\u003DzUvUfmcjO8Kin = num2;
       this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = true;
       if (num2 < 0.0)
@@ -85,7 +85,7 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
       {
         if (!this.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl() || !this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D)
           return;
-        double num3 = num2 - (\u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(ushortList[2]) - \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(num1));
+        double num3 = num2 - (SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(sbyteList[2]) - SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(num1));
         if (num3 < 0.0)
           num3 = -num3;
         if (num3 <= this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D)
@@ -102,13 +102,13 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
       this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(false);
       if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D())
         return;
-      if (_param2 > 0 && (int) ushortList[_param2 - 1] > (int) _param3)
+      if (_param2 > 0 && (int) sbyteList[_param2 - 1] > (int) _param3)
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
         if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !_param4)
           throw new InvalidOperationException("Data has been Inserted to a DataSeries which is unsorted in the X-Direction. Unsorted data can have severe performance implications in Ultrachart.\r\nFor maximum performance, please double-check that you are only inserting sorted data to Ultrachart. Alternatively, to disable this warning and allow unsorted data, please set DataSeries.AcceptsUnsortedData = true. For more info see Performance Tips and Tricks at http://support.ultrachart.com/index.php?/Knowledgebase/Article/View/17227/36/performance-tips-and-tricks");
       }
-      if (_param2 >= count - 1 || (int) ushortList[_param2 + 1] >= (int) _param3)
+      if (_param2 >= count - 1 || (int) sbyteList[_param2 + 1] >= (int) _param3)
         return;
       this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
       if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !_param4)
@@ -117,28 +117,28 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
   }
 
   public override void \u0023\u003DzPY2yStN8KbO\u0024(
-    ISeriesColumn<ushort> _param1,
+    ISeriesColumn<sbyte> _param1,
     int _param2,
     int _param3,
-    IEnumerable<ushort> _param4,
+    IEnumerable<sbyte> _param4,
     bool _param5)
   {
-    IList<ushort> ushortList = (IList<ushort>) _param1;
-    int count = ushortList.Count;
+    IList<sbyte> sbyteList = (IList<sbyte>) _param1;
+    int count = sbyteList.Count;
     if (_param2 + _param3 == count)
       this.\u0023\u003DzeU6gWqHRfREz(_param1, count - _param3, _param4, _param5);
     else if (_param2 == 0)
     {
       if (count <= 2)
         return;
-      double num1 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(ushortList[1]) - \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(ushortList[0]);
+      double num1 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(sbyteList[1]) - SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(sbyteList[0]);
       this.\u0023\u003DzUvUfmcjO8Kin = num1;
       this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = true;
       this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D = this.\u0023\u003DzUvUfmcjO8Kin * 0.000125;
       double znxnJcVnyOdRqEfYqdQ = this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
       for (int index = 2; index < _param3; ++index)
       {
-        double num2 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(ushortList[index]);
+        double num2 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(sbyteList[index]);
         double num3 = num2 - this.\u0023\u003DzECK7c5Gz4mSc;
         this.\u0023\u003DzECK7c5Gz4mSc = num2;
         if (num3 < 0.0)
@@ -167,11 +167,11 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
       this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(false);
       if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D())
         return;
-      ushort num5 = ushortList[_param2 - 1];
+      sbyte num5 = sbyteList[_param2 - 1];
       int num6 = _param2 + _param3 + 1;
       for (int index = _param2; index < num6; ++index)
       {
-        ushort num7 = ushortList[index];
+        sbyte num7 = sbyteList[index];
         if ((int) num7 < (int) num5)
         {
           this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
@@ -185,8 +185,8 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
   }
 
   private void \u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(
-    ISeriesColumn<ushort> _param1,
-    ushort _param2,
+    ISeriesColumn<sbyte> _param1,
+    sbyte _param2,
     int _param3,
     bool _param4)
   {
@@ -194,7 +194,7 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
       return;
     if (_param3 > 0)
     {
-      double num1 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param2) - this.\u0023\u003DzECK7c5Gz4mSc;
+      double num1 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param2) - this.\u0023\u003DzECK7c5Gz4mSc;
       if (num1 < 0.0)
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
@@ -221,13 +221,13 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
         }
       }
     }
-    this.\u0023\u003DzECK7c5Gz4mSc = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param2);
+    this.\u0023\u003DzECK7c5Gz4mSc = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param2);
   }
 
   private void \u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D(
-    IList<ushort> _param1,
+    IList<sbyte> _param1,
     int _param2,
-    ushort[] _param3,
+    sbyte[] _param3,
     int _param4,
     bool _param5)
   {
@@ -237,8 +237,8 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
     double znxnJcVnyOdRqEfYqdQ = this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
     if (_param2 > 0 && _param4 > 0)
     {
-      double num2 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]) - this.\u0023\u003DzECK7c5Gz4mSc;
-      if (this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && this.\u0023\u003DzECK7c5Gz4mSc > \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]))
+      double num2 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]) - this.\u0023\u003DzECK7c5Gz4mSc;
+      if (this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && this.\u0023\u003DzECK7c5Gz4mSc > SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]))
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
         if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !_param5)
@@ -262,12 +262,12 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
         }
       }
     }
-    double num4 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]);
+    double num4 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]);
     double num5 = this.\u0023\u003DzUvUfmcjO8Kin;
     bool flag = this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D;
     for (int index = 1; index < num1; ++index)
     {
-      double num6 = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3[index]);
+      double num6 = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[index]);
       double num7 = num6 - num4;
       if (num7 < 0.0)
       {
@@ -298,13 +298,13 @@ public sealed class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFK
     this.\u0023\u003DzECK7c5Gz4mSc = num4;
     this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = flag;
     this.\u0023\u003DzUvUfmcjO8Kin = num5;
-    this.\u0023\u003DzECK7c5Gz4mSc = \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 1]);
+    this.\u0023\u003DzECK7c5Gz4mSc = SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 1]);
     if (this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D || num1 <= 1)
       return;
-    this.\u0023\u003DzUvUfmcjO8Kin = this.\u0023\u003DzECK7c5Gz4mSc - \u0023\u003DzmAi_JN5raoSBYo9w2IEI_xK5zI\u0024VZ2FtYGm_M5ABFKKcnJPAqPUFruryn3W6.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 2]);
+    this.\u0023\u003DzUvUfmcjO8Kin = this.\u0023\u003DzECK7c5Gz4mSc - SByteDataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 2]);
     this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = true;
     this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D = this.\u0023\u003DzUvUfmcjO8Kin * 0.000125;
   }
 
-  private static double \u0023\u003DzkUwF72z8\u0024rM9(ushort _param0) => (double) _param0;
+  private static double \u0023\u003DzkUwF72z8\u0024rM9(sbyte _param0) => (double) _param0;
 }

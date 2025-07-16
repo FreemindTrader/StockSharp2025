@@ -8,11 +8,11 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE<TX> : 
+public sealed class UserDefinedDistributionCalculator<TX> : 
   BaseDataDistributionCalculator<TX>
   where TX : IComparable
 {
-  public \u0023\u003DzKsGTwu6B0A6eMUO4QALnGKNZhXyw4zGhY9mMxV0dzjFNmJYXroLyeO22bWEE()
+  public UserDefinedDistributionCalculator()
   {
     this.\u0023\u003DzWGTdqe9TpK9M(true);
     this.\u0023\u003DztzlkMHp1fyBYyPnbdOgIwYc\u003D(true);

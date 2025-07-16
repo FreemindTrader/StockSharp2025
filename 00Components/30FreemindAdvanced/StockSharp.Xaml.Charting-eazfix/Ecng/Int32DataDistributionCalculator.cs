@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: #=z6$kyD91Y546oWffDBUVKqEnz1Hw680$YYho$DwBwY351FMWEn9EnILc=
+// Type: #=z3RRntx4pzkd854dIVpLK6UX0gcjkYt7_xp1WV1SkF7QpNXuNEDpMN$YFVE0a
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -8,8 +8,8 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D : 
-  BaseDataDistributionCalculator<DateTime>
+public sealed class Int32DataDistributionCalculator : 
+  BaseDataDistributionCalculator<int>
 {
   private double \u0023\u003DzECK7c5Gz4mSc;
   private double \u0023\u003DzUvUfmcjO8Kin;
@@ -17,37 +17,37 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
   private double \u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
 
   public override void \u0023\u003DzFIf7JZ5S\u0024Wr_(
-    ISeriesColumn<DateTime> _param1,
-    DateTime _param2,
+    ISeriesColumn<int> _param1,
+    int _param2,
     bool _param3)
   {
-    this.\u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(_param1, _param2, ((ICollection<DateTime>) _param1).Count - 1, _param3);
+    this.\u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(_param1, _param2, ((ICollection<int>) _param1).Count - 1, _param3);
   }
 
   public override void \u0023\u003DzeU6gWqHRfREz(
-    ISeriesColumn<DateTime> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
-    IEnumerable<DateTime> _param3,
+    IEnumerable<int> _param3,
     bool _param4)
   {
     switch (_param3)
     {
-      case DateTime[] dateTimeArray2:
-        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<DateTime>) _param1, _param2, dateTimeArray2, dateTimeArray2.Length, _param4);
+      case int[] numArray2:
+        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<int>) _param1, _param2, numArray2, numArray2.Length, _param4);
         break;
-      case IList<DateTime> dateTimeList:
-        int count = dateTimeList.Count;
-        DateTime[] dateTimeArray1 = dateTimeList.\u0023\u003Dz1bvQV4SZTWpA<DateTime>();
-        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<DateTime>) _param1, _param2, dateTimeArray1, count, _param4);
+      case IList<int> intList:
+        int count = intList.Count;
+        int[] numArray1 = intList.\u0023\u003Dz1bvQV4SZTWpA<int>();
+        this.\u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D((IList<int>) _param1, _param2, numArray1, count, _param4);
         break;
       default:
-        IEnumerable<DateTime> dateTimes = _param3;
+        IEnumerable<int> ints = _param3;
         int num = _param2;
-        using (IEnumerator<DateTime> enumerator = dateTimes.GetEnumerator())
+        using (IEnumerator<int> enumerator = ints.GetEnumerator())
         {
           while (enumerator.MoveNext())
           {
-            DateTime current = enumerator.Current;
+            int current = enumerator.Current;
             this.\u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(_param1, current, num, _param4);
             ++num;
           }
@@ -57,24 +57,24 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
   }
 
   public override void \u0023\u003Dzs9WSchJIpnF0(
-    ISeriesColumn<DateTime> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
-    DateTime _param3,
+    int _param3,
     bool _param4)
   {
     if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !this.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl())
       return;
-    IList<DateTime> dateTimeList = (IList<DateTime>) _param1;
-    int count = dateTimeList.Count;
+    IList<int> intList = (IList<int>) _param1;
+    int count = intList.Count;
     if (_param2 == 0)
     {
       if (count <= 1)
         return;
-      DateTime dateTime = dateTimeList[1];
-      double num1 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(dateTime) - \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3);
-      this.\u0023\u003DzUvUfmcjO8Kin = num1;
+      int num1 = intList[1];
+      double num2 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(num1) - Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3);
+      this.\u0023\u003DzUvUfmcjO8Kin = num2;
       this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = true;
-      if (num1 < 0.0)
+      if (num2 < 0.0)
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
         this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(false);
@@ -85,10 +85,10 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
       {
         if (!this.\u0023\u003Dzto0ucxxNtpN_zkiSeV1usQd_D\u0024yl() || !this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D)
           return;
-        double num2 = num1 - (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(dateTimeList[2]) - \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(dateTime));
-        if (num2 < 0.0)
-          num2 = -num2;
-        if (num2 <= this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D)
+        double num3 = num2 - (Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(intList[2]) - Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(num1));
+        if (num3 < 0.0)
+          num3 = -num3;
+        if (num3 <= this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D)
           return;
         this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(false);
       }
@@ -102,13 +102,13 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
       this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(false);
       if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D())
         return;
-      if (_param2 > 0 && dateTimeList[_param2 - 1] > _param3)
+      if (_param2 > 0 && intList[_param2 - 1] > _param3)
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
         if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !_param4)
           throw new InvalidOperationException("Data has been Inserted to a DataSeries which is unsorted in the X-Direction. Unsorted data can have severe performance implications in Ultrachart.\r\nFor maximum performance, please double-check that you are only inserting sorted data to Ultrachart. Alternatively, to disable this warning and allow unsorted data, please set DataSeries.AcceptsUnsortedData = true. For more info see Performance Tips and Tricks at http://support.ultrachart.com/index.php?/Knowledgebase/Article/View/17227/36/performance-tips-and-tricks");
       }
-      if (_param2 >= count - 1 || !(dateTimeList[_param2 + 1] < _param3))
+      if (_param2 >= count - 1 || intList[_param2 + 1] >= _param3)
         return;
       this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
       if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !_param4)
@@ -117,28 +117,28 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
   }
 
   public override void \u0023\u003DzPY2yStN8KbO\u0024(
-    ISeriesColumn<DateTime> _param1,
+    ISeriesColumn<int> _param1,
     int _param2,
     int _param3,
-    IEnumerable<DateTime> _param4,
+    IEnumerable<int> _param4,
     bool _param5)
   {
-    IList<DateTime> dateTimeList = (IList<DateTime>) _param1;
-    int count = dateTimeList.Count;
+    IList<int> intList = (IList<int>) _param1;
+    int count = intList.Count;
     if (_param2 + _param3 == count)
       this.\u0023\u003DzeU6gWqHRfREz(_param1, count - _param3, _param4, _param5);
     else if (_param2 == 0)
     {
       if (count <= 2)
         return;
-      double num1 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(dateTimeList[1]) - \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(dateTimeList[0]);
+      double num1 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(intList[1]) - Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(intList[0]);
       this.\u0023\u003DzUvUfmcjO8Kin = num1;
       this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = true;
       this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D = this.\u0023\u003DzUvUfmcjO8Kin * 0.000125;
       double znxnJcVnyOdRqEfYqdQ = this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
       for (int index = 2; index < _param3; ++index)
       {
-        double num2 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(dateTimeList[index]);
+        double num2 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(intList[index]);
         double num3 = num2 - this.\u0023\u003DzECK7c5Gz4mSc;
         this.\u0023\u003DzECK7c5Gz4mSc = num2;
         if (num3 < 0.0)
@@ -167,26 +167,26 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
       this.\u0023\u003Dz6HFZWED70KA3OkmAw\u0024SltknkBzo4(false);
       if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D())
         return;
-      DateTime dateTime1 = dateTimeList[_param2 - 1];
-      int num = _param2 + _param3 + 1;
-      for (int index = _param2; index < num; ++index)
+      int num5 = intList[_param2 - 1];
+      int num6 = _param2 + _param3 + 1;
+      for (int index = _param2; index < num6; ++index)
       {
-        DateTime dateTime2 = dateTimeList[index];
-        if (dateTime2 < dateTime1)
+        int num7 = intList[index];
+        if (num7 < num5)
         {
           this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
           if (this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() || _param5)
             break;
           throw new InvalidOperationException("Data has been Inserted to a DataSeries which is unsorted in the X-Direction. Unsorted data can have severe performance implications in Ultrachart.\r\nFor maximum performance, please double-check that you are only inserting sorted data to Ultrachart. Alternatively, to disable this warning and allow unsorted data, please set DataSeries.AcceptsUnsortedData = true. For more info see Performance Tips and Tricks at http://support.ultrachart.com/index.php?/Knowledgebase/Article/View/17227/36/performance-tips-and-tricks");
         }
-        dateTime1 = dateTime2;
+        num5 = num7;
       }
     }
   }
 
   private void \u0023\u003DzUIhkiEELxlDXkW60HA\u003D\u003D(
-    ISeriesColumn<DateTime> _param1,
-    DateTime _param2,
+    ISeriesColumn<int> _param1,
+    int _param2,
     int _param3,
     bool _param4)
   {
@@ -194,7 +194,7 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
       return;
     if (_param3 > 0)
     {
-      double num1 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param2) - this.\u0023\u003DzECK7c5Gz4mSc;
+      double num1 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param2) - this.\u0023\u003DzECK7c5Gz4mSc;
       if (num1 < 0.0)
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
@@ -221,13 +221,13 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
         }
       }
     }
-    this.\u0023\u003DzECK7c5Gz4mSc = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param2);
+    this.\u0023\u003DzECK7c5Gz4mSc = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param2);
   }
 
   private void \u0023\u003DzhyFsF2I8e3f6_Y5THg\u003D\u003D(
-    IList<DateTime> _param1,
+    IList<int> _param1,
     int _param2,
-    DateTime[] _param3,
+    int[] _param3,
     int _param4,
     bool _param5)
   {
@@ -237,8 +237,8 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
     double znxnJcVnyOdRqEfYqdQ = this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D;
     if (_param2 > 0 && _param4 > 0)
     {
-      double num2 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]) - this.\u0023\u003DzECK7c5Gz4mSc;
-      if (this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && this.\u0023\u003DzECK7c5Gz4mSc > \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]))
+      double num2 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]) - this.\u0023\u003DzECK7c5Gz4mSc;
+      if (this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && this.\u0023\u003DzECK7c5Gz4mSc > Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]))
       {
         this.\u0023\u003DzBD_etwoAJ6Nw1j21ug\u003D\u003D(false);
         if (!this.\u0023\u003Dzu6iQ2MOE9IYpXL_QIQ\u003D\u003D() && !_param5)
@@ -262,12 +262,12 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
         }
       }
     }
-    double num4 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]);
+    double num4 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[0]);
     double num5 = this.\u0023\u003DzUvUfmcjO8Kin;
     bool flag = this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D;
     for (int index = 1; index < num1; ++index)
     {
-      double num6 = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3[index]);
+      double num6 = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[index]);
       double num7 = num6 - num4;
       if (num7 < 0.0)
       {
@@ -298,13 +298,13 @@ public sealed class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u
     this.\u0023\u003DzECK7c5Gz4mSc = num4;
     this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = flag;
     this.\u0023\u003DzUvUfmcjO8Kin = num5;
-    this.\u0023\u003DzECK7c5Gz4mSc = \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 1]);
+    this.\u0023\u003DzECK7c5Gz4mSc = Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 1]);
     if (this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D || num1 <= 1)
       return;
-    this.\u0023\u003DzUvUfmcjO8Kin = this.\u0023\u003DzECK7c5Gz4mSc - \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqEnz1Hw680\u0024YYho\u0024DwBwY351FMWEn9EnILc\u003D.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 2]);
+    this.\u0023\u003DzUvUfmcjO8Kin = this.\u0023\u003DzECK7c5Gz4mSc - Int32DataDistributionCalculator.\u0023\u003DzkUwF72z8\u0024rM9(_param3[num1 - 2]);
     this.\u0023\u003DzJEpy_QVydelYNN6GnA\u003D\u003D = true;
     this.\u0023\u003DznxnJcVNYOdRqEfYQdQ\u003D\u003D = this.\u0023\u003DzUvUfmcjO8Kin * 0.000125;
   }
 
-  private static double \u0023\u003DzkUwF72z8\u0024rM9(DateTime _param0) => (double) _param0.Ticks;
+  private static double \u0023\u003DzkUwF72z8\u0024rM9(int _param0) => (double) _param0;
 }
