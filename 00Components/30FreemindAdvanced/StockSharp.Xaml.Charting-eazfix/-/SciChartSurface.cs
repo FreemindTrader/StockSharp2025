@@ -523,13 +523,13 @@ public class SciChartSurface :
   }
 
   [SpecialName]
-  public IAnnotationCanvas \u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D()
+  public IAnnotationCanvas AnnotationOverlaySurface
   {
     return (IAnnotationCanvas) this.\u0023\u003DzJCSLrMbWu3xb\u00240pkXO0DnxY\u003D;
   }
 
   [SpecialName]
-  public IAnnotationCanvas \u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D()
+  public IAnnotationCanvas AnnotationUnderlaySurface()
   {
     return (IAnnotationCanvas) this.\u0023\u003Dzm\u0024RjME9m9HW8iNSk3pzjUqs\u003D;
   }

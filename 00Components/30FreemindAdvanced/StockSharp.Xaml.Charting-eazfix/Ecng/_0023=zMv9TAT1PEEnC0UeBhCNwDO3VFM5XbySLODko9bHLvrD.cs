@@ -31,7 +31,7 @@ public class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u00
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     if (xkzemsMs5tGkouk5w != null && Math.Abs(this.\u0023\u003DzYy\u0024VrU8bBAGC) >= double.Epsilon)
     {
-      this.\u0023\u003DzO_MoV2Kpn\u0024rL = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz4wEfDhMr\u0024V6c();
+      this.\u0023\u003DzO_MoV2Kpn\u0024rL = this.\u0023\u003DzHZDgUSdfqmkx().GetOffsetForLabels();
       if (!((IEnumerable<double>) _param1).\u0023\u003DzCCMM80zDpO6N<double>())
         this.\u0023\u003DzrfVZUmcocqSCBDcs2A\u003D\u003D(_param1, xkzemsMs5tGkouk5w, false);
       if (!((IEnumerable<double>) _param2).\u0023\u003DzCCMM80zDpO6N<double>())

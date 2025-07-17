@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
 #nullable disable
-public static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\u003D
+public static class ElementExtensions
 {
   public static void \u0023\u003DzI0WdlDcUgrX_(this UIElement _param0)
   {
@@ -149,7 +149,7 @@ public static class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\u0
     DependencyProperty _param1,
     object _param2)
   {
-    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\u003D.\u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D lmbTiAitFc7nJ884 = new \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQJfGolgX9jTeAGFiNSE\u003D.\u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D();
+    ElementExtensions.\u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D lmbTiAitFc7nJ884 = new ElementExtensions.\u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D();
     lmbTiAitFc7nJ884.\u0023\u003Dz_i6sZDg\u003D = _param0;
     lmbTiAitFc7nJ884.\u0023\u003Dz89jjF1s\u003D = _param1;
     lmbTiAitFc7nJ884.\u0023\u003DzxGz2_8k\u003D = _param2;

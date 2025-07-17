@@ -59,7 +59,7 @@ public sealed class PolarYAxis :
     }
   }
 
-  public override double \u0023\u003Dz4wEfDhMr\u0024V6c() => 0.0;
+  public override double GetOffsetForLabels() => 0.0;
 
   public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
   {

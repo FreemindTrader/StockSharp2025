@@ -23,7 +23,7 @@ public interface IChartModifier :
 
   IAxis YAxis { get; }
 
-  IAxis \u0023\u003Dz4uoxB8oLWxeL(
+  IAxis GetYAxis(
     string _param1);
 
   bool \u0023\u003DzbOxVzAyGdX66(

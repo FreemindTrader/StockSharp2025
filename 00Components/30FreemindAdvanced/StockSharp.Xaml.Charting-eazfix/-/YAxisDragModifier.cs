@@ -15,7 +15,7 @@ public sealed class YAxisDragModifier :
 {
   protected override IAxis \u0023\u003DzFLmJq0JJlr0n()
   {
-    return this.\u0023\u003Dz4uoxB8oLWxeL(this.AxisId);
+    return this.GetYAxis(this.AxisId);
   }
 
   protected override Cursor \u0023\u003Dzwc3e5oDhVoYg(

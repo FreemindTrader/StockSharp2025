@@ -104,12 +104,12 @@ public abstract class ApiElementBase : ContentControl, INotifyPropertyChanged
 
     public abstract void OnDetached();
 
-    public IAxis \u0023\u003Dz4uoxB8oLWxeL( string _param1 )
+    public IAxis GetYAxis( string _param1 )
     {
         return this.ParentSurface == null || this.ParentSurface.get_YAxes() == null ? ( IAxis ) null : this.ParentSurface.get_YAxes().\u0023\u003Dz\u0024YoxjvGBoa2C( _param1, false );
     }
 
-    public IAxis \u0023\u003DzI0EiGDjWkH8S( string _param1 )
+    public IAxis GetXAxis( string _param1 )
     {
         return this.ParentSurface == null || this.ParentSurface.get_XAxes() == null ? ( IAxis ) null : this.ParentSurface.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C( _param1, false );
     }

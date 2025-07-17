@@ -44,7 +44,7 @@ public sealed class XAxisDragModifier :
 
   protected override IAxis \u0023\u003DzFLmJq0JJlr0n()
   {
-    return this.\u0023\u003DzI0EiGDjWkH8S(this.AxisId);
+    return this.GetXAxis(this.AxisId);
   }
 
   public override void OnModifierMouseDown(

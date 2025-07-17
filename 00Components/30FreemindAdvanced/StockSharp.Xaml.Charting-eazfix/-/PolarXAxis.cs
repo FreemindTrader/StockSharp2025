@@ -64,7 +64,7 @@ public sealed class PolarXAxis :
     }
   }
 
-  public override double \u0023\u003Dz4wEfDhMr\u0024V6c() => 0.0;
+  public override double GetOffsetForLabels() => 0.0;
 
   protected override Point \u0023\u003DzY0xm0mTfvYAx(float _param1, float _param2)
   {

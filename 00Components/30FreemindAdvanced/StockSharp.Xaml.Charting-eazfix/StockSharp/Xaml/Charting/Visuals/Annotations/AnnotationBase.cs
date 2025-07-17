@@ -69,9 +69,9 @@ public abstract class AnnotationBase :
         switch ( annotationCanvas )
         {
             case AnnotationCanvas.AboveChart:
-                return this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+                return this.ParentSurface.AnnotationOverlaySurface;
             case AnnotationCanvas.BelowChart:
-                return this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+                return this.ParentSurface.AnnotationUnderlaySurface();
             case AnnotationCanvas.YAxis:
                 return this.YAxis == null ? (IAnnotationCanvas) null : this.YAxis.ModifierAxisCanvas;
             case AnnotationCanvas.XAxis:
@@ -321,19 +321,19 @@ public override bool IsAttached
 
 public override IAxis YAxis
 {
-    get => this._yAxis ?? ( this._yAxis = this.\u0023\u003Dz4uoxB8oLWxeL(this.YAxisId));
+    get => this._yAxis ?? ( this._yAxis = this.GetYAxis(this.YAxisId));
 }
 
 public override IAxis XAxis
 {
-    get => this._xAxis ?? ( this._xAxis = this.\u0023\u003DzI0EiGDjWkH8S(this.XAxisId));
+    get => this._xAxis ?? ( this._xAxis = this.GetXAxis(this.XAxisId));
 }
 
 protected IAnnotationCanvas AnnotationOverlaySurface
 {
     get
     {
-        return this.ParentSurface == null ? (IAnnotationCanvas) null : this.ParentSurface.\u0023\u003DzFPPJbPlQRagwT6aZuQ\u003D\u003D();
+        return this.ParentSurface == null ? (IAnnotationCanvas) null : this.ParentSurface.AnnotationOverlaySurface;
     }
 }
 
@@ -341,11 +341,11 @@ protected IAnnotationCanvas AnnotationUnderlaySurface
 {
     get
     {
-        return this.ParentSurface == null ? (IAnnotationCanvas) null : this.ParentSurface.\u0023\u003Dz7EP15yq7Yz\u0024jLVX6GgE8gjs\u003D();
+        return this.ParentSurface == null ? (IAnnotationCanvas) null : this.ParentSurface.AnnotationUnderlaySurface();
     }
 }
 
-void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnXAxesCollectionChanged(
+void IAnnotation.OnXAxesCollectionChanged(
     object sender,
     NotifyCollectionChangedEventArgs args)
   {
@@ -357,7 +357,7 @@ void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotation
     }.\u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H));
   }
 
-  void IAnnotation.StockSharp\u002EXaml\u002ECharting\u002EVisuals\u002EAnnotations\u002EIAnnotation\u002EOnYAxesCollectionChanged(
+  void IAnnotation.OnYAxesCollectionChanged(
     object sender,
     NotifyCollectionChangedEventArgs args)
   {
@@ -757,8 +757,8 @@ public bool Refresh()
       \u0023\u003Dz2J4l3QUGwZHE = coordinates1.Y,
       \u0023\u003Dz6aJoeqoqAzym = coordinates2.X,
       \u0023\u003DzWp13vlQiZCJc = coordinates2.Y,
-      \u0023\u003DzjAUs6E8\u003D = this.YAxis != null ? this.YAxis.\u0023\u003Dz4wEfDhMr\u0024V6c() : num,
-      \u0023\u003DzN0WZcqs\u003D = this.XAxis != null ? this.XAxis.\u0023\u003Dz4wEfDhMr\u0024V6c() : num
+      \u0023\u003DzjAUs6E8\u003D = this.YAxis != null ? this.YAxis.GetOffsetForLabels() : num,
+      \u0023\u003DzN0WZcqs\u003D = this.XAxis != null ? this.XAxis.GetOffsetForLabels() : num
     };
   }
 
@@ -999,7 +999,7 @@ public bool Refresh()
   {
     if (!(d is AnnotationBase annotationBase))
       return;
-    annotationBase._yAxis = annotationBase.\u0023\u003Dz4uoxB8oLWxeL(annotationBase.YAxisId);
+    annotationBase._yAxis = annotationBase.GetYAxis(annotationBase.YAxisId);
     annotationBase.OnYAxisIdChanged();
     ((AnnotationBase) d).Refresh();
   }
@@ -1008,7 +1008,7 @@ public bool Refresh()
   {
     if (!(d is AnnotationBase annotationBase))
       return;
-    annotationBase._xAxis = annotationBase.\u0023\u003DzI0EiGDjWkH8S(annotationBase.XAxisId);
+    annotationBase._xAxis = annotationBase.GetXAxis(annotationBase.XAxisId);
     annotationBase.OnXAxisIdChanged();
     ((AnnotationBase) d).Refresh();
   }
@@ -1109,7 +1109,7 @@ public bool Refresh()
     {
       // ISSUE: explicit non-virtual call
       // ISSUE: explicit non-virtual call
-      this._variableSome3535._yAxis = __nonvirtual (this._variableSome3535.\u0023\u003Dz4uoxB8oLWxeL(__nonvirtual (this._variableSome3535.YAxisId)));
+      this._variableSome3535._yAxis = __nonvirtual (this._variableSome3535.GetYAxis(__nonvirtual (this._variableSome3535.YAxisId)));
       this._variableSome3535.OnYAxesCollectionChanged(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
     }
   }
@@ -1204,7 +1204,7 @@ public bool Refresh()
     public void \u0023\u003Dz51OAXpgKHWL1SXLaCA5i5tpZSV6aNEG7pUicQk0yky3I6F_EHJGXbx7TM94H()
     {
       // ISSUE: explicit non-virtual call
-      this._variableSome3535._xAxis = this._variableSome3535.\u0023\u003DzI0EiGDjWkH8S(__nonvirtual (this._variableSome3535.XAxisId));
+      this._variableSome3535._xAxis = this._variableSome3535.GetXAxis(__nonvirtual (this._variableSome3535.XAxisId));
       this._variableSome3535.OnXAxesCollectionChanged(this.\u0023\u003DzwM8aRUE\u003D, this.\u0023\u003DzTi2kmf4\u003D);
     }
   }

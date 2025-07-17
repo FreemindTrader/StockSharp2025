@@ -644,7 +644,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
     throw new NotImplementedException();
   }
 
-  public double \u0023\u003Dz4wEfDhMr\u0024V6c() => throw new NotImplementedException();
+  public double GetOffsetForLabels() => throw new NotImplementedException();
 
   public IComparable GetDataValue(double _param1)
   {

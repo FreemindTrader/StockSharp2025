@@ -142,8 +142,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
         
         this._annotation.IsSelected = true;
         this.OnAnnotationCreated();
-
-        throw new NotImplementedException();
+        
         //_annotation.UpdateAdorners();
     }
 
