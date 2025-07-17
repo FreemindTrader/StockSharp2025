@@ -18,7 +18,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
     private Point _pointRelativeToModifier;
 
-    private AnnotationBase _annotation;
+    private AnnotationBaseEx _annotation;
 
     private Type _annotationType;
 
@@ -143,15 +143,15 @@ public class fxAnnotationCreationModifier : ChartModifierBase
         this._annotation.IsSelected = true;
         this.OnAnnotationCreated();
         
-        //_annotation.UpdateAdorners();
+        _annotation.UpdateAdorners();
     }
 
 
 
 
-    protected virtual AnnotationBase CreateAnnotation( Type _param1, Style _param2 )
+    protected virtual AnnotationBaseEx CreateAnnotation( Type _param1, Style _param2 )
     {
-        AnnotationBase instance = (AnnotationBase) Activator.CreateInstance(_param1);
+        var instance = (AnnotationBaseEx) Activator.CreateInstance(_param1);
         instance.YAxisId = this.YAxisId;
         instance.XAxisId = this.XAxisId;
         if ( _param2 != null && _param2.TargetType == _param1 )

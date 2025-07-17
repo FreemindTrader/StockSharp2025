@@ -1,4 +1,34 @@
-﻿//using SciChart.Charting.ChartModifiers;
+﻿
+using System.Windows.Controls;
+using System;
+using System.Windows.Input;
+using SciChart.Charting.Visuals.Annotations;
+
+public class AnnotationBaseEx : AnnotationBase
+{    
+    protected override Cursor GetSelectedCursor()
+    {
+        return Cursors.SizeNS;
+    }
+
+    /// <summary>
+    /// It seems like StockSharp version of Scichart has some customize code, so I am extracting those code out to it's EX version to duplicate its functionalities
+    /// </summary>
+    public void UpdateAdorners()
+    {
+        Canvas adornerLayer = this.GetAdornerLayer();
+        if ( adornerLayer == null )
+            return;
+        var adorners = this.GetUsedAdorners<IAnnotationAdorner>(adornerLayer);
+
+        foreach ( var adorner in adorners )
+        {
+            adorner.UpdatePositions();
+        }                        
+    }
+}
+
+//using SciChart.Charting.ChartModifiers;
 //using SciChart.Charting.Visuals.Annotations;
 //using SciChart.Charting.Visuals.Axes;
 //using SciChart.Charting.Visuals.Events;
@@ -784,7 +814,7 @@
 //    return num6 <= 0.0 ? -1.0 : val1 + num6 * num5;
 //  }
 
-  
+
 
 //  public void MoveAnnotation(double horizOffset, double vertOffset)
 //  {
