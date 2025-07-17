@@ -2,9 +2,9 @@
 	<Import Project="..\..\..\common_target_net.props" />
 	<Import Project="..\..\..\fx.packages.props" />
 	<PropertyGroup>
-		<RootNamespace>StockSharp.Charting</RootNamespace>
-		<AssemblyName>StockSharp.Charting</AssemblyName>
-		<PackageId>StockSharp.Charting</PackageId>
+		<RootNamespace>fx.Xaml.Charting</RootNamespace>
+		<AssemblyName>fx.Xaml.Charting</AssemblyName>
+		<PackageId>fx.Xaml.Charting</PackageId>
 	</PropertyGroup>
 
 	<PropertyGroup>

@@ -1,7 +1,7 @@
-﻿// Ecng.Xaml.Charting.Numerics.GenericMath.ArrayOperations
+﻿// fx.Xaml.Charting.Numerics.GenericMath.ArrayOperations
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting;
+using fx.Xaml.Charting;
 internal static class ArrayOperations
 {
     private interface IGenericArrayHelper<T>

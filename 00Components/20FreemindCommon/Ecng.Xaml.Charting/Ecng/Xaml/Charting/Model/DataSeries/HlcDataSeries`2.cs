@@ -1,9 +1,9 @@
-﻿// Ecng.Xaml.Charting.Model.DataSeries.HlcDataSeries<TX,TY>
+﻿// fx.Xaml.Charting.Model.DataSeries.HlcDataSeries<TX,TY>
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting;
+using fx.Xaml.Charting;
 public sealed class HlcDataSeries<TX, TY> : DataSeries<TX, TY>, IHlcDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IHlcDataSeries where TX : IComparable where TY : IComparable
 {
     private ISeriesColumn<TY> _highColumn = new SeriesColumn<TY>();

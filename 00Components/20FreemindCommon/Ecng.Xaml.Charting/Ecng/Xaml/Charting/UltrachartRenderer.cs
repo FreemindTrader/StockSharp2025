@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     internal class UltrachartRenderer : IUltrachartRenderer
     {

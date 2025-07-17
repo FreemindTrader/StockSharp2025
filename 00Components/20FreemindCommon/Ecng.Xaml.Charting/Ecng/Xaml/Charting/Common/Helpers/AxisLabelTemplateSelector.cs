@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     internal class AxisLabelTemplateSelector : DataTemplateSelector
     {

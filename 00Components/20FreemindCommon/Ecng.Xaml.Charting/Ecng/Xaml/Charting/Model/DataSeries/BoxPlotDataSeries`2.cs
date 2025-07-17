@@ -1,7 +1,7 @@
-﻿// Ecng.Xaml.Charting.Model.DataSeries.BoxPlotDataSeries<TX,TY>
+﻿// fx.Xaml.Charting.Model.DataSeries.BoxPlotDataSeries<TX,TY>
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting;
+using fx.Xaml.Charting;
 public class BoxPlotDataSeries<TX, TY> : DataSeries<TX, TY> where TX : IComparable where TY : IComparable
 {
     private ISeriesColumn<TY> _minimumColumn = new SeriesColumn<TY>();

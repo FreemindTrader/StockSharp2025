@@ -1,15 +1,15 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.DataSeries`2
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.DataSeries`2
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\fx.Xaml.Charting.dll
 
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public abstract class DataSeries<TX, TY> : BindableObject, IDataSeries<TX, TY>, IDataSeries, ISuspendable where TX : IComparable where TY : IComparable
     {
@@ -32,7 +32,7 @@ namespace Ecng.Xaml.Charting
         protected TX _xMax;
         private int? _fifoCapacity;
         private string _seriesName;
-        private Ecng.Xaml.Charting.WeakReference<ISciChartSurface> _parentSurface;
+        private fx.Xaml.Charting.WeakReference<ISciChartSurface> _parentSurface;
 
         public event EventHandler<DataSeriesChangedEventArgs> DataSeriesChanged;
 
@@ -73,7 +73,7 @@ namespace Ecng.Xaml.Charting
                     return;
                 }
 
-                this._parentSurface = new Ecng.Xaml.Charting.WeakReference<ISciChartSurface>( value );
+                this._parentSurface = new fx.Xaml.Charting.WeakReference<ISciChartSurface>( value );
             }
         }
 
@@ -99,8 +99,8 @@ namespace Ecng.Xaml.Charting
             {
                 lock ( this.SyncRoot )
                 {
-                    TX min = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.MaxValue;
-                    TX max = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.MinValue;
+                    TX min = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.MaxValue;
+                    TX max = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.MinValue;
                     if ( this.DataDistributionCalculator.DataIsSortedAscending )
                     {
                         IList<TX> xColumn = (IList<TX>) this._xColumn;
@@ -433,7 +433,7 @@ namespace Ecng.Xaml.Charting
             }
 
             IndexRange indicesRange = this.GetIndicesRange(xRange, SearchMode.Nearest, SearchMode.Nearest);
-            return indicesRange.IsDefined ? this.GetWindowedYRange( indicesRange, getPositiveRange ) : ( IRange ) this.NewRange( ( IComparable ) Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.MinValue, ( IComparable ) Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.MaxValue );
+            return indicesRange.IsDefined ? this.GetWindowedYRange( indicesRange, getPositiveRange ) : ( IRange ) this.NewRange( ( IComparable ) fx.Xaml.Charting.DataSeries<TX, TY>.YMath.MinValue, ( IComparable ) fx.Xaml.Charting.DataSeries<TX, TY>.YMath.MaxValue );
         }
 
         public IRange GetWindowedYRange( IndexRange xIndexRange )
@@ -445,8 +445,8 @@ namespace Ecng.Xaml.Charting
         {
             lock ( this.SyncRoot )
             {
-                TY existingYMax = Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.MinValue;
-                TY y = Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.MaxValue;
+                TY existingYMax = fx.Xaml.Charting.DataSeries<TX, TY>.YMath.MinValue;
+                TY y = fx.Xaml.Charting.DataSeries<TX, TY>.YMath.MaxValue;
                 int num1 = Math.Max(xIndexRange.Min, 0);
                 int num2 = Math.Min(xIndexRange.Max, this.Count - 1);
                 for ( int index = num1 ; index <= num2 ; ++index )
@@ -470,9 +470,9 @@ namespace Ecng.Xaml.Charting
                 }
 
                 double rhs = (double) x;
-                TX lhs = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue;
-                lhs = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Inc( ref lhs );
-                x = ( IComparable ) Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Mult( lhs, rhs );
+                TX lhs = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue;
+                lhs = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Inc( ref lhs );
+                x = ( IComparable ) fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Mult( lhs, rhs );
             }
             return this.XValues.FindIndex<TX>( this.IsSorted, x, searchMode );
         }
@@ -520,7 +520,7 @@ namespace Ecng.Xaml.Charting
                 return positiveMin;
             }
 
-            IComparable comparable = typeof (T) == typeof (TX) ? (IComparable) Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue : (IComparable) Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.ZeroValue;
+            IComparable comparable = typeof (T) == typeof (TX) ? (IComparable) fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue : (IComparable) fx.Xaml.Charting.DataSeries<TX, TY>.YMath.ZeroValue;
             if ( min.CompareTo( ( object ) comparable ) <= 0 )
             {
                 return positiveMin;
@@ -543,7 +543,7 @@ namespace Ecng.Xaml.Charting
                 return existingXMin;
             }
 
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Min( existingXMin, xvalue );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Min( existingXMin, xvalue );
         }
 
         internal TY ComputeMin( TY currentMin, TY inputMin, ISeriesColumn<TY> seriesColumn )
@@ -553,7 +553,7 @@ namespace Ecng.Xaml.Charting
                 return seriesColumn.GetMinimum();
             }
 
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( currentMin, inputMin );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( currentMin, inputMin );
         }
 
         internal TY ComputeMax( TY currentMax, TY inputMax, ISeriesColumn<TY> seriesColumn )
@@ -563,7 +563,7 @@ namespace Ecng.Xaml.Charting
                 return seriesColumn.GetMaximum();
             }
 
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( currentMax, inputMax );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( currentMax, inputMax );
         }
 
         internal TX ComputeMin( TX currentMin, TX inputMin, ISeriesColumn<TX> seriesColumn )
@@ -573,7 +573,7 @@ namespace Ecng.Xaml.Charting
                 return seriesColumn.GetMinimum();
             }
 
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Min( currentMin, inputMin );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Min( currentMin, inputMin );
         }
 
         internal TX ComputeMax( TX currentMax, TX inputMax, ISeriesColumn<TX> seriesColumn )
@@ -583,7 +583,7 @@ namespace Ecng.Xaml.Charting
                 return seriesColumn.GetMaximum();
             }
 
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Max( currentMax, inputMax );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Max( currentMax, inputMax );
         }
 
         internal void OnDataSeriesChanged( DataSeriesUpdate dataSeriesUpdate )
@@ -674,17 +674,17 @@ namespace Ecng.Xaml.Charting
                 TX[] uncheckedList1 = this.XValues.ToUncheckedList<TX>();
                 TY[] uncheckedList2 = this.YValues.ToUncheckedList<TY>();
                 TX x1 = (TX) xValue;
-                double num4 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(x1);
+                double num4 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(x1);
                 if ( this.IsSorted )
                 {
                     if ( xyScaleRatio.CompareTo( 0.0 ) == 0 )
                     {
-                        num1 = uncheckedList1.FindIndexInSortedData<TX>( count, x1, SearchMode.Nearest, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath );
+                        num1 = uncheckedList1.FindIndexInSortedData<TX>( count, x1, SearchMode.Nearest, fx.Xaml.Charting.DataSeries<TX, TY>.XMath );
                     }
                     else
                     {
-                        TX zeroValue = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue;
-                        TX lhs = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Inc(ref zeroValue);
+                        TX zeroValue = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue;
+                        TX lhs = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Inc(ref zeroValue);
                         if ( typeof( TX ) == typeof( DateTime ) )
                         {
                             double num5 = hitTestRadius;
@@ -696,11 +696,11 @@ namespace Ecng.Xaml.Charting
                                 hitTestRadius = ( double ) ( maxValue.Ticks - 1L );
                             }
                         }
-                        TX x2 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Mult(lhs, hitTestRadius);
-                        TX x3 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Subtract(x1, x2);
-                        TX x4 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Add(x1, x2);
-                        int indexInSortedData1 = uncheckedList1.FindIndexInSortedData<TX>(count, x3, SearchMode.RoundDown, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath);
-                        int indexInSortedData2 = uncheckedList1.FindIndexInSortedData<TX>(count, x4, SearchMode.RoundUp, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath);
+                        TX x2 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Mult(lhs, hitTestRadius);
+                        TX x3 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Subtract(x1, x2);
+                        TX x4 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Add(x1, x2);
+                        int indexInSortedData1 = uncheckedList1.FindIndexInSortedData<TX>(count, x3, SearchMode.RoundDown, fx.Xaml.Charting.DataSeries<TX, TY>.XMath);
+                        int indexInSortedData2 = uncheckedList1.FindIndexInSortedData<TX>(count, x4, SearchMode.RoundUp, fx.Xaml.Charting.DataSeries<TX, TY>.XMath);
                         if ( indexInSortedData1 >= 0 )
                         {
                             num2 = indexInSortedData1;
@@ -720,10 +720,10 @@ namespace Ecng.Xaml.Charting
                     int num6 = num2 + num3 + 1;
                     for ( int index = num2 ; index < num6 ; ++index )
                     {
-                        double num7 = Math.Abs(Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(uncheckedList1[index]) - num4);
+                        double num7 = Math.Abs(fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(uncheckedList1[index]) - num4);
                         if ( xyScaleRatio.CompareTo( 0.0 ) != 0 )
                         {
-                            double num8 = Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Subtract(uncheckedList2[index], (TY) yValue));
+                            double num8 = fx.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Subtract(uncheckedList2[index], (TY) yValue));
                             num7 += Math.Abs( num8 ) * xyScaleRatio;
                         }
                         if ( num7 < num5 )
@@ -756,19 +756,19 @@ namespace Ecng.Xaml.Charting
                 TY y1 = (TY) y;
                 if ( this.IsSorted )
                 {
-                    TX x2 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue;
-                    x2 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Inc( ref x2 );
-                    x2 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Mult( x2, xRadius );
-                    int indexInSortedData1 = uncheckedList1.FindIndexInSortedData<TX>(count, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Subtract(x1, x2), SearchMode.RoundDown, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath);
-                    int indexInSortedData2 = uncheckedList1.FindIndexInSortedData<TX>(count, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.Add(x1, x2), SearchMode.RoundUp, Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath);
+                    TX x2 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ZeroValue;
+                    x2 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Inc( ref x2 );
+                    x2 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Mult( x2, xRadius );
+                    int indexInSortedData1 = uncheckedList1.FindIndexInSortedData<TX>(count, fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Subtract(x1, x2), SearchMode.RoundDown, fx.Xaml.Charting.DataSeries<TX, TY>.XMath);
+                    int indexInSortedData2 = uncheckedList1.FindIndexInSortedData<TX>(count, fx.Xaml.Charting.DataSeries<TX, TY>.XMath.Add(x1, x2), SearchMode.RoundUp, fx.Xaml.Charting.DataSeries<TX, TY>.XMath);
                     if ( drawNanAs == LineDrawMode.ClosedLines )
                     {
-                        while ( indexInSortedData1 > 0 && Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( uncheckedList2[ indexInSortedData1 ] ) )
+                        while ( indexInSortedData1 > 0 && fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( uncheckedList2[ indexInSortedData1 ] ) )
                         {
                             --indexInSortedData1;
                         }
 
-                        while ( indexInSortedData2 < this.Count - 1 && Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( uncheckedList2[ indexInSortedData2 ] ) )
+                        while ( indexInSortedData2 < this.Count - 1 && fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( uncheckedList2[ indexInSortedData2 ] ) )
                         {
                             ++indexInSortedData2;
                         }
@@ -781,12 +781,12 @@ namespace Ecng.Xaml.Charting
                     num2 = index1 = indexInSortedData1;
                     num1 = indexInSortedData2 - indexInSortedData1 + 1;
                 }
-                double x3 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(x1);
-                double num3 = Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(y1);
+                double x3 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(x1);
+                double num3 = fx.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(y1);
                 Point pt = new Point(x3, num3 * xyScaleRatio);
                 double num4 = double.MaxValue;
-                double x4 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(uncheckedList1[index1]);
-                double y2 = Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(uncheckedList2[index1]) * xyScaleRatio;
+                double x4 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(uncheckedList1[index1]);
+                double y2 = fx.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(uncheckedList2[index1]) * xyScaleRatio;
                 double num5 = x3 - xRadius;
                 double num6 = x3 + xRadius;
                 int num7 = index1;
@@ -794,7 +794,7 @@ namespace Ecng.Xaml.Charting
                 for ( int index2 = index1 + 1 ; index2 < num8 ; ++index2 )
                 {
                     TY y3 = uncheckedList2[index2];
-                    if ( Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( y3 ) )
+                    if ( fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( y3 ) )
                     {
                         if ( drawNanAs == LineDrawMode.Gaps )
                         {
@@ -803,8 +803,8 @@ namespace Ecng.Xaml.Charting
                     }
                     else
                     {
-                        double x2 = Ecng.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(uncheckedList1[index2]);
-                        double y4 = Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(y3) * xyScaleRatio;
+                        double x2 = fx.Xaml.Charting.DataSeries<TX, TY>.XMath.ToDouble(uncheckedList1[index2]);
+                        double y4 = fx.Xaml.Charting.DataSeries<TX, TY>.YMath.ToDouble(y3) * xyScaleRatio;
                         if ( ( x4 >= num5 || x2 >= num5 ) && ( x4 <= num6 || x2 <= num6 ) )
                         {
                             double num9 = PointUtil.DistanceFromLine(pt, new Point(x4, y2), new Point(x2, y4), true);

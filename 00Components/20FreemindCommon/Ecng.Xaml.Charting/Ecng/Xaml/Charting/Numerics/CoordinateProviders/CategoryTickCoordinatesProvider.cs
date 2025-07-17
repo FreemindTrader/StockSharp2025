@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class CategoryTickCoordinatesProvider : DefaultTickCoordinatesProvider
     {

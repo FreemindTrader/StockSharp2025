@@ -1,4 +1,4 @@
-﻿// Ecng.Xaml.Charting.UltrachartSurfaceBase
+﻿// fx.Xaml.Charting.UltrachartSurfaceBase
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -7,7 +7,7 @@ using System.Windows.Input;
 using System.Windows.Threading;
 using TinyMessenger;
 
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
 
     [TemplatePart( Name = "PART_ChartModifierSurface", Type = typeof( ChartModifierSurface ) )]

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class SeriesInfo : BindableObject, ICloneable
     {
@@ -15,7 +15,7 @@ namespace Ecng.Xaml.Charting
 
         private Color _seriesColor;
 
-        private Ecng.Xaml.Charting.DataSeriesType _dataSeriesType;
+        private fx.Xaml.Charting.DataSeriesType _dataSeriesType;
 
         private double _yValueDouble;
 
@@ -37,7 +37,7 @@ namespace Ecng.Xaml.Charting
             }
         }
 
-        public Ecng.Xaml.Charting.DataSeriesType DataSeriesType
+        public fx.Xaml.Charting.DataSeriesType DataSeriesType
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Ecng.Xaml.Charting
             }
             set
             {
-                SetField<Ecng.Xaml.Charting.DataSeriesType>( ref _dataSeriesType, value, "DataSeriesType" );
+                SetField<fx.Xaml.Charting.DataSeriesType>( ref _dataSeriesType, value, "DataSeriesType" );
             }
         }
 

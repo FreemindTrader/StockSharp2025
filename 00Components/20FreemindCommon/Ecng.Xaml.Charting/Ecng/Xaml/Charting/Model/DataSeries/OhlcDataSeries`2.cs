@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
-    public class OhlcDataSeries<TX, TY> : Ecng.Xaml.Charting.DataSeries<TX, TY>, IOhlcDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IOhlcDataSeries where TX : IComparable where TY : IComparable
+    public class OhlcDataSeries<TX, TY> : fx.Xaml.Charting.DataSeries<TX, TY>, IOhlcDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IOhlcDataSeries where TX : IComparable where TY : IComparable
     {
         private ISeriesColumn<TY> _openColumn = (ISeriesColumn<TY>) new SeriesColumn<TY>();
         private ISeriesColumn<TY> _highColumn = (ISeriesColumn<TY>) new SeriesColumn<TY>();
@@ -343,17 +343,17 @@ namespace Ecng.Xaml.Charting
         public override TY GetYMaxAt( int index, TY existingYMax )
         {
             TY highValue = HighValues[index];
-            if ( Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( highValue ) )
+            if ( fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( highValue ) )
                 return existingYMax;
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( existingYMax, highValue );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( existingYMax, highValue );
         }
 
         public override TY GetYMinAt( int index, TY existingYMin )
         {
             TY lowValue = LowValues[index];
-            if ( Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( lowValue ) )
+            if ( fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( lowValue ) )
                 return existingYMin;
-            return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( existingYMin, lowValue );
+            return fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( existingYMin, lowValue );
         }
 
         private void FlushAppendBuffer( IList<ValueTuple<TX, TY, TY, TY, TY>> bufferedValues )

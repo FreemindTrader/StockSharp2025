@@ -1,7 +1,7 @@
-﻿// Ecng.Xaml.Charting.IndexRange
+﻿// fx.Xaml.Charting.IndexRange
 using System;
 using System.ComponentModel;
-using Ecng.Xaml.Charting;
+using fx.Xaml.Charting;
 public class IndexRange : Range<int>
 {
     private double _dMin;

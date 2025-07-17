@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     [TemplatePart( Name = "PART_ContentHost", Type = typeof( ContentPresenter ) )]
     [TemplatePart( Name = "PART_Header", Type = typeof( Grid ) )]

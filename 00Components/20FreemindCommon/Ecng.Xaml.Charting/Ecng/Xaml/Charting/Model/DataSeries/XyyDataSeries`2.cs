@@ -1,9 +1,9 @@
-﻿// Ecng.Xaml.Charting.Model.DataSeries.XyyDataSeries<TX,TY>
+﻿// fx.Xaml.Charting.Model.DataSeries.XyyDataSeries<TX,TY>
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting;
+using fx.Xaml.Charting;
 public class XyyDataSeries<TX, TY> : DataSeries<TX, TY>, IXyyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyyDataSeries where TX : IComparable where TY : IComparable
 {
     private ISeriesColumn<TY> _y1Column = new SeriesColumn<TY>();

@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.CursorModifier
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.CursorModifier
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\fx.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
@@ -11,19 +11,19 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shapes;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class CursorModifier : TooltipModifierBase
     {
         public static readonly DependencyProperty IncludeSeriesProperty = DependencyProperty.RegisterAttached("IncludeSeries", typeof (bool), typeof (CursorModifier), new PropertyMetadata((object) true));
         public static readonly DependencyProperty ShowTooltipProperty = DependencyProperty.Register(nameof (ShowTooltip), typeof (bool), typeof (CursorModifier), new PropertyMetadata((object) false, (PropertyChangedCallback) null));
-        private ObservableCollection<Ecng.Xaml.Charting.AxisInfo> _axisInfo = new ObservableCollection<Ecng.Xaml.Charting.AxisInfo>();
+        private ObservableCollection<fx.Xaml.Charting.AxisInfo> _axisInfo = new ObservableCollection<fx.Xaml.Charting.AxisInfo>();
         private System.Windows.Shapes.Line _lineX;
         private System.Windows.Shapes.Line _lineY;
         private Ellipse _cursorPoint;
         private TemplatableControl _cursorLabelCache;
-        private Ecng.Xaml.Charting.AxisInfo _xAxisInfo;
-        private Ecng.Xaml.Charting.AxisInfo _yAxisInfo;
+        private fx.Xaml.Charting.AxisInfo _xAxisInfo;
+        private fx.Xaml.Charting.AxisInfo _yAxisInfo;
         private const double CursorXyOffset = 6.0;
 
         public static bool GetIncludeSeries( DependencyObject obj )
@@ -36,7 +36,7 @@ namespace Ecng.Xaml.Charting
             obj.SetValue( CursorModifier.IncludeSeriesProperty, ( object ) value );
         }
 
-        public ObservableCollection<Ecng.Xaml.Charting.AxisInfo> AxisInfo
+        public ObservableCollection<fx.Xaml.Charting.AxisInfo> AxisInfo
         {
             get
             {
@@ -49,7 +49,7 @@ namespace Ecng.Xaml.Charting
             }
         }
 
-        public Ecng.Xaml.Charting.AxisInfo XAxisInfo
+        public fx.Xaml.Charting.AxisInfo XAxisInfo
         {
             get
             {
@@ -62,7 +62,7 @@ namespace Ecng.Xaml.Charting
             }
         }
 
-        public Ecng.Xaml.Charting.AxisInfo YAxisInfo
+        public fx.Xaml.Charting.AxisInfo YAxisInfo
         {
             get
             {
@@ -181,13 +181,13 @@ namespace Ecng.Xaml.Charting
 
         protected virtual void GetAxesData( Point mousePoint )
         {
-            IEnumerable<Ecng.Xaml.Charting.AxisInfo> axisInfos1 = this.YAxes.Select<IAxis, Ecng.Xaml.Charting.AxisInfo>((Func<IAxis, Ecng.Xaml.Charting.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
-            this.YAxisInfo = axisInfos1.FirstOrDefault<Ecng.Xaml.Charting.AxisInfo>();
-            IEnumerable<Ecng.Xaml.Charting.AxisInfo> axisInfos2 = this.XAxes.Select<IAxis, Ecng.Xaml.Charting.AxisInfo>((Func<IAxis, Ecng.Xaml.Charting.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
-            this.XAxisInfo = axisInfos2.FirstOrDefault<Ecng.Xaml.Charting.AxisInfo>();
-            ObservableCollection<Ecng.Xaml.Charting.AxisInfo> collection = new ObservableCollection<Ecng.Xaml.Charting.AxisInfo>();
-            collection.AddRange<Ecng.Xaml.Charting.AxisInfo>( axisInfos2 );
-            collection.AddRange<Ecng.Xaml.Charting.AxisInfo>( axisInfos1 );
+            IEnumerable<fx.Xaml.Charting.AxisInfo> axisInfos1 = this.YAxes.Select<IAxis, fx.Xaml.Charting.AxisInfo>((Func<IAxis, fx.Xaml.Charting.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
+            this.YAxisInfo = axisInfos1.FirstOrDefault<fx.Xaml.Charting.AxisInfo>();
+            IEnumerable<fx.Xaml.Charting.AxisInfo> axisInfos2 = this.XAxes.Select<IAxis, fx.Xaml.Charting.AxisInfo>((Func<IAxis, fx.Xaml.Charting.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
+            this.XAxisInfo = axisInfos2.FirstOrDefault<fx.Xaml.Charting.AxisInfo>();
+            ObservableCollection<fx.Xaml.Charting.AxisInfo> collection = new ObservableCollection<fx.Xaml.Charting.AxisInfo>();
+            collection.AddRange<fx.Xaml.Charting.AxisInfo>( axisInfos2 );
+            collection.AddRange<fx.Xaml.Charting.AxisInfo>( axisInfos1 );
             this.AxisInfo = collection;
         }
 

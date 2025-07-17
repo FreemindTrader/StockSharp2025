@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     internal class CartesianRubberBandOverlayPlacementStrategy : IRubberBandOverlayPlacementStrategy
     {

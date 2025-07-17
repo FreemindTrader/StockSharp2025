@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     internal class TradeChartTickCalculator
     {

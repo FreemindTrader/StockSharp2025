@@ -12,7 +12,7 @@ using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public abstract class AnnotationBase : ApiElementBase, IAnnotation, IHitTestable, IPublishMouseEvents, IXmlSerializable, ISuspendable
     {

@@ -1,10 +1,10 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: Ecng.Xaml.Charting.BaseRenderableSeries
-//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: fx.Xaml.Charting.BaseRenderableSeries
+//// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\fx.Xaml.Charting.dll
 
-//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using StockSharp.Xaml.Licensing.Core;
+//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using StockSharp.Xaml.Licensing.Core;
 //using System;
 //using System.Diagnostics;
 //using System.Reflection;
@@ -17,7 +17,7 @@
 //using System.Xml.Schema;
 //using System.Xml.Serialization;
 
-//namespace Ecng.Xaml.Charting//{
+//namespace fx.Xaml.Charting//{
 //    [ContentProperty( "PointMarker" )]
 //    public abstract class BaseRenderableSeries : ContentControl, IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable
 //    {
@@ -906,7 +906,7 @@
 
 //        protected virtual void CreateRolloverMarker( )
 //        {
-//            this._rolloverMarkerCache = ( FrameworkElement ) Ecng.Xaml.Charting.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
+//            this._rolloverMarkerCache = ( FrameworkElement ) fx.Xaml.Charting.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
 //        }
 
 //        public XmlSchema GetSchema( )
@@ -1020,7 +1020,7 @@
 //            IPointMarker pointMarker = (IPointMarker) null;
 //            if ( template != null )
 //            {
-//                BasePointMarker basePointMarker = Ecng.Xaml.Charting.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
+//                BasePointMarker basePointMarker = fx.Xaml.Charting.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
 //                if ( basePointMarker == null )
 //                {
 //                    SpritePointMarker spritePointMarker = new SpritePointMarker();
@@ -1070,10 +1070,10 @@
 //}
 
 // Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.BaseRenderableSeries
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.BaseRenderableSeries
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\fx.Xaml.Charting.dll
 
 using System;
 using System.Diagnostics;
@@ -1088,7 +1088,7 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     [ContentProperty( "PointMarker" )]
     public abstract class BaseRenderableSeries : ContentControl, IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable
@@ -1920,7 +1920,7 @@ namespace Ecng.Xaml.Charting
 
         protected virtual void CreateRolloverMarker()
         {
-            this._rolloverMarkerCache = ( FrameworkElement ) Ecng.Xaml.Charting.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
+            this._rolloverMarkerCache = ( FrameworkElement ) fx.Xaml.Charting.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
         }
 
         public XmlSchema GetSchema()
@@ -2016,7 +2016,7 @@ namespace Ecng.Xaml.Charting
             IPointMarker pointMarker = (IPointMarker) null;
             if ( template != null )
             {
-                BasePointMarker basePointMarker = Ecng.Xaml.Charting.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
+                BasePointMarker basePointMarker = fx.Xaml.Charting.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
                 if ( basePointMarker == null )
                 {
                     SpritePointMarker spritePointMarker = new SpritePointMarker();

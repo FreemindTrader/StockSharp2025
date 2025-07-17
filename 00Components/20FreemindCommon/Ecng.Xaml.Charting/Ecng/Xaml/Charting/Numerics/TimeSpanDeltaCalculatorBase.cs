@@ -1,13 +1,13 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Numerics.TimeSpanDeltaCalculatorBase
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.Numerics.TimeSpanDeltaCalculatorBase
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
+// Assembly location: T:\00 - Programming\StockSharp\References\fx.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     internal abstract class TimeSpanDeltaCalculatorBase : IDateDeltaCalculator, IDeltaCalculator
     {

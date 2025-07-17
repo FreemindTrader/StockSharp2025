@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class DateTimeLabelProvider : LabelProviderBase
     {

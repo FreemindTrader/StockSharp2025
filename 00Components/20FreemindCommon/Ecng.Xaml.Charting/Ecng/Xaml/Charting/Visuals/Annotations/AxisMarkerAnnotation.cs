@@ -1,15 +1,15 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: Ecng.Xaml.Charting.Annotations.AxisMarkerAnnotation
-//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: fx.Xaml.Charting.Annotations.AxisMarkerAnnotation
+//// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\fx.Xaml.Charting.dll
 
-//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using System;
+//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using fx.Xaml.Charting;//using System;
 //using System.Windows;
 //using System.Windows.Controls;
 //using System.Windows.Input;
 
-//namespace Ecng.Xaml.Charting//{
+//namespace fx.Xaml.Charting//{
 //  public class AxisMarkerAnnotation : AnchorPointAnnotation
 //  {
 //    public static readonly DependencyProperty FormattedValueProperty = DependencyProperty.Register(nameof (FormattedValue), typeof (string), typeof (AxisMarkerAnnotation), new PropertyMetadata((object) null));
@@ -353,16 +353,16 @@
 //}
 
 // Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Annotations.AxisMarkerAnnotation
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.Annotations.AxisMarkerAnnotation
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\fx.Xaml.Charting.dll
 
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class AxisMarkerAnnotation : AnchorPointAnnotation
     {

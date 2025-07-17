@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.UltrachartSurface
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.UltrachartSurface
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\fx.Xaml.Charting.dll
 
 using System;
 using System.Collections;
@@ -25,9 +25,9 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
-    [TemplatePart( Name = "PART_GridLinesArea", Type = typeof( Ecng.Xaml.Charting.GridLinesPanel ) )]
+    [TemplatePart( Name = "PART_GridLinesArea", Type = typeof( fx.Xaml.Charting.GridLinesPanel ) )]
     [TemplatePart( Name = "PART_LeftAxisArea", Type = typeof( AxisArea ) )]
     [TemplatePart( Name = "PART_TopAxisArea", Type = typeof( AxisArea ) )]
     [TemplatePart( Name = "PART_RightAxisArea", Type = typeof( AxisArea ) )]
@@ -66,7 +66,7 @@ namespace Ecng.Xaml.Charting
         private readonly object _syncRoot = new object();
         private readonly HashSet<IDataSeries> _dsToNotify = new HashSet<IDataSeries>();
         private string id = UltrachartSurface.globalId++.ToString();
-        private Ecng.Xaml.Charting.GridLinesPanel _gridLinesPanel;
+        private fx.Xaml.Charting.GridLinesPanel _gridLinesPanel;
         private AxisArea _bottomAxisArea;
         private AxisArea _topAxisArea;
         private AxisArea _rightAxisArea;
@@ -474,7 +474,7 @@ namespace Ecng.Xaml.Charting
                 _centerYAxisArea.Items.Clear();
             }
 
-            _gridLinesPanel = GetAndAssertTemplateChild<Ecng.Xaml.Charting.GridLinesPanel>( "PART_GridLinesArea" );
+            _gridLinesPanel = GetAndAssertTemplateChild<fx.Xaml.Charting.GridLinesPanel>( "PART_GridLinesArea" );
             _bottomAxisArea = GetAndAssertTemplateChild<AxisArea>( "PART_BottomAxisArea" );
             _topAxisArea = GetAndAssertTemplateChild<AxisArea>( "PART_TopAxisArea" );
             _rightAxisArea = GetAndAssertTemplateChild<AxisArea>( "PART_RightAxisArea" );
@@ -1081,7 +1081,7 @@ namespace Ecng.Xaml.Charting
             {
                 if ( StackedColumnsWrapper == null )
                 {
-                    StackedColumnsWrapper = ( IStackedColumnsWrapper ) new Ecng.Xaml.Charting.StackedColumnsWrapper();
+                    StackedColumnsWrapper = ( IStackedColumnsWrapper ) new fx.Xaml.Charting.StackedColumnsWrapper();
                 }
 
                 StackedColumnsWrapper.AddSeries( ( IStackedColumnRenderableSeries ) rSeries );
@@ -1090,7 +1090,7 @@ namespace Ecng.Xaml.Charting
             {
                 if ( StackedMountainsWrapper == null )
                 {
-                    StackedMountainsWrapper = ( IStackedMountainsWrapper ) new Ecng.Xaml.Charting.StackedMountainsWrapper();
+                    StackedMountainsWrapper = ( IStackedMountainsWrapper ) new fx.Xaml.Charting.StackedMountainsWrapper();
                 }
 
                 StackedMountainsWrapper.AddSeries( ( IStackedMountainRenderableSeries ) rSeries );
@@ -1637,7 +1637,7 @@ namespace Ecng.Xaml.Charting
         private static void OnChildStyleChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
         {
             UltrachartSurface ultrachartSurface = (UltrachartSurface) d;
-            Ecng.Xaml.Charting.GridLinesPanel gridLinesPanel = ultrachartSurface.GridLinesPanel as Ecng.Xaml.Charting.GridLinesPanel;
+            fx.Xaml.Charting.GridLinesPanel gridLinesPanel = ultrachartSurface.GridLinesPanel as fx.Xaml.Charting.GridLinesPanel;
             if ( gridLinesPanel != null )
             {
                 gridLinesPanel.Style = ultrachartSurface.GridLinesPanelStyle;

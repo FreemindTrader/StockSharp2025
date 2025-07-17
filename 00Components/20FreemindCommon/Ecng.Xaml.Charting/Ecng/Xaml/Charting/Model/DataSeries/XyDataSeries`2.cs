@@ -1,16 +1,16 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Model.DataSeries.XyDataSeries`2
-// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: fx.Xaml.Charting.Model.DataSeries.XyDataSeries`2
+// Assembly: fx.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
+// Assembly location: T:\00 - Programming\StockSharp\References\fx.Xaml.Charting.dll
 
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
-    public class XyDataSeries<TX, TY> : Ecng.Xaml.Charting.DataSeries<TX, TY>, IXyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyDataSeries where TX : IComparable where TY : IComparable
+    public class XyDataSeries<TX, TY> : fx.Xaml.Charting.DataSeries<TX, TY>, IXyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyDataSeries where TX : IComparable where TY : IComparable
     {
         private readonly DataSeriesAppendBuffer<ValueTuple<TX, TY>> _appendBuffer;
 
@@ -191,16 +191,16 @@ namespace Ecng.Xaml.Charting
         public override TY GetYMinAt( int index, TY existingYMin )
         {
             TY yvalue = YValues[index];
-            if ( !Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
-                return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( existingYMin, yvalue );
+            if ( !fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
+                return fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( existingYMin, yvalue );
             return existingYMin;
         }
 
         public override TY GetYMaxAt( int index, TY existingYMax )
         {
             TY yvalue = YValues[index];
-            if ( !Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
-                return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( existingYMax, yvalue );
+            if ( !fx.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
+                return fx.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( existingYMax, yvalue );
             return existingYMax;
         }
 

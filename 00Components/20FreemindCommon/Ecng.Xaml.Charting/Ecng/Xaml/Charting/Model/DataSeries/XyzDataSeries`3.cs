@@ -1,9 +1,9 @@
-﻿// Ecng.Xaml.Charting.Model.DataSeries.XyzDataSeries<TX,TY,TZ>
+﻿// fx.Xaml.Charting.Model.DataSeries.XyzDataSeries<TX,TY,TZ>
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting;
+using fx.Xaml.Charting;
 public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, TY, TZ>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyzDataSeries where TX : IComparable where TY : IComparable where TZ : IComparable
 {
     public static readonly IMath<TZ> ZMath = GenericMathFactory.New<TZ>();

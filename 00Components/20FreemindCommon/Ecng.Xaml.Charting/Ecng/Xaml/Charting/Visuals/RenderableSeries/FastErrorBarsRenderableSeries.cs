@@ -3,7 +3,7 @@ using System.Windows;
 using System.Windows.Media;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     [UltrachartLicenseProvider( typeof( RenderableSeriesUltrachartLicenseProvider ) )]
     public class FastErrorBarsRenderableSeries : BaseRenderableSeries

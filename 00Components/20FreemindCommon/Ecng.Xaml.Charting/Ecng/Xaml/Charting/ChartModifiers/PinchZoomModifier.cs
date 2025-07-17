@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class PinchZoomModifier : RelativeZoomModifierBase
     {

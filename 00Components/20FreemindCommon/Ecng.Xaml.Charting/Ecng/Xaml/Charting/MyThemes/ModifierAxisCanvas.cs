@@ -1,7 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public class ModifierAxisCanvas : AxisCanvas, IAnnotationCanvas, IHitTestable
     {

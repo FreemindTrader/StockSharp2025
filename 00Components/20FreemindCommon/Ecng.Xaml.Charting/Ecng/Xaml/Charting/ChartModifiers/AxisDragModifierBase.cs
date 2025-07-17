@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-namespace Ecng.Xaml.Charting
+namespace fx.Xaml.Charting
 {
     public abstract class AxisDragModifierBase : ChartModifierBase
     {
