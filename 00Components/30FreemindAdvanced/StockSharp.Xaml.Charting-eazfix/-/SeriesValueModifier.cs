@@ -26,7 +26,7 @@ public sealed class SeriesValueModifier :
   
   private readonly IDictionary<IRenderableSeries, IAnnotation> \u0023\u003DzJVKVgJSKleLL = (IDictionary<IRenderableSeries, IAnnotation>) new Dictionary<IRenderableSeries, IAnnotation>();
   
-  private PropertyChangeNotifier \u0023\u003DzMFucnUdhtZnJ;
+  private Ecng.Xaml.PropertyChangeNotifier \u0023\u003DzMFucnUdhtZnJ;
   
   public static readonly DependencyProperty \u0023\u003Dzvp8Q5iyLlWID = DependencyProperty.Register(nameof (AxisMarkerStyle), typeof (Style), typeof (SeriesValueModifier), new PropertyMetadata((PropertyChangedCallback) null));
   
@@ -119,7 +119,7 @@ public sealed class SeriesValueModifier :
     base.OnAttached();
     if (this.ParentSurface is SciChartSurface parentSurface)
     {
-      this.\u0023\u003DzMFucnUdhtZnJ = new PropertyChangeNotifier((DependencyObject) parentSurface, SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
+      this.\u0023\u003DzMFucnUdhtZnJ = new Ecng.Xaml.PropertyChangeNotifier((DependencyObject) parentSurface, SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
       this.\u0023\u003DzMFucnUdhtZnJ.ValueChanged += new Action(this.\u0023\u003Dz6kEcEuixivshQn\u0024YZtma0mabmk734AF5o\u00243V64I\u003D);
     }
     this.\u0023\u003Dz6kEcEuixivshQn\u0024YZtma0mabmk734AF5o\u00243V64I\u003D();
@@ -207,7 +207,7 @@ public sealed class SeriesValueModifier :
     if (this.\u0023\u003DzMFucnUdhtZnJ == null)
       return;
     this.\u0023\u003DzMFucnUdhtZnJ.ValueChanged -= new Action(this.\u0023\u003Dz6kEcEuixivshQn\u0024YZtma0mabmk734AF5o\u00243V64I\u003D);
-    this.\u0023\u003DzMFucnUdhtZnJ = (PropertyChangeNotifier) null;
+    this.\u0023\u003DzMFucnUdhtZnJ = (Ecng.Xaml.PropertyChangeNotifier) null;
   }
 
   protected override void OnIsEnabledChanged()

@@ -50,13 +50,13 @@ public sealed class UltrachartOverview :
   
   private ISciChartSurface \u0023\u003DzVpgkPm_hKDwz;
   
-  private PropertyChangeNotifier \u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t;
+  private Ecng.Xaml.PropertyChangeNotifier \u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t;
   
-  private PropertyChangeNotifier \u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D;
+  private Ecng.Xaml.PropertyChangeNotifier \u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D;
   
   private ObservableCollection<IRenderableSeries> \u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
   
-  private PropertyChangeNotifier \u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D;
+  private Ecng.Xaml.PropertyChangeNotifier \u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D;
   
   private AxisCollection \u0023\u003DzWdeNTJKzYxQa;
   
@@ -261,9 +261,9 @@ public sealed class UltrachartOverview :
     this.\u0023\u003DzAnFHa0QS7SrDykk4wg\u003D\u003D();
     if (_param1.NewValue is SciChartSurface newValue)
     {
-      this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t = new PropertyChangeNotifier((DependencyObject) newValue, SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
+      this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t = new Ecng.Xaml.PropertyChangeNotifier((DependencyObject) newValue, SciChartSurface.\u0023\u003Dzda5ZTgpF7nPj_QX8WWDrVmQ\u003D);
       this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t.ValueChanged += new Action(this.\u0023\u003Dz_sR2YBsF8Vv_kS6d84fxv3s\u003D);
-      this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) newValue, SciChartSurface.\u0023\u003DzDqajrUCXt2L8);
+      this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = new Ecng.Xaml.PropertyChangeNotifier((DependencyObject) newValue, SciChartSurface.\u0023\u003DzDqajrUCXt2L8);
       this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D.ValueChanged += new Action(this.\u0023\u003DzgjrLoKvF7hcz9A6IKvJCiAc\u003D);
       if (!this.\u0023\u003DzZips37gKJQPGLQcrTw\u003D\u003D((ISciChartSurface) newValue, this.DataSeries))
         this.SetCurrentValue(UltrachartOverview.\u0023\u003DzGTMdFbtr59Hr, (object) null);
@@ -282,12 +282,12 @@ public sealed class UltrachartOverview :
     if (this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D != null)
     {
       this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D.Dispose();
-      this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = (PropertyChangeNotifier) null;
+      this.\u0023\u003DzIByQgd_P4up7CYAE8A\u003D\u003D = (Ecng.Xaml.PropertyChangeNotifier) null;
     }
     if (this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t == null)
       return;
     this.\u0023\u003DzS8n1gsVhmNXbOgPpfTG1M1Hc_96t.Dispose();
-    this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = (PropertyChangeNotifier) null;
+    this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = (Ecng.Xaml.PropertyChangeNotifier) null;
   }
 
   private void \u0023\u003DzMEAXmFgTZfXXcCqZiA\u003D\u003D(
@@ -335,13 +335,13 @@ public sealed class UltrachartOverview :
     if (this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D != null)
     {
       this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D.Dispose();
-      this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = (PropertyChangeNotifier) null;
+      this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = (Ecng.Xaml.PropertyChangeNotifier) null;
     }
     if (gncgo1okL0HgWiq5JrU._IRenderableSeries334 == null)
       return;
     if (gncgo1okL0HgWiq5JrU._IRenderableSeries334 is BaseRenderableSeries)
     {
-      this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = new PropertyChangeNotifier((DependencyObject) (gncgo1okL0HgWiq5JrU._IRenderableSeries334 as BaseRenderableSeries), BaseRenderableSeries.\u0023\u003DzGTMdFbtr59Hr);
+      this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D = new Ecng.Xaml.PropertyChangeNotifier((DependencyObject) (gncgo1okL0HgWiq5JrU._IRenderableSeries334 as BaseRenderableSeries), BaseRenderableSeries.\u0023\u003DzGTMdFbtr59Hr);
       this.\u0023\u003DzLFsuvPTJkIKAJEVj\u0024A\u003D\u003D.ValueChanged += new Action(gncgo1okL0HgWiq5JrU.\u0023\u003Dzq5A_hw8sG0QZl737AckA8VB19QdzQUuQMw\u003D\u003D);
     }
     this.\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(gncgo1okL0HgWiq5JrU._IRenderableSeries334.get_DataSeries());

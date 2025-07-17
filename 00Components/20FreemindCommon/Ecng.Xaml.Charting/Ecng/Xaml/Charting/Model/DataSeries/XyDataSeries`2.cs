@@ -18,11 +18,11 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
 {
     public class XyDataSeries<TX, TY> : StockSharp.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>, IXyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyDataSeries where TX : IComparable where TY : IComparable
     {
-        private readonly DataSeriesAppendBuffer<ValTuple<TX, TY>> _appendBuffer;
+        private readonly DataSeriesAppendBuffer<ValueTuple<TX, TY>> _appendBuffer;
 
         public XyDataSeries()
         {
-            _appendBuffer = new DataSeriesAppendBuffer<ValTuple<TX, TY>>( new Action<IList<ValTuple<TX, TY>>>( FlushAppendBuffer ) );
+            _appendBuffer = new DataSeriesAppendBuffer<ValueTuple<TX, TY>>( new Action<IList<ValueTuple<TX, TY>>>( FlushAppendBuffer ) );
         }
 
         public override DataSeriesType DataSeriesType
@@ -72,7 +72,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
                 }
               ( ( ICollection<TX> ) _xColumn ).Clear();
                 ( ( ICollection<TY> ) _yColumn ).Clear();
-                _appendBuffer.Do<DataSeriesAppendBuffer<ValTuple<TX, TY>>>( ( Action<DataSeriesAppendBuffer<ValTuple<TX, TY>>> ) ( b => b.Clear() ) );
+                _appendBuffer.Do<DataSeriesAppendBuffer<ValueTuple<TX, TY>>>( ( Action<DataSeriesAppendBuffer<ValueTuple<TX, TY>>> ) ( b => b.Clear() ) );
             }
         }
 
@@ -131,7 +131,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
 
         public virtual void Append( TX x, TY y )
         {
-            _appendBuffer.Append( ValTuple.Create<TX, TY>( x, y ) );
+            _appendBuffer.Append( ValueTuple.Create<TX, TY>( x, y ) );
             OnDataSeriesChanged( DataSeriesUpdate.DataChanged );
         }
 
@@ -146,7 +146,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
                 while ( enumerator1.MoveNext() )
                 {
                     if ( enumerator2.MoveNext() )
-                        _appendBuffer.Append( ValTuple.Create<TX, TY>( enumerator1.Current, enumerator2.Current ) );
+                        _appendBuffer.Append( ValueTuple.Create<TX, TY>( enumerator1.Current, enumerator2.Current ) );
                     else
                         break;
                 }
@@ -210,14 +210,14 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
             return existingYMax;
         }
 
-        private void FlushAppendBuffer( IList<ValTuple<TX, TY>> bufferedValues )
+        private void FlushAppendBuffer( IList<ValueTuple<TX, TY>> bufferedValues )
         {
             lock ( SyncRoot )
             {
-                IEnumerable<TX> xes = bufferedValues.Select<ValTuple<TX, TY>, TX>((Func<ValTuple<TX, TY>, TX>) (b => b.Item1));
+                IEnumerable<TX> xes = bufferedValues.Select<ValueTuple<TX, TY>, TX>((Func<ValueTuple<TX, TY>, TX>) (b => b.Item1));
                 int count = ((ISeriesColumn) _xColumn).Count;
                 _xColumn.AddRange( xes );
-                _yColumn.AddRange( bufferedValues.Select<ValTuple<TX, TY>, TY>( ( Func<ValTuple<TX, TY>, TY> ) ( b => b.Item2 ) ) );
+                _yColumn.AddRange( bufferedValues.Select<ValueTuple<TX, TY>, TY>( ( Func<ValueTuple<TX, TY>, TY> ) ( b => b.Item2 ) ) );
                 DataDistributionCalculator.OnAppendXValues( _xColumn, count, xes, AcceptsUnsortedData );
             }
         }

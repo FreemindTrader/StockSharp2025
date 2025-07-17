@@ -25,14 +25,14 @@ namespace StockSharp.Xaml.Charting.Visuals.PointMarkers
         private SmartDisposable<IPen2D> _cachedPen;
         private SmartDisposable<IBrush2D> _cachedBrush;
         private Type _typeOfRendererForCachedResources;
-        private PropertyChangeNotifier _widthNotifier;
-        private PropertyChangeNotifier _heightNotifier;
+        private Ecng.Xaml.PropertyChangeNotifier _widthNotifier;
+        private Ecng.Xaml.PropertyChangeNotifier _heightNotifier;
 
         protected BasePointMarker()
         {
             this.DefaultStyleKey = ( object ) this.GetType();
-            this._widthNotifier = new PropertyChangeNotifier( ( DependencyObject ) this, FrameworkElement.WidthProperty );
-            this._heightNotifier = new PropertyChangeNotifier( ( DependencyObject ) this, FrameworkElement.HeightProperty );
+            this._widthNotifier = new Ecng.Xaml.PropertyChangeNotifier( ( DependencyObject ) this, FrameworkElement.WidthProperty );
+            this._heightNotifier = new Ecng.Xaml.PropertyChangeNotifier( ( DependencyObject ) this, FrameworkElement.HeightProperty );
             this._widthNotifier.ValueChanged += ( Action ) ( () => this.OnPropertyChanged( ( DependencyObject ) this, new DependencyPropertyChangedEventArgs() ) );
             this._heightNotifier.ValueChanged += ( Action ) ( () => this.OnPropertyChanged( ( DependencyObject ) this, new DependencyPropertyChangedEventArgs() ) );
         }

@@ -17,12 +17,12 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
         private ISeriesColumn<TY> _highColumn = (ISeriesColumn<TY>) new SeriesColumn<TY>();
         private ISeriesColumn<TY> _lowColumn = (ISeriesColumn<TY>) new SeriesColumn<TY>();
         private ISeriesColumn<TY> _closeColumn;
-        private readonly DataSeriesAppendBuffer<ValTuple<TX, TY, TY, TY, TY>> _appendBuffer;
+        private readonly DataSeriesAppendBuffer<ValueTuple<TX, TY, TY, TY, TY>> _appendBuffer;
 
         public OhlcDataSeries()
         {
             _closeColumn = _yColumn;
-            _appendBuffer = new DataSeriesAppendBuffer<ValTuple<TX, TY, TY, TY, TY>>( new Action<IList<ValTuple<TX, TY, TY, TY, TY>>>( FlushAppendBuffer ) );
+            _appendBuffer = new DataSeriesAppendBuffer<ValueTuple<TX, TY, TY, TY, TY>>( new Action<IList<ValueTuple<TX, TY, TY, TY, TY>>>( FlushAppendBuffer ) );
         }
 
         public override IRange YRange
@@ -95,7 +95,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
                 ( ( ICollection<TY> ) _highColumn ).Clear();
                 ( ( ICollection<TY> ) _lowColumn ).Clear();
                 ( ( ICollection<TY> ) _closeColumn ).Clear();
-                _appendBuffer.Do<DataSeriesAppendBuffer<ValTuple<TX, TY, TY, TY, TY>>>( ( Action<DataSeriesAppendBuffer<ValTuple<TX, TY, TY, TY, TY>>> ) ( b => b.Clear() ) );
+                _appendBuffer.Do<DataSeriesAppendBuffer<ValueTuple<TX, TY, TY, TY, TY>>>( ( Action<DataSeriesAppendBuffer<ValueTuple<TX, TY, TY, TY, TY>>> ) ( b => b.Clear() ) );
             }
         }
 
@@ -250,7 +250,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
 
         public void Append( TX x, TY open, TY high, TY low, TY close )
         {
-            _appendBuffer.Append( ValTuple.Create<TX, TY, TY, TY, TY>( x, open, high, low, close ) );
+            _appendBuffer.Append( ValueTuple.Create<TX, TY, TY, TY, TY>( x, open, high, low, close ) );
             OnDataSeriesChanged( DataSeriesUpdate.DataChanged );
         }
 
@@ -274,7 +274,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
                             if ( enumerator4.MoveNext() )
                             {
                                 if ( enumerator5.MoveNext() )
-                                    _appendBuffer.Append( ValTuple.Create<TX, TY, TY, TY, TY>( enumerator1.Current, enumerator2.Current, enumerator3.Current, enumerator4.Current, enumerator5.Current ) );
+                                    _appendBuffer.Append( ValueTuple.Create<TX, TY, TY, TY, TY>( enumerator1.Current, enumerator2.Current, enumerator3.Current, enumerator4.Current, enumerator5.Current ) );
                                 else
                                     break;
                             }
@@ -363,18 +363,18 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
             return StockSharp.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.Min( existingYMin, lowValue );
         }
 
-        private void FlushAppendBuffer( IList<ValTuple<TX, TY, TY, TY, TY>> bufferedValues )
+        private void FlushAppendBuffer( IList<ValueTuple<TX, TY, TY, TY, TY>> bufferedValues )
         {
             lock ( SyncRoot )
             {
-                IEnumerable<TX> xes = bufferedValues.Select<ValTuple<TX, TY, TY, TY, TY>, TX>((Func<ValTuple<TX, TY, TY, TY, TY>, TX>) (b => b.Item1));
+                IEnumerable<TX> xes = bufferedValues.Select<ValueTuple<TX, TY, TY, TY, TY>, TX>((Func<ValueTuple<TX, TY, TY, TY, TY>, TX>) (b => b.Item1));
                 int count = ((ISeriesColumn) _xColumn).Count;
 
                 _xColumn.AddRange( xes );
-                _openColumn.AddRange( bufferedValues.Select<ValTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item2 ) ) );
-                _highColumn.AddRange( bufferedValues.Select<ValTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item3 ) ) );
-                _lowColumn.AddRange( bufferedValues.Select<ValTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item4 ) ) );
-                _closeColumn.AddRange( bufferedValues.Select<ValTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item5 ) ) );
+                _openColumn.AddRange( bufferedValues.Select<ValueTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValueTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item2 ) ) );
+                _highColumn.AddRange( bufferedValues.Select<ValueTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValueTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item3 ) ) );
+                _lowColumn.AddRange( bufferedValues.Select<ValueTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValueTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item4 ) ) );
+                _closeColumn.AddRange( bufferedValues.Select<ValueTuple<TX, TY, TY, TY, TY>, TY>( ( Func<ValueTuple<TX, TY, TY, TY, TY>, TY> ) ( b => b.Item5 ) ) );
                 DataDistributionCalculator.OnAppendXValues( _xColumn, count, xes, AcceptsUnsortedData );
             }
         }

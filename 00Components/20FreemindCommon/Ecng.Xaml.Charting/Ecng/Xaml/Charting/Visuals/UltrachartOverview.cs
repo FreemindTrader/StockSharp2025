@@ -40,10 +40,10 @@ namespace StockSharp.Xaml.Charting.Visuals
         public static readonly DependencyProperty RenderableSeriesStyleProperty = DependencyProperty.Register(nameof (RenderableSeriesStyle), typeof (Style), typeof (UltrachartOverview), new PropertyMetadata((object) null, new PropertyChangedCallback(UltrachartOverview.OnRenderableSeriesStylePropertyChanged)));
         public static readonly DependencyProperty RenderableSeriesTypeProperty = DependencyProperty.Register(nameof (RenderableSeriesType), typeof (Type), typeof (UltrachartOverview), new PropertyMetadata((object) null, new PropertyChangedCallback(UltrachartOverview.OnRenderableSeriesTypePropertyChanged)));
         private ISciChartSurface _backgroundChartSurface;
-        private PropertyChangeNotifier _renderableSeriesPropertyNotifier;
-        private PropertyChangeNotifier _renderSeriesDataSeriesPropertyNotifier;
+        private Ecng.Xaml.PropertyChangeNotifier _renderableSeriesPropertyNotifier;
+        private Ecng.Xaml.PropertyChangeNotifier _renderSeriesDataSeriesPropertyNotifier;
         private ObservableCollection<IRenderableSeries> _renderableSeries;
-        private PropertyChangeNotifier _xAxesPropertyNotifier;
+        private Ecng.Xaml.PropertyChangeNotifier _xAxesPropertyNotifier;
         private AxisCollection _axisCollection;
         private readonly RenderTimerHelper _renderTimerHelper;
 
@@ -257,9 +257,9 @@ namespace StockSharp.Xaml.Charting.Visuals
             UltrachartSurface newValue = e.NewValue as UltrachartSurface;
             if ( newValue != null )
             {
-                this._renderableSeriesPropertyNotifier = new PropertyChangeNotifier( ( DependencyObject ) newValue, UltrachartSurface.RenderableSeriesProperty );
+                this._renderableSeriesPropertyNotifier = new Ecng.Xaml.PropertyChangeNotifier( ( DependencyObject ) newValue, UltrachartSurface.RenderableSeriesProperty );
                 this._renderableSeriesPropertyNotifier.ValueChanged += ( Action ) ( () => this.OnRenderableSeriesChanged( ( ObservableCollection<IRenderableSeries> ) this._renderableSeriesPropertyNotifier.Value ) );
-                this._xAxesPropertyNotifier = new PropertyChangeNotifier( ( DependencyObject ) newValue, UltrachartSurface.XAxesProperty );
+                this._xAxesPropertyNotifier = new Ecng.Xaml.PropertyChangeNotifier( ( DependencyObject ) newValue, UltrachartSurface.XAxesProperty );
                 this._xAxesPropertyNotifier.ValueChanged += ( Action ) ( () => this.OnXAxesPropertyChanged( ( AxisCollection ) this._xAxesPropertyNotifier.Value ) );
                 if ( !this.DoesSurfaceHaveThisDataSeries( ( ISciChartSurface ) newValue, this.DataSeries ) )
                 {
@@ -281,7 +281,7 @@ namespace StockSharp.Xaml.Charting.Visuals
             if ( this._xAxesPropertyNotifier != null )
             {
                 this._xAxesPropertyNotifier.Dispose();
-                this._xAxesPropertyNotifier = ( PropertyChangeNotifier ) null;
+                this._xAxesPropertyNotifier = ( Ecng.Xaml.PropertyChangeNotifier ) null;
             }
             if ( this._renderableSeriesPropertyNotifier == null )
             {
@@ -289,7 +289,7 @@ namespace StockSharp.Xaml.Charting.Visuals
             }
 
             this._renderableSeriesPropertyNotifier.Dispose();
-            this._renderSeriesDataSeriesPropertyNotifier = ( PropertyChangeNotifier ) null;
+            this._renderSeriesDataSeriesPropertyNotifier = ( Ecng.Xaml.PropertyChangeNotifier ) null;
         }
 
         private void OnXAxesPropertyChanged( AxisCollection xAxes )
@@ -341,7 +341,7 @@ namespace StockSharp.Xaml.Charting.Visuals
             if ( this._renderSeriesDataSeriesPropertyNotifier != null )
             {
                 this._renderSeriesDataSeriesPropertyNotifier.Dispose();
-                this._renderSeriesDataSeriesPropertyNotifier = ( PropertyChangeNotifier ) null;
+                this._renderSeriesDataSeriesPropertyNotifier = ( Ecng.Xaml.PropertyChangeNotifier ) null;
             }
             if ( renderableSeries == null )
             {
@@ -350,7 +350,7 @@ namespace StockSharp.Xaml.Charting.Visuals
 
             if ( renderableSeries is BaseRenderableSeries )
             {
-                this._renderSeriesDataSeriesPropertyNotifier = new PropertyChangeNotifier( ( DependencyObject ) ( renderableSeries as BaseRenderableSeries ), BaseRenderableSeries.DataSeriesProperty );
+                this._renderSeriesDataSeriesPropertyNotifier = new Ecng.Xaml.PropertyChangeNotifier( ( DependencyObject ) ( renderableSeries as BaseRenderableSeries ), BaseRenderableSeries.DataSeriesProperty );
                 this._renderSeriesDataSeriesPropertyNotifier.ValueChanged += ( Action ) ( () => this.OnDataSeriesDependencyPropertyChanged( renderableSeries.DataSeries ) );
             }
             this.OnDataSeriesDependencyPropertyChanged( renderableSeries.DataSeries );

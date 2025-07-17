@@ -36,17 +36,17 @@ public abstract class BasePointMarker :
   
   private Type \u0023\u003DzMi02w5aVhHynsfiJiA\u003D\u003D;
   
-  private PropertyChangeNotifier \u0023\u003DzubSLsKkd2jzj;
+  private Ecng.Xaml.PropertyChangeNotifier \u0023\u003DzubSLsKkd2jzj;
   
-  private PropertyChangeNotifier \u0023\u003Dzl3E1ABn8TjRR;
+  private Ecng.Xaml.PropertyChangeNotifier \u0023\u003Dzl3E1ABn8TjRR;
   
   private static bool \u0023\u003DzKRRDe7lSf19J3xc8SEr2Ml9bd54lopKnRkf6wFM\u003D;
 
   protected BasePointMarker()
   {
     this.DefaultStyleKey = (object) ((object) this).GetType();
-    this.\u0023\u003DzubSLsKkd2jzj = new PropertyChangeNotifier((DependencyObject) this, FrameworkElement.WidthProperty);
-    this.\u0023\u003Dzl3E1ABn8TjRR = new PropertyChangeNotifier((DependencyObject) this, FrameworkElement.HeightProperty);
+    this.\u0023\u003DzubSLsKkd2jzj = new Ecng.Xaml.PropertyChangeNotifier((DependencyObject) this, FrameworkElement.WidthProperty);
+    this.\u0023\u003Dzl3E1ABn8TjRR = new Ecng.Xaml.PropertyChangeNotifier((DependencyObject) this, FrameworkElement.HeightProperty);
     this.\u0023\u003DzubSLsKkd2jzj.ValueChanged += new Action(this.\u0023\u003DzGDG1SrCuVxZHIZFp\u00248qj2tc\u003D);
     this.\u0023\u003Dzl3E1ABn8TjRR.ValueChanged += new Action(this.\u0023\u003Dz9iWzgKFxwwYVJdwP50lpX9c\u003D);
   }

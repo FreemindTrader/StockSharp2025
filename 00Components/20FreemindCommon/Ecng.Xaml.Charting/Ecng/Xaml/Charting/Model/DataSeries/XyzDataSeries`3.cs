@@ -17,7 +17,7 @@ public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, 
 {
     public static readonly IMath<TZ> ZMath = GenericMathFactory.New<TZ>();
 
-    private readonly DataSeriesAppendBuffer<ValTuple<TX, TY, TZ>> _appendBuffer;
+    private readonly DataSeriesAppendBuffer<ValueTuple<TX, TY, TZ>> _appendBuffer;
 
     protected ISeriesColumn<TZ> _zColumn = new SeriesColumn<TZ>();
 
@@ -51,7 +51,7 @@ public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, 
 
     public XyzDataSeries()
     {
-        _appendBuffer = new DataSeriesAppendBuffer<ValTuple<TX, TY, TZ>>( FlushAppendBuffer );
+        _appendBuffer = new DataSeriesAppendBuffer<ValueTuple<TX, TY, TZ>>( FlushAppendBuffer );
     }
 
     public override void RemoveAt( int index )
@@ -163,7 +163,7 @@ public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, 
             ( ( ICollection<TX> ) _xColumn ).Clear();
             ( ( ICollection<TY> ) _yColumn ).Clear();
             ( ( ICollection<TZ> ) _zColumn ).Clear();
-            Maybe.Do<DataSeriesAppendBuffer<ValTuple<TX, TY, TZ>>>( _appendBuffer, ( Action<DataSeriesAppendBuffer<ValTuple<TX, TY, TZ>>> ) delegate ( DataSeriesAppendBuffer<ValTuple<TX, TY, TZ>> b )
+            Maybe.Do<DataSeriesAppendBuffer<ValueTuple<TX, TY, TZ>>>( _appendBuffer, ( Action<DataSeriesAppendBuffer<ValueTuple<TX, TY, TZ>>> ) delegate ( DataSeriesAppendBuffer<ValueTuple<TX, TY, TZ>> b )
             {
                 b.Clear();
             } );
@@ -182,7 +182,7 @@ public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, 
 
     public void Append( TX x, TY y, TZ z )
     {
-        _appendBuffer.Append( ValTuple.Create<TX, TY, TZ>( x, y, z ) );
+        _appendBuffer.Append( ValueTuple.Create<TX, TY, TZ>( x, y, z ) );
         OnDataSeriesChanged( DataSeriesUpdate.DataChanged );
     }
 
@@ -197,7 +197,7 @@ public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, 
             {
                 while ( enumerator.MoveNext() && enumerator2.MoveNext() && enumerator3.MoveNext() )
                 {
-                    _appendBuffer.Append( ValTuple.Create<TX, TY, TZ>( enumerator.Current, enumerator2.Current, enumerator3.Current ) );
+                    _appendBuffer.Append( ValueTuple.Create<TX, TY, TZ>( enumerator.Current, enumerator2.Current, enumerator3.Current ) );
                 }
             }
             OnDataSeriesChanged( DataSeriesUpdate.DataChanged );
@@ -247,15 +247,15 @@ public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, 
         }
     }
 
-    private void FlushAppendBuffer( IList<ValTuple<TX, TY, TZ>> bufferedValues )
+    private void FlushAppendBuffer( IList<ValueTuple<TX, TY, TZ>> bufferedValues )
     {
         lock ( base.SyncRoot )
         {
-            IEnumerable<TX> enumerable = Enumerable.Select<ValTuple<TX, TY, TZ>, TX>((IEnumerable<ValTuple<TX, TY, TZ>>)bufferedValues, (Func<ValTuple<TX, TY, TZ>, TX>)((ValTuple<TX, TY, TZ> b) => b.Item1));
+            IEnumerable<TX> enumerable = Enumerable.Select<ValueTuple<TX, TY, TZ>, TX>((IEnumerable<ValueTuple<TX, TY, TZ>>)bufferedValues, (Func<ValueTuple<TX, TY, TZ>, TX>)((ValueTuple<TX, TY, TZ> b) => b.Item1));
             int count = ((ISeriesColumn)_xColumn).Count;
             _xColumn.AddRange( enumerable );
-            _yColumn.AddRange( Enumerable.Select<ValTuple<TX, TY, TZ>, TY>( ( IEnumerable<ValTuple<TX, TY, TZ>> ) bufferedValues, ( Func<ValTuple<TX, TY, TZ>, TY> ) ( ( ValTuple<TX, TY, TZ> b ) => b.Item2 ) ) );
-            _zColumn.AddRange( Enumerable.Select<ValTuple<TX, TY, TZ>, TZ>( ( IEnumerable<ValTuple<TX, TY, TZ>> ) bufferedValues, ( Func<ValTuple<TX, TY, TZ>, TZ> ) ( ( ValTuple<TX, TY, TZ> b ) => b.Item3 ) ) );
+            _yColumn.AddRange( Enumerable.Select<ValueTuple<TX, TY, TZ>, TY>( ( IEnumerable<ValueTuple<TX, TY, TZ>> ) bufferedValues, ( Func<ValueTuple<TX, TY, TZ>, TY> ) ( ( ValueTuple<TX, TY, TZ> b ) => b.Item2 ) ) );
+            _zColumn.AddRange( Enumerable.Select<ValueTuple<TX, TY, TZ>, TZ>( ( IEnumerable<ValueTuple<TX, TY, TZ>> ) bufferedValues, ( Func<ValueTuple<TX, TY, TZ>, TZ> ) ( ( ValueTuple<TX, TY, TZ> b ) => b.Item3 ) ) );
             base.DataDistributionCalculator.OnAppendXValues( _xColumn, count, enumerable, base.AcceptsUnsortedData );
         }
     }

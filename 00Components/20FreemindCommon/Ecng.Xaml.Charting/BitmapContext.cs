@@ -90,32 +90,50 @@ namespace System.Windows.Media.Imaging
 
         internal static unsafe void BlockCopy( int[ ] src, int srcOffset, BitmapContext dest, int destOffset, int count )
         {
-            int[] numArray;
-            NativeMethods.CopyUnmanagedMemory( ( numArray = src ) == null || numArray.Length == 0 ? ( byte* ) null : ( byte* ) &numArray[ 0 ], srcOffset, ( byte* ) dest.Pixels, destOffset, count );
-            numArray = ( int[ ] ) null;
+            if ( src != null && src.Length > 0 )
+            {
+                fixed ( int* ptrSrc = src )
+                {
+                    byte* bptrSrc = (byte*) ptrSrc;
+
+                    NativeMethods.CopyUnmanagedMemory( bptrSrc, srcOffset, ( byte* ) dest.Pixels, destOffset, count );
+                }
+            }            
         }
 
         internal static unsafe void BlockCopy( byte[ ] src, int srcOffset, BitmapContext dest, int destOffset, int count )
         {
-            byte[] numArray;
-            NativeMethods.CopyUnmanagedMemory( ( numArray = src ) == null || numArray.Length == 0 ? ( byte* ) null : &numArray[ 0 ], srcOffset, ( byte* ) dest.Pixels, destOffset, count );
-            numArray = ( byte[ ] ) null;
+            if ( src != null && src.Length > 0 )
+            {
+                fixed ( byte* ptrSrc = src )
+                {                    
+                    NativeMethods.CopyUnmanagedMemory( ptrSrc, srcOffset, ( byte* ) dest.Pixels, destOffset, count );
+                }
+            }            
         }
 
         internal static unsafe void BlockCopy( BitmapContext src, int srcOffset, byte[ ] dest, int destOffset, int count )
         {
-            byte[] numArray;
-            byte* dstPtr = (numArray = dest) == null || numArray.Length == 0 ? (byte*) null : &numArray[0];
-            NativeMethods.CopyUnmanagedMemory( ( byte* ) src.Pixels, srcOffset, dstPtr, destOffset, count );
-            numArray = ( byte[ ] ) null;
+            if( dest != null && dest.Length > 0)
+            {
+                fixed ( byte* dstPtr = dest )
+                {
+                    NativeMethods.CopyUnmanagedMemory( ( byte* ) src.Pixels, srcOffset, dstPtr, destOffset, count );
+                }                
+            }
         }
 
         internal static unsafe void BlockCopy( BitmapContext src, int srcOffset, int[ ] dest, int destOffset, int count )
         {
-            int[] numArray;
-            int* numPtr = (numArray = dest) == null || numArray.Length == 0 ? (int*) null : &numArray[0];
-            NativeMethods.CopyUnmanagedMemory( ( byte* ) src.Pixels, srcOffset, ( byte* ) numPtr, destOffset, count );
-            numArray = ( int[ ] ) null;
+            if ( dest != null && dest.Length > 0 )
+            {
+                fixed ( int* dstPtr = dest )
+                {
+                    byte* bptrDest = (byte*) dstPtr;
+
+                    NativeMethods.CopyUnmanagedMemory( ( byte* ) src.Pixels, srcOffset, bptrDest, destOffset, count );
+                }
+            }
         }
 
         internal void Clear()

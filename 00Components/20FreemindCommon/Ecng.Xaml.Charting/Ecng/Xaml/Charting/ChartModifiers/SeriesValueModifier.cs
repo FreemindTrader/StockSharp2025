@@ -29,7 +29,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
         public static readonly DependencyProperty SeriesMarkerColorProperty = DependencyProperty.RegisterAttached("SeriesMarkerColor", typeof (Color), typeof (SeriesValueModifier), new PropertyMetadata((object) new Color()));
         private readonly IDictionary<IRenderableSeries, IAnnotation> _annotationsBySeries = (IDictionary<IRenderableSeries, IAnnotation>) new Dictionary<IRenderableSeries, IAnnotation>();
         private ObservableCollection<IRenderableSeries> _renderSeriesCollection;
-        private PropertyChangeNotifier _renderSeriesNotifier;
+        private Ecng.Xaml.PropertyChangeNotifier _renderSeriesNotifier;
 
         public static void SetIsSeriesValueModifierEnabled( UIElement element, bool value )
         {
@@ -114,7 +114,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             UltrachartSurface parentSurface = this.ParentSurface as UltrachartSurface;
             if ( parentSurface != null )
             {
-                this._renderSeriesNotifier = new PropertyChangeNotifier( ( DependencyObject ) parentSurface, UltrachartSurface.RenderableSeriesProperty );
+                this._renderSeriesNotifier = new Ecng.Xaml.PropertyChangeNotifier( ( DependencyObject ) parentSurface, UltrachartSurface.RenderableSeriesProperty );
                 this._renderSeriesNotifier.ValueChanged += new Action( this.OnRenderableSeriesDrasticallyChanged );
             }
             this.OnRenderableSeriesDrasticallyChanged();
@@ -198,7 +198,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             if ( this._renderSeriesNotifier == null )
                 return;
             this._renderSeriesNotifier.ValueChanged -= new Action( this.OnRenderableSeriesDrasticallyChanged );
-            this._renderSeriesNotifier = ( PropertyChangeNotifier ) null;
+            this._renderSeriesNotifier = ( Ecng.Xaml.PropertyChangeNotifier ) null;
         }
 
         protected override void OnIsEnabledChanged()
