@@ -773,9 +773,9 @@ namespace StockSharp.Xaml.Charting.Visuals
             Action render = (Action) (() =>
             {
                 object syncRoot = SyncRoot;
-                Monitor.Enter(syncRoot);
+                System.Threading.Monitor.Enter(syncRoot);
                 DoDrawingLoop();
-                Monitor.Exit(syncRoot);
+                System.Threading.Monitor.Exit(syncRoot);
                 _isRendering = false;
             });
             if ( RenderPriority == RenderPriority.Normal )

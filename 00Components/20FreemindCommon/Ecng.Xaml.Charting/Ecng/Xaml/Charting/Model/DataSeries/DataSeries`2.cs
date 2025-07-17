@@ -643,7 +643,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
                 return ( IUpdateSuspender ) new UpdateSuspender( ( ISuspendable ) this );
             }
 
-            Monitor.Enter( parentSurface.SyncRoot );
+            System.Threading.Monitor.Enter( parentSurface.SyncRoot );
             return ( IUpdateSuspender ) new UpdateSuspender( ( ISuspendable ) this, parentSurface.SyncRoot );
         }
 
@@ -659,7 +659,7 @@ namespace StockSharp.Xaml.Charting.Model.DataSeries
                 return;
             }
 
-            Monitor.Exit( suspender.Tag );
+            System.Threading.Monitor.Exit( suspender.Tag );
         }
 
         public void DecrementSuspend()

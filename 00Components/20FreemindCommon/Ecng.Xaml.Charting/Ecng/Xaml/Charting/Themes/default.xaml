@@ -1,0 +1,2991 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:Ecng.Xaml.Charting"
+    xmlns:a="clr-namespace:Ecng.Xaml.Charting.Visuals.Annotations"
+    xmlns:axes="clr-namespace:Ecng.Xaml.Charting.Visuals.Axes"
+    xmlns:c="clr-namespace:Ecng.Xaml.Charting.ChartModifiers"
+    xmlns:Common="clr-namespace:Ecng.Xaml.Charting.Common"
+    xmlns:databinding="clr-namespace:Ecng.Xaml.Charting.Common.Databinding"
+    xmlns:extensions="clr-namespace:Ecng.Xaml.Charting.Common.Extensions"
+    xmlns:helpers="clr-namespace:Ecng.Xaml.Charting.Common.Helpers"
+    xmlns:highSpeedRasterizer="clr-namespace:Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer"
+    xmlns:layout="clr-namespace:System.Windows.Controls"
+    xmlns:mouse="clr-namespace:Ecng.Xaml.Charting.Utility.Mouse"
+    xmlns:pointMarkers="clr-namespace:Ecng.Xaml.Charting.Visuals.PointMarkers"
+    xmlns:r="clr-namespace:Ecng.Xaml.Charting.Visuals.RenderableSeries"   
+    xmlns:themes="clr-namespace:Ecng.Xaml.Charting.Themes"
+    xmlns:visuals="clr-namespace:Ecng.Xaml.Charting.Visuals"
+    xmlns:z="clr-namespace:Ecng.Xaml.Charting.Common.MarkupExtensions">
+
+    <s:InverseOrientationConverter x:Key="InverseOrientationConverter" />
+
+    <s:CollapseIfNullOrEmptyStringConverter x:Key="CollapseIfNullOrEmptyStringConverter" />
+
+    <s:OrientationToAxisLabelRotationConverter x:Key="OrientationToAxisLabelRotationConverter" />
+
+    <s:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+
+    <s:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <s:BooleanToVisibilityConverter x:Key="HideBooleanToVisibilityConverter" FalseVisibilityValue="Hidden" />
+
+    <s:IComparableToObjectConverter x:Key="IComparableToObject" />
+
+    <s:InvertBooleanConverter x:Key="InvertBooleanConverter" />
+
+    <s:DoubleToThicknessConverter x:Key="DoubleToThicknessConverter" />
+
+    <s:ThicknessToDoubleConverter x:Key="ThicknessToDoubleConverter" />
+
+    <s:BandSeriesInfoToYValueConverter x:Key="BandSeriesInfoToYValueConverter" />
+
+    <s:DataTemplateToObjectConverter x:Key="DataTemplateToObjectConverter" />
+
+    <s:AxisAlignmentToHorizontalAlignmentConverter x:Key="AxisAlignmentToHorizontalAlignmentConverter" />
+
+    <s:AxisAlignmentToVerticalAlignmentConverter x:Key="AxisAlignmentToVerticalAlignmentConverter" />
+
+    <s:AxisAlignmentToAxisOrientationConverter x:Key="AxisAlignmentToAxisOrientationConverter" />
+
+    <s:HorisontalOrientationVisibilityConverter x:Key="HorisontalOrientationVisibilityConverter" />
+
+    <s:VerticalOrientationVisibilityConverter x:Key="VerticalOrientationVisibilityConverter" />
+
+    <s:BooleanToDefaultAxisAlignmentConverter x:Key="BooleanToDefaultAxisAlignmentConverter" />
+
+    <s:AxisAlignmentToVeticalAnchorPointConverter x:Key="AxisAlignmentToVeticalAnchorPointConverter" />
+
+    <s:AxisAlignmentToHorizontalAnchorPointConverter x:Key="AxisAlignmentToHorizontalAnchorPointConverter" />
+
+    <s:AxisAlignmentToFlowDirectionConverter x:Key="AxisAlignmentToFlowDirectionConverter" />
+
+    <s:ValueMultiplicatorConverter x:Key="ValueMultiplicatorConverter" />
+
+    <s:ValueToTopMarginConverter x:Key="ValueToTopMarginConverter" />
+
+    <s:AxisAlignmentToVisibilityConverter x:Key="LeftPointerAlignmentToVisibilityConverter" IsLeftPointer="true" />
+
+    <s:AxisAlignmentToVisibilityConverter x:Key="RightPointerAlignmentToVisibilityConverter" IsLeftPointer="false" />
+
+    <s:BooleanToRotationTransformConverter x:Key="BooleanToRotationTransformConverter" />
+
+    <s:NullToVisibilityConverter x:Key="NullToVisibilityConverter" />
+
+    <s:DoubleArrayToDoubleCollectionConverter x:Key="DoubleArrayToDoubleCollectionConverter" />
+
+    <s:DoubleToThumbMarginConverter x:Key="DoubleToThumbMarginConverter" />
+
+    <s:OrientationToVisibilityConverter x:Key="OrientationToVisibilityConverter" />
+
+    <s:BooleanToOrientationConverter x:Key="BooleanToOrientationConverter" />
+
+    <s:AxisAlignmentToTransformOriginConverter x:Key="AxisAlignmentToTransformOriginConverter" />
+
+    <s:DoubleToNegativeDoubleConverter x:Key="DoubleToNegativeDoubleConverter" />
+
+    <databinding:AllDoubleToThicknessMultiConverter x:Key="AllDoubleToThicknessMultiConverter" />
+
+    <databinding:GrayscaleColorBrushConverter x:Key="GrayscaleColorBrushConverter" />
+
+    <databinding:IsLastPointInViewportToOpacityConverter x:Key="IsLastPointInViewportToOpacityConverter" />
+
+    <databinding:LegendPlacementToGridPositionConverter x:Key="LegendPlacementToGridPositionConverter" />
+
+    <databinding:AllTrueMultiConverter x:Key="TestConverter" />
+
+    <databinding:EnumToStringConverter x:Key="EnumToStrConverter" />
+
+    <Style x:Key="DefaultGridLinesPanelStyle" TargetType="{x:Type axes:GridLinesPanel}">
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=GridBackgroundBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=visuals:UltrachartSurface}}" />
+        <Setter Property="Control.BorderThickness" Value="{Binding BorderThickness, RelativeSource={RelativeSource AncestorType=visuals:UltrachartSurface}}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type axes:GridLinesPanel}">
+                    <Border Background="{TemplateBinding Control.Background}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultGridLinesPanelStyle}" TargetType="{x:Type axes:GridLinesPanel}" />
+
+    <Style x:Key="AxisAreaStyle" TargetType="{x:Type axes:AxisArea}">
+        <Setter Property="Control.IsTabStop" Value="false" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch" />
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Stretch" />
+        <Setter Property="Control.Background" Value="{x:Null}" />
+    </Style>
+
+    <ItemsPanelTemplate x:Key="DefaultYAxesPanel">
+        <StackPanel Orientation="Horizontal" />
+    </ItemsPanelTemplate>
+
+    <ItemsPanelTemplate x:Key="DefaultXAxesPanel">
+        <StackPanel Orientation="Vertical" />
+    </ItemsPanelTemplate>
+
+    <ItemsPanelTemplate x:Key="CenterXItemsPanel">
+        <themes:PolarPanel />
+    </ItemsPanelTemplate>
+
+    <ItemsPanelTemplate x:Key="CenterYItemsPanel">
+        <themes:RadialPanel />
+    </ItemsPanelTemplate>
+
+    <Style x:Key="UltrachartSurfaceBase" TargetType="{x:Type visuals:UltrachartSurface}">
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=UltrachartBackground}" />
+        <Setter Property="Control.BorderBrush" Value="{z:ThemeBinding Path=GridBorderBrush}" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Padding" Value="20,20,15,15" />
+        <Setter Property="Control.FontSize" Value="20" />
+        <Setter Property="Control.FontWeight" Value="Normal" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="Common:Device.SnapsToDevicePixels" Value="true" />
+        <Setter Property="visuals:UltrachartSurface.ClipUnderlayAnnotations" Value="true" />
+        <Setter Property="visuals:UltrachartSurface.ClipOverlayAnnotations" Value="true" />
+        <Setter Property="visuals:UltrachartSurface.ClipModifierSurface" Value="true" />
+        <Setter Property="visuals:UltrachartSurface.LeftAxesPanelTemplate" Value="{StaticResource DefaultYAxesPanel}" />
+        <Setter Property="visuals:UltrachartSurface.RightAxesPanelTemplate" Value="{StaticResource DefaultYAxesPanel}" />
+        <Setter Property="visuals:UltrachartSurface.TopAxesPanelTemplate" Value="{StaticResource DefaultXAxesPanel}" />
+        <Setter Property="visuals:UltrachartSurface.BottomAxesPanelTemplate" Value="{StaticResource DefaultXAxesPanel}" />
+        <Setter Property="visuals:UltrachartSurface.CenterXAxesPanelTemplate" Value="{StaticResource CenterXItemsPanel}" />
+        <Setter Property="visuals:UltrachartSurface.CenterYAxesPanelTemplate" Value="{StaticResource CenterYItemsPanel}" />
+        <Setter Property="Control.IsTabStop" Value="true" />
+        <Setter Property="Common:CompatibleFocus.IsFocusable" Value="true" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type visuals:UltrachartSurface}">
+                    <Border
+                        Background="{TemplateBinding Control.Background}"
+                        Common:Device.SnapsToDevicePixels="true"
+                        Padding="{TemplateBinding Control.Padding}">
+                        <visuals:MainGrid x:Name="PART_MainGrid" Common:Device.SnapsToDevicePixels="true">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" MinWidth="10" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" MinHeight="10" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Column="2"
+                                Margin="0,0,0,9"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontSize="{TemplateBinding Control.FontSize}"
+                                FontWeight="{TemplateBinding Control.FontWeight}"
+                                Foreground="{TemplateBinding Control.Foreground}"
+                                Text="{TemplateBinding visuals:UltrachartSurface.ChartTitle}"
+                                Visibility="{Binding ChartTitle, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+                            <axes:GridLinesPanel
+                                x:Name="PART_GridLinesArea"
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Common:Device.SnapsToDevicePixels="true"
+                                IsTabStop="false"
+                                Style="{TemplateBinding visuals:UltrachartSurface.GridLinesPanelStyle}" />
+                            <themes:PolarPanel
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                Common:Device.SnapsToDevicePixels="true"
+                                StretchToSize="{Binding IsPolarChart, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource InvertBooleanConverter}}">
+                                <Grid
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Common:ClipToBoundsHelper.ClipToEllipseBounds="{TemplateBinding visuals:UltrachartSurface.IsPolarChart}"
+                                    Common:Device.SnapsToDevicePixels="true">
+                                    <a:AnnotationSurface
+                                        x:Name="PART_AnnotationsUnderlaySurface"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Common:ClipToBoundsHelper.ClipToBounds="{TemplateBinding visuals:UltrachartSurface.ClipUnderlayAnnotations}"
+                                        Common:Device.SnapsToDevicePixels="true" />
+                                    <ContentControl
+                                        HorizontalContentAlignment="Stretch"
+                                        VerticalContentAlignment="Stretch"
+                                        Common:Device.SnapsToDevicePixels="true"
+                                        Content="{TemplateBinding visuals:UltrachartSurface.RenderSurface}"
+                                        IsTabStop="false" />
+                                    <axes:AxisArea
+                                        Common:Device.SnapsToDevicePixels="true"
+                                        ItemsPanel="{TemplateBinding visuals:UltrachartSurface.CenterYAxesPanelTemplate}"
+                                        Name="PART_CenterYAxisArea" />
+                                    <a:AnnotationSurface
+                                        x:Name="PART_AnnotationsOverlaySurface"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Common:ClipToBoundsHelper.ClipToBounds="{TemplateBinding visuals:UltrachartSurface.ClipOverlayAnnotations}"
+                                        Common:Device.SnapsToDevicePixels="true" />
+                                    <visuals:ChartModifierSurface
+                                        x:Name="PART_ChartModifierSurface"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        ClipToBounds="{TemplateBinding visuals:UltrachartSurface.ClipModifierSurface}"
+                                        Common:Device.SnapsToDevicePixels="true"
+                                        IsTabStop="false" />
+                                    <Canvas
+                                        x:Name="PART_ChartAdornerLayer"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Common:ClipToBoundsHelper.ClipToBounds="{TemplateBinding visuals:UltrachartSurface.ClipModifierSurface}"
+                                        Common:Device.SnapsToDevicePixels="true">
+                                        <FrameworkElement.Resources>
+                                            <Style TargetType="{x:Type Thumb}">
+                                                <Setter Property="Control.BorderThickness" Value="1" />
+                                                <Setter Property="Control.IsTabStop" Value="false" />
+                                                <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+                                                <Setter Property="Control.Background" Value="Green" />
+                                                <Setter Property="FrameworkElement.Width" Value="{z:Static Member=visuals:ManipulationMargins.AnnotationResizingThumbSize}" />
+                                                <Setter Property="FrameworkElement.Height" Value="{z:Static Member=visuals:ManipulationMargins.AnnotationResizingThumbSize}" />
+                                                <Setter Property="UIElement.Opacity" Value="0.4" />
+                                                <Setter Property="Control.BorderBrush">
+                                                    <Setter.Value>
+                                                        <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                                            <GradientStop Offset="0" Color="#FFA3AEB9" />
+                                                            <GradientStop Offset="0.375" Color="#FF8399A9" />
+                                                            <GradientStop Offset="0.375" Color="#FF718597" />
+                                                            <GradientStop Offset="1" Color="#FF617584" />
+                                                        </LinearGradientBrush>
+                                                    </Setter.Value>
+                                                </Setter>
+                                                <Setter Property="Control.Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Thumb}">
+                                                            <Grid>
+                                                                <VisualStateManager.VisualStateGroups>
+                                                                    <VisualStateGroup x:Name="CommonStates">
+                                                                        <VisualState x:Name="Normal" />
+                                                                        <VisualState x:Name="MouseOver">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation
+                                                                                    Duration="0"
+                                                                                    Storyboard.TargetName="BackgroundAnimation"
+                                                                                    Storyboard.TargetProperty="Opacity"
+                                                                                    To="1" />
+                                                                                <ColorAnimation
+                                                                                    Duration="0"
+                                                                                    Storyboard.TargetName="Background"
+                                                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                                                    To="#FF6DBDD1" />
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Pressed">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation
+                                                                                    Duration="0"
+                                                                                    Storyboard.TargetName="BackgroundAnimation"
+                                                                                    Storyboard.TargetProperty="Opacity"
+                                                                                    To="1" />
+                                                                                <ColorAnimation
+                                                                                    Duration="0"
+                                                                                    Storyboard.TargetName="Background"
+                                                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)"
+                                                                                    To="#FF6DBDD1" />
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Disabled">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation
+                                                                                    Duration="0"
+                                                                                    Storyboard.TargetName="DisabledVisualElement"
+                                                                                    Storyboard.TargetProperty="Opacity"
+                                                                                    To=".55" />
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                    </VisualStateGroup>
+                                                                    <VisualStateGroup x:Name="FocusStates">
+                                                                        <VisualState x:Name="Focused">
+                                                                            <Storyboard>
+                                                                                <DoubleAnimation
+                                                                                    Duration="0"
+                                                                                    Storyboard.TargetName="FocusVisualElement"
+                                                                                    Storyboard.TargetProperty="Opacity"
+                                                                                    To="1" />
+                                                                            </Storyboard>
+                                                                        </VisualState>
+                                                                        <VisualState x:Name="Unfocused" />
+                                                                    </VisualStateGroup>
+                                                                </VisualStateManager.VisualStateGroups>
+                                                                <Border
+                                                                    x:Name="Background"
+                                                                    Background="White"
+                                                                    BorderBrush="{TemplateBinding Control.BorderBrush}"
+                                                                    BorderThickness="{TemplateBinding Control.BorderThickness}"
+                                                                    CornerRadius="2">
+                                                                    <Grid Margin="1" Background="{TemplateBinding Control.Background}">
+                                                                        <Border
+                                                                            x:Name="BackgroundAnimation"
+                                                                            Background="#FF448DCA"
+                                                                            Opacity="0" />
+                                                                        <Rectangle x:Name="BackgroundGradient" Fill="{TemplateBinding Control.Background}" />
+                                                                    </Grid>
+                                                                </Border>
+                                                                <Rectangle
+                                                                    x:Name="DisabledVisualElement"
+                                                                    Fill="#FFFFFFFF"
+                                                                    IsHitTestVisible="false"
+                                                                    Opacity="0"
+                                                                    RadiusX="2"
+                                                                    RadiusY="2" />
+                                                                <Rectangle
+                                                                    x:Name="FocusVisualElement"
+                                                                    Margin="1"
+                                                                    IsHitTestVisible="false"
+                                                                    Opacity="0"
+                                                                    RadiusX="1"
+                                                                    RadiusY="1"
+                                                                    Stroke="#FF6DBDD1"
+                                                                    StrokeThickness="1" />
+                                                            </Grid>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </FrameworkElement.Resources>
+                                    </Canvas>
+                                </Grid>
+                                <axes:AxisArea
+                                    Common:Device.SnapsToDevicePixels="true"
+                                    ItemsPanel="{TemplateBinding visuals:UltrachartSurface.CenterXAxesPanelTemplate}"
+                                    Name="PART_CenterXAxisArea" />
+                            </themes:PolarPanel>
+                            <Border
+                                Grid.Row="3"
+                                Grid.Column="2"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                BorderBrush="{Binding ElementName=PART_GridLinesArea, Path=BorderBrush}"
+                                BorderThickness="{Binding ElementName=PART_GridLinesArea, Path=BorderThickness}"
+                                Common:Device.SnapsToDevicePixels="true" />
+                            <axes:AxisArea
+                                x:Name="PART_TopAxisArea"
+                                Grid.Row="2"
+                                Grid.Column="2"
+                                Common:Device.SnapsToDevicePixels="true"
+                                ItemsPanel="{TemplateBinding visuals:UltrachartSurface.TopAxesPanelTemplate}"
+                                Style="{StaticResource AxisAreaStyle}" />
+                            <axes:AxisArea
+                                x:Name="PART_LeftAxisArea"
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Common:Device.SnapsToDevicePixels="true"
+                                ItemsPanel="{TemplateBinding visuals:UltrachartSurface.LeftAxesPanelTemplate}"
+                                Style="{StaticResource AxisAreaStyle}" />
+                            <axes:AxisArea
+                                x:Name="PART_BottomAxisArea"
+                                Grid.Row="4"
+                                Grid.Column="2"
+                                Common:Device.SnapsToDevicePixels="true"
+                                ItemsPanel="{TemplateBinding visuals:UltrachartSurface.BottomAxesPanelTemplate}"
+                                Style="{StaticResource AxisAreaStyle}" />
+                            <axes:AxisArea
+                                x:Name="PART_RightAxisArea"
+                                Grid.Row="3"
+                                Grid.Column="3"
+                                Common:Device.SnapsToDevicePixels="true"
+                                ItemsPanel="{TemplateBinding visuals:UltrachartSurface.RightAxesPanelTemplate}"
+                                Style="{StaticResource AxisAreaStyle}" />
+                        </visuals:MainGrid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource UltrachartSurfaceBase}" TargetType="{x:Type visuals:UltrachartSurface}" />
+
+    <Style x:Key="DefaultAxisLabelStyle" TargetType="{x:Type axes:DefaultTickLabel}">
+        <Setter Property="Control.IsTabStop" Value="false" />
+        <Setter Property="FrameworkElement.Margin" Value="1" />
+        <Setter Property="Control.Foreground" Value="{Binding DefaultForeground, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="axes:DefaultTickLabel.VerticalAnchorPoint" Value="{Binding DefaultVerticalAnchorPoint, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="axes:DefaultTickLabel.HorizontalAnchorPoint" Value="{Binding DefaultHorizontalAnchorPoint, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type axes:DefaultTickLabel}">
+                    <ContentControl
+                        Content="{Binding}"
+                        ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                        Foreground="{TemplateBinding Control.Foreground}"
+                        IsTabStop="false" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="NumericLabelTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock
+                x:Name="significand"
+                Margin="{Binding ., RelativeSource={RelativeSource Self}, Converter={StaticResource ValueToTopMarginConverter}, ConverterParameter=0.5}"
+                Text="{Binding Text}" />
+            <TextBlock
+                Margin="{Binding Margin, ElementName=significand}"
+                Text="{Binding Separator}"
+                Visibility="{Binding HasExponent, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBlock
+                x:Name="exponent"
+                FontSize="{Binding FontSize, ElementName=significand, Converter={StaticResource ValueMultiplicatorConverter}, ConverterParameter=0.83}"
+                Text="{Binding Exponent}"
+                Visibility="{Binding HasExponent, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DefaultLabelTemplate">
+        <TextBlock Text="{Binding Text}" />
+    </DataTemplate>
+
+    <Style BasedOn="{StaticResource DefaultAxisLabelStyle}" TargetType="{x:Type axes:NumericTickLabel}">
+        <Setter Property="ContentControl.ContentTemplate" Value="{StaticResource NumericLabelTemplate}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultAxisLabelStyle}" TargetType="{x:Type axes:DefaultTickLabel}">
+        <Setter Property="ContentControl.ContentTemplate" Value="{StaticResource DefaultLabelTemplate}" />
+    </Style>
+
+    <DataTemplate x:Key="DefaultTitleTemplate">
+        <TextBlock
+            Margin="0,3,0,3"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Text="{Binding}" />
+    </DataTemplate>
+
+    <Style x:Key="DefaultAxisTitleStyle" TargetType="{x:Type axes:AxisTitle}">
+        <Style.Setters>
+            <Setter Property="Control.IsTabStop" Value="false" />
+            <Setter Property="FrameworkElement.HorizontalAlignment" Value="Center" />
+            <Setter Property="FrameworkElement.VerticalAlignment" Value="Center" />
+            <Setter Property="FrameworkElement.Margin" Value="0,3,0,3" />
+            <Setter Property="Control.Foreground" Value="{Binding TickTextBrush, RelativeSource={RelativeSource AncestorType=axes:AxisBase}}" />
+            <Setter Property="Control.FontSize" Value="{Binding TitleFontSize, RelativeSource={RelativeSource AncestorType=axes:AxisBase}}" />
+            <Setter Property="Control.FontWeight" Value="{Binding TitleFontWeight, RelativeSource={RelativeSource AncestorType=axes:AxisBase}}" />
+            <Setter Property="ContentControl.Content" Value="{Binding AxisTitle, RelativeSource={RelativeSource AncestorType=axes:AxisBase}}" />
+            <Setter Property="ContentControl.ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <s:AxisTitleTemplateSelector
+                            Content="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content}"
+                            Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=axes:AxisTitle}}"
+                            IsTabStop="false"
+                            StringTitleTemplate="{StaticResource DefaultTitleTemplate}" />
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type axes:AxisTitle}">
+                        <layout:LayoutTransformer Background="{TemplateBinding Control.Background}" LayoutTransform="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay, Converter={StaticResource OrientationToAxisLabelRotationConverter}}">
+                            <ContentControl
+                                Content="{TemplateBinding ContentControl.Content}"
+                                ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                                Foreground="{TemplateBinding Control.Foreground}"
+                                IsTabStop="false" />
+                        </layout:LayoutTransformer>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultAxisTitleStyle}" TargetType="{x:Type axes:AxisTitle}" />
+
+    <Style x:Key="AxisBaseStyle" TargetType="{x:Type axes:AxisBase}">
+        <Setter Property="Common:Device.SnapsToDevicePixels" Value="true" />
+        <Setter Property="UIElement.Visibility" Value="Visible" />
+        <Setter Property="Control.Background" Value="Transparent" />
+        <Setter Property="Control.IsTabStop" Value="false" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.FontWeight" Value="Normal" />
+        <Setter Property="axes:AxisBase.TickTextBrush" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="axes:AxisBase.TitleFontSize" Value="12" />
+        <Setter Property="axes:AxisBase.TitleFontWeight" Value="Bold" />
+        <Setter Property="axes:AxisBase.IsLabelCullingEnabled" Value="true" />
+        <Setter Property="axes:AxisBase.DrawMajorGridLines" Value="{Binding IsPrimaryAxis, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="axes:AxisBase.DrawMinorGridLines" Value="{Binding IsPrimaryAxis, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="axes:AxisBase.AxisBandsFill" Value="{z:ThemeBinding Path=AxisBandsFill}" />
+        <Setter Property="axes:AxisBase.LabelProvider" Value="{Binding DefaultLabelProvider, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="axes:AxisBase.AxisAlignment" Value="{Binding IsXAxis, RelativeSource={RelativeSource Self}, Mode=OneWay, Converter={StaticResource BooleanToDefaultAxisAlignmentConverter}}" />
+        <Setter Property="axes:AxisBase.Orientation" Value="{Binding AxisAlignment, RelativeSource={RelativeSource Self}, Mode=OneWay, Converter={StaticResource AxisAlignmentToAxisOrientationConverter}}" />
+        <Setter Property="axes:AxisBase.IsCenterAxis" Value="{Binding IsPolarAxis, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="axes:AxisBase.GrowBy">
+            <Setter.Value>
+                <s:DoubleRange Max="0.0" Min="0.0" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="axes:AxisBase.MajorTickLineStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=MajorGridLinesBrush}" />
+                    <Setter Property="Shape.StrokeThickness" Value="1" />
+                    <Setter Property="Shape.StrokeEndLineCap" Value="Square" />
+                    <Setter Property="Line.X2" Value="6" />
+                    <Setter Property="Line.Y2" Value="6" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="axes:AxisBase.MinorTickLineStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=MinorGridLinesBrush}" />
+                    <Setter Property="Shape.StrokeThickness" Value="1" />
+                    <Setter Property="Shape.StrokeEndLineCap" Value="Square" />
+                    <Setter Property="Line.X2" Value="3" />
+                    <Setter Property="Line.Y2" Value="3" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="axes:AxisBase.MajorGridLineStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=MajorGridLinesBrush}" />
+                    <Setter Property="Shape.StrokeThickness" Value="1" />
+                    <Setter Property="Shape.StrokeEndLineCap" Value="Square" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="axes:AxisBase.MinorGridLineStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=MinorGridLinesBrush}" />
+                    <Setter Property="Shape.StrokeThickness" Value="1" />
+                    <Setter Property="Shape.StrokeEndLineCap" Value="Square" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type axes:AxisBase}">
+                    <Border
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        Common:Device.SnapsToDevicePixels="true">
+                        <StackPanel
+                            x:Name="PART_AxisContainer"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Common:AxisLayoutHelper.AxisAlignment="{Binding AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                            Common:Device.SnapsToDevicePixels="true"
+                            Orientation="{Binding AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay, Converter={StaticResource AxisAlignmentToAxisOrientationConverter}, ConverterParameter=Inverse}">
+                            <Grid
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Common:AxisLayoutHelper.IsInsideItem="true"
+                                Common:Device.SnapsToDevicePixels="true"
+                                ZIndex="1">
+                                <themes:AxisPanel
+                                    x:Name="PART_AxisCanvas"
+                                    AxisAlignment="{TemplateBinding axes:AxisBase.AxisAlignment}"
+                                    Background="Transparent"
+                                    Common:Device.SnapsToDevicePixels="true"
+                                    DrawLabels="{TemplateBinding axes:AxisBase.DrawLabels}"
+                                    DrawMajorTicks="{TemplateBinding axes:AxisBase.DrawMajorTicks}"
+                                    DrawMinorTicks="{TemplateBinding axes:AxisBase.DrawMinorTicks}"
+                                    IsLabelCullingEnabled="{TemplateBinding axes:AxisBase.IsLabelCullingEnabled}"
+                                    MajorTickLineStyle="{TemplateBinding axes:AxisBase.MajorTickLineStyle}"
+                                    MinorTickLineStyle="{TemplateBinding axes:AxisBase.MinorTickLineStyle}">
+                                    <Image
+                                        x:Name="PART_AxisBitmapImage"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Common:Device.SnapsToDevicePixels="true"
+                                        Stretch="Fill" />
+                                    <Grid x:Name="PART_LabelsCanvas" Margin="{Binding LabelToTickIndent, RelativeSource={RelativeSource FindAncestor, AncestorType=themes:AxisPanel}, Mode=OneWay}">
+                                        <themes:TickLabelAxisCanvas
+                                            Background="Transparent"
+                                            ClipToBounds="false"
+                                            Common:Device.SnapsToDevicePixels="true"
+                                            IsLabelCullingEnabled="{TemplateBinding axes:AxisBase.IsLabelCullingEnabled}" />
+                                        <themes:TickLabelAxisCanvas
+                                            Background="Transparent"
+                                            ClipToBounds="false"
+                                            Common:Device.SnapsToDevicePixels="true"
+                                            IsLabelCullingEnabled="{TemplateBinding axes:AxisBase.IsLabelCullingEnabled}"
+                                            Visibility="Collapsed" />
+                                    </Grid>
+                                    <axes:AxisTitle
+                                        Orientation="{TemplateBinding axes:AxisBase.Orientation}"
+                                        Style="{TemplateBinding axes:AxisBase.TitleStyle}"
+                                        Visibility="{Binding Content, RelativeSource={RelativeSource Self}, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+                                </themes:AxisPanel>
+                                <themes:ModifierAxisCanvas
+                                    x:Name="PART_ModifierAxisCanvas"
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"
+                                    Common:Device.SnapsToDevicePixels="true" />
+                            </Grid>
+                            <ContentPresenter Common:AxisLayoutHelper.IsOutsideItem="true" Content="{TemplateBinding axes:AxisBase.Scrollbar}" />
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style
+        x:Key="NumericAxisStyle"
+        BasedOn="{StaticResource AxisBaseStyle}"
+        TargetType="{x:Type axes:NumericAxis}">
+        <Setter Property="axes:AxisBase.TextFormatting" Value="0.###" />
+        <Setter Property="axes:AxisBase.CursorTextFormatting" Value="0.##" />
+        <Setter Property="axes:AxisBase.MinorsPerMajor" Value="5" />
+    </Style>
+
+    <Style BasedOn="{StaticResource NumericAxisStyle}" TargetType="{x:Type axes:NumericAxis}" />
+
+    <Style BasedOn="{StaticResource AxisBaseStyle}" TargetType="{x:Type axes:DateTimeAxis}">
+        <Setter Property="axes:AxisBase.TextFormatting" Value="dd MMM yyyy" />
+        <Setter Property="axes:DateTimeAxis.SubDayTextFormatting" Value="HH:mm:ss" />
+        <Setter Property="axes:AxisBase.MinorsPerMajor" Value="5" />
+    </Style>
+
+    <Style BasedOn="{StaticResource AxisBaseStyle}" TargetType="{x:Type axes:TimeSpanAxis}">
+        <Setter Property="axes:AxisBase.TextFormatting" Value="-hh\:mm\:ss" />
+        <Setter Property="axes:AxisBase.CursorTextFormatting" Value="-d\.hh\:mm\:ss" />
+        <Setter Property="axes:AxisBase.MinorsPerMajor" Value="5" />
+    </Style>
+
+    <Style BasedOn="{StaticResource AxisBaseStyle}" TargetType="{x:Type axes:CategoryDateTimeAxis}">
+        <Setter Property="axes:AxisBase.TextFormatting" Value="dd MMM yyyy" />
+        <Setter Property="axes:CategoryDateTimeAxis.SubDayTextFormatting" Value="HH:mm" />
+        <Setter Property="axes:AxisBase.MinorsPerMajor" Value="3" />
+    </Style>
+
+    <Style BasedOn="{StaticResource NumericAxisStyle}" TargetType="{x:Type axes:PolarYAxis}">
+        <Setter Property="themes:RadialPanel.Angle" Value="{Binding Angle, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="themes:RadialPanel.OriginPoint" Value="{Binding AxisAlignment, RelativeSource={RelativeSource Self}, Mode=OneWay, Converter={StaticResource AxisAlignmentToTransformOriginConverter}}" />
+        <Setter Property="themes:RadialPanel.IsHorizontal" Value="{Binding IsHorizontalAxis, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource NumericAxisStyle}" TargetType="{x:Type axes:PolarXAxis}">
+        <Setter Property="Control.BorderBrush" Value="{z:ThemeBinding Path=MajorGridLinesBrush}" />
+        <Setter Property="Control.BorderThickness" Value="0,0,0,1" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type axes:PolarXAxis}">
+                    <Grid themes:PolarPanel.ShouldCopyThicknessToParent="true">
+                        <themes:PolarPanel
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Common:Device.SnapsToDevicePixels="true"
+                            IsReversedOrder="true"
+                            ShouldCopyThicknessToParent="true">
+                            <Ellipse
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Fill="Transparent"
+                                IsHitTestVisible="false"
+                                Stroke="{TemplateBinding Control.Background}"
+                                StrokeThickness="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(themes:PolarPanel.Thickness), Mode=OneWay}"
+                                themes:PolarPanel.Thickness="0" />
+                            <Ellipse
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Fill="Transparent"
+                                IsHitTestVisible="false"
+                                Stroke="{TemplateBinding Control.BorderBrush}"
+                                StrokeThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessToDoubleConverter}, ConverterParameter=Top}"
+                                themes:PolarPanel.Thickness="{Binding StrokeThickness, RelativeSource={RelativeSource Self}}" />
+                            <StackPanel
+                                x:Name="PART_AxisContainer"
+                                HorizontalAlignment="{Binding AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource AxisAlignmentToHorizontalAlignmentConverter}}"
+                                VerticalAlignment="{Binding AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource AxisAlignmentToVerticalAlignmentConverter}}"
+                                Common:AxisLayoutHelper.AxisAlignment="{Binding AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}"
+                                Common:Device.SnapsToDevicePixels="true"
+                                Orientation="{Binding AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay, Converter={StaticResource AxisAlignmentToAxisOrientationConverter}, ConverterParameter=Inverse}">
+                                <axes:AxisTitle
+                                    Common:AxisLayoutHelper.IsOutsideItem="true"
+                                    Orientation="{TemplateBinding axes:AxisBase.Orientation}"
+                                    Style="{TemplateBinding axes:AxisBase.TitleStyle}"
+                                    Visibility="{Binding Content, RelativeSource={RelativeSource Self}, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+                                <ContentPresenter Common:AxisLayoutHelper.IsInsideItem="true" Content="{TemplateBinding axes:AxisBase.Scrollbar}" />
+                            </StackPanel>
+                            <Grid
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Common:Device.SnapsToDevicePixels="true">
+                                <themes:PolarAxisPanel
+                                    x:Name="PART_AxisCanvas"
+                                    AxisAlignment="{TemplateBinding axes:AxisBase.AxisAlignment}"
+                                    Common:Device.SnapsToDevicePixels="true"
+                                    DrawLabels="{TemplateBinding axes:AxisBase.DrawLabels}"
+                                    DrawMajorTicks="{TemplateBinding axes:AxisBase.DrawMajorTicks}"
+                                    DrawMinorTicks="{TemplateBinding axes:AxisBase.DrawMinorTicks}"
+                                    IsHitTestVisible="false"
+                                    IsLabelCullingEnabled="{TemplateBinding axes:AxisBase.IsLabelCullingEnabled}"
+                                    MajorTickLineStyle="{TemplateBinding axes:AxisBase.MajorTickLineStyle}"
+                                    MinorTickLineStyle="{TemplateBinding axes:AxisBase.MinorTickLineStyle}"
+                                    themes:PolarPanel.ShouldCopyThicknessToParent="true">
+                                    <themes:PolarPanel
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Common:Device.SnapsToDevicePixels="true"
+                                        IsReversedOrder="true"
+                                        ShouldCopyThicknessToParent="true">
+                                        <Grid x:Name="PART_LabelsCanvas" Common:Device.SnapsToDevicePixels="true">
+                                            <themes:PolarTickLabelAxisCanvas
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch"
+                                                Background="Transparent"
+                                                ClipToBounds="false"
+                                                Common:Device.SnapsToDevicePixels="true"
+                                                IsLabelCullingEnabled="{TemplateBinding axes:AxisBase.IsLabelCullingEnabled}"
+                                                themes:PolarPanel.ShouldCopyThicknessToParent="true"
+                                                themes:PolarPanel.Thickness="{Binding MaxChildSize, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+                                            <themes:PolarTickLabelAxisCanvas
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch"
+                                                Background="Transparent"
+                                                ClipToBounds="false"
+                                                Common:Device.SnapsToDevicePixels="true"
+                                                IsLabelCullingEnabled="{TemplateBinding axes:AxisBase.IsLabelCullingEnabled}"
+                                                themes:PolarPanel.ShouldCopyThicknessToParent="true"
+                                                themes:PolarPanel.Thickness="{Binding MaxChildSize, RelativeSource={RelativeSource Self}, Mode=OneWay}"
+                                                Visibility="Collapsed" />
+                                        </Grid>
+                                        <Border themes:PolarPanel.Thickness="{Binding AxisLabelToTickIndent, RelativeSource={RelativeSource AncestorType=themes:PolarAxisPanel}, Mode=OneWay}" />
+                                        <Image
+                                            x:Name="PART_AxisBitmapImage"
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            Common:Device.SnapsToDevicePixels="true"
+                                            Stretch="Fill"
+                                            themes:PolarPanel.Thickness="{Binding MajorTickSize, RelativeSource={RelativeSource AncestorType=themes:PolarAxisPanel}, Mode=OneWay}" />
+                                    </themes:PolarPanel>
+                                </themes:PolarAxisPanel>
+                            </Grid>
+                            <Ellipse
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Fill="Transparent"
+                                IsHitTestVisible="false"
+                                Stroke="{TemplateBinding Control.BorderBrush}"
+                                StrokeThickness="{Binding BorderThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessToDoubleConverter}, ConverterParameter=Bottom}"
+                                themes:PolarPanel.Thickness="{Binding StrokeThickness, RelativeSource={RelativeSource Self}}" />
+                        </themes:PolarPanel>
+                        <themes:PolarModifierAxisCanvas
+                            x:Name="PART_ModifierAxisCanvas"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            Common:Device.SnapsToDevicePixels="true" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RolloverMarkerEllipseStyle" TargetType="{x:Type Ellipse}">
+        <Setter Property="Shape.Fill" Value="{z:ThemeBinding Path=RolloverLabelBackgroundBrush}" />
+        <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=RolloverLabelBorderBrush}" />
+    </Style>
+
+    <DataTemplate x:Key="DefaultRolloverMarkerTemplate">
+        <Ellipse
+            Width="9"
+            Height="9"
+            StrokeThickness="2"
+            Style="{StaticResource RolloverMarkerEllipseStyle}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="DefaultBandSeriesRolloverMarkerTemplate">
+        <Ellipse
+            Width="7"
+            Height="7"
+            Style="{StaticResource RolloverMarkerEllipseStyle}" />
+    </DataTemplate>
+
+    <Style x:Key="DefaultPointMarker" TargetType="{x:Type pointMarkers:BasePointMarker}">
+        <Setter Property="FrameworkElement.Width" Value="7" />
+        <Setter Property="FrameworkElement.Height" Value="7" />
+        <Setter Property="pointMarkers:BasePointMarker.Fill" Value="{Binding SeriesColor}" />
+        <Setter Property="pointMarkers:BasePointMarker.Stroke" Value="{Binding SeriesColor}" />
+        <Setter Property="pointMarkers:BasePointMarker.AntiAliasing" Value="{Binding AntiAliasing}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultPointMarker}" TargetType="{x:Type pointMarkers:EllipsePointMarker}">
+        <Setter Property="pointMarkers:BasePointMarker.PointMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Ellipse
+                        Width="{Binding DataContext.PointMarker.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        Height="{Binding DataContext.PointMarker.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        Fill="{Binding DataContext.PointMarker.Fill, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}"
+                        Stroke="{Binding DataContext.PointMarker.Stroke, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}"
+                        StrokeThickness="{Binding DataContext.PointMarker.StrokeThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultPointMarker}" TargetType="{x:Type pointMarkers:SquarePointMarker}">
+        <Setter Property="pointMarkers:BasePointMarker.PointMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Border
+                        Width="{Binding DataContext.PointMarker.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                        Height="{Binding DataContext.PointMarker.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                        Background="{Binding DataContext.PointMarker.Fill, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}"
+                        BorderBrush="{Binding DataContext.PointMarker.Stroke, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}"
+                        BorderThickness="{Binding DataContext.PointMarker.StrokeThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultPointMarker}" TargetType="{x:Type pointMarkers:CrossPointMarker}">
+        <Setter Property="FrameworkElement.Width" Value="9" />
+        <Setter Property="FrameworkElement.Height" Value="9" />
+        <Setter Property="pointMarkers:BasePointMarker.PointMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <FrameworkElement.Resources>
+                            <Style TargetType="{x:Type Line}">
+                                <Setter Property="Shape.Stretch" Value="Fill" />
+                                <Setter Property="FrameworkElement.Height" Value="{Binding DataContext.PointMarker.Height, RelativeSource={RelativeSource TemplatedParent}}" />
+                                <Setter Property="FrameworkElement.Width" Value="{Binding DataContext.PointMarker.Width, RelativeSource={RelativeSource TemplatedParent}}" />
+                                <Setter Property="Shape.Stroke" Value="{Binding DataContext.PointMarker.Stroke, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}" />
+                                <Setter Property="Shape.StrokeThickness" Value="{Binding DataContext.PointMarker.StrokeThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Style>
+                        </FrameworkElement.Resources>
+                        <Line
+                            Stretch="Fill"
+                            X1="0"
+                            X2="1"
+                            Y1="0.4"
+                            Y2="0.4" />
+                        <Line
+                            Stretch="Fill"
+                            X1="0.5"
+                            X2="0.5"
+                            Y1="0"
+                            Y2="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultPointMarker}" TargetType="{x:Type pointMarkers:TrianglePointMarker}">
+        <Setter Property="pointMarkers:BasePointMarker.PointMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Grid>
+                        <Polygon
+                            Width="{Binding DataContext.PointMarker.Width, RelativeSource={RelativeSource TemplatedParent}}"
+                            Height="{Binding DataContext.PointMarker.Height, RelativeSource={RelativeSource TemplatedParent}}"
+                            Fill="{Binding DataContext.PointMarker.Fill, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}"
+                            Points="0,0 1,0 0.5,1 0,0"
+                            Stretch="Uniform"
+                            Stroke="{Binding DataContext.PointMarker.Stroke, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorToBrushConverter}}"
+                            StrokeThickness="{Binding DataContext.PointMarker.StrokeThickness, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="DefaultLegendMarkerTemplate" DataType="r:BaseRenderableSeries">
+        <Line
+            VerticalAlignment="Center"
+            Stretch="Fill"
+            Stroke="{Binding SeriesColor, Converter={StaticResource ColorToBrushConverter}}"
+            StrokeThickness="2"
+            X1="0"
+            X2="1"
+            Y1="0.5"
+            Y2="0.5" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="LineSeriesLegendMarkerTemplate" DataType="r:FastLineRenderableSeries">
+        <Grid>
+            <FrameworkElement.Resources>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stretch" Value="Fill" />
+                    <Setter Property="Line.X1" Value="0" />
+                    <Setter Property="Line.X2" Value="1" />
+                    <Setter Property="Line.Y1" Value="0.5" />
+                    <Setter Property="Line.Y2" Value="0.5" />
+                    <Setter Property="Shape.StrokeThickness" Value="2" />
+                    <Setter Property="UIElement.Visibility" Value="{Binding PointMarker, Converter={StaticResource NullToVisibilityConverter}}" />
+                    <Setter Property="Shape.StrokeDashArray" Value="{Binding StrokeDashArray, Converter={StaticResource DoubleArrayToDoubleCollectionConverter}}" />
+                    <Setter Property="FrameworkElement.VerticalAlignment" Value="Center" />
+                    <Setter Property="Shape.Stroke" Value="{Binding SeriesColor, Converter={StaticResource ColorToBrushConverter}}" />
+                </Style>
+            </FrameworkElement.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Line Grid.ColumnSpan="3" Visibility="{Binding PointMarker, Converter={StaticResource NullToVisibilityConverter}, ConverterParameter=Inverse}" />
+            <Line Grid.Column="0" />
+            <Viewbox
+                Grid.Column="1"
+                Stretch="Uniform"
+                Visibility="{Binding PointMarker, Converter={StaticResource NullToVisibilityConverter}}">
+                <r:TemplatableControl Template="{Binding PointMarker.PointMarkerTemplate}" />
+            </Viewbox>
+            <Line Grid.Column="2" />
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OhlcLegendMarkerTemplate">
+        <Line
+            VerticalAlignment="Center"
+            Stretch="Fill"
+            Stroke="{Binding UpWickColor, Converter={StaticResource ColorToBrushConverter}}"
+            StrokeThickness="2"
+            X1="0"
+            X2="1"
+            Y1="0.5"
+            Y2="0.5" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ScatterSeriesLegendMarkerTemplate" DataType="r:XyScatterRenderableSeries">
+        <Grid>
+            <Viewbox HorizontalAlignment="Center" Stretch="Uniform">
+                <r:TemplatableControl Template="{Binding PointMarker.PointMarkerTemplate}" />
+            </Viewbox>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MountainSeriesLegendMarkerTemplate" DataType="r:FastMountainRenderableSeries">
+        <Border BorderBrush="{Binding SeriesColor, Converter={StaticResource ColorToBrushConverter}}" BorderThickness="{Binding StrokeThickness, Converter={StaticResource DoubleToThicknessConverter}}">
+            <Rectangle Fill="{Binding AreaBrush}" Stretch="Fill" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ColumnSeriesLegendMarkerTemplate" DataType="r:FastColumnRenderableSeries">
+        <Border BorderBrush="{Binding SeriesColor, Converter={StaticResource ColorToBrushConverter}}" BorderThickness="{Binding StrokeThickness}">
+            <Rectangle Fill="{Binding FillBrush}" Stretch="Fill" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BandSeriesLegendMarkerTemplate" DataType="r:FastBandRenderableSeries">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Border
+                HorizontalAlignment="Stretch"
+                Background="{Binding BandUpColor, Converter={StaticResource ColorToBrushConverter}}"
+                BorderBrush="{Binding SeriesColor, Converter={StaticResource ColorToBrushConverter}}"
+                BorderThickness="1,1,0,1" />
+            <Border
+                Grid.Column="1"
+                HorizontalAlignment="Stretch"
+                Background="{Binding BandDownColor, Converter={StaticResource ColorToBrushConverter}}"
+                BorderBrush="{Binding Series1Color, Converter={StaticResource ColorToBrushConverter}}"
+                BorderThickness="0,1,1,1" />
+        </Grid>
+    </DataTemplate>
+
+    <Style x:Key="DefaultRenderableSeriesStyle" TargetType="{x:Type r:BaseRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.RolloverMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <r:TemplatableControl ContentTemplate="{StaticResource DefaultRolloverMarkerTemplate}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource DefaultLegendMarkerTemplate}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:BaseRenderableSeries}" />
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastErrorBarsRenderableSeries}" />
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastCandlestickRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
+        <Setter Property="r:FastCandlestickRenderableSeries.UpWickColor" Value="{z:ThemeBinding Path=DefaultCandleUpWickColor}" />
+        <Setter Property="r:FastCandlestickRenderableSeries.DownWickColor" Value="{z:ThemeBinding Path=DefaultCandleDownWickColor}" />
+        <Setter Property="r:FastCandlestickRenderableSeries.UpBodyBrush" Value="{z:ThemeBinding Path=DefaultCandleUpBodyBrush}" />
+        <Setter Property="r:FastCandlestickRenderableSeries.DownBodyBrush" Value="{z:ThemeBinding Path=DefaultCandleDownBodyBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastOhlcRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
+        <Setter Property="r:FastOhlcRenderableSeries.UpWickColor" Value="{z:ThemeBinding Path=DefaultCandleUpWickColor}" />
+        <Setter Property="r:FastOhlcRenderableSeries.DownWickColor" Value="{z:ThemeBinding Path=DefaultCandleDownWickColor}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastXORenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource OhlcLegendMarkerTemplate}" />
+        <Setter Property="r:FastOhlcRenderableSeries.UpWickColor" Value="{z:ThemeBinding Path=DefaultCandleUpWickColor}" />
+        <Setter Property="r:FastOhlcRenderableSeries.DownWickColor" Value="{z:ThemeBinding Path=DefaultCandleDownWickColor}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastColumnRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ColumnSeriesLegendMarkerTemplate}" />
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultColumnOutlineColor}" />
+        <Setter Property="r:BaseColumnRenderableSeries.FillBrush" Value="{z:ThemeBinding Path=DefaultColumnFillBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:StackedColumnRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ColumnSeriesLegendMarkerTemplate}" />
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultColumnOutlineColor}" />
+        <Setter Property="r:BaseColumnRenderableSeries.FillBrush" Value="{z:ThemeBinding Path=DefaultColumnFillBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastLineRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultLineSeriesColor}" />
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource LineSeriesLegendMarkerTemplate}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastMountainRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource MountainSeriesLegendMarkerTemplate}" />
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultMountainLineColor}" />
+        <Setter Property="r:BaseMountainRenderableSeries.AreaBrush" Value="{z:ThemeBinding Path=DefaultMountainAreaBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:StackedMountainRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultMountainLineColor}" />
+        <Setter Property="r:BaseMountainRenderableSeries.AreaBrush" Value="{z:ThemeBinding Path=DefaultMountainAreaBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastHeatMapRenderableSeries}">
+        <Setter Property="r:FastHeatMapRenderableSeries.ColorMap" Value="{z:ThemeBinding Path=DefaultColorMapBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:XyScatterRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ScatterSeriesLegendMarkerTemplate}" />
+        <Setter Property="r:BaseRenderableSeries.AntiAliasing" Value="false" />
+    </Style>
+
+    <Style TargetType="{x:Type r:FastBandRenderableSeries}">
+        <Setter Property="r:FastBandRenderableSeries.BandDownColor" Value="{z:ThemeBinding Path=DefaultDownBandFillColor}" />
+        <Setter Property="r:FastBandRenderableSeries.BandUpColor" Value="{z:ThemeBinding Path=DefaultUpBandFillColor}" />
+        <Setter Property="r:FastBandRenderableSeries.Series1Color" Value="{z:ThemeBinding Path=DefaultDownBandLineColor}" />
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultUpBandLineColor}" />
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource BandSeriesLegendMarkerTemplate}" />
+        <Setter Property="r:BaseRenderableSeries.RolloverMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <r:TemplatableControl ContentTemplate="{StaticResource DefaultBandSeriesRolloverMarkerTemplate}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastImpulseRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultLineSeriesColor}" />
+        <Setter Property="r:BaseRenderableSeries.LegendMarkerTemplate" Value="{StaticResource ScatterSeriesLegendMarkerTemplate}" />
+        <Setter Property="r:BaseRenderableSeries.PointMarkerTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <pointMarkers:EllipsePointMarker
+                        Width="5"
+                        Height="5"
+                        Fill="{Binding DataContext.SeriesColor, RelativeSource={RelativeSource TemplatedParent}}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:FastBoxPlotRenderableSeries}">
+        <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{z:ThemeBinding Path=DefaultLineSeriesColor}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:BoxVolumeRenderableSeries}">
+        <Setter Property="r:BoxVolumeRenderableSeries.Timeframe2Color" Value="{z:ThemeBinding Path=BoxVolumeTimeframe2Color}" />
+        <Setter Property="r:BoxVolumeRenderableSeries.Timeframe2FrameColor" Value="{z:ThemeBinding Path=BoxVolumeTimeframe2FrameColor}" />
+        <Setter Property="r:BoxVolumeRenderableSeries.Timeframe3Color" Value="{z:ThemeBinding Path=BoxVolumeTimeframe3Color}" />
+        <Setter Property="r:BoxVolumeRenderableSeries.CellFontColor" Value="{z:ThemeBinding Path=BoxVolumeCellFontColor}" />
+        <Setter Property="r:BoxVolumeRenderableSeries.HighVolColor" Value="{z:ThemeBinding Path=BoxVolumeHighVolColor}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRenderableSeriesStyle}" TargetType="{x:Type r:ClusterProfileRenderableSeries}">
+        <Setter Property="r:ClusterProfileRenderableSeries.LineColor" Value="{z:ThemeBinding Path=ClusterProfileLineColor}" />
+        <Setter Property="r:ClusterProfileRenderableSeries.TextColor" Value="{z:ThemeBinding Path=ClusterProfileTextColor}" />
+        <Setter Property="r:ClusterProfileRenderableSeries.ClusterColor" Value="{z:ThemeBinding Path=ClusterProfileClusterColor}" />
+        <Setter Property="r:ClusterProfileRenderableSeries.ClusterMaxColor" Value="{z:ThemeBinding Path=ClusterProfileClusterMaxColor}" />
+    </Style>
+
+    <Style x:Key="HintDataItemsStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="TextBlock.Foreground" Value="{z:ThemeBinding Path=CursorLabelForeground}" />
+        <Setter Property="TextBlock.FontWeight" Value="Bold" />
+        <Setter Property="TextBlock.FontFamily" Value="Arial" />
+        <Setter Property="TextBlock.FontSize" Value="13" />
+        <Setter Property="FrameworkElement.Margin" Value="3,2,2,2" />
+    </Style>
+
+    <DataTemplate x:Key="BoxPlotRolloverLabelTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <StackPanel Grid.Row="1">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Maximum" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="UpperQuartile" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Median" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="LowerQuartile" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Minimum" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedMaximumValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedUpperQuartileValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedMedianValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedLowerQuartileValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedMinimumValue}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OhlcSeriesRolloverLabelTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <StackPanel Grid.Row="1">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Open" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Highest" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Lowest" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Close" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedOpenValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedHighValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedLowValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedCloseValue}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HlcSeriesRolloverLabelTemplate">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.ColumnSpan="2"
+                HorizontalAlignment="Left"
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <StackPanel Grid.Row="1">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="High" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Low" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="Close" />
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedHighValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedLowValue}" />
+                <TextBlock
+                    HorizontalAlignment="Left"
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding FormattedCloseValue}" />
+            </StackPanel>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="XySeriesRolloverLabelTemplate">
+        <StackPanel Orientation="Vertical">
+            <TextBlock
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName, StringFormat='{}{0}:'}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding FormattedYValue}" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BandSeries1RolloverLabelTemplate">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding FormattedY1Value}" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BandSeries2RolloverLabelTemplate">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding FormattedYValue}" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="BandSeriesCursorLabelTemplate">
+        <StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock
+                    Style="{StaticResource HintDataItemsStyle}"
+                    Text="{Binding SeriesName}"
+                    Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+                <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding ., Converter={StaticResource BandSeriesInfoToYValueConverter}, ConverterParameter=greater}" />
+                <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding ., Converter={StaticResource BandSeriesInfoToYValueConverter}, ConverterParameter=lower}" />
+            </StackPanel>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="HeatmapRolloverLabelTemplate">
+        <StackPanel Margin="5" Orientation="Vertical">
+            <TextBlock
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName, StringFormat='{}{0}:'}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding FormattedXValue, StringFormat='X: {0}'}" />
+            <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding FormattedYValue, StringFormat='Y: {0}'}" />
+            <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding ZValue, StringFormat='Z: {0:0.00}'}" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="OneHundredPercentStackedSeriesRolloverLabelTemplate">
+        <StackPanel Orientation="Vertical">
+            <TextBlock
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName, StringFormat='{}{0}:'}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <TextBlock Style="{StaticResource HintDataItemsStyle}">
+                <Run Text="{Binding FormattedYValue, Mode=OneWay}" />
+                <Run Text="{Binding Percentage, StringFormat=({0:0.00}%)}" />
+            </TextBlock>
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="TimeframeSegmentSeriesRolloverLabelTemplate">
+        <StackPanel Orientation="Vertical">
+            <TextBlock
+                Style="{StaticResource HintDataItemsStyle}"
+                Text="{Binding SeriesName, StringFormat='{}{0}:'}"
+                Visibility="{Binding SeriesName, Converter={StaticResource CollapseIfNullOrEmptyStringConverter}}" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <FrameworkElement.Resources>
+                    <Style BasedOn="{StaticResource HintDataItemsStyle}" TargetType="{x:Type TextBlock}" />
+                </FrameworkElement.Resources>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Text="Y " />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding FormattedYValue, Mode=OneWay}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    HorizontalAlignment="Left"
+                    Text="Volume " />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Volume, Mode=OneWay}" />
+            </Grid>
+        </StackPanel>
+    </DataTemplate>
+
+    <Style x:Key="DefaultSeriesInfoTemplateSelectorStyle" TargetType="{x:Type s:SeriesInfoTemplateSelector}">
+        <Setter Property="s:DataTemplateSelector.DefaultTemplate" Value="{StaticResource XySeriesRolloverLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.BandSeries1Template" Value="{StaticResource BandSeriesCursorLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.BandSeries2Template" Value="{StaticResource BandSeriesCursorLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.BoxPlotSeriesTemplate" Value="{StaticResource BoxPlotRolloverLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.OhlcSeriesTemplate" Value="{StaticResource OhlcSeriesRolloverLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.HlcSeriesTemplate" Value="{StaticResource HlcSeriesRolloverLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.HeatmapSeriesTemplate" Value="{StaticResource HeatmapRolloverLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.OneHundredPercentStackedSeriesTemplate" Value="{StaticResource OneHundredPercentStackedSeriesRolloverLabelTemplate}" />
+        <Setter Property="s:SeriesInfoTemplateSelector.TimeframeSegmentSeriesTemplate" Value="{StaticResource TimeframeSegmentSeriesRolloverLabelTemplate}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultSeriesInfoTemplateSelectorStyle}" TargetType="{x:Type s:SeriesInfoTemplateSelector}" />
+
+    <Style TargetType="{x:Type r:TooltipControl}">
+        <Setter Property="r:TooltipControl.SelectorContext" Value="{Binding DataContext, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+    </Style>
+
+    <ControlTemplate x:Key="RolloverLabelTemplate" TargetType="{x:Type r:TooltipControl}">
+        <Border BorderThickness="1" CornerRadius="5">
+            <FrameworkElement.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Border.Background" Value="{z:ThemeBinding Path=CursorLabelBackgroundBrush}" />
+                    <Setter Property="Border.BorderBrush" Value="{z:ThemeBinding Path=CursorLabelBorderBrush}" />
+                </Style>
+            </FrameworkElement.Style>
+            <ContentControl Content="{TemplateBinding r:TooltipControl.SelectorContext}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" />
+        </Border>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="AxisLabelTemplate" DataType="r:AxisInfo">
+        <Border
+            Margin="1"
+            BorderThickness="1"
+            CornerRadius="2">
+            <FrameworkElement.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Border.Background" Value="{z:ThemeBinding Path=CursorLabelBackgroundBrush}" />
+                    <Setter Property="Border.BorderBrush" Value="{z:ThemeBinding Path=CursorLabelBorderBrush}" />
+                </Style>
+            </FrameworkElement.Style>
+            <TextBlock Style="{StaticResource HintDataItemsStyle}" Text="{Binding CursorFormattedDataValue}" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="EmptyDataTemplate" DataType="r:AxisInfo" />
+
+    <ControlTemplate x:Key="DefaultAxesLabelTemplate" TargetType="{x:Type r:TooltipControl}">
+        <ContentControl Content="{TemplateBinding r:TooltipControl.SelectorContext}" ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}" />
+    </ControlTemplate>
+
+    <Style x:Key="DefaultVerticalSliceBaseStyle" TargetType="{x:Type c:VerticalSliceModifierBase}">
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplateSelector" Value="{Binding DefaultTooltipLabelTemplateSelector, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplateSelector" Value="{Binding DefaultAxisLabelTemplateSelector, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="c:TooltipModifierBase.DefaultAxisLabelTemplateSelectorStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type s:AxisInfoTemplateSelector}">
+                    <Setter Property="s:AxisInfoTemplateSelector.XAxisDataTemplate" Value="{StaticResource AxisLabelTemplate}" />
+                    <Setter Property="s:AxisInfoTemplateSelector.YAxisDataTemplate" Value="{StaticResource EmptyDataTemplate}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="c:TooltipModifierBase.DefaultTooltipLabelTemplateSelectorStyle" Value="{StaticResource DefaultSeriesInfoTemplateSelectorStyle}" />
+    </Style>
+
+    <Style
+        x:Key="DefaultRolloverModifierStyle"
+        BasedOn="{StaticResource DefaultVerticalSliceBaseStyle}"
+        TargetType="{x:Type c:RolloverModifier}">
+        <Setter Property="c:TooltipModifierBase.ShowTooltipOn" Value="MouseOver" />
+        <Setter Property="c:TooltipModifierBase.LineOverlayStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=RolloverLineStroke}" />
+                    <Setter Property="Shape.StrokeThickness" Value="7" />
+                    <Setter Property="Panel.ZIndex" Value="-1" />
+                    <Setter Property="UIElement.IsHitTestVisible" Value="false" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplate" Value="{StaticResource RolloverLabelTemplate}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplate" Value="{StaticResource DefaultAxesLabelTemplate}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRolloverModifierStyle}" TargetType="{x:Type c:RolloverModifier}" />
+
+    <Style BasedOn="{StaticResource DefaultVerticalSliceBaseStyle}" TargetType="{x:Type c:VerticalSliceModifier}">
+        <Setter Property="c:TooltipModifierBase.ShowTooltipOn" Value="Always" />
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplate" Value="{StaticResource RolloverLabelTemplate}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplate" Value="{StaticResource DefaultAxesLabelTemplate}" />
+        <Setter Property="c:InspectSeriesModifierBase.UseInterpolation" Value="true" />
+        <Setter Property="c:TooltipModifierBase.ShowAxisLabels" Value="false" />
+    </Style>
+
+    <Style TargetType="{x:Type c:TooltipModifier}">
+        <Setter Property="c:TooltipModifierBase.ShowTooltipOn" Value="MouseOver" />
+        <Setter Property="c:TooltipModifierBase.LineOverlayStyle" Value="{x:Null}" />
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplate" Value="{StaticResource RolloverLabelTemplate}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplate" Value="{x:Null}" />
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplateSelector" Value="{Binding DefaultTooltipLabelTemplateSelector, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplateSelector" Value="{Binding DefaultAxisLabelTemplateSelector, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="c:TooltipModifierBase.DefaultTooltipLabelTemplateSelectorStyle" Value="{StaticResource DefaultSeriesInfoTemplateSelectorStyle}" />
+    </Style>
+
+    <Style x:Key="DefaultRubberBandModifierStyle" TargetType="{x:Type c:RubberBandXyZoomModifier}">
+        <Setter Property="c:RubberBandXyZoomModifier.RubberBandFill" Value="{z:ThemeBinding Path=RubberBandFillBrush}" />
+        <Setter Property="c:RubberBandXyZoomModifier.RubberBandStroke" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultRubberBandModifierStyle}" TargetType="{x:Type c:RubberBandXyZoomModifier}" />
+
+    <ControlTemplate x:Key="CursorLabelTemplate" TargetType="{x:Type r:TooltipControl}">
+        <Border BorderThickness="1" CornerRadius="5">
+            <FrameworkElement.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Border.Background" Value="{z:ThemeBinding Path=CursorLabelBackgroundBrush}" />
+                    <Setter Property="Border.BorderBrush" Value="{z:ThemeBinding Path=CursorLabelBorderBrush}" />
+                </Style>
+            </FrameworkElement.Style>
+            <ItemsControl Margin="6" ItemsSource="{Binding SelectorContext.SeriesData.SeriesInfo, RelativeSource={RelativeSource TemplatedParent}}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <r:TooltipControl Selector="{Binding Selector, RelativeSource={RelativeSource AncestorType=r:TooltipControl}}" Template="{StaticResource DefaultAxesLabelTemplate}" />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Border>
+    </ControlTemplate>
+
+    <Style x:Key="DefaultCursorModifierStyle" TargetType="{x:Type c:CursorModifier}">
+        <Setter Property="c:TooltipModifierBase.ShowTooltipOn" Value="Always" />
+        <Setter Property="c:InspectSeriesModifierBase.UseInterpolation" Value="true" />
+        <Setter Property="c:TooltipModifierBase.LineOverlayStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Line}">
+                    <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=CursorLineBrush}" />
+                    <Setter Property="Shape.StrokeThickness" Value="0.5" />
+                    <Setter Property="Common:Device.SnapsToDevicePixels" Value="true" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplate" Value="{StaticResource CursorLabelTemplate}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplate" Value="{StaticResource DefaultAxesLabelTemplate}" />
+        <Setter Property="c:TooltipModifierBase.TooltipLabelTemplateSelector" Value="{Binding DefaultTooltipLabelTemplateSelector, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="c:TooltipModifierBase.AxisLabelTemplateSelector" Value="{Binding DefaultAxisLabelTemplateSelector, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="c:TooltipModifierBase.DefaultAxisLabelTemplateSelectorStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type s:AxisInfoTemplateSelector}">
+                    <Setter Property="s:AxisInfoTemplateSelector.XAxisDataTemplate" Value="{StaticResource AxisLabelTemplate}" />
+                    <Setter Property="s:AxisInfoTemplateSelector.YAxisDataTemplate" Value="{StaticResource AxisLabelTemplate}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="c:TooltipModifierBase.DefaultTooltipLabelTemplateSelectorStyle" Value="{StaticResource DefaultSeriesInfoTemplateSelectorStyle}" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultCursorModifierStyle}" TargetType="{x:Type c:CursorModifier}" />
+
+    <DataTemplate x:Key="UltrachartLegendItemTemplate" DataType="s:SeriesInfo">
+        <StackPanel Orientation="Horizontal">
+            <CheckBox
+                Width="16"
+                Margin="5,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                IsChecked="{Binding RenderableSeries.IsVisible, Mode=TwoWay}"
+                Visibility="{Binding LegendData.ShowVisibilityCheckboxes, RelativeSource={RelativeSource AncestorType=visuals:UltrachartLegend}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <r:PointMarker
+                Width="40"
+                Height="10"
+                Margin="5,0,0,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                HorizontalContentAlignment="Stretch"
+                VerticalContentAlignment="Stretch"
+                DataContext="{Binding RenderableSeries}"
+                DeferredContent="{Binding LegendMarkerTemplate}"
+                Visibility="{Binding ShowSeriesMarkers, RelativeSource={RelativeSource AncestorType=visuals:UltrachartLegend}, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <TextBlock
+                Margin="5,0,5,0"
+                HorizontalAlignment="Left"
+                Text="{Binding SeriesName}" />
+        </StackPanel>
+    </DataTemplate>
+
+    <Style x:Key="DefaultUltrachartLegendStyle" TargetType="{x:Type visuals:UltrachartLegend}">
+        <Setter Property="Control.BorderBrush" Value="{z:ThemeBinding Path=GridBorderBrush}" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=LegendBackgroundBrush}" />
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Top" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+        <Setter Property="Control.Padding" Value="5" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=CursorLabelForeground}" />
+        <Setter Property="Control.FontWeight" Value="Bold" />
+        <Setter Property="ItemsControl.ItemsSource" Value="{Binding LegendData.SeriesInfo, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ItemsControl.ItemTemplate" Value="{StaticResource UltrachartLegendItemTemplate}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ItemsControl.ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="{Binding Orientation, RelativeSource={RelativeSource AncestorType=visuals:UltrachartLegend}}" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type visuals:UltrachartLegend}">
+                    <Border
+                        HorizontalAlignment="{TemplateBinding FrameworkElement.HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding FrameworkElement.VerticalAlignment}"
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        Padding="{TemplateBinding Control.Padding}">
+                        <ScrollViewer
+                            Common:CompatibleFocus.IsFocusable="false"
+                            HorizontalScrollBarVisibility="{Binding (ScrollViewer.HorizontalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}"
+                            VerticalScrollBarVisibility="{Binding (ScrollViewer.VerticalScrollBarVisibility), RelativeSource={RelativeSource TemplatedParent}}">
+                            <ItemsPresenter />
+                        </ScrollViewer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultUltrachartLegendStyle}" TargetType="{x:Type visuals:UltrachartLegend}" />
+
+    <Style TargetType="{x:Type r:LegendPlaceholder}">
+        <Setter Property="Grid.Row" Value="{Binding LegendPlacement, Converter={StaticResource LegendPlacementToGridPositionConverter}, ConverterParameter=Row}" />
+        <Setter Property="Grid.Column" Value="{Binding LegendPlacement, Converter={StaticResource LegendPlacementToGridPositionConverter}, ConverterParameter=Column}" />
+        <Setter Property="FrameworkElement.Margin" Value="{Binding Margin}" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="{Binding HorizontalAlignment}" />
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="{Binding VerticalAlignment}" />
+        <Setter Property="Control.Template" Value="{Binding LegendTemplate}" />
+    </Style>
+
+    <ControlTemplate x:Key="DefaultUltrachartLegend">
+        <visuals:UltrachartLegend
+            ItemTemplate="{Binding LegendItemTemplate}"
+            LegendData="{Binding LegendData}"
+            Orientation="{Binding Orientation}"
+            ScrollViewer.HorizontalScrollBarVisibility="{Binding Path=(ScrollViewer.HorizontalScrollBarVisibility)}"
+            ScrollViewer.VerticalScrollBarVisibility="{Binding Path=(ScrollViewer.VerticalScrollBarVisibility)}"
+            ShowSeriesMarkers="{Binding ShowSeriesMarkers}"
+            ShowVisibilityCheckboxes="{Binding ShowVisibilityCheckboxes}" />
+    </ControlTemplate>
+
+    <Style x:Key="DefaultLegendModifierStyle" TargetType="{x:Type c:LegendModifier}">
+        <Setter Property="c:LegendModifier.LegendData" Value="{Binding SeriesData, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Top" />
+        <Setter Property="c:LegendModifier.LegendTemplate" Value="{StaticResource DefaultUltrachartLegend}" />
+        <Setter Property="c:LegendModifier.LegendItemTemplate" Value="{StaticResource UltrachartLegendItemTemplate}" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Disabled" />
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultLegendModifierStyle}" TargetType="{x:Type c:LegendModifier}" />
+
+    <DataTemplate x:Key="StockChartXAxis">
+        <axes:CategoryDateTimeAxis Style="{Binding ParentSurface.XAxisStyle, RelativeSource={RelativeSource Self}}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="StockChartYAxis">
+        <axes:NumericAxis Style="{Binding ParentSurface.YAxisStyle, RelativeSource={RelativeSource Self}}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="StockChartModifier">
+        <c:ModifierGroup x:Name="ModifierGroup">
+            <c:XAxisDragModifier />
+            <c:YAxisDragModifier />
+            <c:ZoomPanModifier
+                ClipModeX="ClipAtMin"
+                IsEnabled="{Binding ParentSurface.IsPanEnabled, RelativeSource={RelativeSource Self}}"
+                ReceiveHandledEvents="true" />
+            <c:LegendModifier
+                LegendData="{Binding ParentSurface.LegendSource, RelativeSource={RelativeSource Self}}"
+                ShowLegend="{Binding ParentSurface.ShowLegend, RelativeSource={RelativeSource Self}}"
+                Style="{Binding ParentSurface.LegendStyle, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+            <c:CursorModifier
+                IsEnabled="{Binding ParentSurface.IsCursorEnabled, RelativeSource={RelativeSource Self}}"
+                ReceiveHandledEvents="true"
+                ShowAxisLabels="true"
+                ShowTooltip="false"
+                Style="{StaticResource DefaultCursorModifierStyle}" />
+            <c:RolloverModifier
+                IsEnabled="{Binding ParentSurface.IsRolloverEnabled, RelativeSource={RelativeSource Self}}"
+                ReceiveHandledEvents="true"
+                ShowAxisLabels="true"
+                ShowTooltipOn="MouseHover"
+                Style="{StaticResource DefaultRolloverModifierStyle}" />
+            <c:RubberBandXyZoomModifier
+                IsEnabled="{Binding ParentSurface.IsRubberBandZoomEnabled, RelativeSource={RelativeSource Self}}"
+                IsXAxisOnly="true"
+                ReceiveHandledEvents="true"
+                Style="{StaticResource DefaultRubberBandModifierStyle}" />
+            <c:MouseWheelZoomModifier ActionType="Zoom" XyDirection="XYDirection" />
+            <c:ZoomExtentsModifier ExecuteOn="MouseDoubleClick" />
+            <c:SeriesValueModifier IsEnabled="{Binding ParentSurface.IsAxisMarkersEnabled, RelativeSource={RelativeSource Self}}" />
+        </c:ModifierGroup>
+    </DataTemplate>
+
+    <Style x:Key="DefaultStockChartLegendStyle" TargetType="{x:Type c:LegendModifier}">
+        <Setter Property="FrameworkElement.Margin" Value="5" />
+        <Setter Property="c:LegendModifier.Orientation" Value="Horizontal" />
+        <Setter Property="c:LegendModifier.ShowSeriesMarkers" Value="false" />
+        <Setter Property="c:LegendModifier.ShowVisibilityCheckboxes" Value="false" />
+    </Style>
+
+    <Style BasedOn="{StaticResource UltrachartSurfaceBase}" TargetType="{x:Type s:UltraStockChart}">
+        <Setter Property="s:UltrachartGroup.VerticalChartGroup" Value="{Binding Path=VerticalChartGroupId, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="s:UltraStockChart.IsCursorEnabled" Value="true" />
+        <Setter Property="s:UltraStockChart.IsRubberBandZoomEnabled" Value="false" />
+        <Setter Property="s:UltraStockChart.IsPanEnabled" Value="true" />
+        <Setter Property="Common:Device.SnapsToDevicePixels" Value="true" />
+        <Setter Property="visuals:UltrachartSurface.XAxis" Value="{Binding Source={StaticResource StockChartXAxis}, Converter={StaticResource DataTemplateToObjectConverter}}" />
+        <Setter Property="visuals:UltrachartSurface.YAxis" Value="{Binding Source={StaticResource StockChartYAxis}, Converter={StaticResource DataTemplateToObjectConverter}}" />
+        <Setter Property="visuals:UltrachartSurface.ChartModifier" Value="{Binding Source={StaticResource StockChartModifier}, Converter={StaticResource DataTemplateToObjectConverter}}" />
+        <Setter Property="s:UltraStockChart.LegendSource" Value="{Binding DefaultDataProvider.SeriesData, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="s:UltraStockChart.DefaultDataProvider" Value="{Binding ChartModifier[LegendModifier], RelativeSource={RelativeSource Self}}" />
+        <Setter Property="s:UltraStockChart.ShowLegend" Value="false" />
+        <Setter Property="s:UltraStockChart.LegendStyle" Value="{StaticResource DefaultStockChartLegendStyle}" />
+    </Style>
+
+    <ControlTemplate x:Key="DefaultScrollbarResizingGripsTemplate" TargetType="{x:Type visuals:UltraThumb}">
+        <r:ScrollbarResizeGrip Style="{Binding GripsStyle, RelativeSource={RelativeSource AncestorType=visuals:UltrachartScrollbar}}" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DefaultScrollbarViewportTemplate" TargetType="{x:Type visuals:UltraThumb}">
+        <r:ScrollbarViewport Style="{Binding ViewportStyle, RelativeSource={RelativeSource AncestorType=visuals:UltrachartScrollbar}}" />
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type r:ScrollbarResizeGrip}">
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Stretch" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Control.Background" Value="Azure" />
+        <Setter Property="Control.BorderBrush" Value="Black" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Control}">
+                    <Border
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        CornerRadius="3">
+                        <Grid Margin="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <FrameworkElement.Resources>
+                                <Style TargetType="{x:Type Line}">
+                                    <Setter Property="Shape.Stretch" Value="Fill" />
+                                    <Setter Property="Shape.StrokeThickness" Value="1" />
+                                    <Setter Property="Shape.Stroke" Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GrayscaleColorBrushConverter}}" />
+                                </Style>
+                            </FrameworkElement.Resources>
+                            <Line
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Visibility="{Binding Orientation, RelativeSource={RelativeSource AncestorType=visuals:UltrachartScrollbar}, Converter={StaticResource OrientationToVisibilityConverter}, ConverterParameter=inverse}"
+                                X1="0"
+                                X2="1"
+                                Y1="0"
+                                Y2="0" />
+                            <Line
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Visibility="{Binding Orientation, RelativeSource={RelativeSource AncestorType=visuals:UltrachartScrollbar}, Converter={StaticResource OrientationToVisibilityConverter}}"
+                                X1="0"
+                                X2="0"
+                                Y1="0"
+                                Y2="1" />
+                            <Line
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Visibility="{Binding Orientation, RelativeSource={RelativeSource AncestorType=visuals:UltrachartScrollbar}, Converter={StaticResource OrientationToVisibilityConverter}}"
+                                X1="0"
+                                X2="0"
+                                Y1="0"
+                                Y2="1" />
+                            <Line
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Visibility="{Binding Orientation, RelativeSource={RelativeSource AncestorType=visuals:UltrachartScrollbar}, Converter={StaticResource OrientationToVisibilityConverter}, ConverterParameter=inverse}"
+                                X1="0"
+                                X2="1"
+                                Y1="0"
+                                Y2="0" />
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type r:ScrollbarViewport}">
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=ScrollbarFillBrush}" />
+        <Setter Property="Control.BorderBrush" Value="Black" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Control}">
+                    <Border
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type visuals:UltrachartScrollbar}">
+        <Setter Property="visuals:UltrachartScrollbar.GripsThickness" Value="10" />
+        <Setter Property="Control.Background" Value="Transparent" />
+        <Setter Property="visuals:UltrachartScrollbar.Orientation" Value="{Binding Axis.IsHorizontalAxis, RelativeSource={RelativeSource Self}, Converter={StaticResource BooleanToOrientationConverter}, Mode=OneWay}" />
+        <Setter Property="visuals:UltrachartScrollbar.NonSelectedAreaStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type Path}">
+                    <Setter Property="Shape.Fill" Value="Transparent" />
+                    <Setter Property="Shape.StrokeThickness" Value="0" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type visuals:UltrachartScrollbar}">
+                    <Border Background="{TemplateBinding Control.Background}">
+                        <Grid>
+                            <Path
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Name="PART_NonSelectedArea"
+                                Stretch="Fill"
+                                Style="{TemplateBinding visuals:UltrachartScrollbar.NonSelectedAreaStyle}" />
+                            <Border Name="PART_Border">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <visuals:UltraThumb
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        Cursor="Hand"
+                                        Name="PART_MiddleThumb"
+                                        Template="{StaticResource DefaultScrollbarViewportTemplate}" />
+                                    <visuals:UltraThumb
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        Width="{TemplateBinding visuals:UltrachartScrollbar.GripsLength}"
+                                        Height="{TemplateBinding visuals:UltrachartScrollbar.GripsThickness}"
+                                        Margin="{Binding GripsThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DoubleToThumbMarginConverter}, ConverterParameter=vertical}"
+                                        Cursor="SizeNS"
+                                        Name="PART_TopThumb"
+                                        Template="{StaticResource DefaultScrollbarResizingGripsTemplate}"
+                                        Visibility="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource OrientationToVisibilityConverter}, ConverterParameter=inverse}" />
+                                    <visuals:UltraThumb
+                                        Grid.Row="1"
+                                        Grid.Column="0"
+                                        Width="{TemplateBinding visuals:UltrachartScrollbar.GripsThickness}"
+                                        Height="{TemplateBinding visuals:UltrachartScrollbar.GripsLength}"
+                                        Margin="{Binding GripsThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DoubleToThumbMarginConverter}}"
+                                        Cursor="SizeWE"
+                                        Name="PART_LeftThumb"
+                                        Template="{StaticResource DefaultScrollbarResizingGripsTemplate}"
+                                        Visibility="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource OrientationToVisibilityConverter}}" />
+                                    <visuals:UltraThumb
+                                        Grid.Row="1"
+                                        Grid.Column="2"
+                                        Width="{TemplateBinding visuals:UltrachartScrollbar.GripsThickness}"
+                                        Height="{TemplateBinding visuals:UltrachartScrollbar.GripsLength}"
+                                        Margin="{Binding GripsThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DoubleToThumbMarginConverter}}"
+                                        Cursor="SizeWE"
+                                        Name="PART_RightThumb"
+                                        Template="{StaticResource DefaultScrollbarResizingGripsTemplate}"
+                                        Visibility="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource OrientationToVisibilityConverter}}" />
+                                    <visuals:UltraThumb
+                                        Grid.Row="2"
+                                        Grid.Column="1"
+                                        Width="{TemplateBinding visuals:UltrachartScrollbar.GripsLength}"
+                                        Height="{TemplateBinding visuals:UltrachartScrollbar.GripsThickness}"
+                                        Margin="{Binding GripsThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource DoubleToThumbMarginConverter}, ConverterParameter=vertical}"
+                                        Cursor="SizeNS"
+                                        Name="PART_BottomThumb"
+                                        Template="{StaticResource DefaultScrollbarResizingGripsTemplate}"
+                                        Visibility="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource OrientationToVisibilityConverter}, ConverterParameter=inverse}" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type visuals:UltrachartOverview}">
+        <Setter Property="Control.FontSize" Value="20" />
+        <Setter Property="Control.FontWeight" Value="Normal" />
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=UltrachartBackground}" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="Control.Padding" Value="0" />
+        <Setter Property="visuals:UltrachartOverview.AreaBrush" Value="{z:ThemeBinding Path=DefaultMountainAreaBrush}" />
+        <Setter Property="visuals:UltrachartOverview.SeriesColor" Value="{z:ThemeBinding Path=DefaultMountainLineColor}" />
+        <Setter Property="visuals:UltrachartOverview.SelectedRange" Value="{Binding RelativeSource={RelativeSource Self}, Path=Axis.VisibleRange, Mode=TwoWay}" />
+        <Setter Property="visuals:UltrachartOverview.RenderableSeriesStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type r:FastMountainRenderableSeries}">
+                    <Setter Property="r:BaseMountainRenderableSeries.AreaBrush" Value="{Binding Path=AreaBrush, RelativeSource={RelativeSource FindAncestor, AncestorType=visuals:UltrachartOverview}, Mode=OneWay}" />
+                    <Setter Property="r:BaseRenderableSeries.DataSeries" Value="{Binding DataSeries, RelativeSource={RelativeSource FindAncestor, AncestorType=visuals:UltrachartOverview}, Mode=OneWay}" />
+                    <Setter Property="r:BaseRenderableSeries.SeriesColor" Value="{Binding SeriesColor, RelativeSource={RelativeSource FindAncestor, AncestorType=visuals:UltrachartOverview}, Mode=OneWay}" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="visuals:UltrachartOverview.RenderableSeriesType" Value="r:FastMountainRenderableSeries" />
+        <Setter Property="visuals:UltrachartOverview.ScrollbarStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type visuals:UltrachartScrollbar}">
+                    <Setter Property="visuals:UltrachartScrollbar.Orientation" Value="Horizontal" />
+                    <Setter Property="visuals:UltrachartScrollbar.GripsLength" Value="25" />
+                    <Setter Property="visuals:UltrachartScrollbar.ViewportStyle">
+                        <Setter.Value>
+                            <Style TargetType="{x:Type Control}">
+                                <Setter Property="UIElement.Opacity" Value="0" />
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="visuals:UltrachartScrollbar.NonSelectedAreaStyle">
+                        <Setter.Value>
+                            <Style TargetType="{x:Type Path}">
+                                <Setter Property="Shape.Fill" Value="{z:ThemeBinding Path=OverviewFillBrush}" />
+                            </Style>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type visuals:UltrachartOverview}">
+                    <Grid Name="PART_Container">
+                        <visuals:UltrachartSurface
+                            x:Name="PART_BackgroundSurface"
+                            Background="{TemplateBinding Control.Background}"
+                            BorderThickness="0"
+                            FontSize="{TemplateBinding Control.FontSize}"
+                            FontWeight="{TemplateBinding Control.FontWeight}"
+                            Foreground="{TemplateBinding Control.Foreground}"
+                            Padding="{TemplateBinding Control.Padding}">
+                            <visuals:UltrachartSurface.YAxis>
+                                <axes:NumericAxis
+                                    AutoRange="Always"
+                                    DrawMajorGridLines="false"
+                                    DrawMinorGridLines="false"
+                                    TextFormatting="###E+0"
+                                    Visibility="Collapsed" />
+                            </visuals:UltrachartSurface.YAxis>
+                        </visuals:UltrachartSurface>
+                        <visuals:UltrachartScrollbar
+                            x:Name="PART_Scrollbar"
+                            Axis="{TemplateBinding visuals:UltrachartOverview.Axis}"
+                            Style="{TemplateBinding visuals:UltrachartOverview.ScrollbarStyle}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type visuals:HeatmapColourMap}">
+        <Setter Property="Control.BorderBrush" Value="{z:ThemeBinding Path=GridBorderBrush}" />
+        <Setter Property="Control.BorderThickness" Value="1" />
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=LegendBackgroundBrush}" />
+        <Setter Property="FrameworkElement.VerticalAlignment" Value="Top" />
+        <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+        <Setter Property="Control.Padding" Value="5" />
+        <Setter Property="Control.FontSize" Value="12" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=CursorLabelForeground}" />
+        <Setter Property="Control.FontWeight" Value="Bold" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type visuals:HeatmapColourMap}">
+                    <Border
+                        x:Name="PART_Border"
+                        HorizontalAlignment="{TemplateBinding FrameworkElement.HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding FrameworkElement.VerticalAlignment}"
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        Padding="{TemplateBinding Control.Padding}">
+                        <Grid>
+                            <Grid DataContext="{TemplateBinding visuals:HeatmapColourMap.FastHeatMapRenderableSeries}" Visibility="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource HorisontalOrientationVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
+                                    Grid.ColumnSpan="3"
+                                    Width="150"
+                                    Height="15"
+                                    Margin="3"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Fill="{Binding Path=ColorMap}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Text="{Binding Path=Minimum, StringFormat='{}{0:n0}'}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Center"
+                                    Text="{Binding Path=MiddleValue, StringFormat='{}{0:n0}'}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="2"
+                                    HorizontalAlignment="Right"
+                                    Text="{Binding Path=Maximum, StringFormat='{}{0:n0}'}" />
+                            </Grid>
+                            <Grid DataContext="{TemplateBinding visuals:HeatmapColourMap.FastHeatMapRenderableSeries}" Visibility="{Binding Orientation, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource VerticalOrientationVisibilityConverter}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Rectangle
+                                    Grid.RowSpan="3"
+                                    Width="15"
+                                    Height="150"
+                                    Margin="3"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    Fill="{Binding Path=ColorMap}">
+                                    <UIElement.RenderTransform>
+                                        <RotateTransform Angle="180" CenterX="7.5" CenterY="75" />
+                                    </UIElement.RenderTransform>
+                                </Rectangle>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    VerticalAlignment="Top"
+                                    Text="{Binding Path=Maximum, StringFormat='{}{0:n0}'}" />
+                                <TextBlock
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    Text="{Binding Path=MiddleValue, StringFormat='{}{0:n0}'}" />
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    VerticalAlignment="Bottom"
+                                    Text="{Binding Path=Minimum, StringFormat='{}{0:n0}'}" />
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DefaultGroupPaneStyle" TargetType="{x:Type s:UltrachartGroupPane}">
+        <Setter Property="s:UltrachartGroupPane.HeaderTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid VerticalAlignment="Center" Background="{x:Null}">
+                        <TextBlock
+                            Margin="10, 2"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Text="{Binding PaneViewModel.Title}">
+                            <FrameworkElement.Style>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="TextBlock.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                </Style>
+                            </FrameworkElement.Style>
+                        </TextBlock>
+                        <StackPanel
+                            Margin="10, 2"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Background="Transparent"
+                            Orientation="Horizontal">
+                            <Button
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="Transparent"
+                                Command="{Binding ChangeOrientationCommand}">
+                                <Grid>
+                                    <Path Data="M 0,0 L 10,0 5,8 " Visibility="{Binding IsTabbed, Converter={StaticResource BooleanToVisibilityConverter}, ConverterParameter=inverse}">
+                                        <FrameworkElement.Style>
+                                            <Style TargetType="{x:Type Path}">
+                                                <Setter Property="Shape.Fill" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                                <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                            </Style>
+                                        </FrameworkElement.Style>
+                                    </Path>
+                                    <Path Data="M 0,8 L 10,8 5,0 " Visibility="{Binding IsTabbed, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <FrameworkElement.Style>
+                                            <Style TargetType="{x:Type Path}">
+                                                <Setter Property="Shape.Fill" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                                <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                            </Style>
+                                        </FrameworkElement.Style>
+                                    </Path>
+                                </Grid>
+                            </Button>
+                            <Button
+                                HorizontalContentAlignment="Center"
+                                VerticalContentAlignment="Center"
+                                Background="Transparent"
+                                Command="{Binding ClosePaneCommand}"
+                                CommandParameter="{Binding PaneViewModel}">
+                                <Grid>
+                                    <Path Data="M 0,0 L 10,8 " StrokeThickness="2">
+                                        <FrameworkElement.Style>
+                                            <Style TargetType="{x:Type Path}">
+                                                <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                            </Style>
+                                        </FrameworkElement.Style>
+                                    </Path>
+                                    <Path Data="M 0,8 L 10,0 " StrokeThickness="2">
+                                        <FrameworkElement.Style>
+                                            <Style TargetType="{x:Type Path}">
+                                                <Setter Property="Shape.Stroke" Value="{z:ThemeBinding Path=TickTextBrush}" />
+                                            </Style>
+                                        </FrameworkElement.Style>
+                                    </Path>
+                                </Grid>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:UltrachartGroupPane}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Thumb
+                            x:Name="PART_TopSplitter"
+                            Height="5"
+                            HorizontalAlignment="Stretch"
+                            BorderThickness="0,1,0,1"
+                            Cursor="SizeNS">
+                            <FrameworkElement.Style>
+                                <Style TargetType="{x:Type Thumb}">
+                                    <Setter Property="Control.Background" Value="{z:ThemeBinding Path=RubberBandFillBrush}" />
+                                    <Setter Property="Control.BorderBrush" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+                                </Style>
+                            </FrameworkElement.Style>
+                        </Thumb>
+                        <ContentPresenter
+                            x:Name="PART_ContentHost"
+                            Grid.Row="1"
+                            Grid.RowSpan="2"
+                            Content="{TemplateBinding ContentControl.Content}" />
+                        <Grid x:Name="PART_Header" Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultGroupPaneStyle}" TargetType="{x:Type s:UltrachartGroupPane}" />
+
+    <Style TargetType="{x:Type s:UltrachartGroup}">
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=UltrachartBackground}" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="ItemsControl.ItemContainerStyle" Value="{StaticResource DefaultGroupPaneStyle}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type s:UltrachartGroup}">
+                    <Grid x:Name="PART_MainGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <ContentPresenter x:Name="PART_MainPane" />
+                        <Canvas x:Name="PART_UltrachartGroupModifierCanvas" />
+                        <StackPanel x:Name="PART_StackedContent" Grid.Row="1" />
+                        <s:TabControlCompatible
+                            x:Name="PART_TabbedContent"
+                            Grid.Row="2"
+                            Visibility="{Binding HasTabbedItems, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <FrameworkElement.Style>
+                                <Style TargetType="{x:Type s:TabControlCompatible}">
+                                    <Setter Property="Control.Background" Value="{z:ThemeBinding Path=UltrachartBackground}" />
+                                    <Setter Property="Control.BorderThickness" Value="0" />
+                                    <Setter Property="Control.HorizontalContentAlignment" Value="Stretch" />
+                                    <Setter Property="Control.Padding" Value="0" />
+                                    <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+                                    <Setter Property="TabControl.TabStripPlacement" Value="Bottom" />
+                                </Style>
+                            </FrameworkElement.Style>
+                        </s:TabControlCompatible>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AnnotationBaseStyle" TargetType="{x:Type a:AnnotationBase}">
+        <Style.Setters>
+            <Setter Property="Control.IsTabStop" Value="false" />
+        </Style.Setters>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:CustomAnnotation}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:CustomAnnotation}">
+                    <ContentPresenter
+                        Margin="{TemplateBinding Control.Padding}"
+                        HorizontalAlignment="{TemplateBinding Control.HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding Control.VerticalContentAlignment}"
+                        Content="{TemplateBinding ContentControl.Content}"
+                        ContentTemplate="{TemplateBinding ContentControl.ContentTemplate}"
+                        Cursor="{TemplateBinding FrameworkElement.Cursor}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="AnnotationTextBoxStyle" TargetType="{x:Type TextBox}">
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=DefaultTextAnnotationBackground}" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=DefaultTextAnnotationForeground}" />
+        <Setter Property="Control.Padding" Value="2" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid x:Name="RootElement">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="MouseOver" />
+                                <VisualState x:Name="Disabled" />
+                                <VisualState x:Name="ReadOnly" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused" />
+                                <VisualState x:Name="Unfocused" />
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid" />
+                                <VisualState x:Name="InvalidUnfocused" />
+                                <VisualState x:Name="InvalidFocused" />
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ScrollViewer
+                            x:Name="ContentElement"
+                            BorderThickness="0"
+                            IsTabStop="false"
+                            Padding="{TemplateBinding Control.Padding}"
+                            s:FrameworkVisibilityManager.VisibleIn="Silverlight" />
+                        <ScrollViewer
+                            x:Name="PART_ContentHost"
+                            BorderThickness="0"
+                            IsTabStop="false"
+                            Padding="{TemplateBinding Control.Padding}"
+                            s:FrameworkVisibilityManager.VisibleIn="Wpf" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:TextAnnotation}">
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="Control.Background" Value="Transparent" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:TextAnnotation}">
+                    <Border
+                        x:Name="PART_TextAnnotationRoot"
+                        Margin="{TemplateBinding FrameworkElement.Margin}"
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        CornerRadius="{TemplateBinding a:TextAnnotation.CornerRadius}">
+                        <TextBox
+                            x:Name="PART_InputTextArea"
+                            Margin="{TemplateBinding Control.Padding}"
+                            VerticalAlignment="{TemplateBinding FrameworkElement.VerticalAlignment}"
+                            AcceptsReturn="true"
+                            Background="Transparent"
+                            BorderThickness="0"
+                            FontFamily="{TemplateBinding Control.FontFamily}"
+                            FontSize="{TemplateBinding Control.FontSize}"
+                            FontWeight="{TemplateBinding Control.FontWeight}"
+                            Foreground="{TemplateBinding Control.Foreground}"
+                            IsTabStop="{TemplateBinding a:AnnotationBase.IsEditable}"
+                            Style="{StaticResource AnnotationTextBoxStyle}"
+                            Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                            TextAlignment="{TemplateBinding a:TextAnnotation.TextAlignment}"
+                            TextWrapping="Wrap" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:LineAnnotation}">
+        <Setter Property="a:LineAnnotationBase.Stroke" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+        <Setter Property="a:LineAnnotationBase.StrokeThickness" Value="2.0" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:LineAnnotation}">
+                    <Grid x:Name="PART_LineAnnotationRoot">
+                        <Line
+                            x:Name="PART_GhostLine"
+                            Stroke="Transparent"
+                            StrokeThickness="{z:Static Member=visuals:ManipulationMargins.AnnotationLineWidth}" />
+                        <Line
+                            x:Name="PART_Line"
+                            Stroke="{TemplateBinding a:LineAnnotationBase.Stroke}"
+                            StrokeDashArray="{TemplateBinding a:LineAnnotationBase.StrokeDashArray}"
+                            StrokeThickness="{TemplateBinding a:LineAnnotationBase.StrokeThickness}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:LineArrowAnnotation}">
+        <Setter Property="a:LineAnnotationBase.Stroke" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+        <Setter Property="a:LineAnnotationBase.StrokeThickness" Value="2.0" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:LineArrowAnnotation}">
+                    <Grid x:Name="PART_LineArrowAnnotationRoot">
+                        <Line
+                            x:Name="PART_GhostLine"
+                            Stroke="Transparent"
+                            StrokeThickness="{z:Static Member=visuals:ManipulationMargins.AnnotationLineWidth}" />
+                        <Line
+                            x:Name="PART_Line"
+                            Stroke="{TemplateBinding a:LineAnnotationBase.Stroke}"
+                            StrokeDashArray="{TemplateBinding a:LineAnnotationBase.StrokeDashArray}"
+                            StrokeThickness="{TemplateBinding a:LineAnnotationBase.StrokeThickness}" />
+                        <Polygon
+                            x:Name="PART_ArrowHead"
+                            Fill="{TemplateBinding a:LineAnnotationBase.Stroke}"
+                            Stroke="{TemplateBinding a:LineAnnotationBase.Stroke}"
+                            StrokeThickness="{TemplateBinding a:LineAnnotationBase.StrokeThickness}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:HorizontalLineAnnotation}">
+        <Setter Property="a:LineAnnotationBase.Stroke" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+        <Setter Property="a:LineAnnotationBase.StrokeThickness" Value="2.0" />
+        <Setter Property="a:LineAnnotationWithLabelsBase.LabelTextFormatting" Value="{Binding DefaultTextFormatting, Mode=OneWay, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="a:LineAnnotationWithLabelsBase.LabelValue" Value="{Binding DefaultLabelValue, Converter={StaticResource IComparableToObject}, Mode=OneWay, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:HorizontalLineAnnotation}">
+                    <Grid x:Name="PART_LineAnnotationRoot" ShowGridLines="false">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Line
+                            x:Name="PART_GhostLine"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            Stretch="Fill"
+                            Stroke="Transparent"
+                            StrokeThickness="{z:Static Member=visuals:ManipulationMargins.AnnotationLineWidth}"
+                            X1="0"
+                            X2="1"
+                            Y1="0"
+                            Y2="0" />
+                        <Line
+                            x:Name="PART_Line"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            VerticalAlignment="Center"
+                            Stretch="Fill"
+                            Stroke="{TemplateBinding a:LineAnnotationBase.Stroke}"
+                            StrokeDashArray="{TemplateBinding a:LineAnnotationBase.StrokeDashArray}"
+                            StrokeEndLineCap="Square"
+                            StrokeStartLineCap="Square"
+                            StrokeThickness="{TemplateBinding a:LineAnnotationBase.StrokeThickness}"
+                            X1="0"
+                            X2="1"
+                            Y1="0"
+                            Y2="0" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:VerticalLineAnnotation}">
+        <Setter Property="a:LineAnnotationBase.Stroke" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+        <Setter Property="a:LineAnnotationBase.StrokeThickness" Value="2.0" />
+        <Setter Property="a:LineAnnotationWithLabelsBase.LabelTextFormatting" Value="{Binding DefaultTextFormatting, Mode=OneWay, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="a:LineAnnotationWithLabelsBase.LabelValue" Value="{Binding DefaultLabelValue, Converter={StaticResource IComparableToObject}, Mode=OneWay, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:VerticalLineAnnotation}">
+                    <Grid x:Name="PART_LineAnnotationRoot" ShowGridLines="false">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <Line
+                            x:Name="PART_GhostLine"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            Stretch="Fill"
+                            Stroke="Transparent"
+                            StrokeThickness="{z:Static Member=visuals:ManipulationMargins.AnnotationLineWidth}"
+                            X1="0"
+                            X2="0"
+                            Y1="0"
+                            Y2="1" />
+                        <Line
+                            x:Name="PART_Line"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            HorizontalAlignment="Center"
+                            Stretch="Fill"
+                            Stroke="{TemplateBinding a:LineAnnotationBase.Stroke}"
+                            StrokeDashArray="{TemplateBinding a:LineAnnotationBase.StrokeDashArray}"
+                            StrokeEndLineCap="Square"
+                            StrokeStartLineCap="Square"
+                            StrokeThickness="{TemplateBinding a:LineAnnotationBase.StrokeThickness}"
+                            X1="0"
+                            X2="0"
+                            Y1="0"
+                            Y2="1" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="annotationLabel" TargetType="{x:Type a:AnnotationLabel}">
+        <Setter Property="a:AnnotationLabel.Text" Value="{Binding FormattedLabel, Mode=OneWay}" />
+        <Setter Property="Control.Foreground" Value="{Binding Stroke}" />
+        <Setter Property="Control.BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="annotationAxisLabel" TargetType="{x:Type a:AnnotationLabel}">
+        <Setter Property="a:AnnotationLabel.Text" Value="{Binding FormattedLabel, Mode=OneWay}" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="Control.Background" Value="{Binding Stroke}" />
+        <Setter Property="Control.BorderBrush" Value="{Binding Stroke}" />
+        <Setter Property="Control.BorderThickness" Value="{Binding StrokeThickness, Converter={StaticResource DoubleToThicknessConverter}}" />
+        <Setter Property="a:AnnotationLabel.CornerRadius" Value="2" />
+    </Style>
+
+    <Style TargetType="{x:Type a:AnnotationLabel}">
+        <Setter Property="Control.IsTabStop" Value="false" />
+        <Setter Property="a:AnnotationLabel.LabelStyle" Value="{StaticResource annotationLabel}" />
+        <Setter Property="a:AnnotationLabel.AxisLabelStyle" Value="{StaticResource annotationAxisLabel}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:AnnotationLabel}">
+                    <layout:LayoutTransformer>
+                        <layout:LayoutTransformer.LayoutTransform>
+                            <RotateTransform Angle="{Binding RotationAngle, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </layout:LayoutTransformer.LayoutTransform>
+                        <Border
+                            Margin="{TemplateBinding FrameworkElement.Margin}"
+                            Background="{TemplateBinding Control.Background}"
+                            BorderBrush="{TemplateBinding Control.BorderBrush}"
+                            BorderThickness="{TemplateBinding Control.BorderThickness}"
+                            ContextMenu="{TemplateBinding FrameworkElement.ContextMenu}"
+                            CornerRadius="{TemplateBinding a:AnnotationLabel.CornerRadius}">
+                            <TextBox
+                                x:Name="PART_InputTextArea"
+                                Margin="{TemplateBinding Control.Padding}"
+                                VerticalAlignment="{TemplateBinding FrameworkElement.VerticalAlignment}"
+                                ContextMenu="{TemplateBinding FrameworkElement.ContextMenu}"
+                                FontFamily="{TemplateBinding Control.FontFamily}"
+                                FontSize="{TemplateBinding Control.FontSize}"
+                                FontWeight="{TemplateBinding Control.FontWeight}"
+                                Foreground="{TemplateBinding Control.Foreground}"
+                                IsEnabled="false"
+                                IsTabStop="{Binding IsEditable}"
+                                Style="{StaticResource AnnotationTextBoxStyle}"
+                                Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                        </Border>
+                    </layout:LayoutTransformer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CancelOrderButtonStyle" TargetType="{x:Type Button}">
+        <Setter Property="FrameworkElement.OverridesDefaultStyle" Value="true" />
+        <Setter Property="FrameworkElement.Margin" Value="0" />
+        <Setter Property="TextBlock.FontSize" Value="10" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="DarkGray"
+                        BorderThickness="1"
+                        CornerRadius="3"
+                        Name="border"
+                        Padding="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="UIElement.IsMouseOver" Value="true">
+                            <Setter TargetName="border" Property="Border.BorderBrush" Value="Black" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:ActiveOrderAnnotation}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:ActiveOrderAnnotation}">
+                    <Grid
+                        x:Name="PART_AnnotationRoot"
+                        ShowGridLines="false"
+                        SnapsToDevicePixels="true">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <FrameworkElement.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="TextBlock.FontSize" Value="10" />
+                            </Style>
+                        </FrameworkElement.Resources>
+                        <Border
+                            Grid.Column="0"
+                            Background="{TemplateBinding a:ActiveOrderAnnotation.CancelButtonFill}"
+                            BorderBrush="{TemplateBinding a:ActiveOrderAnnotation.Stroke}"
+                            BorderThickness="1"
+                            CornerRadius="1">
+                            <Button
+                                x:Name="PART_CancelButton"
+                                Padding="0"
+                                Style="{StaticResource CancelOrderButtonStyle}">
+                                <TextBlock
+                                    Margin="1,-1,-1,1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    FontWeight="UltraBlack"
+                                    Foreground="{TemplateBinding a:ActiveOrderAnnotation.CancelButtonColor}"
+                                    Text="X" />
+                            </Button>
+                        </Border>
+                        <Grid x:Name="PART_GridOrderInfo" Column="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" MinWidth="18" />
+                                <ColumnDefinition Width="Auto" MinWidth="70" />
+                                <ColumnDefinition Width="10" />
+                            </Grid.ColumnDefinitions>
+                            <Border
+                                x:Name="PART_GridOrderCount"
+                                Grid.Column="0"
+                                Panel.ZIndex="1"
+                                Background="{TemplateBinding Control.Background}"
+                                BorderBrush="{TemplateBinding a:ActiveOrderAnnotation.Stroke}"
+                                BorderThickness="1"
+                                CornerRadius="1"
+                                RenderTransformOrigin="0.1,0.5">
+                                <UIElement.RenderTransform>
+                                    <ScaleTransform />
+                                </UIElement.RenderTransform>
+                                <TextBlock
+                                    x:Name="PART_OrderCountText"
+                                    Margin="2,-1,2,1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="{TemplateBinding Control.Foreground}"
+                                    Text="{TemplateBinding a:ActiveOrderAnnotation.OrderSizeText}" />
+                            </Border>
+                            <Border
+                                x:Name="PART_GridOrderText"
+                                Grid.Column="1"
+                                Background="{TemplateBinding Control.Background}"
+                                BorderBrush="{TemplateBinding a:ActiveOrderAnnotation.Stroke}"
+                                BorderThickness="1,1,0,1"
+                                CornerRadius="1,0,0,1">
+                                <TextBlock
+                                    x:Name="PART_OrderText"
+                                    Margin="0,-1,0,1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    FontWeight="Bold"
+                                    Foreground="{TemplateBinding Control.Foreground}"
+                                    Text="{TemplateBinding a:ActiveOrderAnnotation.OrderText}" />
+                            </Border>
+                            <Grid Column="2">
+                                <Polygon
+                                    x:Name="PART_OrderPointer"
+                                    Fill="{TemplateBinding Control.Background}"
+                                    Points="0,0 10,9 0,17"
+                                    StrokeThickness="0" />
+                                <Line
+                                    Stroke="{TemplateBinding a:ActiveOrderAnnotation.Stroke}"
+                                    StrokeThickness="1"
+                                    X1="0"
+                                    X2="10"
+                                    Y1="0"
+                                    Y2="9" />
+                                <Line
+                                    Stroke="{TemplateBinding a:ActiveOrderAnnotation.Stroke}"
+                                    StrokeThickness="1"
+                                    X1="10"
+                                    X2="0"
+                                    Y1="9"
+                                    Y2="17" />
+                            </Grid>
+                        </Grid>
+                        <Line
+                            x:Name="PART_Line"
+                            Grid.Column="2"
+                            VerticalAlignment="Center"
+                            Stretch="Fill"
+                            Stroke="{TemplateBinding Control.Background}"
+                            StrokeDashArray="3 3"
+                            StrokeThickness="2" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="DefaultAxisMarkerTemplate" DataType="r:AxisInfo">
+        <Border
+            Background="{Binding Background, RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}}"
+            BorderBrush="{Binding BorderBrush, RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}}"
+            BorderThickness="0,1,0,1">
+            <TextBlock
+                Margin="{Binding Padding, RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}}"
+                VerticalAlignment="Center"
+                FontSize="{Binding FontSize, RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}}"
+                Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}}"
+                Text="{Binding FormattedValue, RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}}" />
+        </Border>
+    </DataTemplate>
+
+    <DataTemplate x:Key="DefaultAxisPointerTemplate">
+        <Path
+            HorizontalAlignment="Right"
+            VerticalAlignment="Stretch"
+            Data="M 0,10 L -4,5 0,0 Z"
+            Fill="{Binding RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}, Path=Background}"
+            Stretch="Fill"
+            Stroke="{Binding RelativeSource={RelativeSource AncestorType=a:AxisMarkerAnnotation}, Path=BorderBrush}"
+            StrokeEndLineCap="Round"
+            StrokeLineJoin="Round"
+            StrokeStartLineCap="Round"
+            StrokeThickness="1" />
+    </DataTemplate>
+
+    <Style
+        x:Key="AxisMarkerAnnotationStyle"
+        BasedOn="{StaticResource AnnotationBaseStyle}"
+        TargetType="{x:Type a:AxisMarkerAnnotation}">
+        <Setter Property="Control.Background" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+        <Setter Property="Control.BorderBrush" Value="{z:ThemeBinding Path=RubberBandStrokeBrush}" />
+        <Setter Property="Control.Foreground" Value="{z:ThemeBinding Path=TickTextBrush}" />
+        <Setter Property="a:AnchorPointAnnotation.VerticalAnchorPoint" Value="Center" />
+        <Setter Property="a:AnchorPointAnnotation.HorizontalAnchorPoint" Value="Center" />
+        <Setter Property="a:AxisMarkerAnnotation.MarkerPointWidth" Value="8" />
+        <Setter Property="Control.Padding" Value="2,0,4,0" />
+        <Setter Property="Control.FontWeight" Value="Bold" />
+        <Setter Property="a:AxisMarkerAnnotation.LabelTemplate" Value="{StaticResource DefaultAxisMarkerTemplate}" />
+        <Setter Property="a:AxisMarkerAnnotation.PointerTemplate" Value="{StaticResource DefaultAxisPointerTemplate}" />
+        <Setter Property="a:AxisMarkerAnnotation.FormattedValue" Value="{Binding AxisInfo.AxisFormattedDataValue, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:AxisMarkerAnnotation}">
+                    <Border x:Name="PART_AxisMarkerAnnotationRoot">
+                        <layout:LayoutTransformer LayoutTransform="{Binding AxisInfo.IsHorizontal, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToRotationTransformConverter}}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <ContentControl
+                                    Grid.Column="0"
+                                    HorizontalContentAlignment="Stretch"
+                                    VerticalContentAlignment="Stretch"
+                                    Content="{TemplateBinding a:AxisMarkerAnnotation.AxisInfo}"
+                                    ContentTemplate="{TemplateBinding a:AxisMarkerAnnotation.PointerTemplate}"
+                                    Visibility="{Binding AxisInfo.AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource LeftPointerAlignmentToVisibilityConverter}}" />
+                                <ContentPresenter
+                                    Grid.Column="1"
+                                    Content="{TemplateBinding a:AxisMarkerAnnotation.AxisInfo}"
+                                    ContentTemplate="{TemplateBinding a:AxisMarkerAnnotation.LabelTemplate}" />
+                                <ContentControl
+                                    Grid.Column="2"
+                                    HorizontalContentAlignment="Stretch"
+                                    VerticalContentAlignment="Stretch"
+                                    Content="{TemplateBinding a:AxisMarkerAnnotation.AxisInfo}"
+                                    ContentTemplate="{TemplateBinding a:AxisMarkerAnnotation.PointerTemplate}"
+                                    RenderTransformOrigin="0.5,0.5"
+                                    Visibility="{Binding AxisInfo.AxisAlignment, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource RightPointerAlignmentToVisibilityConverter}}">
+                                    <UIElement.RenderTransform>
+                                        <ScaleTransform ScaleX="-1" />
+                                    </UIElement.RenderTransform>
+                                </ContentControl>
+                            </Grid>
+                        </layout:LayoutTransformer>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AxisMarkerAnnotationStyle}" TargetType="{x:Type a:AxisMarkerAnnotation}" />
+
+    <Style BasedOn="{StaticResource AxisMarkerAnnotationStyle}" TargetType="{x:Type a:SeriesValueAxisMarkerAnnotation}">
+        <Setter Property="Control.BorderBrush" Value="{Binding Background, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Control.Background" Value="{Binding Path=(c:SeriesValueModifier.SeriesMarkerColor), Mode=TwoWay, Converter={StaticResource ColorToBrushConverter}}" />
+        <Setter Property="Control.Foreground" Value="{Binding Background, RelativeSource={RelativeSource Self}, Converter={StaticResource GrayscaleColorBrushConverter}}" />
+        <Setter Property="UIElement.Opacity" Value="{Binding Path=(c:SeriesValueModifier.IsLastPointInViewport), Mode=TwoWay, Converter={StaticResource IsLastPointInViewportToOpacityConverter}}" />
+        <Setter Property="a:AnnotationBase.IsHidden">
+            <Setter.Value>
+                <z:MultiBindingCompatible Converter="{StaticResource TestConverter}">
+                    <Binding Path="IsVisible" />
+                    <Binding Path="(c:SeriesValueModifier.IsRenderableSeriesInViewport)" />
+                    <Binding Path="(c:SeriesValueModifier.IsSeriesValueModifierEnabled)" />
+                </z:MultiBindingCompatible>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource AnnotationBaseStyle}" TargetType="{x:Type a:BoxAnnotation}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type a:BoxAnnotation}">
+                    <Border
+                        x:Name="PART_BoxAnnotationRoot"
+                        Margin="{TemplateBinding FrameworkElement.Margin}"
+                        Background="{TemplateBinding Control.Background}"
+                        BorderBrush="{TemplateBinding Control.BorderBrush}"
+                        BorderThickness="{TemplateBinding Control.BorderThickness}"
+                        CornerRadius="{TemplateBinding a:BoxAnnotation.CornerRadius}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type visuals:UltrachartPerformanceOverlay}">
+        <Style.Setters>
+            <Setter Property="Control.Foreground" Value="#BBFC9C29" />
+            <Setter Property="Control.FontSize" Value="14" />
+            <Setter Property="Control.FontWeight" Value="Normal" />
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type visuals:UltrachartPerformanceOverlay}">
+                        <Border Background="{TemplateBinding Control.Background}" Padding="{TemplateBinding Control.Padding}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32" />
+                                    <RowDefinition Height="5" />
+                                    <RowDefinition Height="32" />
+                                    <RowDefinition Height="32" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <visuals:UltrachartSurface
+                                    Grid.Column="2"
+                                    Margin="5,0"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    MaxFrameRate="20"
+                                    Padding="0"
+                                    Visibility="{TemplateBinding visuals:UltrachartPerformanceOverlay.ChartsVisibility}">
+                                    <visuals:UltrachartSurface.RenderSurface>
+                                        <highSpeedRasterizer:HighSpeedRenderSurface />
+                                    </visuals:UltrachartSurface.RenderSurface>
+                                    <visuals:UltrachartSurface.GridLinesPanelStyle>
+                                        <Style TargetType="{x:Type axes:GridLinesPanel}">
+                                            <Setter Property="Control.Background" Value="#11FFFFFF" />
+                                        </Style>
+                                    </visuals:UltrachartSurface.GridLinesPanelStyle>
+                                    <visuals:UltrachartSurface.RenderableSeries>
+                                        <r:FastMountainRenderableSeries
+                                            AntiAliasing="false"
+                                            DataSeries="{Binding WpfFpsSeries, RelativeSource={RelativeSource TemplatedParent}}"
+                                            Opacity="0.5" />
+                                    </visuals:UltrachartSurface.RenderableSeries>
+                                    <visuals:UltrachartSurface.YAxis>
+                                        <axes:NumericAxis
+                                            DrawMajorGridLines="false"
+                                            DrawMinorGridLines="false"
+                                            Visibility="Collapsed"
+                                            VisibleRange="0,62" />
+                                    </visuals:UltrachartSurface.YAxis>
+                                    <visuals:UltrachartSurface.XAxis>
+                                        <axes:NumericAxis
+                                            AutoRange="Always"
+                                            DrawMajorGridLines="false"
+                                            DrawMinorGridLines="false"
+                                            Visibility="Collapsed" />
+                                    </visuals:UltrachartSurface.XAxis>
+                                </visuals:UltrachartSurface>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Margin="0,3"
+                                    VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding Control.FontSize}"
+                                    FontWeight="{TemplateBinding Control.FontWeight}"
+                                    Foreground="{TemplateBinding Control.Foreground}">
+                                    <Run Text="CompositionTarget:" />
+                                </TextBlock>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="3,3"
+                                    VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding Control.FontSize}"
+                                    FontWeight="{TemplateBinding Control.FontWeight}"
+                                    Foreground="{TemplateBinding Control.Foreground}">
+                                    <Run Text="{Binding WpfFps, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=30.0, StringFormat=#0.0}" />
+                                    <Run Text="FPS" />
+                                </TextBlock>
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Margin="0,3"
+                                    VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding Control.FontSize}"
+                                    FontWeight="{TemplateBinding Control.FontWeight}"
+                                    Foreground="{TemplateBinding Control.Foreground}">
+                                    <Run Text="UltrachartSurface:" />
+                                </TextBlock>
+                                <TextBlock
+                                    Grid.Row="2"
+                                    Grid.Column="1"
+                                    Margin="3,3"
+                                    VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding Control.FontSize}"
+                                    FontWeight="{TemplateBinding Control.FontWeight}"
+                                    Foreground="{TemplateBinding Control.Foreground}">
+                                    <Run Text="{Binding UltrachartFps, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=30.0, StringFormat=#0.0}" />
+                                    <Run Text="FPS" />
+                                </TextBlock>
+                                <visuals:UltrachartSurface
+                                    Grid.Row="2"
+                                    Grid.Column="2"
+                                    Margin="5,0"
+                                    Background="Transparent"
+                                    BorderBrush="Transparent"
+                                    MaxFrameRate="20"
+                                    Padding="0"
+                                    Visibility="{TemplateBinding visuals:UltrachartPerformanceOverlay.ChartsVisibility}">
+                                    <visuals:UltrachartSurface.RenderSurface>
+                                        <highSpeedRasterizer:HighSpeedRenderSurface />
+                                    </visuals:UltrachartSurface.RenderSurface>
+                                    <visuals:UltrachartSurface.GridLinesPanelStyle>
+                                        <Style TargetType="{x:Type axes:GridLinesPanel}">
+                                            <Setter Property="Control.Background" Value="#11FFFFFF" />
+                                        </Style>
+                                    </visuals:UltrachartSurface.GridLinesPanelStyle>
+                                    <visuals:UltrachartSurface.RenderableSeries>
+                                        <r:FastMountainRenderableSeries
+                                            AntiAliasing="false"
+                                            DataSeries="{Binding UltrachartFpsSeries, RelativeSource={RelativeSource TemplatedParent}}"
+                                            Opacity="0.5" />
+                                    </visuals:UltrachartSurface.RenderableSeries>
+                                    <visuals:UltrachartSurface.YAxis>
+                                        <axes:NumericAxis
+                                            DrawMajorGridLines="false"
+                                            DrawMinorGridLines="false"
+                                            Visibility="Collapsed"
+                                            VisibleRange="0,62" />
+                                    </visuals:UltrachartSurface.YAxis>
+                                    <visuals:UltrachartSurface.XAxis>
+                                        <axes:NumericAxis
+                                            AutoRange="Always"
+                                            DrawMajorGridLines="false"
+                                            DrawMinorGridLines="false"
+                                            Visibility="Collapsed" />
+                                    </visuals:UltrachartSurface.XAxis>
+                                </visuals:UltrachartSurface>
+                                <TextBlock
+                                    Grid.Row="3"
+                                    Margin="0,3"
+                                    VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding Control.FontSize}"
+                                    FontWeight="{TemplateBinding Control.FontWeight}"
+                                    Foreground="{TemplateBinding Control.Foreground}">
+                                    <Run Text="Chart Stats:" />
+                                </TextBlock>
+                                <TextBlock
+                                    Grid.Row="3"
+                                    Grid.Column="1"
+                                    Margin="3,3"
+                                    VerticalAlignment="Center"
+                                    FontSize="{TemplateBinding Control.FontSize}"
+                                    FontWeight="{TemplateBinding Control.FontWeight}"
+                                    Foreground="{TemplateBinding Control.Foreground}">
+                                    <Run Text="{Binding TotalPointCount, RelativeSource={RelativeSource TemplatedParent}, FallbackValue=1000.0, StringFormat=n0}" />
+                                    <Run Text="Points" />
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="DefaultAxisDragCursor" TargetType="{x:Type c:AxisDragCursor}">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <layout:LayoutTransformer>
+                        <layout:LayoutTransformer.LayoutTransform>
+                            <RotateTransform Angle="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Angle, Mode=TwoWay}" CenterX="11" CenterY="5" />
+                        </layout:LayoutTransformer.LayoutTransform>
+                        <Grid Width="22" Height="10">
+                            <Path
+                                x:Name="Path"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                Data="F1 M 0.689217,6.84 L 5.40717,0.84 5.40717,4.84 17.202,4.84 17.202,0.84 21.92,6.84 17.202,12.84 17.202,8.84 5.40717,8.84 5.40717,12.84 0.689217,6.84 Z"
+                                Fill="White"
+                                IsHitTestVisible="false"
+                                Stretch="Fill"
+                                Stroke="#FF000000"
+                                StrokeLineJoin="Round"
+                                StrokeThickness="0.5"
+                                Visibility="Visible" />
+                        </Grid>
+                    </layout:LayoutTransformer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style BasedOn="{StaticResource DefaultAxisDragCursor}" TargetType="{x:Type c:AxisDragCursor}" />
+
+</ResourceDictionary>

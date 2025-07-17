@@ -402,11 +402,16 @@ namespace StockSharp.Xaml.Charting
                 _resizeTotalDragDiff = 0.0;
                 _resizeInitialHeight = _resizePane.PaneElement.ActualHeight;
                 _resizeTotalHeight = _resizeInitialHeight + _resizeUpperPane.PaneElement.ActualHeight;
-                _resizeInitialMouseYCoord = Mouse.GetPosition( _resizeUpperPane.PaneElement.GetWindow() ).Y;
+
+                var myWindows = Ecng.Xaml.XamlHelper.GetWindow(_resizeUpperPane.PaneElement);
+
+                _resizeInitialMouseYCoord = Mouse.GetPosition( myWindows ).Y;
                 _resizeMinHeight = ( ( UltrachartGroupPane ) _resizePane.PaneElement ).MeasureMinHeight();
             }
 
-            double y = Mouse.GetPosition(_resizeUpperPane.PaneElement.GetWindow()).Y;
+            var myWindows2 = Ecng.Xaml.XamlHelper.GetWindow(_resizeUpperPane.PaneElement);
+
+            double y = Mouse.GetPosition(myWindows2).Y;
             _resizeTotalDragDiff = y - _resizeInitialMouseYCoord;
 
             var newHeight = Math.Min( _resizeTotalHeight - _resizeMinHeight, Math.Max( _resizeMinHeight, _resizeInitialHeight - _resizeTotalDragDiff ) );

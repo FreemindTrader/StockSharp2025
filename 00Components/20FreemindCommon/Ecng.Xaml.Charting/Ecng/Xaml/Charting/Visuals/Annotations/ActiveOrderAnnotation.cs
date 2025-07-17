@@ -169,14 +169,16 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations
             markerAnnotation.IsEditable = false;
             markerAnnotation.IsSelected = false;
             _axisMarker = markerAnnotation;
-            _axisMarker.SetBindings( UIElement.VisibilityProperty, ( object ) this, "Visibility", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( Control.ForegroundProperty, ( object ) this, "Foreground", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( Control.BackgroundProperty, ( object ) this, "Background", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( Control.BorderBrushProperty, ( object ) this, "Background", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, ( object ) this, "XAxisId", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( AnnotationBase.YAxisIdProperty, ( object ) this, "YAxisId", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( AnnotationBase.Y1Property, ( object ) this, "Y1", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
-            _axisMarker.SetBindings( AnnotationBase.IsHiddenProperty, ( object ) this, "IsHidden", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+
+
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, UIElement.VisibilityProperty, ( object ) this, "Visibility", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, Control.ForegroundProperty, ( object ) this, "Foreground", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, Control.BackgroundProperty, ( object ) this, "Background", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, Control.BorderBrushProperty, ( object ) this, "Background", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, AnnotationBase.XAxisIdProperty, ( object ) this, "XAxisId", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, AnnotationBase.YAxisIdProperty, ( object ) this, "YAxisId", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, AnnotationBase.Y1Property, ( object ) this, "Y1", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+            Ecng.Xaml.XamlHelper.SetBindings( _axisMarker, AnnotationBase.IsHiddenProperty, ( object ) this, "IsHidden", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
             _scrollTimer = new DispatcherTimer()
             {
                 Interval = ActiveOrderAnnotation._scrollTimerInterval
@@ -217,7 +219,8 @@ namespace StockSharp.Xaml.Charting.Visuals.Annotations
                         return;
                     cancelClick( this );
                 } );
-                _cancelButton.SetBindings( UIElement.IsEnabledProperty, ( object ) this, "IsEditable", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
+
+                Ecng.Xaml.XamlHelper.SetBindings( _cancelButton, UIElement.IsEnabledProperty, ( object ) this, "IsEditable", BindingMode.OneWay, ( IValueConverter ) null, ( object ) null );
             }
             _templateInitialized = true;
             HandleIsEditable();
