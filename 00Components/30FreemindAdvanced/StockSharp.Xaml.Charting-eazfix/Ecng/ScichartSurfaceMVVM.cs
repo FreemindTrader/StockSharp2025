@@ -189,10 +189,23 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         this.NotifyChanged( "Title" );
     }
 
+    private void OnChartOrderMouseEvent( ModifierMouseArgs _param1 )
+    {
+        IChart chart = this.Chart;
+        if ( chart == null )
+            return;
+        chart.IsAutoRange = false;
+    }
+
+    public IChart Chart => this.Area.Chart;
+
+    public ChartArea Area => this._chartArea;
+
     private void SetupModifiers()
     {
         if ( this._chartModifiers.Count > 0 )
             return;
+
         var cursor = new UltrachartCursormodifier();
         cursor.ShowTooltip = true;
         cursor.ReceiveHandledEvents = true;
@@ -206,8 +219,12 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         zoomPan.ClipModeX = ClipMode.None;
         
         ChartOrderModifier orderLines = new ChartOrderModifier();
-        orderLines.\u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D( new Action<ModifierMouseArgs>( this.\u0023\u003Dz2baZtMhFLPZu0vCzoJUPQZE\u003D) );
+        orderLines.OnModifierMouseUp = new Action<ModifierMouseArgs>( this.OnChartOrderMouseEvent );
+
+        ( new Action<ModifierMouseArgs>( this.OnChartOrderMouseEvent) );
         orderLines.\u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D( new Action<ModifierMouseArgs>( this.\u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D) );
+
+
         List<ChartModifierBase> zRhhpqbmmRle6 = this._chartModifiers;
         ChartModifierBase[] v7UvhxrxhaatqEjdArray = new ChartModifierBase[9];
         v7UvhxrxhaatqEjdArray[ 0 ] = ( ChartModifierBase ) orderLines;
@@ -286,7 +303,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
             UltrachartCursormodifier yx2796KwcrF36XmmEjd = this.ChartModifier.ChildModifiers.OfType<UltrachartCursormodifier>().Single<UltrachartCursormodifier>();
             yx2796KwcrF36XmmEjd.SetBindings( ChartModifierBase._isEnabled, ( object ) this.Chart, "CrossHair" );
             yx2796KwcrF36XmmEjd.SetBindings( dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzCuzcJq\u0024VLiWR, ( object ) this.Chart, "CrossHairAxisLabels" );
-            yx2796KwcrF36XmmEjd.SetBindings( UltrachartCursormodifier.\u0023\u003DztwQ4ieQ9dTof, ( object ) this.Chart, "CrossHairTooltip" );
+            yx2796KwcrF36XmmEjd.SetBindings( UltrachartCursormodifier.InPlaceTooltipProperty, ( object ) this.Chart, "CrossHairTooltip" );
             ChartOrderModifier orderLines = this.ChartModifier.ChildModifiers.OfType <ChartOrderModifier> ().Single <ChartOrderModifier> ();
             ChartOrderModifier orderLines = orderLines;
             DependencyProperty zSlZmDsF5TsAu = ChartModifierBase._isEnabled;
@@ -641,11 +658,11 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     }
   }
 
-  public IChart Chart => this.Area.Chart;
+  
 
   public StockSharp.Xaml.Charting.Chart GroupChart => this.Chart as StockSharp.Xaml.Charting.Chart;
 
-  public ChartArea Area => this._chartArea;
+  
 
   public ChartViewModel ParentViewModel
   {
@@ -1017,14 +1034,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     return flag;
   }
 
-  private void \u0023\u003Dz2baZtMhFLPZu0vCzoJUPQZE\u003D(
-    ModifierMouseArgs _param1)
-  {
-    IChart chart = this.Chart;
-    if (chart == null)
-      return;
-    chart.IsAutoRange = false;
-  }
+  
 
   private void \u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D(
     ModifierMouseArgs _param1)

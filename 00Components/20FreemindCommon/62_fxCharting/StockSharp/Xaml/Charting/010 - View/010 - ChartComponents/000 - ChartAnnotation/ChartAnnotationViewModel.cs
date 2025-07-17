@@ -39,18 +39,22 @@
 //}
 
 
+////using Ecng.Collections;
+////using StockSharp.Xaml.Charting;
+////using System;
+////using System.Linq;
+
+
+
+using System.Linq;
 using Ecng.Collections;
 using StockSharp.Xaml.Charting;
-using System;
-using System.Linq;
 
-
-/// <summary>
-/// 
+/// < summary >
+///
 /// NOT DONE YET
 /// 
 /// </summary>
-
 internal sealed class ChartAnnotationViewModel : ChartCompentWpfBaseViewModel<ChartAnnotation>
 {
     public ChartAnnotationViewModel( ChartAnnotation annotation ) : base( annotation )

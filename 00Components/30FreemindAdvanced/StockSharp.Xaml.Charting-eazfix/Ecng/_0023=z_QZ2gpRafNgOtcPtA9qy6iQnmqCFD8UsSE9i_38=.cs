@@ -14,19 +14,19 @@ public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D :
   ChartModifierBase
 {
   
-  private Action<ModifierMouseArgs> \u0023\u003Dz0oGDcgXNO1Ze;
+  private Action<ModifierMouseArgs> MouseUpEvent;
   
-  private Action<ModifierMouseArgs> \u0023\u003DzrmlvxkfuVPe1;
+  private Action<ModifierMouseArgs> MouseDownEvent;
 
   public void \u0023\u003DzQNMSGlzReVSKbDSdEA\u003D\u003D(
     Action<ModifierMouseArgs> _param1)
   {
-    Action<ModifierMouseArgs> action = this.\u0023\u003Dz0oGDcgXNO1Ze;
+    Action<ModifierMouseArgs> action = this.MouseUpEvent;
     Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003Dz0oGDcgXNO1Ze, comparand + _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.MouseUpEvent, comparand + _param1, comparand);
     }
     while (action != comparand);
   }
@@ -34,12 +34,12 @@ public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D :
   public void \u0023\u003DzKMNJUrebJ6bHfEfMgg\u003D\u003D(
     Action<ModifierMouseArgs> _param1)
   {
-    Action<ModifierMouseArgs> action = this.\u0023\u003Dz0oGDcgXNO1Ze;
+    Action<ModifierMouseArgs> action = this.MouseUpEvent;
     Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003Dz0oGDcgXNO1Ze, comparand - _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.MouseUpEvent, comparand - _param1, comparand);
     }
     while (action != comparand);
   }
@@ -47,12 +47,12 @@ public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D :
   public void \u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D(
     Action<ModifierMouseArgs> _param1)
   {
-    Action<ModifierMouseArgs> action = this.\u0023\u003DzrmlvxkfuVPe1;
+    Action<ModifierMouseArgs> action = this.MouseDownEvent;
     Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003DzrmlvxkfuVPe1, comparand + _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.MouseDownEvent, comparand + _param1, comparand);
     }
     while (action != comparand);
   }
@@ -60,12 +60,12 @@ public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D :
   public void \u0023\u003DzcMDiaOXtryw1mZGXQA\u003D\u003D(
     Action<ModifierMouseArgs> _param1)
   {
-    Action<ModifierMouseArgs> action = this.\u0023\u003DzrmlvxkfuVPe1;
+    Action<ModifierMouseArgs> action = this.MouseDownEvent;
     Action<ModifierMouseArgs> comparand;
     do
     {
       comparand = action;
-      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.\u0023\u003DzrmlvxkfuVPe1, comparand - _param1, comparand);
+      action = Interlocked.CompareExchange<Action<ModifierMouseArgs>>(ref this.MouseDownEvent, comparand - _param1, comparand);
     }
     while (action != comparand);
   }
@@ -76,7 +76,7 @@ public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D :
     base.OnModifierMouseDown(_param1);
     if (_param1.MouseButtons() != (MouseButtons) 1)
       return;
-    Action<ModifierMouseArgs> zrmlvxkfuVpe1 = this.\u0023\u003DzrmlvxkfuVPe1;
+    Action<ModifierMouseArgs> zrmlvxkfuVpe1 = this.MouseDownEvent;
     if (zrmlvxkfuVpe1 == null)
       return;
     zrmlvxkfuVpe1(_param1);
@@ -86,7 +86,7 @@ public sealed class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6iQnmqCFD8UsSE9i_38\u003D :
     ModifierMouseArgs _param1)
   {
     base.\u0023\u003DzQTINWhMByBmJ(_param1);
-    Action<ModifierMouseArgs> z0oGdcgXnO1Ze = this.\u0023\u003Dz0oGDcgXNO1Ze;
+    Action<ModifierMouseArgs> z0oGdcgXnO1Ze = this.MouseUpEvent;
     if (z0oGdcgXnO1Ze == null)
       return;
     z0oGdcgXnO1Ze(_param1);

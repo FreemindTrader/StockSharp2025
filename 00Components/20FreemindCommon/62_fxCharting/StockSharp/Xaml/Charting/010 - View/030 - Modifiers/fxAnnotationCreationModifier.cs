@@ -115,7 +115,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
     public override void OnModifierMouseDown( ModifierMouseArgs _param1 )
     {
         base.OnModifierMouseDown( _param1 );
-        if ( this._annotationType == ( Type ) null || !ChartModifierBase.MatchesExecuteOn( _param1.MouseButtons, this.ExecuteOn ) || !_param1.IsMaster || this._annotation != null && !this._annotation.IsSelected )
+        if ( this._annotationType == ( Type ) null || !this.MatchesExecuteOn( _param1.MouseButtons, this.ExecuteOn ) || !_param1.IsMaster || this._annotation != null && !this._annotation.IsSelected )
             return;
         _param1.Handled=( true );
         if ( this._annotation != null && this._annotation.IsAttached )
@@ -129,7 +129,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
     public override void OnModifierMouseUp( ModifierMouseArgs _param1 )
     {
-        if ( this._annotationType == ( Type ) null || !ChartModifierBase.MatchesExecuteOn( _param1.MouseButtons, this.ExecuteOn ) || !_param1.IsMaster )
+        if ( this._annotationType == ( Type ) null || !this.MatchesExecuteOn( _param1.MouseButtons, this.ExecuteOn ) || !_param1.IsMaster )
             return;
         if ( this.IsSubclassOfIsAssignableFrom( this._annotationType ) && this._annotation == null )
         {

@@ -52,14 +52,7 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
                 return;
             this._chartAnnotationTypes = this._chartAnnotationTypes == ChartAnnotationTypes.None ? value : throw new InvalidOperationException( LocalizedStrings.AnnotationTypeCantBeChanged );
         }
-    }
-
-    //Func<IComparable, System.Drawing.Color?> StockSharp.Charting.IChartElement.Colorer
-    //{
-    //    get => throw new NotImplementedException();
-    //    set => throw new NotImplementedException();
-    //}
-        
+    }  
 
     public DrawableChartComponentBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel )
     {
@@ -79,9 +72,7 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
         this._baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
-    bool IChartComponent.CheckAxesCompatible(
-      ChartAxisType? _param1,
-      ChartAxisType? _param2 )
+    bool IChartComponent.CheckAxesCompatible( ChartAxisType? _param1, ChartAxisType? _param2 )
     {
         return !_param2.HasValue || _param2.GetValueOrDefault() == ChartAxisType.Numeric;
     }
