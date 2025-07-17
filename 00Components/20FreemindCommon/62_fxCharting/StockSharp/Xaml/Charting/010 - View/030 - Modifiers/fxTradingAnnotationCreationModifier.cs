@@ -233,22 +233,36 @@ namespace StockSharp.Xaml.Charting
             OnAnnotationCreated( );
         }
 
-        protected override AnnotationBase CreateAnnotation( Type annotationType, Style annotationStyle )
-        {
-            AnnotationBase instance = ( AnnotationBase )Activator.CreateInstance( annotationType );
+        //protected override AnnotationBase CreateAnnotation( Type annotationType, Style annotationStyle )
+        //{
+        //    AnnotationBase instance = ( AnnotationBase )Activator.CreateInstance( annotationType );
 
-            instance.YAxisId = YAxisId;
-            instance.XAxisId = XAxisId;
+        //    instance.YAxisId = YAxisId;
+        //    instance.XAxisId = XAxisId;
 
-            if ( annotationStyle != null && annotationStyle.TargetType == annotationType )
-            {
-                Style style = new Style( annotationType ) { BasedOn = annotationStyle };
-                instance.Style = style;
-            }
+        //    if ( annotationStyle != null && annotationStyle.TargetType == annotationType )
+        //    {
+        //        Style style = new Style( annotationType ) { BasedOn = annotationStyle };
+        //        instance.Style = style;
+        //    }
 
-            ParentSurface.Annotations.Add( instance );
-            return instance;
-        }
+        //    ParentSurface.Annotations.Add( instance );
+        //    return instance;
+        //}
+
+        //protected virtual AnnotationBaseEx CreateAnnotation( Type _param1, Style _param2 )
+        //{
+        //    var instance = (AnnotationBaseEx) Activator.CreateInstance(_param1);
+        //    instance.YAxisId = this.YAxisId;
+        //    instance.XAxisId = this.XAxisId;
+        //    if ( _param2 != null && _param2.TargetType == _param1 )
+        //    {
+        //        Style style = new Style(_param1) { BasedOn = _param2 };
+        //        instance.Style = style;
+        //    }
+        //    this.ParentSurface.Annotations.Add( ( IAnnotation ) instance );
+        //    return instance;
+        //}
 
         private static void OnAnnotationTypeChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
         {

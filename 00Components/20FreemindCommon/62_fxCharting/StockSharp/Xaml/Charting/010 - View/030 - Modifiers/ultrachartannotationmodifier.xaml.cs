@@ -137,7 +137,7 @@ namespace StockSharp.Xaml.Charting
             _rulerAnnotation = null;
         }
 
-        protected override AnnotationBase CreateAnnotation( Type _param1, Style data )
+        protected override IAnnotation CreateAnnotation( Type _param1, Style data )
         {
             if ( _param1 != typeof( RulerAnnotation ) )
             {

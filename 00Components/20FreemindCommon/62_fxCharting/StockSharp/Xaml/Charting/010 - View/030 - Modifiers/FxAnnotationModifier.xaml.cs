@@ -209,7 +209,7 @@ namespace StockSharp.Xaml.Charting
             }
             else
             {
-                AnnotationBase instance = ( AnnotationBase )Activator.CreateInstance( annotationType );
+                var instance = ( AnnotationBaseEx )Activator.CreateInstance( annotationType );
 
                 instance.YAxisId = YAxisId;
                 instance.XAxisId = XAxisId;

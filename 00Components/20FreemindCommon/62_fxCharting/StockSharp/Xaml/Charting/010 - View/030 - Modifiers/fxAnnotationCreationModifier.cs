@@ -123,7 +123,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
         this._pointRelativeToModifier = this.GetPointRelativeTo( _param1.MousePoint, ( IHitTestable ) this.ModifierSurface );
         if ( this.IsSubclassOfIsAssignableFrom( this._annotationType ) )
             return;
-        this._annotation = this.CreateAnnotation( this._annotationType, this._annotationStyle );
+        this._annotation = ( AnnotationBaseEx ) this.CreateAnnotation( this._annotationType, this._annotationStyle );
         this._annotation.UpdatePosition( this._pointRelativeToModifier, this._pointRelativeToModifier );
     }
 
@@ -133,7 +133,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
             return;
         if ( this.IsSubclassOfIsAssignableFrom( this._annotationType ) && this._annotation == null )
         {
-            this._annotation = this.CreateAnnotation( this._annotationType, this._annotationStyle );
+            this._annotation = ( AnnotationBaseEx ) this.CreateAnnotation( this._annotationType, this._annotationStyle );
             Point point = this.GetPointRelativeTo( _param1.MousePoint, ( IHitTestable ) this.ModifierSurface );
             this._annotation.UpdatePosition( point, point );
         }
@@ -149,7 +149,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
 
 
-    protected virtual AnnotationBaseEx CreateAnnotation( Type _param1, Style _param2 )
+    protected virtual IAnnotation CreateAnnotation( Type _param1, Style _param2 )
     {
         var instance = (AnnotationBaseEx) Activator.CreateInstance(_param1);
         instance.YAxisId = this.YAxisId;
