@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries.SegmentDataSeries
+namespace Ecng.Xaml.Charting
 {
     internal class TimeframeSegmentPointSeries : IPointSeries
     {

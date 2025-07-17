@@ -8,9 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Ecng.Xaml.Charting.ChartModifiers;
-using Ecng.Xaml.Charting.Common.Extensions;
-
 namespace Ecng.Xaml.Charting
 {
     public class ChartDataObject : BindableObject

@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Ecng.Xaml.Charting;
-
 namespace TinyMessenger
 {
     public sealed class TinyMessengerHub : IEventAggregator, ITinyMessengerHub

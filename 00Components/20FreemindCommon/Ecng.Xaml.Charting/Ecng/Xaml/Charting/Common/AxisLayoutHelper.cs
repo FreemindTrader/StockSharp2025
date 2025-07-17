@@ -7,10 +7,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Common
+namespace Ecng.Xaml.Charting
 {
     public class AxisLayoutHelper
     {

@@ -12,7 +12,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class VisualTreeExtensions
     {

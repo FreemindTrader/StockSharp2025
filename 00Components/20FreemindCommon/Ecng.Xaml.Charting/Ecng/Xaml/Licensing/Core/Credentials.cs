@@ -4,8 +4,7 @@
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 //// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using Ecng.Xaml.Charting.Visuals;
-//using System;
+//using Ecng.Xaml.Charting;//using System;
 //using System.Globalization;
 //using System.Reflection;
 //using System.Text;
@@ -90,8 +89,7 @@ using System;
 using System.Globalization;
 using System.Reflection;
 using System.Text;
-using Ecng.Xaml.Charting.Visuals;
-
+using Ecng.Xaml.Charting;
 namespace StockSharp.Xaml.Licensing.Core
 {
     [Obfuscation( Feature = "encryptmethod;encryptstrings;encryptconstants", Exclude = false, ApplyToMembers = true, StripAfterObfuscation = true )]

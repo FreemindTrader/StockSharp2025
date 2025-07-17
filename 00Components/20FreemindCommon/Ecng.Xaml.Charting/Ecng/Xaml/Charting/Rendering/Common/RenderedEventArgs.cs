@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public class RenderedEventArgs : EventArgs
     {

@@ -8,9 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     internal class FifoBuffer<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
     {

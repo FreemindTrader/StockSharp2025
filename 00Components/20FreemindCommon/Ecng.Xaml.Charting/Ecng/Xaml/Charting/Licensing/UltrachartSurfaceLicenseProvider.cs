@@ -9,10 +9,9 @@ using System.Linq;
 using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
-using Ecng.Xaml.Charting.Visuals;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Licensing
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = false, Feature = "encryptmethod;encryptstrings;encryptconstants", StripAfterObfuscation = true )]
     internal sealed class UltrachartSurfaceLicenseProvider : Credentials, IUltrachartLicenseProvider

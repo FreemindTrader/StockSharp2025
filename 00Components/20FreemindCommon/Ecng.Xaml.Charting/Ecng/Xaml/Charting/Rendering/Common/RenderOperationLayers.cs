@@ -7,7 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public class RenderOperationLayers : IEnumerable<RenderOperationLayer>, IEnumerable
     {

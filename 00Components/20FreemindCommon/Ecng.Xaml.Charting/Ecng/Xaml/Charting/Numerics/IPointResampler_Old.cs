@@ -6,7 +6,7 @@
 
 using System.Collections;
 
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal interface IPointResampler_Old
     {

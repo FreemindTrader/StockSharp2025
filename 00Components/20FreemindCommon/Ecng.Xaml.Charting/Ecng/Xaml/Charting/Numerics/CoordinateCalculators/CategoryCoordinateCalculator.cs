@@ -6,11 +6,7 @@
 
 using System;
 using System.Collections;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Numerics.CoordinateCalculators
+namespace Ecng.Xaml.Charting
 {
     internal sealed class CategoryCoordinateCalculator : CoordinateCalculatorBase, ICategoryCoordinateCalculator, ICoordinateCalculator<double>
     {

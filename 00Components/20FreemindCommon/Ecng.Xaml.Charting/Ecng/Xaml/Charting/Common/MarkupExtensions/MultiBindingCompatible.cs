@@ -6,7 +6,7 @@
 
 using System.Windows.Data;
 
-namespace Ecng.Xaml.Charting.Common.MarkupExtensions
+namespace Ecng.Xaml.Charting
 {
     public class MultiBindingCompatible : MultiBinding
     {

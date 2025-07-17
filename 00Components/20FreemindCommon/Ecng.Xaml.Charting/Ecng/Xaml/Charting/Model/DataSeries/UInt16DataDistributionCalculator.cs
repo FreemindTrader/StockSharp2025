@@ -6,9 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     internal class UInt16DataDistributionCalculator : BaseDataDistributionCalculator<ushort>
     {

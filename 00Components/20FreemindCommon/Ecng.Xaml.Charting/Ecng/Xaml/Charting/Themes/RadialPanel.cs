@@ -9,9 +9,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class RadialPanel : Panel
     {

@@ -8,10 +8,9 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Rendering.Common;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Licensing
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = false, Feature = "encryptmethod;encryptstrings;encryptconstants", StripAfterObfuscation = true )]
     internal sealed class RenderSurfaceValidator

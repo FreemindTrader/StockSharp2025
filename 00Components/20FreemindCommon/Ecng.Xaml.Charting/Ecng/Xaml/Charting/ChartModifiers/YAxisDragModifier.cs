@@ -1,8 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting
 {
     public class YAxisDragModifier : AxisDragModifierBase
     {

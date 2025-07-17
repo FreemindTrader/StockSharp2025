@@ -4,10 +4,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal static class BitmapPrintingHelper
     {

@@ -7,7 +7,7 @@
 using System;
 using System.Threading;
 
-namespace Ecng.Xaml.Charting.Threading
+namespace Ecng.Xaml.Charting
 {
     internal class MultiThreaded
     {

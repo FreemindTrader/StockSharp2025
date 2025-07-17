@@ -6,7 +6,7 @@
 
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     internal class DoubleToColorMappingSettings
     {

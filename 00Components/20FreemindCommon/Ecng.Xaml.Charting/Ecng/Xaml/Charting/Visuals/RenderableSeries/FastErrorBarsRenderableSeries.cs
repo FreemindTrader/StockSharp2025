@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Licensing;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Rendering.Common;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
+namespace Ecng.Xaml.Charting
 {
     [UltrachartLicenseProvider( typeof( RenderableSeriesUltrachartLicenseProvider ) )]
     public class FastErrorBarsRenderableSeries : BaseRenderableSeries

@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     public interface ISeriesPoint<T> : IComparable where T : IComparable
     {

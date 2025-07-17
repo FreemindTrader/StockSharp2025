@@ -7,7 +7,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Rendering
+namespace Ecng.Xaml.Charting
 {
     internal class TextureKey
     {

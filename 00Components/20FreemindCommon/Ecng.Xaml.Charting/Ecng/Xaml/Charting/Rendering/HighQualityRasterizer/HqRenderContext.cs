@@ -4,9 +4,7 @@
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 //// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using Ecng.Xaml.Charting.Common.Extensions;
-//using Ecng.Xaml.Charting.Rendering.Common;
-//using MatterHackers.Agg;
+//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using MatterHackers.Agg;
 //using MatterHackers.Agg.Image;
 //using MatterHackers.Agg.VertexSource;
 //using System;
@@ -16,8 +14,7 @@
 //using System.Windows.Media;
 //using System.Windows.Media.Imaging;
 
-//namespace Ecng.Xaml.Charting.Rendering.HighQualityRasterizer
-//{
+//namespace Ecng.Xaml.Charting//{
 //  internal class HqRenderContext : RenderContextBase
 //  {
 //    private readonly RenderOperationLayers _renderLayers = new RenderOperationLayers();
@@ -849,10 +846,7 @@ using System.Windows.Media.Imaging;
 using MatterHackers.Agg;
 using MatterHackers.Agg.Image;
 using MatterHackers.Agg.VertexSource;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering.HighQualityRasterizer
+namespace Ecng.Xaml.Charting
 {
     internal class HqRenderContext : RenderContextBase
     {

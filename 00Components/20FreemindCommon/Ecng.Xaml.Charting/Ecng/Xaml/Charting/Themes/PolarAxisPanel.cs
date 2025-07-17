@@ -6,12 +6,7 @@
 
 using System.Windows;
 using System.Windows.Controls;
-using Ecng.Xaml.Charting.Common.Helpers;
-using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class PolarAxisPanel : AxisPanel
     {

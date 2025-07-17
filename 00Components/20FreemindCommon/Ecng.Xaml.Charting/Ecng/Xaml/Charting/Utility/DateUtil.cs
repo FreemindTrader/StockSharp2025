@@ -8,9 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Utility
+namespace Ecng.Xaml.Charting
 {
     internal static class DateUtil
     {

@@ -11,14 +11,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Xml.Schema;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-using Ecng.Xaml.Charting.Visuals.Axes;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 namespace Ecng.Xaml.Charting
 {
     internal class AxisProxy : IAxis, IAxisParams, IHitTestable, ISuspendable, IInvalidatableElement, IDrawable

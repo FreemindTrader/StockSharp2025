@@ -5,9 +5,7 @@
 // Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class DoubleExtensions
     {

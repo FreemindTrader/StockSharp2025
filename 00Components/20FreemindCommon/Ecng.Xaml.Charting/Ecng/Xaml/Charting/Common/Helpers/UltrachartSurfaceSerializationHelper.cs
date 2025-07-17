@@ -10,15 +10,7 @@ using System.Collections.ObjectModel;
 using System.Windows;
 using System.Xml;
 using System.Xml.Serialization;
-using Ecng.Xaml.Charting.ChartModifiers;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers.XmlSerialization;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal class UltrachartSurfaceSerializationHelper : SerializationHelper<UltrachartSurface>
     {

@@ -9,13 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Numerics.PointResamplers;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = true )]
     public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> : IDataSeries<TX, TY>, IDataSeries, ISuspendable, IHeatmap2DArrayDataSeriesInternal, IHeatmap2DArrayDataSeries where TX : IComparable where TY : IComparable where TZ : IComparable

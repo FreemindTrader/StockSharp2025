@@ -7,9 +7,7 @@
 using System;
 using System.Windows.Media.Imaging;
 using MatterHackers.Agg.Image;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering.HighQualityRasterizer
+namespace Ecng.Xaml.Charting
 {
     internal class HqSprite2D : ISprite2D, IDisposable
     {

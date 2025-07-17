@@ -7,7 +7,7 @@
 using System;
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public interface IPathColor : IDisposable
     {

@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Numerics.CoordinateCalculators
+namespace Ecng.Xaml.Charting
 {
     internal class PolarCoordinateCalculator : CoordinateCalculatorBase
     {

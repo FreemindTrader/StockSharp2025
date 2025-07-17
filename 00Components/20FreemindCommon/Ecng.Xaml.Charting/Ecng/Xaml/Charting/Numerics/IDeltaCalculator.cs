@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     public interface IDeltaCalculator
     {

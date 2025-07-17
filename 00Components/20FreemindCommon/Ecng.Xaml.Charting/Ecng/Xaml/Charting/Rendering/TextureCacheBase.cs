@@ -7,9 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering
+namespace Ecng.Xaml.Charting
 {
     public class TextureCacheBase
     {

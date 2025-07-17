@@ -13,12 +13,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     public static class EnumerableExtensions
     {

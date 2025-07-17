@@ -6,11 +6,9 @@
 
 using MatterHackers.Agg;
 using MatterHackers.Agg.Image;
-using Ecng.Xaml.Charting.Licensing;
-using Ecng.Xaml.Charting.Rendering.Common;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Rendering.HighQualityRasterizer
+namespace Ecng.Xaml.Charting
 {
     [UltrachartLicenseProvider( typeof( RenderSurfaceLicenseProvider ) )]
     public class HighQualityRenderSurface : RenderSurfaceBase

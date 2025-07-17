@@ -6,10 +6,7 @@
 
 using System;
 using System.Windows;
-using Ecng.Xaml.Charting.Themes;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class AxisExtensions
     {

@@ -10,9 +10,6 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals;
-
 namespace Ecng.Xaml.Charting
 {
     public class ShowVisibilityCheckboxesConverter : IValueConverter

@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     internal abstract class BaseSeriesColumn<T> : ISeriesColumn<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, ISeriesColumn
     {

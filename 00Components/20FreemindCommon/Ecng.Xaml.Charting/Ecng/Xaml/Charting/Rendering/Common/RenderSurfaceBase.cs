@@ -4,15 +4,7 @@
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 //// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using Ecng.Xaml.Charting.Common;
-//using Ecng.Xaml.Charting.Common.Extensions;
-//using Ecng.Xaml.Charting.Common.Helpers;
-//using Ecng.Xaml.Charting.Common.Messaging;
-//using Ecng.Xaml.Charting.Licensing;
-//using Ecng.Xaml.Charting.Utility;
-//using Ecng.Xaml.Charting.Visuals;
-//using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-//using StockSharp.Xaml.Licensing.Core;
+//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using StockSharp.Xaml.Licensing.Core;
 //using System;
 //using System.Collections.Generic;
 //using System.Collections.ObjectModel;
@@ -29,8 +21,7 @@
 //using System.Windows.Shapes;
 //using System.Windows.Threading;
 
-//namespace Ecng.Xaml.Charting.Rendering.Common
-//{
+//namespace Ecng.Xaml.Charting//{
 //    public abstract class RenderSurfaceBase : ContentControl, IRenderSurface2D, IRenderSurface, IDisposable, IHitTestable, IInvalidatableElement
 //    {
 //        public static readonly DependencyProperty MaxFrameRateProperty = DependencyProperty.Register(nameof (MaxFrameRate), typeof (double?), typeof (RenderSurfaceBase), new PropertyMetadata((object) null, new PropertyChangedCallback(RenderSurfaceBase.OnMaxFramerateChanged)));
@@ -503,17 +494,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using Ecng.Xaml.Charting.Common;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers;
-using Ecng.Xaml.Charting.Common.Messaging;
-using Ecng.Xaml.Charting.Licensing;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public abstract class RenderSurfaceBase : ContentControl, IRenderSurface2D, IRenderSurface, IDisposable, IHitTestable, IInvalidatableElement
     {

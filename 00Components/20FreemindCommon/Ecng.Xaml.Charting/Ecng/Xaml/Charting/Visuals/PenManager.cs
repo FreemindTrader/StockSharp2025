@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Visuals.PenManager
+// Type: Ecng.Xaml.Charting.PenManager
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
@@ -7,9 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Visuals
+namespace Ecng.Xaml.Charting
 {
     internal class PenManager : IPenManager, IDisposable
     {

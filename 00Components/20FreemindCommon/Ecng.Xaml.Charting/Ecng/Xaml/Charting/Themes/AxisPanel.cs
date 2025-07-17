@@ -11,14 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
-using Ecng.Xaml.Charting.Rendering;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class AxisPanel : Panel, IAxisPanel, INotifyPropertyChanged
     {

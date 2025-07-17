@@ -6,11 +6,7 @@
 
 using System;
 using System.Xml;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers.XmlSerialization;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal sealed class AxisSerializationHelper : SerializationHelper<AxisBase>
     {

@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal class ObjectPool<T> : IDisposable where T : new()
     {

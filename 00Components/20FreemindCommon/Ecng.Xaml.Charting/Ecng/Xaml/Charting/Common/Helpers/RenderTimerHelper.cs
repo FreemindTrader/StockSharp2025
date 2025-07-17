@@ -5,10 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal class RenderTimerHelper
     {

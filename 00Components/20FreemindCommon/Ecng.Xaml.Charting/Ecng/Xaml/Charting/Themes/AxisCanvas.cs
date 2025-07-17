@@ -10,10 +10,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class AxisCanvas : Panel, ISuspendable
     {

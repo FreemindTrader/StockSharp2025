@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal class TradeChartTickCalculator
     {

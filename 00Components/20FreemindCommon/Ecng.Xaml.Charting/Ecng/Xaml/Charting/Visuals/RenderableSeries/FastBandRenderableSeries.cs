@@ -1,14 +1,5 @@
-﻿//// Ecng.Xaml.Charting.Visuals.RenderableSeries.FastBandRenderableSeries
-//using Ecng.Xaml.Charting.Common.Databinding;
-//using Ecng.Xaml.Charting.Common.Extensions;
-//using Ecng.Xaml.Charting.Licensing;
-//using Ecng.Xaml.Charting.Model.DataSeries;
-//using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-//using Ecng.Xaml.Charting.Rendering.Common;
-//using Ecng.Xaml.Charting.Utility;
-//using Ecng.Xaml.Charting.Visuals.PointMarkers;
-//using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-//using StockSharp.Xaml.Licensing.Core;
+﻿//// Ecng.Xaml.Charting.FastBandRenderableSeries
+//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using StockSharp.Xaml.Licensing.Core;
 //using System;
 //using System.Collections.Generic;
 //using System.ComponentModel;
@@ -16,8 +7,7 @@
 //using System.Windows;
 //using System.Windows.Media;
 
-//namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
-//{
+//namespace Ecng.Xaml.Charting//{
 //    
 //    public class FastBandRenderableSeries : BaseRenderableSeries
 //    {
@@ -147,7 +137,7 @@
 //        protected override void CreateRolloverMarker( )
 //        {
 //            base.CreateRolloverMarker();
-//            RolloverMarker1 = Ecng.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate( base.RolloverMarkerTemplate, this );
+//            RolloverMarker1 = Ecng.Xaml.Charting.PointMarker.CreateFromTemplate( base.RolloverMarkerTemplate, this );
 //        }
 
 //        protected override HitTestInfo HitTestInternal( Point rawPoint, double hitTestRadius, bool interpolate )
@@ -469,7 +459,7 @@
 //}
 
 // Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Visuals.RenderableSeries.FastBandRenderableSeries
+// Type: Ecng.Xaml.Charting.FastBandRenderableSeries
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
@@ -480,17 +470,9 @@ using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Databinding;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Licensing;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals.PointMarkers;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
+namespace Ecng.Xaml.Charting
 {
     [UltrachartLicenseProvider( typeof( RenderableSeriesUltrachartLicenseProvider ) )]
     public class FastBandRenderableSeries : BaseRenderableSeries
@@ -597,7 +579,7 @@ namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
         protected override void CreateRolloverMarker()
         {
             base.CreateRolloverMarker();
-            RolloverMarker1 = Ecng.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate( base.RolloverMarkerTemplate, this );
+            RolloverMarker1 = Ecng.Xaml.Charting.PointMarker.CreateFromTemplate( base.RolloverMarkerTemplate, this );
         }
 
         protected override HitTestInfo HitTestInternal( Point rawPoint, double hitTestRadius, bool interpolate )

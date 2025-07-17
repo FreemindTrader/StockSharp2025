@@ -8,7 +8,7 @@ using System;
 using System.Linq;
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class DoubleCollectionExtensions
     {

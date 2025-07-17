@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals.Axes;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting
 {
     public abstract class InspectSeriesModifierBase : ChartModifierBase
     {
@@ -31,11 +27,11 @@ namespace Ecng.Xaml.Charting.ChartModifiers
             }
         }
 
-        public Ecng.Xaml.Charting.ChartModifiers.SourceMode SourceMode
+        public Ecng.Xaml.Charting.SourceMode SourceMode
         {
             get
             {
-                return ( Ecng.Xaml.Charting.ChartModifiers.SourceMode ) base.GetValue( InspectSeriesModifierBase.SourceModeProperty );
+                return ( Ecng.Xaml.Charting.SourceMode ) base.GetValue( InspectSeriesModifierBase.SourceModeProperty );
             }
             set
             {
@@ -58,20 +54,20 @@ namespace Ecng.Xaml.Charting.ChartModifiers
         static InspectSeriesModifierBase()
         {
             InspectSeriesModifierBase.UseInterpolationProperty = DependencyProperty.Register( "UseInterpolation", typeof( bool ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( false ) );
-            InspectSeriesModifierBase.SourceModeProperty = DependencyProperty.Register( "SourceMode", typeof( Ecng.Xaml.Charting.ChartModifiers.SourceMode ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( ( object ) Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries ) );
+            InspectSeriesModifierBase.SourceModeProperty = DependencyProperty.Register( "SourceMode", typeof( Ecng.Xaml.Charting.SourceMode ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( ( object ) Ecng.Xaml.Charting.SourceMode.AllVisibleSeries ) );
             InspectSeriesModifierBase.SeriesDataProperty = DependencyProperty.Register( "SeriesData", typeof( ChartDataObject ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( null ) );
         }
 
         protected InspectSeriesModifierBase()
         {
-            base.SetCurrentValue( InspectSeriesModifierBase.SourceModeProperty, Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries );
-            base.SetCurrentValue( ChartModifierBase.ExecuteOnProperty, Ecng.Xaml.Charting.ChartModifiers.ExecuteOn.MouseMove );
+            base.SetCurrentValue( InspectSeriesModifierBase.SourceModeProperty, Ecng.Xaml.Charting.SourceMode.AllVisibleSeries );
+            base.SetCurrentValue( ChartModifierBase.ExecuteOnProperty, Ecng.Xaml.Charting.ExecuteOn.MouseMove );
         }
 
         private bool CheckSeriesMode( IRenderableSeries series )
         {
 
-            if ( this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllSeries || series.IsVisible && this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries || series.IsSelected && this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.SelectedSeries )
+            if ( this.SourceMode == Ecng.Xaml.Charting.SourceMode.AllSeries || series.IsVisible && this.SourceMode == Ecng.Xaml.Charting.SourceMode.AllVisibleSeries || series.IsSelected && this.SourceMode == Ecng.Xaml.Charting.SourceMode.SelectedSeries )
             {
                 return true;
             }
@@ -79,7 +75,7 @@ namespace Ecng.Xaml.Charting.ChartModifiers
             {
                 return false;
             }
-            return this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.UnselectedSeries;
+            return this.SourceMode == Ecng.Xaml.Charting.SourceMode.UnselectedSeries;
         }
 
         protected abstract void ClearAll();

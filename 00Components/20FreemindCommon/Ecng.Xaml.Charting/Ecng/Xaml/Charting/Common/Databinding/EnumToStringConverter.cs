@@ -10,7 +10,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Windows.Data;
 
-namespace Ecng.Xaml.Charting.Common.Databinding
+namespace Ecng.Xaml.Charting
 {
     public class EnumToStringConverter : IValueConverter
     {

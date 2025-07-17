@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Common
+namespace Ecng.Xaml.Charting
 {
     internal class SmartDisposable<T> : IDisposable where T : IDisposable
     {

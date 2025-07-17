@@ -7,7 +7,7 @@
 using System;
 using System.Xml.Linq;
 
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class XElementExtensions
     {

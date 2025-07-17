@@ -6,7 +6,7 @@
 
 using System.Windows;
 
-namespace Ecng.Xaml.Charting.StrategyManager
+namespace Ecng.Xaml.Charting
 {
     internal abstract class TransformationStrategyBase : ITransformationStrategy
     {

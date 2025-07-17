@@ -10,14 +10,6 @@ using System.Windows.Media;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using Ecng.Xaml.Charting.ChartModifiers;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 namespace Ecng.Xaml.Charting
 {
     internal class RenderSeriesProxy : IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable

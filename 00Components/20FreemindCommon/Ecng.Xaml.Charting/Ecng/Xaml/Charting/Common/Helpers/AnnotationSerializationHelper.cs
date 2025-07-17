@@ -7,11 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers.XmlSerialization;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal sealed class AnnotationSerializationHelper : SerializationHelper<IAnnotation>
     {

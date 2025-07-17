@@ -4,14 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Ecng.Xaml.Charting;
-using Ecng.Xaml.Charting.Common;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Numerics.PointResamplers;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 public class XyyDataSeries<TX, TY> : DataSeries<TX, TY>, IXyyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyyDataSeries where TX : IComparable where TY : IComparable
 {
     private ISeriesColumn<TY> _y1Column = new SeriesColumn<TY>();

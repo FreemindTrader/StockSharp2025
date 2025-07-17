@@ -6,7 +6,7 @@
 
 using System.Windows;
 
-namespace Ecng.Xaml.Charting.Common
+namespace Ecng.Xaml.Charting
 {
     public class Device : FrameworkElement
     {

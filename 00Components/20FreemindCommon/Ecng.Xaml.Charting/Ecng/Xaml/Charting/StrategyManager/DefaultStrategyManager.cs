@@ -6,10 +6,7 @@
 
 using System;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Messaging;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.StrategyManager
+namespace Ecng.Xaml.Charting
 {
     internal class DefaultStrategyManager : IStrategyManager
     {

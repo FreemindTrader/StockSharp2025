@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Visuals.Axes.DateTimeAxis
+// Type: Ecng.Xaml.Charting.DateTimeAxis
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
@@ -8,14 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Licensing;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting
 {
     [UltrachartLicenseProvider( typeof( AxisUltrachartLicenseProvider ) )]
     public class DateTimeAxis : TimeSpanAxisBase

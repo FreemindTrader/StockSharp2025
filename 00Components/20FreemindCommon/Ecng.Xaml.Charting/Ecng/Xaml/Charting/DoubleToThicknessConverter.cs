@@ -8,8 +8,6 @@ using System;
 using System.Globalization;
 using System.Windows;
 using System.Windows.Data;
-using Ecng.Xaml.Charting.Common.Extensions;
-
 namespace Ecng.Xaml.Charting
 {
     public class DoubleToThicknessConverter : IValueConverter

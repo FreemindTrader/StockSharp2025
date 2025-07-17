@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     [Obsolete( "UnsortedXyDataSeries is obsolete. Please use the XyDataseries which now correctly detects if your data is sorted or unsorted", true )]
     public class UnsortedXyDataSeries<TX, TY> : XyDataSeries<TX, TY> where TX : IComparable where TY : IComparable

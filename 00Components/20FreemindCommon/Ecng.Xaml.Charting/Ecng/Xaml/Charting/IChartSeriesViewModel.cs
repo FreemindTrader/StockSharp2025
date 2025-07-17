@@ -5,9 +5,6 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.ComponentModel;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 namespace Ecng.Xaml.Charting
 {
     public interface IChartSeriesViewModel : INotifyPropertyChanged

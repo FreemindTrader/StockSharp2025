@@ -2,9 +2,6 @@
 using System;
 using System.ComponentModel;
 using Ecng.Xaml.Charting;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Utility;
-
 public class IndexRange : Range<int>
 {
     private double _dMin;

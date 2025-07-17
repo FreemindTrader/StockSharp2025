@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     public class UserDefinedDistributionCalculator<TX> : BaseDataDistributionCalculator<TX> where TX : IComparable
     {

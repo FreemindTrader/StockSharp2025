@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     public class PointSeriesEnumerator : IEnumerator<IPoint>, IDisposable, IEnumerator, IEnumerator<Point2D>
     {

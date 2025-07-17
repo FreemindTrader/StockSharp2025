@@ -9,10 +9,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering.HighQualityRasterizer
+namespace Ecng.Xaml.Charting
 {
     internal class HqTextureBrush : IBrush2D, IPathColor, IDisposable
     {

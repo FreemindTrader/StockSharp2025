@@ -8,10 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
 namespace Ecng.Xaml.Charting
 {
     public class HorizontalGroupHelper

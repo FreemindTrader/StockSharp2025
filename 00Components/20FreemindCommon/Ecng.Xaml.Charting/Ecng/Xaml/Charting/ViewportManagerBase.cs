@@ -7,11 +7,6 @@
 using System;
 using System.Windows;
 using System.Windows.Threading;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
 namespace Ecng.Xaml.Charting
 {
     public abstract class ViewportManagerBase : IViewportManager, IUltrachartController, ISuspendable, IInvalidatableElement

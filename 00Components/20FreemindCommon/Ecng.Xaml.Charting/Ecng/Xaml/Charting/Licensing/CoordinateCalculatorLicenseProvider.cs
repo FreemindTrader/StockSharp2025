@@ -6,10 +6,9 @@
 
 using System;
 using System.Reflection;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Licensing
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = false, Feature = "encryptmethod;encryptstrings;encryptconstants", StripAfterObfuscation = true )]
     internal class CoordinateCalculatorLicenseProvider : Credentials, IUltrachartLicenseProvider

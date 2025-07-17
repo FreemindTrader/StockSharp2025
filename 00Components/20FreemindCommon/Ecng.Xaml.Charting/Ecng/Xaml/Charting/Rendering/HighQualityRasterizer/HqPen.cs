@@ -6,9 +6,7 @@
 
 using System;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering.HighQualityRasterizer
+namespace Ecng.Xaml.Charting
 {
     internal class HqPen : IPen2D, IPathColor, IDisposable, IDashSplittingContext
     {

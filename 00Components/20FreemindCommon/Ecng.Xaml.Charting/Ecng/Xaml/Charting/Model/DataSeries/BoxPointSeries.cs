@@ -4,7 +4,7 @@
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     public class BoxPointSeries : GenericPointSeriesBase<BoxSeriesPoint>
     {

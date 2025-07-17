@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals.Axes;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 namespace Ecng.Xaml.Charting
 {
     public class SeriesInfo : BindableObject, ICloneable
@@ -19,7 +15,7 @@ namespace Ecng.Xaml.Charting
 
         private Color _seriesColor;
 
-        private Ecng.Xaml.Charting.Model.DataSeries.DataSeriesType _dataSeriesType;
+        private Ecng.Xaml.Charting.DataSeriesType _dataSeriesType;
 
         private double _yValueDouble;
 
@@ -41,7 +37,7 @@ namespace Ecng.Xaml.Charting
             }
         }
 
-        public Ecng.Xaml.Charting.Model.DataSeries.DataSeriesType DataSeriesType
+        public Ecng.Xaml.Charting.DataSeriesType DataSeriesType
         {
             get
             {
@@ -49,7 +45,7 @@ namespace Ecng.Xaml.Charting
             }
             set
             {
-                SetField<Ecng.Xaml.Charting.Model.DataSeries.DataSeriesType>( ref _dataSeriesType, value, "DataSeriesType" );
+                SetField<Ecng.Xaml.Charting.DataSeriesType>( ref _dataSeriesType, value, "DataSeriesType" );
             }
         }
 

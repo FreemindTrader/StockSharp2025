@@ -6,12 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.Numerics.CoordinateProviders;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Numerics.TickCoordinateProviders
+namespace Ecng.Xaml.Charting
 {
     public class DefaultTickCoordinatesProvider : ProviderBase, ITickCoordinatesProvider
     {

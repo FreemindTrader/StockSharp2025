@@ -2,7 +2,7 @@
 using System.Reflection;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Licensing
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( Feature = "encryptmethod;encryptstrings;encryptconstants", Exclude = false, ApplyToMembers = true, StripAfterObfuscation = true )]
     internal class UltraTradeChartLicenseProvider : Credentials, IUltrachartLicenseProvider

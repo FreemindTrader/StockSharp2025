@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Themes;
-using Ecng.Xaml.Charting.Visuals;
-
 namespace Ecng.Xaml.Charting
 {
     public static class ThemeManager

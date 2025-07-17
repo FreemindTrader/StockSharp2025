@@ -6,9 +6,7 @@
 
 using System;
 using System.Collections;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal class LinearRegression
     {

@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Utility
+namespace Ecng.Xaml.Charting
 {
     public class GuardConstraint
     {

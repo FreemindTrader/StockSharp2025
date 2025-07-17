@@ -7,10 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public interface IRenderSurface2D : IRenderSurface, IDisposable, IHitTestable, IInvalidatableElement
     {

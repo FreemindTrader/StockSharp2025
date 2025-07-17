@@ -6,7 +6,7 @@
 
 using System.Windows;
 
-namespace Ecng.Xaml.Charting.Common.Messaging
+namespace Ecng.Xaml.Charting
 {
     public class RenderSurfaceResizedMessage : LoggedMessageBase
     {

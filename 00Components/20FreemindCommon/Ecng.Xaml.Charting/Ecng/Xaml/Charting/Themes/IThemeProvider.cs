@@ -7,7 +7,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public interface IThemeProvider
     {

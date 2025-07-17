@@ -7,10 +7,7 @@
 using System.Collections;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.AttachedProperties;
-using Ecng.Xaml.Charting.Common.Helpers;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class ThemeColorProvider : BindableObject, IThemeProvider
     {

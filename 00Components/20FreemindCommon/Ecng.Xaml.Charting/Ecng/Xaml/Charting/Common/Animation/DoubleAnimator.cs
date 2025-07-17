@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 using System.Windows.Media.Animation;
 
-namespace Ecng.Xaml.Charting.Common.Animation
+namespace Ecng.Xaml.Charting
 {
     internal class DoubleAnimator
     {

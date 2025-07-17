@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Ecng.Xaml.Charting.Threading
+namespace Ecng.Xaml.Charting
 {
     internal class ImmediateScheduler : TaskScheduler
     {

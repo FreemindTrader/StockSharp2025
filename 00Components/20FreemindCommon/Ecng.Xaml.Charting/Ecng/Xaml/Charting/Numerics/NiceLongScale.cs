@@ -5,9 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal class NiceLongScale
     {

@@ -5,9 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Helpers;
-
-namespace Ecng.Xaml.Charting.StrategyManager
+namespace Ecng.Xaml.Charting
 {
     internal class PolarTransformationStrategy : TransformationStrategyBase
     {

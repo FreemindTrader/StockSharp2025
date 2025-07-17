@@ -8,12 +8,7 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Data;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Common.Databinding
+namespace Ecng.Xaml.Charting
 {
     internal class CategoryIndexToDataValueConverter : IValueConverter
     {

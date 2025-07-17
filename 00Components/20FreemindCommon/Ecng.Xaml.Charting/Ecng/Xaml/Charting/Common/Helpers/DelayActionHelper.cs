@@ -7,7 +7,7 @@
 using System;
 using System.Windows.Threading;
 
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal class DelayActionHelper
     {

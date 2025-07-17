@@ -1,8 +1,5 @@
 ﻿using System;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting
 {
     public class TimeSpanTickProvider : TimeSpanTickProviderBase
     {

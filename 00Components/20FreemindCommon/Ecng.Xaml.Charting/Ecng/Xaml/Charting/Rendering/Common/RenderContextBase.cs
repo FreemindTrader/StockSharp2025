@@ -11,10 +11,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public abstract class RenderContextBase : IRenderContext2D, IDisposable
     {

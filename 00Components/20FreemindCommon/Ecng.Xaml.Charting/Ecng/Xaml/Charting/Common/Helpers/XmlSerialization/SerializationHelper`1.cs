@@ -9,9 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml;
 using System.Xml.Serialization;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Common.Helpers.XmlSerialization
+namespace Ecng.Xaml.Charting
 {
     internal abstract class SerializationHelper<T> where T : IXmlSerializable
     {

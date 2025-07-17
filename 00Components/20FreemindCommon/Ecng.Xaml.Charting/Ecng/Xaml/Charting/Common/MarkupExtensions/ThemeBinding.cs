@@ -10,9 +10,7 @@ using System.Reflection;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
-using Ecng.Xaml.Charting.Themes;
-
-namespace Ecng.Xaml.Charting.Common.MarkupExtensions
+namespace Ecng.Xaml.Charting
 {
     public class ThemeBinding : MarkupExtension
     {

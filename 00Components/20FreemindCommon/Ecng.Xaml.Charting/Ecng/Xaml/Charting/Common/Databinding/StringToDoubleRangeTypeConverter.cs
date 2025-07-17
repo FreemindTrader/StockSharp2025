@@ -8,7 +8,7 @@ using System;
 using System.ComponentModel;
 using System.Globalization;
 
-namespace Ecng.Xaml.Charting.Common.Databinding
+namespace Ecng.Xaml.Charting
 {
     public class StringToDoubleRangeTypeConverter : TypeConverter
     {

@@ -6,7 +6,7 @@
 
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     internal interface I2DArraySegment : IPoint
     {

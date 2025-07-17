@@ -5,9 +5,6 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Utility;
-
 namespace Ecng.Xaml.Charting
 {
     public class TimeSpanRange : Range<TimeSpan>

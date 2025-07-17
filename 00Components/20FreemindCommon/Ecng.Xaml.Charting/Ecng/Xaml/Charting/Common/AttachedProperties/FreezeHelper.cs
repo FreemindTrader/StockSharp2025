@@ -6,7 +6,7 @@
 
 using System.Windows;
 
-namespace Ecng.Xaml.Charting.Common.AttachedProperties
+namespace Ecng.Xaml.Charting
 {
     internal class FreezeHelper
     {

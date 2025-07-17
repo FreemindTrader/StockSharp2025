@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ecng.Xaml.Charting.Numerics.GenericMath
+namespace Ecng.Xaml.Charting
 {
     internal static class GenericMathFactory
     {

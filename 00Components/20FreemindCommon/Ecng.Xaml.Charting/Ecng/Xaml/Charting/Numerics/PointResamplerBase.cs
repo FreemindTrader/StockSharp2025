@@ -8,11 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal abstract class PointResamplerBase : IPointResampler
     {

@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Numerics.GenericMath
+namespace Ecng.Xaml.Charting
 {
     internal sealed class SbyteMath : IMath<sbyte>
     {

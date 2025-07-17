@@ -5,9 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Windows.Input;
-using Ecng.Xaml.Charting.ChartModifiers;
-
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class MouseExtensions
     {

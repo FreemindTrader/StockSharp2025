@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     public abstract class GenericPointSeriesBase<TY> : IGenericPointSeries<TY>, IPointSeries where TY : IComparable
     {

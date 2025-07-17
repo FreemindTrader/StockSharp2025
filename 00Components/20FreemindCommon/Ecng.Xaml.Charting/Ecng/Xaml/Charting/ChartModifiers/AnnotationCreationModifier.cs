@@ -1,16 +1,12 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.ChartModifiers.AnnotationCreationModifier
+// Type: Ecng.Xaml.Charting.AnnotationCreationModifier
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-
-namespace Ecng.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting
 {
     public class AnnotationCreationModifier : ChartModifierBase
     {

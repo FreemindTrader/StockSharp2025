@@ -8,11 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class TickLabelAxisCanvas : AxisCanvas
     {

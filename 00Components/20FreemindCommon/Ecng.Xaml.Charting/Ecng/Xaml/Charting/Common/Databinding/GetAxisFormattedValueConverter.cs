@@ -7,10 +7,7 @@
 using System;
 using System.Globalization;
 using System.Windows.Data;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Common.Databinding
+namespace Ecng.Xaml.Charting
 {
     public class GetAxisFormattedValueConverter : IValueConverter
     {

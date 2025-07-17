@@ -6,9 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class RangeExtensions
     {

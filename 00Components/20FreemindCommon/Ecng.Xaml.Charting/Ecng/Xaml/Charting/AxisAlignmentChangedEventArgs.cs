@@ -5,8 +5,6 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
 namespace Ecng.Xaml.Charting
 {
     public class AxisAlignmentChangedEventArgs : EventArgs

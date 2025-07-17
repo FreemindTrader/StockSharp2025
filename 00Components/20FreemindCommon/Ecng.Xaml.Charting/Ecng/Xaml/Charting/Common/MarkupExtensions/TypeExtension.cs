@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 using System.Windows.Markup;
 
-namespace Ecng.Xaml.Charting.Common.MarkupExtensions
+namespace Ecng.Xaml.Charting
 {
     internal class TypeExtension : MarkupExtension
     {

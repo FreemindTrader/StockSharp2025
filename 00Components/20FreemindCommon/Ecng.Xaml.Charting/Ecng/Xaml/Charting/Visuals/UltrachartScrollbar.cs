@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Visuals.UltrachartScrollbar
+// Type: Ecng.Xaml.Charting.UltrachartScrollbar
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
@@ -14,12 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Visuals
+namespace Ecng.Xaml.Charting
 {
     [TemplatePart( Name = "PART_NonSelectedArea", Type = typeof( Path ) )]
     [TemplatePart( Name = "PART_Border", Type = typeof( Border ) )]

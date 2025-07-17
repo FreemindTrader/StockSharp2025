@@ -7,7 +7,7 @@
 using System;
 using System.Reflection;
 
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal static class InterfaceHelpers
     {

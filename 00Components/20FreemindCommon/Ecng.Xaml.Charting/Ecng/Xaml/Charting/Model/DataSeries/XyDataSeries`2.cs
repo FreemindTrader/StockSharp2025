@@ -8,15 +8,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting.Common;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Numerics.PointResamplers;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
-    public class XyDataSeries<TX, TY> : Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>, IXyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyDataSeries where TX : IComparable where TY : IComparable
+    public class XyDataSeries<TX, TY> : Ecng.Xaml.Charting.DataSeries<TX, TY>, IXyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyDataSeries where TX : IComparable where TY : IComparable
     {
         private readonly DataSeriesAppendBuffer<ValueTuple<TX, TY>> _appendBuffer;
 
@@ -197,16 +191,16 @@ namespace Ecng.Xaml.Charting.Model.DataSeries
         public override TY GetYMinAt( int index, TY existingYMin )
         {
             TY yvalue = YValues[index];
-            if ( !Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
-                return Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.Min( existingYMin, yvalue );
+            if ( !Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
+                return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( existingYMin, yvalue );
             return existingYMin;
         }
 
         public override TY GetYMaxAt( int index, TY existingYMax )
         {
             TY yvalue = YValues[index];
-            if ( !Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
-                return Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.Max( existingYMax, yvalue );
+            if ( !Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( yvalue ) )
+                return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( existingYMax, yvalue );
             return existingYMax;
         }
 

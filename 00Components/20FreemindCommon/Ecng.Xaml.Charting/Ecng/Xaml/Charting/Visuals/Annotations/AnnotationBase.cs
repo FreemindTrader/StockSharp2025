@@ -12,17 +12,7 @@ using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using Ecng.Xaml.Charting.ChartModifiers;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.StrategyManager;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Utility.Mouse;
-using Ecng.Xaml.Charting.Visuals.Axes;
-using Ecng.Xaml.Charting.Visuals.Events;
-
-namespace Ecng.Xaml.Charting.Visuals.Annotations
+namespace Ecng.Xaml.Charting
 {
     public abstract class AnnotationBase : ApiElementBase, IAnnotation, IHitTestable, IPublishMouseEvents, IXmlSerializable, ISuspendable
     {

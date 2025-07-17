@@ -6,9 +6,7 @@
 
 using System;
 using System.Windows;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     public interface IRenderSurface : IDisposable, IHitTestable, IInvalidatableElement
     {

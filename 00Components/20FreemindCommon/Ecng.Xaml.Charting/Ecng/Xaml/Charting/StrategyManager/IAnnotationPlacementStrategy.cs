@@ -5,9 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Windows;
-using Ecng.Xaml.Charting.Visuals.Annotations;
-
-namespace Ecng.Xaml.Charting.StrategyManager
+namespace Ecng.Xaml.Charting
 {
     public interface IAnnotationPlacementStrategy
     {

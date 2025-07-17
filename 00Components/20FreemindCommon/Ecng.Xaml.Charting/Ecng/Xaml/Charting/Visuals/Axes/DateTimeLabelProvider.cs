@@ -1,7 +1,5 @@
 ﻿using System;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting
 {
     public class DateTimeLabelProvider : LabelProviderBase
     {

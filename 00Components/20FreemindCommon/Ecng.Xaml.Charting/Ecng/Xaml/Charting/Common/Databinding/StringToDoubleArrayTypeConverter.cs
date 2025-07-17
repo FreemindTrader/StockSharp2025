@@ -10,7 +10,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 
-namespace Ecng.Xaml.Charting.Common.Databinding
+namespace Ecng.Xaml.Charting
 {
     public class StringToDoubleArrayTypeConverter : TypeConverter
     {

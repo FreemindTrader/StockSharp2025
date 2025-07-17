@@ -9,15 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-using Ecng.Xaml.Charting.Numerics.PointResamplers;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries.SegmentDataSeries
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = true )]
     public class TimeframeSegmentDataSeries : BindableObject, IDataSeries<DateTime, double>, IDataSeries, ISuspendable

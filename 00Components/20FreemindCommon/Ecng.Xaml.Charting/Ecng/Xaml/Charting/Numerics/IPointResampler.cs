@@ -5,9 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Collections;
-using Ecng.Xaml.Charting.Model.DataSeries;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     public interface IPointResampler
     {

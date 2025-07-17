@@ -7,9 +7,7 @@
 using System;
 using System.Globalization;
 using System.Windows.Data;
-using Ecng.Xaml.Charting.ChartModifiers;
-
-namespace Ecng.Xaml.Charting.Common.Databinding
+namespace Ecng.Xaml.Charting
 {
     public class LegendPlacementToGridPositionConverter : IValueConverter
     {

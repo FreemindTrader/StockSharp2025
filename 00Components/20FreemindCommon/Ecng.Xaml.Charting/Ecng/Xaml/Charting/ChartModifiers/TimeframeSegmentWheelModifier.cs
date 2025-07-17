@@ -1,16 +1,12 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.ChartModifiers.TimeframeSegmentWheelModifier
+// Type: Ecng.Xaml.Charting.TimeframeSegmentWheelModifier
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Windows;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting
 {
     public class TimeframeSegmentWheelModifier : RelativeZoomModifierBase
     {

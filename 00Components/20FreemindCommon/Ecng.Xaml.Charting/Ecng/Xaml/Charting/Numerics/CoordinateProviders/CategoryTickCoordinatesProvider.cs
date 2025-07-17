@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
-
-namespace Ecng.Xaml.Charting.Numerics.CoordinateProviders
+namespace Ecng.Xaml.Charting
 {
     public class CategoryTickCoordinatesProvider : DefaultTickCoordinatesProvider
     {

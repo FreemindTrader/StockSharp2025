@@ -2,16 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting.Common;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Numerics.PointResamplers;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
-    public class OhlcDataSeries<TX, TY> : Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>, IOhlcDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IOhlcDataSeries where TX : IComparable where TY : IComparable
+    public class OhlcDataSeries<TX, TY> : Ecng.Xaml.Charting.DataSeries<TX, TY>, IOhlcDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IOhlcDataSeries where TX : IComparable where TY : IComparable
     {
         private ISeriesColumn<TY> _openColumn = (ISeriesColumn<TY>) new SeriesColumn<TY>();
         private ISeriesColumn<TY> _highColumn = (ISeriesColumn<TY>) new SeriesColumn<TY>();
@@ -350,17 +343,17 @@ namespace Ecng.Xaml.Charting.Model.DataSeries
         public override TY GetYMaxAt( int index, TY existingYMax )
         {
             TY highValue = HighValues[index];
-            if ( Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.IsNaN( highValue ) )
+            if ( Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( highValue ) )
                 return existingYMax;
-            return Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.Max( existingYMax, highValue );
+            return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Max( existingYMax, highValue );
         }
 
         public override TY GetYMinAt( int index, TY existingYMin )
         {
             TY lowValue = LowValues[index];
-            if ( Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.IsNaN( lowValue ) )
+            if ( Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.IsNaN( lowValue ) )
                 return existingYMin;
-            return Ecng.Xaml.Charting.Model.DataSeries.DataSeries<TX, TY>.YMath.Min( existingYMin, lowValue );
+            return Ecng.Xaml.Charting.DataSeries<TX, TY>.YMath.Min( existingYMin, lowValue );
         }
 
         private void FlushAppendBuffer( IList<ValueTuple<TX, TY, TY, TY, TY>> bufferedValues )

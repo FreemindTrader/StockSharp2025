@@ -7,11 +7,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-
-namespace Ecng.Xaml.Charting.Numerics.PointResamplers
+namespace Ecng.Xaml.Charting
 {
     public class PointResamplerFactory : IPointResamplerFactory
     {

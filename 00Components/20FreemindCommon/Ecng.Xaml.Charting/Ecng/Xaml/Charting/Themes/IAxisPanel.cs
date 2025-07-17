@@ -6,9 +6,7 @@
 
 using System;
 using System.ComponentModel;
-using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public interface IAxisPanel : INotifyPropertyChanged
     {

@@ -6,9 +6,7 @@
 
 using System;
 using System.Windows.Media.Imaging;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer
+namespace Ecng.Xaml.Charting
 {
     internal class HsSprite2D : ISprite2D, IDisposable
     {

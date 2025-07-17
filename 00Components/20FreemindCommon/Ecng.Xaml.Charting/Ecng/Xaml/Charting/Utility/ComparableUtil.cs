@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 
-namespace Ecng.Xaml.Charting.Utility
+namespace Ecng.Xaml.Charting
 {
     internal class ComparableUtil
     {

@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Visuals.Axes.PolarYAxis
+// Type: Ecng.Xaml.Charting.PolarYAxis
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
@@ -8,10 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Rendering.Common;
-using Ecng.Xaml.Charting.StrategyManager;
-
-namespace Ecng.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting
 {
     public class PolarYAxis : NumericAxis
     {

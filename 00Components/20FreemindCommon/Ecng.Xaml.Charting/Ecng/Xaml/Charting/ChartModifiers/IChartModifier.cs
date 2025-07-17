@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.ChartModifiers.IChartModifier
+// Type: Ecng.Xaml.Charting.IChartModifier
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
@@ -8,11 +8,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Windows;
-using Ecng.Xaml.Charting.Utility.Mouse;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting
 {
     public interface IChartModifier : IChartModifierBase, IReceiveMouseEvents, INotifyPropertyChanged
     {

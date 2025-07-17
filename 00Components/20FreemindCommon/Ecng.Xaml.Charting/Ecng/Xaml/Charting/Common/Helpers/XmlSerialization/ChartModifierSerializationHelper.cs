@@ -6,9 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.ChartModifiers;
-
-namespace Ecng.Xaml.Charting.Common.Helpers.XmlSerialization
+namespace Ecng.Xaml.Charting
 {
     internal class ChartModifierSerializationHelper : SerializationHelper<ChartModifierBase>
     {

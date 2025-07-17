@@ -6,7 +6,7 @@
 
 using System.Threading.Tasks;
 
-namespace Ecng.Xaml.Charting.Threading
+namespace Ecng.Xaml.Charting
 {
     internal static class TaskEx
     {

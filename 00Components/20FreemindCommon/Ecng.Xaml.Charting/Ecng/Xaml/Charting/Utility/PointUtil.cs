@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace Ecng.Xaml.Charting.Utility
+namespace Ecng.Xaml.Charting
 {
     public static class PointUtil
     {

@@ -14,11 +14,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Licensing;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
 using StockSharp.Xaml.Licensing.Core;
 
 namespace Ecng.Xaml.Charting

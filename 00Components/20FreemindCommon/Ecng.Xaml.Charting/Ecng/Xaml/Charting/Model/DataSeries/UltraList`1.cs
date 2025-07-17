@@ -9,9 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security;
 using System.Threading;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     internal class UltraList<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
     {

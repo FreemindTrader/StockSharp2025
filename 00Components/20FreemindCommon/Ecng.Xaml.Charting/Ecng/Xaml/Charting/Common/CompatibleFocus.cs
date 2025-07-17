@@ -7,7 +7,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Ecng.Xaml.Charting.Common
+namespace Ecng.Xaml.Charting
 {
     public class CompatibleFocus
     {

@@ -8,10 +8,7 @@ using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer
+namespace Ecng.Xaml.Charting
 {
     internal class HsPen : IPen2D, IPathColor, IDisposable, IDashSplittingContext
     {

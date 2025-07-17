@@ -4,15 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Ecng.Xaml.Charting;
-using Ecng.Xaml.Charting.Common;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-using Ecng.Xaml.Charting.Numerics.PointResamplers;
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 public class XyzDataSeries<TX, TY, TZ> : DataSeries<TX, TY>, IXyzDataSeries<TX, TY, TZ>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyzDataSeries where TX : IComparable where TY : IComparable where TZ : IComparable
 {
     public static readonly IMath<TZ> ZMath = GenericMathFactory.New<TZ>();

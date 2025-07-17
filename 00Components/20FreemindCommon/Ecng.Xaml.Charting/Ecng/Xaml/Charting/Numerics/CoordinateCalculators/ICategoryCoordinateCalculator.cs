@@ -5,9 +5,7 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Numerics.CoordinateCalculators
+namespace Ecng.Xaml.Charting
 {
     public interface ICategoryCoordinateCalculator : ICoordinateCalculator<double>
     {

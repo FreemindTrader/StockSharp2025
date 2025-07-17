@@ -6,9 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries
+namespace Ecng.Xaml.Charting
 {
     public interface IOhlcDataSeries<TX, TY> : IDataSeries<TX, TY>, IDataSeries, ISuspendable, IOhlcDataSeries where TX : IComparable where TY : IComparable
     {

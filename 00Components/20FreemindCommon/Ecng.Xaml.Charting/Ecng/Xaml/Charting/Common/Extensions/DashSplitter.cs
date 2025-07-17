@@ -4,9 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Rendering.Common;
-
+using Ecng.Xaml.Charting;
 internal sealed class DashSplitter : IEnumerator<LineD>, IDisposable, IEnumerator
 {
     private sealed class LengthSplitter : IEnumerator<DashLength>, IDisposable, IEnumerator

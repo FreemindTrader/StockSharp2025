@@ -1,17 +1,14 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: Ecng.Xaml.Charting.Visuals.Annotations.BoxAnnotation
+//// Type: Ecng.Xaml.Charting.Annotations.BoxAnnotation
 //// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 //// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using Ecng.Xaml.Charting.StrategyManager;
-//using Ecng.Xaml.Charting.Utility;
-//using System.Windows;
+//using Ecng.Xaml.Charting;//using Ecng.Xaml.Charting;//using System.Windows;
 //using System.Windows.Controls;
 //using System.Windows.Input;
 
-//namespace Ecng.Xaml.Charting.Visuals.Annotations
-//{
+//namespace Ecng.Xaml.Charting//{
 //  public class BoxAnnotation : AnnotationBase
 //  {
 //    public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(nameof (CornerRadius), typeof (CornerRadius), typeof (BoxAnnotation), new PropertyMetadata((object) new CornerRadius()));
@@ -122,7 +119,7 @@
 
 
 // Decompiled with JetBrains decompiler
-// Type: Ecng.Xaml.Charting.Visuals.Annotations.BoxAnnotation
+// Type: Ecng.Xaml.Charting.Annotations.BoxAnnotation
 // Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
 // Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
@@ -130,11 +127,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.StrategyManager;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Visuals.Annotations
+namespace Ecng.Xaml.Charting
 {
     public class BoxAnnotation : AnnotationBase
     {

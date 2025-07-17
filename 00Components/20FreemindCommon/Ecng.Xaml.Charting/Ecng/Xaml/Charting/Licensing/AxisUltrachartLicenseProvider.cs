@@ -5,10 +5,9 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Reflection;
-using Ecng.Xaml.Charting.Visuals.Axes;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Licensing
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = false, Feature = "encryptmethod;encryptstrings;encryptconstants", StripAfterObfuscation = true )]
     internal sealed class AxisUltrachartLicenseProvider : Credentials, IUltrachartLicenseProvider

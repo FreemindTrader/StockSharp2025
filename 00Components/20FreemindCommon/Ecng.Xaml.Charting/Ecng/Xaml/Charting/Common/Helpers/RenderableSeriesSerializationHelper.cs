@@ -6,10 +6,7 @@
 
 using System;
 using System.Collections.Generic;
-using Ecng.Xaml.Charting.Common.Helpers.XmlSerialization;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting
 {
     internal sealed class RenderableSeriesSerializationHelper : SerializationHelper<IRenderableSeries>
     {

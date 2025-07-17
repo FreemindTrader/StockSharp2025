@@ -7,7 +7,7 @@
 using System.Reflection;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace Ecng.Xaml.Charting.Licensing
+namespace Ecng.Xaml.Charting
 {
     [Obfuscation( ApplyToMembers = true, Exclude = false, Feature = "encryptmethod;encryptstrings;encryptconstants", StripAfterObfuscation = true )]
     internal sealed class RenderSurfaceLicenseProvider : Credentials, IUltrachartLicenseProvider

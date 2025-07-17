@@ -4,9 +4,6 @@
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-using Ecng.Xaml.Charting.Visuals;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
 namespace Ecng.Xaml.Charting
 {
     public class DefaultViewportManager : ViewportManagerBase

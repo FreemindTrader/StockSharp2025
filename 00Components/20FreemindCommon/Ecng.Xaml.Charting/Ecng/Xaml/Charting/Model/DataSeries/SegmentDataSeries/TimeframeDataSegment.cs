@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Model.DataSeries.SegmentDataSeries
+namespace Ecng.Xaml.Charting
 {
     public class TimeframeDataSegment : IPoint
     {

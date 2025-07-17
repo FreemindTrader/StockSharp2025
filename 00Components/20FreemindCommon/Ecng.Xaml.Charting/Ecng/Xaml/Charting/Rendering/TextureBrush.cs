@@ -9,10 +9,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Rendering.Common;
-
-namespace Ecng.Xaml.Charting.Rendering
+namespace Ecng.Xaml.Charting
 {
     internal class TextureBrush : IBrush2D, IPathColor, IDisposable
     {

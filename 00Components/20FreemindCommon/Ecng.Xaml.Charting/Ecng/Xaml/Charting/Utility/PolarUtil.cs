@@ -7,7 +7,7 @@
 using System;
 using System.Windows;
 
-namespace Ecng.Xaml.Charting.Utility
+namespace Ecng.Xaml.Charting
 {
     internal static class PolarUtil
     {

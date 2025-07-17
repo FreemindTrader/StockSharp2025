@@ -5,9 +5,6 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Windows;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals;
-
 namespace Ecng.Xaml.Charting
 {
     internal class ChartGroup
@@ -38,7 +35,7 @@ namespace Ecng.Xaml.Charting
 
         internal void RestoreState()
         {
-            Ecng.Xaml.Charting.Visuals.UltrachartSurface ultrachartSurface = this.UltrachartSurface as Ecng.Xaml.Charting.Visuals.UltrachartSurface;
+            Ecng.Xaml.Charting.UltrachartSurface ultrachartSurface = this.UltrachartSurface as Ecng.Xaml.Charting.UltrachartSurface;
             if ( ultrachartSurface == null )
                 return;
             if ( ultrachartSurface.AxisAreaLeft != null )

@@ -7,10 +7,7 @@
 using System;
 using System.Windows.Media;
 using System.Windows.Threading;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Utility.Mouse;
-
-namespace Ecng.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting
 {
     internal class RenderTimer : IDisposable
     {

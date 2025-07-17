@@ -6,10 +6,7 @@
 
 using System;
 using System.Collections;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Utility;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal class PointResampler_Old : IPointResampler_Old
     {

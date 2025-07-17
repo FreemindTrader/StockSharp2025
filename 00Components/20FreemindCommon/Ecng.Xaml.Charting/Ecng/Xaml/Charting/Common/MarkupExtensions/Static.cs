@@ -14,7 +14,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Xaml;
 
-namespace Ecng.Xaml.Charting.Common.MarkupExtensions
+namespace Ecng.Xaml.Charting
 {
     public class Static : MarkupExtension
     {

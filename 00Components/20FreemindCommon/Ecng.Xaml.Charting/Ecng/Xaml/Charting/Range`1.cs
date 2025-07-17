@@ -6,10 +6,6 @@
 
 using System;
 using System.ComponentModel;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Numerics.GenericMath;
-using Ecng.Xaml.Charting.Utility;
-
 namespace Ecng.Xaml.Charting
 {
     public abstract class Range<T> : BindableObject, IRange<T>, IRange, ICloneable, INotifyPropertyChanged where T : IComparable

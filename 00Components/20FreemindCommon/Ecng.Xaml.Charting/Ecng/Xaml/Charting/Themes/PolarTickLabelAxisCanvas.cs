@@ -8,12 +8,7 @@ using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Common.Helpers;
-using Ecng.Xaml.Charting.Utility;
-using Ecng.Xaml.Charting.Visuals.Axes;
-
-namespace Ecng.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting
 {
     public class PolarTickLabelAxisCanvas : TickLabelAxisCanvas
     {

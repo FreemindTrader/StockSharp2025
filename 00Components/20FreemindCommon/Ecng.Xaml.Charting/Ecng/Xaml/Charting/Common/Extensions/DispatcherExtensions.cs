@@ -7,7 +7,7 @@
 using System;
 using System.Windows.Threading;
 
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class DispatcherExtensions
     {

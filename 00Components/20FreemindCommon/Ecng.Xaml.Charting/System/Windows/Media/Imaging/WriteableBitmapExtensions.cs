@@ -1,6 +1,5 @@
 ﻿//// System.Windows.Media.Imaging.WriteableBitmapExtensions
-//using Ecng.Xaml.Charting.Common.Extensions;
-//using System;
+//using Ecng.Xaml.Charting;//using System;
 //using System.Collections.Generic;
 //using System.IO;
 //using System.Reflection;
@@ -4003,8 +4002,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using Ecng.Xaml.Charting.Common.Extensions;
-
+using Ecng.Xaml.Charting;
 namespace System.Windows.Media.Imaging
 {
     internal static class WriteableBitmapExtensions

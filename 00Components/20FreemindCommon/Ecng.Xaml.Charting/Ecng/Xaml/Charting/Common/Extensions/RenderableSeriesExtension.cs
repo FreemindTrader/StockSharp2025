@@ -7,10 +7,7 @@
 using System.Linq;
 using System.Windows;
 using System.Windows.Media;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     internal static class RenderableSeriesExtension
     {

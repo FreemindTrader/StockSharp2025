@@ -5,8 +5,6 @@
 // Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
-using Ecng.Xaml.Charting.Rendering.Common;
-
 namespace Ecng.Xaml.Charting
 {
     public class UltrachartRenderedMessage : LoggedMessageBase

@@ -8,7 +8,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     public static class CanvasExtensions
     {

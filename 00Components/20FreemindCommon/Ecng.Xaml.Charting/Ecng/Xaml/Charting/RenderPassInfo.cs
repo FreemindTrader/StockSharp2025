@@ -6,11 +6,6 @@
 
 using System.Collections.Generic;
 using System.Windows;
-using Ecng.Xaml.Charting.Model.DataSeries;
-using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
-using Ecng.Xaml.Charting.StrategyManager;
-using Ecng.Xaml.Charting.Visuals.RenderableSeries;
-
 namespace Ecng.Xaml.Charting
 {
     public struct RenderPassInfo

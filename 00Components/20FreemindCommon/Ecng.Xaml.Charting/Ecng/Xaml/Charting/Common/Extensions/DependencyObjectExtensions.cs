@@ -7,7 +7,7 @@
 using System.Windows;
 using System.Windows.Media;
 
-namespace Ecng.Xaml.Charting.Common.Extensions
+namespace Ecng.Xaml.Charting
 {
     public static class DependencyObjectExtensions
     {

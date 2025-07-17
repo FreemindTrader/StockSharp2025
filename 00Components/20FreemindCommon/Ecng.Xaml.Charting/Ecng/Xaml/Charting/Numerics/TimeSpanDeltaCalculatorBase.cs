@@ -7,9 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ecng.Xaml.Charting.Common.Extensions;
-
-namespace Ecng.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting
 {
     internal abstract class TimeSpanDeltaCalculatorBase : IDateDeltaCalculator, IDeltaCalculator
     {

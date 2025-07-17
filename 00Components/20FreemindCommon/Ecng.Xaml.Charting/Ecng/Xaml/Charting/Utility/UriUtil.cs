@@ -6,10 +6,7 @@
 
 using System;
 using System.Reflection;
-using Ecng.Xaml.Charting.Common.Extensions;
-using Ecng.Xaml.Charting.Visuals;
-
-namespace Ecng.Xaml.Charting.Utility
+namespace Ecng.Xaml.Charting
 {
     internal static class UriUtil
     {
