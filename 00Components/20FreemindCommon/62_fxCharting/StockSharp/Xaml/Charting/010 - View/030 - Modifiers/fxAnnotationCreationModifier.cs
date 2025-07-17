@@ -10,6 +10,13 @@ using System.Windows;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
+
+/// <summary>
+/// This modifier is used to define the behaviour for the Annotation. At first, I was thinking about using 
+/// this ChartModifier to creat the fibonacci retracment and expansion.
+/// 
+/// Ultimately, I learnt that I have to use MyTradingAnnotationBase instead of this fxAnnotationCreationModifier
+/// </summary>
 public class fxAnnotationCreationModifier : ChartModifierBase
 {
     public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof(YAxisId), typeof(string), typeof(fxAnnotationCreationModifier), new PropertyMetadata((object) "DefaultAxisId"));
@@ -78,6 +85,12 @@ public class fxAnnotationCreationModifier : ChartModifierBase
         }
     }
 
+
+    /// <summary>
+    /// Called when the IsEnabled property changes on this SciChart.Charting.ChartModifiers.ChartModifierBase instance
+    /// 
+    /// This annotation is no longer Selectable or Editable.
+    /// </summary>
     protected override void OnIsEnabledChanged()
     {
         base.OnIsEnabledChanged();
@@ -98,6 +111,10 @@ public class fxAnnotationCreationModifier : ChartModifierBase
         AnnotationCreated?.Invoke( this, EventArgs.Empty );
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="mouseEventArgs"></param>
     public override void OnModifierMouseMove( ModifierMouseArgs mouseEventArgs )
     {
         if ( this._annotationType == ( Type ) null || this._annotation == null || !this._annotation.IsAttached || this._annotation.IsSelected )
@@ -112,29 +129,39 @@ public class fxAnnotationCreationModifier : ChartModifierBase
         return typeof( IAnchorPointAnnotation ).IsAssignableFrom( t ) || t.IsSubclassOf( typeof( LineAnnotationWithLabelsBase ) );
     }
 
-    public override void OnModifierMouseDown( ModifierMouseArgs _param1 )
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="mouseEvent"></param>
+    public override void OnModifierMouseDown( ModifierMouseArgs mouseEvent )
     {
-        base.OnModifierMouseDown( _param1 );
-        if ( this._annotationType == ( Type ) null || !this.MatchesExecuteOn( _param1.MouseButtons, this.ExecuteOn ) || !_param1.IsMaster || this._annotation != null && !this._annotation.IsSelected )
+        base.OnModifierMouseDown( mouseEvent );
+        if ( this._annotationType == ( Type ) null || !this.MatchesExecuteOn( mouseEvent.MouseButtons, this.ExecuteOn ) || !mouseEvent.IsMaster || this._annotation != null && !this._annotation.IsSelected )
             return;
-        _param1.Handled=( true );
+        mouseEvent.Handled=( true );
         if ( this._annotation != null && this._annotation.IsAttached )
             this._annotation.IsSelected = false;
-        this._pointRelativeToModifier = this.GetPointRelativeTo( _param1.MousePoint, ( IHitTestable ) this.ModifierSurface );
+        this._pointRelativeToModifier = this.GetPointRelativeTo( mouseEvent.MousePoint, ( IHitTestable ) this.ModifierSurface );
         if ( this.IsSubclassOfIsAssignableFrom( this._annotationType ) )
             return;
         this._annotation = ( AnnotationBaseEx ) this.CreateAnnotation( this._annotationType, this._annotationStyle );
         this._annotation.UpdatePosition( this._pointRelativeToModifier, this._pointRelativeToModifier );
     }
 
-    public override void OnModifierMouseUp( ModifierMouseArgs _param1 )
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="mouseEvent"></param>
+    public override void OnModifierMouseUp( ModifierMouseArgs mouseEvent )
     {
-        if ( this._annotationType == ( Type ) null || !this.MatchesExecuteOn( _param1.MouseButtons, this.ExecuteOn ) || !_param1.IsMaster )
+        if ( this._annotationType == ( Type ) null || !this.MatchesExecuteOn( mouseEvent.MouseButtons, this.ExecuteOn ) || !mouseEvent.IsMaster )
             return;
         if ( this.IsSubclassOfIsAssignableFrom( this._annotationType ) && this._annotation == null )
         {
             this._annotation = ( AnnotationBaseEx ) this.CreateAnnotation( this._annotationType, this._annotationStyle );
-            Point point = this.GetPointRelativeTo( _param1.MousePoint, ( IHitTestable ) this.ModifierSurface );
+            Point point = this.GetPointRelativeTo( mouseEvent.MousePoint, ( IHitTestable ) this.ModifierSurface );
             this._annotation.UpdatePosition( point, point );
         }
         if ( this._annotation == null )
@@ -148,15 +175,20 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
 
 
-
-    protected virtual IAnnotation CreateAnnotation( Type _param1, Style _param2 )
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="annotationType"></param>
+    /// <param name="annotationStyle"></param>
+    /// <returns></returns>
+    protected virtual IAnnotation CreateAnnotation( Type annotationType, Style annotationStyle )
     {
-        var instance = (AnnotationBaseEx) Activator.CreateInstance(_param1);
+        var instance = (AnnotationBaseEx) Activator.CreateInstance(annotationType);
         instance.YAxisId = this.YAxisId;
         instance.XAxisId = this.XAxisId;
-        if ( _param2 != null && _param2.TargetType == _param1 )
+        if ( annotationStyle != null && annotationStyle.TargetType == annotationType )
         {
-            Style style = new Style(_param1) { BasedOn = _param2 };
+            Style style = new Style(annotationType) { BasedOn = annotationStyle };
             instance.Style = style;
         }
         this.ParentSurface.Annotations.Add( ( IAnnotation ) instance );

@@ -36,12 +36,18 @@ using StockSharp.Xaml;
 using System.Windows.Media;
 using StockSharp.Xaml.Charting.Xaml;
 using DevExpress.Mvvm.Native;
-using StockSharp.Charting;
 using AnnotationCoordinateMode = SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode;
 using LabelPlacement = SciChart.Charting.Visuals.Annotations.LabelPlacement;
 
+
+
 namespace StockSharp.Xaml.Charting
 {
+    /// <summary>
+    /// Tony Fixed already:
+    /// 
+    /// 
+    /// </summary>
     public partial class ultrachartannotationmodifier : fxAnnotationCreationModifier
     {
         fxTradingAnnotationCreationModifier _tradingAPI;
