@@ -137,7 +137,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
     }
 
     /// <summary>
-    ///
+    /// When the user is holding the mouse button witout releasing, the dragging process will start, we will update the annotation to the new position.
     /// </summary>
     /// <param name="mouseEventArgs"></param>
     public override void OnModifierMouseMove(ModifierMouseArgs mouseEventArgs)
@@ -158,7 +158,8 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
 
     /// <summary>
-    ///
+    /// When the user first click the mouse on the annotation without releasing, this code detect if it is the correct button to 
+    /// click, if it is correct, we will start the dragging process.
     /// </summary>
     /// <param name="mouseEvent"></param>
     public override void OnModifierMouseDown(ModifierMouseArgs mouseEvent)
@@ -186,7 +187,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
 
     /// <summary>
-    ///
+    /// When the user finish clicking the mouse, we move the annotation to a new position and select it.
     /// </summary>
     /// <param name="mouseEvent"></param>
     public override void OnModifierMouseUp(ModifierMouseArgs mouseEvent)
