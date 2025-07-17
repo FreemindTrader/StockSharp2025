@@ -1,13 +1,13 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ActionCommand`1
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.ActionCommand`1
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Windows.Input;
 
-namespace StockSharp.Xaml.Charting
+namespace Ecng.Xaml.Charting
 {
     public class ActionCommand<T> : ICommand where T : class
     {

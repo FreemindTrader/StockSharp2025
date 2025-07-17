@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     public abstract class InspectSeriesModifierBase : ChartModifierBase
     {
@@ -31,11 +31,11 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             }
         }
 
-        public StockSharp.Xaml.Charting.ChartModifiers.SourceMode SourceMode
+        public Ecng.Xaml.Charting.ChartModifiers.SourceMode SourceMode
         {
             get
             {
-                return ( StockSharp.Xaml.Charting.ChartModifiers.SourceMode ) base.GetValue( InspectSeriesModifierBase.SourceModeProperty );
+                return ( Ecng.Xaml.Charting.ChartModifiers.SourceMode ) base.GetValue( InspectSeriesModifierBase.SourceModeProperty );
             }
             set
             {
@@ -58,20 +58,20 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
         static InspectSeriesModifierBase()
         {
             InspectSeriesModifierBase.UseInterpolationProperty = DependencyProperty.Register( "UseInterpolation", typeof( bool ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( false ) );
-            InspectSeriesModifierBase.SourceModeProperty = DependencyProperty.Register( "SourceMode", typeof( StockSharp.Xaml.Charting.ChartModifiers.SourceMode ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( ( object ) StockSharp.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries ) );
+            InspectSeriesModifierBase.SourceModeProperty = DependencyProperty.Register( "SourceMode", typeof( Ecng.Xaml.Charting.ChartModifiers.SourceMode ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( ( object ) Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries ) );
             InspectSeriesModifierBase.SeriesDataProperty = DependencyProperty.Register( "SeriesData", typeof( ChartDataObject ), typeof( InspectSeriesModifierBase ), new PropertyMetadata( null ) );
         }
 
         protected InspectSeriesModifierBase()
         {
-            base.SetCurrentValue( InspectSeriesModifierBase.SourceModeProperty, StockSharp.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries );
-            base.SetCurrentValue( ChartModifierBase.ExecuteOnProperty, StockSharp.Xaml.Charting.ChartModifiers.ExecuteOn.MouseMove );
+            base.SetCurrentValue( InspectSeriesModifierBase.SourceModeProperty, Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries );
+            base.SetCurrentValue( ChartModifierBase.ExecuteOnProperty, Ecng.Xaml.Charting.ChartModifiers.ExecuteOn.MouseMove );
         }
 
         private bool CheckSeriesMode( IRenderableSeries series )
         {
 
-            if ( this.SourceMode == StockSharp.Xaml.Charting.ChartModifiers.SourceMode.AllSeries || series.IsVisible && this.SourceMode == StockSharp.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries || series.IsSelected && this.SourceMode == StockSharp.Xaml.Charting.ChartModifiers.SourceMode.SelectedSeries )
+            if ( this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllSeries || series.IsVisible && this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.AllVisibleSeries || series.IsSelected && this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.SelectedSeries )
             {
                 return true;
             }
@@ -79,7 +79,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             {
                 return false;
             }
-            return this.SourceMode == StockSharp.Xaml.Charting.ChartModifiers.SourceMode.UnselectedSeries;
+            return this.SourceMode == Ecng.Xaml.Charting.ChartModifiers.SourceMode.UnselectedSeries;
         }
 
         protected abstract void ClearAll();

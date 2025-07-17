@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ChartModifiers.CursorModifier
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.ChartModifiers.CursorModifier
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
@@ -11,26 +11,26 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Shapes;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Visuals;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     public class CursorModifier : TooltipModifierBase
     {
         public static readonly DependencyProperty IncludeSeriesProperty = DependencyProperty.RegisterAttached("IncludeSeries", typeof (bool), typeof (CursorModifier), new PropertyMetadata((object) true));
         public static readonly DependencyProperty ShowTooltipProperty = DependencyProperty.Register(nameof (ShowTooltip), typeof (bool), typeof (CursorModifier), new PropertyMetadata((object) false, (PropertyChangedCallback) null));
-        private ObservableCollection<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> _axisInfo = new ObservableCollection<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
+        private ObservableCollection<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> _axisInfo = new ObservableCollection<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
         private System.Windows.Shapes.Line _lineX;
         private System.Windows.Shapes.Line _lineY;
         private Ellipse _cursorPoint;
         private TemplatableControl _cursorLabelCache;
-        private StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo _xAxisInfo;
-        private StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo _yAxisInfo;
+        private Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo _xAxisInfo;
+        private Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo _yAxisInfo;
         private const double CursorXyOffset = 6.0;
 
         public static bool GetIncludeSeries( DependencyObject obj )
@@ -43,7 +43,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             obj.SetValue( CursorModifier.IncludeSeriesProperty, ( object ) value );
         }
 
-        public ObservableCollection<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> AxisInfo
+        public ObservableCollection<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> AxisInfo
         {
             get
             {
@@ -56,7 +56,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             }
         }
 
-        public StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo XAxisInfo
+        public Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo XAxisInfo
         {
             get
             {
@@ -69,7 +69,7 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
             }
         }
 
-        public StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo YAxisInfo
+        public Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo YAxisInfo
         {
             get
             {
@@ -188,13 +188,13 @@ namespace StockSharp.Xaml.Charting.ChartModifiers
 
         protected virtual void GetAxesData( Point mousePoint )
         {
-            IEnumerable<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> axisInfos1 = this.YAxes.Select<IAxis, StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>((Func<IAxis, StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
-            this.YAxisInfo = axisInfos1.FirstOrDefault<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
-            IEnumerable<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> axisInfos2 = this.XAxes.Select<IAxis, StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>((Func<IAxis, StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
-            this.XAxisInfo = axisInfos2.FirstOrDefault<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
-            ObservableCollection<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> collection = new ObservableCollection<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
-            collection.AddRange<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>( axisInfos2 );
-            collection.AddRange<StockSharp.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>( axisInfos1 );
+            IEnumerable<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> axisInfos1 = this.YAxes.Select<IAxis, Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>((Func<IAxis, Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
+            this.YAxisInfo = axisInfos1.FirstOrDefault<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
+            IEnumerable<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> axisInfos2 = this.XAxes.Select<IAxis, Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>((Func<IAxis, Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>) (a => this.HitTestAxis(a, mousePoint)));
+            this.XAxisInfo = axisInfos2.FirstOrDefault<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
+            ObservableCollection<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo> collection = new ObservableCollection<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>();
+            collection.AddRange<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>( axisInfos2 );
+            collection.AddRange<Ecng.Xaml.Charting.Visuals.RenderableSeries.AxisInfo>( axisInfos1 );
             this.AxisInfo = collection;
         }
 

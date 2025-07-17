@@ -1,8 +1,8 @@
 <ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:Common="clr-namespace:StockSharp.Xaml.Charting.Common"
+                    xmlns:Common="clr-namespace:Ecng.Xaml.Charting.Common"
                     xmlns:layout="clr-namespace:System.Windows.Controls"
-                    xmlns:Ultrachart="clr-namespace:StockSharp.Xaml.Charting">
+                    xmlns:Ultrachart="clr-namespace:Ecng.Xaml.Charting">
   <SolidColorBrush x:Key="TickTextBrush" Color="#EEEEEE"/>
   <SolidColorBrush x:Key="MajorGridLineBrush" Color="#77AAAAAA"/>
   <SolidColorBrush x:Key="MinorGridLineBrush" Color="#33999999"/>

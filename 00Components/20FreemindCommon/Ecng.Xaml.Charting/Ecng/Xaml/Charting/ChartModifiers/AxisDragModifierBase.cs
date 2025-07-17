@@ -1,9 +1,9 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Visuals.Axes;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     public abstract class AxisDragModifierBase : ChartModifierBase
     {

@@ -1,14 +1,14 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ChartGroup
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.ChartGroup
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Windows;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Visuals;
 
-namespace StockSharp.Xaml.Charting
+namespace Ecng.Xaml.Charting
 {
     internal class ChartGroup
     {
@@ -38,7 +38,7 @@ namespace StockSharp.Xaml.Charting
 
         internal void RestoreState()
         {
-            StockSharp.Xaml.Charting.Visuals.UltrachartSurface ultrachartSurface = this.UltrachartSurface as StockSharp.Xaml.Charting.Visuals.UltrachartSurface;
+            Ecng.Xaml.Charting.Visuals.UltrachartSurface ultrachartSurface = this.UltrachartSurface as Ecng.Xaml.Charting.Visuals.UltrachartSurface;
             if ( ultrachartSurface == null )
                 return;
             if ( ultrachartSurface.AxisAreaLeft != null )

@@ -1,22 +1,22 @@
 <ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:a="clr-namespace:StockSharp.Xaml.Charting.Visuals.Annotations"
-    xmlns:axes="clr-namespace:StockSharp.Xaml.Charting.Visuals.Axes"
-    xmlns:c="clr-namespace:StockSharp.Xaml.Charting.ChartModifiers"
-    xmlns:Common="clr-namespace:StockSharp.Xaml.Charting.Common"
-    xmlns:databinding="clr-namespace:StockSharp.Xaml.Charting.Common.Databinding"
-    xmlns:extensions="clr-namespace:StockSharp.Xaml.Charting.Common.Extensions"
-    xmlns:helpers="clr-namespace:StockSharp.Xaml.Charting.Common.Helpers"
-    xmlns:highSpeedRasterizer="clr-namespace:StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer"
+    xmlns:a="clr-namespace:Ecng.Xaml.Charting.Visuals.Annotations"
+    xmlns:axes="clr-namespace:Ecng.Xaml.Charting.Visuals.Axes"
+    xmlns:c="clr-namespace:Ecng.Xaml.Charting.ChartModifiers"
+    xmlns:Common="clr-namespace:Ecng.Xaml.Charting.Common"
+    xmlns:databinding="clr-namespace:Ecng.Xaml.Charting.Common.Databinding"
+    xmlns:extensions="clr-namespace:Ecng.Xaml.Charting.Common.Extensions"
+    xmlns:helpers="clr-namespace:Ecng.Xaml.Charting.Common.Helpers"
+    xmlns:highSpeedRasterizer="clr-namespace:Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer"
     xmlns:layout="clr-namespace:System.Windows.Controls"
-    xmlns:mouse="clr-namespace:StockSharp.Xaml.Charting.Utility.Mouse"
-    xmlns:pointMarkers="clr-namespace:StockSharp.Xaml.Charting.Visuals.PointMarkers"
-    xmlns:r="clr-namespace:StockSharp.Xaml.Charting.Visuals.RenderableSeries"
-    xmlns:s="clr-namespace:StockSharp.Xaml.Charting"
-    xmlns:themes="clr-namespace:StockSharp.Xaml.Charting.Themes"
-    xmlns:visuals="clr-namespace:StockSharp.Xaml.Charting.Visuals"
-    xmlns:z="clr-namespace:StockSharp.Xaml.Charting.Common.MarkupExtensions">
+    xmlns:mouse="clr-namespace:Ecng.Xaml.Charting.Utility.Mouse"
+    xmlns:pointMarkers="clr-namespace:Ecng.Xaml.Charting.Visuals.PointMarkers"
+    xmlns:r="clr-namespace:Ecng.Xaml.Charting.Visuals.RenderableSeries"
+    xmlns:s="clr-namespace:Ecng.Xaml.Charting"
+    xmlns:themes="clr-namespace:Ecng.Xaml.Charting.Themes"
+    xmlns:visuals="clr-namespace:Ecng.Xaml.Charting.Visuals"
+    xmlns:z="clr-namespace:Ecng.Xaml.Charting.Common.MarkupExtensions">
 
     <s:InverseOrientationConverter x:Key="InverseOrientationConverter" />
 

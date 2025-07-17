@@ -5,7 +5,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     public class PinchZoomModifier : RelativeZoomModifierBase
     {

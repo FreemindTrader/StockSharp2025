@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
-using StockSharp.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
+using Ecng.Xaml.Charting.Visuals.Axes;
 
-namespace StockSharp.Xaml.Charting.Numerics
+namespace Ecng.Xaml.Charting.Numerics
 {
     internal class TradeChartTickCalculator
     {

@@ -1,20 +1,20 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: StockSharp.Xaml.Charting.Visuals.Axes.LogarithmicNumericAxis
-//// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: Ecng.Xaml.Charting.Visuals.Axes.LogarithmicNumericAxis
+//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using StockSharp.Xaml.Charting.Common.Extensions;
-//using StockSharp.Xaml.Charting.Numerics;
-//using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
-//using StockSharp.Xaml.Charting.Visuals.Axes.LabelProviders;
-//using StockSharp.Xaml.Charting.Visuals.Axes.LogarithmicAxis;
+//using Ecng.Xaml.Charting.Common.Extensions;
+//using Ecng.Xaml.Charting.Numerics;
+//using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
+//using Ecng.Xaml.Charting.Visuals.Axes.LabelProviders;
+//using Ecng.Xaml.Charting.Visuals.Axes.LogarithmicAxis;
 //using System;
 //using System.ComponentModel;
 //using System.Runtime.CompilerServices;
 //using System.Windows;
 
-//namespace StockSharp.Xaml.Charting.Visuals.Axes
+//namespace Ecng.Xaml.Charting.Visuals.Axes
 //{
 //    public class LogarithmicNumericAxis : NumericAxis, ILogarithmicAxis, IAxis, IAxisParams, IHitTestable, ISuspendable, IInvalidatableElement, IDrawable
 //    {
@@ -104,22 +104,22 @@
 //}
 
 // Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.Axes.LogarithmicNumericAxis
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.Axes.LogarithmicNumericAxis
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Numerics;
-using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
-using StockSharp.Xaml.Charting.Visuals.Axes.LabelProviders;
-using StockSharp.Xaml.Charting.Visuals.Axes.LogarithmicAxis;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Numerics;
+using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
+using Ecng.Xaml.Charting.Visuals.Axes.LabelProviders;
+using Ecng.Xaml.Charting.Visuals.Axes.LogarithmicAxis;
 
-namespace StockSharp.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting.Visuals.Axes
 {
     public class LogarithmicNumericAxis : NumericAxis, ILogarithmicAxis, IAxis, IAxisParams, IHitTestable, ISuspendable, IInvalidatableElement, IDrawable
     {

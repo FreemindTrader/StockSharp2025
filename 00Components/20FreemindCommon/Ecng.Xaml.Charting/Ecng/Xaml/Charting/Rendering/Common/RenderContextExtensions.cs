@@ -2,7 +2,7 @@
 using System.Windows.Media;
 using System.Windows.Shapes;
 
-namespace StockSharp.Xaml.Charting.Rendering.Common
+namespace Ecng.Xaml.Charting.Rendering.Common
 {
     internal static class RenderContextExtensions
     {

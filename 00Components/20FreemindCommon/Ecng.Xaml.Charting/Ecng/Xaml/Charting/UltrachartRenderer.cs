@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-using StockSharp.Xaml.Charting.Common;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Numerics.PointResamplers;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.Services;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Visuals;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.Common;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Numerics.PointResamplers;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Services;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
-namespace StockSharp.Xaml.Charting
+namespace Ecng.Xaml.Charting
 {
     internal class UltrachartRenderer : IUltrachartRenderer
     {

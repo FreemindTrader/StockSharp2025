@@ -1,15 +1,15 @@
-﻿// StockSharp.Xaml.Charting.Visuals.UltrachartSurfaceBase
+﻿// Ecng.Xaml.Charting.Visuals.UltrachartSurfaceBase
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Threading;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Utility;
 using TinyMessenger;
 
-namespace StockSharp.Xaml.Charting.Visuals
+namespace Ecng.Xaml.Charting.Visuals
 {
 
     [TemplatePart( Name = "PART_ChartModifierSurface", Type = typeof( ChartModifierSurface ) )]

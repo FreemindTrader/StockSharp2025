@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ChartModifiers.TooltipModifierBase
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.ChartModifiers.TooltipModifierBase
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: T:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: T:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
@@ -10,16 +10,16 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Themes;
-using StockSharp.Xaml.Charting.Visuals;
-using StockSharp.Xaml.Charting.Visuals.Annotations;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Themes;
+using Ecng.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Visuals.Annotations;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     public abstract class TooltipModifierBase : InspectSeriesModifierBase
     {

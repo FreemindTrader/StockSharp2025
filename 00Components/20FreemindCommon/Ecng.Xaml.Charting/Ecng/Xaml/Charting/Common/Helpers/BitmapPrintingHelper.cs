@@ -4,10 +4,10 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Visuals;
 
-namespace StockSharp.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting.Common.Helpers
 {
     internal static class BitmapPrintingHelper
     {

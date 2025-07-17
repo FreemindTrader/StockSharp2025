@@ -1,21 +1,21 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: StockSharp.Xaml.Charting.Visuals.RenderableSeries.BaseRenderableSeries
-//// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: Ecng.Xaml.Charting.Visuals.RenderableSeries.BaseRenderableSeries
+//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using StockSharp.Xaml.Charting.ChartModifiers;
-//using StockSharp.Xaml.Charting.Common.Extensions;
-//using StockSharp.Xaml.Charting.Common.Helpers;
-//using StockSharp.Xaml.Charting.Licensing;
-//using StockSharp.Xaml.Charting.Model.DataSeries;
-//using StockSharp.Xaml.Charting.Numerics;
-//using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-//using StockSharp.Xaml.Charting.Rendering.Common;
-//using StockSharp.Xaml.Charting.StrategyManager;
-//using StockSharp.Xaml.Charting.Utility;
-//using StockSharp.Xaml.Charting.Visuals.Axes;
-//using StockSharp.Xaml.Charting.Visuals.PointMarkers;
+//using Ecng.Xaml.Charting.ChartModifiers;
+//using Ecng.Xaml.Charting.Common.Extensions;
+//using Ecng.Xaml.Charting.Common.Helpers;
+//using Ecng.Xaml.Charting.Licensing;
+//using Ecng.Xaml.Charting.Model.DataSeries;
+//using Ecng.Xaml.Charting.Numerics;
+//using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+//using Ecng.Xaml.Charting.Rendering.Common;
+//using Ecng.Xaml.Charting.StrategyManager;
+//using Ecng.Xaml.Charting.Utility;
+//using Ecng.Xaml.Charting.Visuals.Axes;
+//using Ecng.Xaml.Charting.Visuals.PointMarkers;
 //using StockSharp.Xaml.Licensing.Core;
 //using System;
 //using System.Diagnostics;
@@ -29,7 +29,7 @@
 //using System.Xml.Schema;
 //using System.Xml.Serialization;
 
-//namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
+//namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
 //{
 //    [ContentProperty( "PointMarker" )]
 //    public abstract class BaseRenderableSeries : ContentControl, IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable
@@ -919,7 +919,7 @@
 
 //        protected virtual void CreateRolloverMarker( )
 //        {
-//            this._rolloverMarkerCache = ( FrameworkElement ) StockSharp.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
+//            this._rolloverMarkerCache = ( FrameworkElement ) Ecng.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
 //        }
 
 //        public XmlSchema GetSchema( )
@@ -1033,7 +1033,7 @@
 //            IPointMarker pointMarker = (IPointMarker) null;
 //            if ( template != null )
 //            {
-//                BasePointMarker basePointMarker = StockSharp.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
+//                BasePointMarker basePointMarker = Ecng.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
 //                if ( basePointMarker == null )
 //                {
 //                    SpritePointMarker spritePointMarker = new SpritePointMarker();
@@ -1083,10 +1083,10 @@
 //}
 
 // Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.RenderableSeries.BaseRenderableSeries
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.RenderableSeries.BaseRenderableSeries
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Diagnostics;
@@ -1099,21 +1099,21 @@ using System.Windows.Media;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using StockSharp.Xaml.Charting.ChartModifiers;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.Licensing;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.PointMarkers;
+using Ecng.Xaml.Charting.ChartModifiers;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.Licensing;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.PointMarkers;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
+namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
 {
     [ContentProperty( "PointMarker" )]
     public abstract class BaseRenderableSeries : ContentControl, IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable
@@ -1945,7 +1945,7 @@ namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
 
         protected virtual void CreateRolloverMarker()
         {
-            this._rolloverMarkerCache = ( FrameworkElement ) StockSharp.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
+            this._rolloverMarkerCache = ( FrameworkElement ) Ecng.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate( this.RolloverMarkerTemplate, ( object ) this );
         }
 
         public XmlSchema GetSchema()
@@ -2041,7 +2041,7 @@ namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
             IPointMarker pointMarker = (IPointMarker) null;
             if ( template != null )
             {
-                BasePointMarker basePointMarker = StockSharp.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
+                BasePointMarker basePointMarker = Ecng.Xaml.Charting.Visuals.RenderableSeries.PointMarker.CreateFromTemplate(template, dataContext).FindVisualChild<BasePointMarker>();
                 if ( basePointMarker == null )
                 {
                     SpritePointMarker spritePointMarker = new SpritePointMarker();

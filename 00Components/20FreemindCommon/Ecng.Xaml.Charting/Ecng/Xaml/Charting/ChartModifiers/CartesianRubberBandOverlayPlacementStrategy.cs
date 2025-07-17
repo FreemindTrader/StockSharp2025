@@ -2,10 +2,10 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Utility;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     internal class CartesianRubberBandOverlayPlacementStrategy : IRubberBandOverlayPlacementStrategy
     {

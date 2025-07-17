@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Themes;
-using StockSharp.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Themes;
+using Ecng.Xaml.Charting.Visuals;
 
-namespace StockSharp.Xaml.Charting
+namespace Ecng.Xaml.Charting
 {
     public static class ThemeManager
     {

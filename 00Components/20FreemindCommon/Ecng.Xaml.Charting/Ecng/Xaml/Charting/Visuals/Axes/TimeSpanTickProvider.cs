@@ -1,8 +1,8 @@
 ﻿using System;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Utility;
 
-namespace StockSharp.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting.Visuals.Axes
 {
     public class TimeSpanTickProvider : TimeSpanTickProviderBase
     {

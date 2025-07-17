@@ -1,8 +1,8 @@
-﻿// StockSharp.Xaml.Charting.Numerics.GenericMath.ArrayOperations
+﻿// Ecng.Xaml.Charting.Numerics.GenericMath.ArrayOperations
 using System;
 using System.Collections.Generic;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Numerics.GenericMath;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Numerics.GenericMath;
 
 internal static class ArrayOperations
 {

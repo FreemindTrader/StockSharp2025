@@ -12,17 +12,17 @@ using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using StockSharp.Xaml.Charting.ChartModifiers;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Utility.Mouse;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.Events;
+using Ecng.Xaml.Charting.ChartModifiers;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Utility.Mouse;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.Events;
 
-namespace StockSharp.Xaml.Charting.Visuals.Annotations
+namespace Ecng.Xaml.Charting.Visuals.Annotations
 {
     public abstract class AnnotationBase : ApiElementBase, IAnnotation, IHitTestable, IPublishMouseEvents, IXmlSerializable, ISuspendable
     {

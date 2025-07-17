@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StockSharp.Xaml.Charting
+namespace Ecng.Xaml.Charting
 {
     public class Int64Range : Range<long>
     {

@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
 // Type: MatterHackers.VectorMath.Matrix4X4
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 

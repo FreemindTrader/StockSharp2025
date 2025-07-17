@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.UltrachartSurface
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.UltrachartSurface
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Collections;
@@ -23,28 +23,28 @@ using System.Windows.Threading;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using StockSharp.Xaml.Charting.ChartModifiers;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.Common.Messaging;
-using StockSharp.Xaml.Charting.Licensing;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Numerics.PointResamplers;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer;
-using StockSharp.Xaml.Charting.Services;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Utility.Mouse;
-using StockSharp.Xaml.Charting.Visuals.Annotations;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.ChartModifiers;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.Common.Messaging;
+using Ecng.Xaml.Charting.Licensing;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Numerics.PointResamplers;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer;
+using Ecng.Xaml.Charting.Services;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Utility.Mouse;
+using Ecng.Xaml.Charting.Visuals.Annotations;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace StockSharp.Xaml.Charting.Visuals
+namespace Ecng.Xaml.Charting.Visuals
 {
-    [TemplatePart( Name = "PART_GridLinesArea", Type = typeof( StockSharp.Xaml.Charting.Visuals.Axes.GridLinesPanel ) )]
+    [TemplatePart( Name = "PART_GridLinesArea", Type = typeof( Ecng.Xaml.Charting.Visuals.Axes.GridLinesPanel ) )]
     [TemplatePart( Name = "PART_LeftAxisArea", Type = typeof( AxisArea ) )]
     [TemplatePart( Name = "PART_TopAxisArea", Type = typeof( AxisArea ) )]
     [TemplatePart( Name = "PART_RightAxisArea", Type = typeof( AxisArea ) )]
@@ -83,7 +83,7 @@ namespace StockSharp.Xaml.Charting.Visuals
         private readonly object _syncRoot = new object();
         private readonly HashSet<IDataSeries> _dsToNotify = new HashSet<IDataSeries>();
         private string id = UltrachartSurface.globalId++.ToString();
-        private StockSharp.Xaml.Charting.Visuals.Axes.GridLinesPanel _gridLinesPanel;
+        private Ecng.Xaml.Charting.Visuals.Axes.GridLinesPanel _gridLinesPanel;
         private AxisArea _bottomAxisArea;
         private AxisArea _topAxisArea;
         private AxisArea _rightAxisArea;
@@ -491,7 +491,7 @@ namespace StockSharp.Xaml.Charting.Visuals
                 _centerYAxisArea.Items.Clear();
             }
 
-            _gridLinesPanel = GetAndAssertTemplateChild<StockSharp.Xaml.Charting.Visuals.Axes.GridLinesPanel>( "PART_GridLinesArea" );
+            _gridLinesPanel = GetAndAssertTemplateChild<Ecng.Xaml.Charting.Visuals.Axes.GridLinesPanel>( "PART_GridLinesArea" );
             _bottomAxisArea = GetAndAssertTemplateChild<AxisArea>( "PART_BottomAxisArea" );
             _topAxisArea = GetAndAssertTemplateChild<AxisArea>( "PART_TopAxisArea" );
             _rightAxisArea = GetAndAssertTemplateChild<AxisArea>( "PART_RightAxisArea" );
@@ -1098,7 +1098,7 @@ namespace StockSharp.Xaml.Charting.Visuals
             {
                 if ( StackedColumnsWrapper == null )
                 {
-                    StackedColumnsWrapper = ( IStackedColumnsWrapper ) new StockSharp.Xaml.Charting.Visuals.RenderableSeries.StackedColumnsWrapper();
+                    StackedColumnsWrapper = ( IStackedColumnsWrapper ) new Ecng.Xaml.Charting.Visuals.RenderableSeries.StackedColumnsWrapper();
                 }
 
                 StackedColumnsWrapper.AddSeries( ( IStackedColumnRenderableSeries ) rSeries );
@@ -1107,7 +1107,7 @@ namespace StockSharp.Xaml.Charting.Visuals
             {
                 if ( StackedMountainsWrapper == null )
                 {
-                    StackedMountainsWrapper = ( IStackedMountainsWrapper ) new StockSharp.Xaml.Charting.Visuals.RenderableSeries.StackedMountainsWrapper();
+                    StackedMountainsWrapper = ( IStackedMountainsWrapper ) new Ecng.Xaml.Charting.Visuals.RenderableSeries.StackedMountainsWrapper();
                 }
 
                 StackedMountainsWrapper.AddSeries( ( IStackedMountainRenderableSeries ) rSeries );
@@ -1654,7 +1654,7 @@ namespace StockSharp.Xaml.Charting.Visuals
         private static void OnChildStyleChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
         {
             UltrachartSurface ultrachartSurface = (UltrachartSurface) d;
-            StockSharp.Xaml.Charting.Visuals.Axes.GridLinesPanel gridLinesPanel = ultrachartSurface.GridLinesPanel as StockSharp.Xaml.Charting.Visuals.Axes.GridLinesPanel;
+            Ecng.Xaml.Charting.Visuals.Axes.GridLinesPanel gridLinesPanel = ultrachartSurface.GridLinesPanel as Ecng.Xaml.Charting.Visuals.Axes.GridLinesPanel;
             if ( gridLinesPanel != null )
             {
                 gridLinesPanel.Style = ultrachartSurface.GridLinesPanelStyle;

@@ -1,8 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Input;
-using StockSharp.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.Axes;
 
-namespace StockSharp.Xaml.Charting.ChartModifiers
+namespace Ecng.Xaml.Charting.ChartModifiers
 {
     public class YAxisDragModifier : AxisDragModifierBase
     {

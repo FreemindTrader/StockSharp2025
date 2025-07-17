@@ -1,14 +1,14 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: StockSharp.Xaml.Charting.Visuals.RenderableSeries.StackedMountainRenderableSeries
-//// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: Ecng.Xaml.Charting.Visuals.RenderableSeries.StackedMountainRenderableSeries
+//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using StockSharp.Xaml.Charting.Common.Extensions;
-//using StockSharp.Xaml.Charting.Licensing;
-//using StockSharp.Xaml.Charting.Model.DataSeries;
-//using StockSharp.Xaml.Charting.Rendering.Common;
-//using StockSharp.Xaml.Charting.Visuals.PointMarkers;
+//using Ecng.Xaml.Charting.Common.Extensions;
+//using Ecng.Xaml.Charting.Licensing;
+//using Ecng.Xaml.Charting.Model.DataSeries;
+//using Ecng.Xaml.Charting.Rendering.Common;
+//using Ecng.Xaml.Charting.Visuals.PointMarkers;
 //using StockSharp.Xaml.Licensing.Core;
 //using System;
 //using System.Runtime.CompilerServices;
@@ -16,7 +16,7 @@
 //using System.Windows.Media;
 //using System.Xml.Serialization;
 
-//namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
+//namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
 //{
 //    
 //    public class StackedMountainRenderableSeries : BaseMountainRenderableSeries, IStackedMountainRenderableSeries, IStackedRenderableSeries, IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable
@@ -198,25 +198,25 @@
 //}
 
 // Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.RenderableSeries.StackedMountainRenderableSeries
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.RenderableSeries.StackedMountainRenderableSeries
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Media;
 using System.Xml.Serialization;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Licensing;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.Visuals.PointMarkers;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Licensing;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Visuals.PointMarkers;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
+namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
 {
     [UltrachartLicenseProvider( typeof( RenderableSeriesUltrachartLicenseProvider ) )]
     public class StackedMountainRenderableSeries : BaseMountainRenderableSeries, IStackedMountainRenderableSeries, IStackedRenderableSeries, IRenderableSeries, IRenderableSeriesBase, IDrawable, IXmlSerializable

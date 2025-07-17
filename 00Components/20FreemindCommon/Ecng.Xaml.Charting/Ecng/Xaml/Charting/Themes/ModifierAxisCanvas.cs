@@ -1,11 +1,11 @@
 ﻿using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
-using StockSharp.Xaml.Charting.Visuals;
-using StockSharp.Xaml.Charting.Visuals.Annotations;
-using StockSharp.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Visuals.Annotations;
+using Ecng.Xaml.Charting.Visuals.Axes;
 
-namespace StockSharp.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting.Themes
 {
     public class ModifierAxisCanvas : AxisCanvas, IAnnotationCanvas, IHitTestable
     {

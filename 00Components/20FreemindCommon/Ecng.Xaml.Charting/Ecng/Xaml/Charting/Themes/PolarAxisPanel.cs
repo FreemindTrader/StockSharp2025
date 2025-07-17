@@ -1,17 +1,17 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Themes.PolarAxisPanel
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Themes.PolarAxisPanel
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System.Windows;
 using System.Windows.Controls;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Utility;
 
-namespace StockSharp.Xaml.Charting.Themes
+namespace Ecng.Xaml.Charting.Themes
 {
     public class PolarAxisPanel : AxisPanel
     {

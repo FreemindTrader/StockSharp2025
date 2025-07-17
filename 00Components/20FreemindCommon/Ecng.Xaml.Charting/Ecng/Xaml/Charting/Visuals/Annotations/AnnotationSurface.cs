@@ -2,7 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 
-namespace StockSharp.Xaml.Charting.Visuals.Annotations
+namespace Ecng.Xaml.Charting.Visuals.Annotations
 {
     public class AnnotationSurface : Canvas, IAnnotationCanvas, IHitTestable
     {

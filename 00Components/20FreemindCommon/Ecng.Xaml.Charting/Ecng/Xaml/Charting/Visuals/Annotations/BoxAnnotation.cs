@@ -1,16 +1,16 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: StockSharp.Xaml.Charting.Visuals.Annotations.BoxAnnotation
-//// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: Ecng.Xaml.Charting.Visuals.Annotations.BoxAnnotation
+//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using StockSharp.Xaml.Charting.StrategyManager;
-//using StockSharp.Xaml.Charting.Utility;
+//using Ecng.Xaml.Charting.StrategyManager;
+//using Ecng.Xaml.Charting.Utility;
 //using System.Windows;
 //using System.Windows.Controls;
 //using System.Windows.Input;
 
-//namespace StockSharp.Xaml.Charting.Visuals.Annotations
+//namespace Ecng.Xaml.Charting.Visuals.Annotations
 //{
 //  public class BoxAnnotation : AnnotationBase
 //  {
@@ -122,19 +122,19 @@
 
 
 // Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.Annotations.BoxAnnotation
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.Annotations.BoxAnnotation
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Utility;
 
-namespace StockSharp.Xaml.Charting.Visuals.Annotations
+namespace Ecng.Xaml.Charting.Visuals.Annotations
 {
     public class BoxAnnotation : AnnotationBase
     {

@@ -1,16 +1,16 @@
-﻿// StockSharp.Xaml.Charting.Model.DataSeries.XyyDataSeries<TX,TY>
+﻿// Ecng.Xaml.Charting.Model.DataSeries.XyyDataSeries<TX,TY>
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using StockSharp.Xaml.Charting;
-using StockSharp.Xaml.Charting.Common;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics;
-using StockSharp.Xaml.Charting.Numerics.PointResamplers;
-using StockSharp.Xaml.Charting.Visuals;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting;
+using Ecng.Xaml.Charting.Common;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics;
+using Ecng.Xaml.Charting.Numerics.PointResamplers;
+using Ecng.Xaml.Charting.Visuals;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
 public class XyyDataSeries<TX, TY> : DataSeries<TX, TY>, IXyyDataSeries<TX, TY>, IDataSeries<TX, TY>, IDataSeries, ISuspendable, IXyyDataSeries where TX : IComparable where TY : IComparable
 {

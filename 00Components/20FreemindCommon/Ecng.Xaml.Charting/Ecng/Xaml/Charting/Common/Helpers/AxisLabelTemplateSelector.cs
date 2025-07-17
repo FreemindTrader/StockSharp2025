@@ -1,7 +1,7 @@
 ﻿using System.Windows;
-using StockSharp.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.Axes;
 
-namespace StockSharp.Xaml.Charting.Common.Helpers
+namespace Ecng.Xaml.Charting.Common.Helpers
 {
     internal class AxisLabelTemplateSelector : DataTemplateSelector
     {

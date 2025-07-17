@@ -1,24 +1,24 @@
 ﻿//// Decompiled with JetBrains decompiler
-//// Type: StockSharp.Xaml.Charting.Visuals.Axes.AxisBase
-//// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+//// Type: Ecng.Xaml.Charting.Visuals.Axes.AxisBase
+//// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 //// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-//// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+//// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
-//using StockSharp.Xaml.Charting.Common.Databinding;
-//using StockSharp.Xaml.Charting.Common.Extensions;
-//using StockSharp.Xaml.Charting.Common.Helpers;
-//using StockSharp.Xaml.Charting.Licensing;
-//using StockSharp.Xaml.Charting.Model.DataSeries;
-//using StockSharp.Xaml.Charting.Numerics;
-//using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-//using StockSharp.Xaml.Charting.Numerics.CoordinateProviders;
-//using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
-//using StockSharp.Xaml.Charting.Rendering.Common;
-//using StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer;
-//using StockSharp.Xaml.Charting.Themes;
-//using StockSharp.Xaml.Charting.Utility;
-//using StockSharp.Xaml.Charting.Visuals.Annotations;
-//using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+//using Ecng.Xaml.Charting.Common.Databinding;
+//using Ecng.Xaml.Charting.Common.Extensions;
+//using Ecng.Xaml.Charting.Common.Helpers;
+//using Ecng.Xaml.Charting.Licensing;
+//using Ecng.Xaml.Charting.Model.DataSeries;
+//using Ecng.Xaml.Charting.Numerics;
+//using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+//using Ecng.Xaml.Charting.Numerics.CoordinateProviders;
+//using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
+//using Ecng.Xaml.Charting.Rendering.Common;
+//using Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer;
+//using Ecng.Xaml.Charting.Themes;
+//using Ecng.Xaml.Charting.Utility;
+//using Ecng.Xaml.Charting.Visuals.Annotations;
+//using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 //using StockSharp.Xaml.Licensing.Core;
 //using System;
 //using System.Collections.Generic;
@@ -36,7 +36,7 @@
 //using System.Xml.Schema;
 //using System.Xml.Serialization;
 
-//namespace StockSharp.Xaml.Charting.Visuals.Axes
+//namespace Ecng.Xaml.Charting.Visuals.Axes
 //{
 //    [TemplatePart( Name = "PART_AxisCanvas", Type = typeof( IAxisPanel ) )]
 //    [TemplatePart( Name = "PART_ModifierAxisCanvas", Type = typeof( AxisCanvas ) )]
@@ -104,7 +104,7 @@
 //        private ILabelProvider _defaultLabelProvider;
 //        private ISciChartSurface _parentSurface;
 //        private IAxisPanel _axisPanel;
-//        private StockSharp.Xaml.Charting.Themes.ModifierAxisCanvas _modifierAxisCanvas;
+//        private Ecng.Xaml.Charting.Themes.ModifierAxisCanvas _modifierAxisCanvas;
 //        private ITickLabelsPool _labelsPool;
 //        private TickCoordinates _tickCoords;
 //        private float _offset;
@@ -143,7 +143,7 @@
 
 //        private void InitializeLabelsPool( )
 //        {
-//            _labelsPool = _labelsPool ?? ( this is NumericAxis ? ( ITickLabelsPool ) new StockSharp.Xaml.Charting.Visuals.Axes.TickLabelsPool<NumericTickLabel>( MaxAutoTicks, new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) ) : ( ITickLabelsPool ) new StockSharp.Xaml.Charting.Visuals.Axes.TickLabelsPool<DefaultTickLabel>( MaxAutoTicks, new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) ) );
+//            _labelsPool = _labelsPool ?? ( this is NumericAxis ? ( ITickLabelsPool ) new Ecng.Xaml.Charting.Visuals.Axes.TickLabelsPool<NumericTickLabel>( MaxAutoTicks, new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) ) : ( ITickLabelsPool ) new Ecng.Xaml.Charting.Visuals.Axes.TickLabelsPool<DefaultTickLabel>( MaxAutoTicks, new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) ) );
 //        }
 
 //        private DefaultTickLabel ApplyStyle( DefaultTickLabel defaultTickLabel )
@@ -1850,7 +1850,7 @@
 //            base.OnApplyTemplate();
 //            _axisContainer = GetAndAssertTemplateChild<StackPanel>( "PART_AxisContainer" );
 //            _axisPanel = GetAndAssertTemplateChild<IAxisPanel>( "PART_AxisCanvas" );
-//            ( ( StockSharp.Xaml.Charting.Themes.AxisPanel ) _axisPanel ).AddLabels = ( Action<AxisCanvas> ) ( canvas =>
+//            ( ( Ecng.Xaml.Charting.Themes.AxisPanel ) _axisPanel ).AddLabels = ( Action<AxisCanvas> ) ( canvas =>
 //            {
 //                if ( !IsValidForDrawing() || !IsShown() )
 //                {
@@ -1859,7 +1859,7 @@
 
 //                DrawTickLabels( canvas, _tickCoords, _offset );
 //            } );
-//            _modifierAxisCanvas = GetAndAssertTemplateChild<StockSharp.Xaml.Charting.Themes.ModifierAxisCanvas>( "PART_ModifierAxisCanvas" );
+//            _modifierAxisCanvas = GetAndAssertTemplateChild<Ecng.Xaml.Charting.Themes.ModifierAxisCanvas>( "PART_ModifierAxisCanvas" );
 //            _modifierAxisCanvas.ParentAxis = this;
 //            if ( VisibleRange != null )
 //            {
@@ -2298,10 +2298,10 @@
 //    }
 //}
 // Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.Axes.AxisBase
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.Axes.AxisBase
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
@@ -2318,22 +2318,22 @@ using System.Windows.Media.Animation;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
-using StockSharp.Xaml.Charting.Common.Databinding;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Common.Helpers;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Numerics.CoordinateProviders;
-using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer;
-using StockSharp.Xaml.Charting.Themes;
-using StockSharp.Xaml.Charting.Utility;
-using StockSharp.Xaml.Charting.Visuals.Annotations;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.Common.Databinding;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Helpers;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Numerics.CoordinateProviders;
+using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer;
+using Ecng.Xaml.Charting.Themes;
+using Ecng.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Visuals.Annotations;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
-namespace StockSharp.Xaml.Charting.Visuals.Axes;
+namespace Ecng.Xaml.Charting.Visuals.Axes;
 
 [TemplatePart( Name = "PART_AxisCanvas", Type = typeof( IAxisPanel ) )]
 [TemplatePart( Name = "PART_ModifierAxisCanvas", Type = typeof( AxisCanvas ) )]
@@ -2608,7 +2608,7 @@ public abstract class AxisBase : ContentControl, IAxis, IAxisParams, IHitTestabl
     private ILabelProvider _defaultLabelProvider;
     private ISciChartSurface _parentSurface;
     private IAxisPanel _axisPanel;
-    private StockSharp.Xaml.Charting.Themes.ModifierAxisCanvas _modifierAxisCanvas;
+    private Ecng.Xaml.Charting.Themes.ModifierAxisCanvas _modifierAxisCanvas;
     private ITickLabelsPool _labelsPool;
     private TickCoordinates _tickCoords;
     private float _offset;
@@ -2647,10 +2647,10 @@ public abstract class AxisBase : ContentControl, IAxis, IAxisParams, IHitTestabl
     {
         _labelsPool = _labelsPool ??
             ( this is NumericAxis
-                ? ( ITickLabelsPool ) new StockSharp.Xaml.Charting.Visuals.Axes.TickLabelsPool<NumericTickLabel>(
+                ? ( ITickLabelsPool ) new Ecng.Xaml.Charting.Visuals.Axes.TickLabelsPool<NumericTickLabel>(
                     MaxAutoTicks,
                     new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) )
-                : ( ITickLabelsPool ) new StockSharp.Xaml.Charting.Visuals.Axes.TickLabelsPool<DefaultTickLabel>(
+                : ( ITickLabelsPool ) new Ecng.Xaml.Charting.Visuals.Axes.TickLabelsPool<DefaultTickLabel>(
                     MaxAutoTicks,
                     new Func<DefaultTickLabel, DefaultTickLabel>( ApplyStyle ) ) );
     }
@@ -4268,13 +4268,13 @@ public abstract class AxisBase : ContentControl, IAxis, IAxisParams, IHitTestabl
         base.OnApplyTemplate();
         _axisContainer = GetAndAssertTemplateChild<StackPanel>( "PART_AxisContainer" );
         _axisPanel = GetAndAssertTemplateChild<IAxisPanel>( "PART_AxisCanvas" );
-        ( ( StockSharp.Xaml.Charting.Themes.AxisPanel ) _axisPanel ).AddLabels = ( Action<AxisCanvas> ) ( canvas =>
+        ( ( Ecng.Xaml.Charting.Themes.AxisPanel ) _axisPanel ).AddLabels = ( Action<AxisCanvas> ) ( canvas =>
         {
             if ( !IsValidForDrawing() || !IsShown() )
                 return;
             DrawTickLabels( canvas, _tickCoords, _offset );
         } );
-        _modifierAxisCanvas = GetAndAssertTemplateChild<StockSharp.Xaml.Charting.Themes.ModifierAxisCanvas>(
+        _modifierAxisCanvas = GetAndAssertTemplateChild<Ecng.Xaml.Charting.Themes.ModifierAxisCanvas>(
             "PART_ModifierAxisCanvas" );
         _modifierAxisCanvas.ParentAxis = this;
         if ( VisibleRange != null )

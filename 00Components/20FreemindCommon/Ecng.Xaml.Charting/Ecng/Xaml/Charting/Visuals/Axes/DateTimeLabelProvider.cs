@@ -1,7 +1,7 @@
 ﻿using System;
-using StockSharp.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Common.Extensions;
 
-namespace StockSharp.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting.Visuals.Axes
 {
     public class DateTimeLabelProvider : LabelProviderBase
     {

@@ -1,17 +1,17 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.Axes.PolarYAxis
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.Axes.PolarYAxis
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.StrategyManager;
 
-namespace StockSharp.Xaml.Charting.Visuals.Axes
+namespace Ecng.Xaml.Charting.Visuals.Axes
 {
     public class PolarYAxis : NumericAxis
     {

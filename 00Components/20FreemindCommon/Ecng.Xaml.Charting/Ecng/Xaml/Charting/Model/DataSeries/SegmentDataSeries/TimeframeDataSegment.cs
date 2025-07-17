@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Utility;
 
-namespace StockSharp.Xaml.Charting.Model.DataSeries.SegmentDataSeries
+namespace Ecng.Xaml.Charting.Model.DataSeries.SegmentDataSeries
 {
     public class TimeframeDataSegment : IPoint
     {

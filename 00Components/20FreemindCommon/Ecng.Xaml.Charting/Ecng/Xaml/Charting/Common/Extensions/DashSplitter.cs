@@ -1,11 +1,11 @@
-﻿// StockSharp.Xaml.Charting.Common.Extensions.DashSplitter
+﻿// Ecng.Xaml.Charting.Common.Extensions.DashSplitter
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media.Imaging;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Rendering.Common;
 
 internal sealed class DashSplitter : IEnumerator<LineD>, IDisposable, IEnumerator
 {

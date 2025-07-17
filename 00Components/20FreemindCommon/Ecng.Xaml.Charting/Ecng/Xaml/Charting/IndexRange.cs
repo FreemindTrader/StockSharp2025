@@ -1,9 +1,9 @@
-﻿// StockSharp.Xaml.Charting.IndexRange
+﻿// Ecng.Xaml.Charting.IndexRange
 using System;
 using System.ComponentModel;
-using StockSharp.Xaml.Charting;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Utility;
 
 public class IndexRange : Range<int>
 {

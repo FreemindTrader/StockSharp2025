@@ -1,8 +1,8 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Utility.Mouse.MouseManager
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Utility.Mouse.MouseManager
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Collections.Generic;
@@ -10,11 +10,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
-using StockSharp.Xaml.Charting.ChartModifiers;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Visuals.Events;
+using Ecng.Xaml.Charting.ChartModifiers;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Visuals.Events;
 
-namespace StockSharp.Xaml.Charting.Utility.Mouse
+namespace Ecng.Xaml.Charting.Utility.Mouse
 {
     public class MouseManager : IMouseManager
     {
@@ -31,8 +31,8 @@ namespace StockSharp.Xaml.Charting.Utility.Mouse
 
         public MouseManager()
         {
-            this.MousePositionProvider = ( IMousePositionProvider ) new StockSharp.Xaml.Charting.Utility.Mouse.MousePositionProvider();
-            this.TouchPositionProvider = ( ITouchPositionProvider ) new StockSharp.Xaml.Charting.Utility.Mouse.TouchPositionProvider();
+            this.MousePositionProvider = ( IMousePositionProvider ) new Ecng.Xaml.Charting.Utility.Mouse.MousePositionProvider();
+            this.TouchPositionProvider = ( ITouchPositionProvider ) new Ecng.Xaml.Charting.Utility.Mouse.TouchPositionProvider();
         }
 
         public static void SetMouseEventGroup( DependencyObject element, string modifierGroup )

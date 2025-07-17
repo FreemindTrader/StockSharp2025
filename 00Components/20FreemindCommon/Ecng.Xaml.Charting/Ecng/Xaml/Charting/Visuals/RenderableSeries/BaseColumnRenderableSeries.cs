@@ -1,22 +1,22 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Visuals.RenderableSeries.BaseColumnRenderableSeries
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Visuals.RenderableSeries.BaseColumnRenderableSeries
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: 5D7395C1-836A-4A9B-B006-2FBF7EC25A8F
-// Assembly location: B:\00 - Programming\StockSharp\References\StockSharp.Xaml.Charting.dll
+// Assembly location: B:\00 - Programming\StockSharp\References\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Windows;
 using System.Windows.Media;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Licensing;
-using StockSharp.Xaml.Charting.Model.DataSeries;
-using StockSharp.Xaml.Charting.Numerics;
-using StockSharp.Xaml.Charting.Rendering.Common;
-using StockSharp.Xaml.Charting.StrategyManager;
-using StockSharp.Xaml.Charting.Utility;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Licensing;
+using Ecng.Xaml.Charting.Model.DataSeries;
+using Ecng.Xaml.Charting.Numerics;
+using Ecng.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.StrategyManager;
+using Ecng.Xaml.Charting.Utility;
 using StockSharp.Xaml.Licensing.Core;
 
-namespace StockSharp.Xaml.Charting.Visuals.RenderableSeries
+namespace Ecng.Xaml.Charting.Visuals.RenderableSeries
 {
     [UltrachartLicenseProvider( typeof( RenderableSeriesUltrachartLicenseProvider ) )]
     public abstract class BaseColumnRenderableSeries : BaseRenderableSeries

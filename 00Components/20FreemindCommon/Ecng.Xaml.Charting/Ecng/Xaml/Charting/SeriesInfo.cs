@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Visuals.Axes;
-using StockSharp.Xaml.Charting.Visuals.RenderableSeries;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Visuals.Axes;
+using Ecng.Xaml.Charting.Visuals.RenderableSeries;
 
-namespace StockSharp.Xaml.Charting
+namespace Ecng.Xaml.Charting
 {
     public class SeriesInfo : BindableObject, ICloneable
     {
@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting
 
         private Color _seriesColor;
 
-        private StockSharp.Xaml.Charting.Model.DataSeries.DataSeriesType _dataSeriesType;
+        private Ecng.Xaml.Charting.Model.DataSeries.DataSeriesType _dataSeriesType;
 
         private double _yValueDouble;
 
@@ -41,7 +41,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        public StockSharp.Xaml.Charting.Model.DataSeries.DataSeriesType DataSeriesType
+        public Ecng.Xaml.Charting.Model.DataSeries.DataSeriesType DataSeriesType
         {
             get
             {
@@ -49,7 +49,7 @@ namespace StockSharp.Xaml.Charting
             }
             set
             {
-                SetField<StockSharp.Xaml.Charting.Model.DataSeries.DataSeriesType>( ref _dataSeriesType, value, "DataSeriesType" );
+                SetField<Ecng.Xaml.Charting.Model.DataSeries.DataSeriesType>( ref _dataSeriesType, value, "DataSeriesType" );
             }
         }
 

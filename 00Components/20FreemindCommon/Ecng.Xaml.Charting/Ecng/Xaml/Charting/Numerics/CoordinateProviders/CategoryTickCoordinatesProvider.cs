@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Numerics.CoordinateCalculators;
-using StockSharp.Xaml.Charting.Numerics.TickCoordinateProviders;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Numerics.CoordinateCalculators;
+using Ecng.Xaml.Charting.Numerics.TickCoordinateProviders;
 
-namespace StockSharp.Xaml.Charting.Numerics.CoordinateProviders
+namespace Ecng.Xaml.Charting.Numerics.CoordinateProviders
 {
     public class CategoryTickCoordinatesProvider : DefaultTickCoordinatesProvider
     {

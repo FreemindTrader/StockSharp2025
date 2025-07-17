@@ -1,17 +1,17 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer.HsPen
-// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// Type: Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer.HsPen
+// Assembly: Ecng.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
 // MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
-// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+// Assembly location: A:\10 - StockSharp\Hydra\Ecng.Xaml.Charting.dll
 
 using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
-using StockSharp.Xaml.Charting.Common.Extensions;
-using StockSharp.Xaml.Charting.Rendering.Common;
+using Ecng.Xaml.Charting.Common.Extensions;
+using Ecng.Xaml.Charting.Rendering.Common;
 
-namespace StockSharp.Xaml.Charting.Rendering.HighSpeedRasterizer
+namespace Ecng.Xaml.Charting.Rendering.HighSpeedRasterizer
 {
     internal class HsPen : IPen2D, IPathColor, IDisposable, IDashSplittingContext
     {
