@@ -11,6 +11,7 @@ using fx.Collections;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using SciChart.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

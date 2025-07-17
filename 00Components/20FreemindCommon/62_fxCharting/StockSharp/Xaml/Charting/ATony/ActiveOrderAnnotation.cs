@@ -10,7 +10,8 @@ using SciChart.Core.Extensions;
 using SciChart.Core.Utility;
 using StockSharp.Xaml.Charting.Definitions;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using SciChart.Charting;
 
 namespace StockSharp.Xaml.Charting.ATony
 {

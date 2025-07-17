@@ -246,7 +246,7 @@ public sealed partial class ChartViewModel : DependencyObject
         }
     }
 
-    internal void RaiseRebuildCandlesEvent( StockSharp.Xaml.Charting.IChartElement chartUI, CandleSeries candleSeries )
+    internal void RaiseRebuildCandlesEvent( StockSharp.Charting.IChartElement chartUI, CandleSeries candleSeries )
     {
         var rebuildEvent = RebuildCandlesEvent;
         if ( rebuildEvent == null )
@@ -315,7 +315,7 @@ public sealed partial class ChartViewModel : DependencyObject
         VisbleRangeDp.InitRangeDepProperty( this );
     }
 
-    public void InvokeRemoveElementEvent( StockSharp.Xaml.Charting.IChartElement element )
+    public void InvokeRemoveElementEvent( StockSharp.Charting.IChartElement element )
     {
         RemoveElementEvent?.Invoke( element );
     }

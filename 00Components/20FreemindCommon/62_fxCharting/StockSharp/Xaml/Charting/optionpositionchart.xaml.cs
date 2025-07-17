@@ -16,6 +16,7 @@ using System.Windows.Controls;
 using System.Windows.Markup;
 using System.Windows.Media;
 using StockSharp.Charting;
+using SciChart.Charting;
 
 
 namespace StockSharp.Xaml.Charting

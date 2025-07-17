@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Media;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

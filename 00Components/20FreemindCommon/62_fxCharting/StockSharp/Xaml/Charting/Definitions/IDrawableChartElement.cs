@@ -9,8 +9,8 @@ using System.ComponentModel;
 using System.Windows.Media;
 
 public interface IDrawableChartElement : IChartComponent,
-  StockSharp.Xaml.Charting.IChartElement,
-  IChartPart<StockSharp.Xaml.Charting.IChartElement>,
+  StockSharp.Charting.IChartElement,
+  IChartPart<StockSharp.Charting.IChartElement>,
   INotifyPropertyChanging,
   INotifyPropertyChanged,
   IPersistable

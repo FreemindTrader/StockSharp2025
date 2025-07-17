@@ -254,7 +254,7 @@ internal sealed class ChartComponentChartSettings : ChartSettingsObjectBase<ICha
             else
             {
                 var pdl = new List<PropertyDescriptor>();
-                pdl.Add( Create( this.CreateName( this._component?.GetName( ( StockSharp.Xaml.Charting.IChartElement ) chartCom ) ?? Extensions.GetDisplayName( propDesc, ( string ) null ) ), ( object ) this._component, chartCom, this._settings._propertyDescSelector ) );
+                pdl.Add( Create( this.CreateName( this._component?.GetName( ( StockSharp.Charting.IChartElement ) chartCom ) ?? Extensions.GetDisplayName( propDesc, ( string ) null ) ), ( object ) this._component, chartCom, this._settings._propertyDescSelector ) );
 
                 pd = ( IEnumerable<PropertyDescriptor> ) pdl;
             }

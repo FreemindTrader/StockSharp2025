@@ -1,6 +1,6 @@
 ﻿using StockSharp.Xaml.Charting;
 using System.Collections.Specialized;
-
+using StockSharp.Charting;
 internal sealed class YAxisesComboBoxEditSettings : AxisesComboBoxEditSettings
 {
     protected override INotifyCollectionChanged GetAxisesArray(

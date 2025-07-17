@@ -11,7 +11,8 @@ using StockSharp.Localization;
 using StockSharp.Messages;
 using StockSharp.Xaml.Charting;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
@@ -23,6 +24,7 @@ using System.Windows.Media;
 using StockSharp.Xaml.Charting.ATony;
 using StockSharp.Algo;
 using Ecng.ComponentModel;
+using SciChart.Charting;
 
 
 #pragma warning disable CA1416
@@ -311,7 +313,7 @@ namespace StockSharp.Xaml.Charting
         {
             Order order                  = _param1.Order();
             var activeOrder              = new ActiveOrderAnnotation();
-            activeOrder.CoordinateMode = AnnotationCoordinateMode.RelativeX;
+            activeOrder.CoordinateMode = SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeX;
             activeOrder.DragDirections = XyDirection.YDirection;
             activeOrder.ResizeDirections = XyDirection.XDirection;
             activeOrder.OrderErrorText = LocalizedStrings.OrderError.ToUpperInvariant( );

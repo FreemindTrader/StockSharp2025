@@ -6,10 +6,12 @@ using StockSharp.Algo.Indicators;
 using StockSharp.Localization;
 using System;
 using System.Collections;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 

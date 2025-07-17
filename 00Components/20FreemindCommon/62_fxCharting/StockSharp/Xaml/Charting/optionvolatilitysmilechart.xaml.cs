@@ -8,7 +8,8 @@ using MoreLinq;
 using Ecng.Drawing;
 using System;
 using System.CodeDom.Compiler;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -18,6 +19,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
+using SciChart.Charting;
 
 
 namespace StockSharp.Xaml.Charting

@@ -1,5 +1,6 @@
 ﻿using Ecng.Common;
 using SciChart.Charting.Visuals.Annotations;
+using StockSharp.Charting;
 using System;
 
 namespace StockSharp.Xaml.Charting

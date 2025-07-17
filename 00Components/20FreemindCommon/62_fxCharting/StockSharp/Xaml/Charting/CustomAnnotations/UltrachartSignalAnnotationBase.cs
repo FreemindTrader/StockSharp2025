@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Ecng.Common;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting.CustomAnnotations
 {

@@ -2,7 +2,7 @@
 using DevExpress.Xpf.Editors.Helpers;
 using DevExpress.Xpf.Editors.Settings;
 using DevExpress.Xpf.PropertyGrid;
-using StockSharp.Xaml.Charting;
+using StockSharp.Charting;
 using StockSharp.Xaml.Charting.Ultrachart;
 
 internal abstract class AxisesComboBoxEditSettingsBase : ComboBoxEditSettings

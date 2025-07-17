@@ -1,6 +1,8 @@
 ﻿using Ecng.Serialization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

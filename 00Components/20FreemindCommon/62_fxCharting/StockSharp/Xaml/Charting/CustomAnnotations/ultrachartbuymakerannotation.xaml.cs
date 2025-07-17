@@ -1,4 +1,5 @@
 ﻿using System;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

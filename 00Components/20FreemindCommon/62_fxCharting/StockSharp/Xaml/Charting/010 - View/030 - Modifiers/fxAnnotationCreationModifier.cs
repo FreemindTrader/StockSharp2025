@@ -10,7 +10,7 @@ using System.Windows;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
-internal class fxAnnotationCreationModifier : ChartModifierBase
+public class fxAnnotationCreationModifier : ChartModifierBase
 {
     public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof(YAxisId), typeof(string), typeof(fxAnnotationCreationModifier), new PropertyMetadata((object) "DefaultAxisId"));
 
@@ -142,7 +142,9 @@ internal class fxAnnotationCreationModifier : ChartModifierBase
         
         this._annotation.IsSelected = true;
         this.OnAnnotationCreated();
-        _annotation.UpdateAdorners();
+
+        throw new NotImplementedException();
+        //_annotation.UpdateAdorners();
     }
 
 

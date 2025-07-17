@@ -39,6 +39,7 @@ using System.Drawing;
 using System.Windows.Media;
 using SciChart.Charting.Themes;
 using Ecng.Common;
+using SciChart.Charting;
 
 namespace StockSharp.Xaml.Charting;
 

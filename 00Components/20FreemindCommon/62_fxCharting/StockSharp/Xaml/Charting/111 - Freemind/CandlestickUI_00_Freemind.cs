@@ -10,6 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Windows.Media;
 using fx.Definitions;
+using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {

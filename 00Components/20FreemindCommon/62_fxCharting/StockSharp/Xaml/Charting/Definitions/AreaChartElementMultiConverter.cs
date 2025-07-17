@@ -1,4 +1,5 @@
-﻿using StockSharp.Xaml.Charting;
+﻿using StockSharp.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Globalization;
 using System.Windows.Data;

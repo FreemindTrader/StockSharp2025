@@ -90,12 +90,12 @@ namespace StockSharp.Xaml.Charting
 
         static fxTradingAnnotationCreationModifier( )
         {
-            AnnotationTypeProperty.OverrideMetadata( typeof( fxTradingAnnotationCreationModifier ), new PropertyMetadata( null, new PropertyChangedCallback( OnAnnotationTypeChanged ) ) );
+            //AnnotationTypeProperty.OverrideMetadata( typeof( fxTradingAnnotationCreationModifier ), new PropertyMetadata( null, new PropertyChangedCallback( OnAnnotationTypeChanged ) ) );
         }
 
         protected override void OnIsEnabledChanged( )
         {
-            Annotation = null;
+            //Annotation = null;
         }
 
         public override void OnModifierMouseMove( ModifierMouseArgs mouseEventArgs )
@@ -141,7 +141,7 @@ namespace StockSharp.Xaml.Charting
             }
 
             _lastClick = GetPointRelativeTo( mouseButtonEventArgs.MousePoint, ModifierSurface );
-            Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
+            //Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
 
             ITradingAnnotation annotation = Annotation as ITradingAnnotation;
 
@@ -176,7 +176,7 @@ namespace StockSharp.Xaml.Charting
             {
                 _lastClick = GetPointRelativeTo( mouseButtonEventArgs.MousePoint, ModifierSurface );
 
-                Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
+                //Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
 
                 ITradingAnnotation annotation = Annotation as ITradingAnnotation;
 

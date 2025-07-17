@@ -100,7 +100,7 @@ namespace StockSharp.Xaml.Charting
 
         static FxAnnotationModifier( )
         {
-            AnnotationTypeProperty.OverrideMetadata( typeof( FxAnnotationModifier ), new PropertyMetadata( null, new PropertyChangedCallback( OnAnnotationTypeChanged ) ) );
+            //AnnotationTypeProperty.OverrideMetadata( typeof( FxAnnotationModifier ), new PropertyMetadata( null, new PropertyChangedCallback( OnAnnotationTypeChanged ) ) );
         }
 
 
@@ -154,7 +154,7 @@ namespace StockSharp.Xaml.Charting
                 }
 
                 AnnotationType = type;
-                Annotation     = null;
+                //Annotation     = null;
                 IsEnabled      = true;
 
                 //if ( annotationTypes == ChartAnnotationTypes.HorizontalLineAnnotation || annotationTypes == ChartAnnotationTypes.VerticalLineAnnotation )
@@ -182,7 +182,7 @@ namespace StockSharp.Xaml.Charting
 
         protected override void OnIsEnabledChanged( )
         {
-            Annotation = null;
+            //Annotation = null;
         }
 
         
@@ -251,19 +251,20 @@ namespace StockSharp.Xaml.Charting
             {
                 _lastClick = GetPointRelativeTo( mouseButtonEventArgs.MousePoint, ModifierSurface );
 
-                Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
+                throw new NotImplementedException();
+                //Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
 
-                ITradingAnnotation annotation = Annotation as ITradingAnnotation;
+                //ITradingAnnotation annotation = Annotation as ITradingAnnotation;
 
-                if ( annotation != null )
-                {
-                    annotation.AnnotationCreated += new EventHandler<AnnotationCreationArgs>( AdvancedAnnotationCreated );
-                    IComparable xAxisDateTime     = XAxis.GetDataValue( _lastClick.X );
-                    IComparable yAxisPrice        = YAxis.GetDataValue( _lastClick.Y );
+                //if ( annotation != null )
+                //{
+                //    annotation.AnnotationCreated += new EventHandler<AnnotationCreationArgs>( AdvancedAnnotationCreated );
+                //    IComparable xAxisDateTime     = XAxis.GetDataValue( _lastClick.X );
+                //    IComparable yAxisPrice        = YAxis.GetDataValue( _lastClick.Y );
 
-                    annotation.SetBasePoint( xAxisDateTime, yAxisPrice );
-                    _clickCount = 1;
-                }
+                //    annotation.SetBasePoint( xAxisDateTime, yAxisPrice );
+                //    _clickCount = 1;
+                //}
             }
             else
             {
@@ -373,47 +374,50 @@ namespace StockSharp.Xaml.Charting
 
             
             var instance = CreateAnnotation( AnnotationType, AnnotationStyle );
-            Annotation = instance;
 
-            if ( instance is ITradingAnnotation annotation )
-            {
-                IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
-                IComparable yAxisPrice = YAxis.GetDataValue( _lastClick.Y );
+            throw new NotImplementedException();
 
-                annotation.SetBasePoint( xAxisDateTime, yAxisPrice );
+            //Annotation = instance;
 
-                _clickCount = 1;
-            }
-            else if ( instance is VerticalLineAnnotation )
-            {
-                IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //if ( instance is ITradingAnnotation annotation )
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //    IComparable yAxisPrice = YAxis.GetDataValue( _lastClick.Y );
 
-                ICategoryCoordinateCalculator coordCalc = XAxis.GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
-                int index = coordCalc.TransformDataToIndex( xAxisDateTime );
-                instance.X1 = index;
+            //    annotation.SetBasePoint( xAxisDateTime, yAxisPrice );
 
-                OnAnnotationCreated( );
-            }
-            else if ( instance is HorizontalLineAnnotation )
-            {
-                IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
-                IComparable yAxisPrice    = YAxis.GetDataValue( _lastClick.Y );
+            //    _clickCount = 1;
+            //}
+            //else if ( instance is VerticalLineAnnotation )
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
 
-                instance.X1 = xAxisDateTime;
-                instance.Y1 = yAxisPrice;
+            //    ICategoryCoordinateCalculator coordCalc = XAxis.GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
+            //    int index = coordCalc.TransformDataToIndex( xAxisDateTime );
+            //    instance.X1 = index;
 
-                OnAnnotationCreated( );
-            }
-            else
-            {
-                IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
-                IComparable yAxisPrice    = YAxis.GetDataValue( _lastClick.Y );
+            //    OnAnnotationCreated( );
+            //}
+            //else if ( instance is HorizontalLineAnnotation )
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //    IComparable yAxisPrice    = YAxis.GetDataValue( _lastClick.Y );
 
-                instance.X1 = xAxisDateTime;
-                instance.Y1 = yAxisPrice;
+            //    instance.X1 = xAxisDateTime;
+            //    instance.Y1 = yAxisPrice;
 
-                _clickCount = 1;
-            }
+            //    OnAnnotationCreated( );
+            //}
+            //else
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //    IComparable yAxisPrice    = YAxis.GetDataValue( _lastClick.Y );
+
+            //    instance.X1 = xAxisDateTime;
+            //    instance.Y1 = yAxisPrice;
+
+            //    _clickCount = 1;
+            //}
         }
 
         #endregion

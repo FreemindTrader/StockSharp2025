@@ -30,7 +30,7 @@ using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
 using fx.Common;
 using StockSharp.Xaml;
-
+using StockSharp.Charting;
 
 
 #pragma warning disable 067
