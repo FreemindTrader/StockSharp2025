@@ -8,7 +8,7 @@
 public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzwjYTtd2Y4XJ9\u0024LmrFYUarlJnNjSRG3t4w69ang3iq0Klw\u003D(
   \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D _param1,
   \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR _param2) : 
-  \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E1XIWWar5UU1A8kbYiZgM0qg75I\u003D(_param1, _param2, (\u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D) null)
+  \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E1XIWWar5UU1A8kbYiZgM0qg75I\u003D(_param1, _param2, (IImageFilterFunction) null)
 {
   public override void \u0023\u003DzvJVSzbY\u003D(
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D[] _param1,

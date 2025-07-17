@@ -11,7 +11,7 @@ public sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg5DNkBpIF971q52OpobmsqDJ1qX
   private int \u0023\u003DzkgeRLzgn\u00240Y5;
   private int \u0023\u003Dzx5dsIdhE6PKJ;
   private int \u0023\u003Dzoz\u0024fUDBiNnSX;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<double> \u0023\u003DzvLumE2M5pBGj = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<double>(16 /*0x10*/);
+  private ArrayPOD<double> \u0023\u003DzvLumE2M5pBGj = new ArrayPOD<double>(16 /*0x10*/);
   private int \u0023\u003Dzqa1HDECR3YFf;
 
   public \u0023\u003DzdnTE8UjAVGg52Oblqj3yg5DNkBpIF971q52OpobmsqDJ1qX\u0024lkMCdTbBatrbEkyDtQ\u003D\u003D()
@@ -76,7 +76,7 @@ public sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg5DNkBpIF971q52OpobmsqDJ1qX
       for (int index = 0; index < this.\u0023\u003DzkgeRLzgn\u00240Y5; ++index)
         this.\u0023\u003DzvLumE2M5pBGj.\u0023\u003DzS9gpfR4\u003D(index, 0.0);
       int num1 = 3 * this.\u0023\u003DzkgeRLzgn\u00240Y5;
-      \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<double> doiRvpM0aYHqY7Xw1 = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<double>(num1);
+      ArrayPOD<double> doiRvpM0aYHqY7Xw1 = new ArrayPOD<double>(num1);
       for (int index = 0; index < num1; ++index)
         doiRvpM0aYHqY7Xw1.\u0023\u003DzS9gpfR4\u003D(index, 0.0);
       int zkgeRlzgn0Y5 = this.\u0023\u003DzkgeRLzgn\u00240Y5;
@@ -97,7 +97,7 @@ public sealed class \u0023\u003DzdnTE8UjAVGg52Oblqj3yg5DNkBpIF971q52OpobmsqDJ1qX
       for (int index = 1; index < num3; ++index)
       {
         double num8 = 1.0 / (doiRvpM0aYHqY7Xw1.\u0023\u003Dz\u0024CeUvME\u003D(zkgeRlzgn0Y5 + index) * doiRvpM0aYHqY7Xw1.\u0023\u003Dz\u0024CeUvME\u003D(index - 1) + 2.0);
-        \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<double> doiRvpM0aYHqY7Xw2 = doiRvpM0aYHqY7Xw1;
+        ArrayPOD<double> doiRvpM0aYHqY7Xw2 = doiRvpM0aYHqY7Xw1;
         int num9 = index;
         doiRvpM0aYHqY7Xw2.\u0023\u003DzS9gpfR4\u003D(num9, doiRvpM0aYHqY7Xw2.\u0023\u003Dz\u0024CeUvME\u003D(num9) * -num8);
         doiRvpM0aYHqY7Xw1.\u0023\u003DzS9gpfR4\u003D(num2 + index, (doiRvpM0aYHqY7Xw1.\u0023\u003Dz\u0024CeUvME\u003D(num2 + index) - doiRvpM0aYHqY7Xw1.\u0023\u003Dz\u0024CeUvME\u003D(zkgeRlzgn0Y5 + index) * doiRvpM0aYHqY7Xw1.\u0023\u003Dz\u0024CeUvME\u003D(num2 + index - 1)) * num8);

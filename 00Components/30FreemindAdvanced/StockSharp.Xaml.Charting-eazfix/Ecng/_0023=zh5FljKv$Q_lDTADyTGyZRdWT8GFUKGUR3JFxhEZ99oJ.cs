@@ -11,7 +11,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
   \u0023\u003DzolvWmzKCnovSLB\u0024fEd65UxTe9ueugBFPPbNRHut89GFfexjP4JI2sgmYygvp7gvAFg\u003D\u003D
 {
   private \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLSS28mTU1\u0024kh32C_bmlBdAw\u0024tw\u003D\u003D \u0023\u003DzzO5jLdwolkwL;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte> \u0023\u003DzsSva0obPyFyB;
+  private ArrayPOD<byte> \u0023\u003DzsSva0obPyFyB;
   private static byte \u0023\u003Dz68hARzzl638oLDKc3Q\u003D\u003D = byte.MaxValue;
 
   public \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99oJ\u0024N5dWNqQlx2PfqrfGQo3sPQ\u003D\u003D(
@@ -21,7 +21,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
   {
     this.\u0023\u003Dz1tnZb_4PNlXh = _param1;
     this.\u0023\u003DzzO5jLdwolkwL = _param2;
-    this.\u0023\u003DzsSva0obPyFyB = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte>((int) byte.MaxValue);
+    this.\u0023\u003DzsSva0obPyFyB = new ArrayPOD<byte>((int) byte.MaxValue);
   }
 
   private void \u0023\u003Dzq1uVk7jQi60\u0024b\u0024mxEA\u003D\u003D(int _param1)
@@ -39,7 +39,7 @@ public sealed class \u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRdWT8GFUKGUR3JFxhEZ99o
   private void \u0023\u003DzdLQweeZoBAmK(int _param1, byte _param2)
   {
     this.\u0023\u003Dzq1uVk7jQi60\u0024b\u0024mxEA\u003D\u003D(_param1);
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003Dz6\u0024HSYSmsjbW7(this.\u0023\u003DzsSva0obPyFyB.\u0023\u003DzvsnCYl4\u003D(), 0, _param2, _param1);
+    agg_basics.\u0023\u003Dz6\u0024HSYSmsjbW7(this.\u0023\u003DzsSva0obPyFyB.\u0023\u003DzvsnCYl4\u003D(), 0, _param2, _param1);
   }
 
   private void \u0023\u003DzdLQweeZoBAmK(int _param1, byte[] _param2, int _param3)

@@ -109,7 +109,7 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
   [SpecialName]
   public int \u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D()
   {
-    return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
+    return agg_basics.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
   }
 
   [SpecialName]
@@ -121,7 +121,7 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
   [SpecialName]
   public int \u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D()
   {
-    return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003DzoRsAtmfOFDZe * (double) byte.MaxValue);
+    return agg_basics.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003DzoRsAtmfOFDZe * (double) byte.MaxValue);
   }
 
   [SpecialName]
@@ -133,7 +133,7 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
   [SpecialName]
   public int \u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()
   {
-    return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003DzcdKuX48ZXN_S * (double) byte.MaxValue);
+    return agg_basics.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003DzcdKuX48ZXN_S * (double) byte.MaxValue);
   }
 
   [SpecialName]
@@ -145,7 +145,7 @@ public struct \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1v
   [SpecialName]
   public int \u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D()
   {
-    return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003DzKCqGEcs\u003D * (double) byte.MaxValue);
+    return agg_basics.\u0023\u003DzROReRE0C5MV7((double) this.\u0023\u003DzKCqGEcs\u003D * (double) byte.MaxValue);
   }
 
   [SpecialName]

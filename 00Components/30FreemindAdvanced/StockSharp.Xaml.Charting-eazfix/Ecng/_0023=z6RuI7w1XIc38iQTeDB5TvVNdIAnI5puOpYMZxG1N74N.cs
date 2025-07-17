@@ -8,12 +8,12 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvVNdIAnI5puOpYMZxG1N74NKDg_amLDV7KqxGsLju8sgS0tDjuo\u003D : 
-  \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D
+  span_image_filter
 {
   public \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvVNdIAnI5puOpYMZxG1N74NKDg_amLDV7KqxGsLju8sgS0tDjuo\u003D(
-    \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D _param1,
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT _param2,
-    \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeTxLdSjL9CR9M_QGcrFkI\u0024EwQ\u003D\u003D _param3)
+    IImageBufferAccessor _param1,
+    ISpanInterpolator _param2,
+    ImageFilterLookUpTable _param3)
     : base(_param1, _param2, _param3)
   {
     if (_param1.\u0023\u003Dz8hY71usSYcKH().\u0023\u003DzQB4v2EccUot6eT2VRw\u003D\u003D() != 3)
@@ -31,7 +31,7 @@ public sealed class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvVNdIAnI5puOpYMZxG1N74NKDg_
     int num1 = this.\u0023\u003DzPAwmFd_s7qOr.\u0023\u003DzsG\u0024bkFt924ExZZI2LQ\u003D\u003D();
     int num2 = this.\u0023\u003DzPAwmFd_s7qOr.\u0023\u003DzCVPVJaY\u003D();
     int[] numArray1 = this.\u0023\u003DzPAwmFd_s7qOr.\u0023\u003Dztrjmxx0aHjVH();
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT nbVwaPinzNveauDt = this.\u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D();
+    ISpanInterpolator nbVwaPinzNveauDt = this.\u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D();
     do
     {
       nbVwaPinzNveauDt.\u0023\u003Dz95kJcrQe23xpIQcxtQ\u003D\u003D(out _param3, out _param4);

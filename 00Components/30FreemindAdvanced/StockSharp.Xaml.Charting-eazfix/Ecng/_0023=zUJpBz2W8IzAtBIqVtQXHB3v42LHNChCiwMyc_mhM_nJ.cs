@@ -10,14 +10,14 @@ public sealed class \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB3v42LHNChCiwMyc_mhM_nJgX2N
 {
   private int \u0023\u003Dz_TCtD0vLATv8;
   private int \u0023\u003DzFfSb8y0\u003D;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan> \u0023\u003DzDfv8Db0RWqZH;
+  private ArrayPOD<ScanlineSpan> \u0023\u003DzDfv8Db0RWqZH;
   private int \u0023\u003DzJZMDU99kHHNc;
   private int \u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
 
   public \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB3v42LHNChCiwMyc_mhM_nJgX2NQAB9o1T4SlQbf8OpLyJGvcS0\u003D()
   {
     this.\u0023\u003Dz_TCtD0vLATv8 = 2147483632;
-    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan>(1000);
+    this.\u0023\u003DzDfv8Db0RWqZH = new ArrayPOD<ScanlineSpan>(1000);
     this.\u0023\u003DzJZMDU99kHHNc = 0;
   }
 

@@ -1,0 +1,49 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: StockSharp.Xaml.Charting.ChartModifiers.IChartModifierBase
+// Assembly: StockSharp.Xaml.Charting, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b10e79ed0227b515
+// MVID: C2F11401-C1E6-47FC-9255-FC66EA027789
+// Assembly location: A:\10 - StockSharp\Hydra\StockSharp.Xaml.Charting.dll
+
+using System.ComponentModel;
+using StockSharp.Xaml.Charting.Utility.Mouse;
+using StockSharp.Xaml.Charting.Visuals;
+
+namespace StockSharp.Xaml.Charting.ChartModifiers
+{
+    public interface IChartModifierBase : IReceiveMouseEvents, INotifyPropertyChanged
+    {
+        IServiceContainer Services
+        {
+            get; set;
+        }
+
+        IChartModifierSurface ModifierSurface
+        {
+            get;
+        }
+
+        string ModifierName
+        {
+            get;
+        }
+
+        bool IsAttached
+        {
+            get; set;
+        }
+
+        object DataContext
+        {
+            get; set;
+        }
+
+        bool ReceiveHandledEvents
+        {
+            get;
+        }
+
+        void OnAttached();
+
+        void OnDetached();
+    }
+}

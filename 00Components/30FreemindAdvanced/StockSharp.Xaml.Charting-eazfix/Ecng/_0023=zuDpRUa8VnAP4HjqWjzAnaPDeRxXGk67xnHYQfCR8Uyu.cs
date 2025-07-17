@@ -16,9 +16,9 @@ public sealed class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaPDeRxXGk67xnHYQfCR8UyuYU_5
     this.\u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D = _param1;
   }
 
-  public int \u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(int _param1, int _param2, int _param3)
+  public int calculate(int _param1, int _param2, int _param3)
   {
-    int num = this.\u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D.\u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(_param1, _param2, _param3);
+    int num = this.\u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D.calculate(_param1, _param2, _param3);
     if (num < 0)
       num = 0;
     if (num > _param3)

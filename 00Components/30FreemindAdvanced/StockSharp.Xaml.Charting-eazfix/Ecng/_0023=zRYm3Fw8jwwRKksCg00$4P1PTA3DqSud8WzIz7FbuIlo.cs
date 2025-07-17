@@ -10,7 +10,7 @@ using System.Diagnostics;
 #nullable disable
 public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIlooN_p__NkwlEdlyT\u0024342dv_HVBZ72oDCymVTQ57Q\u003D\u003D : 
   \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM,
-  \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W
+  ISpanGenerator
 {
   private bool \u0023\u003Dz0jB3_omTSIIx;
   private int \u0023\u003DzQerFnE0gt21w;
@@ -189,9 +189,9 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
   public struct \u0023\u003Dziujnni9rN792sAZFhw\u003D\u003D
   {
     
-    public double \u0023\u003DzrQGe4cfoOivd;
+    public double m_x1;
     
-    public double \u0023\u003Dz3TQoxnnGHEBc;
+    public double m_y1;
     
     public double \u0023\u003DzYTRoyKyN3fBR;
     
@@ -227,8 +227,8 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
       \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM.\u0023\u003DzafZj3dT3iE_e _param1,
       \u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSvy8c_QvO7qt\u002402e0HOXYtg5UkjUccmmBVwlVFwpO\u0024EC4O_OLVZeFPIM.\u0023\u003DzafZj3dT3iE_e _param2)
     {
-      this.\u0023\u003DzrQGe4cfoOivd = _param1.\u0023\u003DzwP120vA\u003D - 0.5;
-      this.\u0023\u003Dz3TQoxnnGHEBc = _param1.\u0023\u003Dzi8jDI4I\u003D - 0.5;
+      this.m_x1 = _param1.\u0023\u003DzwP120vA\u003D - 0.5;
+      this.m_y1 = _param1.\u0023\u003Dzi8jDI4I\u003D - 0.5;
       this.\u0023\u003DzYTRoyKyN3fBR = _param2.\u0023\u003DzwP120vA\u003D - _param1.\u0023\u003DzwP120vA\u003D;
       double num = _param2.\u0023\u003Dzi8jDI4I\u003D - _param1.\u0023\u003Dzi8jDI4I\u003D;
       this.\u0023\u003DzBH1CDqurOI4f = num < 1E-05 ? 100000.0 : 1.0 / num;
@@ -244,16 +244,16 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P1PTA3DqSud8WzIz7FbuIl
 
     public void \u0023\u003DzFlkZpfJp6G9R(double _param1)
     {
-      double num = (_param1 - this.\u0023\u003Dz3TQoxnnGHEBc) * this.\u0023\u003DzBH1CDqurOI4f;
+      double num = (_param1 - this.m_y1) * this.\u0023\u003DzBH1CDqurOI4f;
       if (num < 0.0)
         num = 0.0;
       if (num > 1.0)
         num = 1.0;
-      this.\u0023\u003Dzay8Cw54\u003D = this.\u0023\u003DzyJ\u0024PpUsJK7XJ + \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003Dz_br6GRXs8pgf * num);
-      this.\u0023\u003DzCkmRwyg\u003D = this.\u0023\u003Dzct6gFYjI7A\u0024p + \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003Dz4ywyXdDcW_iI * num);
-      this.\u0023\u003DzX\u0024mScSc\u003D = this.\u0023\u003Dzj0KIAlR0xKcn + \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003Dz\u00249WRGOfcshij * num);
-      this.\u0023\u003Dz4CsGzTg\u003D = this.\u0023\u003DzsP3bw41BOvEM + \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003DzkGVuVBDBJzlP * num);
-      this.\u0023\u003DzI6P8IpE\u003D = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((this.\u0023\u003DzrQGe4cfoOivd + this.\u0023\u003DzYTRoyKyN3fBR * num) * 16.0);
+      this.\u0023\u003Dzay8Cw54\u003D = this.\u0023\u003DzyJ\u0024PpUsJK7XJ + agg_basics.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003Dz_br6GRXs8pgf * num);
+      this.\u0023\u003DzCkmRwyg\u003D = this.\u0023\u003Dzct6gFYjI7A\u0024p + agg_basics.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003Dz4ywyXdDcW_iI * num);
+      this.\u0023\u003DzX\u0024mScSc\u003D = this.\u0023\u003Dzj0KIAlR0xKcn + agg_basics.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003Dz\u00249WRGOfcshij * num);
+      this.\u0023\u003Dz4CsGzTg\u003D = this.\u0023\u003DzsP3bw41BOvEM + agg_basics.\u0023\u003DzQ9DKAFLSaa9H((double) this.\u0023\u003DzkGVuVBDBJzlP * num);
+      this.\u0023\u003DzI6P8IpE\u003D = agg_basics.\u0023\u003DzQ9DKAFLSaa9H((this.m_x1 + this.\u0023\u003DzYTRoyKyN3fBR * num) * 16.0);
     }
   }
 }

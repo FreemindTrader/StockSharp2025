@@ -7,5 +7,5 @@
 #nullable disable
 public interface \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLHE4noQv5jvPOdidvRVonqXR1_40XGWjzqTPSwaJ
 {
-  int \u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(int _param1, int _param2, int _param3);
+  int calculate(int _param1, int _param2, int _param3);
 }

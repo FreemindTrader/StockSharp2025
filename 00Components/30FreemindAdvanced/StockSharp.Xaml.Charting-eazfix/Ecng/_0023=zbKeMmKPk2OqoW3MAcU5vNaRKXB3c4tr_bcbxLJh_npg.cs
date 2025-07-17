@@ -38,8 +38,8 @@ public static class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npg0ToI
     }
     else
     {
-      _param2 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num2);
-      _param3 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num3);
+      _param2 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num2);
+      _param3 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num3);
     }
   }
 
@@ -48,7 +48,7 @@ public static class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npg0ToI
     ref int _param1,
     ref int _param2)
   {
-    if (\u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(((double) (_param1 - _param0.\u0023\u003DzxpGWEWQ\u003D) * (double) (_param0.\u0023\u003Dz3MxuAfw\u003D - _param0.\u0023\u003DzrS5XlCc\u003D) - (double) (_param2 - _param0.\u0023\u003Dz3MxuAfw\u003D) * (double) (_param0.\u0023\u003DzxpGWEWQ\u003D - _param0.\u0023\u003DzLNbWazE\u003D)) / (double) _param0.\u0023\u003Dzeids9mY\u003D) >= 128 /*0x80*/)
+    if (agg_basics.\u0023\u003DzQ9DKAFLSaa9H(((double) (_param1 - _param0.\u0023\u003DzxpGWEWQ\u003D) * (double) (_param0.\u0023\u003Dz3MxuAfw\u003D - _param0.\u0023\u003DzrS5XlCc\u003D) - (double) (_param2 - _param0.\u0023\u003Dz3MxuAfw\u003D) * (double) (_param0.\u0023\u003DzxpGWEWQ\u003D - _param0.\u0023\u003DzLNbWazE\u003D)) / (double) _param0.\u0023\u003Dzeids9mY\u003D) >= 128 /*0x80*/)
       return;
     _param1 = _param0.\u0023\u003DzLNbWazE\u003D + (_param0.\u0023\u003Dz3MxuAfw\u003D - _param0.\u0023\u003DzrS5XlCc\u003D);
     _param2 = _param0.\u0023\u003DzrS5XlCc\u003D - (_param0.\u0023\u003DzxpGWEWQ\u003D - _param0.\u0023\u003DzLNbWazE\u003D);
@@ -59,7 +59,7 @@ public static class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npg0ToI
     ref int _param1,
     ref int _param2)
   {
-    if (\u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(((double) (_param1 - _param0.\u0023\u003DzxpGWEWQ\u003D) * (double) (_param0.\u0023\u003Dz3MxuAfw\u003D - _param0.\u0023\u003DzrS5XlCc\u003D) - (double) (_param2 - _param0.\u0023\u003Dz3MxuAfw\u003D) * (double) (_param0.\u0023\u003DzxpGWEWQ\u003D - _param0.\u0023\u003DzLNbWazE\u003D)) / (double) _param0.\u0023\u003Dzeids9mY\u003D) >= 128 /*0x80*/)
+    if (agg_basics.\u0023\u003DzQ9DKAFLSaa9H(((double) (_param1 - _param0.\u0023\u003DzxpGWEWQ\u003D) * (double) (_param0.\u0023\u003Dz3MxuAfw\u003D - _param0.\u0023\u003DzrS5XlCc\u003D) - (double) (_param2 - _param0.\u0023\u003Dz3MxuAfw\u003D) * (double) (_param0.\u0023\u003DzxpGWEWQ\u003D - _param0.\u0023\u003DzLNbWazE\u003D)) / (double) _param0.\u0023\u003Dzeids9mY\u003D) >= 128 /*0x80*/)
       return;
     _param1 = _param0.\u0023\u003DzxpGWEWQ\u003D + (_param0.\u0023\u003Dz3MxuAfw\u003D - _param0.\u0023\u003DzrS5XlCc\u003D);
     _param2 = _param0.\u0023\u003Dz3MxuAfw\u003D - (_param0.\u0023\u003DzxpGWEWQ\u003D - _param0.\u0023\u003DzLNbWazE\u003D);

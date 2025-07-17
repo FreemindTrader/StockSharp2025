@@ -7,7 +7,7 @@
 #nullable disable
 public sealed class \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGLBk7pXAGd\u00242IV5d6o6Os2AavA\u003D\u003D
 {
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte> \u0023\u003Dznvk9a7y2KXcJ = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte>();
+  private ArrayPOD<byte> \u0023\u003Dznvk9a7y2KXcJ = new ArrayPOD<byte>();
   private byte[] \u0023\u003DzY\u0024iy3H6MDQlk = new byte[256 /*0x0100*/];
   private int \u0023\u003DzV_VWhM\u00240YBe2u0P9ylDRaVg\u003D;
   private double \u0023\u003DzEvw\u0024o4zKEtz2;
@@ -24,7 +24,7 @@ public sealed class \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGL
 
   public \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGLBk7pXAGd\u00242IV5d6o6Os2AavA\u003D\u003D(
     double _param1,
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOx1RkmuVmhXUogDkNvXBX5gA\u003D\u003D _param2)
+    IGammaFunction _param2)
   {
     this.\u0023\u003DzV_VWhM\u00240YBe2u0P9ylDRaVg\u003D = 0;
     this.\u0023\u003DzEvw\u0024o4zKEtz2 = 1.0;
@@ -44,10 +44,10 @@ public sealed class \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGL
   }
 
   public void \u0023\u003DzruxDfy35wG0J(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOx1RkmuVmhXUogDkNvXBX5gA\u003D\u003D _param1)
+    IGammaFunction _param1)
   {
     for (int index = 0; index < 256 /*0x0100*/; ++index)
-      this.\u0023\u003DzY\u0024iy3H6MDQlk[index] = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param1.\u0023\u003DzoxmYZFvB84ZN((double) index / (double) byte.MaxValue) * (double) byte.MaxValue);
+      this.\u0023\u003DzY\u0024iy3H6MDQlk[index] = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param1.\u0023\u003DzoxmYZFvB84ZN((double) index / (double) byte.MaxValue) * (double) byte.MaxValue);
   }
 
   public void \u0023\u003DzCIN619c\u003D(double _param1)
@@ -93,7 +93,7 @@ public sealed class \u0023\u003DzK81GG_wgiuuUbPhMOlh\u0024xkmZqO75yiiNxcE1i3GVGL
 
   private byte[] \u0023\u003Dze_G\u0024P7U\u003D(double _param1)
   {
-    this.\u0023\u003DzV_VWhM\u00240YBe2u0P9ylDRaVg\u003D = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param1 * 256.0);
+    this.\u0023\u003DzV_VWhM\u00240YBe2u0P9ylDRaVg\u003D = agg_basics.\u0023\u003DzROReRE0C5MV7(_param1 * 256.0);
     int num = this.\u0023\u003DzV_VWhM\u00240YBe2u0P9ylDRaVg\u003D + 1536 /*0x0600*/;
     if (num > this.\u0023\u003Dznvk9a7y2KXcJ.\u0023\u003DzdTxNrgQ\u003D())
       this.\u0023\u003Dznvk9a7y2KXcJ.\u0023\u003Dz7FKHKl8\u003D(num);

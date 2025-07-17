@@ -13,7 +13,7 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
   public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zdsYrjLM9nJb1ADJMhUVI0gywA65\u0024G8nuhFUmGTW3S(
     \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D _param1,
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR _param2,
-    \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D _param3)
+    IImageFilterFunction _param3)
     : base(_param1, _param2, _param3)
   {
     if (_param1.\u0023\u003Dz8hY71usSYcKH().\u0023\u003DzaqBjqW\u00249N6vELXAC78288VQ\u003D() != 4)
@@ -28,7 +28,7 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
     int _param5)
   {
     this.\u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D().\u0023\u003DzoLjFgpI\u003D((double) _param3 + (double) this.\u0023\u003Dz5c6JtFGOLiHGd1cR5w\u003D\u003D(), (double) _param4 + (double) this.\u0023\u003DzD8L\u0024XwNa3mshC_L9ug\u003D\u003D(), _param5);
-    int num1 = (int) this.\u0023\u003Dzyo0OJMP0VzUq.\u0023\u003Dzh1hhOkJ3kH4Y() * 2;
+    int num1 = (int) this.\u0023\u003Dzyo0OJMP0VzUq.radius() * 2;
     int num2 = -(num1 / 2 - 1);
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR ywl94q52Rf8Lm58bmuAsr = this.\u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D();
     \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D erd6w55yk5zndcPeVl2HlhMqzA = this.\u0023\u003DzL2OrHlw\u003D();
@@ -52,11 +52,11 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
       float num13 = 0.0f;
       while (true)
       {
-        float num14 = (float) this.\u0023\u003Dzyo0OJMP0VzUq.\u0023\u003DzG17fc7\u0024pCNOA(Math.Sqrt((jnelpsqX4Q78W2Ejd2.dje_zLPL6EZPA_ejd - jnelpsqX4Q78W2Ejd1.dje_zLPL6EZPA_ejd) * (jnelpsqX4Q78W2Ejd2.dje_zLPL6EZPA_ejd - jnelpsqX4Q78W2Ejd1.dje_zLPL6EZPA_ejd)));
+        float num14 = (float) this.\u0023\u003Dzyo0OJMP0VzUq.calc_weight(Math.Sqrt((jnelpsqX4Q78W2Ejd2.dje_zLPL6EZPA_ejd - jnelpsqX4Q78W2Ejd1.dje_zLPL6EZPA_ejd) * (jnelpsqX4Q78W2Ejd2.dje_zLPL6EZPA_ejd - jnelpsqX4Q78W2Ejd1.dje_zLPL6EZPA_ejd)));
         int num15 = num1;
         while (true)
         {
-          float num16 = (float) this.\u0023\u003Dzyo0OJMP0VzUq.\u0023\u003DzG17fc7\u0024pCNOA(Math.Sqrt((jnelpsqX4Q78W2Ejd2.dje_z3GBAX47U_ejd - jnelpsqX4Q78W2Ejd1.dje_z3GBAX47U_ejd) * (jnelpsqX4Q78W2Ejd2.dje_z3GBAX47U_ejd - jnelpsqX4Q78W2Ejd1.dje_z3GBAX47U_ejd))) * num14;
+          float num16 = (float) this.\u0023\u003Dzyo0OJMP0VzUq.calc_weight(Math.Sqrt((jnelpsqX4Q78W2Ejd2.dje_z3GBAX47U_ejd - jnelpsqX4Q78W2Ejd1.dje_z3GBAX47U_ejd) * (jnelpsqX4Q78W2Ejd2.dje_z3GBAX47U_ejd - jnelpsqX4Q78W2Ejd1.dje_z3GBAX47U_ejd))) * num14;
           num9 += num16 * numArray[index + 2];
           num10 += num16 * numArray[index + 1];
           num11 += num16 * numArray[index];

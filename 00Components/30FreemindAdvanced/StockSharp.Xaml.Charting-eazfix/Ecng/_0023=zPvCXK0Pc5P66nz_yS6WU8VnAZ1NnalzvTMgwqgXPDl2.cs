@@ -6,16 +6,16 @@
 
 #nullable disable
 public sealed class \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8VnAZ1NnalzvTMgwqgXPDl29eBnig_Va4H5ByklMpTldBWsg9KM\u003D : 
-  \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D
+  IImageFilterFunction
 {
   private static double \u0023\u003DzXY7EHDGfNlcu(double _param0)
   {
     return _param0 > 0.0 ? _param0 * _param0 * _param0 : 0.0;
   }
 
-  public double \u0023\u003Dzh1hhOkJ3kH4Y() => 2.0;
+  public double radius() => 2.0;
 
-  public double \u0023\u003DzG17fc7\u0024pCNOA(double _param1)
+  public double calc_weight(double _param1)
   {
     return 1.0 / 6.0 * (\u0023\u003DzPvCXK0Pc5P66nz_yS6WU8VnAZ1NnalzvTMgwqgXPDl29eBnig_Va4H5ByklMpTldBWsg9KM\u003D.\u0023\u003DzXY7EHDGfNlcu(_param1 + 2.0) - 4.0 * \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8VnAZ1NnalzvTMgwqgXPDl29eBnig_Va4H5ByklMpTldBWsg9KM\u003D.\u0023\u003DzXY7EHDGfNlcu(_param1 + 1.0) + 6.0 * \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8VnAZ1NnalzvTMgwqgXPDl29eBnig_Va4H5ByklMpTldBWsg9KM\u003D.\u0023\u003DzXY7EHDGfNlcu(_param1) - 4.0 * \u0023\u003DzPvCXK0Pc5P66nz_yS6WU8VnAZ1NnalzvTMgwqgXPDl29eBnig_Va4H5ByklMpTldBWsg9KM\u003D.\u0023\u003DzXY7EHDGfNlcu(_param1 - 1.0));
   }

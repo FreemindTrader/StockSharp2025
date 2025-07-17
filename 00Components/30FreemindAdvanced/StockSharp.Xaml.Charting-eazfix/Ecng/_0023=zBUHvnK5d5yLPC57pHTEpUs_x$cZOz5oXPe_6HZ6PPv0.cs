@@ -12,7 +12,7 @@ public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv
 {
   private IImageByte \u0023\u003DzegTLEtYkn1Xk;
   private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ2IziWohYgJvXhRNocRw\u003D\u003D \u0023\u003Dzv8zN_0vlssXJ;
-  private int \u0023\u003Dzd7Ch78N2\u0024CEF;
+  private int m_start;
   private double \u0023\u003DzpIkTrpHGJNon;
   private RectangleInt \u0023\u003DzI89dEGml\u0024B4z;
 
@@ -22,7 +22,7 @@ public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv
   {
     this.\u0023\u003DzegTLEtYkn1Xk = _param1;
     this.\u0023\u003Dzv8zN_0vlssXJ = _param2;
-    this.\u0023\u003Dzd7Ch78N2\u0024CEF = 0;
+    this.m_start = 0;
     this.\u0023\u003DzpIkTrpHGJNon = 1.0;
     this.\u0023\u003DzI89dEGml\u0024B4z = new RectangleInt(0, 0, 0, 0);
   }
@@ -66,10 +66,10 @@ public sealed class \u0023\u003DzBUHvnK5d5yLPC57pHTEpUs_x\u0024cZOz5oXPe_6HZ6PPv
 
   public void \u0023\u003Dz1qhSEfFndRSy(double _param1)
   {
-    this.\u0023\u003Dzd7Ch78N2\u0024CEF = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 256.0);
+    this.m_start = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 256.0);
   }
 
-  public double \u0023\u003Dz1qhSEfFndRSy() => (double) this.\u0023\u003Dzd7Ch78N2\u0024CEF / 256.0;
+  public double \u0023\u003Dz1qhSEfFndRSy() => (double) this.m_start / 256.0;
 
   public int \u0023\u003DzqKKXccv\u0024wvZxrEpbtQ\u003D\u003D()
   {

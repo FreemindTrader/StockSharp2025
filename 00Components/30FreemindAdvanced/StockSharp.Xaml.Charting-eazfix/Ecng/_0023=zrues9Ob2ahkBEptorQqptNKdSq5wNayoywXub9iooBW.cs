@@ -8,19 +8,19 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003Dzrues9Ob2ahkBEptorQqptNKdSq5wNayoywXub9iooBWmx4vjD6pCrJ2hvCL7NWvunAWbe_c\u003D : 
-  \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D
+  IImageFilterFunction
 {
-  private double \u0023\u003Dznb94gaZaZtxqJOrpKA\u003D\u003D;
+  private double m_radius;
 
   public \u0023\u003Dzrues9Ob2ahkBEptorQqptNKdSq5wNayoywXub9iooBWmx4vjD6pCrJ2hvCL7NWvunAWbe_c\u003D(
     double _param1)
   {
-    this.\u0023\u003Dznb94gaZaZtxqJOrpKA\u003D\u003D = _param1 < 2.0 ? 2.0 : _param1;
+    this.m_radius = _param1 < 2.0 ? 2.0 : _param1;
   }
 
-  public double \u0023\u003Dzh1hhOkJ3kH4Y() => this.\u0023\u003Dznb94gaZaZtxqJOrpKA\u003D\u003D;
+  public double radius() => this.m_radius;
 
-  public double \u0023\u003DzG17fc7\u0024pCNOA(double _param1)
+  public double calc_weight(double _param1)
   {
     if (_param1 == 0.0)
       return 1.0;

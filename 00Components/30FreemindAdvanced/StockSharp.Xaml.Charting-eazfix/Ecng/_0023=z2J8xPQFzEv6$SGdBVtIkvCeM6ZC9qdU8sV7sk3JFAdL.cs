@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 #nullable disable
 [StructLayout(LayoutKind.Sequential, Size = 1)]
 public struct \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvCeM6ZC9qdU8sV7sk3JFAdLMbGvGbE6TaGNQ1s4CUnEAZM0likVPoICZ : 
-  \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D
+  IImageFilterFunction
 {
-  public double \u0023\u003Dzh1hhOkJ3kH4Y() => 3.0;
+  public double radius() => 3.0;
 
-  public double \u0023\u003DzG17fc7\u0024pCNOA(double _param1)
+  public double calc_weight(double _param1)
   {
     if (_param1 < 1.0)
       return ((13.0 / 11.0 * _param1 - 453.0 / 209.0) * _param1 - 3.0 / 209.0) * _param1 + 1.0;

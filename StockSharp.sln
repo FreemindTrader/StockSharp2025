@@ -220,6 +220,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockSharp.Xaml.Charting-ea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "50_Ecng.Drawing", "00Components\00FreemindBase\50_Ecng.Drawing\50_Ecng.Drawing.csproj", "{A4B36E8C-86DE-4A45-940D-C4904DD77CBF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "60_Ecng.Xaml.Charting", "00Components\20FreemindCommon\Ecng.Xaml.Charting\60_Ecng.Xaml.Charting.csproj", "{C78DD80C-1EFE-406E-B366-B885D5FC980B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -594,6 +596,10 @@ Global
 		{A4B36E8C-86DE-4A45-940D-C4904DD77CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4B36E8C-86DE-4A45-940D-C4904DD77CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4B36E8C-86DE-4A45-940D-C4904DD77CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C78DD80C-1EFE-406E-B366-B885D5FC980B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C78DD80C-1EFE-406E-B366-B885D5FC980B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C78DD80C-1EFE-406E-B366-B885D5FC980B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C78DD80C-1EFE-406E-B366-B885D5FC980B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -687,6 +693,7 @@ Global
 		{A0FB16E0-6D6F-45BB-A27B-3527260A1EE9} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 		{1D6046C7-1124-46BD-B3A5-DECBA44EE2D7} = {C562CB3C-C5D8-41EE-8E5A-BD04AC85305D}
 		{A4B36E8C-86DE-4A45-940D-C4904DD77CBF} = {05691DFD-6F8F-4DA2-86AD-FFFD8BC7F125}
+		{C78DD80C-1EFE-406E-B366-B885D5FC980B} = {CB6BF31B-B214-445E-96FE-F63F6BBD4D48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {05C6C3D9-0063-47AB-BC11-315B396BEBD0}

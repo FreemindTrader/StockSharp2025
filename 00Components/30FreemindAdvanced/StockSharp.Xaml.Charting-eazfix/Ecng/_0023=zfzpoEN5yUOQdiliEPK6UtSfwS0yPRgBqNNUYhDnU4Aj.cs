@@ -89,7 +89,7 @@ public sealed class \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AjEqCz
     double num4 = _param6 - _param4;
     double num5 = _param7 - _param5;
     double num6 = _param8 - _param6;
-    this.\u0023\u003DzdfIXiUfrx8sS = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((Math.Sqrt(num1 * num1 + num2 * num2) + Math.Sqrt(num3 * num3 + num4 * num4) + Math.Sqrt(num5 * num5 + num6 * num6)) * 0.25 * this.\u0023\u003Dz9IbNApzCydlB);
+    this.\u0023\u003DzdfIXiUfrx8sS = agg_basics.\u0023\u003DzROReRE0C5MV7((Math.Sqrt(num1 * num1 + num2 * num2) + Math.Sqrt(num3 * num3 + num4 * num4) + Math.Sqrt(num5 * num5 + num6 * num6)) * 0.25 * this.\u0023\u003Dz9IbNApzCydlB);
     if (this.\u0023\u003DzdfIXiUfrx8sS < 4)
       this.\u0023\u003DzdfIXiUfrx8sS = 4;
     double num7 = 1.0 / (double) this.\u0023\u003DzdfIXiUfrx8sS;

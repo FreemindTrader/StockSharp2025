@@ -38,16 +38,16 @@ public struct \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3c
   public \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_(
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param1)
   {
-    this.\u0023\u003Dz8PXgNcU\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((0.299 * (double) _param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() + 0.587 * (double) _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() + 0.114 * (double) _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()) * (double) byte.MaxValue);
-    this.\u0023\u003Dzgzm8ZP4\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D() * (double) byte.MaxValue);
+    this.\u0023\u003Dz8PXgNcU\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((0.299 * (double) _param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() + 0.587 * (double) _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() + 0.114 * (double) _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()) * (double) byte.MaxValue);
+    this.\u0023\u003Dzgzm8ZP4\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzaFSg4agx5zA7ee4hwQ\u003D\u003D() * (double) byte.MaxValue);
   }
 
   public \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_(
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param1,
     double _param2)
   {
-    this.\u0023\u003Dz8PXgNcU\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((0.299 * (double) _param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() + 0.587 * (double) _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() + 0.114 * (double) _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()) * (double) byte.MaxValue);
-    this.\u0023\u003Dzgzm8ZP4\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
+    this.\u0023\u003Dz8PXgNcU\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((0.299 * (double) _param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() + 0.587 * (double) _param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() + 0.114 * (double) _param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()) * (double) byte.MaxValue);
+    this.\u0023\u003Dzgzm8ZP4\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
   }
 
   public \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_(
@@ -82,7 +82,7 @@ public struct \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3c
       _param1 = 0.0;
     if (_param1 > 1.0)
       _param1 = 1.0;
-    this.\u0023\u003Dzgzm8ZP4\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param1 * (double) byte.MaxValue);
+    this.\u0023\u003Dzgzm8ZP4\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param1 * (double) byte.MaxValue);
   }
 
   public double \u0023\u003DzzS1ryjLBRBUI()
@@ -137,7 +137,7 @@ public struct \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3c
     \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_ _param1,
     double _param2)
   {
-    int num = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * 256.0);
+    int num = agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * 256.0);
     \u0023\u003DzfzpoEN5yUOQdiliEPK6UtSfwS0yPRgBqNNUYhDnU4AiWfr05pKN3cwsVMcb_ wfr05pKn3cwsVmcb;
     wfr05pKn3cwsVmcb.\u0023\u003Dz8PXgNcU\u003D = (byte) ((uint) this.\u0023\u003Dz8PXgNcU\u003D + (uint) (((int) _param1.\u0023\u003Dz8PXgNcU\u003D - (int) this.\u0023\u003Dz8PXgNcU\u003D) * num >> 8));
     wfr05pKn3cwsVmcb.\u0023\u003Dzgzm8ZP4\u003D = (byte) ((uint) this.\u0023\u003Dzgzm8ZP4\u003D + (uint) (((int) _param1.\u0023\u003Dzgzm8ZP4\u003D - (int) this.\u0023\u003Dzgzm8ZP4\u003D) * num >> 8));

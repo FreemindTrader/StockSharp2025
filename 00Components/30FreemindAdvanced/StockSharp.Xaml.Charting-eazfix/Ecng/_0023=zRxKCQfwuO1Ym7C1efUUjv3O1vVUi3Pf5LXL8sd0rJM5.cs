@@ -6,7 +6,7 @@
 
 #nullable disable
 public sealed class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv3O1vVUi3Pf5LXL8sd0rJM58IDMHA5wMaG6ZVAx8da671z3jYgWuoBa0 : 
-  \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOx1RkmuVmhXUogDkNvXBX5gA\u003D\u003D
+  IGammaFunction
 {
   private double \u0023\u003Dz1xW1yskBxtqK;
 

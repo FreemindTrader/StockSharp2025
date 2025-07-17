@@ -14,7 +14,7 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
 
   public void \u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(
     IImageByte _param1,
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D _param2,
+    IRasterizer _param2,
     IScanlineCache _param3,
     Func<int, int, RGBA_Bytes> _param4)
   {
@@ -27,7 +27,7 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
 
   public void \u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(
     IImageByte _param1,
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D _param2,
+    IRasterizer _param2,
     IScanlineCache _param3,
     RGBA_Bytes _param4)
   {
@@ -40,7 +40,7 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
 
   public void \u0023\u003Dzb_MhpM64exdk(
     IImageFloat _param1,
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D _param2,
+    IRasterizer _param2,
     IScanlineCache _param3,
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param4)
   {
@@ -137,7 +137,7 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
 
   public void \u0023\u003DzcLzk\u0024bRsvd9E3NLfkg\u003D\u003D(
     IImageByte _param1,
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D _param2,
+    IRasterizer _param2,
     IScanlineCache _param3,
     IVertexSource _param4,
     RGBA_Bytes[] _param5,
@@ -156,7 +156,7 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
     IScanlineCache _param1,
     IImageByte _param2,
     \u0023\u003DzaP7vgnwtOd1ghQwnj\u00248jG0EnNMkB6j6sGbBk2GGUXxjpTlrktA2EC\u0024ljoyQE _param3,
-    \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W _param4)
+    ISpanGenerator _param4)
   {
     int num1 = _param1.\u0023\u003Dzi8jDI4I\u003D();
     int num2 = _param1.\u0023\u003DzAK83aWWCVpNB();
@@ -209,11 +209,11 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
   }
 
   public void \u0023\u003DzQP1ayQE_7iMj(
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D _param1,
+    IRasterizer _param1,
     IScanlineCache _param2,
     IImageByte _param3,
     \u0023\u003DzaP7vgnwtOd1ghQwnj\u00248jG0EnNMkB6j6sGbBk2GGUXxjpTlrktA2EC\u0024ljoyQE _param4,
-    \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W _param5)
+    ISpanGenerator _param5)
   {
     if (!_param1.\u0023\u003DzptZK7icdgElf2pwnqtUfz44glEoM())
       return;
@@ -224,7 +224,7 @@ public sealed class \u0023\u003Dz5VLaAZX2bctAcuSoajSAXhoSlmBm0oGMB\u0024RrBBDXLS
   }
 
   public void \u0023\u003DzQP1ayQE_7iMj(
-    \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D _param1,
+    IRasterizer _param1,
     IScanlineCache _param2,
     IImageFloat _param3,
     \u0023\u003DzaP7vgnwtOd1ghQwnj\u00248jG0EnNMkB6j6sGbBk2GGUXxjpTlrktA2EC\u0024ljoyQE _param4,

@@ -66,12 +66,12 @@ public class \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqH
     this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D.\u0023\u003DzR7pES1JXr5Q9(_param1, _param2);
     if (this.\u0023\u003DzY8UU_WcJpxm8 != null)
     {
-      this.\u0023\u003DznnhVP00HZom15cH91Q\u003D\u003D.\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzY8UU_WcJpxm8, (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D, this.\u0023\u003Dz0jRCiSHNEpG9RV20qtAqHwM\u003D, _param3);
+      this.\u0023\u003DznnhVP00HZom15cH91Q\u003D\u003D.\u0023\u003Dz6W_LCQE4E4aPriWcSDUd6wdbLe8\u0024Mmp70w\u003D\u003D(this.\u0023\u003DzY8UU_WcJpxm8, (IRasterizer) this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D, this.\u0023\u003Dz0jRCiSHNEpG9RV20qtAqHwM\u003D, _param3);
       this.\u0023\u003DzZRNA7tv6M_pf().\u0023\u003DzuO1BGcahegmc();
     }
     else
     {
-      this.\u0023\u003DznnhVP00HZom15cH91Q\u003D\u003D.\u0023\u003Dzb_MhpM64exdk(this.\u0023\u003Dzfvj649InGKK0, (\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D, this.\u0023\u003Dz0jRCiSHNEpG9RV20qtAqHwM\u003D, _param3.\u0023\u003DzLtGfTF6UBAlmvu08d_2IGiE\u003D());
+      this.\u0023\u003DznnhVP00HZom15cH91Q\u003D\u003D.\u0023\u003Dzb_MhpM64exdk(this.\u0023\u003Dzfvj649InGKK0, (IRasterizer) this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D, this.\u0023\u003Dz0jRCiSHNEpG9RV20qtAqHwM\u003D, _param3.\u0023\u003DzLtGfTF6UBAlmvu08d_2IGiE\u003D());
       this.\u0023\u003Dzfvj649InGKK0.\u0023\u003DzuO1BGcahegmc();
     }
   }
@@ -108,7 +108,7 @@ public class \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqH
 
   private void \u0023\u003DzOwPBNDnMTwIS(
     IImageByte _param1,
-    \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W _param2,
+    ISpanGenerator _param2,
     Affine _param3)
   {
     if (this.\u0023\u003DzY8UU_WcJpxm8.\u0023\u003DzSm8CGbTqdI1U().dje_z3GBAX47U_ejd != 0.0 || this.\u0023\u003DzY8UU_WcJpxm8.\u0023\u003DzSm8CGbTqdI1U().dje_zLPL6EZPA_ejd != 0.0)
@@ -116,7 +116,7 @@ public class \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqH
     VertexSourceApplyTransform znpRwHj98V9LHhN68 = new VertexSourceApplyTransform((IVertexSource) this.\u0023\u003Dz7GfsEshVytb8, (ITransform) _param3);
     this.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003DzR7pES1JXr5Q9((IVertexSource) znpRwHj98V9LHhN68);
     \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAasIOppKfaJ8_zxxVQenXg\u003D\u003D ioppKfaJ8ZxxVqenXg = new \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjgvmjBXViFoefH7k8YXhfdTqAasIOppKfaJ8_zxxVQenXg\u003D\u003D(this.\u0023\u003DzY8UU_WcJpxm8);
-    this.\u0023\u003DznnhVP00HZom15cH91Q\u003D\u003D.\u0023\u003DzQP1ayQE_7iMj((\u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D) this.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), (IScanlineCache) this.\u0023\u003DzUypQ0vxcwyJ8DyYoHvy5rCo\u003D, (IImageByte) ioppKfaJ8ZxxVqenXg, this.\u0023\u003DzrKsISSNwYrP75feeig\u003D\u003D, _param2);
+    this.\u0023\u003DznnhVP00HZom15cH91Q\u003D\u003D.\u0023\u003DzQP1ayQE_7iMj((IRasterizer) this.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D(), (IScanlineCache) this.\u0023\u003DzUypQ0vxcwyJ8DyYoHvy5rCo\u003D, (IImageByte) ioppKfaJ8ZxxVqenXg, this.\u0023\u003DzrKsISSNwYrP75feeig\u003D\u003D, _param2);
   }
 
   public override void \u0023\u003DzLDS6T7I\u003D(
@@ -163,8 +163,8 @@ public class \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqH
         Affine yenmDycPb20wrmFW3 = new Affine(yenmDycPb20wrmFW2);
         yenmDycPb20wrmFW3.\u0023\u003DzFU8YZw3Q_iPd();
         \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D kfjlv0yjch1C5KjErZk = new \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D((ITransform) yenmDycPb20wrmFW3);
-        \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D wjo36zKsrEqSwNka = (\u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D) new \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAbG5yCERTVlAHXU\u002491pTc_0\u00249S_IJjqm2RooF3Z3GCGxsWTMKbR2A7YAC\u0024bSIDB2QLk\u003D((\u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D) new \u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO5bt324uVLj6vvvu_oYamxWfKZJqA7XWueY_TW6QxtgNQQ\u003D\u003D(_param1, \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D.\u0023\u003DzoNysZPTJyBXy(0.0f, 0.0f, 0.0f, 0.0f).\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D()), (IColorType) \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D.\u0023\u003DzoNysZPTJyBXy(0.0f, 0.0f, 0.0f, 0.0f), (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT) kfjlv0yjch1C5KjErZk);
-        this.\u0023\u003DzOwPBNDnMTwIS(_param1, (\u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W) wjo36zKsrEqSwNka, yenmDycPb20wrmFW2);
+        span_image_filter wjo36zKsrEqSwNka = (span_image_filter) new \u0023\u003DzWwDYSe\u0024z_nPO4KEsBbkyAbG5yCERTVlAHXU\u002491pTc_0\u00249S_IJjqm2RooF3Z3GCGxsWTMKbR2A7YAC\u0024bSIDB2QLk\u003D((IImageBufferAccessor) new \u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO5bt324uVLj6vvvu_oYamxWfKZJqA7XWueY_TW6QxtgNQQ\u003D\u003D(_param1, \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D.\u0023\u003DzoNysZPTJyBXy(0.0f, 0.0f, 0.0f, 0.0f).\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D()), (IColorType) \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D.\u0023\u003DzoNysZPTJyBXy(0.0f, 0.0f, 0.0f, 0.0f), (ISpanInterpolator) kfjlv0yjch1C5KjErZk);
+        this.\u0023\u003DzOwPBNDnMTwIS(_param1, (ISpanGenerator) wjo36zKsrEqSwNka, yenmDycPb20wrmFW2);
       }
       else
       {
@@ -174,22 +174,22 @@ public class \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3smKkT1b5smOw_lMHMtPtnGTbJIqH
         yenmDycPb20wrmFW5.\u0023\u003DzFU8YZw3Q_iPd();
         \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D kfjlv0yjch1C5KjErZk = new \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D((ITransform) yenmDycPb20wrmFW5);
         \u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO5bt324uVLj6vvvu_oYamxWfKZJqA7XWueY_TW6QxtgNQQ\u003D\u003D a7XwueYTw6QxtgNqq = new \u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO5bt324uVLj6vvvu_oYamxWfKZJqA7XWueY_TW6QxtgNQQ\u003D\u003D(_param1, \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D.\u0023\u003DzoNysZPTJyBXy(0.0f, 0.0f, 0.0f, 0.0f).\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D());
-        \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D wjo36zKsrEqSwNka;
+        span_image_filter wjo36zKsrEqSwNka;
         switch (_param1.\u0023\u003DzHstjD51XfGa0())
         {
           case 8:
-            wjo36zKsrEqSwNka = (\u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D) new \u0023\u003Dz5bjCWzBDiPRPmitpfhC_MmKR1q6GmPzdlRTagZHczYB76YwlGmfqCi_gQw\u00241sSkPXPHUgRedwEiVNzkID5K\u0024tdM\u003D((\u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D) a7XwueYTw6QxtgNqq, (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT) kfjlv0yjch1C5KjErZk);
+            wjo36zKsrEqSwNka = (span_image_filter) new \u0023\u003Dz5bjCWzBDiPRPmitpfhC_MmKR1q6GmPzdlRTagZHczYB76YwlGmfqCi_gQw\u00241sSkPXPHUgRedwEiVNzkID5K\u0024tdM\u003D((IImageBufferAccessor) a7XwueYTw6QxtgNqq, (ISpanInterpolator) kfjlv0yjch1C5KjErZk);
             break;
           case 24:
-            wjo36zKsrEqSwNka = (\u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI_5HM2NK0NfhEmtavzhUovghn8LFYgjSKU8hVGA\u0024HE4qFj5\u0024dCsYuZ\u00242RGlyow\u003D\u003D((\u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D) a7XwueYTw6QxtgNqq, (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT) kfjlv0yjch1C5KjErZk);
+            wjo36zKsrEqSwNka = (span_image_filter) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARI_5HM2NK0NfhEmtavzhUovghn8LFYgjSKU8hVGA\u0024HE4qFj5\u0024dCsYuZ\u00242RGlyow\u003D\u003D((IImageBufferAccessor) a7XwueYTw6QxtgNqq, (ISpanInterpolator) kfjlv0yjch1C5KjErZk);
             break;
           case 32 /*0x20*/:
-            wjo36zKsrEqSwNka = (\u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26r2y2mz1QyqDHpk4N5zi6L0FAbw787CXj4DSqqF82XPMkQrdEdSKw39VRlMCM21pTTg\u003D((\u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D) a7XwueYTw6QxtgNqq, (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT) kfjlv0yjch1C5KjErZk);
+            wjo36zKsrEqSwNka = (span_image_filter) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26r2y2mz1QyqDHpk4N5zi6L0FAbw787CXj4DSqqF82XPMkQrdEdSKw39VRlMCM21pTTg\u003D((IImageBufferAccessor) a7XwueYTw6QxtgNqq, (ISpanInterpolator) kfjlv0yjch1C5KjErZk);
             break;
           default:
             throw new NotImplementedException();
         }
-        this.\u0023\u003DzOwPBNDnMTwIS(_param1, (\u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W) wjo36zKsrEqSwNka, yenmDycPb20wrmFW4);
+        this.\u0023\u003DzOwPBNDnMTwIS(_param1, (ISpanGenerator) wjo36zKsrEqSwNka, yenmDycPb20wrmFW4);
         this.\u0023\u003DzZRNA7tv6M_pf().\u0023\u003DzuO1BGcahegmc();
       }
     }

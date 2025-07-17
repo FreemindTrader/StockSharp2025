@@ -33,10 +33,10 @@ public sealed class \u0023\u003DzAfUZ1hld3Aj4_oK9JVqPo0l783DjW2h74dYy0k094dr0Mor
   {
     this.\u0023\u003DzY\u0024iy3H6MDQlk = _param1;
     for (uint index = 0; index < 256U /*0x0100*/; ++index)
-      this.\u0023\u003DzWVUZoyYrdEAhL0POug\u003D\u003D[(int) index] = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(Math.Pow((double) index / (double) byte.MaxValue, this.\u0023\u003DzY\u0024iy3H6MDQlk) * (double) byte.MaxValue);
+      this.\u0023\u003DzWVUZoyYrdEAhL0POug\u003D\u003D[(int) index] = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(Math.Pow((double) index / (double) byte.MaxValue, this.\u0023\u003DzY\u0024iy3H6MDQlk) * (double) byte.MaxValue);
     double y = 1.0 / _param1;
     for (uint index = 0; index < 256U /*0x0100*/; ++index)
-      this.\u0023\u003Dz_Mi9vVvOQ0BJhRJz_A\u003D\u003D[(int) index] = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(Math.Pow((double) index / (double) byte.MaxValue, y) * (double) byte.MaxValue);
+      this.\u0023\u003Dz_Mi9vVvOQ0BJhRJz_A\u003D\u003D[(int) index] = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(Math.Pow((double) index / (double) byte.MaxValue, y) * (double) byte.MaxValue);
   }
 
   public double \u0023\u003DzoxmYZFvB84ZN() => this.\u0023\u003DzY\u0024iy3H6MDQlk;

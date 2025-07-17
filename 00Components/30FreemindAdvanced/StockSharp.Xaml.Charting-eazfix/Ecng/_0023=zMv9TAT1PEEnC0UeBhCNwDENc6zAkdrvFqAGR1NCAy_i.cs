@@ -6,15 +6,15 @@
 
 #nullable disable
 public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_i4JkVJJflvrNX2ElFoPchsLSvcuqXma1D5pBece012IBs\u003D : 
-  \u0023\u003DzumuFC1VOOoBDs2QpPto5VkbLjIthccEiDcgR\u0024vJQ7K_Hrp4E7vWJo36zKSrEqSwNKA\u003D\u003D
+  span_image_filter
 {
   private RGBA_Bytes \u0023\u003DzYmPlTO0s8S1n;
 
   public \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_i4JkVJJflvrNX2ElFoPchsLSvcuqXma1D5pBece012IBs\u003D(
-    \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D _param1,
+    IImageBufferAccessor _param1,
     IColorType _param2,
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT _param3)
-    : base(_param1, _param3, (\u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQ6PRW443CXjnpjY_jRLnxeTxLdSjL9CR9M_QGcrFkI\u0024EwQ\u003D\u003D) null)
+    ISpanInterpolator _param3)
+    : base(_param1, _param3, (ImageFilterLookUpTable) null)
   {
     this.\u0023\u003DzYmPlTO0s8S1n = _param2.\u0023\u003DzTBzq3CHoFG5sZ9taiA\u003D\u003D();
   }
@@ -46,7 +46,7 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_i4JkV
     \u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D ppsbKthY7Nkewpng = (\u0023\u003DzwAFz4a79BKMMb8uGV0S8\u0024aurvjmQtbZLb71GKZHjczV_N6A4_lPpsbKthY7Nkewpng\u003D\u003D) this.\u0023\u003DzXfsXM99CTPMy().\u0023\u003Dz8hY71usSYcKH();
     int num1 = ppsbKthY7Nkewpng.Width - 1;
     int num2 = ppsbKthY7Nkewpng.Height - 1;
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT nbVwaPinzNveauDt = this.\u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D();
+    ISpanInterpolator nbVwaPinzNveauDt = this.\u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D();
     do
     {
       int num3;

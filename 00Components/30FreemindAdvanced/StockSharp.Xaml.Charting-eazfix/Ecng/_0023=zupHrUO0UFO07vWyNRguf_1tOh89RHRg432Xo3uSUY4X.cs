@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003DzupHrUO0UFO07vWyNRguf_1tOh89RHRg432Xo3uSUY4XoCu07N4DQfXXxG3GgLjwrP3Obcvw\u003D : 
-  \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D
+  IImageFilterFunction
 {
   private double \u0023\u003Dzgzm8ZP4\u003D;
   private double \u0023\u003DzSWv5SJI\u003D;
@@ -27,9 +27,9 @@ public sealed class \u0023\u003DzupHrUO0UFO07vWyNRguf_1tOh89RHRg432Xo3uSUY4XoCu0
     this.\u0023\u003DzSWv5SJI\u003D = 1.0 / this.\u0023\u003Dzk6_X7W2nSWVcrTmzXA\u003D\u003D(_param1);
   }
 
-  public double \u0023\u003Dzh1hhOkJ3kH4Y() => 1.0;
+  public double radius() => 1.0;
 
-  public double \u0023\u003DzG17fc7\u0024pCNOA(double _param1)
+  public double calc_weight(double _param1)
   {
     return this.\u0023\u003Dzk6_X7W2nSWVcrTmzXA\u003D\u003D(this.\u0023\u003Dzgzm8ZP4\u003D * Math.Sqrt(1.0 - _param1 * _param1)) * this.\u0023\u003DzSWv5SJI\u003D;
   }

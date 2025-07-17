@@ -31,33 +31,33 @@ public sealed class \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZmAstoZQw80oWSTVCoASbg\u002
     double _param2,
     double _param3)
   {
-    this.\u0023\u003Dzay8Cw54\u003D = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
-    this.\u0023\u003DzWYndTuds7\u0024Yf = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param2 * 16.0);
-    this.\u0023\u003DzTPVp5n0ryn49 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param3 * 16.0);
+    this.\u0023\u003Dzay8Cw54\u003D = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
+    this.\u0023\u003DzWYndTuds7\u0024Yf = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param2 * 16.0);
+    this.\u0023\u003DzTPVp5n0ryn49 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param3 * 16.0);
     this.\u0023\u003Dzs1JQ\u0024lajkyKy();
   }
 
   public void \u0023\u003Dz0gbwL\u00244\u003D(double _param1, double _param2, double _param3)
   {
-    this.\u0023\u003Dzay8Cw54\u003D = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
-    this.\u0023\u003DzWYndTuds7\u0024Yf = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param2 * 16.0);
-    this.\u0023\u003DzTPVp5n0ryn49 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param3 * 16.0);
+    this.\u0023\u003Dzay8Cw54\u003D = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
+    this.\u0023\u003DzWYndTuds7\u0024Yf = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param2 * 16.0);
+    this.\u0023\u003DzTPVp5n0ryn49 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param3 * 16.0);
     this.\u0023\u003Dzs1JQ\u0024lajkyKy();
   }
 
-  public double \u0023\u003Dzh1hhOkJ3kH4Y() => (double) this.\u0023\u003Dzay8Cw54\u003D / 16.0;
+  public double radius() => (double) this.\u0023\u003Dzay8Cw54\u003D / 16.0;
 
   public double \u0023\u003Dz31cJuBzNTDHV() => (double) this.\u0023\u003DzWYndTuds7\u0024Yf / 16.0;
 
   public double \u0023\u003Dz7cQ9H6PnPkbj() => (double) this.\u0023\u003DzTPVp5n0ryn49 / 16.0;
 
-  public int \u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(int _param1, int _param2, int _param3)
+  public int calculate(int _param1, int _param2, int _param3)
   {
     double num1 = (double) (_param1 - this.\u0023\u003DzWYndTuds7\u0024Yf);
     double num2 = (double) (_param2 - this.\u0023\u003DzTPVp5n0ryn49);
     double num3 = num1 * (double) this.\u0023\u003DzTPVp5n0ryn49 - num2 * (double) this.\u0023\u003DzWYndTuds7\u0024Yf;
     double num4 = this.\u0023\u003DzF0YeAutsQf6t * (num1 * num1 + num2 * num2) - num3 * num3;
-    return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((num1 * (double) this.\u0023\u003DzWYndTuds7\u0024Yf + num2 * (double) this.\u0023\u003DzTPVp5n0ryn49 + Math.Sqrt(Math.Abs(num4))) * this.\u0023\u003Dz1xW1yskBxtqK);
+    return agg_basics.\u0023\u003DzQ9DKAFLSaa9H((num1 * (double) this.\u0023\u003DzWYndTuds7\u0024Yf + num2 * (double) this.\u0023\u003DzTPVp5n0ryn49 + Math.Sqrt(Math.Abs(num4))) * this.\u0023\u003Dz1xW1yskBxtqK);
   }
 
   private void \u0023\u003Dzs1JQ\u0024lajkyKy()

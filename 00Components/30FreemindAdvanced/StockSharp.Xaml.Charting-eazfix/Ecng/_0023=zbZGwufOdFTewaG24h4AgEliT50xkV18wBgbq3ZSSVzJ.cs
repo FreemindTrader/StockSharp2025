@@ -12,6 +12,6 @@ public struct \u0023\u003DzbZGwufOdFTewaG24h4AgEliT50xkV18wBgbq3ZSSVzJmxlUquvfLb
 {
   public static int \u0023\u003Dz2skJA3U\u003D(double _param0)
   {
-    return \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param0 * 256.0, 268435455 /*0x0FFFFFFF*/);
+    return agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param0 * 256.0, 268435455 /*0x0FFFFFFF*/);
   }
 }

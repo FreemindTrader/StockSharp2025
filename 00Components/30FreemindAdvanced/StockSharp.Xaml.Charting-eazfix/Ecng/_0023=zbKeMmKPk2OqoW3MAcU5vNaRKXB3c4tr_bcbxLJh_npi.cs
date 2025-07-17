@@ -58,10 +58,10 @@ public sealed class \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNaRKXB3c4tr_bcbxLJh_npicDwJ
   public void \u0023\u003DztgAjJuk\u003D(
     IImageByte _param1)
   {
-    this.\u0023\u003DzDlwWn9FvhBBB = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzWpDhW47ZWd5f((double) _param1.Height);
-    this.\u0023\u003DzfKsXfd89zAXB = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzWpDhW47ZWd5f((double) _param1.Width);
-    this.\u0023\u003Dz2KSNnSqX5ag9 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) (_param1.Width * 256 /*0x0100*/));
-    this.\u0023\u003Dz7DCXdiOu1t7pVIakI9J4Z\u0024c\u003D = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) (_param1.Height * 256 /*0x0100*/ / 2));
+    this.\u0023\u003DzDlwWn9FvhBBB = agg_basics.\u0023\u003DzWpDhW47ZWd5f((double) _param1.Height);
+    this.\u0023\u003DzfKsXfd89zAXB = agg_basics.\u0023\u003DzWpDhW47ZWd5f((double) _param1.Width);
+    this.\u0023\u003Dz2KSNnSqX5ag9 = agg_basics.\u0023\u003DzROReRE0C5MV7((double) (_param1.Width * 256 /*0x0100*/));
+    this.\u0023\u003Dz7DCXdiOu1t7pVIakI9J4Z\u0024c\u003D = agg_basics.\u0023\u003DzROReRE0C5MV7((double) (_param1.Height * 256 /*0x0100*/ / 2));
     this.\u0023\u003DzRMW8\u0024UklYRyZFNMJBw\u003D\u003D = this.\u0023\u003DzRaBaavvGIyTharEI_y9zv7o\u003D + this.\u0023\u003Dz7DCXdiOu1t7pVIakI9J4Z\u0024c\u003D - 128 /*0x80*/;
     this.\u0023\u003Dz7DCXdiOu1t7pVIakI9J4Z\u0024c\u003D += 128 /*0x80*/;
     int num1 = this.\u0023\u003DzfKsXfd89zAXB + this.\u0023\u003DzMmeAmNbAedQgLn3gdw\u003D\u003D * 2;

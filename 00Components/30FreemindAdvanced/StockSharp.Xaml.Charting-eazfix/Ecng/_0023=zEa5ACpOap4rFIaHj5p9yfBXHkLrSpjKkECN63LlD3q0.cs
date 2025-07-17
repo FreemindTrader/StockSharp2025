@@ -16,10 +16,10 @@ public sealed class \u0023\u003DzEa5ACpOap4rFIaHj5p9yfBXHkLrSpjKkECN63LlD3q0NQ7Y
     this.\u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D = _param1;
   }
 
-  public int \u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(int _param1, int _param2, int _param3)
+  public int calculate(int _param1, int _param2, int _param3)
   {
     int num1 = _param3 << 1;
-    int num2 = this.\u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D.\u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(_param1, _param2, _param3) % num1;
+    int num2 = this.\u0023\u003DzoVRCaVeCBmwtQQ3gMw\u003D\u003D.calculate(_param1, _param2, _param3) % num1;
     if (num2 < 0)
       num2 += num1;
     if (num2 >= _param3)

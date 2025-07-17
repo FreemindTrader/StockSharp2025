@@ -25,7 +25,7 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
   {
     this.\u0023\u003DzYTRoyKyN3fBR = _param3 - _param1;
     this.\u0023\u003DzOxmXVfz021CI = _param4 - _param2;
-    this.\u0023\u003DzwmOOME4syT6R = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H((double) (_param5 + 128 /*0x80*/ - _param3) * (double) this.\u0023\u003DzOxmXVfz021CI - (double) (_param6 + 128 /*0x80*/ - _param4) * (double) this.\u0023\u003DzYTRoyKyN3fBR);
+    this.\u0023\u003DzwmOOME4syT6R = agg_basics.\u0023\u003DzQ9DKAFLSaa9H((double) (_param5 + 128 /*0x80*/ - _param3) * (double) this.\u0023\u003DzOxmXVfz021CI - (double) (_param6 + 128 /*0x80*/ - _param4) * (double) this.\u0023\u003DzYTRoyKyN3fBR);
     this.\u0023\u003DzYTRoyKyN3fBR <<= 8;
     this.\u0023\u003DzOxmXVfz021CI <<= 8;
   }

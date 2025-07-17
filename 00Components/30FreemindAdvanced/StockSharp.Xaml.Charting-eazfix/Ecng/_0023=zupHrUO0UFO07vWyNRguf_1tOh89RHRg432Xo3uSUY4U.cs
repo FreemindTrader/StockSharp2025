@@ -6,7 +6,7 @@
 
 #nullable disable
 public sealed class \u0023\u003DzupHrUO0UFO07vWyNRguf_1tOh89RHRg432Xo3uSUY4UhFWmYrjpRbDFG5IddQAZY6KwEmTlLAbcF : 
-  \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D
+  IImageFilterFunction
 {
   private double \u0023\u003DzOD069RY\u003D;
   private double \u0023\u003Dzmjtu3pY\u003D;
@@ -34,9 +34,9 @@ public sealed class \u0023\u003DzupHrUO0UFO07vWyNRguf_1tOh89RHRg432Xo3uSUY4UhFWm
     this.\u0023\u003Dzd58rBaE\u003D = (-_param1 - 6.0 * _param2) / 6.0;
   }
 
-  public double \u0023\u003Dzh1hhOkJ3kH4Y() => 2.0;
+  public double radius() => 2.0;
 
-  public double \u0023\u003DzG17fc7\u0024pCNOA(double _param1)
+  public double calc_weight(double _param1)
   {
     if (_param1 < 1.0)
       return this.\u0023\u003DzOD069RY\u003D + _param1 * _param1 * (this.\u0023\u003Dzmjtu3pY\u003D + _param1 * this.\u0023\u003Dz4SlvGgQ\u003D);

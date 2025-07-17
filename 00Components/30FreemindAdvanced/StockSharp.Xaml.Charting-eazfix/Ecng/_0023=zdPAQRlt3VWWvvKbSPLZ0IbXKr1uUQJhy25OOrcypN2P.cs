@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IbXKr1uUQJhy25OOrcypN2PAALR7DaWZkesO3q0NSOGk1Q\u003D\u003D : 
-  \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0LKrMWRP8HpfFNPgYY55tLjfw\u003D\u003D
+  IImageBufferAccessor
 {
   protected IImageByte \u0023\u003DzcRozJLFRZ0BY;
   protected int \u0023\u003DzI6P8IpE\u003D;

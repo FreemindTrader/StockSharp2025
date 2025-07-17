@@ -6,9 +6,9 @@
 
 #nullable disable
 public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0024dC405m1dNndLm4Y7dsDppgMbBdbYrSg\u003D : 
-  \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUFCGVt5IjX6IGOBNwa3W
+  ISpanGenerator
 {
-  private \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT \u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D;
+  private ISpanInterpolator \u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D;
   private \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLHE4noQv5jvPOdidvRVonqXR1_40XGWjzqTPSwaJ \u0023\u003DzUX0XMqTbXsWSmtVE_1m_AsE\u003D;
   private \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvLY8yONCumZs0tA6xU \u0023\u003DzzmnDHCJ5pXWj;
   private int \u0023\u003DzuBGyQEEBPYYb;
@@ -19,7 +19,7 @@ public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0
   }
 
   public \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0024dC405m1dNndLm4Y7dsDppgMbBdbYrSg\u003D(
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT _param1,
+    ISpanInterpolator _param1,
     \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLHE4noQv5jvPOdidvRVonqXR1_40XGWjzqTPSwaJ _param2,
     \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvLY8yONCumZs0tA6xU _param3,
     double _param4,
@@ -28,11 +28,11 @@ public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0
     this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D = _param1;
     this.\u0023\u003DzUX0XMqTbXsWSmtVE_1m_AsE\u003D = _param2;
     this.\u0023\u003DzzmnDHCJ5pXWj = _param3;
-    this.\u0023\u003DzuBGyQEEBPYYb = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param4 * 16.0);
-    this.\u0023\u003DzOouuReRASRuk = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param5 * 16.0);
+    this.\u0023\u003DzuBGyQEEBPYYb = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param4 * 16.0);
+    this.\u0023\u003DzOouuReRASRuk = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param5 * 16.0);
   }
 
-  public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT \u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D()
+  public ISpanInterpolator \u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D()
   {
     return this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D;
   }
@@ -52,7 +52,7 @@ public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0
   public double \u0023\u003DzBgadLtY\u003D() => (double) this.\u0023\u003DzOouuReRASRuk / 16.0;
 
   public void \u0023\u003DzGNzgb4HQGBekYN3Uq0M_3pY\u003D(
-    \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT _param1)
+    ISpanInterpolator _param1)
   {
     this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D = _param1;
   }
@@ -71,12 +71,12 @@ public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0
 
   public void \u0023\u003DzG5C3ipE\u003D(double _param1)
   {
-    this.\u0023\u003DzuBGyQEEBPYYb = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
+    this.\u0023\u003DzuBGyQEEBPYYb = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
   }
 
   public void \u0023\u003DzBgadLtY\u003D(double _param1)
   {
-    this.\u0023\u003DzOouuReRASRuk = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
+    this.\u0023\u003DzOouuReRASRuk = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 16.0);
   }
 
   public void \u0023\u003DzwJ_PjEc\u003D()
@@ -97,7 +97,7 @@ public sealed class \u0023\u003DzDB45NmFy1DDUpCYhH1HtWfiyTqePuv1uk7aX_a\u0024\u0
     do
     {
       this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D.\u0023\u003Dz95kJcrQe23xpIQcxtQ\u003D\u003D(out _param3, out _param4);
-      int num2 = (this.\u0023\u003DzUX0XMqTbXsWSmtVE_1m_AsE\u003D.\u0023\u003DzBkt7RJwYL3SkbpPPrQ\u003D\u003D(_param3 >> 4, _param4 >> 4, this.\u0023\u003DzOouuReRASRuk) - this.\u0023\u003DzuBGyQEEBPYYb) * this.\u0023\u003DzzmnDHCJ5pXWj.\u0023\u003DzG2qqjnQ\u003D() / num1;
+      int num2 = (this.\u0023\u003DzUX0XMqTbXsWSmtVE_1m_AsE\u003D.calculate(_param3 >> 4, _param4 >> 4, this.\u0023\u003DzOouuReRASRuk) - this.\u0023\u003DzuBGyQEEBPYYb) * this.\u0023\u003DzzmnDHCJ5pXWj.\u0023\u003DzG2qqjnQ\u003D() / num1;
       if (num2 < 0)
         num2 = 0;
       if (num2 >= this.\u0023\u003DzzmnDHCJ5pXWj.\u0023\u003DzG2qqjnQ\u003D())

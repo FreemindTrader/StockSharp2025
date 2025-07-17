@@ -70,7 +70,7 @@ public sealed class \u0023\u003Dz8b2iwQyC3tYOGumtm_saeFEztS\u0024DGFDKJ9TI9SthUF
     double num2 = _param4 - _param2;
     double num3 = _param5 - _param3;
     double num4 = _param6 - _param4;
-    this.\u0023\u003DzdfIXiUfrx8sS = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((Math.Sqrt(num1 * num1 + num2 * num2) + Math.Sqrt(num3 * num3 + num4 * num4)) * 0.25 * this.\u0023\u003Dz9IbNApzCydlB);
+    this.\u0023\u003DzdfIXiUfrx8sS = agg_basics.\u0023\u003DzROReRE0C5MV7((Math.Sqrt(num1 * num1 + num2 * num2) + Math.Sqrt(num3 * num3 + num4 * num4)) * 0.25 * this.\u0023\u003Dz9IbNApzCydlB);
     if (this.\u0023\u003DzdfIXiUfrx8sS < 4)
       this.\u0023\u003DzdfIXiUfrx8sS = 4;
     double num5 = 1.0 / (double) this.\u0023\u003DzdfIXiUfrx8sS;

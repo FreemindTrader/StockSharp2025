@@ -11,16 +11,16 @@ public sealed class \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zds
   private int \u0023\u003Dz_yS_hpC\u0024Bvok;
   private int \u0023\u003Dz_TCtD0vLATv8;
   private int \u0023\u003DzFfSb8y0\u003D;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte> \u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D;
-  private \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan> \u0023\u003DzDfv8Db0RWqZH;
+  private ArrayPOD<byte> \u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D;
+  private ArrayPOD<ScanlineSpan> \u0023\u003DzDfv8Db0RWqZH;
   private int \u0023\u003DzJZMDU99kHHNc;
   private int \u0023\u003DzlYYZvacF9UC9Kl5xTSuYyyE\u003D;
 
   public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQAaMpPLBW\u0024Zg11zdsYrjLM8bZVDWXNrQdoNZBGie1gx2fksrDdDUggZqAqbq4tJvbNkZldr8SUXJLe1VOgX3osK0()
   {
     this.\u0023\u003Dz_TCtD0vLATv8 = 2147483632;
-    this.\u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<byte>(1000);
-    this.\u0023\u003DzDfv8Db0RWqZH = new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9eoU7rVJSKf2\u0024pLc\u0024Q_CRRI0B0xDoi_RvpM0a\u0024y\u0024HqY7Xw\u003D\u003D<ScanlineSpan>(1000);
+    this.\u0023\u003Dzsr2UJaJdwnjcHzBzMw\u003D\u003D = new ArrayPOD<byte>(1000);
+    this.\u0023\u003DzDfv8Db0RWqZH = new ArrayPOD<ScanlineSpan>(1000);
   }
 
   public ScanlineSpan \u0023\u003DzYkrxbPUh8YlkHw5nkgeSuH8\u003D()

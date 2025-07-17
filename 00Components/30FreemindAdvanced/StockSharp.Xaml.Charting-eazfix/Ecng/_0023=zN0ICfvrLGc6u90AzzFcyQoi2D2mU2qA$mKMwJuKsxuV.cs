@@ -77,18 +77,18 @@ public sealed class RoundedRect :
     this.\u0023\u003DzXAIVgfY\u003D.\u0023\u003DzSzOWcj8\u003D = _param2;
   }
 
-  public void \u0023\u003Dzh1hhOkJ3kH4Y(double _param1)
+  public void radius(double _param1)
   {
     this.\u0023\u003Dzw9UCUHkwOR2n.dje_z3GBAX47U_ejd = this.\u0023\u003Dzw9UCUHkwOR2n.dje_zLPL6EZPA_ejd = this.\u0023\u003Dz\u00240tutq\u0024KQH0o.dje_z3GBAX47U_ejd = this.\u0023\u003Dz\u00240tutq\u0024KQH0o.dje_zLPL6EZPA_ejd = this.\u0023\u003DzXjJvl0XncRte.dje_z3GBAX47U_ejd = this.\u0023\u003DzXjJvl0XncRte.dje_zLPL6EZPA_ejd = this.\u0023\u003DzGbB75PmSkUJk.dje_z3GBAX47U_ejd = this.\u0023\u003DzGbB75PmSkUJk.dje_zLPL6EZPA_ejd = _param1;
   }
 
-  public void \u0023\u003Dzh1hhOkJ3kH4Y(double _param1, double _param2)
+  public void radius(double _param1, double _param2)
   {
     this.\u0023\u003Dzw9UCUHkwOR2n.dje_z3GBAX47U_ejd = this.\u0023\u003Dz\u00240tutq\u0024KQH0o.dje_z3GBAX47U_ejd = this.\u0023\u003DzXjJvl0XncRte.dje_z3GBAX47U_ejd = this.\u0023\u003DzGbB75PmSkUJk.dje_z3GBAX47U_ejd = _param1;
     this.\u0023\u003Dzw9UCUHkwOR2n.dje_zLPL6EZPA_ejd = this.\u0023\u003Dz\u00240tutq\u0024KQH0o.dje_zLPL6EZPA_ejd = this.\u0023\u003DzXjJvl0XncRte.dje_zLPL6EZPA_ejd = this.\u0023\u003DzGbB75PmSkUJk.dje_zLPL6EZPA_ejd = _param2;
   }
 
-  public void \u0023\u003Dzh1hhOkJ3kH4Y(
+  public void radius(
     double _param1,
     double _param2,
     double _param3,
@@ -100,7 +100,7 @@ public sealed class RoundedRect :
     this.\u0023\u003DzGbB75PmSkUJk = new Vector2(_param4, _param4);
   }
 
-  public void \u0023\u003Dzh1hhOkJ3kH4Y(
+  public void radius(
     double _param1,
     double _param2,
     double _param3,

@@ -72,7 +72,7 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
     int num3 = _param5;
     if (_param2 < 0 || _param2 > num2)
     {
-      \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
+      agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
     }
     else
     {
@@ -81,10 +81,10 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
         num3 += _param1;
         if (num3 <= 0)
         {
-          \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
+          agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
           return;
         }
-        \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, -_param1);
+        agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, -_param1);
         _param4 -= _param1;
         _param1 = 0;
       }
@@ -94,10 +94,10 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
         num3 -= num4;
         if (num3 <= 0)
         {
-          \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
+          agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
           return;
         }
-        \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4 + num3, num4);
+        agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4 + num3, num4);
       }
       int num5 = this.\u0023\u003Dzq_GYkpSu5Wgn.\u0023\u003DzHlHGfKJZNJsq(_param1, _param2);
       byte[] numArray = this.\u0023\u003Dzq_GYkpSu5Wgn.\u0023\u003Dz9b1_JhA\u003D();
@@ -123,7 +123,7 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
     int index1 = _param4;
     if (_param2 < 0 || _param2 > num2)
     {
-      \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
+      agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
     }
     else
     {
@@ -132,10 +132,10 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
         num3 += _param1;
         if (num3 <= 0)
         {
-          \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
+          agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
           return;
         }
-        \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(numArray1, index1, -_param1);
+        agg_basics.\u0023\u003DzDrRZp7mp0k89(numArray1, index1, -_param1);
         index1 -= _param1;
         _param1 = 0;
       }
@@ -145,10 +145,10 @@ public sealed class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u3L4wr8nsid\u00247DvZjvNcM0
         num3 -= num4;
         if (num3 <= 0)
         {
-          \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
+          agg_basics.\u0023\u003DzDrRZp7mp0k89(_param3, _param4, _param5);
           return;
         }
-        \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzDrRZp7mp0k89(numArray1, index1 + num3, num4);
+        agg_basics.\u0023\u003DzDrRZp7mp0k89(numArray1, index1 + num3, num4);
       }
       int index2 = this.\u0023\u003Dzq_GYkpSu5Wgn.\u0023\u003DzHlHGfKJZNJsq(_param1, _param2);
       byte[] numArray2 = this.\u0023\u003Dzq_GYkpSu5Wgn.\u0023\u003Dz9b1_JhA\u003D();

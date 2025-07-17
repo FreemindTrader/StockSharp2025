@@ -44,7 +44,7 @@ public sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm6q
     int num = _param1.\u0023\u003DzHlHGfKJZNJsq(0, 0);
     float[] numArray1 = _param1.\u0023\u003Dz9b1_JhA\u003D();
     float[] numArray2 = new float[numArray1.Length];
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQBDTcr7NcY0a(numArray2, num, numArray1, num, numArray1.Length - num);
+    agg_basics.\u0023\u003DzQBDTcr7NcY0a(numArray2, num, numArray1, num, numArray1.Length - num);
     this.\u0023\u003DzdrMgpSc\u003D(numArray2, num);
     this.\u0023\u003DzgDbPoFoJnrrrHveVDA\u003D\u003D(_param2);
   }
@@ -188,7 +188,7 @@ public sealed class \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSeBW2Qyo4X1JlYe0Jj9qgYOQm6q
       float[] numArray2 = this.\u0023\u003DznPLKTp_rfCU9(_param2.\u0023\u003DzP4R7yU0\u003D + _param3, _param2.\u0023\u003DzRNV_Dpk\u003D + _param4, out num3);
       for (int index = 0; index < _param2.Height; ++index)
       {
-        \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzifsHAOd0B2qk(numArray2, num3, numArray1, num2, num1);
+        agg_basics.\u0023\u003DzifsHAOd0B2qk(numArray2, num3, numArray1, num2, num1);
         num2 += _param1.\u0023\u003DzzzpYZKdbZZc8Pfg5Vw\u003D\u003D();
         num3 += this.\u0023\u003DzzzpYZKdbZZc8Pfg5Vw\u003D\u003D();
       }

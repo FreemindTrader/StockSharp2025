@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\common_target_net.props" />
+	<Import Project="..\..\..\fx.packages.props" />
+	<PropertyGroup>
+		<RootNamespace>StockSharp.Charting</RootNamespace>
+		<AssemblyName>StockSharp.Charting</AssemblyName>
+		<PackageId>StockSharp.Charting</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{C78DD80C-1EFE-406E-B366-B885D5FC980B}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<TargetFrameworks>net6.0-windows7</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
+		<UseWPF>true</UseWPF>
+		<NoWarn>CA1416</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ecng.Xaml.DXRefs" Version="1.0.*" />
+		<PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+		<PackageReference Include="StockSharp.Xaml" Version="5.0.234" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+	</ItemGroup>
+</Project>
+

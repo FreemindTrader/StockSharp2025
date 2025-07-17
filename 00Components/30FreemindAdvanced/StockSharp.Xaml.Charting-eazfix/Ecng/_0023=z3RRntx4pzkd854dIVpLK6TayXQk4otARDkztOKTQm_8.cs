@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6TayXQk4otARDkztOKTQm_8ZIdn1qP1XUph1_wik5f\u0024O1L9fAuj0sUjIkJ9SbbijHKQx5efX : 
-  \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT
+  ISpanInterpolator
 {
   private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003DzToAhmmy\u0024bsjqN98ElA\u003D\u003D;
   private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DlJYL42\u0024owdCmNJ6K1L \u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D;
@@ -99,39 +99,39 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6TayXQk4otARDkztOKTQm_8ZIdn
     double num1 = _param1;
     double num2 = _param2;
     this.\u0023\u003DzToAhmmy\u0024bsjqN98ElA\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num1, ref num2);
-    int num3 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num1 * 256.0);
-    int num4 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num2 * 256.0);
+    int num3 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num1 * 256.0);
+    int num4 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num2 * 256.0);
     double num5 = 1.0 / 256.0;
     double num6 = num1 + num5;
     double num7 = num2;
     this.\u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num6, ref num7);
     double num8 = num6 - _param1;
     double num9 = num7 - _param2;
-    int num10 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num8 * num8 + num9 * num9)) >> 8;
+    int num10 = agg_basics.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num8 * num8 + num9 * num9)) >> 8;
     double num11 = num1;
     double num12 = num2 + num5;
     this.\u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num11, ref num12);
     double num13 = num11 - _param1;
     double num14 = num12 - _param2;
-    int num15 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num13 * num13 + num14 * num14)) >> 8;
+    int num15 = agg_basics.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num13 * num13 + num14 * num14)) >> 8;
     _param1 += (double) _param3;
     double num16 = _param1;
     double num17 = _param2;
     this.\u0023\u003DzToAhmmy\u0024bsjqN98ElA\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num16, ref num17);
-    int num18 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num16 * 256.0);
-    int num19 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num17 * 256.0);
+    int num18 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num16 * 256.0);
+    int num19 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num17 * 256.0);
     double num20 = num16 + num5;
     double num21 = num17;
     this.\u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num20, ref num21);
     double num22 = num20 - _param1;
     double num23 = num21 - _param2;
-    int num24 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num22 * num22 + num23 * num23)) >> 8;
+    int num24 = agg_basics.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num22 * num22 + num23 * num23)) >> 8;
     double num25 = num16;
     double num26 = num17 + num5;
     this.\u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num25, ref num26);
     double num27 = num25 - _param1;
     double num28 = num26 - _param2;
-    int num29 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num27 * num27 + num28 * num28)) >> 8;
+    int num29 = agg_basics.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num27 * num27 + num28 * num28)) >> 8;
     this.\u0023\u003DzEk6W\u0024ffqSR8E2H01og\u003D\u003D = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num3, num18, _param3);
     this.\u0023\u003DzpKQbO6HsOY47qReLxQ\u003D\u003D = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num4, num19, _param3);
     this.\u0023\u003DzpIkTrpHGJNon = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num10, num24, _param3);
@@ -150,21 +150,21 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6TayXQk4otARDkztOKTQm_8ZIdn
     double num5 = _param1;
     double num6 = _param2;
     this.\u0023\u003DzToAhmmy\u0024bsjqN98ElA\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num5, ref num6);
-    int num7 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num5 * 256.0);
-    int num8 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num6 * 256.0);
+    int num7 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num5 * 256.0);
+    int num8 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num6 * 256.0);
     double num9 = 1.0 / 256.0;
     double num10 = num5 + num9;
     double num11 = num6;
     this.\u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num10, ref num11);
     double num12 = num10 - _param1;
     double num13 = num11 - _param2;
-    int num14 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num12 * num12 + num13 * num13)) >> 8;
+    int num14 = agg_basics.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num12 * num12 + num13 * num13)) >> 8;
     double num15 = num5;
     double num16 = num6 + num9;
     this.\u0023\u003DzsV86ks6c0pG0E_IQTw\u003D\u003D.\u0023\u003DzhA5n1D0\u003D(ref num15, ref num16);
     double num17 = num15 - _param1;
     double num18 = num16 - _param2;
-    int num19 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num17 * num17 + num18 * num18)) >> 8;
+    int num19 = agg_basics.\u0023\u003DzROReRE0C5MV7(256.0 / Math.Sqrt(num17 * num17 + num18 * num18)) >> 8;
     this.\u0023\u003DzEk6W\u0024ffqSR8E2H01og\u003D\u003D = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num1, num7, _param3);
     this.\u0023\u003DzpKQbO6HsOY47qReLxQ\u003D\u003D = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num2, num8, _param3);
     this.\u0023\u003DzpIkTrpHGJNon = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num3, num14, _param3);

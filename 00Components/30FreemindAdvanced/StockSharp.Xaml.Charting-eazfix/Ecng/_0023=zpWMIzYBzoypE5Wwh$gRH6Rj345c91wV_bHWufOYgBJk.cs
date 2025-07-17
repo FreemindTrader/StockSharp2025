@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJkEIa\u0024gxVFiFtn1t6a1SKrdXMUKfjlv0yjch\u00241C5KjERZk\u003D : 
-  \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_VXA\u0024pdrNBRk9sVTmSjnfr_47jyZuQRTCMKIqVTsNBVwaPINZNveauDT
+  ISpanInterpolator
 {
   private ITransform \u0023\u003DzA6knWDzOHW8u;
   private \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D \u0023\u003Dz_qJgG_H4iKXd;
@@ -55,13 +55,13 @@ public sealed class \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJ
     double num1 = _param1;
     double num2 = _param2;
     this.\u0023\u003DzA6knWDzOHW8u.\u0023\u003DzhA5n1D0\u003D(ref num1, ref num2);
-    int num3 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num1 * 256.0);
-    int num4 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num2 * 256.0);
+    int num3 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num1 * 256.0);
+    int num4 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num2 * 256.0);
     double num5 = _param1 + (double) _param3;
     double num6 = _param2;
     this.\u0023\u003DzA6knWDzOHW8u.\u0023\u003DzhA5n1D0\u003D(ref num5, ref num6);
-    int num7 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num5 * 256.0);
-    int num8 = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(num6 * 256.0);
+    int num7 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num5 * 256.0);
+    int num8 = agg_basics.\u0023\u003DzQ9DKAFLSaa9H(num6 * 256.0);
     this.\u0023\u003Dz_qJgG_H4iKXd = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num3, num7, _param3);
     this.\u0023\u003DzCmfG6yExbxuh = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(num4, num8, _param3);
   }
@@ -72,8 +72,8 @@ public sealed class \u0023\u003DzpWMIzYBzoypE5Wwh\u0024gRH6Rj345c91wV_bHWufOYgBJ
     int _param3)
   {
     this.\u0023\u003DzA6knWDzOHW8u.\u0023\u003DzhA5n1D0\u003D(ref _param1, ref _param2);
-    this.\u0023\u003Dz_qJgG_H4iKXd = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(this.\u0023\u003Dz_qJgG_H4iKXd.\u0023\u003Dzi8jDI4I\u003D(), \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 256.0), _param3);
-    this.\u0023\u003DzCmfG6yExbxuh = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(this.\u0023\u003DzCmfG6yExbxuh.\u0023\u003Dzi8jDI4I\u003D(), \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzQ9DKAFLSaa9H(_param2 * 256.0), _param3);
+    this.\u0023\u003Dz_qJgG_H4iKXd = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(this.\u0023\u003Dz_qJgG_H4iKXd.\u0023\u003Dzi8jDI4I\u003D(), agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param1 * 256.0), _param3);
+    this.\u0023\u003DzCmfG6yExbxuh = new \u0023\u003DzVWRskdf0yEAwtZYFZxzKpY66I7KBgFOrZE6TjZYGqzX9MyREyvpL0V3tgpQVgHh60tZDRpKxNBxb0ofxOw\u003D\u003D(this.\u0023\u003DzCmfG6yExbxuh.\u0023\u003Dzi8jDI4I\u003D(), agg_basics.\u0023\u003DzQ9DKAFLSaa9H(_param2 * 256.0), _param3);
   }
 
   public void \u0023\u003DzXiQrjbw\u003D()

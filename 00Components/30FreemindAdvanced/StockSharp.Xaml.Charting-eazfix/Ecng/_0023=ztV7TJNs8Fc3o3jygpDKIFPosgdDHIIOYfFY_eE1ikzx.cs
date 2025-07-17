@@ -9,11 +9,11 @@ using System.Diagnostics;
 
 #nullable disable
 public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZwWE9pxbJ0DUw_\u0024fe3jeL_uz4nXi9f : 
-  \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqDpzvOj09HO8UQ_m7wovLdWXKsF3jYX73x\u0024NvAUEtJByux1XUZw\u003D
+  IRasterizer
 {
   private \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20XZZLU_SBymsgRVXpM61Ax5QggCbu8 \u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D;
-  private \u0023\u003DzmKAFQoddoidM6qzDBEHa4ri2MSuQ0yetOTSoJgIvU2aq4D0lUbhHhxGL2gv6t6L7uw\u003D\u003D \u0023\u003DztiwBhDbLuFUOsQrrVw\u003D\u003D;
-  private \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D \u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D;
+  private VectorClipper \u0023\u003DztiwBhDbLuFUOsQrrVw\u003D\u003D;
+  private agg_basics.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D \u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D;
   private \u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DkCcJeAzrFeePM8kxIf8fDEKw\u003D\u003D \u0023\u003DzqmBOXY7JRTb_;
   private \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<\u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZwWE9pxbJ0DUw_\u0024fe3jeL_uz4nXi9f.\u0023\u003Dzh7UcPPSzOf\u0024r> \u0023\u003Dz5ugot49DgF0zyrgrMw\u003D\u003D;
   private \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<int> \u0023\u003DzAcdr\u0024aGY3FP_;
@@ -32,8 +32,8 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
   public \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZwWE9pxbJ0DUw_\u0024fe3jeL_uz4nXi9f()
   {
     this.\u0023\u003DzScA4JFZguWA\u0024gb6WwSe_Dlw\u003D = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20XZZLU_SBymsgRVXpM61Ax5QggCbu8();
-    this.\u0023\u003DztiwBhDbLuFUOsQrrVw\u003D\u003D = new \u0023\u003DzmKAFQoddoidM6qzDBEHa4ri2MSuQ0yetOTSoJgIvU2aq4D0lUbhHhxGL2gv6t6L7uw\u003D\u003D();
-    this.\u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D = (\u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D) 0;
+    this.\u0023\u003DztiwBhDbLuFUOsQrrVw\u003D\u003D = new VectorClipper();
+    this.\u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D = (agg_basics.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D) 0;
     this.\u0023\u003DzqmBOXY7JRTb_ = (\u0023\u003Dz9V3XmNblPtIESO78oE\u0024lpZyApi09lYaLQFtlVvwH2DkCcJeAzrFeePM8kxIf8fDEKw\u003D\u003D) 1;
     this.\u0023\u003Dz5ugot49DgF0zyrgrMw\u003D\u003D = new \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<\u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZwWE9pxbJ0DUw_\u0024fe3jeL_uz4nXi9f.\u0023\u003Dzh7UcPPSzOf\u0024r>();
     this.\u0023\u003DzAcdr\u0024aGY3FP_ = new \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrlp42uAvcBcBfw\u003D\u003D<int>();
@@ -51,7 +51,7 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
   }
 
   public void \u0023\u003DzruxDfy35wG0J(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOx1RkmuVmhXUogDkNvXBX5gA\u003D\u003D _param1)
+    IGammaFunction _param1)
   {
     throw new NotImplementedException();
   }
@@ -67,7 +67,7 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
   }
 
   private void \u0023\u003Dz9oma1EeDllFlgo5SLQ\u003D\u003D(
-    \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D _param1)
+    agg_basics.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D _param1)
   {
     this.\u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D = _param1;
   }
@@ -321,7 +321,7 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
       return;
     while (this.\u0023\u003DzCtECCbNdmyUP.\u0023\u003DzG2qqjnQ\u003D() <= _param1)
       this.\u0023\u003DzCtECCbNdmyUP.\u0023\u003DzObQSsmE\u003D((int) byte.MaxValue);
-    this.\u0023\u003DzCtECCbNdmyUP.\u0023\u003DzvsnCYl4\u003D()[_param1] = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
+    this.\u0023\u003DzCtECCbNdmyUP.\u0023\u003DzvsnCYl4\u003D()[_param1] = agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
   }
 
   public void \u0023\u003DzR7pES1JXr5Q9(
@@ -377,7 +377,7 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
     int num = _param1 >> 9;
     if (num < 0)
       num = -num;
-    if (this.\u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D == (\u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D) 1)
+    if (this.\u0023\u003DzVTC2U6dVKqCvrBDpM31y0b8\u003D == (agg_basics.\u0023\u003Dz4wqgBpCiq\u00244vrUn_o2ab9Es\u003D) 1)
     {
       num &= 511 /*0x01FF*/;
       if (num > 256 /*0x0100*/)

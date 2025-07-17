@@ -74,10 +74,10 @@ public struct RGBA_Bytes :
     double _param3,
     double _param4)
   {
-    this.\u0023\u003Dz4WHdt9g\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param1 * (double) byte.MaxValue);
-    this.\u0023\u003DzoRsAtmfOFDZe = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
-    this.\u0023\u003DzcdKuX48ZXN_S = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param3 * (double) byte.MaxValue);
-    this.\u0023\u003DzKCqGEcs\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param4 * (double) byte.MaxValue);
+    this.\u0023\u003Dz4WHdt9g\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param1 * (double) byte.MaxValue);
+    this.\u0023\u003DzoRsAtmfOFDZe = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
+    this.\u0023\u003DzcdKuX48ZXN_S = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param3 * (double) byte.MaxValue);
+    this.\u0023\u003DzKCqGEcs\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param4 * (double) byte.MaxValue);
   }
 
   public RGBA_Bytes(
@@ -85,9 +85,9 @@ public struct RGBA_Bytes :
     double _param2,
     double _param3)
   {
-    this.\u0023\u003Dz4WHdt9g\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param1 * (double) byte.MaxValue);
-    this.\u0023\u003DzoRsAtmfOFDZe = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
-    this.\u0023\u003DzcdKuX48ZXN_S = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param3 * (double) byte.MaxValue);
+    this.\u0023\u003Dz4WHdt9g\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param1 * (double) byte.MaxValue);
+    this.\u0023\u003DzoRsAtmfOFDZe = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
+    this.\u0023\u003DzcdKuX48ZXN_S = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param3 * (double) byte.MaxValue);
     this.\u0023\u003DzKCqGEcs\u003D = byte.MaxValue;
   }
 
@@ -95,10 +95,10 @@ public struct RGBA_Bytes :
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param1,
     double _param2)
   {
-    this.\u0023\u003Dz4WHdt9g\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
-    this.\u0023\u003DzoRsAtmfOFDZe = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzoRsAtmfOFDZe * (double) byte.MaxValue);
-    this.\u0023\u003DzcdKuX48ZXN_S = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzcdKuX48ZXN_S * (double) byte.MaxValue);
-    this.\u0023\u003DzKCqGEcs\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
+    this.\u0023\u003Dz4WHdt9g\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
+    this.\u0023\u003DzoRsAtmfOFDZe = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzoRsAtmfOFDZe * (double) byte.MaxValue);
+    this.\u0023\u003DzcdKuX48ZXN_S = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzcdKuX48ZXN_S * (double) byte.MaxValue);
+    this.\u0023\u003DzKCqGEcs\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * (double) byte.MaxValue);
   }
 
   public RGBA_Bytes(
@@ -129,10 +129,10 @@ public struct RGBA_Bytes :
   public RGBA_Bytes(
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg7Z8mbS\u0024KpwTZWt25viJ7i7WYL1vIcbzTgAF0lRdvTGLYLevjU0\u003D _param1)
   {
-    this.\u0023\u003Dz4WHdt9g\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
-    this.\u0023\u003DzoRsAtmfOFDZe = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzoRsAtmfOFDZe * (double) byte.MaxValue);
-    this.\u0023\u003DzcdKuX48ZXN_S = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzcdKuX48ZXN_S * (double) byte.MaxValue);
-    this.\u0023\u003DzKCqGEcs\u003D = (byte) \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzKCqGEcs\u003D * (double) byte.MaxValue);
+    this.\u0023\u003Dz4WHdt9g\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003Dz4WHdt9g\u003D * (double) byte.MaxValue);
+    this.\u0023\u003DzoRsAtmfOFDZe = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzoRsAtmfOFDZe * (double) byte.MaxValue);
+    this.\u0023\u003DzcdKuX48ZXN_S = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzcdKuX48ZXN_S * (double) byte.MaxValue);
+    this.\u0023\u003DzKCqGEcs\u003D = (byte) agg_basics.\u0023\u003DzROReRE0C5MV7((double) _param1.\u0023\u003DzKCqGEcs\u003D * (double) byte.MaxValue);
   }
 
   [SpecialName]
@@ -218,7 +218,7 @@ public struct RGBA_Bytes :
     double _param2)
   {
     RGBA_Bytes nwsEwePinXgsJj4Q = new RGBA_Bytes();
-    int num = \u0023\u003DzV9O5tWduWosGLvu_87Zf5OXt7zllMlwUCoVEqrXWXWOo_9I8LKlxnD0wx5l0vOI7XMUaGCc\u003D.\u0023\u003DzROReRE0C5MV7(_param2 * 256.0);
+    int num = agg_basics.\u0023\u003DzROReRE0C5MV7(_param2 * 256.0);
     nwsEwePinXgsJj4Q.\u0023\u003DzD9hXShMMhqxP5ayUkQ\u003D\u003D((int) (byte) (this.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() + ((_param1.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D() - this.\u0023\u003DzV4RXfxw92_Lg32L76Q\u003D\u003D()) * num >> 8)));
     nwsEwePinXgsJj4Q.\u0023\u003DzSqu7zYTdQL7FVU\u0024pkQ\u003D\u003D((int) (byte) (this.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() + ((_param1.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D() - this.\u0023\u003DzawOz8j0iM2Uvf\u0024fqsg\u003D\u003D()) * num >> 8)));
     nwsEwePinXgsJj4Q.\u0023\u003DzeSyb0eNYy90rJiPexQ\u003D\u003D((int) (byte) (this.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D() + ((_param1.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D() - this.\u0023\u003Dz5hw2frZMqmtuBiH06w\u003D\u003D()) * num >> 8)));

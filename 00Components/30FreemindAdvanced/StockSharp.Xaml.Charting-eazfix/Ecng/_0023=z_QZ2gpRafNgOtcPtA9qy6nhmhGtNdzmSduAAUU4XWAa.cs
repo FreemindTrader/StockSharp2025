@@ -10,7 +10,7 @@ public abstract class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E
 {
   private \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D \u0023\u003Dz9heM955jUj0G_XASlw\u003D\u003D;
   protected \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR \u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D;
-  protected \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D \u0023\u003Dzyo0OJMP0VzUq;
+  protected IImageFilterFunction \u0023\u003Dzyo0OJMP0VzUq;
   private float \u0023\u003DzIS6U\u0024sEtLGgBaJIylw\u003D\u003D;
   private float \u0023\u003Dzx2hGrqbJIyqrP9r3oQ\u003D\u003D;
 
@@ -21,14 +21,14 @@ public abstract class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E
   public \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E1XIWWar5UU1A8kbYiZgM0qg75I\u003D(
     \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D _param1,
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR _param2)
-    : this(_param1, _param2, (\u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D) null)
+    : this(_param1, _param2, (IImageFilterFunction) null)
   {
   }
 
   public \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E1XIWWar5UU1A8kbYiZgM0qg75I\u003D(
     \u0023\u003DzsDU9XQyTsl2DjEg2HhKpBHrPPgTSsTv2U_6gZ4ERd6w55yk5zndcPe_vl2HLhMqz\u0024A\u003D\u003D _param1,
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240UvSdtxx4ULRrY0tRkq5Lb0jFkvOD3SGxLkYwl94q52RF8Lm58bmuASR _param2,
-    \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D _param3)
+    IImageFilterFunction _param3)
   {
     this.\u0023\u003Dz9heM955jUj0G_XASlw\u003D\u003D = _param1;
     this.\u0023\u003Dz8piAmGjALgntNR5r77ROXo0\u003D = _param2;
@@ -55,7 +55,7 @@ public abstract class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E
     return this.\u0023\u003Dz9heM955jUj0G_XASlw\u003D\u003D;
   }
 
-  public \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D \u0023\u003DzGFZX44Ht7NiH()
+  public IImageFilterFunction \u0023\u003DzGFZX44Ht7NiH()
   {
     return this.\u0023\u003Dzyo0OJMP0VzUq;
   }
@@ -77,7 +77,7 @@ public abstract class \u0023\u003Dz_QZ2gpRafNgOtcPtA9qy6nhmhGtNdzmSduAAUU4XWAa3E
   }
 
   public void \u0023\u003DzGFZX44Ht7NiH(
-    \u0023\u003DzRqOhEDBos0N6g4v4zYOaM9GR9bn8mvj2yw4D0iSSz7\u00247IVjNcUWYRVrjRbV\u0024QDTRFg\u003D\u003D _param1)
+    IImageFilterFunction _param1)
   {
     this.\u0023\u003Dzyo0OJMP0VzUq = _param1;
   }
