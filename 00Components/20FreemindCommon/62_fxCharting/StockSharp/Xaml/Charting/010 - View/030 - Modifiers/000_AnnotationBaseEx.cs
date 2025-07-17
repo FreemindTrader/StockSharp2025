@@ -4,6 +4,11 @@ using System;
 using System.Windows.Input;
 using SciChart.Charting.Visuals.Annotations;
 
+/// <summary>
+/// This class is the bridge between the original Scichart and the StockSharp verison of Scichart.
+/// 
+/// Since stocksharp adds some exact funtionalities to the Scichart base code, I have to create an intermediate class and recreate those functionalities in the middleman class
+/// </summary>
 public class AnnotationBaseEx : AnnotationBase
 {    
     protected override Cursor GetSelectedCursor()
