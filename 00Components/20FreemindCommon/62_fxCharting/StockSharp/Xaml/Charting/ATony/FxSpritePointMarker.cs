@@ -131,17 +131,26 @@ namespace StockSharp.Xaml.Charting
             return _renderSize;
         }
 
+        //public override void Draw( IRenderContext2D context, IEnumerable<Point> centers )
+        //{
+        //    if ( _cachedPointMarker == null )
+        //    {
+        //        return;
+        //    }
+
+        //    // Tony: Make some changes to Sprites
+        //    context.DrawSprites( _cachedPointMarker.Inner, centers );
+        //}
+
         public override void Draw( IRenderContext2D context, IEnumerable<Point> centers )
         {
             if ( _cachedPointMarker == null )
             {
                 return;
             }
-
-            // Tony: Make some changes to Sprites
-            context.DrawSprites( _cachedPointMarker.Inner, centers );
+            context.DrawSprites( _cachedPointMarker.Inner, _drawRect, centers );
         }
-        
+
 
         public override void Dispose( )
         {
