@@ -38,7 +38,7 @@ public sealed class AxisCollection :
 
   protected IAxis \u0023\u003DzJ3NldqbrPhqs()
   {
-    return this.FirstOrDefault<IAxis>(AxisCollection.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (AxisCollection.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<IAxis, bool>(AxisCollection.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D)));
+    return this.FirstOrDefault<IAxis>(AxisCollection.SomeClass34343383._public_static_Func_Order_bool_001 ?? (AxisCollection.SomeClass34343383._public_static_Func_Order_bool_001 = new Func<IAxis, bool>(AxisCollection.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_\u0024NHFfiy5WpmIFSni1JgGAc\u003D)));
   }
 
   public IAxis Default
@@ -53,7 +53,7 @@ public sealed class AxisCollection :
     string _param1,
     bool _param2)
   {
-    AxisCollection.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new AxisCollection.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
+    AxisCollection.PrivateSealedClass0830 z9r5QdtX0xdsJ15Nf5Q = new AxisCollection.PrivateSealedClass0830();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQ9LPsT8\u003D = _param1;
     try
     {
@@ -112,7 +112,7 @@ public sealed class AxisCollection :
   {
     public static readonly AxisCollection.SomeClass34343383 SomeMethond0343 = new AxisCollection.SomeClass34343383();
     public static Func<IAxis, bool> \u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D;
-    public static Func<IAxis, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
+    public static Func<IAxis, bool> _public_static_Func_Order_bool_001;
     public static Func<IAxis, bool> SomeIntenalMethod003D;
 
     public bool \u0023\u003DzRJhtMumVXlNPFgq5l\u0024kQUfw\u003D(
@@ -134,7 +134,7 @@ public sealed class AxisCollection :
     }
   }
 
-  private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
+  private sealed class PrivateSealedClass0830
   {
     public string \u0023\u003DzQ9LPsT8\u003D;
 

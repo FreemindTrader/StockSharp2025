@@ -238,7 +238,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
 
   public int \u0023\u003DzkhL6vQ3dVWuWmnG7awTRHY0\u003D(int _param1)
   {
-    return this.\u0023\u003DzXFL\u0024_rFvmi9H.\u0023\u003DzrnGNvGY\u003D()[_param1 - this.\u0023\u003DzGtfasZEM3kCR].\u0023\u003Dzzm\u0024Pe00\u003D;
+    return this.\u0023\u003DzXFL\u0024_rFvmi9H._public_ChartDrawData_sActiveOrder()[_param1 - this.\u0023\u003DzGtfasZEM3kCR].\u0023\u003Dzzm\u0024Pe00\u003D;
   }
 
   public void \u0023\u003DzM55RxAl19tGHk1q0ZA\u003D\u003D(
@@ -246,7 +246,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
     out \u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tFDwl0NMb[] _param2,
     out int _param3)
   {
-    _param2 = this.\u0023\u003DzjTWbW2dZB8Dy.\u0023\u003DzrnGNvGY\u003D();
+    _param2 = this.\u0023\u003DzjTWbW2dZB8Dy._public_ChartDrawData_sActiveOrder();
     _param3 = this.\u0023\u003DzXFL\u0024_rFvmi9H[_param1 - this.\u0023\u003DzGtfasZEM3kCR].\u0023\u003DzCVPVJaY\u003D;
   }
 
@@ -269,7 +269,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
     if ((this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 | this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55) == 0 || this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D >= 4194304 /*0x400000*/)
       return;
     this.\u0023\u003DzFDoXu2\u0024LCcSU\u0024SeGFGK7OmeJQOMT();
-    this.\u0023\u003DzHkfwL3cpFpGk.\u0023\u003DzrnGNvGY\u003D()[this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D].\u0023\u003DzBYt8raY\u003D(this.\u0023\u003DzzfnK\u0024txag4iW);
+    this.\u0023\u003DzHkfwL3cpFpGk._public_ChartDrawData_sActiveOrder()[this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D].\u0023\u003DzBYt8raY\u003D(this.\u0023\u003DzzfnK\u0024txag4iW);
     ++this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D;
   }
 

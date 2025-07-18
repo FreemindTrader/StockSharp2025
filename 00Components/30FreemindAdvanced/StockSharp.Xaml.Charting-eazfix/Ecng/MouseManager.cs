@@ -50,7 +50,7 @@ public sealed class MouseManager :
     IPublishMouseEvents _param1,
     IReceiveMouseEvents  _param2)
   {
-    MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
+    MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc dop2SzA2WchXh2wc = new MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc();
     dop2SzA2WchXh2wc._variableSome3535 = this;
     dop2SzA2WchXh2wc.\u0023\u003DzL2OrHlw\u003D = _param1;
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) dop2SzA2WchXh2wc.\u0023\u003DzL2OrHlw\u003D, "element");
@@ -377,7 +377,7 @@ public sealed class MouseManager :
     return this.\u0023\u003DzPmsN62CuaNQ5kbur20HKcgQ\u003D;
   }
 
-  private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
+  private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
     public MouseManager _variableSome3535;
     public \u0023\u003Dzq8lPttT4Qpp4TSswk_CaTc1AR\u0024_Dkj9GLXUtdlw\u003D \u0023\u003DzqvJkfbGyJf\u0024_;
@@ -578,7 +578,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzE4CEJXjA93amsG7Qqp_sMKQ\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;
 
     public void \u0023\u003DzWAuFYQDtZFB9v3VPYQ\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -596,7 +596,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzG\u0024gA6j6jfrxRQolA2x_tg40\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dq\u0024uKyDGtJtqwdqW0OlZQOaisIsBBEZn9KuuA4WX6kbxA\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003Dq\u0024uKyDGtJtqwdqW0OlZQOaisIsBBEZn9KuuA4WX6kbxA\u003D;
 
     public void \u0023\u003DzTO8kgirXuwiDLDodow\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -608,7 +608,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzHiYHAiumYY10dpF2ltto0w8\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dqyaob7ZmPRWRFRSYWBmEDoAiypRnMSzJDCIc0XzNtSqo\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003Dqyaob7ZmPRWRFRSYWBmEDoAiypRnMSzJDCIc0XzNtSqo\u003D;
 
     public void \u0023\u003DzGFMMAqOoeHDnRrvhow\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -620,7 +620,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzOQsMlZgjkVZiIBBBvq7BWpc\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqviizWS0uYlNRyOw9oXk1JmvnJzBswMLEUzlTrRzThKA\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003DqviizWS0uYlNRyOw9oXk1JmvnJzBswMLEUzlTrRzThKA\u003D;
 
     public void \u0023\u003Dzzbp47HAC77wwCj4mqw\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -632,7 +632,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzOVbvGyAUlOlSG92isdmlY08\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqDGS82oTBZ\u0024CkKsNfUVM9XxR6WPEu4uyPJgSIUBBKyWs\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003DqDGS82oTBZ\u0024CkKsNfUVM9XxR6WPEu4uyPJgSIUBBKyWs\u003D;
 
     public void \u0023\u003Dzi3lac9zHQwZ94EQd\u0024g\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -644,7 +644,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzY7CfQOlCGtzQjF07XvwBPz4\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqFkNKRpbJGcPo6KdRUdjYgV32QrpnUdNLLzRVdhdnQvA\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003DqFkNKRpbJGcPo6KdRUdjYgV32QrpnUdNLLzRVdhdnQvA\u003D;
 
     public void \u0023\u003DzdbgJTyl0_Z5NId2bow\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -656,7 +656,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003Dzcq2XeUHBVZN9jqX8KauJiyM\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqVLPFUC1wnpGY7Zl3JTxkXnU2TIEt8CuV\u0024PKiDG\u0024bMmk\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003DqVLPFUC1wnpGY7Zl3JTxkXnU2TIEt8CuV\u0024PKiDG\u0024bMmk\u003D;
 
     public void \u0023\u003Dz6WIAV5vso4Y6vPf5VA\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -668,7 +668,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzhRF\u0024rbCfI1ikWlftxh2eQ7U\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqhIKxx2Fgk_utZ5064cd0qNYlbflZp5kXmNVaqrMla8Q\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003DqhIKxx2Fgk_utZ5064cd0qNYlbflZp5kXmNVaqrMla8Q\u003D;
 
     public void \u0023\u003DzolnDW1Cyh39ARqLnFg\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -688,7 +688,7 @@ public sealed class MouseManager :
   {
     public Action<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf, IReceiveMouseEvents , bool> \u0023\u003DzaY_8iBE\u003D;
     public \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
     public void \u0023\u003Dz9O7cRibjOuApTwUuGA\u003D\u003D(
       IReceiveMouseEvents  _param1)
@@ -700,7 +700,7 @@ public sealed class MouseManager :
   private sealed class \u0023\u003DzyQni\u0024go7q3hZ_gnypm8UBRs\u003D
   {
     public ModifierMouseArgs \u0023\u003DzTi2kmf4\u003D;
-    public MouseManager.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D \u0023\u003DqtAzlqurTc5We1ZAU3ovVrx43Z68HZcrCMXu4\u0024g\u002481qA\u003D;
+    public MouseManager.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc \u0023\u003DqtAzlqurTc5We1ZAU3ovVrx43Z68HZcrCMXu4\u0024g\u002481qA\u003D;
 
     public void \u0023\u003DzwgN4FHGLnJhwzv26BQ\u003D\u003D(
       IReceiveMouseEvents  _param1)

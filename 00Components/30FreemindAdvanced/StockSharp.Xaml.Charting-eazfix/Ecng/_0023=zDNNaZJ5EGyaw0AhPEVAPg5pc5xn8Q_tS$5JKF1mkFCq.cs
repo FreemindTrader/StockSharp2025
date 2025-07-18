@@ -98,7 +98,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
 
   public static void \u0023\u003DznHdRJtnS158H(this FrameworkElement _param0, Action _param1)
   {
-    \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
+    \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc dop2SzA2WchXh2wc = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc();
     dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D = _param0;
     dop2SzA2WchXh2wc.\u0023\u003Dz07PQx44\u003D = _param1;
     if (dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D == null)
@@ -239,7 +239,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
     }
   }
 
-  private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
+  private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
     public 
     #nullable disable

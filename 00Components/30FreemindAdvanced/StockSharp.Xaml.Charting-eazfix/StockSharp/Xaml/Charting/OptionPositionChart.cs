@@ -73,7 +73,7 @@ public class OptionPositionChart :
 
   public OptionPositionChart()
   {
-    OptionPositionChart.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new OptionPositionChart.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
+    OptionPositionChart.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc dop2SzA2WchXh2wc = new OptionPositionChart.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc();
     // ISSUE: explicit constructor call
     base.\u002Ector();
     dop2SzA2WchXh2wc._variableSome3535 = this;
@@ -361,7 +361,7 @@ public class OptionPositionChart :
     return _param1 != this.\u0023\u003Dz_h3U\u0024zi3bxOZ5JXm\u0024A\u003D\u003D;
   }
 
-  private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
+  private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
     public OptionPositionChart _variableSome3535;
     public bool \u0023\u003Dz0gbwL\u00244\u003D;

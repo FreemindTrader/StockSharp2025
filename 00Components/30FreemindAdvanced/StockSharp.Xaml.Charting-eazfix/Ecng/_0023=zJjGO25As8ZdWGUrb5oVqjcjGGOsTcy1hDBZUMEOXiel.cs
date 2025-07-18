@@ -102,7 +102,7 @@ public abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyU
   public override void \u0023\u003DzQTINWhMByBmJ(
     ModifierMouseArgs _param1)
   {
-    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
+    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.PrivateSealedClass0830 z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.PrivateSealedClass0830();
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz1BK01YA\u003D = _param1;
     try
     {
@@ -159,7 +159,7 @@ public abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyU
   public override void \u0023\u003DzsSwjrBzrsGPJ(
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf _param1)
   {
-    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
+    \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc dop2SzA2WchXh2wc = new \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyUpQaOw\u003D\u003D.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc();
     dop2SzA2WchXh2wc.\u0023\u003Dz1BK01YA\u003D = _param1;
     try
     {
@@ -175,7 +175,7 @@ public abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyU
     }
   }
 
-  private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
+  private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
     public \u0023\u003DzEJoJjwSelM_K3zbmiw1OAyK9MPuNjG5KW8R74IqEWckf \u0023\u003Dz1BK01YA\u003D;
 
@@ -197,7 +197,7 @@ public abstract class \u0023\u003DzJjGO25As8ZdWGUrb5oVqjcjGGOsTcy1hDBZUMEOXielyU
     }
   }
 
-  private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
+  private sealed class PrivateSealedClass0830
   {
     public ModifierMouseArgs \u0023\u003Dz1BK01YA\u003D;
 

@@ -46,7 +46,7 @@ public class BubbleChart : UserControl, IComponentConnector
 
   public BubbleChart.IBubbleSeries<double> CreateDoubleSeries(Color? color)
   {
-    return (BubbleChart.IBubbleSeries<double>) new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<double>(this.\u0023\u003Dz_wRpn38\u003D(color), BubbleChart.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (BubbleChart.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<double, SeriesPoint>(BubbleChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzlSVLoTzOi9mOI2TX7beRTB8\u003D)));
+    return (BubbleChart.IBubbleSeries<double>) new BubbleChart.\u0023\u003Dz3j8PT5y_w1jq<double>(this.\u0023\u003Dz_wRpn38\u003D(color), BubbleChart.SomeClass34343383._public_static_Func_Order_bool_001 ?? (BubbleChart.SomeClass34343383._public_static_Func_Order_bool_001 = new Func<double, SeriesPoint>(BubbleChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzlSVLoTzOi9mOI2TX7beRTB8\u003D)));
   }
 
   [DebuggerNonUserCode]
@@ -122,7 +122,7 @@ public class BubbleChart : UserControl, IComponentConnector
   {
     public static readonly BubbleChart.SomeClass34343383 SomeMethond0343 = new BubbleChart.SomeClass34343383();
     public static Func<DateTime, SeriesPoint> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
-    public static Func<double, SeriesPoint> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
+    public static Func<double, SeriesPoint> _public_static_Func_Order_bool_001;
 
     public SeriesPoint \u0023\u003DzpXJS7zsG3ayStA6Cv3aiwRc\u003D(DateTime _param1)
     {

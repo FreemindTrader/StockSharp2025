@@ -160,8 +160,8 @@ public sealed class AnnotationCollection :
     AnnotationCollection.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D qws5VcJaSLcUcBty = new AnnotationCollection.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D();
     if (!_param2.BoolOne || _param2.BoolTwo)
       return;
-    qws5VcJaSLcUcBty.\u0023\u003Dz2vouRgM\u003D = _param1 as IAnnotation;
-    if (qws5VcJaSLcUcBty.\u0023\u003Dz2vouRgM\u003D == null)
+    qws5VcJaSLcUcBty._public_ActiveOrderAnnotation_083 = _param1 as IAnnotation;
+    if (qws5VcJaSLcUcBty._public_ActiveOrderAnnotation_083 == null)
       return;
     CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(qws5VcJaSLcUcBty.\u0023\u003DzohWX52bl44U09jwJQRRBQCc\u003D)).ToArray<IAnnotation>(), AnnotationCollection.SomeClass34343383.\u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D ?? (AnnotationCollection.SomeClass34343383.\u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D = new Action<IAnnotation>(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzWLL21j0cIbtvfyx1n7j_L3p5Tj3r)));
   }
@@ -173,8 +173,8 @@ public sealed class AnnotationCollection :
     AnnotationCollection.\u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D uuovZyvmyeAqC2gog8 = new AnnotationCollection.\u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D();
     if (!_param2.BoolOne || _param2.BoolTwo)
       return;
-    uuovZyvmyeAqC2gog8.\u0023\u003Dz2vouRgM\u003D = _param1 as IAnnotation;
-    if (uuovZyvmyeAqC2gog8.\u0023\u003Dz2vouRgM\u003D == null)
+    uuovZyvmyeAqC2gog8._public_ActiveOrderAnnotation_083 = _param1 as IAnnotation;
+    if (uuovZyvmyeAqC2gog8._public_ActiveOrderAnnotation_083 == null)
       return;
     CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(uuovZyvmyeAqC2gog8.\u0023\u003Dzxqad0J2WdWQXWHM7O24\u0024gAw\u003D)).ToArray<IAnnotation>(), AnnotationCollection.SomeClass34343383.\u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D ?? (AnnotationCollection.SomeClass34343383.\u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D = new Action<IAnnotation>(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DznHZdoyT\u0024EEaTkfWvQEMXoEih2Miy)));
   }
@@ -187,8 +187,8 @@ public sealed class AnnotationCollection :
     qeYqJf714K2eMyR9I.\u0023\u003Dz1BK01YA\u003D = _param2;
     if (!qeYqJf714K2eMyR9I.\u0023\u003Dz1BK01YA\u003D.BoolOne || qeYqJf714K2eMyR9I.\u0023\u003Dz1BK01YA\u003D.BoolTwo)
       return;
-    qeYqJf714K2eMyR9I.\u0023\u003Dz2vouRgM\u003D = _param1 as IAnnotation;
-    if (qeYqJf714K2eMyR9I.\u0023\u003Dz2vouRgM\u003D == null)
+    qeYqJf714K2eMyR9I._public_ActiveOrderAnnotation_083 = _param1 as IAnnotation;
+    if (qeYqJf714K2eMyR9I._public_ActiveOrderAnnotation_083 == null)
       return;
     CollectionHelper.ForEach<IAnnotation>((IEnumerable<IAnnotation>) this.Where<IAnnotation>(new Func<IAnnotation, bool>(qeYqJf714K2eMyR9I.\u0023\u003DzauLrVnHgfyr3yQ0vEFCCM5c\u003D)).ToArray<IAnnotation>(), new Action<IAnnotation>(qeYqJf714K2eMyR9I.\u0023\u003Dz_njip1a1ig5klNz6gwSkhfw\u003D));
   }
@@ -263,11 +263,11 @@ public sealed class AnnotationCollection :
   {
     AnnotationCollection.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new AnnotationCollection.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D()
     {
-      \u0023\u003Dz2vouRgM\u003D = _param1
+      _public_ActiveOrderAnnotation_083 = _param1
     };
     lrrNtIjstOuVg4Rro.\u0023\u003DzAG7Twks\u003D = this.Where<IAnnotation>(new Func<IAnnotation, bool>(lrrNtIjstOuVg4Rro.\u0023\u003Dzv2EVeGQzvOiLkeQ6I1bYc_s\u003D)).Concat<IAnnotation>((IEnumerable<IAnnotation>) new IAnnotation[1]
     {
-      lrrNtIjstOuVg4Rro.\u0023\u003Dz2vouRgM\u003D
+      lrrNtIjstOuVg4Rro._public_ActiveOrderAnnotation_083
     }).ToArray<IAnnotation>();
     return ((IEnumerable<IAnnotation>) lrrNtIjstOuVg4Rro.\u0023\u003DzAG7Twks\u003D).All<IAnnotation>(new Func<IAnnotation, bool>(lrrNtIjstOuVg4Rro.\u0023\u003DzfZsZRxWRaYq2NFL\u0024VzVo6bw\u003D));
   }
@@ -344,24 +344,24 @@ public sealed class AnnotationCollection :
 
   private sealed class \u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D
   {
-    public IAnnotation \u0023\u003Dz2vouRgM\u003D;
+    public IAnnotation _public_ActiveOrderAnnotation_083;
 
     public bool \u0023\u003Dzxqad0J2WdWQXWHM7O24\u0024gAw\u003D(
       IAnnotation _param1)
     {
-      return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
+      return _param1 != this._public_ActiveOrderAnnotation_083 && _param1.get_IsSelected();
     }
   }
 
   private sealed class \u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D
   {
-    public IAnnotation \u0023\u003Dz2vouRgM\u003D;
+    public IAnnotation _public_ActiveOrderAnnotation_083;
     public IAnnotation[] \u0023\u003DzAG7Twks\u003D;
 
     public bool \u0023\u003Dzv2EVeGQzvOiLkeQ6I1bYc_s\u003D(
       IAnnotation _param1)
     {
-      return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
+      return _param1 != this._public_ActiveOrderAnnotation_083 && _param1.get_IsSelected();
     }
 
     public bool \u0023\u003DzfZsZRxWRaYq2NFL\u0024VzVo6bw\u003D(
@@ -373,24 +373,24 @@ public sealed class AnnotationCollection :
 
   private sealed class \u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D
   {
-    public IAnnotation \u0023\u003Dz2vouRgM\u003D;
+    public IAnnotation _public_ActiveOrderAnnotation_083;
 
     public bool \u0023\u003DzohWX52bl44U09jwJQRRBQCc\u003D(
       IAnnotation _param1)
     {
-      return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
+      return _param1 != this._public_ActiveOrderAnnotation_083 && _param1.get_IsSelected();
     }
   }
 
   private sealed class \u0023\u003Dz_e22hQeYq_jf714K2eMYR9I\u003D
   {
-    public IAnnotation \u0023\u003Dz2vouRgM\u003D;
+    public IAnnotation _public_ActiveOrderAnnotation_083;
     public AnnotationDragDeltaEventArgs \u0023\u003Dz1BK01YA\u003D;
 
     public bool \u0023\u003DzauLrVnHgfyr3yQ0vEFCCM5c\u003D(
       IAnnotation _param1)
     {
-      return _param1 != this.\u0023\u003Dz2vouRgM\u003D && _param1.get_IsSelected();
+      return _param1 != this._public_ActiveOrderAnnotation_083 && _param1.get_IsSelected();
     }
 
     public void \u0023\u003Dz_njip1a1ig5klNz6gwSkhfw\u003D(

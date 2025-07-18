@@ -281,7 +281,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
   {
     foreach (IAxis yax in (Collection<IAxis>) _param0.get_YAxes())
     {
-      \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D dop2SzA2WchXh2wc = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D();
+      \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc dop2SzA2WchXh2wc = new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc();
       dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D = yax;
       using (IUpdateSuspender fq05jnDg3bOrIrgCjote = dop2SzA2WchXh2wc.\u0023\u003DzS7JsfCE\u003D.SuspendUpdates())
       {
@@ -405,7 +405,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     }
   }
 
-  private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
+  private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
     public IAxis \u0023\u003DzS7JsfCE\u003D;
 

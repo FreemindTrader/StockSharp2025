@@ -55,7 +55,7 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
 
   private void \u0023\u003Dzk_r\u0024wtNtUKwJ(bool _param1)
   {
-    \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
+    \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.PrivateSealedClass0830 z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.PrivateSealedClass0830();
     z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D = _param1;
     if (!DrawableChartElementBaseViewModel.IsUiThread())
@@ -192,7 +192,7 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
     this.\u0023\u003DzB1NfMuK_wtfq(false);
   }
 
-  private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
+  private sealed class PrivateSealedClass0830
   {
     public \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T> _variableSome3535;
     public bool \u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D;

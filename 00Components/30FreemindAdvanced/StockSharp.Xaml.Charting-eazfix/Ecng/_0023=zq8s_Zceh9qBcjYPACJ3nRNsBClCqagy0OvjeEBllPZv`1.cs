@@ -169,7 +169,7 @@ public class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRNsBClCqagy0OvjeEBllPZvRaPkvRhhJrl
     return this.\u0023\u003Dz\u0024XVulME\u003D[_param1];
   }
 
-  public \u0023\u003Dz2n1QiX8\u003D[] \u0023\u003DzrnGNvGY\u003D()
+  public \u0023\u003Dz2n1QiX8\u003D[] _public_ChartDrawData_sActiveOrder()
   {
     return this.\u0023\u003Dz\u0024XVulME\u003D;
   }

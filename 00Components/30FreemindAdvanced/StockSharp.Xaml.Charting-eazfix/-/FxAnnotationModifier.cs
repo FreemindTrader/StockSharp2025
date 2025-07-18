@@ -241,11 +241,11 @@ public sealed class FxAnnotationModifier :
   {
     FxAnnotationModifier.SomeClass7237 doDcwiev7trI4Ny0 = new FxAnnotationModifier.SomeClass7237();
     doDcwiev7trI4Ny0._variableSome3535 = this;
-    doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D = _param1;
+    doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 = _param1;
     if (this.\u0023\u003DzGuZ8w82B3fMJ() == null)
       return;
-    doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D.Selected += new EventHandler(doDcwiev7trI4Ny0.\u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D);
-    doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D.Unselected += new EventHandler(doDcwiev7trI4Ny0.\u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D);
+    doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Selected += new EventHandler(doDcwiev7trI4Ny0.\u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D);
+    doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Unselected += new EventHandler(doDcwiev7trI4Ny0.\u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D);
     List<DependencyProperty> dependencyPropertyList = new List<DependencyProperty>()
     {
       AnnotationBase.IsHiddenProperty,
@@ -256,20 +256,20 @@ public sealed class FxAnnotationModifier :
       AnnotationBase.Y2Property,
       AnnotationBase.CoordinateModeProperty
     };
-    if (doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D is LineAnnotationBase)
+    if (doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is LineAnnotationBase)
     {
       dependencyPropertyList.Add(LineAnnotationBase.StrokeThicknessProperty);
       dependencyPropertyList.Add(LineAnnotationBase.StrokeProperty);
     }
-    if (!(doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D is HorizontalLineAnnotation))
+    if (!(doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation))
     {
-      if (!(doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D is VerticalLineAnnotation))
+      if (!(doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation))
       {
-        if (!(doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D is BoxAnnotation))
+        if (!(doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is BoxAnnotation))
         {
-          if (!(doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D is TextAnnotation))
+          if (!(doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is TextAnnotation))
           {
-            if (doDcwiev7trI4Ny0.\u0023\u003Dz2vouRgM\u003D is RulerAnnotation)
+            if (doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is RulerAnnotation)
               dependencyPropertyList.Add(Control.BackgroundProperty);
           }
           else
@@ -298,28 +298,28 @@ public sealed class FxAnnotationModifier :
   private ChartDrawData.AnnotationData \u0023\u003DzCVYc\u0024mw923hM(AnnotationBase _param1)
   {
     FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW;
-    vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D = _param1;
+    vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 = _param1;
     ChartDrawData.AnnotationData annotationData = new ChartDrawData.AnnotationData();
-    vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    annotationData.IsVisible = new bool?(!vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.IsHidden);
-    annotationData.IsEditable = new bool?(this.\u0023\u003DztnHdtisTy1nl(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D));
-    annotationData.CoordinateMode = new AnnotationCoordinateMode?(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.CoordinateMode);
-    annotationData.X1 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.X1, ref vm6DexIkyzzokCaW);
-    annotationData.X2 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.X2, ref vm6DexIkyzzokCaW);
-    annotationData.Y1 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.Y1, ref vm6DexIkyzzokCaW);
-    annotationData.Y2 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D.Y2, ref vm6DexIkyzzokCaW);
-    if (vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D is LineAnnotationBase z2vouRgM1)
+    vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    annotationData.IsVisible = new bool?(!vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.IsHidden);
+    annotationData.IsEditable = new bool?(this.\u0023\u003DztnHdtisTy1nl(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083));
+    annotationData.CoordinateMode = new AnnotationCoordinateMode?(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.CoordinateMode);
+    annotationData.X1 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X1, ref vm6DexIkyzzokCaW);
+    annotationData.X2 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X2, ref vm6DexIkyzzokCaW);
+    annotationData.Y1 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y1, ref vm6DexIkyzzokCaW);
+    annotationData.Y2 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y2, ref vm6DexIkyzzokCaW);
+    if (vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1)
     {
       annotationData.Stroke = z2vouRgM1.Stroke;
       annotationData.Thickness = new Thickness?(new Thickness(z2vouRgM1.StrokeThickness));
     }
-    if (!(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D is HorizontalLineAnnotation z2vouRgM5))
+    if (!(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation z2vouRgM5))
     {
-      if (!(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D is VerticalLineAnnotation z2vouRgM4))
+      if (!(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation z2vouRgM4))
       {
-        if (!(vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D is BoxAnnotation z2vouRgM3))
+        if (!(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is BoxAnnotation z2vouRgM3))
         {
-          if (vm6DexIkyzzokCaW.\u0023\u003Dz2vouRgM\u003D is TextAnnotation z2vouRgM2)
+          if (vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is TextAnnotation z2vouRgM2)
           {
             annotationData.Foreground = z2vouRgM2.Foreground;
             annotationData.Text = z2vouRgM2.Text;
@@ -368,30 +368,30 @@ public sealed class FxAnnotationModifier :
   {
     FxAnnotationModifier.SomeClass343 vqd1Qhu2nAw1nzwT0;
     bool? nullable;
-    if (!this.\u0023\u003DzCqbxaY8TFdGX.TryGetKey(_param1, ref vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D))
+    if (!this.\u0023\u003DzCqbxaY8TFdGX.TryGetKey(_param1, ref vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083))
     {
       Type type = _param1.Type.\u0023\u003Dz6wKFLhaRAAzr();
-      vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D = (AnnotationBase) Activator.CreateInstance(type);
-      vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.XAxisId = _param1.XAxisId;
-      vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.YAxisId = _param1.YAxisId;
-      vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.IsHidden = false;
-      AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D;
+      vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 = (AnnotationBase) Activator.CreateInstance(type);
+      vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxisId = _param1.XAxisId;
+      vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.YAxisId = _param1.YAxisId;
+      vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.IsHidden = false;
+      AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
       nullable = _param2.IsEditable;
       int num = !(!nullable.GetValueOrDefault() & nullable.HasValue) ? 1 : 0;
       this.\u0023\u003DzbSFwQBfxHeQf(z2vouRgM, num != 0);
-      this.\u0023\u003DzIehZCHK_gy_6(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D);
-      ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzCqbxaY8TFdGX)[vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D] = _param1;
-      this.\u0023\u003DzfS3q6Qc\u003D.Add((IAnnotation) vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D);
+      this.\u0023\u003DzIehZCHK_gy_6(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083);
+      ((KeyedCollection<AnnotationBase, ChartAnnotation>) this.\u0023\u003DzCqbxaY8TFdGX)[vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083] = _param1;
+      this.\u0023\u003DzfS3q6Qc\u003D.Add((IAnnotation) vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083);
       this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003Dz49m\u0024QLWwKQs9(_param1);
     }
-    vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
     try
     {
       this.\u0023\u003DzmHijKtV8bKDY = true;
       nullable = _param2.IsVisible;
       if (nullable.HasValue)
       {
-        AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D;
+        AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
         nullable = _param2.IsVisible;
         int num = !nullable.Value ? 1 : 0;
         z2vouRgM.IsHidden = num != 0;
@@ -399,41 +399,41 @@ public sealed class FxAnnotationModifier :
       nullable = _param2.IsEditable;
       if (nullable.HasValue)
       {
-        AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D;
+        AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
         nullable = _param2.IsEditable;
         int num = nullable.Value ? 1 : 0;
         this.\u0023\u003DzbSFwQBfxHeQf(z2vouRgM, num != 0);
       }
       if (_param2.CoordinateMode.HasValue)
-        vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.CoordinateMode = _param2.CoordinateMode.Value;
+        vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.CoordinateMode = _param2.CoordinateMode.Value;
       IComparable comparable1 = FxAnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
       IComparable comparable2 = FxAnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
       IComparable comparable3 = FxAnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(_param2.Y1);
       IComparable comparable4 = FxAnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(_param2.Y2);
       if (comparable1 != null)
-        vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.X1 = comparable1;
+        vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.X1 = comparable1;
       if (comparable2 != null)
-        vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.X2 = comparable2;
+        vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.X2 = comparable2;
       if (comparable3 != null)
-        vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.Y1 = comparable3;
+        vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.Y1 = comparable3;
       if (comparable4 != null)
-        vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D.Y2 = comparable4;
-      if (vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D is LineAnnotationBase z2vouRgM1)
+        vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.Y2 = comparable4;
+      if (vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1)
       {
         if (_param2.Stroke != null)
           z2vouRgM1.Stroke = _param2.Stroke;
         if (_param2.Thickness.HasValue)
           z2vouRgM1.StrokeThickness = _param2.Thickness.Value.Left;
       }
-      if (!(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D is HorizontalLineAnnotation z2vouRgM6))
+      if (!(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation z2vouRgM6))
       {
-        if (!(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D is VerticalLineAnnotation z2vouRgM5))
+        if (!(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation z2vouRgM5))
         {
-          if (!(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D is BoxAnnotation z2vouRgM4))
+          if (!(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is BoxAnnotation z2vouRgM4))
           {
-            if (!(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D is TextAnnotation z2vouRgM3))
+            if (!(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is TextAnnotation z2vouRgM3))
             {
-              if (!(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D is RulerAnnotation z2vouRgM2) || _param2.Fill == null)
+              if (!(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is RulerAnnotation z2vouRgM2) || _param2.Fill == null)
                 return;
               Brush brush = _param2.Fill is SolidColorBrush fill ? (Brush) new SolidColorBrush(fill.Color.ToTransparent((byte) 50)) : _param2.Fill;
               z2vouRgM2.Background = brush;
@@ -497,7 +497,7 @@ public sealed class FxAnnotationModifier :
     finally
     {
       this.\u0023\u003DzmHijKtV8bKDY = false;
-      this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003Dz5mEkRaZSEt9m(_param1, this.\u0023\u003DzCVYc\u0024mw923hM(vqd1Qhu2nAw1nzwT0.\u0023\u003Dz2vouRgM\u003D));
+      this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003Dz5mEkRaZSEt9m(_param1, this.\u0023\u003DzCVYc\u0024mw923hM(vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083));
     }
   }
 
@@ -560,7 +560,7 @@ public sealed class FxAnnotationModifier :
     if (_param0 == null)
       return (IComparable) null;
     if (_param0 is double num)
-      return _param1.\u0023\u003Dz2vouRgM\u003D.CoordinateMode == AnnotationCoordinateMode.Relative || _param1.\u0023\u003Dz2vouRgM\u003D.CoordinateMode == AnnotationCoordinateMode.RelativeY ? (IComparable) num : (IComparable) Converter.To<Decimal>((object) num);
+      return _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Relative || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY ? (IComparable) num : (IComparable) Converter.To<Decimal>((object) num);
     throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[1]
     {
       (object) _param0.GetType().Name
@@ -577,7 +577,7 @@ public sealed class FxAnnotationModifier :
       return (IComparable) dateTimeOffset.UtcDateTime;
     if (_param0 is DateTime dateTime)
       return (IComparable) dateTime;
-    if (_param1.\u0023\u003DzFlkZpfJp6G9R is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D && (_param1.\u0023\u003Dz2vouRgM\u003D.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1.\u0023\u003Dz2vouRgM\u003D.CoordinateMode == AnnotationCoordinateMode.RelativeY))
+    if (_param1.\u0023\u003DzFlkZpfJp6G9R is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
       throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[1]
       {
         (object) _param0.GetType().Name
@@ -641,7 +641,7 @@ public sealed class FxAnnotationModifier :
     
     public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzFlkZpfJp6G9R;
     
-    public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
+    public AnnotationBase _public_ActiveOrderAnnotation_083;
   }
 
   [StructLayout(LayoutKind.Auto)]
@@ -650,7 +650,7 @@ public sealed class FxAnnotationModifier :
     
     public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzFlkZpfJp6G9R;
     
-    public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
+    public AnnotationBase _public_ActiveOrderAnnotation_083;
   }
 
   private sealed class SomeClass398
@@ -674,12 +674,12 @@ public sealed class FxAnnotationModifier :
     public void \u0023\u003Dzn4dNgi0mxbbCP\u0024DWxprQswg\u003D(AnnotationBase _param1)
     {
       FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D();
-      wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D = _param1;
+      wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083 = _param1;
       dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd m53T5BwgtpbkV9ZEjd = this._variableSome3535.\u0023\u003DzqRVOnAc\u003D();
       m53T5BwgtpbkV9ZEjd.IsOpen = false;
       CollectionHelper.ForEach<IAnnotation>(this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>(new Func<IAnnotation, bool>(wd3zPhu0dS2ZqhuzuE.\u0023\u003DzJdTk1tU_hZdMZEOQ7Sdo5JQ\u003D)), FxAnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D ?? (FxAnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D = new Action<IAnnotation>(FxAnnotationModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1)));
-      wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D.IsSelected = true;
-      m53T5BwgtpbkV9ZEjd.PlacementTarget = (UIElement) wd3zPhu0dS2ZqhuzuE.\u0023\u003Dz2vouRgM\u003D;
+      wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083.IsSelected = true;
+      m53T5BwgtpbkV9ZEjd.PlacementTarget = (UIElement) wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083;
       m53T5BwgtpbkV9ZEjd.IsOpen = true;
     }
 
@@ -754,19 +754,19 @@ public sealed class FxAnnotationModifier :
 
   private sealed class \u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D
   {
-    public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
+    public AnnotationBase _public_ActiveOrderAnnotation_083;
 
     public bool \u0023\u003DzJdTk1tU_hZdMZEOQ7Sdo5JQ\u003D(
       IAnnotation _param1)
     {
-      return _param1 != this.\u0023\u003Dz2vouRgM\u003D;
+      return _param1 != this._public_ActiveOrderAnnotation_083;
     }
   }
 
   private sealed class SomeClass7237
   {
     public FxAnnotationModifier _variableSome3535;
-    public AnnotationBase \u0023\u003Dz2vouRgM\u003D;
+    public AnnotationBase _public_ActiveOrderAnnotation_083;
     public Action<DependencyPropertyChangedEventArgs> \u0023\u003DzDg_APFfs\u0024qGS;
 
     public void \u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D(
@@ -787,16 +787,16 @@ public sealed class FxAnnotationModifier :
     #nullable disable
     DependencyProperty _param1)
     {
-      this.\u0023\u003Dz2vouRgM\u003D.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
+      this._public_ActiveOrderAnnotation_083.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
     }
 
     public void \u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D(
       DependencyPropertyChangedEventArgs _param1)
     {
       ChartAnnotation chartAnnotation;
-      if (!((KeyedCollection<AnnotationBase, ChartAnnotation>) this._variableSome3535.\u0023\u003DzCqbxaY8TFdGX).TryGetValue(this.\u0023\u003Dz2vouRgM\u003D, ref chartAnnotation) || this._variableSome3535.\u0023\u003DzmHijKtV8bKDY)
+      if (!((KeyedCollection<AnnotationBase, ChartAnnotation>) this._variableSome3535.\u0023\u003DzCqbxaY8TFdGX).TryGetValue(this._public_ActiveOrderAnnotation_083, ref chartAnnotation) || this._variableSome3535.\u0023\u003DzmHijKtV8bKDY)
         return;
-      this._variableSome3535.\u0023\u003DzGuZ8w82B3fMJ().\u0023\u003Dz5mEkRaZSEt9m(chartAnnotation, this._variableSome3535.\u0023\u003DzCVYc\u0024mw923hM(this.\u0023\u003Dz2vouRgM\u003D));
+      this._variableSome3535.\u0023\u003DzGuZ8w82B3fMJ().\u0023\u003Dz5mEkRaZSEt9m(chartAnnotation, this._variableSome3535.\u0023\u003DzCVYc\u0024mw923hM(this._public_ActiveOrderAnnotation_083));
     }
   }
 }

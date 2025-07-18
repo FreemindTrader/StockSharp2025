@@ -60,7 +60,7 @@ public sealed class RolloverModifier :
     IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1,
     ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param2)
   {
-    _param1.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new RolloverModifier.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D()
+    _param1.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new RolloverModifier.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc()
     {
       \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D = _param2
     }.\u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D));
@@ -151,7 +151,7 @@ public sealed class RolloverModifier :
     return jyxtBaVakvxTuthBw;
   }
 
-  private sealed class \u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D
+  private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
     public ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
 
