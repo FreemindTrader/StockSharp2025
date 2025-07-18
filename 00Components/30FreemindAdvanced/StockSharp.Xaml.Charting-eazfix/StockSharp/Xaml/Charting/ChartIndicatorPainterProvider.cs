@@ -56,12 +56,12 @@ public class ChartIndicatorPainterProvider : IChartIndicatorPainterProvider
   private sealed class SomeWheireosoe
   {
     public Type \u0023\u003DzLLebWNY\u003D;
-    public Func<Type, bool> \u0023\u003DzuAeZVTPDgzYE;
+    public Func<Type, bool> _Func_IAxis_bool_0835;
 
     public Type[] \u0023\u003DzqS88LfGdBd2ottAmeg9CBAy31ox5mLVAGiw_boMZnQSurxls6ar_INuSczI\u0024(
       SynchronizedDictionary<Type, Type> _param1)
     {
-      return _param1.Keys.Where<Type>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<Type, bool>(this.\u0023\u003DzVqZqWbcdJe5mMlLpr_IsrBFwuF8WCc_56\u0024iJ5R2frCg4R0zx1QRrGNkntn_r))).ToArray<Type>();
+      return _param1.Keys.Where<Type>(this._Func_IAxis_bool_0835 ?? (this._Func_IAxis_bool_0835 = new Func<Type, bool>(this.\u0023\u003DzVqZqWbcdJe5mMlLpr_IsrBFwuF8WCc_56\u0024iJ5R2frCg4R0zx1QRrGNkntn_r))).ToArray<Type>();
     }
 
     public bool \u0023\u003DzVqZqWbcdJe5mMlLpr_IsrBFwuF8WCc_56\u0024iJ5R2frCg4R0zx1QRrGNkntn_r(

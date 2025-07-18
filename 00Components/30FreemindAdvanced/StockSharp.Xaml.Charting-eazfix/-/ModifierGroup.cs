@@ -185,7 +185,7 @@ public sealed class ModifierGroup :
   public override void OnModifierMouseDown(
     ModifierMouseArgs _param1)
   {
-    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (ModifierGroup.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
+    this.\u0023\u003DziTCeMLw\u003D(ModifierGroup.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ ?? (ModifierGroup.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ = new Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD>(ModifierGroup.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5krLWsvoXbq\u00248_PqIuQDSoaDq3r_)), (\u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD) _param1);
   }
 
   public override void OnModifierMouseMove(
@@ -318,7 +318,7 @@ public sealed class ModifierGroup :
     public static readonly ModifierGroup.SomeClass34343383 SomeMethond0343 = new ModifierGroup.SomeClass34343383();
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzmsiBBf5ih\u0024wjnD8X9g\u003D\u003D;
     public static Func<IChartModifier, bool> \u0023\u003DzNCbtu8hqqUunVlh3ow\u003D\u003D;
-    public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
+    public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> m_public_static_Func_ChartCompentViewModel_bool_;
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D;
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzgXbxBZLvg_0J\u0024EPUjg\u003D\u003D;
     public static Action<IChartModifier, \u0023\u003DzVWRskdf0yEAwtZYFZxzKpWslqKAb\u0024JC7uHI2kCirjjsD> \u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D;

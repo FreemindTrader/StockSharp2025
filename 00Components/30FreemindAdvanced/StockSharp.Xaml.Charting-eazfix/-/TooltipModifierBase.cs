@@ -26,7 +26,7 @@ public abstract class TooltipModifierBase :
   
   public static readonly DependencyProperty \u0023\u003Dzdz6MkOePVs4t = DependencyProperty.Register(nameof (AxisLabelTemplate), typeof (ControlTemplate), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003DzbVg\u0024qRIz823IPqWt\u0024A\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzCuzcJq\u0024VLiWR = DependencyProperty.Register(nameof (ShowAxisLabels), typeof (bool), typeof (TooltipModifierBase), new PropertyMetadata((object) true, (PropertyChangedCallback) null));
+  public static readonly DependencyProperty ShowAxisLabelsProperty = DependencyProperty.Register(nameof (ShowAxisLabels), typeof (bool), typeof (TooltipModifierBase), new PropertyMetadata((object) true, (PropertyChangedCallback) null));
   
   public static readonly DependencyProperty \u0023\u003DzwbBEIdM\u0024iIcr = DependencyProperty.Register(nameof (TooltipLabelTemplate), typeof (ControlTemplate), typeof (TooltipModifierBase), new PropertyMetadata(new PropertyChangedCallback(TooltipModifierBase.\u0023\u003Dzwur\u0024mqt3kPJHpkPRjQ\u003D\u003D)));
   
@@ -112,11 +112,11 @@ public abstract class TooltipModifierBase :
   {
     get
     {
-      return (bool) this.GetValue(TooltipModifierBase.\u0023\u003DzCuzcJq\u0024VLiWR);
+      return (bool) this.GetValue(TooltipModifierBase.ShowAxisLabelsProperty);
     }
     set
     {
-      this.SetValue(TooltipModifierBase.\u0023\u003DzCuzcJq\u0024VLiWR, (object) value);
+      this.SetValue(TooltipModifierBase.ShowAxisLabelsProperty, (object) value);
     }
   }
 

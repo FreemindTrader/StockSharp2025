@@ -181,7 +181,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   public void Reset(IEnumerable<ICollection<LineData<DateTime>>> items)
   {
-    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (EquityCurveChart.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.ResetY1Annotation))));
+    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.pubStatic_Action_ChartAxis_ ?? (EquityCurveChart.SomeClass34343383.pubStatic_Action_ChartAxis_ = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.ResetY1Annotation))));
   }
 
   public void Reset(IEnumerable<IChartBandElement> elements)
@@ -201,7 +201,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   public void Load(SettingsStorage storage)
   {
     this.Clear();
-    foreach (IChartElement chartElement in ((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>("elements", (SettingsStorage[]) null)).Select<SettingsStorage, ChartBandElement>(EquityCurveChart.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? (EquityCurveChart.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<SettingsStorage, ChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D))))
+    foreach (IChartElement chartElement in ((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>("elements", (SettingsStorage[]) null)).Select<SettingsStorage, ChartBandElement>(EquityCurveChart.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ ?? (EquityCurveChart.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ = new Func<SettingsStorage, ChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D))))
       ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Add(chartElement);
   }
 
@@ -256,8 +256,8 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   {
     public static readonly EquityCurveChart.SomeClass34343383 SomeMethond0343 = new EquityCurveChart.SomeClass34343383();
     public static Action<IChartAxis> \u0023\u003DzFdH9dhR0fERarkwbZA\u003D\u003D;
-    public static Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
-    public static Func<SettingsStorage, ChartBandElement> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
+    public static Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement> pubStatic_Action_ChartAxis_;
+    public static Func<SettingsStorage, ChartBandElement> m_public_static_Func_ChartCompentViewModel_bool_;
     public static Func<IChartBandElement, SettingsStorage> \u0023\u003DzlGkGNQogYMM2PMCQxA\u003D\u003D;
 
     public void \u0023\u003DzvXldtNp6EqOzZHGiHo5vu0E\u003D(IChartAxis _param1)

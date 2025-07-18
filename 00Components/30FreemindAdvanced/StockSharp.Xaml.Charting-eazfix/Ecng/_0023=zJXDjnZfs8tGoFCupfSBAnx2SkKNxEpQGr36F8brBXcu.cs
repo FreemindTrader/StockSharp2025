@@ -16,7 +16,7 @@ public struct \u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tF
   
   public int \u0023\u003Dzu6bzeD\u0024Y6N55;
   
-  public int \u0023\u003Dzy_5REws\u003D;
+  public int _chartArea_093;
   
   public int \u0023\u003DzLw_1RqQ\u003D;
   
@@ -27,7 +27,7 @@ public struct \u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tF
     this.\u0023\u003DzwP120vA\u003D = int.MaxValue;
     this.\u0023\u003Dzi8jDI4I\u003D = int.MaxValue;
     this.\u0023\u003Dzu6bzeD\u0024Y6N55 = 0;
-    this.\u0023\u003Dzy_5REws\u003D = 0;
+    this._chartArea_093 = 0;
     this.\u0023\u003DzLw_1RqQ\u003D = -1;
     this.\u0023\u003DzTgDnxCg\u003D = -1;
   }
@@ -38,7 +38,7 @@ public struct \u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tF
     this.\u0023\u003DzwP120vA\u003D = _param1.\u0023\u003DzwP120vA\u003D;
     this.\u0023\u003Dzi8jDI4I\u003D = _param1.\u0023\u003Dzi8jDI4I\u003D;
     this.\u0023\u003Dzu6bzeD\u0024Y6N55 = _param1.\u0023\u003Dzu6bzeD\u0024Y6N55;
-    this.\u0023\u003Dzy_5REws\u003D = _param1.\u0023\u003Dzy_5REws\u003D;
+    this._chartArea_093 = _param1._chartArea_093;
     this.\u0023\u003DzLw_1RqQ\u003D = _param1.\u0023\u003DzLw_1RqQ\u003D;
     this.\u0023\u003DzTgDnxCg\u003D = _param1.\u0023\u003DzTgDnxCg\u003D;
   }

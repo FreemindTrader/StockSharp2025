@@ -62,7 +62,7 @@ public sealed class ItemsControlParentSurface
   {
     public ItemsControl \u0023\u003Dzki8twMk\u003D;
     public UltrachartOverview \u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D;
-    public NotifyCollectionChangedEventHandler \u0023\u003DzuAeZVTPDgzYE;
+    public NotifyCollectionChangedEventHandler _Func_IAxis_bool_0835;
 
     public void \u0023\u003Dz0xfb5\u0024uSJ4miTqDRzdsXVbY\u003D(
       object _param1,
@@ -70,7 +70,7 @@ public sealed class ItemsControlParentSurface
     {
       if (this.\u0023\u003Dzki8twMk\u003D.ItemsSource is INotifyCollectionChanged itemsSource)
       {
-        NotifyCollectionChangedEventHandler changedEventHandler = this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new NotifyCollectionChangedEventHandler(this.\u0023\u003DzlOmNQalRcYS04kULyvkLsQQ\u003D));
+        NotifyCollectionChangedEventHandler changedEventHandler = this._Func_IAxis_bool_0835 ?? (this._Func_IAxis_bool_0835 = new NotifyCollectionChangedEventHandler(this.\u0023\u003DzlOmNQalRcYS04kULyvkLsQQ\u003D));
         itemsSource.CollectionChanged += changedEventHandler;
       }
       ItemsControlParentSurface.\u0023\u003DzgCXh\u0024GcoJtLk(this.\u0023\u003DzbWUE4QnsAHzF0cRUyQ\u003D\u003D, this.\u0023\u003Dzki8twMk\u003D);

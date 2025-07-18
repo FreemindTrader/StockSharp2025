@@ -81,7 +81,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
       str = \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzJmwTBL5wi7Zy8Thmt0etFrw\u003D.Value + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString();
       flag = false;
     }
-    else if (_param1.XAxis is dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd && _param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
+    else if (_param1.XAxis is CategoryDateTimeAxis && _param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>())
     {
       str = \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzlgqIi4B2zuQC1ih8Gx\u0024aMAJJcKZtTnjFo_9FGCE\u003D.Value + \u0023\u003DzTbSy5Tg7CNKewHb2FguXq09eZMREAJl6IstiMmQ\u003D.\u0023\u003DzCGXxEfvxqF5P?.ToString();
       flag = false;

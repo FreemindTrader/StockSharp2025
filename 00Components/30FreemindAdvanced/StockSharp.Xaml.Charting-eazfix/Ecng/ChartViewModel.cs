@@ -688,7 +688,7 @@ public void ExecuteClosePaneCommand2(
     Order> \u0023\u003DzrhkYnMPbNPr3HVPmAT1zSUTwkFvh(
       ScichartSurfaceMVVM _param1)
     {
-      return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(ChartViewModel.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (ChartViewModel.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(ChartViewModel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
+      return _param1.GetActiveOrders(ChartViewModel.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D ?? (ChartViewModel.SomeClass34343383.\u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D = new Func<Order, bool>(ChartViewModel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t)));
     }
 
     public bool \u0023\u003Dz6ysbq7QSBMgTXxXd1pDg18rT_80t(Order _param1)

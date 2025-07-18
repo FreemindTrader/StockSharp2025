@@ -26,12 +26,12 @@ using System.Windows.Data;
 using System.Windows.Media;
 
 #nullable disable
-public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D(
+public sealed class ChartActiveOrdersElementVM(
   ChartActiveOrdersElement _param1) : 
   ChartCompentWpfBaseViewModel<ChartActiveOrdersElement>(_param1)
 {
   
-  private readonly PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> \u0023\u003DzS1WBvIHjLsHj = new PairSet<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>();
+  private readonly PairSet<Order, ChartActiveOrdersElementVM.AnnotationInfo> \u0023\u003DzS1WBvIHjLsHj = new PairSet<Order, ChartActiveOrdersElementVM.AnnotationInfo>();
 
   protected override void UpdateUi()
   {
@@ -42,13 +42,13 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
   {
   }
 
-  public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c(Func<Order, bool> _param1)
+  public IEnumerable<Order> GetActiveOrders(Func<Order, bool> _param1)
   {
     if (!DrawableChartElementBaseViewModel.IsUiThread())
       throw new InvalidOperationException("must be called from ui thread");
     if (_param1 == null)
-      _param1 = \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<Order, bool>(\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D));
-    return ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.Where<Order>(_param1);
+      _param1 = ChartActiveOrdersElementVM.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D ?? (ChartActiveOrdersElementVM.SomeClass34343383.\u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D = new Func<Order, bool>(ChartActiveOrdersElementVM.SomeClass34343383.SomeMethond0343.\u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D));
+    return ((KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.Where<Order>(_param1);
   }
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
@@ -62,16 +62,16 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
 
   private void \u0023\u003Dzu72g2gQaaQQ2(Order _param1)
   {
-    if (CollectionHelper.TryGetValue<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>((IDictionary<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj, _param1) == null)
+    if (CollectionHelper.TryGetValue<Order, ChartActiveOrdersElementVM.AnnotationInfo>((IDictionary<Order, ChartActiveOrdersElementVM.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj, _param1) == null)
       return;
-    ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Remove(_param1);
+    ((KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Remove(_param1);
     this.ScichartSurfaceMVVM.RemoveAnnotation(this.RootElem, (object) _param1);
   }
 
   private void \u0023\u003Dz4ka8DEp6gsYz(
     ChartDrawData.sActiveOrder _param1)
   {
-    \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
+    ChartActiveOrdersElementVM.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D z9r5QdtX0xdsJ15Nf5Q = new ChartActiveOrdersElementVM.\u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D();
     z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D = _param1;
     if (!DrawableChartElementBaseViewModel.IsUiThread())
@@ -81,24 +81,24 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
     else
     {
       z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D = z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzEbEKEpf9EiRR();
-      \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo annotationInfo;
-      if (!((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).TryGetValue(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, ref annotationInfo))
+      ChartActiveOrdersElementVM.AnnotationInfo annotationInfo;
+      if (!((KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).TryGetValue(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, ref annotationInfo))
       {
-        if (!\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzzTd2XsqYavfdlfkXJw\u003D\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
+        if (!ChartActiveOrdersElementVM.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzzTd2XsqYavfdlfkXJw\u003D\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
           return;
         annotationInfo = this.CreateAnnotation(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D);
-        ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Add(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo);
+        ((KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Add(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo);
         this.ScichartSurfaceMVVM.AddAxisMakerAnnotation(this.RootElem, (IAnnotation) annotationInfo.Annotation, (object) z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D);
         z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, true);
       }
-      else if (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo.AutoRemoveFromChart, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
+      else if (ChartActiveOrdersElementVM.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003Dz54\u0024be\u0024c\u003D, annotationInfo.AutoRemoveFromChart, z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzrnGNvGY\u003D.IsError))
         z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, true);
       else
         z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, false);
     }
   }
 
-  private \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo CreateAnnotation(
+  private ChartActiveOrdersElementVM.AnnotationInfo CreateAnnotation(
     ChartDrawData.sActiveOrder _param1)
   {
     Order order = _param1.\u0023\u003DzEbEKEpf9EiRR();
@@ -109,7 +109,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
     annotation.OrderErrorText = LocalizedStrings.Error.ToUpperInvariant();
     annotation.OrderText = order.Side == 1 ? "SELL LMT" : "BUY LMT";
     annotation.X1 = (IComparable) 0.8;
-    \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo dataObject = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo(annotation);
+    ChartActiveOrdersElementVM.AnnotationInfo dataObject = new ChartActiveOrdersElementVM.AnnotationInfo(annotation);
     annotation.SetBindings(AnnotationBase.XAxisIdProperty, (object) this.ChartComponentView, "XAxisId");
     annotation.SetBindings(AnnotationBase.YAxisIdProperty, (object) this.ChartComponentView, "YAxisId");
     annotation.SetBindings(AnnotationBase.IsHiddenProperty, (object) this.ChartComponentView, "IsVisible", converter: (IValueConverter) new InverseBooleanConverter());
@@ -123,17 +123,17 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
     annotation.SetBindings(ActiveOrderAnnotation.BlinkColorProperty, (object) this.ChartComponentView, order.Side == 1 ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay);
     MultiBinding binding = new MultiBinding()
     {
-      Converter = (IMultiValueConverter) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz2m1NF_ZMmb7l(),
+      Converter = (IMultiValueConverter) new ChartActiveOrdersElementVM.\u0023\u003Dz2m1NF_ZMmb7l(),
       Mode = BindingMode.OneWay
     };
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) dataObject, "State"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) order, "Side"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "BuyPendingColor"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "BuyColor"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "SellPendingColor"));
-    binding.Bindings.Add((BindingBase) \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "SellColor"));
+    binding.Bindings.Add((BindingBase) ChartActiveOrdersElementVM.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) dataObject, "State"));
+    binding.Bindings.Add((BindingBase) ChartActiveOrdersElementVM.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) order, "Side"));
+    binding.Bindings.Add((BindingBase) ChartActiveOrdersElementVM.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "BuyPendingColor"));
+    binding.Bindings.Add((BindingBase) ChartActiveOrdersElementVM.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "BuyColor"));
+    binding.Bindings.Add((BindingBase) ChartActiveOrdersElementVM.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "SellPendingColor"));
+    binding.Bindings.Add((BindingBase) ChartActiveOrdersElementVM.\u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd((object) this.ChartComponentView, "SellColor"));
     annotation.SetBinding(Control.BackgroundProperty, (BindingBase) binding);
-    \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DzP\u0024rwMb8\u003D(dataObject, _param1);
+    ChartActiveOrdersElementVM.\u0023\u003DzP\u0024rwMb8\u003D(dataObject, _param1);
     annotation.CancelClick += new Action<ActiveOrderAnnotation>(this.\u0023\u003Dzr1A_0cGwcH5c);
     annotation.DragEnded += new EventHandler<EventArgs>(this.\u0023\u003DzZe__axziAicn);
     annotation.AnimationDone += new Action<ActiveOrderAnnotation>(this.\u0023\u003DzVh15ej24l3Pl);
@@ -141,7 +141,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
   }
 
   private static void \u0023\u003DzP\u0024rwMb8\u003D(
-    \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _param0,
+    ChartActiveOrdersElementVM.AnnotationInfo _param0,
     ChartDrawData.sActiveOrder _param1)
   {
     ActiveOrderAnnotation annotation = _param0.Annotation;
@@ -158,9 +158,9 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
 
   private Order \u0023\u003Dz28gLj6T_roD8(
     ActiveOrderAnnotation _param1,
-    out \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _param2)
+    out ChartActiveOrdersElementVM.AnnotationInfo _param2)
   {
-    KeyValuePair<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> keyValuePair = ((IEnumerable<KeyValuePair<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>>) this.\u0023\u003DzS1WBvIHjLsHj).FirstOrDefault<KeyValuePair<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>>(new Func<KeyValuePair<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>, bool>(new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D()
+    KeyValuePair<Order, ChartActiveOrdersElementVM.AnnotationInfo> keyValuePair = ((IEnumerable<KeyValuePair<Order, ChartActiveOrdersElementVM.AnnotationInfo>>) this.\u0023\u003DzS1WBvIHjLsHj).FirstOrDefault<KeyValuePair<Order, ChartActiveOrdersElementVM.AnnotationInfo>>(new Func<KeyValuePair<Order, ChartActiveOrdersElementVM.AnnotationInfo>, bool>(new ChartActiveOrdersElementVM.\u0023\u003Dz4hWzOvDOp2Sz_a2WchXH2wc\u003D()
     {
       \u0023\u003Dz2vouRgM\u003D = _param1
     }.\u0023\u003Dzus90X13c0dQNK8NugoaejT0\u003D));
@@ -171,7 +171,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
   private void \u0023\u003DzZe__axziAicn(object _param1, EventArgs _param2)
   {
     ActiveOrderAnnotation activeOrderAnnotation = (ActiveOrderAnnotation) _param1;
-    Order order = this.\u0023\u003Dz28gLj6T_roD8(activeOrderAnnotation, out \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _);
+    Order order = this.\u0023\u003Dz28gLj6T_roD8(activeOrderAnnotation, out ChartActiveOrdersElementVM.AnnotationInfo _);
     if (order == null)
       return;
     Decimal price = order.Price;
@@ -188,16 +188,16 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
 
   private void \u0023\u003DzVh15ej24l3Pl(ActiveOrderAnnotation _param1)
   {
-    \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo annotationInfo;
+    ChartActiveOrdersElementVM.AnnotationInfo annotationInfo;
     Order order = this.\u0023\u003Dz28gLj6T_roD8(_param1, out annotationInfo);
-    if (order == null || \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(order, annotationInfo.AutoRemoveFromChart, annotationInfo.State, false))
+    if (order == null || ChartActiveOrdersElementVM.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(order, annotationInfo.AutoRemoveFromChart, annotationInfo.State, false))
       return;
     this.\u0023\u003Dz4ka8DEp6gsYz(new ChartDrawData.sActiveOrder(order, annotationInfo.Balance, annotationInfo.State, annotationInfo.PriceStep, annotationInfo.AutoRemoveFromChart, false, false, false, order.Price));
   }
 
   private void \u0023\u003Dzr1A_0cGwcH5c(ActiveOrderAnnotation _param1)
   {
-    Order order = this.\u0023\u003Dz28gLj6T_roD8(_param1, out \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _);
+    Order order = this.\u0023\u003Dz28gLj6T_roD8(_param1, out ChartActiveOrdersElementVM.AnnotationInfo _);
     if (order == null)
       return;
     this.ScichartSurfaceMVVM.GroupChart?.\u0023\u003DzrMNjBJFuBLP3(order);
@@ -218,7 +218,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
 
   private void \u0023\u003DzotzePNFdGlR6yejSfw\u003D\u003D()
   {
-    CollectionHelper.ForEach<Order>((IEnumerable<Order>) ((KeyedCollection<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.ToArray<Order>(), new Action<Order>(this.\u0023\u003Dzu72g2gQaaQQ2));
+    CollectionHelper.ForEach<Order>((IEnumerable<Order>) ((KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo>) this.\u0023\u003DzS1WBvIHjLsHj).Keys.ToArray<Order>(), new Action<Order>(this.\u0023\u003Dzu72g2gQaaQQ2));
   }
 
   public static Binding \u0023\u003DqnQBHgWwq46HtTk3awt3PNwG0MqJsTB80JyTm_gnLH305sglD_qwjbzhv17Y66uZd(
@@ -267,7 +267,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
     public ActiveOrderAnnotation \u0023\u003Dz2vouRgM\u003D;
 
     public bool \u0023\u003Dzus90X13c0dQNK8NugoaejT0\u003D(
-      KeyValuePair<Order, \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo> _param1)
+      KeyValuePair<Order, ChartActiveOrdersElementVM.AnnotationInfo> _param1)
     {
       return _param1.Value.Annotation == this.\u0023\u003Dz2vouRgM\u003D;
     }
@@ -276,7 +276,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
   [Serializable]
   private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.SomeClass34343383();
+    public static readonly ChartActiveOrdersElementVM.SomeClass34343383 SomeMethond0343 = new ChartActiveOrdersElementVM.SomeClass34343383();
     public static Func<Order, bool> \u0023\u003DzS6LQN8LYhmIH4nSLVw\u003D\u003D;
 
     public bool \u0023\u003Dz5Z\u0024LBhMmNfY9qrmIEVzcHfw\u003D(Order _param1) => true;
@@ -284,7 +284,7 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
 
   private sealed class \u0023\u003Dz9r5QdtX0xdsJ15Nf5Q\u003D\u003D
   {
-    public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D _variableSome3535;
+    public ChartActiveOrdersElementVM _variableSome3535;
     public ChartDrawData.sActiveOrder \u0023\u003DzrnGNvGY\u003D;
     public Order \u0023\u003Dz54\u0024be\u0024c\u003D;
 
@@ -294,13 +294,13 @@ public sealed class \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT5
     }
 
     public void \u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(
-      \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.AnnotationInfo _param1,
+      ChartActiveOrdersElementVM.AnnotationInfo _param1,
       bool _param2)
     {
       ActiveOrderAnnotation annotation = _param1.Annotation;
       bool flag1 = true;
       bool flag2 = _param1.Balance != this.\u0023\u003DzrnGNvGY\u003D.\u0023\u003DzP9vQqYe3EED\u0024();
-      \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D.\u0023\u003DzP\u0024rwMb8\u003D(_param1, this.\u0023\u003DzrnGNvGY\u003D);
+      ChartActiveOrdersElementVM.\u0023\u003DzP\u0024rwMb8\u003D(_param1, this.\u0023\u003DzrnGNvGY\u003D);
       if (annotation.IsAnimationEnabled)
       {
         if (this.\u0023\u003DzrnGNvGY\u003D.IsError)

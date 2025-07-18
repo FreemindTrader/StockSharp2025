@@ -244,7 +244,7 @@ public sealed class UltraStockChart :
     UltraStockChart muzmbdfsghM62BaEjd = (UltraStockChart) _param0;
     if (muzmbdfsghM62BaEjd == null || !(muzmbdfsghM62BaEjd.ChartModifier is ModifierGroup chartModifier))
       return;
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SetMouseEventGroup((DependencyObject) chartModifier, _param1.NewValue as string);
+    MouseManager.SetMouseEventGroup((DependencyObject) chartModifier, _param1.NewValue as string);
   }
 
   private static void \u0023\u003DzbI1wn6DLqQEI(

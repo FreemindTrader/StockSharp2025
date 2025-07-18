@@ -269,7 +269,7 @@ public sealed class ScanlineRasterizer :
       {
         \u0023\u003DzJXDjnZfs8tGoFCupfSBAnx2SkKNxEpQGr36F8brBXcuQuLBcdO8tFDwl0NMb quLbcdO8tFdwl0Nmb = quLbcdO8tFdwl0NmbArray[index];
         int zwP120vA = quLbcdO8tFdwl0Nmb.\u0023\u003DzwP120vA\u003D;
-        int zy5Rews = quLbcdO8tFdwl0Nmb.\u0023\u003Dzy_5REws\u003D;
+        int zy5Rews = quLbcdO8tFdwl0Nmb._chartArea_093;
         num2 += quLbcdO8tFdwl0Nmb.\u0023\u003Dzu6bzeD\u0024Y6N55;
         while (--num1 != 0)
         {
@@ -277,7 +277,7 @@ public sealed class ScanlineRasterizer :
           quLbcdO8tFdwl0Nmb = quLbcdO8tFdwl0NmbArray[index];
           if (quLbcdO8tFdwl0Nmb.\u0023\u003DzwP120vA\u003D == zwP120vA)
           {
-            zy5Rews += quLbcdO8tFdwl0Nmb.\u0023\u003Dzy_5REws\u003D;
+            zy5Rews += quLbcdO8tFdwl0Nmb._chartArea_093;
             num2 += quLbcdO8tFdwl0Nmb.\u0023\u003Dzu6bzeD\u0024Y6N55;
           }
           else

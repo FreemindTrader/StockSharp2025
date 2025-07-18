@@ -33,7 +33,7 @@ public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANBeoGZb42Ln7VhR5bovuZyp_7I4
         new string[3]{ "ZoomExtentsY", "XyDirection", "ClipModeX" }
       },
       {
-        typeof (dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd),
+        typeof (ZoomExtentsModifier),
         new string[2]{ "XyDirection", "IsAnimated" }
       },
       {
@@ -41,11 +41,11 @@ public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANBeoGZb42Ln7VhR5bovuZyp_7I4
         new string[2]{ "DragMode", "AxisId" }
       },
       {
-        typeof (dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd),
+        typeof (XAxisDragModifier),
         new string[1]{ "ClipModeX" }
       },
       {
-        typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd),
+        typeof (TooltipModifierBase),
         new string[2]{ "ShowTooltipOn", "ShowAxisLabels" }
       },
       {

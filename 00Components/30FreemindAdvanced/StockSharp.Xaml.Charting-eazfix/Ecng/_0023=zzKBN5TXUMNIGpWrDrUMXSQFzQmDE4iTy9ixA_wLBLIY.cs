@@ -236,7 +236,7 @@ public abstract class \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ 
     string oldValue = (string) _param1.OldValue;
     if (!de4iTy9ixAWLbliyq.IsAttached)
       return;
-    (de4iTy9ixAWLbliyq is dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd ? de4iTy9ixAWLbliyq.GetXAxis(oldValue) : de4iTy9ixAWLbliyq.GetYAxis(oldValue))?.\u0023\u003DzqFIyyIbnwGLq(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003DzFl6tvxA\u003D);
+    (de4iTy9ixAWLbliyq is XAxisDragModifier ? de4iTy9ixAWLbliyq.GetXAxis(oldValue) : de4iTy9ixAWLbliyq.GetYAxis(oldValue))?.\u0023\u003DzqFIyyIbnwGLq(\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSQFzQmDE4iTy9ixA_wLBLIYQ.\u0023\u003DzFl6tvxA\u003D);
     de4iTy9ixAWLbliyq.\u0023\u003DzTXojzBH7awRH((Cursor) null);
   }
 }

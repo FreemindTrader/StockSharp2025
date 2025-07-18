@@ -41,11 +41,11 @@ public abstract class \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmqCb1u9vHqE9pa_ddXk\u003D
     IServiceContainer _param1)
   {
     if (this._serviceContainer != null)
-      this._serviceContainer.GetService<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().RemovePropertyEvents((IReceiveMouseEvents ) this);
+      this._serviceContainer.GetService<IMouseManager>().RemovePropertyEvents((IReceiveMouseEvents ) this);
     this._serviceContainer = _param1;
     if (this._serviceContainer == null)
       return;
-    this._serviceContainer.GetService<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().AddPropertyEvents((IPublishMouseEvents) this.\u0023\u003DzJ3FH5kAFy7GH, (IReceiveMouseEvents ) this);
+    this._serviceContainer.GetService<IMouseManager>().AddPropertyEvents((IPublishMouseEvents) this.\u0023\u003DzJ3FH5kAFy7GH, (IReceiveMouseEvents ) this);
   }
 
   public Canvas \u0023\u003DzVuf430fCLR2l() => this.\u0023\u003DzZ_bY0tT8hlGH;

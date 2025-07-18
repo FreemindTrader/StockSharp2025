@@ -37,32 +37,32 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
     IChart _param3)
   {
     \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg1 = new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe();
-    vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D = _param0;
+    vbxLeArTkallkIdHg1._IChartAxis_098 = _param0;
     vbxLeArTkallkIdHg1.\u0023\u003Dzi8fyBqQ\u003D = _param1;
     \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D d295Ww4skLs1HZBq = new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D();
     d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D = vbxLeArTkallkIdHg1;
-    switch (d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.AxisType)
+    switch (d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098.AxisType)
     {
       case ChartAxisType.DateTime:
         d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D = (AxisBase) new dje_zW9CS5E2KYALJRMCDFUV9GBWAD6S7353K768YQ7ENY8VRCQY29QF62_ejd();
         break;
       case ChartAxisType.CategoryDateTime:
         \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe ulUkgXkBneEwzP3h0_1 = d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
-        dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd nu9622VfydaypdeqEjd = new dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd();
-        nu9622VfydaypdeqEjd.LabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DznXVw5HITBHoBrjSOBA\u003D\u003D(_param3, d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D);
+        CategoryDateTimeAxis nu9622VfydaypdeqEjd = new CategoryDateTimeAxis();
+        nu9622VfydaypdeqEjd.LabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DznXVw5HITBHoBrjSOBA\u003D\u003D(_param3, d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098);
         nu9622VfydaypdeqEjd.TickProvider = (ITickProvider) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003Dzg7H9cRyacWHB();
         ulUkgXkBneEwzP3h0_1.\u0023\u003DzCejzG6Y\u003D = (AxisBase) nu9622VfydaypdeqEjd;
-        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, "SubDayTextFormatting");
+        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(CategoryDateTimeAxis.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098, "SubDayTextFormatting");
         break;
       case ChartAxisType.Numeric:
-        bool flag = ((ICollection<IChartAxis>) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.ChartArea.XAxises).Contains(d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D);
+        bool flag = ((ICollection<IChartAxis>) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098.ChartArea.XAxises).Contains(d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098);
         d295Ww4skLs1HZBq.\u0023\u003DzZBtfoxHC6iyc = new DoubleRange(0.0, flag ? 0.0 : 0.05);
         \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe ulUkgXkBneEwzP3h0_2 = d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
         dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd mrfV9Sq7FuggeEjd = new dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd();
         mrfV9Sq7FuggeEjd.GrowBy = (IRange<double>) d295Ww4skLs1HZBq.\u0023\u003DzZBtfoxHC6iyc;
         ulUkgXkBneEwzP3h0_2.\u0023\u003DzCejzG6Y\u003D = (AxisBase) mrfV9Sq7FuggeEjd;
-        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzhYW6tiLSC0eZ, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, "FlipCoordinates");
-        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzkAJ7QX7sBa0Q, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D, "CursorTextFormatting");
+        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzhYW6tiLSC0eZ, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098, "FlipCoordinates");
+        d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzkAJ7QX7sBa0Q, (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098, "CursorTextFormatting");
         if (!flag)
         {
           d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.MouseDoubleClick += new MouseButtonEventHandler(d295Ww4skLs1HZBq.\u0023\u003Dz4EeJ2Z9T93ppthogLg\u003D\u003D);
@@ -70,19 +70,19 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
         }
         break;
       default:
-        throw new ArgumentOutOfRangeException("axis", (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.AxisType, LocalizedStrings.InvalidValue);
+        throw new ArgumentOutOfRangeException("axis", (object) d295Ww4skLs1HZBq.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098.AxisType, LocalizedStrings.InvalidValue);
     }
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.Tag = (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D;
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzD\u0024wXQ8E\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "Id");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzKm2_RDWENeyO, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "AutoRange", converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzHNYnjAF9C6pAx9qdjQ\u003D\u003D());
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003Dz\u0024geG9XF9qNM9, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "DrawLabels");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "DrawMajorGridLines");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003Dz6E17UGyH3Hxe, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "DrawMajorTicks");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "DrawMinorGridLines");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzHxEy7A8kQeb2, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "DrawMinorTicks");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzALRRz3KBB3Uz, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "TextFormatting");
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzfMY988N0StOA, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "SwitchAxisLocation", converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzEAflM12ss7VY(((ICollection<IChartAxis>) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D.ChartArea.XAxises).Contains(vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D)));
-    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(UIElement.VisibilityProperty, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D, "IsVisible", converter: (IValueConverter) new BoolToVisibilityConverter());
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.Tag = (object) vbxLeArTkallkIdHg1._IChartAxis_098;
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzD\u0024wXQ8E\u003D, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "Id");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzKm2_RDWENeyO, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "AutoRange", converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzHNYnjAF9C6pAx9qdjQ\u003D\u003D());
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003Dz\u0024geG9XF9qNM9, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "DrawLabels");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzAaZ_8g9ACaldVRhq\u0024w\u003D\u003D, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "DrawMajorGridLines");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003Dz6E17UGyH3Hxe, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "DrawMajorTicks");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzqdrX3c4RyinxmAyEug\u003D\u003D, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "DrawMinorGridLines");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzHxEy7A8kQeb2, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "DrawMinorTicks");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzALRRz3KBB3Uz, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "TextFormatting");
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(AxisBase.\u0023\u003DzfMY988N0StOA, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "SwitchAxisLocation", converter: (IValueConverter) new \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.\u0023\u003DzEAflM12ss7VY(((ICollection<IChartAxis>) vbxLeArTkallkIdHg1._IChartAxis_098.ChartArea.XAxises).Contains(vbxLeArTkallkIdHg1._IChartAxis_098)));
+    vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D.SetBindings(UIElement.VisibilityProperty, (object) vbxLeArTkallkIdHg1._IChartAxis_098, "IsVisible", converter: (IValueConverter) new BoolToVisibilityConverter());
     ControlTemplate controlTemplate1 = new ControlTemplate();
     controlTemplate1.VisualTree = new FrameworkElementFactory(typeof (PropertyGridEx));
     ControlTemplate controlTemplate2 = controlTemplate1;
@@ -92,7 +92,7 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
     controlTemplate2.VisualTree.SetValue(PropertyGridControl.ShowMenuButtonInRowsProperty, (object) false);
     controlTemplate2.VisualTree.SetValue(PropertyGridControl.ShowToolPanelProperty, (object) false);
     controlTemplate2.VisualTree.SetValue(PropertyGridControl.ShowSearchBoxProperty, (object) false);
-    controlTemplate2.VisualTree.SetValue(PropertyGridControl.SelectedObjectProperty, (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D);
+    controlTemplate2.VisualTree.SetValue(PropertyGridControl.SelectedObjectProperty, (object) vbxLeArTkallkIdHg1._IChartAxis_098);
     \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcjlIQ\u003D\u003D.SomeWheireosoe vbxLeArTkallkIdHg2 = vbxLeArTkallkIdHg1;
     ContentControl contentControl = new ContentControl();
     contentControl.Template = controlTemplate2;
@@ -116,18 +116,18 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
       barButtonItem.Glyph = ThemedIconsExtension.GetImage("Remove2");
       barButtonItem.Content = (object) LocalizedStrings.Delete;
       barButtonItem.Command = vbxLeArTkallkIdHg1.\u0023\u003Dzi8fyBqQ\u003D;
-      barButtonItem.CommandParameter = (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D;
+      barButtonItem.CommandParameter = (object) vbxLeArTkallkIdHg1._IChartAxis_098;
       barButtonItem.CommandTarget = (IInputElement) vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D;
       items2.Add((IBarItem) barButtonItem);
     }
-    if (vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D.AxisType == ChartAxisType.CategoryDateTime && _param2 != null)
+    if (vbxLeArTkallkIdHg1._IChartAxis_098.AxisType == ChartAxisType.CategoryDateTime && _param2 != null)
     {
       CommonBarItemCollection items3 = popupMenu2.Items;
       BarButtonItem barButtonItem = new BarButtonItem();
       barButtonItem.Glyph = ThemedIconsExtension.GetImage("Refresh");
       barButtonItem.Content = (object) LocalizedStrings.ResetTimeZone;
       barButtonItem.Command = _param2;
-      barButtonItem.CommandParameter = (object) vbxLeArTkallkIdHg1.\u0023\u003Dzfl\u0024A1s0\u003D;
+      barButtonItem.CommandParameter = (object) vbxLeArTkallkIdHg1._IChartAxis_098;
       barButtonItem.CommandTarget = (IInputElement) vbxLeArTkallkIdHg1.\u0023\u003DzCejzG6Y\u003D;
       items3.Add((IBarItem) barButtonItem);
     }
@@ -139,7 +139,7 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
 
   private sealed class SomeWheireosoe
   {
-    public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
+    public IChartAxis _IChartAxis_098;
     public AxisBase \u0023\u003DzCejzG6Y\u003D;
     public PropertyGridEx \u0023\u003Dzan5_\u0024vA\u003D;
     public ContentControl \u0023\u003Dzs1tPnmG2z8D2;
@@ -155,7 +155,7 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
       if (this.\u0023\u003Dzan5_\u0024vA\u003D != null)
       {
         this.\u0023\u003Dzan5_\u0024vA\u003D.SelectedObject = (object) null;
-        this.\u0023\u003Dzan5_\u0024vA\u003D.SelectedObject = (object) this.\u0023\u003Dzfl\u0024A1s0\u003D;
+        this.\u0023\u003Dzan5_\u0024vA\u003D.SelectedObject = (object) this._IChartAxis_098;
       }
       ((DelegateCommand<ChartAxis>) this.\u0023\u003Dzi8fyBqQ\u003D)?.RaiseCanExecuteChanged();
     }
@@ -296,7 +296,7 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
       MouseButtonEventArgs _param2)
     {
       _param2.Handled = true;
-      this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dzfl\u0024A1s0\u003D.AutoRange = true;
+      this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D._IChartAxis_098.AutoRange = true;
       this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.SetValue(AxisBase.\u0023\u003Dz3kyPJRWoiKq0, (object) this.\u0023\u003DzZBtfoxHC6iyc);
       this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003DzCejzG6Y\u003D.ParentSurface?.InvalidateElement();
     }
@@ -307,7 +307,7 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
   {
     private readonly IChart _chart;
     private readonly IChartAxis \u0023\u003DzLXQXNXQ\u003D;
-    private dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd \u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D;
+    private CategoryDateTimeAxis \u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D;
     private string \u0023\u003Dz0Evdh7mohgMvZAgX2A\u003D\u003D;
     private string \u0023\u003DzT__mYRdWRdMk;
 
@@ -335,7 +335,7 @@ public static class \u0023\u003DzjFV3E4nzZ192p80vvoilf9WS4WoGxY87RV3wblXTQ04iAcj
     public override void \u0023\u003DzWzUaFxw\u003D(
       IAxis _param1)
     {
-      this.\u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D = (dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd) _param1;
+      this.\u0023\u003Dzki6FtdthyFT0AuhYN0Coyw0\u003D = (CategoryDateTimeAxis) _param1;
       base.\u0023\u003DzWzUaFxw\u003D(_param1);
     }
 

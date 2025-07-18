@@ -299,7 +299,7 @@ public class ChartPanel :
     ((DispatcherObject) this).GuiAsync(new Action(new ChartPanel.\u0023\u003Dzfi7\u0024520U3d1pGN5XKVeQxF4\u003D()
     {
       _variableSome3535 = this,
-      \u0023\u003DzaPd0W_M\u003D = predicate
+      m_public_Func_Order_bool_ = predicate
     }.\u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D));
   }
 
@@ -1443,11 +1443,11 @@ label_14:
     public 
     #nullable disable
     ChartPanel _variableSome3535;
-    public Func<Order, bool> \u0023\u003DzaPd0W_M\u003D;
+    public Func<Order, bool> m_public_Func_Order_bool_;
 
     public void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
-      this._variableSome3535.\u0023\u003DzO72kpz0\u003D.CancelOrders(this.\u0023\u003DzaPd0W_M\u003D);
+      this._variableSome3535.\u0023\u003DzO72kpz0\u003D.CancelOrders(this.m_public_Func_Order_bool_);
     }
   }
 }

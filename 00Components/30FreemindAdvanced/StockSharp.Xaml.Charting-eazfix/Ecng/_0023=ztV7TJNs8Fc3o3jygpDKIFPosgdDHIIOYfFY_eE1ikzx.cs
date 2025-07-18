@@ -238,14 +238,14 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
           if (quLbcdO8tFdwl0NmbArray[index6].\u0023\u003DzwP120vA\u003D == zh7UcPpSzOfRArray[index7].\u0023\u003DzH64ouBYJK6cR)
           {
             index1 = zh7UcPpSzOfRArray[index7].\u0023\u003Dz7D88q7f7iugS + zh7UcPpSzOfRArray[index7].\u0023\u003DzJ_uAqhdJETQX - 1;
-            quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzy_5REws\u003D += quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzy_5REws\u003D;
+            quLbcdO8tFdwl0NmbArray[index1]._chartArea_093 += quLbcdO8tFdwl0NmbArray[index6]._chartArea_093;
             quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzu6bzeD\u0024Y6N55 += quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzu6bzeD\u0024Y6N55;
           }
           else
           {
             index1 = zh7UcPpSzOfRArray[index7].\u0023\u003Dz7D88q7f7iugS + zh7UcPpSzOfRArray[index7].\u0023\u003DzJ_uAqhdJETQX;
             quLbcdO8tFdwl0NmbArray[index1].\u0023\u003DzwP120vA\u003D = quLbcdO8tFdwl0NmbArray[index6].\u0023\u003DzwP120vA\u003D;
-            quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzy_5REws\u003D = quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzy_5REws\u003D;
+            quLbcdO8tFdwl0NmbArray[index1]._chartArea_093 = quLbcdO8tFdwl0NmbArray[index6]._chartArea_093;
             quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzu6bzeD\u0024Y6N55 = quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzu6bzeD\u0024Y6N55;
             zh7UcPpSzOfRArray[index7].\u0023\u003DzH64ouBYJK6cR = quLbcdO8tFdwl0NmbArray[index6].\u0023\u003DzwP120vA\u003D;
             ++zh7UcPpSzOfRArray[index7].\u0023\u003DzJ_uAqhdJETQX;
@@ -254,14 +254,14 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
           if (quLbcdO8tFdwl0NmbArray[index6].\u0023\u003DzwP120vA\u003D == zh7UcPpSzOfRArray[index8].\u0023\u003DzH64ouBYJK6cR)
           {
             index1 = zh7UcPpSzOfRArray[index8].\u0023\u003Dz7D88q7f7iugS + zh7UcPpSzOfRArray[index8].\u0023\u003DzJ_uAqhdJETQX - 1;
-            quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzy_5REws\u003D -= quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzy_5REws\u003D;
+            quLbcdO8tFdwl0NmbArray[index1]._chartArea_093 -= quLbcdO8tFdwl0NmbArray[index6]._chartArea_093;
             quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzu6bzeD\u0024Y6N55 -= quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzu6bzeD\u0024Y6N55;
           }
           else
           {
             index1 = zh7UcPpSzOfRArray[index8].\u0023\u003Dz7D88q7f7iugS + zh7UcPpSzOfRArray[index8].\u0023\u003DzJ_uAqhdJETQX;
             quLbcdO8tFdwl0NmbArray[index1].\u0023\u003DzwP120vA\u003D = quLbcdO8tFdwl0NmbArray[index6].\u0023\u003DzwP120vA\u003D;
-            quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzy_5REws\u003D = -quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzy_5REws\u003D;
+            quLbcdO8tFdwl0NmbArray[index1]._chartArea_093 = -quLbcdO8tFdwl0NmbArray[index6]._chartArea_093;
             quLbcdO8tFdwl0NmbArray[index1].\u0023\u003Dzu6bzeD\u0024Y6N55 = -quLbcdO8tFdwl0NmbArray[index6].\u0023\u003Dzu6bzeD\u0024Y6N55;
             zh7UcPpSzOfRArray[index8].\u0023\u003DzH64ouBYJK6cR = quLbcdO8tFdwl0NmbArray[index6].\u0023\u003DzwP120vA\u003D;
             ++zh7UcPpSzOfRArray[index8].\u0023\u003DzJ_uAqhdJETQX;
@@ -420,7 +420,7 @@ public sealed class \u0023\u003DztV7TJNs8Fc3o3jygpDKIFPosgdDHIIOYfFY_eE1ikzx66dZ
     while (zJUAqhdJetqx-- != 0)
     {
       int zwP120vA = quLbcdO8tFdwl0Nmb.\u0023\u003DzwP120vA\u003D;
-      int zy5Rews = quLbcdO8tFdwl0Nmb.\u0023\u003Dzy_5REws\u003D;
+      int zy5Rews = quLbcdO8tFdwl0Nmb._chartArea_093;
       num2 += quLbcdO8tFdwl0Nmb.\u0023\u003Dzu6bzeD\u0024Y6N55;
       quLbcdO8tFdwl0Nmb = this.\u0023\u003DzHkfwL3cpFpGk[++z7D88q7f7iugS];
       if (zy5Rews != 0)

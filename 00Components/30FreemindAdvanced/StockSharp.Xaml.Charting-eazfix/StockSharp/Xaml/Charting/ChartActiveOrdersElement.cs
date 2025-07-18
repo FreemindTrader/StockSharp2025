@@ -235,7 +235,7 @@ public class ChartActiveOrdersElement :
 
     DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
     {
-        return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D( this );
+        return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new ChartActiveOrdersElementVM( this );
     }
 
     bool IDrawableChartElement.StartDrawing(

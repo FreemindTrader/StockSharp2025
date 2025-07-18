@@ -110,7 +110,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
         }
         int num17 = num16 - num11;
         this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 += num17;
-        this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D += num15 * num17;
+        this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 += num15 * num17;
         int num18 = num9 + num13;
         this.\u0023\u003DzW2_nqFYfAth5(num14, num18);
         int num19 = num16 + num16 - num2;
@@ -118,13 +118,13 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
         while (num18 != num10)
         {
           this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 = num19;
-          this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D = num20;
+          this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 = num20;
           num18 += num13;
           this.\u0023\u003DzW2_nqFYfAth5(num14, num18);
         }
         int num21 = num12 - num2 + num16;
         this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 += num21;
-        this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D += num15 * num21;
+        this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 += num15 * num21;
       }
       else
       {
@@ -196,7 +196,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
     this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003DzwP120vA\u003D = int.MaxValue;
     this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzi8jDI4I\u003D = int.MaxValue;
     this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 = 0;
-    this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D = 0;
+    this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 = 0;
     if (this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D == 0)
       return;
     this.\u0023\u003DzjTWbW2dZB8Dy.\u0023\u003DzWIEZ7Zw\u003D(this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D);
@@ -261,12 +261,12 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
     this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003DzwP120vA\u003D = _param1;
     this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzi8jDI4I\u003D = _param2;
     this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 = 0;
-    this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D = 0;
+    this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 = 0;
   }
 
   private void \u0023\u003DzEipIRFgc2nC5()
   {
-    if ((this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D | this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55) == 0 || this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D >= 4194304 /*0x400000*/)
+    if ((this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 | this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55) == 0 || this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D >= 4194304 /*0x400000*/)
       return;
     this.\u0023\u003DzFDoXu2\u0024LCcSU\u0024SeGFGK7OmeJQOMT();
     this.\u0023\u003DzHkfwL3cpFpGk.\u0023\u003DzrnGNvGY\u003D()[this.\u0023\u003Dzl9pLaGnpqvJ13TV2xQ\u003D\u003D].\u0023\u003DzBYt8raY\u003D(this.\u0023\u003DzzfnK\u0024txag4iW);
@@ -300,7 +300,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
     {
       int num5 = _param5 - _param3;
       this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 += num5;
-      this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D += (num3 + num4) * num5;
+      this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 += (num3 + num4) * num5;
     }
     else
     {
@@ -323,7 +323,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
         num11 += num9;
       }
       this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 += num10;
-      this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D += (num3 + num7) * num10;
+      this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 += (num3 + num7) * num10;
       int num12 = num1 + num8;
       this.\u0023\u003DzW2_nqFYfAth5(num12, _param1);
       _param3 += num10;
@@ -348,7 +348,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
             ++num17;
           }
           this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 += num17;
-          this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D += 256 /*0x0100*/ * num17;
+          this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 += 256 /*0x0100*/ * num17;
           _param3 += num17;
           num12 += num8;
           this.\u0023\u003DzW2_nqFYfAth5(num12, _param1);
@@ -356,7 +356,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiZot20
       }
       int num18 = _param5 - _param3;
       this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzu6bzeD\u0024Y6N55 += num18;
-      this.\u0023\u003DzzfnK\u0024txag4iW.\u0023\u003Dzy_5REws\u003D += (num4 + 256 /*0x0100*/ - num7) * num18;
+      this.\u0023\u003DzzfnK\u0024txag4iW._chartArea_093 += (num4 + 256 /*0x0100*/ - num7) * num18;
     }
   }
 

@@ -1650,7 +1650,7 @@ public class SciChartSurface :
   {
     base.\u0023\u003DzLIrH2H7exOOX(_param1);
     _param1.\u0023\u003Dz7wSH25w\u003D<\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyNMn5sYJZKzXDppYgrIuwPB>((\u0023\u003DzEJoJjwSelM_K3zbmiw1OAyNMn5sYJZKzXDppYgrIuwPB) new \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y(this));
-    _param1.\u0023\u003Dz7wSH25w\u003D<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>((\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D());
+    _param1.\u0023\u003Dz7wSH25w\u003D<IMouseManager>((IMouseManager) new MouseManager());
     _param1.\u0023\u003Dz7wSH25w\u003D<\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7WIKy8yFmS0qz5aG2LjQ9ZhaLqHaajO4_nAIgryYYasWa8dMpfY\u003D>((\u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7WIKy8yFmS0qz5aG2LjQ9ZhaLqHaajO4_nAIgryYYasWa8dMpfY\u003D) new \u0023\u003DzPql\u0024onrPHiHfWZj7w2jaKmkEzvtrSPmPXCypCYSvlJxk\u0024K3oG\u0024G8T9G0Kw\u0024aeAQVBAnAZzg\u003D());
     _param1.\u0023\u003Dz7wSH25w\u003D<IPointResamplerFactory>((IPointResamplerFactory) new \u0023\u003DzMLvZWaqDqEKovfY1GVv1jIthZnhPHuHdNTeekcYACCJOAHdnvwa8qvrQ_TgmYt5MkQ\u003D\u003D());
     _param1.\u0023\u003Dz7wSH25w\u003D<ISciChartSurface>((ISciChartSurface) this);
@@ -1674,7 +1674,7 @@ public class SciChartSurface :
     _param1.ParentSurface = (ISciChartSurface) this;
     _param1.Services = this.Services();
     if (this.\u0023\u003Dzwc4Gzka23TGB() != null)
-      this.Services().GetService<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().AddPropertyEvents((IPublishMouseEvents) this.\u0023\u003Dzwc4Gzka23TGB(), (IReceiveMouseEvents ) _param1);
+      this.Services().GetService<IMouseManager>().AddPropertyEvents((IPublishMouseEvents) this.\u0023\u003Dzwc4Gzka23TGB(), (IReceiveMouseEvents ) _param1);
     _param1.DataContext = this.DataContext;
     _param1.IsAttached = true;
     _param1.OnAttached();
@@ -1718,7 +1718,7 @@ public class SciChartSurface :
   {
     if (this.\u0023\u003Dzwc4Gzka23TGB() == null || this.Services() == null)
       return;
-    this.Services().GetService<\u0023\u003Dz\u0024xWvhP6es1QcQRB94rX4cNVVgfiVZTLWRhl\u00244Uw\u003D>().RemovePropertyEvents((IPublishMouseEvents) this.\u0023\u003Dzwc4Gzka23TGB());
+    this.Services().GetService<IMouseManager>().RemovePropertyEvents((IPublishMouseEvents) this.\u0023\u003Dzwc4Gzka23TGB());
   }
 
   private void \u0023\u003Dz_2Z37e3SOi5eNmQj2g\u003D\u003D(

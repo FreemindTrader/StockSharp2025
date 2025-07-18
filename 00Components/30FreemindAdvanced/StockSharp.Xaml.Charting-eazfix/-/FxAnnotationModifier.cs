@@ -55,7 +55,7 @@ public sealed class FxAnnotationModifier :
   
   private dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd \u0023\u003DzUdabyQU\u003D;
   
-  public static readonly DependencyProperty \u0023\u003DzEaRzkw2Bl16I = DependencyProperty.Register(nameof (UserAnnotationType), typeof (ChartAnnotationTypes), typeof (FxAnnotationModifier), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(FxAnnotationModifier.\u0023\u003DzLJLGN_0FzU1B)));
+  public static readonly DependencyProperty UserAnnotationTypeProperty = DependencyProperty.Register(nameof (UserAnnotationType), typeof (ChartAnnotationTypes), typeof (FxAnnotationModifier), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(FxAnnotationModifier.\u0023\u003DzLJLGN_0FzU1B)));
   
   private bool \u0023\u003DzQGCmQMjHdLKS;
 
@@ -86,11 +86,11 @@ public sealed class FxAnnotationModifier :
   {
     get
     {
-      return (ChartAnnotationTypes) this.GetValue(FxAnnotationModifier.\u0023\u003DzEaRzkw2Bl16I);
+      return (ChartAnnotationTypes) this.GetValue(FxAnnotationModifier.UserAnnotationTypeProperty);
     }
     set
     {
-      this.SetValue(FxAnnotationModifier.\u0023\u003DzEaRzkw2Bl16I, (object) value);
+      this.SetValue(FxAnnotationModifier.UserAnnotationTypeProperty, (object) value);
     }
   }
 

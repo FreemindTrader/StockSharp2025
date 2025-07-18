@@ -60,7 +60,7 @@ public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9
     }
     this.\u0023\u003Dz6w5dj1Plgc_m = new DoubleRange(num1, num2);
     HashSet<double> doubleSet1 = new HashSet<double>();
-    foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>) this.\u0023\u003Dz_xjf3ZVIHzP_()).Where<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>(mpa4F4mcyQlZrFjfRi.\u0023\u003Dzon\u0024_RZacJIPJ ?? (mpa4F4mcyQlZrFjfRi.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, bool>(mpa4F4mcyQlZrFjfRi.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D))).SelectMany<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, KeyValuePair<double, CandlePriceLevel>>(mpa4F4mcyQlZrFjfRi.\u0023\u003DzuAeZVTPDgzYE ?? (mpa4F4mcyQlZrFjfRi.\u0023\u003DzuAeZVTPDgzYE = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, IEnumerable<KeyValuePair<double, CandlePriceLevel>>>(mpa4F4mcyQlZrFjfRi.OnChartAreaElementsRemovingAt))))
+    foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>) this.\u0023\u003Dz_xjf3ZVIHzP_()).Where<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>(mpa4F4mcyQlZrFjfRi.\u0023\u003Dzon\u0024_RZacJIPJ ?? (mpa4F4mcyQlZrFjfRi.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, bool>(mpa4F4mcyQlZrFjfRi.\u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D))).SelectMany<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, KeyValuePair<double, CandlePriceLevel>>(mpa4F4mcyQlZrFjfRi._Func_IAxis_bool_0835 ?? (mpa4F4mcyQlZrFjfRi._Func_IAxis_bool_0835 = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, IEnumerable<KeyValuePair<double, CandlePriceLevel>>>(mpa4F4mcyQlZrFjfRi.OnChartAreaElementsRemovingAt))))
     {
       doubleSet1.Add(key);
       CandlePriceLevel candlePriceLevel2;
@@ -153,7 +153,7 @@ public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9
     public Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, bool> \u0023\u003Dzon\u0024_RZacJIPJ;
     public Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, 
     #nullable enable
-    IEnumerable<KeyValuePair<double, CandlePriceLevel>>> \u0023\u003DzuAeZVTPDgzYE;
+    IEnumerable<KeyValuePair<double, CandlePriceLevel>>> _Func_IAxis_bool_0835;
 
     public bool \u0023\u003DzPc3AK\u0024sNtgO1kq4Bew\u003D\u003D(
       #nullable disable

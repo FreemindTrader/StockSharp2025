@@ -45,7 +45,7 @@ namespace StockSharp.Xaml.Charting;
 
 public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurfaceVM, IDisposable
 {
-    private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel> _vmChartUIs = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>();
+    private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel> _componentsCache = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>();
     private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>> _chartUIRSeries = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>();
 
     private readonly PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap = new PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>>();
@@ -174,8 +174,8 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         var cursor = new UltrachartCursormodifier();
         cursor.ShowTooltip = true;
         cursor.ReceiveHandledEvents = true;
-        cursor.ShowTooltipOn = ShowTooltipOptions.MouseHover;
-        cursor.HoverDelay = 1000;
+        //cursor.ShowTooltipOn = ShowTooltipOptions.MouseHover;
+        //cursor.HoverDelay = 1000;
 
         var orderLines = new ChartOrderModifier(Area);
         orderLines.IsEnabled = true;
@@ -192,9 +192,8 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         var zoomPan = new fxZoomPanModifier();
         zoomPan.ExecuteOn = ExecuteOn.MouseLeftButton;
         zoomPan.ReceiveHandledEvents = true;
-
         zoomPan.ClipModeX = ClipMode.None;
-        zoomPan.XyDirection = XyDirection.XYDirection;
+        //zoomPan.XyDirection = XyDirection.XYDirection;
 
 
         var xaxisDragModifier = new XAxisDragModifier();
@@ -240,22 +239,17 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         _chartModifiers.AddRange(chartModifierBaseArray);
     }
 
-    private void OnChartPropertyChanged(object sender, PropertyChangedEventArgs e)
+    private void OnChartPropertyChanged( object _param1, PropertyChangedEventArgs e )
     {
-        string propertyName = e.PropertyName;
-
-        if(!(propertyName == "AutoRangeInterval"))
+        switch ( e.PropertyName )
         {
-            if(!(propertyName == "ShowPerfStats"))
-            {
-                return;
-            }
-
-            NotifyChanged(e.PropertyName);
-        } else
-        {
-            RestartTimer();
-            NotifyChanged(e.PropertyName);
+            case "AutoRangeInterval":
+                this.RestartTimer();
+                this.NotifyChanged( e.PropertyName );
+                break;
+            case "ShowPerfStats":
+                this.NotifyChanged( e.PropertyName );
+                break;
         }
     }
 
@@ -270,7 +264,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             ChartModifier.ChildModifiers.Add(LegendModifier);
             ChartModifier.ChildModifiers.Add(AnnotationModifier);
 
-            ChartCandleElement[ ] candles = _vmChartUIs.Keys.OfType<ChartCandleElement>().ToArray();
+            ChartCandleElement[ ] candles = _componentsCache.Keys.OfType<ChartCandleElement>().ToArray();
 
             if(candles.Length != 0)
             {
@@ -510,7 +504,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
             //tag.DataPointWidth = axis.CurrentDatapointPixelSize;
         }
 
-        var parentVms = _vmChartUIs.Values;
+        var parentVms = _componentsCache.Values;
 
         foreach(var vm in parentVms)
         {
@@ -541,7 +535,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
     private void StartRenderingChartUIs(ChartDrawData drawData)
     {
-        //foreach ( var vmChartUI in _vmChartUIs.CachedValues )
+        //foreach ( var vmChartUI in _componentsCache.CachedValues )
         //{
         //    if ( vmChartUI.DrawChartData( drawData ) )
         //    {
@@ -569,7 +563,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
     {
         foreach(IChartComponent chartElement in chartElements)
         {
-            var ParentChartViewModel = _vmChartUIs.TryGetValue(chartElement);
+            var ParentChartViewModel = _componentsCache.TryGetValue(chartElement);
 
             if(ParentChartViewModel != null)
             {
@@ -581,7 +575,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
     private void AssignOrphanedChildElementsWithParent()
     {
-        var noParents = _vmChartUIs.Where(p => p.Value == null).Select(p => p.Key).ToArray();
+        var noParents = _componentsCache.Where(p => p.Value == null).Select(p => p.Key).ToArray();
 
         foreach(IChartComponent element in noParents)
         {
@@ -595,7 +589,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
             //ChartCompentViewModel parentVm = new ChartCompentViewModel( this, element, childElements );
 
-            //_vmChartUIs[ element ] = parentVm;
+            //_componentsCache[ element ] = parentVm;
 
             //if ( element.IsLegend )
             //{
@@ -614,7 +608,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //IChartComponent anyChartUiXY = ( IChartComponent )anyChartUI;
         //anyChartUiXY.AddAxisesAndEventHandler( Area );
 
-        //if ( _vmChartUIs.ContainsKey( anyChartUiXY ) )
+        //if ( _componentsCache.ContainsKey( anyChartUiXY ) )
         //{
         //    throw new ArgumentException( "duplicate chart element", "elem" );
         //}
@@ -654,7 +648,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //        _candleStickVM.CanUpdateNullBar = true;
         //    }
 
-        //    _vmChartUIs[ anyChartUiXY ] = ParentChartViewModel;
+        //    _componentsCache[ anyChartUiXY ] = ParentChartViewModel;
 
         //    if ( anyChartUiXY.IsLegend )
         //    {
@@ -663,7 +657,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //}
         //else
         //{
-        //    _vmChartUIs[ anyChartUiXY ] = null;
+        //    _componentsCache[ anyChartUiXY ] = null;
         //}
 
         //if ( _modifierGroup != null && anyChartUiXY is ChartCandleElement candle )
@@ -694,7 +688,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //elementXY?.RemoveAxisesEventHandler( );
 
         //ChartCompentViewModel ParentChartViewModel;
-        //if ( !_vmChartUIs.TryGetValue( elementXY, out ParentChartViewModel ) )
+        //if ( !_componentsCache.TryGetValue( elementXY, out ParentChartViewModel ) )
         //{
         //    return false;
         //}
@@ -705,7 +699,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
         //}
 
         //elementXY.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
-        //_vmChartUIs.Remove( elementXY );
+        //_componentsCache.Remove( elementXY );
 
         //if ( ParentChartViewModel != null )
         //{
@@ -1512,7 +1506,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurf
 
     public IEnumerable<Order> GetActiveOrders(Func<Order, bool> _param1)
     {
-        var parentVM = _vmChartUIs.CachedValues;
+        var parentVM = _componentsCache.CachedValues;
 
         var orders = parentVM.Where(p => p != null)
             .SelectMany(

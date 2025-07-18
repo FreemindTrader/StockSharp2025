@@ -197,81 +197,119 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         chart.IsAutoRange = false;
     }
 
+    private void OnChartOrderMouseMove(
+    ModifierMouseArgs _param1)
+  {
+    IChart chart = this.Chart;
+    if (chart == null)
+      return;
+    chart.IsAutoRange = false;
+  }
+
     public IChart Chart => this.Area.Chart;
 
     public ChartArea Area => this._chartArea;
 
     private void SetupModifiers()
     {
-        if ( this._chartModifiers.Count > 0 )
+        if ( _chartModifiers.Count > 0 )
+        {
             return;
+        }
 
         var cursor = new UltrachartCursormodifier();
         cursor.ShowTooltip = true;
         cursor.ReceiveHandledEvents = true;
-        
-        ChartOrderModifier orderLines = new ChartOrderModifier( this.Area );
-        orderLines.IsEnabled = false;
-        
+        //cursor.ShowTooltipOn = ShowTooltipOptions.MouseHover;
+        //cursor.HoverDelay = 1000;
+
+        var orderLines = new ChartOrderModifier(Area);
+        orderLines.IsEnabled = true;
+        //orderLines.CanCreateOrders = true;
+
+        _dataPointSelector = new fxDataPointSelectionModifier();
+        _dataPointSelector.ExecuteOn = ExecuteOn.MouseMiddleButton;
+        _dataPointSelector.ReceiveHandledEvents = true;
+        _dataPointSelector.XAxisId = "X";
+        _dataPointSelector.IsEnabled = true;
+        _dataPointSelector.AllowsMultiSelection = true;
+
+
         var zoomPan = new fxZoomPanModifier();
         zoomPan.ExecuteOn = ExecuteOn.MouseLeftButton;
         zoomPan.ReceiveHandledEvents = true;
         zoomPan.ClipModeX = ClipMode.None;
-        
-        ChartOrderModifier orderLines = new ChartOrderModifier();
-        orderLines.OnModifierMouseUp = new Action<ModifierMouseArgs>( this.OnChartOrderMouseEvent );
-
-        ( new Action<ModifierMouseArgs>( this.OnChartOrderMouseEvent) );
-        orderLines.\u0023\u003DzHs7QOJE3efiH3JF5Bw\u003D\u003D( new Action<ModifierMouseArgs>( this.\u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D) );
+        //zoomPan.XyDirection = XyDirection.XYDirection;
 
 
-        List<ChartModifierBase> zRhhpqbmmRle6 = this._chartModifiers;
-        ChartModifierBase[] v7UvhxrxhaatqEjdArray = new ChartModifierBase[9];
-        v7UvhxrxhaatqEjdArray[ 0 ] = ( ChartModifierBase ) orderLines;
-        v7UvhxrxhaatqEjdArray[ 1 ] = ( ChartModifierBase ) orderLines;
-        v7UvhxrxhaatqEjdArray[ 2 ] = ( ChartModifierBase ) cursor;
-        dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd wcsffbemybnM9U2CjdEjd = new dje_zDBVG6SK23T4RT3VZFJ9FTNBW2KXD43HARN8WCSFFBEMYBNM9U2CJD_ejd();
-        wcsffbemybnM9U2CjdEjd.AxisId = "X";
-        wcsffbemybnM9U2CjdEjd.ClipModeX = ClipMode.None;
-        v7UvhxrxhaatqEjdArray[ 3 ] = ( ChartModifierBase ) wcsffbemybnM9U2CjdEjd;
-        dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd dgE2H48XyyA87SEjd = new dje_zHZJUNELMY3BAWUYNNRAVXVEJSS7HS9SSZHRJV76DGE2H48XYYA87S_ejd();
-        dgE2H48XyyA87SEjd.AxisId = "Y";
-        v7UvhxrxhaatqEjdArray[ 4 ] = ( ChartModifierBase ) dgE2H48XyyA87SEjd;
-        v7UvhxrxhaatqEjdArray[ 5 ] = ( ChartModifierBase ) new dje_z48XSEY4E7J7ZY268G4C2RR2SX8TP9XUT5MGB3Z3KUFJWUUVR4YBN3_ejd();
-        v7UvhxrxhaatqEjdArray[ 6 ] = ( ChartModifierBase ) this._rubberBandXyZoomModifier;
-        dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd fk4QgaphfmmujdEjd = new dje_zNHZFRV6VYN2XDNU56GMDGQJ2YP79UFMBF66RXN4FK4QGAPHFMMUJD_ejd();
-        fk4QgaphfmmujdEjd.ExecuteOn = ExecuteOn.MouseDoubleClick;
-        v7UvhxrxhaatqEjdArray[ 7 ] = ( ChartModifierBase ) fk4QgaphfmmujdEjd;
-        v7UvhxrxhaatqEjdArray[ 8 ] = ( ChartModifierBase ) zoomPan;
-    \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D< ChartModifierBase > collection = new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D< ChartModifierBase > ( v7UvhxrxhaatqEjdArray );
-        zRhhpqbmmRle6.AddRange( ( IEnumerable<ChartModifierBase> ) collection );
+        var xaxisDragModifier = new XAxisDragModifier();
+        xaxisDragModifier.AxisId = "X";
+        xaxisDragModifier.ClipModeX = ClipMode.None;
+
+        var yaxisDragModifier = new YAxisDragModifier();
+        yaxisDragModifier.AxisId = "Y";
+
+        var bandXyZoomModifier = new RubberBandXyZoomModifier();
+        bandXyZoomModifier.IsXAxisOnly = true;
+        bandXyZoomModifier.ExecuteOn = ExecuteOn.MouseRightButton;
+        bandXyZoomModifier.ReceiveHandledEvents = true;
+
+        var zoomExtentsModifier = new ZoomExtentsModifier();
+        zoomExtentsModifier.ExecuteOn = ExecuteOn.MouseDoubleClick;
+        zoomExtentsModifier.XyDirection = XyDirection.YDirection;
+
+        var seriesValueModifer = new SeriesValueModifier();
+
+        //_tradingAPI                             = new fxTradingAnnotationCreationModifier( );
+        //_tradingAPI.XAxisId                     = "X";
+        //_tradingAPI.YAxisId                     = "Y";
+        //_tradingAPI.ExecuteOn                   = ExecuteOn.MouseLeftButton;
+        //_tradingAPI.ReceiveHandledEvents        = true;
+
+        //_annotationModifier.TradingAPI          = _tradingAPI;
+
+
+        var chartModifierBaseArray = new ChartModifierBase[ 10 ];
+        chartModifierBaseArray[ 0 ] = orderLines;
+        chartModifierBaseArray[ 1 ] = cursor;
+        chartModifierBaseArray[ 2 ] = xaxisDragModifier;
+        chartModifierBaseArray[ 3 ] = yaxisDragModifier;
+        chartModifierBaseArray[ 4 ] = new MouseWheelZoomModifier();
+        chartModifierBaseArray[ 5 ] = bandXyZoomModifier;
+        chartModifierBaseArray[ 6 ] = zoomExtentsModifier;
+        chartModifierBaseArray[ 7 ] = zoomPan;
+        chartModifierBaseArray[ 8 ] = _dataPointSelector;
+        chartModifierBaseArray[ 9 ] = seriesValueModifer;
+
+
+        _chartModifiers.AddRange( chartModifierBaseArray );
     }
 
-    private void \u0023\u003DzPHnXepkJBjde( object _param1, PropertyChangedEventArgs _param2 )
+    private void OnChartPropertyChanged( object _param1, PropertyChangedEventArgs e )
     {
-        switch ( _param2.PropertyName )
+        switch ( e.PropertyName )
         {
             case "AutoRangeInterval":
-                this.\u0023\u003Dzdp1hbkXJ1MkF();
-                this.NotifyChanged( _param2.PropertyName );
+                this.RestartTimer();
+                this.NotifyChanged( e.PropertyName );
                 break;
             case "ShowPerfStats":
-                this.NotifyChanged( _param2.PropertyName );
+                this.NotifyChanged( e.PropertyName );
                 break;
         }
     }
 
-    public IEnumerable<Order> \u0023\u003DzQ\u0024gUWeEbsN2c( Func<Order, bool> _param1 )
+    public IEnumerable<Order> GetActiveOrders( Func<Order, bool> _param1 )
     {
-        return ( ( IEnumerable<ChartCompentViewModel> ) this._componentsCache.CachedValues ).Where<ChartCompentViewModel>( ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D ?? ( ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D = new Func<ChartCompentViewModel, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242 ) )).SelectMany<ChartCompentViewModel, Order>( new Func<ChartCompentViewModel, IEnumerable<Order>>( new ScichartSurfaceMVVM.\u0023\u003Dz0EETrg8PejletCT5YuMr1Rw\u003D()
+        return ( ( IEnumerable<ChartCompentViewModel> ) this._componentsCache.CachedValues ).Where<ChartCompentViewModel>( ScichartSurfaceMVVM.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ ?? ( ScichartSurfaceMVVM.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ = new Func<ChartCompentViewModel, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.SomeMEthod03852 ) )).SelectMany<ChartCompentViewModel, Order>( new Func<ChartCompentViewModel, IEnumerable<Order>>( new ScichartSurfaceMVVM.PrivateSealedClass0835()
         {
-      \u0023\u003DzaPd0W_M\u003D = _param1
+      m_public_Func_Order_bool_ = _param1
     }.\u0023\u003Dz3ppSxBWUBHoE_OmJHdF4GT0\u003D));
     }
 
     public void InitPropertiesEventHandlers()
     {
-        ( ( INotifyPropertyChanged ) this.Chart ).PropertyChanged += new PropertyChangedEventHandler( this.\u0023\u003DzPHnXepkJBjde );
+        ( ( INotifyPropertyChanged ) this.Chart ).PropertyChanged += new PropertyChangedEventHandler( this.OnChartPropertyChanged );
         if ( !this._doneInitialization )
         {
             this._doneInitialization = true;
@@ -279,9 +317,10 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
             this.ChartModifier.ChildModifiers.Add( ( IChartModifier ) this.AnnotationModifier );
             IChartCandleElement[] array = ((SynchronizedDictionary<IChartComponent, ChartCompentViewModel>) this._componentsCache).Keys.OfType<IChartCandleElement>().ToArray<IChartCandleElement>();
             if ( array.Length != 0 )
-                CollectionHelper.ForEach<IChartCandleElement>( ( IEnumerable<IChartCandleElement> ) array, new Action<IChartCandleElement>( this.\u0023\u003Dz5QuVGogKpyDd_u\u0024czKaNHcU\u003D) );
+                CollectionHelper.ForEach<IChartCandleElement>( ( IEnumerable<IChartCandleElement> ) array, new Action<IChartCandleElement>( this.SomeWhTekjerek023) );
         }
-        this.\u0023\u003Dz9VF9FI8x1QxU();
+        this.AssignOrphanedChildElementsWithParent();
+
         if ( this.ParentViewModel == null )
         {
             this.ClosePaneCommand = ( ICommand ) null;
@@ -289,20 +328,20 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         else
         {
             this.ClosePaneCommand = ( ICommand ) this.ParentViewModel.ClosePaneCommand;
-            this.ParentViewModel.AddPropertyListener( ChartViewModel.ShowLegendProperty, new Action<DependencyPropertyChangedEventArgs>( this.\u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D) );
-            this.ParentViewModel.AddPropertyListener( ChartViewModel.ShowOverviewProperty, new Action<DependencyPropertyChangedEventArgs>( this.\u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D) );
-            this.ParentViewModel.AddPropertyListener( ChartViewModel.MinimumRangeProperty, new Action<DependencyPropertyChangedEventArgs>( this.\u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D) );
-            this.ParentViewModel.AddPropertyListener( ChartViewModel.SelectedThemeProperty, new Action<DependencyPropertyChangedEventArgs>( this.\u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D) );
+            this.ParentViewModel.AddPropertyListener( ChartViewModel.ShowLegendProperty, new Action<DependencyPropertyChangedEventArgs>( this.OnShowLegendProperty) );
+            this.ParentViewModel.AddPropertyListener( ChartViewModel.ShowOverviewProperty, new Action<DependencyPropertyChangedEventArgs>( this.OnShowOverview) );
+            this.ParentViewModel.AddPropertyListener( ChartViewModel.MinimumRangeProperty, new Action<DependencyPropertyChangedEventArgs>( this.OnMinimumRangeProperty) );
+            this.ParentViewModel.AddPropertyListener( ChartViewModel.SelectedThemeProperty, new Action<DependencyPropertyChangedEventArgs>( this.OnSelectedThemeProperty) );
         }
         StockSharp.Xaml.Charting.Chart groupChart = this.GroupChart;
         if ( groupChart != null )
         {
             this.SetupModifiers();
             CollectionHelper.AddRange<IChartModifier>( ( ICollection<IChartModifier> ) this.ChartModifier.ChildModifiers, ( IEnumerable<IChartModifier> ) this._chartModifiers );
-            this.AnnotationModifier.SetBindings( FxAnnotationModifier.\u0023\u003DzEaRzkw2Bl16I, ( object ) groupChart, "AnnotationType" );
+            this.AnnotationModifier.SetBindings( FxAnnotationModifier.UserAnnotationTypeProperty, ( object ) groupChart, "AnnotationType" );
             UltrachartCursormodifier yx2796KwcrF36XmmEjd = this.ChartModifier.ChildModifiers.OfType<UltrachartCursormodifier>().Single<UltrachartCursormodifier>();
             yx2796KwcrF36XmmEjd.SetBindings( ChartModifierBase._isEnabled, ( object ) this.Chart, "CrossHair" );
-            yx2796KwcrF36XmmEjd.SetBindings( dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCFGW3UZZ44XSUJJQGVNND2_ejd.\u0023\u003DzCuzcJq\u0024VLiWR, ( object ) this.Chart, "CrossHairAxisLabels" );
+            yx2796KwcrF36XmmEjd.SetBindings( TooltipModifierBase.ShowAxisLabelsProperty, ( object ) this.Chart, "CrossHairAxisLabels" );
             yx2796KwcrF36XmmEjd.SetBindings( UltrachartCursormodifier.InPlaceTooltipProperty, ( object ) this.Chart, "CrossHairTooltip" );
             ChartOrderModifier orderLines = this.ChartModifier.ChildModifiers.OfType <ChartOrderModifier> ().Single <ChartOrderModifier> ();
             ChartOrderModifier orderLines = orderLines;
@@ -320,16 +359,16 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
             orderLines.SetMultiBinding( zSlZmDsF5TsAu, ( IMultiValueConverter ) conv, bindingArray );
             orderLines.SetBindings( ChartOrderModifier.ShowHorizontalLineProperty, ( object ) this.Chart, "CrossHair", BindingMode.OneWay, ( IValueConverter ) new InverseBooleanConverter() );
             this.ChartModifier.ChildModifiers.OfType<fxZoomPanModifier>().Single<fxZoomPanModifier>().SetBindings( ChartModifierBase._isEnabled, ( object ) this.Chart, "AnnotationType", BindingMode.OneWay, ( IValueConverter ) new EnumBooleanConverter(), ( object ) ChartAnnotationTypes.None.ToString() );
-      \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SetMouseEventGroup( ( DependencyObject ) this.ChartModifier, this.PaneGroup );
+      MouseManager.SetMouseEventGroup( ( DependencyObject ) this.ChartModifier, this.PaneGroup );
         }
-        this.\u0023\u003Dzdp1hbkXJ1MkF();
+        this.RestartTimer();
         CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) this.Area.XAxises, new Action<IChartAxis>( this.\u0023\u003DzQVqx9924gaWX1\u0024r5THddBi0\u003D) );
         CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) this.Area.YAxises, new Action<IChartAxis>( this.\u0023\u003DzhueGWJf3Qdd7bLHGZUE_sNY\u003D) );
     }
 
     public void Release()
     {
-        ( ( INotifyPropertyChanged ) this.Chart ).PropertyChanged -= new PropertyChangedEventHandler( this.\u0023\u003DzPHnXepkJBjde );
+        ( ( INotifyPropertyChanged ) this.Chart ).PropertyChanged -= new PropertyChangedEventHandler( this.OnChartPropertyChanged );
         if ( this.GroupChart != null )
             this._chartModifiers.ForEach( new Action<ChartModifierBase>( this.\u0023\u003DzTdIpNSu812itYYHN7lIakb6BiejkaXWFgQ\u003D\u003D) );
         CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) this.Area.XAxises, new Action<IChartAxis>( this.\u0023\u003DzrFpAakDNl3igj4xxMoWpQFW0GE4J_yze\u0024g\u003D\u003D) );
@@ -337,7 +376,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         this._dispatcherTimer.Stop();
     }
 
-    private void \u0023\u003Dzdp1hbkXJ1MkF()
+    private void RestartTimer()
     {
         this._dispatcherTimer.Stop();
         this._dispatcherTimer.Interval = this.AutoRangeInterval;
@@ -350,8 +389,8 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   {
     ScichartSurfaceMVVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D mpa4F4mcyQlZrFjfRi = new ScichartSurfaceMVVM.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D();
     mpa4F4mcyQlZrFjfRi._variableSome3535 = this;
-    mpa4F4mcyQlZrFjfRi.\u0023\u003Dzfl\u0024A1s0\u003D = _param1;
-    mpa4F4mcyQlZrFjfRi.\u0023\u003Dz_liTKnA\u003D = _param2;
+    mpa4F4mcyQlZrFjfRi._IChartAxis_098 = _param1;
+    mpa4F4mcyQlZrFjfRi._ICollection_IAxis_098 = _param2;
     FrameworkElement chart = (FrameworkElement) this.Chart;
     if (chart == null)
       return;
@@ -391,19 +430,19 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     IChartAxis _param1,
     ICollection<IAxis> _param2)
   {
-    ScichartSurfaceMVVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D jy0mx0yCuWlqEsh0ZdY = new ScichartSurfaceMVVM.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D();
-    jy0mx0yCuWlqEsh0ZdY.\u0023\u003Dz_liTKnA\u003D = _param2;
-    jy0mx0yCuWlqEsh0ZdY.\u0023\u003Dzfl\u0024A1s0\u003D = _param1;
+    ScichartSurfaceMVVM.SomeSealClass083523 jy0mx0yCuWlqEsh0ZdY = new ScichartSurfaceMVVM.SomeSealClass083523();
+    jy0mx0yCuWlqEsh0ZdY._ICollection_IAxis_098 = _param2;
+    jy0mx0yCuWlqEsh0ZdY._IChartAxis_098 = _param1;
     jy0mx0yCuWlqEsh0ZdY._variableSome3535 = this;
     FrameworkElement chart = (FrameworkElement) this.Chart;
     if (chart != null)
-      ((DispatcherObject) chart).GuiAsync(new Action(jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D));
+      ((DispatcherObject) chart).GuiAsync(new Action(jy0mx0yCuWlqEsh0ZdY._SomeSealClass083523_Metho03));
     return true;
   }
 
-  private void \u0023\u003Dzfi9Y8f8VaR3y(object _param1, PropertyChangedEventArgs _param2)
+  private void OnTargetPropertyChanged308(object _param1, PropertyChangedEventArgs _param2)
   {
-    if (!(_param1 is dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd nu9622VfydaypdeqEjd) || _param2.PropertyName != "CurrentDatapointPixelSize")
+    if (!(_param1 is CategoryDateTimeAxis nu9622VfydaypdeqEjd) || _param2.PropertyName != "CurrentDatapointPixelSize")
       return;
     IChartCandleElement chartCandleElement = ((SynchronizedDictionary<IChartComponent, ChartCompentViewModel>) this._childElements).Keys.OfType<IChartCandleElement>().FirstOrDefault<IChartCandleElement>();
     if (chartCandleElement != null && chartCandleElement.XAxisId != nu9622VfydaypdeqEjd.Id)
@@ -437,7 +476,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   {
     if (this._sciChartSurface == null)
       return;
-    CollectionHelper.ForEach<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(this.XAxises.OfType<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(), ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D = new Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ)));
+    CollectionHelper.ForEach<CategoryDateTimeAxis>(this.XAxises.OfType<CategoryDateTimeAxis>(), ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D = new Action<CategoryDateTimeAxis>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ)));
     CollectionHelper.ForEach<ChartCompentViewModel>((IEnumerable<ChartCompentViewModel>) ((SynchronizedDictionary<IChartComponent, ChartCompentViewModel>) this._childElements).Values, ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Action<ChartCompentViewModel>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzpfilwLTVeZDaJUeDuSBVjV3PZ4yR)));
     if (!this.ShowPerfStats || _param2.\u0023\u003DzguiAuOeZYTXy() <= 0.0)
       return;
@@ -480,7 +519,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     }
   }
 
-  private void \u0023\u003Dz9VF9FI8x1QxU()
+  private void AssignOrphanedChildElementsWithParent()
   {
     foreach (IChartComponent ddznyiGmdRlAevOq in ((IEnumerable<KeyValuePair<IChartComponent, ChartCompentViewModel>>) this._childElements).Where<KeyValuePair<IChartComponent, ChartCompentViewModel>>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003Dz8slTl9RRXzpBYOxh4Q\u003D\u003D = new Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, bool>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzFUwEsnQgb3v8tcGvhyZ1DIc\u003D))).Select<KeyValuePair<IChartComponent, ChartCompentViewModel>, IChartComponent>(ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (ScichartSurfaceMVVM.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, IChartComponent>(ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.\u0023\u003DzkaiqO59tHfX5w4slAysHOio\u003D))).ToArray<IChartComponent>())
     {
@@ -618,10 +657,10 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   public \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR \u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(
     string _param1)
   {
-    IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this.Area.XAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(new ScichartSurfaceMVVM.\u0023\u003DzHtYFIEI9CJAk\u0024GXG5dtCtJE\u003D()
+    IChartAxis chartAxis = ((IEnumerable<IChartAxis>) this.Area.XAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(new ScichartSurfaceMVVM.SomeSealClass0833352()
     {
-      \u0023\u003DzABBG58cxsbcx = _param1
-    }.\u0023\u003DzbSjDouuxMOmtENb1CI\u0024NfEXlBX\u0024_));
+      _someString0382 = _param1
+    }.bool_Method02_IChartAxis_));
     return chartAxis == null ? (\u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR) null : \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.\u0023\u003DzYMTYgq1xYsSy(this.GetRootElement(), chartAxis.Group, this.PaneGroupSuffix, chartAxis.AxisType);
   }
 
@@ -643,7 +682,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
       if (this.GroupChart == null)
         return;
       this.\u0023\u003Dz0FfA4J7ON5133\u00246jKg\u003D\u003D();
-      \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vgE1y_16\u0024Ql8QLBV6E\u003D.SetMouseEventGroup((DependencyObject) this.ChartModifier, this.PaneGroup);
+      MouseManager.SetMouseEventGroup((DependencyObject) this.ChartModifier, this.PaneGroup);
     }
   }
 
@@ -1036,38 +1075,31 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
   
 
-  private void \u0023\u003DzSH7LR2Lse3B4yzL0g_1pqV8\u003D(
-    ModifierMouseArgs _param1)
-  {
-    IChart chart = this.Chart;
-    if (chart == null)
-      return;
-    chart.IsAutoRange = false;
-  }
+  
 
-  private void \u0023\u003Dz5QuVGogKpyDd_u\u0024czKaNHcU\u003D(IChartCandleElement _param1)
+  private void SomeWhTekjerek023(IChartCandleElement _param1)
   {
     this.\u0023\u003Dzs0UfYK\u0024prvoZsynK2TcvH5w\u003D(_param1);
     _param1.PropertyChanged += new PropertyChangedEventHandler(this.\u0023\u003DzzBrCMQ6JtN57pKl5fw\u003D\u003D);
   }
 
-  private void \u0023\u003DzlzIC4G73INUgxBGJvcu\u0024bn8\u003D(
+  private void OnShowLegendProperty(
     DependencyPropertyChangedEventArgs _param1)
   {
     this.NotifyChanged("ShowLegend");
   }
 
-  private void \u0023\u003DzQdV5fzQnxZUH8cqQCCGjyic\u003D(DependencyPropertyChangedEventArgs _param1)
+  private void OnShowOverview(DependencyPropertyChangedEventArgs _param1)
   {
     this.NotifyChanged("ShowOverview");
   }
 
-  private void \u0023\u003DzaPzrvWfKjELcmaG2lpOTZss\u003D(DependencyPropertyChangedEventArgs _param1)
+  private void OnMinimumRangeProperty(DependencyPropertyChangedEventArgs _param1)
   {
     this.NotifyChanged("MinimumRange");
   }
 
-  private void \u0023\u003Dz\u0024BXtYBf7QC49I9Cu8SMYkgA\u003D(
+  private void OnSelectedThemeProperty(
     DependencyPropertyChangedEventArgs _param1)
   {
     this.NotifyChanged("SelectedTheme");
@@ -1120,10 +1152,10 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     zeBeQvx4(_param1);
   }
 
-  private sealed class \u0023\u003Dz0EETrg8PejletCT5YuMr1Rw\u003D
+  private sealed class PrivateSealedClass0835
   {
-    public Func<Order, bool> \u0023\u003DzaPd0W_M\u003D;
-    public Func<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D, 
+    public Func<Order, bool> m_public_Func_Order_bool_;
+    public Func<ChartActiveOrdersElementVM, 
     #nullable enable
     IEnumerable<
     #nullable disable
@@ -1136,7 +1168,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     Order> \u0023\u003Dz3ppSxBWUBHoE_OmJHdF4GT0\u003D(
       ChartCompentViewModel _param1)
     {
-      return _param1.Elements.OfType<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D>().SelectMany<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D, Order>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<\u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D, IEnumerable<Order>>(this.\u0023\u003Dz2Yv1Pu_wdWkdbu34jskJTTE\u003D)));
+      return _param1.Elements.OfType<ChartActiveOrdersElementVM>().SelectMany<ChartActiveOrdersElementVM, Order>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<ChartActiveOrdersElementVM, IEnumerable<Order>>(this.\u0023\u003Dz2Yv1Pu_wdWkdbu34jskJTTE\u003D)));
     }
 
     public 
@@ -1144,26 +1176,26 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     IEnumerable<
     #nullable disable
     Order> \u0023\u003Dz2Yv1Pu_wdWkdbu34jskJTTE\u003D(
-      \u0023\u003DzYmjweh1bAvPkbiZkK_vQiF4Ij4OLxcPJ6j\u0024MVq9JT52kmtoFstXIgXETlSaEaF89mw\u003D\u003D _param1)
+      ChartActiveOrdersElementVM _param1)
     {
-      return _param1.\u0023\u003DzQ\u0024gUWeEbsN2c(this.\u0023\u003DzaPd0W_M\u003D);
+      return _param1.GetActiveOrders(this.m_public_Func_Order_bool_);
     }
   }
 
   private sealed class \u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D
   {
     public ScichartSurfaceMVVM _variableSome3535;
-    public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
-    public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
+    public IChartAxis _IChartAxis_098;
+    public ICollection<IAxis> _ICollection_IAxis_098;
 
     public void \u0023\u003DzFX_lHxlPjn56eMHQ\u0024g\u003D\u003D()
     {
       if (this._variableSome3535.Chart == null)
         return;
-      AxisBase axF9ZgQ7NbH9KsEjd = this.\u0023\u003Dzfl\u0024A1s0\u003D.\u0023\u003Dz68iph80\u003D(this._variableSome3535.ParentViewModel?.RemoveAxisCommand, this._variableSome3535.ResetAxisTimeZoneCommand, this._variableSome3535.Chart);
-      axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003Dzfi9Y8f8VaR3y);
-      this.\u0023\u003Dz_liTKnA\u003D.Add((IAxis) axF9ZgQ7NbH9KsEjd);
-      if (this.\u0023\u003Dz_liTKnA\u003D != this._variableSome3535.XAxises)
+      AxisBase axF9ZgQ7NbH9KsEjd = this._IChartAxis_098.\u0023\u003Dz68iph80\u003D(this._variableSome3535.ParentViewModel?.RemoveAxisCommand, this._variableSome3535.ResetAxisTimeZoneCommand, this._variableSome3535.Chart);
+      axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler(this._variableSome3535.OnTargetPropertyChanged308);
+      this._ICollection_IAxis_098.Add((IAxis) axF9ZgQ7NbH9KsEjd);
+      if (this._ICollection_IAxis_098 != this._variableSome3535.XAxises)
         return;
       this._variableSome3535.\u0023\u003Dz0FfA4J7ON5133\u00246jKg\u003D\u003D();
     }
@@ -1173,9 +1205,9 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
   private new sealed class SomeClass34343383
   {
     public static readonly ScichartSurfaceMVVM.SomeClass34343383 SomeMethond0343 = new ScichartSurfaceMVVM.SomeClass34343383();
-    public static Action<ChartAxis> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
-    public static Func<ChartCompentViewModel, bool> \u0023\u003DzZ1TIJti3dLv69swWwQ\u003D\u003D;
-    public static Action<dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd> \u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D;
+    public static Action<ChartAxis> pubStatic_Action_ChartAxis_;
+    public static Func<ChartCompentViewModel, bool> m_public_static_Func_ChartCompentViewModel_bool_;
+    public static Action<CategoryDateTimeAxis> \u0023\u003DzrDW3kcvb8jweTamfSw\u003D\u003D;
     public static Action<ChartCompentViewModel> \u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D;
     public static Func<IRenderableSeries, bool> \u0023\u003DzOkZpX_jNLPK4\u0024VqKDw\u003D\u003D;
     public static Func<IRenderableSeries, int> \u0023\u003DzAMUmAPxCMMfLz0aKiA\u003D\u003D;
@@ -1191,14 +1223,14 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     
 
-    public bool \u0023\u003DzrQJFhnLMBw4KLdFbErEk\u0024Eju6p\u00242(
+    public bool SomeMEthod03852(
       ChartCompentViewModel _param1)
     {
       return _param1 != null;
     }
 
     public void \u0023\u003DzJR2NRNOjWD80Ydt_1RhppIXJFkoJ(
-      dje_zP5SLCZMPLKRDSVWETEPWLMZPT4N45VSYZ76M5M7C6J68NU9622VFYDAYPDEQ_ejd _param1)
+      CategoryDateTimeAxis _param1)
     {
       if (!(_param1.Tag is ChartAxis tag))
         return;
@@ -1277,60 +1309,60 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     }
   }
 
-  private sealed class \u0023\u003DzHtYFIEI9CJAk\u0024GXG5dtCtJE\u003D
+  private sealed class SomeSealClass0833352
   {
-    public string \u0023\u003DzABBG58cxsbcx;
+    public string _someString0382;
 
-    public bool \u0023\u003DzbSjDouuxMOmtENb1CI\u0024NfEXlBX\u0024_(IChartAxis _param1)
+    public bool bool_Method02_IChartAxis_(IChartAxis _param1)
     {
-      return _param1.Id == this.\u0023\u003DzABBG58cxsbcx;
+      return _param1.Id == this._someString0382;
     }
   }
 
   
 
-  private sealed class \u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D
+  private sealed class SomeSealClass083523
   {
-    public ICollection<IAxis> \u0023\u003Dz_liTKnA\u003D;
-    public IChartAxis \u0023\u003Dzfl\u0024A1s0\u003D;
+    public ICollection<IAxis> _ICollection_IAxis_098;
+    public IChartAxis _IChartAxis_098;
     public ScichartSurfaceMVVM _variableSome3535;
-    public Func<IAxis, bool> \u0023\u003DzuAeZVTPDgzYE;
+    public Func<IAxis, bool> _Func_IAxis_bool_0835;
 
-    public void \u0023\u003DzgPfL2cm03IfPSYpk8w\u003D\u003D()
+    public void _SomeSealClass083523_Metho03()
     {
-      AxisBase target = (AxisBase) this.\u0023\u003Dz_liTKnA\u003D.FirstOrDefault<IAxis>(this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Func<IAxis, bool>(this.\u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D)));
+      AxisBase target = (AxisBase) this._ICollection_IAxis_098.FirstOrDefault<IAxis>(this._Func_IAxis_bool_0835 ?? (this._Func_IAxis_bool_0835 = new Func<IAxis, bool>(this._function_IAxis__R__void__001)));
       if (target == null)
         return;
-      target.PropertyChanged -= new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003Dzfi9Y8f8VaR3y);
+      target.PropertyChanged -= new PropertyChangedEventHandler(this._variableSome3535.OnTargetPropertyChanged308);
       BindingOperations.ClearAllBindings((DependencyObject) target);
-      this.\u0023\u003Dz_liTKnA\u003D.Remove((IAxis) target);
+      this._ICollection_IAxis_098.Remove((IAxis) target);
     }
 
-    public bool \u0023\u003DzZ4z4dhLl82s4_UYFOQ\u003D\u003D(
+    public bool _function_IAxis__R__void__001(
       IAxis _param1)
     {
-      return _param1.Id == this.\u0023\u003Dzfl\u0024A1s0\u003D.Id;
+      return _param1.Id == this._IChartAxis_098.Id;
     }
   }
 
   private sealed class SomeClass6409
   {
     public ScichartSurfaceMVVM _variableSome3535;
-    public ChartArea \u0023\u003Dzy_5REws\u003D;
-    public Action<IChartElement> \u0023\u003DzmkzpZPDRopSK;
+    public ChartArea _chartArea_093;
+    public Action<IChartElement> _action_IChartElement_023;
 
     public bool OnChartAreaElementsRemovingAt(int _param1)
     {
-      return this._variableSome3535.OnChartAreaElementsRemoving(((IList<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements)[_param1]);
+      return this._variableSome3535.OnChartAreaElementsRemoving(((IList<IChartElement>) this._chartArea_093.Elements)[_param1]);
     }
 
     public bool OnChartAreaElementsClearing()
     {
-      CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements, this.\u0023\u003DzmkzpZPDRopSK ?? (this.\u0023\u003DzmkzpZPDRopSK = new Action<IChartElement>(this.\u0023\u003Dzr5cnmYeOtMU0QUibOQ\u003D\u003D)));
+      CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this._chartArea_093.Elements, this._action_IChartElement_023 ?? (this._action_IChartElement_023 = new Action<IChartElement>(this._function1_IChartElement____void__001)));
       return true;
     }
 
-    public void \u0023\u003Dzr5cnmYeOtMU0QUibOQ\u003D\u003D(IChartElement _param1)
+    public void _function1_IChartElement____void__001(IChartElement _param1)
     {
       this._variableSome3535.OnChartAreaElementsRemoving(_param1);
     }
@@ -1347,7 +1379,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     public bool OnArea.XAxisesRemovingAt(int _param1)
     {
-      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.XAxises);
+      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this._chartArea_093.XAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.XAxises);
     }
 
     public void OnAreaYAxisesAdded(IChartAxis _param1)
@@ -1362,7 +1394,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     public bool OnAreaYAxisesRemovingAt(int _param1)
     {
-      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.YAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.YAxises);
+      return this._variableSome3535.\u0023\u003Dz_FxkB6U\u003D(((IList<IChartAxis>) this._chartArea_093.YAxises)[_param1], (ICollection<IAxis>) this._variableSome3535.YAxises);
     }
 
     public void OnApplicationThemeChanged(

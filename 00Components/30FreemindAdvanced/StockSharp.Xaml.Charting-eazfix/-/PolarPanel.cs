@@ -114,7 +114,7 @@ public sealed class PolarPanel : Panel
 
   private IEnumerable<UIElement> \u0023\u003DzL8atuyQ\u003D()
   {
-    IEnumerable<UIElement> source = this.Children.OfType<UIElement>().Where<UIElement>(PolarPanel.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (PolarPanel.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<UIElement, bool>(PolarPanel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D)));
+    IEnumerable<UIElement> source = this.Children.OfType<UIElement>().Where<UIElement>(PolarPanel.SomeClass34343383.pubStatic_Action_ChartAxis_ ?? (PolarPanel.SomeClass34343383.pubStatic_Action_ChartAxis_ = new Func<UIElement, bool>(PolarPanel.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D)));
     return !this.IsReversedOrder ? source : source.Reverse<UIElement>();
   }
 
@@ -220,7 +220,7 @@ public sealed class PolarPanel : Panel
   private sealed class SomeClass34343383
   {
     public static readonly PolarPanel.SomeClass34343383 SomeMethond0343 = new PolarPanel.SomeClass34343383();
-    public static Func<UIElement, bool> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
+    public static Func<UIElement, bool> pubStatic_Action_ChartAxis_;
 
     public bool \u0023\u003Dz2zySBoQIuvaRfw_ykBJUBYo\u003D(UIElement _param1)
     {

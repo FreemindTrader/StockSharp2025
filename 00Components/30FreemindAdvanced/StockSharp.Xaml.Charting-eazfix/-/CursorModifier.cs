@@ -133,7 +133,7 @@ public class CursorModifier :
 
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
-    CursorModifier.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D jy0mx0yCuWlqEsh0ZdY = new CursorModifier.\u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D();
+    CursorModifier.SomeSealClass083523 jy0mx0yCuWlqEsh0ZdY = new CursorModifier.SomeSealClass083523();
     jy0mx0yCuWlqEsh0ZdY._variableSome3535 = this;
     jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzvCn8oRW_i8ct = _param1;
     this.\u0023\u003DzSRU73z_agnZjtPtO2Cu\u0024edM\u003D(jy0mx0yCuWlqEsh0ZdY.\u0023\u003DzvCn8oRW_i8ct);
@@ -371,7 +371,7 @@ public class CursorModifier :
     }
   }
 
-  private sealed class \u0023\u003DzM\u0024TlJy0mx0yCUWlqEsh0ZdY\u003D
+  private sealed class SomeSealClass083523
   {
     public CursorModifier _variableSome3535;
     public Point \u0023\u003DzvCn8oRW_i8ct;

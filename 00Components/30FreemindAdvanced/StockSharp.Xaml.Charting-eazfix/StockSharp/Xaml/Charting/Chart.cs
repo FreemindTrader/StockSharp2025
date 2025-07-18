@@ -283,7 +283,7 @@ public class Chart :
 		( ( DispatcherObject ) this ).GuiSync( new Action( new Chart.SomeInternalSealedClass08343()
 
 	{
-      \u0023\u003Dzy_5REws\u003D = area,
+      _chartArea_093 = area,
 	  _variableSome3535 = this
 	}.\u0023\u003DzTUl6zvo_PmQZ4TJ2ew\u003D\u003D) );
 	}
@@ -295,7 +295,7 @@ public class Chart :
 
 	{
 			_variableSome3535 = this,
-      \u0023\u003Dzy_5REws\u003D = area
+      _chartArea_093 = area
 		}.\u0023\u003DzJiDIwzXuOcws4Nsgtg\u003D\u003D));
 	}
 
@@ -326,7 +326,7 @@ public class Chart :
 		Chart.SomeInternalSealedClass3578512 gncgo1okL0HgWiq5JrU = new Chart.SomeInternalSealedClass3578512();
 		gncgo1okL0HgWiq5JrU.\u0023\u003Dz_i6sZDg\u003D = element;
 		gncgo1okL0HgWiq5JrU._variableSome3535 = this;
-		gncgo1okL0HgWiq5JrU.\u0023\u003Dzy_5REws\u003D = area;
+		gncgo1okL0HgWiq5JrU._chartArea_093 = area;
 		
 		( ( DispatcherObject ) this ).GuiSync( new Action( gncgo1okL0HgWiq5JrU.SomeMethod03843) );
 	}
@@ -335,7 +335,7 @@ public class Chart :
 	{
 		public IChartElement \u0023\u003Dz_i6sZDg\u003D;
     public Chart _variableSome3535;
-		public IChartArea \u0023\u003Dzy_5REws\u003D;
+		public IChartArea _chartArea_093;
 
     public void SomeMethod03843()
     {
@@ -343,7 +343,7 @@ public class Chart :
       if (this.\u0023\u003Dz_i6sZDg\u003D is IChartIndicatorElement zI6sZdg && zI6sZdg.AutoAssignYAxis && this._variableSome3535._indicatorElementMap.TryGetValue(zI6sZdg, ref zZq9Hpf12oRwg) && zZq9Hpf12oRwg.Indicator.Measure != IndicatorMeasures.Price)
 
 	  {
-			(IChartArea, IndicatorMeasures) key = (this.\u0023\u003Dzy_5REws\u003D, zZq9Hpf12oRwg.Indicator.Measure);
+			(IChartArea, IndicatorMeasures) key = (this._chartArea_093, zZq9Hpf12oRwg.Indicator.Measure);
 			string str;
 			if ( !this._variableSome3535._area2IndicatorMeasuresMap.TryGetValue( key, out str ) )
 			{
@@ -352,13 +352,13 @@ public class Chart :
 				IChartAxis axis = __nonvirtual (this._variableSome3535.CreateAxis());
 				axis.Id = str;
 				axis.AxisType = ChartAxisType.Numeric;
-				( ( ICollection<IChartAxis> ) this.\u0023\u003Dzy_5REws\u003D.YAxises).Add( axis );
+				( ( ICollection<IChartAxis> ) this._chartArea_093.YAxises).Add( axis );
 				this._variableSome3535._area2IndicatorMeasuresMap.Add( key, axis.Id );
 			}
 			this.\u0023\u003Dz_i6sZDg\u003D.YAxisId = str;
         }
 
-	  ((ICollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Add(this.\u0023\u003Dz_i6sZDg\u003D);
+	  ((ICollection<IChartElement>) this._chartArea_093.Elements).Add(this.\u0023\u003Dz_i6sZDg\u003D);
 		}
 	}
 
@@ -420,9 +420,9 @@ public class Chart :
 	void IChart.RemoveElement( IChartArea area, IChartElement element )
 	{
 		Chart.\u0023\u003Dzm_oWpvJyDZiF55m7JqXuwJc\u003D jyDziF55m7JqXuwJc = new Chart.\u0023\u003Dzm_oWpvJyDZiF55m7JqXuwJc\u003D();
-		jyDziF55m7JqXuwJc.\u0023\u003Dzy_5REws\u003D = area;
+		jyDziF55m7JqXuwJc._chartArea_093 = area;
 		jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D = element;
-		if ( jyDziF55m7JqXuwJc.\u0023\u003Dzy_5REws\u003D == null)
+		if ( jyDziF55m7JqXuwJc._chartArea_093 == null)
       throw new ArgumentNullException( nameof( area ) );
 		if ( jyDziF55m7JqXuwJc.\u0023\u003Dz_i6sZDg\u003D == null)
       throw new ArgumentNullException( nameof( element ) );
@@ -487,7 +487,7 @@ public class Chart :
     ((DispatcherObject) this).GuiSync(new Action(new Chart.\u0023\u003DzFDlMmaXY4v\u0024C2LpqBGOoouE\u003D()
     {
       _variableSome3535 = this,
-      \u0023\u003DzaPd0W_M\u003D = predicate
+      m_public_Func_Order_bool_ = predicate
     }.\u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D));
   }
 
@@ -1481,11 +1481,11 @@ public class Chart :
   private sealed class \u0023\u003DzFDlMmaXY4v\u0024C2LpqBGOoouE\u003D
   {
     public Chart _variableSome3535;
-    public Func<Order, bool> \u0023\u003DzaPd0W_M\u003D;
+    public Func<Order, bool> m_public_Func_Order_bool_;
 
     public void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
-      this._variableSome3535.ViewModel.\u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(this.\u0023\u003DzaPd0W_M\u003D);
+      this._variableSome3535.ViewModel.\u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(this.m_public_Func_Order_bool_);
     }
   }
 
@@ -1493,36 +1493,36 @@ public class Chart :
 
   private sealed class SomeInternalSealedClass08343
   {
-    public IChartArea \u0023\u003Dzy_5REws\u003D;
+    public IChartArea _chartArea_093;
     public Chart _variableSome3535;
-    public Action<IChartAxis> \u0023\u003DzuAeZVTPDgzYE;
+    public Action<IChartAxis> _Func_IAxis_bool_0835;
 
     public void \u0023\u003DzTUl6zvo_PmQZ4TJ2ew\u003D\u003D()
     {
-      if (this.\u0023\u003Dzy_5REws\u003D.Chart != null)
+      if (this._chartArea_093.Chart != null)
         throw new ArgumentException("area.Chart != null", "area");
-      if (this.\u0023\u003Dzy_5REws\u003D == null || this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Contains(this.\u0023\u003Dzy_5REws\u003D))
+      if (this._chartArea_093 == null || this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Contains(this._chartArea_093))
         throw new ArgumentException("area2");
       ChartAxisType? xaxisType = this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.FirstOrDefault<IChartArea>()?.XAxisType;
       if (xaxisType.HasValue)
       {
-        if (CollectionHelper.IsEmpty<IChartElement>((ICollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements))
-          this.\u0023\u003Dzy_5REws\u003D.XAxisType = xaxisType.Value;
-        else if (this.\u0023\u003Dzy_5REws\u003D.XAxisType != xaxisType.Value)
+        if (CollectionHelper.IsEmpty<IChartElement>((ICollection<IChartElement>) this._chartArea_093.Elements))
+          this._chartArea_093.XAxisType = xaxisType.Value;
+        else if (this._chartArea_093.XAxisType != xaxisType.Value)
           throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
       }
-      CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this.\u0023\u003Dzy_5REws\u003D.XAxises, this.\u0023\u003DzuAeZVTPDgzYE ?? (this.\u0023\u003DzuAeZVTPDgzYE = new Action<IChartAxis>(this.\u0023\u003Dz_CddBmgHU5hqO5sw1g\u003D\u003D)));
-      this.\u0023\u003Dzy_5REws\u003D.PropertyChanged += new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003DzqfFsxob3ngDX);
-      ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Added += new Action<IChartElement>(this._variableSome3535.\u0023\u003DzVpu_ST0\u003D);
-      ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Removed += new Action<IChartElement>(this._variableSome3535.\u0023\u003DzW\u0024jq94I\u003D);
-      this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Add(this.\u0023\u003Dzy_5REws\u003D);
-      this.\u0023\u003Dzy_5REws\u003D.Chart = (IChart) this._variableSome3535;
-      this._variableSome3535.ViewModel.ChartPaneViewModels.Add(((ChartArea) this.\u0023\u003Dzy_5REws\u003D).ViewModel);
-      CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements, new Action<IChartElement>(this._variableSome3535.\u0023\u003DzVpu_ST0\u003D));
+      CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>) this._chartArea_093.XAxises, this._Func_IAxis_bool_0835 ?? (this._Func_IAxis_bool_0835 = new Action<IChartAxis>(this.\u0023\u003Dz_CddBmgHU5hqO5sw1g\u003D\u003D)));
+      this._chartArea_093.PropertyChanged += new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003DzqfFsxob3ngDX);
+      ((INotifyCollection<IChartElement>) this._chartArea_093.Elements).Added += new Action<IChartElement>(this._variableSome3535.\u0023\u003DzVpu_ST0\u003D);
+      ((INotifyCollection<IChartElement>) this._chartArea_093.Elements).Removed += new Action<IChartElement>(this._variableSome3535.\u0023\u003DzW\u0024jq94I\u003D);
+      this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Add(this._chartArea_093);
+      this._chartArea_093.Chart = (IChart) this._variableSome3535;
+      this._variableSome3535.ViewModel.ChartPaneViewModels.Add(((ChartArea) this._chartArea_093).ViewModel);
+      CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this._chartArea_093.Elements, new Action<IChartElement>(this._variableSome3535.\u0023\u003DzVpu_ST0\u003D));
       Action<IChartArea> zk8cjLwfRrDki = this._variableSome3535.\u0023\u003Dzk8cjLWfRrDKI;
       if (zk8cjLwfRrDki == null)
         return;
-      zk8cjLwfRrDki(this.\u0023\u003Dzy_5REws\u003D);
+      zk8cjLwfRrDki(this._chartArea_093);
     }
 
     public void \u0023\u003Dz_CddBmgHU5hqO5sw1g\u003D\u003D(IChartAxis _param1)
@@ -1598,34 +1598,34 @@ public class Chart :
 
   private sealed class \u0023\u003Dzm_oWpvJyDZiF55m7JqXuwJc\u003D
   {
-    public IChartArea \u0023\u003Dzy_5REws\u003D;
+    public IChartArea _chartArea_093;
     public IChartElement \u0023\u003Dz_i6sZDg\u003D;
 
     public bool \u0023\u003DzRy89s7w8wbPZi21A_M2JlLqW05mnmhs8PApgiRA\u003D()
     {
-      return ((ICollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Remove(this.\u0023\u003Dz_i6sZDg\u003D);
+      return ((ICollection<IChartElement>) this._chartArea_093.Elements).Remove(this.\u0023\u003Dz_i6sZDg\u003D);
     }
   }
 
   private sealed class \u0023\u003DzwNBM8yU0t_ER1Neix6Hn12Q\u003D
   {
     public Chart _variableSome3535;
-    public IChartArea \u0023\u003Dzy_5REws\u003D;
+    public IChartArea _chartArea_093;
 
     public void \u0023\u003DzJiDIwzXuOcws4Nsgtg\u003D\u003D()
     {
-      if (!this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Remove(this.\u0023\u003Dzy_5REws\u003D))
+      if (!this._variableSome3535.\u0023\u003Dza1mnh6ythHbd.Remove(this._chartArea_093))
         return;
-      this.\u0023\u003Dzy_5REws\u003D.PropertyChanged -= new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003DzqfFsxob3ngDX);
-      ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Added -= new Action<IChartElement>(this._variableSome3535.\u0023\u003DzVpu_ST0\u003D);
-      ((INotifyCollection<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements).Removed -= new Action<IChartElement>(this._variableSome3535.\u0023\u003DzW\u0024jq94I\u003D);
-      this._variableSome3535.ViewModel.ChartPaneViewModels.Remove(((ChartArea) this.\u0023\u003Dzy_5REws\u003D).ViewModel);
-      CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this.\u0023\u003Dzy_5REws\u003D.Elements, new Action<IChartElement>(this._variableSome3535.\u0023\u003DzW\u0024jq94I\u003D));
-      this.\u0023\u003Dzy_5REws\u003D.Chart = (IChart) null;
-      TypeHelper.DoDispose<IChartArea>(this.\u0023\u003Dzy_5REws\u003D);
+      this._chartArea_093.PropertyChanged -= new PropertyChangedEventHandler(this._variableSome3535.\u0023\u003DzqfFsxob3ngDX);
+      ((INotifyCollection<IChartElement>) this._chartArea_093.Elements).Added -= new Action<IChartElement>(this._variableSome3535.\u0023\u003DzVpu_ST0\u003D);
+      ((INotifyCollection<IChartElement>) this._chartArea_093.Elements).Removed -= new Action<IChartElement>(this._variableSome3535.\u0023\u003DzW\u0024jq94I\u003D);
+      this._variableSome3535.ViewModel.ChartPaneViewModels.Remove(((ChartArea) this._chartArea_093).ViewModel);
+      CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>) this._chartArea_093.Elements, new Action<IChartElement>(this._variableSome3535.\u0023\u003DzW\u0024jq94I\u003D));
+      this._chartArea_093.Chart = (IChart) null;
+      TypeHelper.DoDispose<IChartArea>(this._chartArea_093);
       Action<IChartArea> z0aBkRs4Mkj0a = this._variableSome3535.\u0023\u003Dz0aBkRs4Mkj0a;
       if (z0aBkRs4Mkj0a != null)
-        z0aBkRs4Mkj0a(this.\u0023\u003Dzy_5REws\u003D);
+        z0aBkRs4Mkj0a(this._chartArea_093);
       if (!CollectionHelper.IsEmpty<IChartArea>((ICollection<IChartArea>) this._variableSome3535.\u0023\u003Dza1mnh6ythHbd))
         return;
       this._variableSome3535.ViewModel.InitRangeDepProperty();

@@ -268,8 +268,8 @@ public abstract class LineAnnotationWithLabelsBase : LineAnnotation
     LineAnnotationWithLabelsBase.\u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D dltbvS8bNvezolg25s = new LineAnnotationWithLabelsBase.\u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D();
     dltbvS8bNvezolg25s._variableSome3535 = this;
     dltbvS8bNvezolg25s.\u0023\u003Dzze_xX5E\u003D = offset;
-    dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D = this.GetUsedAxis();
-    if (dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D == null || dltbvS8bNvezolg25s.\u0023\u003Dzfl\u0024A1s0\u003D.get_ModifierAxisCanvas() == null)
+    dltbvS8bNvezolg25s._IChartAxis_098 = this.GetUsedAxis();
+    if (dltbvS8bNvezolg25s._IChartAxis_098 == null || dltbvS8bNvezolg25s._IChartAxis_098.get_ModifierAxisCanvas() == null)
       return;
     this.AnnotationLabels.Where<AnnotationLabel>(LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D ?? (LineAnnotationWithLabelsBase.SomeClass34343383.\u0023\u003DzxqTBwn3Lm9d_a3_OxA\u003D\u003D = new Func<AnnotationLabel, bool>(LineAnnotationWithLabelsBase.SomeClass34343383.SomeMethond0343.\u0023\u003DzLjDDzfRiLodJ0Yk0_kZqhnuCB1rY))).\u0023\u003Dz30RSSSygABj_<AnnotationLabel>(new Action<AnnotationLabel>(dltbvS8bNvezolg25s.\u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D));
   }
@@ -441,13 +441,13 @@ public abstract class LineAnnotationWithLabelsBase : LineAnnotation
   private sealed class \u0023\u003DzVqJpnDltbvS8bNvezolg25s\u003D
   {
     public LineAnnotationWithLabelsBase _variableSome3535;
-    public IAxis \u0023\u003Dzfl\u0024A1s0\u003D;
+    public IAxis _IChartAxis_098;
     public Point \u0023\u003Dzze_xX5E\u003D;
 
     public void \u0023\u003DzjBItOqBmy2tJFsdrzSt4jsU\u003D(
       AnnotationLabel _param1)
     {
-      this._variableSome3535.PlaceAxisLabel(this.\u0023\u003Dzfl\u0024A1s0\u003D, _param1, this.\u0023\u003Dzze_xX5E\u003D);
+      this._variableSome3535.PlaceAxisLabel(this._IChartAxis_098, _param1, this.\u0023\u003Dzze_xX5E\u003D);
     }
   }
 }

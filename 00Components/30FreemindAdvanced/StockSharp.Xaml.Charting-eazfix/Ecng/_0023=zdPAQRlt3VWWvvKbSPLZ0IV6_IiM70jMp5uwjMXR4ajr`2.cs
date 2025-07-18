@@ -235,7 +235,7 @@ public class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY> :
   {
     lock (this.SyncRoot)
     {
-      IEnumerable<TX> zulcL8Ras = _param1.Select<(TX, TY), TX>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D ?? (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.\u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D = new Func<(TX, TY), TX>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz01HqdUysEJn5lH\u0024ib6NXi0A\u003D)));
+      IEnumerable<TX> zulcL8Ras = _param1.Select<(TX, TY), TX>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.pubStatic_Action_ChartAxis_ ?? (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.pubStatic_Action_ChartAxis_ = new Func<(TX, TY), TX>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz01HqdUysEJn5lH\u0024ib6NXi0A\u003D)));
       int count = ((\u0023\u003DzJhc8WdlQgSkcniY\u0024669ans2mQMwz_VJH0HVFEk8\u003D) this.\u0023\u003DzmIwKipw\u003D).get_Count();
       this.\u0023\u003DzmIwKipw\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(zulcL8Ras);
       this.\u0023\u003DzoEP49rI\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY), TY>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Func<(TX, TY), TY>(\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz1_IuEwLrYewTrhAZNPbXTd0\u003D))));
@@ -247,7 +247,7 @@ public class \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY> :
   private sealed class SomeClass34343383
   {
     public static readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>.SomeClass34343383();
-    public static Func<(TX, TY), TX> \u0023\u003Dzfa4InO8BG_qfj7v\u0024gA\u003D\u003D;
+    public static Func<(TX, TY), TX> pubStatic_Action_ChartAxis_;
     public static Func<(TX, TY), TY> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
     public TX \u0023\u003Dz01HqdUysEJn5lH\u0024ib6NXi0A\u003D(
