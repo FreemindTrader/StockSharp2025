@@ -34,7 +34,7 @@ public sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZI6
   private void \u0023\u003DzMRbc7eZGFu0n(
     TickCoordinates _param1)
   {
-    if (this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() == null)
+    if (this.\u0023\u003DzHZDgUSdfqmkx().GetCurrentCoordinateCalculator() == null)
       return;
     for (int index = 0; index < _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D().Length; ++index)
     {
@@ -51,7 +51,7 @@ public sealed class \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqEwEg9j_x8XOiyOqAPcZI6
   private void \u0023\u003DzPQmsxQlX6LPB(
     TickCoordinates _param1)
   {
-    if (this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() == null)
+    if (this.\u0023\u003DzHZDgUSdfqmkx().GetCurrentCoordinateCalculator() == null)
       return;
     for (int index = 0; index < _param1.\u0023\u003Dz7uJsqQByZdM3URzWdA\u003D\u003D().Length; ++index)
     {

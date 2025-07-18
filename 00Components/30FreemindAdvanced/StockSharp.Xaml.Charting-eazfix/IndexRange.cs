@@ -20,16 +20,16 @@ public sealed class IndexRange  :
 
   public IndexRange ()
   {
-    this.\u0023\u003DzWzUaFxw\u003D(this.Min, this.Max);
+    this.Init(this.Min, this.Max);
   }
 
   public IndexRange (int _param1, int _param2)
     : base(_param1, _param2)
   {
-    this.\u0023\u003DzWzUaFxw\u003D(this.Min, this.Max);
+    this.Init(this.Min, this.Max);
   }
 
-  private void \u0023\u003DzWzUaFxw\u003D(int _param1, int _param2)
+  private void Init(int _param1, int _param2)
   {
     ((INotifyPropertyChanged) this).PropertyChanged += new PropertyChangedEventHandler(this.OnPropertyChanged);
     this.\u0023\u003DzeLxWL8r3I02c = (double) _param1;

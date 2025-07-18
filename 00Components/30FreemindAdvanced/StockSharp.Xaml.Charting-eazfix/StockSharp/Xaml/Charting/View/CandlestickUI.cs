@@ -389,7 +389,7 @@ label_4:
   private void \u0023\u003DztzYeKaM\u003D()
   {
     this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D(this.\u0023\u003Dz8bZd_lILC\u0024Y\u0024(), (IRenderableSeries) this.CreateRenderableSeries());
-    this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzKj7nvWQ\u003D);
+    this.ScichartSurfaceMVVM.AddSeriesViewModelsToRoot(this.RootElem, (IRenderableSeries) this.\u0023\u003DzKj7nvWQ\u003D);
     this.ClearAll();
     this.SetupAxisMarkerAndBinding(this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries, (IChartComponent) this.ChartComponentView, "ShowAxisMarker", (string) null);
   }
@@ -398,14 +398,14 @@ label_4:
   {
     if (this.\u0023\u003DzKj7nvWQ\u003D == null)
       return;
-    this.ScichartSurfaceMVVM.\u0023\u003Dzwh_e_TheVZKh(this.RootElem);
+    this.ScichartSurfaceMVVM.RemoveChartComponent(this.RootElem);
     this.\u0023\u003DzKj7nvWQ\u003D = (\u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D) null;
   }
 
   public override void PerformPeriodicalAction()
   {
     base.PerformPeriodicalAction();
-    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR g72ZksY7iW1Jk3iR = this.ScichartSurfaceMVVM.\u0023\u003DzOALCA8UxYpqEXXXKxQ\u003D\u003D(this.ChartComponentView.XAxisId);
+    VisbleRangeDp g72ZksY7iW1Jk3iR = this.ScichartSurfaceMVVM.GetVisibleRangeDp(this.ChartComponentView.XAxisId);
     if (g72ZksY7iW1Jk3iR == null)
       return;
     IndexRange  categoryDateTimeRange = g72ZksY7iW1Jk3iR.CategoryDateTimeRange;

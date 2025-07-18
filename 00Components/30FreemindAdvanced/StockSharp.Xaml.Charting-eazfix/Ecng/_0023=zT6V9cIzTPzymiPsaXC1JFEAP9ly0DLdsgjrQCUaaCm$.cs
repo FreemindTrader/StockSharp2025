@@ -17,7 +17,7 @@ public sealed class \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u002
   
   private string \u0023\u003DzNdw5dH7x9p9X;
   
-  private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003DzULiYiNYjd7IM;
+  private ChartAxisAlignment \u0023\u003DzULiYiNYjd7IM;
   
   private IComparable \u0023\u003DzUrJYk18uwxfp;
   
@@ -51,7 +51,7 @@ public sealed class \u0023\u003DzT6V9cIzTPzymiPsaXC1JFEAP9ly0DLdsgjrQCUaaCm\u002
     }
   }
 
-  public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd AxisAlignment
+  public ChartAxisAlignment AxisAlignment
   {
     get => this.\u0023\u003DzULiYiNYjd7IM;
     set

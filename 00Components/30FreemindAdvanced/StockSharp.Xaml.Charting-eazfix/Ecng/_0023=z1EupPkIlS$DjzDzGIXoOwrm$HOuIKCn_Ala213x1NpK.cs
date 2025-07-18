@@ -7,7 +7,7 @@
 #nullable disable
 public interface \u0023\u003Dz1EupPkIlS\u0024DjzDzGIXoOwrm\u0024HOuIKCn_Ala213x1NpKA
 {
-  void \u0023\u003DzWzUaFxw\u003D(
+  void Init(
     IAxis _param1);
 
   TickCoordinates \u0023\u003DzU4j4bt2YhYuc(

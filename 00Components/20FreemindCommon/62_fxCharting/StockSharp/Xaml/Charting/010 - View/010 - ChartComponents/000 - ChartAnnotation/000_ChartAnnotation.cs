@@ -54,7 +54,7 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
         }
     }  
 
-    public DrawableChartComponentBaseViewModel CreateViewModel( IScichartSurfaceVM viewModel )
+    public DrawableChartComponentBaseViewModel CreateViewModel( IDrawingSurfaceVM viewModel )
     {
         if ( this.Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );

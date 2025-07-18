@@ -11,16 +11,16 @@ using System.Globalization;
 public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22mOTs6M1Rc5MHAxGSwybk_pTjg\u003D\u003D : 
   \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B
 {
-  public override void \u0023\u003DzWzUaFxw\u003D(
+  public override void Init(
     IAxis _param1)
   {
     if (!(_param1 is \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D))
       throw new ArgumentException("LogarithmicNumericLabelProvider can be used with the LogarithmicNumericAxis only.");
-    base.\u0023\u003DzWzUaFxw\u003D(_param1);
+    base.Init(_param1);
   }
 
-  public override \u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D \u0023\u003Dz9xSd9Yg\u003D(
-    \u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D _param1,
+  public override ITickLabelViewModel UpdateDataContext(
+    ITickLabelViewModel _param1,
     IComparable _param2)
   {
     \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D tmjze8uJg3v1qUa6q9M = this.\u0023\u003DzHZDgUSdfqmkx() as \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D;
@@ -60,7 +60,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22m
       lqkdKbY6smnsRhNQalw2.Separator = str6;
     }
     else
-      _param1 = base.\u0023\u003Dz9xSd9Yg\u003D(_param1, _param2);
+      _param1 = base.UpdateDataContext(_param1, _param2);
     return _param1;
   }
 }

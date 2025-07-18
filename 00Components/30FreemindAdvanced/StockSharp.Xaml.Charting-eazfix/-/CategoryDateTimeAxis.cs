@@ -27,22 +27,22 @@ public sealed class CategoryDateTimeAxis :
   
   public static readonly DependencyProperty \u0023\u003Dzaf3Lae48WNlm = DependencyProperty.Register(nameof (BarTimeFrame), typeof (double), typeof (CategoryDateTimeAxis), new PropertyMetadata((object) -1.0));
   
-  public static readonly DependencyProperty \u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D = DependencyProperty.Register(nameof (SubDayTextFormatting), typeof (string), typeof (CategoryDateTimeAxis), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
+  public static readonly DependencyProperty SubDayTextFormattingProperty = DependencyProperty.Register(nameof (SubDayTextFormatting), typeof (string), typeof (CategoryDateTimeAxis), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
   
   private static readonly List<Type> \u0023\u003DzVGdWd1PKAs\u00242 = ((IEnumerable<Type>) new Type[1]
   {
     typeof (DateTime)
   }).ToList<Type>();
   
-  private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003DzvScByjqid0AM;
+  private AxisParams \u0023\u003DzvScByjqid0AM;
   
   private double _dataPointWidth = double.NaN;
 
   public CategoryDateTimeAxis()
   {
     this.DefaultStyleKey = (object) typeof (CategoryDateTimeAxis);
-    this.DefaultLabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3RMYA\u003D();
-    this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk());
+    this.DefaultLabelProvider = (ILabelProvider) new TradeChartAxisLabelProvider();
+    this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new NumericTickProvider());
     this.SetCurrentValue(AxisBase.\u0023\u003DzfolHRDLbOj27, (object) new \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D());
   }
 
@@ -50,11 +50,11 @@ public sealed class CategoryDateTimeAxis :
   {
     get
     {
-      return (string) this.GetValue(CategoryDateTimeAxis.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D);
+      return (string) this.GetValue(CategoryDateTimeAxis.SubDayTextFormattingProperty);
     }
     set
     {
-      this.SetValue(CategoryDateTimeAxis.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D, (object) value);
+      this.SetValue(CategoryDateTimeAxis.SubDayTextFormattingProperty, (object) value);
     }
   }
 
@@ -152,10 +152,10 @@ public sealed class CategoryDateTimeAxis :
 
   public override double \u0023\u003DzhL6gsJw\u003D(IComparable _param1)
   {
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.GetCurrentCoordinateCalculator();
     if (xkzemsMs5tGkouk5w == null)
       return double.NaN;
-    if (xkzemsMs5tGkouk5w is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0 && _param1 is DateTime)
+    if (xkzemsMs5tGkouk5w is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0 && _param1 is DateTime)
       _param1 = (IComparable) q9i0MXI7Qb9c1V6c0.\u0023\u003DzFk6sufr\u0024co4e((DateTime) _param1);
     return this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.ToDouble());
   }
@@ -165,7 +165,7 @@ public sealed class CategoryDateTimeAxis :
     if (this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D == null)
       return (IComparable) int.MaxValue;
     double num = this.\u0023\u003DzrRhlv2\u00243x_rdw41lF5j1sXE\u003D.GetDataValue(_param1);
-    return (IComparable) (this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0 ? q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc((int) num) : num.\u0023\u003Dzxuo5aY4wjkaI());
+    return (IComparable) (this.GetCurrentCoordinateCalculator() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0 ? q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc((int) num) : num.\u0023\u003Dzxuo5aY4wjkaI());
   }
 
   protected override IComparable \u0023\u003Dz3ZiX3E6vqtLl(IComparable _param1)
@@ -189,7 +189,7 @@ public sealed class CategoryDateTimeAxis :
     return (IRange) new IndexRange (0, 10);
   }
 
-  public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
+  public override AxisParams GetAxisParams()
   {
     return this.\u0023\u003DzvScByjqid0AM;
   }
@@ -198,7 +198,7 @@ public sealed class CategoryDateTimeAxis :
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1 = default (\u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D),
     IPointSeries _param2 = null)
   {
-    this.\u0023\u003DzvScByjqid0AM = base.\u0023\u003Dz0RktzzbyC\u002468();
+    this.\u0023\u003DzvScByjqid0AM = base.GetAxisParams();
     if (_param2 != null)
     {
       this.\u0023\u003DzFDFY\u0024WdH2REe(_param2);
@@ -268,7 +268,7 @@ public sealed class CategoryDateTimeAxis :
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "visibleRange");
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D) null;
-    if (this.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)
+    if (this.GetCurrentCoordinateCalculator() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
       dx26vpI1xWpwwNqJw = new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Min).\u0023\u003Dzxuo5aY4wjkaI(), q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Max).\u0023\u003Dzxuo5aY4wjkaI());
     return dx26vpI1xWpwwNqJw;
   }

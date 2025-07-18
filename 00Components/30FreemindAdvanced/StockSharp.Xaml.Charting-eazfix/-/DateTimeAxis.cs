@@ -22,12 +22,12 @@ public sealed class DateTimeAxis :
     typeof (DateTime)
   }).ToList<Type>();
   
-  public static readonly DependencyProperty \u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D = DependencyProperty.Register(nameof (SubDayTextFormatting), typeof (string), typeof (DateTimeAxis), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
+  public static readonly DependencyProperty SubDayTextFormattingProperty = DependencyProperty.Register(nameof (SubDayTextFormatting), typeof (string), typeof (DateTimeAxis), new PropertyMetadata((object) null, new PropertyChangedCallback(AxisBase.\u0023\u003DzLUQi5D4\u003D)));
 
   public DateTimeAxis()
   {
     this.DefaultStyleKey = (object) typeof (DateTimeAxis);
-    this.DefaultLabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003Dz9jHRW\u00244hcTcRirEhLafLfKwkzeHFx2BtVDw8LCsrGTu1();
+    this.DefaultLabelProvider = (ILabelProvider) new fxTradeChartAxisLabelProvider();
     this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003DzJhc8WdlQgSkcniY\u0024669aniHe9rfoFyUgrbTADSj0lBiy());
   }
 
@@ -35,11 +35,11 @@ public sealed class DateTimeAxis :
   {
     get
     {
-      return (string) this.GetValue(DateTimeAxis.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D);
+      return (string) this.GetValue(DateTimeAxis.SubDayTextFormattingProperty);
     }
     set
     {
-      this.SetValue(DateTimeAxis.\u0023\u003Dz5Kre9LKvddWFL51pIQ\u003D\u003D, (object) value);
+      this.SetValue(DateTimeAxis.SubDayTextFormattingProperty, (object) value);
     }
   }
 

@@ -16,7 +16,7 @@ public static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024Te
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3,
     bool _param4)
   {
-    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D ?? (\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3, _param4, true);
+    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D ?? (\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.\u0023\u003Dz7ixUD\u002407i38pD5UcHw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzGUcxqSn7lG8Lz5bs5V7C8Zk\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.Count(), _param2, _param3, _param4, true);
   }
 
   public static void \u0023\u003DzftEp\u0024x4VdHnj(
@@ -32,7 +32,7 @@ public static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024Te
     h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D = _param1;
     if ((double) h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D.StrokeThickness <= 0.0 || h5gkzF2FxdwMnQnA.\u0023\u003DzY_IgCbQ\u003D.Color.A == (byte) 0)
       return;
-    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, IPathColor>(h5gkzF2FxdwMnQnA.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
+    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, IPathColor>(h5gkzF2FxdwMnQnA.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.Count(), _param3, _param4, _param5, _param6);
   }
 
   public static void \u0023\u003DzftEp\u0024x4VdHnj(
@@ -47,7 +47,7 @@ public static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024Te
     \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, new Func<double, double, IPathColor>(new \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.SomeClass1234()
     {
       \u0023\u003Dz_HpzU5w\u003D = _param1
-    }.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
+    }.\u0023\u003DzKKgGz4w_A30dXvY2Sw\u003D\u003D), _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.Count(), _param3, _param4, _param5, _param6);
   }
 
   public static void \u0023\u003DzftEp\u0024x4VdHnj(
@@ -59,7 +59,7 @@ public static class \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024Te
     bool _param5,
     bool _param6)
   {
-    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, _param1, _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4, _param5, _param6);
+    \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(_param0, _param1, _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.Count(), _param3, _param4, _param5, _param6);
   }
 
   private static void \u0023\u003DzftEp\u0024x4VdHnj(

@@ -87,9 +87,9 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
     this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzIHjxTqC159pe, this.ChartComponentView.Line2, this.\u0023\u003DzXNWLRaQhQW_0);
     this.SetupAxisMarkerAndBinding(this.\u0023\u003DzYirGqB2gXz09.RenderSeries, (IChartComponent) this.ChartComponentView.Line1, "ShowAxisMarker", "Color");
     this.SetupAxisMarkerAndBinding(this.\u0023\u003DzIHjxTqC159pe.RenderSeries, (IChartComponent) this.ChartComponentView.Line2, "ShowAxisMarker", "Color");
-    this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzYirGqB2gXz09);
-    this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzIHjxTqC159pe);
-    this.ScichartSurfaceMVVM.\u0023\u003DzBE5I4io\u003D(this.RootElem, (IRenderableSeries) this.\u0023\u003DzRm0WUjzJSu8n);
+    this.ScichartSurfaceMVVM.AddSeriesViewModelsToRoot(this.RootElem, (IRenderableSeries) this.\u0023\u003DzYirGqB2gXz09);
+    this.ScichartSurfaceMVVM.AddSeriesViewModelsToRoot(this.RootElem, (IRenderableSeries) this.\u0023\u003DzIHjxTqC159pe);
+    this.ScichartSurfaceMVVM.AddSeriesViewModelsToRoot(this.RootElem, (IRenderableSeries) this.\u0023\u003DzRm0WUjzJSu8n);
     this.\u0023\u003DzJGn0U4ESy8cx();
   }
 
@@ -168,7 +168,7 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
 
   protected override void Clear()
   {
-    this.ScichartSurfaceMVVM.\u0023\u003Dzwh_e_TheVZKh(this.RootElem);
+    this.ScichartSurfaceMVVM.RemoveChartComponent(this.RootElem);
   }
 
   protected override void UpdateUi()

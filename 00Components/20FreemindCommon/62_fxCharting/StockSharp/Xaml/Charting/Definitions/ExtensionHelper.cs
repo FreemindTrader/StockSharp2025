@@ -196,7 +196,7 @@ internal static class ExtensionHelper
 
     public sealed class CategoryDateTimeAxisLabelProvider : TradeChartAxisLabelProvider
     {
-        private readonly StockSharp.Xaml.Charting.IChart      _chart;
+        private readonly StockSharp.Charting.IChart      _chart;
         private readonly ChartAxis      _chartAxis;
         private CategoryDateTimeAxis _dateTimeAxis;
         private string               _subDayFormat;
@@ -207,7 +207,7 @@ internal static class ExtensionHelper
 
         }
 
-        public CategoryDateTimeAxisLabelProvider( StockSharp.Xaml.Charting.IChart chart, ChartAxis axis )
+        public CategoryDateTimeAxisLabelProvider( StockSharp.Charting.IChart chart, ChartAxis axis )
         {
             if ( chart == null )
             {

@@ -27,7 +27,7 @@ public abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFua
     this.\u0023\u003Dz_HMHLf7iUOmptZScZA\u003D\u003D = _param1;
   }
 
-  public virtual void \u0023\u003DzWzUaFxw\u003D(
+  public virtual void Init(
     IAxis _param1)
   {
     this.\u0023\u003DzkF76BMTQOROh(_param1);
@@ -36,7 +36,7 @@ public abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFua
   double[] ITickProvider.\u0023\u003Dzi_t7eeX4F5JXHEvvNMYntVuE\u0024DOzJypZ_yUUtsy7UfgGUn\u0024KmQ\u003D\u003D(
     IAxisParams _param1)
   {
-    return this.\u0023\u003DzzRdFGRW8MXMa(this.\u0023\u003Dzctqa9kMCtfQQ(_param1));
+    return this.\u0023\u003DzzRdFGRW8MXMa(this.GetMajorTicks(_param1));
   }
 
   double[] ITickProvider.\u0023\u003Dz9Un\u00242WfBWxcgtkVaLDekO\u0024WlNKRH8oky5JNikYGv5urX2CiRow\u003D\u003D(
@@ -50,7 +50,7 @@ public abstract class \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFua
     return ((IEnumerable<T>) _param1).Select<T, double>(\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D ?? (\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383.\u0023\u003Dzpc02twqHC0yNe7RFKg\u003D\u003D = new Func<T, double>(\u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<T>.SomeClass34343383.SomeMethond0343.\u0023\u003Dzjr185UPePXNseau9xK_z_0g\u003D))).ToArray<double>();
   }
 
-  public abstract T[] \u0023\u003Dzctqa9kMCtfQQ(
+  public abstract T[] GetMajorTicks(
     IAxisParams _param1);
 
   public abstract T[] \u0023\u003Dz65PoZl8ZJBOc(

@@ -54,7 +54,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
   private bool \u0023\u003DzUIGQlR2nTtVHv7f_sPdYlsk\u003D;
   private string \u0023\u003DzQNPprkAewzNuJ8BKgQ\u003D\u003D;
   private string \u0023\u003DzcfCQIxVozaICVFl_NBxBzog\u003D;
-  private \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH \u0023\u003DzF89yE4I0sNZToajVmw\u003D\u003D;
+  private ILabelProvider \u0023\u003DzF89yE4I0sNZToajVmw\u003D\u003D;
   private bool \u0023\u003Dzd_LGQNec_oZzeIc6UgVO1bo\u003D;
   private bool \u0023\u003Dz6u7rpXiPZ0ELNt9NTNmaSBs\u003D;
   private bool \u0023\u003Dz87HLNmE7ZOYXhABhXdXP_Qs\u003D;
@@ -71,7 +71,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
   private HorizontalAlignment \u0023\u003DzEVNVu_ZK7\u00248NZaMf6lPJDrQ\u003D;
   private VerticalAlignment \u0023\u003DzD\u0024vImVfDGuVPRP1kiGxuWsE\u003D;
   private \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSdQaIc96_52nMJQUgeTEfBP3 \u0023\u003Dz3roz5ID2WsvKJYjSPpMBQF4\u003D;
-  private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz_emvXNgm7Xa94MS7OGNgTK0\u003D;
+  private ChartAxisAlignment \u0023\u003Dz_emvXNgm7Xa94MS7OGNgTK0\u003D;
   private bool \u0023\u003DzxkxRfeJKyToxpPT4fWwas78\u003D;
   private bool \u0023\u003DzHZdoCrtkBoXvozMBD\u0024zQ6WHB3IFoPNT1\u0024A\u003D\u003D;
   private bool \u0023\u003DzE8wAOIfSLDbe62ukKlhboN5j5Pb3;
@@ -394,7 +394,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
     set => this.\u0023\u003DzcfCQIxVozaICVFl_NBxBzog\u003D = value;
   }
 
-  public \u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH LabelProvider
+  public CategoryDateTimeAxisLabelProvider LabelProvider
   {
     get => this.\u0023\u003DzF89yE4I0sNZToajVmw\u003D\u003D;
     set => this.\u0023\u003DzF89yE4I0sNZToajVmw\u003D\u003D = value;
@@ -503,7 +503,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
     set => this.\u0023\u003Dz3roz5ID2WsvKJYjSPpMBQF4\u003D = value;
   }
 
-  public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd AxisAlignment
+  public ChartAxisAlignment AxisAlignment
   {
     get => this.\u0023\u003Dz_emvXNgm7Xa94MS7OGNgTK0\u003D;
     set => this.\u0023\u003Dz_emvXNgm7Xa94MS7OGNgTK0\u003D = value;
@@ -593,7 +593,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
     set => this.\u0023\u003DzRoux7W5jZAVE88YvvTzQyR6QfsrTykyeBA\u003D\u003D = value;
   }
 
-  public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D()
+  public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> GetCurrentCoordinateCalculator()
   {
     throw new NotImplementedException();
   }

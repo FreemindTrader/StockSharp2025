@@ -300,7 +300,7 @@ public sealed class FxAnnotationModifier :
     FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW;
     vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 = _param1;
     ChartDrawData.AnnotationData annotationData = new ChartDrawData.AnnotationData();
-    vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
     annotationData.IsVisible = new bool?(!vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.IsHidden);
     annotationData.IsEditable = new bool?(this.\u0023\u003DztnHdtisTy1nl(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083));
     annotationData.CoordinateMode = new AnnotationCoordinateMode?(vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.CoordinateMode);
@@ -384,7 +384,7 @@ public sealed class FxAnnotationModifier :
       this.\u0023\u003DzfS3q6Qc\u003D.Add((IAnnotation) vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083);
       this.\u0023\u003DzGuZ8w82B3fMJ()?.\u0023\u003Dz49m\u0024QLWwKQs9(_param1);
     }
-    vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
     try
     {
       this.\u0023\u003DzmHijKtV8bKDY = true;
@@ -535,7 +535,7 @@ public sealed class FxAnnotationModifier :
       case null:
         return (IComparable) null;
       case int num1:
-        if (!(_param1.\u0023\u003DzFlkZpfJp6G9R is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D zFlkZpfJp6G9R))
+        if (!(_param1.\u0023\u003DzFlkZpfJp6G9R is ICategoryCoordinateCalculator zFlkZpfJp6G9R))
           throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[1]
           {
             (object) "int"
@@ -577,7 +577,7 @@ public sealed class FxAnnotationModifier :
       return (IComparable) dateTimeOffset.UtcDateTime;
     if (_param0 is DateTime dateTime)
       return (IComparable) dateTime;
-    if (_param1.\u0023\u003DzFlkZpfJp6G9R is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
+    if (_param1.\u0023\u003DzFlkZpfJp6G9R is ICategoryCoordinateCalculator && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
       throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[1]
       {
         (object) _param0.GetType().Name

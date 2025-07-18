@@ -15,6 +15,8 @@ using Ecng.Xaml.Converters;
 
 #pragma warning disable CA1416
 
+namespace StockSharp.Xaml.Charting;
+
 /// <summary>
 /// This class mainly take care of the drawing of the Chart Elment.
 /// 
@@ -62,7 +64,7 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
     /// <summary>
     /// This is the Scichart Drawing Surface
     /// </summary>
-    protected IScichartSurfaceVM DrawingSurface
+    protected IDrawingSurfaceVM DrawingSurface
     {
         get
         {

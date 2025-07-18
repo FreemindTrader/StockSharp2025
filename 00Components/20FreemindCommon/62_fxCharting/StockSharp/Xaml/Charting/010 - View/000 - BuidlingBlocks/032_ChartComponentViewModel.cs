@@ -255,11 +255,11 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //    private readonly ObservableCollection< ChartElementViewModel > _childViewModels = new ObservableCollection< ChartElementViewModel >( );
 //    private readonly DrawableChartElementBaseViewModel[ ] _childElements;
 //    private double _minFieldWidth;
-//    private readonly IScichartSurfaceVM _scichartSurfaceVM;
+//    private readonly IDrawingSurfaceVM _scichartSurfaceVM;
 //    private readonly IChartComponent _iRootElement;
 //    private bool _isDisposed;
 
-//    public ChartCompentViewModel( IScichartSurfaceVM pane, IChartComponent elementXY, IEnumerable< DrawableChartElementBaseViewModel > childElements )
+//    public ChartCompentViewModel( IDrawingSurfaceVM pane, IChartComponent elementXY, IEnumerable< DrawableChartElementBaseViewModel > childElements )
 //    {
 //        if( pane == null )
 //        {
@@ -292,7 +292,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //        }
 //    }
 
-//    public IScichartSurfaceVM ScichartSurface
+//    public IDrawingSurfaceVM ScichartSurface
 //    {
 //        get
 //        {

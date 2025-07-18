@@ -48,7 +48,7 @@ public interface \u0023\u003DzRxKCQfwuO1Ym7C1efUUjv1ei5a44WdHi6c16UXGWhmY1mMHOZA
   void set_RenderSurface(
     IRenderSurface _param1);
 
-  void \u0023\u003DzKPHSi1vgK\u0024Fx(EventHandler<EventArgs> _param1);
+  void Rendered(EventHandler<EventArgs> _param1);
 
   void \u0023\u003DzrRRdxqQwy\u0024OJ(EventHandler<EventArgs> _param1);
 

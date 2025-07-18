@@ -174,7 +174,7 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
             return _viewModel = new TransactionVM<T>( ( T ) this );
         }

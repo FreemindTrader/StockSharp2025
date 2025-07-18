@@ -17,7 +17,7 @@ public class NumericAxis :
   AxisBase
 {
   
-  private \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003DzvScByjqid0AM;
+  private AxisParams \u0023\u003DzvScByjqid0AM;
   
   private static readonly List<Type> \u0023\u003DzVGdWd1PKAs\u00242 = ((IEnumerable<Type>) new Type[10]
   {
@@ -38,8 +38,8 @@ public class NumericAxis :
   public NumericAxis()
   {
     this.DefaultStyleKey = (object) typeof (NumericAxis);
-    this.DefaultLabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B();
-    this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk());
+    this.DefaultLabelProvider = (ILabelProvider) new \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZt5Gh_M7zik7mtVzjUImZB9B();
+    this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new NumericTickProvider());
   }
 
   public double MajorDelta
@@ -197,11 +197,11 @@ public class NumericAxis :
   protected override void \u0023\u003Dz_0Le6I5slA7z(
     \u0023\u003Dz9Cv\u0024UX3L5m_6hX1ogAvN6swsMiTQ4vauzZKCwXA\u003D _param1)
   {
-    this.\u0023\u003DzvScByjqid0AM = base.\u0023\u003Dz0RktzzbyC\u002468();
+    this.\u0023\u003DzvScByjqid0AM = base.GetAxisParams();
     base.\u0023\u003Dz_0Le6I5slA7z(_param1);
   }
 
-  public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
+  public override AxisParams GetAxisParams()
   {
     return this.\u0023\u003DzvScByjqid0AM;
   }
@@ -210,7 +210,7 @@ public class NumericAxis :
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param1 = default (\u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D),
     IPointSeries _param2 = null)
   {
-    this.\u0023\u003DzvScByjqid0AM = base.\u0023\u003Dz0RktzzbyC\u002468();
+    this.\u0023\u003DzvScByjqid0AM = base.GetAxisParams();
     \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D rfw9WrzF8qIcTicp0wQ = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D.OfType<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D>().FirstOrDefault<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D>();
     if (_param2 != null && rfw9WrzF8qIcTicp0wQ != null)
     {

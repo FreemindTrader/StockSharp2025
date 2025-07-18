@@ -304,7 +304,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
 
   private void \u0023\u003Dzvsv0ozPERJCLH7Qlj2XfYJ33Rsql()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9)), -1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.public_static_Action_ChartCompentViewModel_008 ?? (OptimizerChart3D.SomeClass34343383.public_static_Action_ChartCompentViewModel_008 = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9)), -1.0);
   }
 
   private void \u0023\u003DzVbbb3fC3vb43rF4KU9TEZE6hLOjw()
@@ -324,7 +324,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
 
   private void \u0023\u003Dz2k7_5qrtOkXy0eZDlvgLHhnNDAga()
   {
-    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D ?? (OptimizerChart3D.SomeClass34343383.\u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzRg6HPHFitFsySR6nRP24a_mwKHUh)), -1.0);
+    this.\u0023\u003DzYaCFkfF9kh0u(OptimizerChart3D.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_ ?? (OptimizerChart3D.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_ = new Func<Vector3D, bool>(OptimizerChart3D.SomeClass34343383.SomeMethond0343.\u0023\u003DzRg6HPHFitFsySR6nRP24a_mwKHUh)), -1.0);
   }
 
   private void \u0023\u003DzSc1IksKKMcH8jWMVaFYUjseX8E\u0024W()
@@ -345,11 +345,11 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   private sealed class SomeClass34343383
   {
     public static readonly OptimizerChart3D.SomeClass34343383 SomeMethond0343 = new OptimizerChart3D.SomeClass34343383();
-    public static Func<Vector3D, bool> \u0023\u003DzHf64i7sS_m0gAJCSlg\u003D\u003D;
+    public static Func<Vector3D, bool> public_static_Action_ChartCompentViewModel_008;
     public static Func<Vector3D, bool> \u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D;
     public static Func<Vector3D, bool> Method05;
     public static Func<Vector3D, bool> \u0023\u003Dzgtt8BV5qq\u0024eBi5JtnA\u003D\u003D;
-    public static Func<Vector3D, bool> \u0023\u003DzG9p0UKsG3FcNaICZMQ\u003D\u003D;
+    public static Func<Vector3D, bool> public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_;
     public static Func<Vector3D, bool> \u0023\u003DzWh8zy81NxgujdHZLXg\u003D\u003D;
 
     public bool \u0023\u003DzKNVw5MUKA0_gPqNER5gf5wMS6aQ9(Vector3D _param1) => _param1.X == 1.0;

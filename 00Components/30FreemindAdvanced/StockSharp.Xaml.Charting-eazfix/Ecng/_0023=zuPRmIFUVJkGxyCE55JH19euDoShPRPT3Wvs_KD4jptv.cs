@@ -8,12 +8,12 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-public sealed class \u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr : EventArgs
+public sealed class RenderedEventArgs : EventArgs
 {
   
   private readonly double \u0023\u003DzcrBdqBo\u003D;
 
-  public \u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr(double _param1)
+  public RenderedEventArgs(double _param1)
   {
     this.\u0023\u003DzcrBdqBo\u003D = _param1;
   }

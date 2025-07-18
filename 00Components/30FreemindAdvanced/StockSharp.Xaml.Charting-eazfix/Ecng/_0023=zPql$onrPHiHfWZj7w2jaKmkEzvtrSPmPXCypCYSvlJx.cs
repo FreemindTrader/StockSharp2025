@@ -11,7 +11,7 @@ public sealed class \u0023\u003DzPql\u0024onrPHiHfWZj7w2jaKmkEzvtrSPmPXCypCYSvlJ
   \u0023\u003Dz11\u00242ZZHXfa65mwO6Nijb7WIKy8yFmS0qz5aG2LjQ9ZhaLqHaajO4_nAIgryYYasWa8dMpfY\u003D
 {
   public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> GetMath(
-    \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY _param1)
+    AxisParams _param1)
   {
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w;
     if (_param1.\u0023\u003DzJqKipxOjoBSS && _param1.\u0023\u003DznUzlqIN9ReXL != null)
@@ -43,7 +43,7 @@ public sealed class \u0023\u003DzPql\u0024onrPHiHfWZj7w2jaKmkEzvtrSPmPXCypCYSvlJ
   }
 
   private static \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzczoVHEA\u0024Nf1d0vdM4a6BcifpH6_u(
-    \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY _param0,
+    AxisParams _param0,
     bool _param1)
   {
     return _param1 ? (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) new \u0023\u003DzYNfF0SGPMJVvgWPQnt5HEJiRtXRCnPZdCVqsqV8cmzW4e6QdAywEXAh86y0Qs6E_vMDCpvPvum5n(_param0.\u0023\u003DzdTxNrgQ\u003D, _param0.\u0023\u003DzBeOlCgb3wUDW, _param0.\u0023\u003Dzk0u64hpXv585, _param0.\u0023\u003DzFA18Bsxthn7B, _param0.\u0023\u003Dz_jNjf7U\u003D, _param0.\u0023\u003DztJAA1uMf9_P8) : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) new \u0023\u003DzyhbJ\u0024o3\u0024d46dmasRm5VGLEl_9tFndcOtx3Ve2lI2k6yumdGOSKr1pMGF0iLxfTWtzvstXMk\u003D(_param0.\u0023\u003DzdTxNrgQ\u003D, _param0.\u0023\u003DzBeOlCgb3wUDW, _param0.\u0023\u003Dzk0u64hpXv585, _param0.\u0023\u003DzFA18Bsxthn7B, _param0.\u0023\u003Dz_jNjf7U\u003D, _param0.\u0023\u003DztJAA1uMf9_P8);

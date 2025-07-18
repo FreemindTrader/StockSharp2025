@@ -8,17 +8,17 @@ using \u002D;
 using System;
 
 #nullable disable
-public class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3RMYA\u003D : 
-  \u0023\u003DziARJyOecclYiJO5UbZqQJ8tTDgXi4mHI9\u0024dB3n962FPd
+public class TradeChartAxisLabelProvider : 
+  LabelProviderBase
 {
-  private readonly string[] \u0023\u003Dz4HfK1guJY2ey = new string[4]
+  private readonly string[] _cursorFormatStrings = new string[4]
   {
     "MMM {0}",
     "yyyy {0}",
     "{0} yyyy",
     "dd MMM {0}"
   };
-  private readonly string[] \u0023\u003Dz_x3fDihuHF1f = new string[4]
+  private readonly string[] _majorFormatStrings = new string[4]
   {
     "yyyy",
     "MMM",
@@ -27,15 +27,15 @@ public class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3RMY
   };
   private int \u0023\u003DzTs5gEHtGGnsI;
 
-  public override void \u0023\u003DzWzUaFxw\u003D(
+  public override void Init(
     IAxis _param1)
   {
     if (!(_param1 is CategoryDateTimeAxis))
       throw new InvalidOperationException("The TradeChartAxisLabelFormatter is only valid on instances of CategoryDateTimeAxis");
-    base.\u0023\u003DzWzUaFxw\u003D(_param1);
+    base.Init(_param1);
   }
 
-  public override void \u0023\u003DzI_kEht21kBsX()
+  public override void OnBeginAxisDraw()
   {
     CategoryDateTimeAxis nu9622VfydaypdeqEjd = (CategoryDateTimeAxis) this.\u0023\u003DzHZDgUSdfqmkx();
     double num1 = nu9622VfydaypdeqEjd.\u0023\u003DzbY7N\u0024Xk2WSr8();
@@ -68,27 +68,27 @@ public class \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u0oVUOjcWZm6tIn4bpm9YMvj_jwo7f3RMY
       }
     }
 label_6:
-    base.\u0023\u003DzI_kEht21kBsX();
+    base.OnBeginAxisDraw();
   }
 
-  public override string \u0023\u003Dz\u0024WinkXTLMGVP(IComparable _param1, bool _param2)
+  public override string FormatCursorLabel(IComparable _param1, bool _param2)
   {
     DateTime dateTime = _param1.\u0023\u003Dzxuo5aY4wjkaI();
     string str;
     if (this.\u0023\u003DzHZDgUSdfqmkx().get_CursorTextFormatting().\u0023\u003DzCCMM80zDpO6N<char>())
     {
       int index = this.\u0023\u003DztY4N5eKR6isL(dateTime, true);
-      str = string.Format(dateTime.ToString(this.\u0023\u003Dz4HfK1guJY2ey[index]), (object) dateTime.ToString(this.\u0023\u003Dz_x3fDihuHF1f[index]));
+      str = string.Format(dateTime.ToString(this._cursorFormatStrings[index]), (object) dateTime.ToString(this._majorFormatStrings[index]));
     }
     else
       str = dateTime.ToString(this.\u0023\u003DzHZDgUSdfqmkx().get_CursorTextFormatting());
     return str;
   }
 
-  public override string \u0023\u003DzkqN2vZ4\u003D(IComparable _param1)
+  public override string FormatLabel(IComparable _param1)
   {
     DateTime dateTime = _param1.\u0023\u003Dzxuo5aY4wjkaI();
-    string format = this.\u0023\u003Dz_x3fDihuHF1f[this.\u0023\u003DztY4N5eKR6isL(dateTime, false)];
+    string format = this._majorFormatStrings[this.\u0023\u003DztY4N5eKR6isL(dateTime, false)];
     return dateTime.ToString(format);
   }
 

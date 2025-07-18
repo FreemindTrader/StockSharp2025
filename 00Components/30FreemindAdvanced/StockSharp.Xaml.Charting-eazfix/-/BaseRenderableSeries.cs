@@ -449,7 +449,7 @@ public abstract class BaseRenderableSeries :
 
   protected void \u0023\u003Dzz7UraMUVt1cf<TSeriesPoint>(string _param1) where TSeriesPoint : \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<double>
   {
-    if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() != null && this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D() != 0 && !(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(0) is \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<TSeriesPoint>))
+    if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() != null && this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().Count() != 0 && !(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(0) is \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<TSeriesPoint>))
       throw new InvalidOperationException($"{((object) this).GetType()} is expecting data passed as {typeof (TSeriesPoint)}. Please use dataseries type {_param1}");
   }
 
@@ -495,7 +495,7 @@ public abstract class BaseRenderableSeries :
     IPointSeries _param2,
     double _param3)
   {
-    return this.\u0023\u003Dz6BuO4fnhj6SX(_param1, _param2, (double) _param2.\u0023\u003DzlpVGw6E\u003D(), _param3);
+    return this.\u0023\u003Dz6BuO4fnhj6SX(_param1, _param2, (double) _param2.Count(), _param3);
   }
 
   public int \u0023\u003Dz6BuO4fnhj6SX(
@@ -508,7 +508,7 @@ public abstract class BaseRenderableSeries :
       throw new ArgumentException("WidthFraction should be between 0.0 and 1.0 inclusive", "widthFraction");
     double num = _param1.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? this.\u0023\u003Dz3L36rdwwPqC0.Width : this.\u0023\u003Dz3L36rdwwPqC0.Height;
     if (_param3 > 1.0)
-      num = Math.Abs(_param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(_param2.\u0023\u003DzlpVGw6E\u003D() - 1).\u0023\u003Dz2_4KSTY\u003D()) - _param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(0).\u0023\u003Dz2_4KSTY\u003D())) / (_param3 - 1.0);
+      num = Math.Abs(_param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(_param2.Count() - 1).\u0023\u003Dz2_4KSTY\u003D()) - _param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(0).\u0023\u003Dz2_4KSTY\u003D())) / (_param3 - 1.0);
     return (int) (num * _param4);
   }
 
@@ -610,7 +610,7 @@ public abstract class BaseRenderableSeries :
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     double num1 = xkzemsMs5tGkouk5w1.GetDataValue(_param1.X);
     IComparable comparable1 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(num1, this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[0].GetType());
-    if (xkzemsMs5tGkouk5w1 is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)
+    if (xkzemsMs5tGkouk5w1 is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
     {
       int num2 = (int) num1;
       comparable1 = (IComparable) q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(num2);
@@ -643,7 +643,7 @@ public abstract class BaseRenderableSeries :
     HitTestInfo zldchDrVsrVyHh6WyiGy = this.\u0023\u003Dz47Cmf38KMhH_(_param1);
     lock (this.DataSeries.get_SyncRoot())
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzZjtwJshPYJrbgaR43Q\u003D\u003D(!this.DataSeries.get_IsSorted() || this.DataSeries.get_HasValues() && _param4.CompareTo(this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[0]) >= 0 && _param4.CompareTo(this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[this.DataSeries.\u0023\u003DzwQnyySN6xaVC().Count - 1]) <= 0);
-    double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0 ? q9i0MXI7Qb9c1V6c0.\u0023\u003DzhL6gsJw\u003D((double) _param1) : this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(zldchDrVsrVyHh6WyiGy.\u0023\u003DztryT5H42SVj8().ToDouble());
+    double num1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0 ? q9i0MXI7Qb9c1V6c0.\u0023\u003DzhL6gsJw\u003D((double) _param1) : this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(zldchDrVsrVyHh6WyiGy.\u0023\u003DztryT5H42SVj8().ToDouble());
     double num2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(zldchDrVsrVyHh6WyiGy.\u0023\u003Dzd9IAScWutAfJ().ToDouble());
     Point point1 = new Point(num1, num2);
     _param2 = this.\u0023\u003Dzop6vn0GowyiR(_param2, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
@@ -758,7 +758,7 @@ public abstract class BaseRenderableSeries :
   {
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
-    if (xkzemsMs5tGkouk5w1 is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)
+    if (xkzemsMs5tGkouk5w1 is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
       _param1 = (double) q9i0MXI7Qb9c1V6c0.\u0023\u003DzFk6sufr\u0024co4e((IComparable) _param1);
     return this.\u0023\u003Dzop6vn0GowyiR(new Point(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(_param1), xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(_param2)), this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
   }

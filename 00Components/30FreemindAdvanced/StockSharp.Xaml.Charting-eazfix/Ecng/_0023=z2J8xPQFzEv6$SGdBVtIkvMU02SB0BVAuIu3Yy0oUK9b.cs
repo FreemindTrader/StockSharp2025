@@ -33,7 +33,7 @@ public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9
     IRange _param3,
     double _param4)
   {
-    \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D mpa4F4mcyQlZrFjfRi = new \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D.\u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D();
+    \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D.PrivateSealedClass_3Ins_1Met mpa4F4mcyQlZrFjfRi = new \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D.PrivateSealedClass_3Ins_1Met();
     mpa4F4mcyQlZrFjfRi.\u0023\u003DzgSMmZSBP2RDX = _param4;
     // ISSUE: explicit constructor call
     base.\u002Ector();
@@ -103,7 +103,7 @@ public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9
   }
 
   [SpecialName]
-  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003DzJGH6M80\u003D.Length;
+  public int Count() => this.\u0023\u003DzJGH6M80\u003D.Length;
 
   public IEnumerable<double> \u0023\u003DzQJbf5e\u0024oTzuvDw2moQ\u003D\u003D()
   {
@@ -146,7 +146,7 @@ public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9
     return candlePriceLevel;
   }
 
-  private sealed class \u0023\u003Dz5NCozMpa4F4mcyQlZrFJfRI\u003D
+  private sealed class PrivateSealedClass_3Ins_1Met
   {
     public \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D _variableSome3535;
     public double \u0023\u003DzgSMmZSBP2RDX;

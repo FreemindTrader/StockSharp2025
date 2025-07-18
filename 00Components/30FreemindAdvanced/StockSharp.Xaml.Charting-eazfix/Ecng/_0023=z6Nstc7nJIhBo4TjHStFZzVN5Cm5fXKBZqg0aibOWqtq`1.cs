@@ -25,7 +25,7 @@ public sealed class \u0023\u003Dz6Nstc7nJIhBo4TjHStFZzVN5Cm5fXKBZqg0aibOWqtqjvKK
     this.\u0023\u003DzG2qqjnQ\u003D = 0;
   }
 
-  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003DzG2qqjnQ\u003D;
+  public int Count() => this.\u0023\u003DzG2qqjnQ\u003D;
 
   public T \u0023\u003DzqOGsK89GmOsq()
   {

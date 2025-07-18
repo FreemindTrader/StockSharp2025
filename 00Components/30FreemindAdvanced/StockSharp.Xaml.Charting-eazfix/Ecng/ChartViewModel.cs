@@ -208,7 +208,7 @@ public sealed class ChartViewModel : DependencyObject
         }
     }
 
-    public DelegateCommand<IScichartSurfaceVM> ClosePaneCommand
+    public DelegateCommand<IDrawingSurfaceVM> ClosePaneCommand
     {
         get => this._closePaneCommand;
     }
@@ -300,7 +300,7 @@ public sealed class ChartViewModel : DependencyObject
     public static readonly DependencyProperty MinimumRangeProperty = DependencyProperty.Register(nameof (MinimumRange), typeof (int), typeof (ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
 
 
-    private readonly DelegateCommand<IScichartSurfaceVM> _closePaneCommand;
+    private readonly DelegateCommand<IDrawingSurfaceVM> _closePaneCommand;
 
     public ChartViewModel()
     {
@@ -320,7 +320,7 @@ public sealed class ChartViewModel : DependencyObject
         this.AddYAxisCommand = ( ICommand ) new DelegateCommand<ChartArea>( new Action<ChartArea>( this.ExecuteAddYAxisCommand ), new Func<ChartArea, bool>( this.CanExecuteAddYAxisCommand ) );
         this.RemoveAxisCommand = ( ICommand ) new DelegateCommand<ChartAxis>( ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand = new Action<ChartAxis>( ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteRemoveAxisCommand2 ) ), new Func<ChartAxis, bool>( this.CanExecuteRemoveAxisCommand ) );
         this.InitRangeDepProperty();
-        this._closePaneCommand = new DelegateCommand<IScichartSurfaceVM>( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand = new Action<IScichartSurfaceVM>( ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteClosePaneCommand2 ) ), new Func<IScichartSurfaceVM, bool>( this.CanExecuteClosePaneCommand ) );
+        this._closePaneCommand = new DelegateCommand<IDrawingSurfaceVM>( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand = new Action<IDrawingSurfaceVM>( ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteClosePaneCommand2 ) ), new Func<IDrawingSurfaceVM, bool>( this.CanExecuteClosePaneCommand ) );
         this.CancelActiveOrdersCommand = ( ICommand ) new DelegateCommand<ChartArea>( new Action<ChartArea>( this.ExecuteCancelActiveOrders ), new Func<ChartArea, bool>( this.CanExecuteCancelActiveOrders ) );
         if ( this.IsDesignMode() )
             return;
@@ -478,7 +478,7 @@ zu6zyxyyj5lOwEolg( _param1, _param2 );
 
 public void InitRangeDepProperty()
 {
-    \u0023\u003Dz7oKBks6ccXdMBOl\u0024qXdcQGlzHFTS415EjH_wseBoYgQlG72ZKsY7iW1Jk3iR.InitRangeDepProperty( ( object ) this );
+    VisbleRangeDp.InitRangeDepProperty( ( object ) this );
 }
 
 public void \u0023\u003DzzXq5ccDMuPZc( IChartElement _param1 )
@@ -614,7 +614,7 @@ private bool CanExecuteRemoveAxisCommand( ChartAxis _param1 )
 }
 
 private bool CanExecuteClosePaneCommand(
-  IScichartSurfaceVM _param1 )
+  IDrawingSurfaceVM _param1 )
 {
     return this.AllowAddArea;
 }
@@ -642,7 +642,7 @@ private sealed class SomeClass34343383
     public static readonly ChartViewModel.SomeClass34343383 SomeMethond0343 = new ChartViewModel.SomeClass34343383();
     public static Action<ScichartSurfaceMVVM> \u0023\u003Dz4K9Ew\u00245ncgrgb99V4w\u003D\u003D;
     public static Action<ChartAxis> ExecuteRemoveAxisCommand;
-    public static Action<IScichartSurfaceVM> ExecuteClosePaneCommand;
+    public static Action<IDrawingSurfaceVM> ExecuteClosePaneCommand;
     public static Func<Order, bool> \u0023\u003DzwCieN8nlFS3aCeRPgg\u003D\u003D;
     public static Func<Order, bool> \u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D;
     public static Func<ScichartSurfaceMVVM,
@@ -668,7 +668,7 @@ public void ExecuteRemoveAxisCommand2( ChartAxis _param1 )
 }
 
 public void ExecuteClosePaneCommand2(
-  IScichartSurfaceVM _param1 )
+  IDrawingSurfaceVM _param1 )
 {
     ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new ChartViewModel.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D();
       lrrNtIjstOuVg4Rro.\u0023\u003DzsWV8_ck\u003D = _param1;
@@ -706,7 +706,7 @@ public void ExecuteClosePaneCommand2(
 
   private sealed class \u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D
   {
-    public IScichartSurfaceVM \u0023\u003DzsWV8_ck\u003D;
+    public IDrawingSurfaceVM \u0023\u003DzsWV8_ck\u003D;
 
     public bool \u0023\u003DzHDJpZroCOKM644oB\u0024A\u003D\u003D(IChartArea _param1)
     {

@@ -41,7 +41,7 @@ public class \u0023\u003DztorG3HTUDpMsfjPqFEEe9E4FShzXANmvCep2LE5GUown<T> :
   }
 
   [SpecialName]
-  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003DztUQ677I\u003D;
+  public int Count() => this.\u0023\u003DztUQ677I\u003D;
 
   [SpecialName]
   public int \u0023\u003Dz8o3wsq506dwJ() => this.\u0023\u003Dz4FCMJWQ\u003D.Count;

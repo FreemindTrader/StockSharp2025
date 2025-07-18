@@ -97,7 +97,7 @@ public sealed class ChartComponentElementSettings :
     PropertyDescriptor> \u0023\u003Dz7Ouzu6Mg\u0024YJrs1NoTA\u003D\u003D(PropertyDescriptor _param1)
     {
       object obj = _param1.GetValue((object) this.\u0023\u003DzLICojrU\u003D);
-      ChartComponentElementSettings.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D d295Ww4skLs1HZBq = new ChartComponentElementSettings.\u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D();
+      ChartComponentElementSettings.PrivateSealedClass0392 d295Ww4skLs1HZBq = new ChartComponentElementSettings.PrivateSealedClass0392();
       d295Ww4skLs1HZBq.\u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D = this;
       IEnumerable<PropertyDescriptor> propertyDescriptors;
       if (!(obj is IChartComponent ddznyiGmdRlAevOq))
@@ -124,7 +124,7 @@ public sealed class ChartComponentElementSettings :
     }
   }
 
-  private sealed class \u0023\u003DzmD295WW4skLs1H\u0024zBQ\u003D\u003D
+  private sealed class PrivateSealedClass0392
   {
     public IChartIndicatorPainter \u0023\u003DzT8iWFU1Lr3ZdgvcQELUnNho\u003D;
     public ChartComponentElementSettings.SomeWheireosoe \u0023\u003Dq9oPAsd_XX7A0iOT0n\u0024XoJRH5BDywfM7Sl5FCgaUG6WI\u003D;

@@ -76,7 +76,7 @@ public sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u
       return;
     \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.Add(key, _param1);
     \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dz3dE3KTgP\u0024pXw(_param0);
-    _param0.\u0023\u003DzKPHSi1vgK\u0024Fx(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 = new EventHandler<EventArgs>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D)));
+    _param0.Rendered(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 = new EventHandler<EventArgs>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D)));
   }
 
   private static void \u0023\u003DzC641\u0024PpiHUo22N9TFU19b5A7dw9m(
@@ -103,14 +103,14 @@ public sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u
     if (!\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.TryGetValue(new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D(_param0), out k0hz6MwLrPm7JfgVw01g.\u0023\u003Dzvd7k66M\u003D))
       return;
     \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D[] array = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzovkpR0EIGwzr.Where<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>>(new Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, bool>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzUB2PB4j3oKnShyLauh0J0fA\u003D)).Select<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Func<KeyValuePair<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, string>, \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzL6P38Nt3ByHiE6Ehg2GH\u00247w\u003D))).ToArray<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>();
-    k0hz6MwLrPm7JfgVw01g.\u0023\u003DzmfE\u0024jucTzddtybnMGg\u003D\u003D = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Bottom);
-    k0hz6MwLrPm7JfgVw01g.\u0023\u003DzHQz9fVShYfxRR3dztw\u003D\u003D = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Top);
+    k0hz6MwLrPm7JfgVw01g.\u0023\u003DzmfE\u0024jucTzddtybnMGg\u003D\u003D = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, ChartAxisAlignment.Bottom);
+    k0hz6MwLrPm7JfgVw01g.\u0023\u003DzHQz9fVShYfxRR3dztw\u003D\u003D = \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.\u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array, ChartAxisAlignment.Top);
     ((IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D>) array).Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.\u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D ?? (\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.\u0023\u003DzEfO0YchCrnkh1uXOeQ\u003D\u003D = new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, ISciChartSurface>(\u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzQW8\u0024ngWQrNuehXxNdJc5YQM\u003D))).OfType<SciChartSurface>().\u0023\u003Dz30RSSSygABj_<SciChartSurface>(new Action<SciChartSurface>(k0hz6MwLrPm7JfgVw01g.\u0023\u003DzBgT6HSE20ulby6RTtGwqWX8\u003D));
   }
 
   private static double \u0023\u003DzngzyCR\u0024m4xucYS6Umw\u003D\u003D(
     IEnumerable<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D> _param0,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param1)
+    ChartAxisAlignment _param1)
   {
     IEnumerable<IEnumerable<AxisBase>> source = _param0.Select<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, IEnumerable<AxisBase>>(new Func<\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D, IEnumerable<AxisBase>>(new \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u003D.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc()
     {
@@ -131,14 +131,14 @@ public sealed class \u0023\u003DzdrN0sF\u0024gsZwp28k07ZqFHiTdVAFrQacgUQ\u003D\u
 
   private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
-    public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz0V69zGwQUFh\u0024;
-    public Func<AxisBase, bool> \u0023\u003DzoD2HtVGZvKav;
+    public ChartAxisAlignment \u0023\u003Dz0V69zGwQUFh\u0024;
+    public Func<AxisBase, bool> Func_ChartActiveOrdersElementVM_0938;
 
     public IEnumerable<AxisBase> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       AxisCollection yaxes = _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D().get_YAxes();
-      return yaxes == null ? (IEnumerable<AxisBase>) null : yaxes.OfType<AxisBase>().Where<AxisBase>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<AxisBase, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
+      return yaxes == null ? (IEnumerable<AxisBase>) null : yaxes.OfType<AxisBase>().Where<AxisBase>(this.Func_ChartActiveOrdersElementVM_0938 ?? (this.Func_ChartActiveOrdersElementVM_0938 = new Func<AxisBase, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
     }
 
     public bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(

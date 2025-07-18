@@ -33,7 +33,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
     IPointSeries _param1)
   {
     this.\u0023\u003Dz6leEYQVpwDm8 = _param1;
-    this.\u0023\u003DztUQ677I\u003D = _param1.\u0023\u003DzlpVGw6E\u003D();
+    this.\u0023\u003DztUQ677I\u003D = _param1.Count();
     this.Reset();
   }
 

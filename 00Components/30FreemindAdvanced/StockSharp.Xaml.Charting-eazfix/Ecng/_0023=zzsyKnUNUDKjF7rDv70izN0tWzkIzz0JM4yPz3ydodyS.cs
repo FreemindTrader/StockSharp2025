@@ -9,16 +9,16 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003DzzsyKnUNUDKjF7rDv70izN0tWzkIzz0JM4yPz3ydodySc : 
-  \u0023\u003DziARJyOecclYiJO5UbZqQJ8tTDgXi4mHI9\u0024dB3n962FPd
+  LabelProviderBase
 {
-  public override string \u0023\u003Dz\u0024WinkXTLMGVP(IComparable _param1, bool _param2)
+  public override string FormatCursorLabel(IComparable _param1, bool _param2)
   {
     if (!(this.\u0023\u003DzHZDgUSdfqmkx() is dje_zUWZK4BU846MEUQCR5WKT9QZA85UZEQW6M2YZEKBE72N8R2PVRLRQA_ejd e72N8R2PvrlrqaEjd))
       throw new InvalidOperationException("The TimeSpanLabelFormatter is only valid on instances of TimeSpanAxis");
     return this.\u0023\u003DzxwlUcz8\u003D((TimeSpan) _param1, e72N8R2PvrlrqaEjd.CursorTextFormatting);
   }
 
-  public override string \u0023\u003DzkqN2vZ4\u003D(IComparable _param1)
+  public override string FormatLabel(IComparable _param1)
   {
     if (!(this.\u0023\u003DzHZDgUSdfqmkx() is dje_zUWZK4BU846MEUQCR5WKT9QZA85UZEQW6M2YZEKBE72N8R2PVRLRQA_ejd e72N8R2PvrlrqaEjd))
       throw new InvalidOperationException("The TimeSpanLabelFormatter is only valid on instances of TimeSpanAxis");

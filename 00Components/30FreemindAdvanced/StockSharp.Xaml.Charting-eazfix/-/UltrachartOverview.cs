@@ -233,7 +233,7 @@ public sealed class UltrachartOverview :
       Source = (object) _param1,
       Mode = BindingMode.OneWay
     };
-    ((FrameworkElement) dynWmoFzgH4RlWB0lB).SetBinding(AxisBase.\u0023\u003DzhYW6tiLSC0eZ, (BindingBase) binding);
+    ((FrameworkElement) dynWmoFzgH4RlWB0lB).SetBinding(AxisBase.FlipCoordinatesProperty, (BindingBase) binding);
     this.\u0023\u003DzOhSPDVgkFsLoLHEdyw\u003D\u003D().XAxis = dynWmoFzgH4RlWB0lB;
   }
 

@@ -2,7 +2,7 @@
 
 //namespace StockSharp.Xaml.Charting;
 
-//internal interface IScichartSurfaceVM
+//internal interface IDrawingSurfaceVM
 //{
 //    string Title
 //    {
@@ -36,7 +36,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public interface IScichartSurfaceVM
+    public interface IDrawingSurfaceVM
     {
         double Height
         {

@@ -39,7 +39,7 @@ public sealed class \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0nF
   }
 
   [SpecialName]
-  public override int \u0023\u003DzlpVGw6E\u003D()
+  public override int Count()
   {
     return this.\u0023\u003DzXfO9DgaVRj7B.\u0023\u003DzUbuaVJkUy0ct();
   }

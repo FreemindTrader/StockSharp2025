@@ -8,7 +8,7 @@ using System.Collections;
 using System.Diagnostics;
 
 #nullable disable
-public struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
+public struct AxisParams
 {
   
   public bool \u0023\u003DztJAA1uMf9_P8;
@@ -47,11 +47,11 @@ public struct \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY
 
   public override bool Equals(object _param1)
   {
-    return _param1 != null && !(_param1.GetType() != typeof (\u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY)) && this.\u0023\u003DzhxbsSqM\u003D((\u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY) _param1);
+    return _param1 != null && !(_param1.GetType() != typeof (AxisParams)) && this.\u0023\u003DzhxbsSqM\u003D((AxisParams) _param1);
   }
 
   public bool \u0023\u003DzhxbsSqM\u003D(
-    \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY _param1)
+    AxisParams _param1)
   {
     return _param1.\u0023\u003DzdTxNrgQ\u003D.Equals(this.\u0023\u003DzdTxNrgQ\u003D) && _param1.\u0023\u003DzBeOlCgb3wUDW.Equals(this.\u0023\u003DzBeOlCgb3wUDW) && _param1.\u0023\u003Dzk0u64hpXv585.Equals(this.\u0023\u003Dzk0u64hpXv585) && _param1.\u0023\u003DzJqKipxOjoBSS.Equals(this.\u0023\u003DzJqKipxOjoBSS) && _param1.\u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D.Equals(this.\u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D) && object.Equals((object) _param1.\u0023\u003DznUzlqIN9ReXL, (object) this.\u0023\u003DznUzlqIN9ReXL) && _param1.\u0023\u003Dz_jNjf7U\u003D.Equals(this.\u0023\u003Dz_jNjf7U\u003D) && _param1.\u0023\u003DztJAA1uMf9_P8.Equals(this.\u0023\u003DztJAA1uMf9_P8) && object.Equals((object) _param1.\u0023\u003Dz9jZG_9RUfbqZ, (object) this.\u0023\u003Dz9jZG_9RUfbqZ) && object.Equals((object) _param1.\u0023\u003DzToxB29CkMiO6, (object) this.\u0023\u003DzToxB29CkMiO6) && _param1.\u0023\u003Dz_WzdhI8nAiba.Equals(this.\u0023\u003Dz_WzdhI8nAiba) && _param1.\u0023\u003DzormciIUBnCr2.Equals(this.\u0023\u003DzormciIUBnCr2) && _param1.\u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D.Equals(this.\u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D) && _param1.\u0023\u003DzYlmrR5WNSPuW.Equals(this.\u0023\u003DzYlmrR5WNSPuW) && _param1.\u0023\u003DzFA18Bsxthn7B.Equals(this.\u0023\u003DzFA18Bsxthn7B);
   }

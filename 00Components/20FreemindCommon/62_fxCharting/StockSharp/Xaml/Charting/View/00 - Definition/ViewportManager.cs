@@ -59,7 +59,7 @@ public sealed class ViewportManager : ViewportManagerBase
         }
 
         var service          = Services.GetService<ISciChartSurface>( );
-        var ultraChartPaneVM = ( IScichartSurfaceVM )( ( FrameworkElement )service ).DataContext;
+        var ultraChartPaneVM = ( IDrawingSurfaceVM )( ( FrameworkElement )service ).DataContext;
         var yAxisAnnotation  = service.Annotations.Where( i => i.YAxis == yAxis ).ToArray( );
 
         if ( yAxisAnnotation.Length == 0 )

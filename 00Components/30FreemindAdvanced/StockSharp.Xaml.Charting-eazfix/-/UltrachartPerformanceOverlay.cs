@@ -186,7 +186,7 @@ public sealed class UltrachartPerformanceOverlay :
     CompositionTarget.Rendering -= new EventHandler(this.\u0023\u003DzzYypnyJA76yR);
     CompositionTarget.Rendering += new EventHandler(this.\u0023\u003DzzYypnyJA76yR);
     EventHandler<EventArgs> eventHandler = new EventHandler<EventArgs>(this.\u0023\u003DzAYDiRNgmrWdYtBKmdijQiGQ\u003D);
-    elwvdvgwnmJ5AjuaEjd.\u0023\u003DzKPHSi1vgK\u0024Fx(eventHandler);
+    elwvdvgwnmJ5AjuaEjd.Rendered(eventHandler);
   }
 
   private void \u0023\u003DzAYDiRNgmrWdYtBKmdijQiGQ\u003D(object _param1, EventArgs _param2)
@@ -195,7 +195,7 @@ public sealed class UltrachartPerformanceOverlay :
     this.\u0023\u003Dz7DSowRM8YI8lUCePfEYzKln_4DSk = (double) this.\u0023\u003DzWewHyEvM_sOk.ElapsedMilliseconds;
     this.UltrachartFpsSeries.Append(this.UltrachartFpsSeries.Count == 0 ? 0.0 : (double) (int) (this.UltrachartFpsSeries.XValues.Last<double>() + 1.0), num);
     this.UltrachartFps = this.UltrachartFpsSeries.YValues.Sum() / (double) this.UltrachartFpsSeries.Count;
-    this.TotalPointCount = this.TargetSurface.get_RenderableSeries().Sum<IRenderableSeries>(UltrachartPerformanceOverlay.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D ?? (UltrachartPerformanceOverlay.SomeClass34343383.\u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D = new Func<IRenderableSeries, int>(UltrachartPerformanceOverlay.SomeClass34343383.SomeMethond0343.\u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D)));
+    this.TotalPointCount = this.TargetSurface.get_RenderableSeries().Sum<IRenderableSeries>(UltrachartPerformanceOverlay.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_ ?? (UltrachartPerformanceOverlay.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_ = new Func<IRenderableSeries, int>(UltrachartPerformanceOverlay.SomeClass34343383.SomeMethond0343.\u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D)));
   }
 
   private void \u0023\u003DzzYypnyJA76yR(object _param1, EventArgs _param2)
@@ -212,7 +212,7 @@ public sealed class UltrachartPerformanceOverlay :
   private sealed class SomeClass34343383
   {
     public static readonly UltrachartPerformanceOverlay.SomeClass34343383 SomeMethond0343 = new UltrachartPerformanceOverlay.SomeClass34343383();
-    public static Func<IRenderableSeries, int> \u0023\u003DzoANln2qVkbS_vrdROw\u003D\u003D;
+    public static Func<IRenderableSeries, int> _Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_;
 
     public int \u0023\u003DzElyHXfPhEvYEiDkhXXnNS27lyPhdoMOxZwPR79c\u003D(
       IRenderableSeries _param1)

@@ -61,9 +61,9 @@ public sealed class PolarYAxis :
 
   public override double GetOffsetForLabels() => 0.0;
 
-  public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
+  public override AxisParams GetAxisParams()
   {
-    \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY vcA0rHxkV5W8VrNvy = base.\u0023\u003Dz0RktzzbyC\u002468() with
+    AxisParams vcA0rHxkV5W8VrNvy = base.GetAxisParams() with
     {
       \u0023\u003DzWaaoT4e35MUnXIdKsg\u003D\u003D = this.IsPolarAxis
     };

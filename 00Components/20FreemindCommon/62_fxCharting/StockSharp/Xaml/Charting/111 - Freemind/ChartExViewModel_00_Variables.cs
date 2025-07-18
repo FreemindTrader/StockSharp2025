@@ -55,7 +55,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        public IScichartSurfaceVM SurfaceVM
+        public IDrawingSurfaceVM SurfaceVM
         {
             get
             {

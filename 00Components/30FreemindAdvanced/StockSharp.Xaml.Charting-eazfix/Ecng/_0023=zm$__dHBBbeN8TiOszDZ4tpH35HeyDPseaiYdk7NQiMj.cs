@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 
 #nullable disable
-public class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk : 
+public class NumericTickProvider : 
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<double>
 {
   public override double[] \u0023\u003Dz65PoZl8ZJBOc(
@@ -17,13 +17,13 @@ public class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
     return this.\u0023\u003Dz65PoZl8ZJBOc((IRange<double>) _param1.VisibleRange.AsDoubleRange(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.MinorDelta.ToDouble(), _param1.MajorDelta.ToDouble()));
   }
 
-  public override double[] \u0023\u003Dzctqa9kMCtfQQ(
+  public override double[] GetMajorTicks(
     IAxisParams _param1)
   {
-    return this.\u0023\u003Dzctqa9kMCtfQQ((IRange<double>) _param1.VisibleRange.AsDoubleRange(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.MinorDelta.ToDouble(), _param1.MajorDelta.ToDouble()));
+    return this.GetMajorTicks((IRange<double>) _param1.VisibleRange.AsDoubleRange(), (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double>) new \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D(_param1.MinorDelta.ToDouble(), _param1.MajorDelta.ToDouble()));
   }
 
-  public double[] \u0023\u003Dzctqa9kMCtfQQ(
+  public double[] GetMajorTicks(
     IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
@@ -59,10 +59,10 @@ public class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
     IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
-    return this.\u0023\u003DzyPl0NtN\u0024cLlA(_param1, _param2.\u0023\u003Dzgq30Jn5PclK8(), _param2.\u0023\u003Dzgq30Jn5PclK8());
+    return this.GetTicksWithinRange(_param1, _param2.\u0023\u003Dzgq30Jn5PclK8(), _param2.\u0023\u003Dzgq30Jn5PclK8());
   }
 
-  private double[] \u0023\u003DzyPl0NtN\u0024cLlA(
+  private double[] GetTicksWithinRange(
     IRange<double> _param1,
     double _param2,
     double _param3)
@@ -96,6 +96,6 @@ public class \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk :
     IRange<double> _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<double> _param2)
   {
-    return this.\u0023\u003DzyPl0NtN\u0024cLlA(_param1, _param2.\u0023\u003DzZ85DqsktXJL3(), _param2.\u0023\u003Dzgq30Jn5PclK8());
+    return this.GetTicksWithinRange(_param1, _param2.\u0023\u003DzZ85DqsktXJL3(), _param2.\u0023\u003Dzgq30Jn5PclK8());
   }
 }

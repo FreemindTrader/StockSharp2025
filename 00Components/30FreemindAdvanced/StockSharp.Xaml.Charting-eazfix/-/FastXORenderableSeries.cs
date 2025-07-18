@@ -44,7 +44,7 @@ public sealed class FastXORenderableSeries :
     bool flag1 = _param2.\u0023\u003DzDoU1CJhSUWFV();
     IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     double xoBoxSize = this.XOBoxSize;
-    int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
+    int num1 = ftrixUnpTllY1PkTyq.Count();
     if (num1 == 1 || xoBoxSize <= 0.0)
       return;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();

@@ -12,7 +12,7 @@ using System.Windows;
 
 #nullable disable
 public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8 : 
-  dje_zX3N6Q9TLRHQ6K6VPWM4NP8NG2M44BK7RCDU397R9MRFV9SQ7FUGGE_ejd,
+  NumericAxis,
   IDrawable,
   \u0023\u003Dz3arZou\u0024KE51WuqbncgcGPrnCKeTj4UlchcD8Tmjze8uJG3v1qUA6q9M\u003D,
   IAxisParams,
@@ -26,7 +26,7 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L81
 
   public \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L813isRbgur3b1bKA73O8()
   {
-    this.LabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22mOTs6M1Rc5MHAxGSwybk_pTjg\u003D\u003D();
+    this.LabelProvider = (CategoryDateTimeAxisLabelProvider) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlOg8AZz2RC1cZ1hYdlZ22mOTs6M1Rc5MHAxGSwybk_pTjg\u003D\u003D();
     this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_3Sui7NwtBg1zT9cdY4yX());
   }
 
@@ -56,9 +56,9 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L81
 
   public override bool IsLogarithmicAxis => true;
 
-  public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
+  public override AxisParams GetAxisParams()
   {
-    return base.\u0023\u003Dz0RktzzbyC\u002468() with
+    return base.GetAxisParams() with
     {
       \u0023\u003Dzh2T5GvjINwPwgFALsCLUJis\u003D = true,
       \u0023\u003DzY9K_6JLtXDZUY_yhDkngupc\u003D = this.LogarithmicBase
@@ -78,11 +78,11 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrNHxk0FFK6Qy3UD\u0024n9L81
     return (\u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWu7vteBmpkBQwFYGp0VhHiJ5hoI4CA\u003D\u003D) entNgBmir7icAkU1t0;
   }
 
-  protected override TickCoordinates \u0023\u003DzyPl0NtN\u0024cLlA()
+  protected override TickCoordinates GetTicksWithinRange()
   {
     if (this.TickProvider is \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_3Sui7NwtBg1zT9cdY4yX tickProvider)
       tickProvider.\u0023\u003DzY2pNM8i3KOHB8USXquggYrI\u003D(this.LogarithmicBase);
-    return base.\u0023\u003DzyPl0NtN\u0024cLlA();
+    return base.GetTicksWithinRange();
   }
 
   public override IRange \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()

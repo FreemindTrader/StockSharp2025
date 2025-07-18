@@ -266,7 +266,7 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
       throw new NotSupportedException("vertical charts not supported");
     if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzTlJPop1Rus3dbxPf\u0024iJeyAQ\u003D() || this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzTlJPop1Rus3dbxPf\u0024iJeyAQ\u003D())
       throw new NotSupportedException("flipped axes not supported");
-    if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D() < 1 || !(this.DataSeries is TransactionDataSeries))
+    if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().Count() < 1 || !(this.DataSeries is TransactionDataSeries))
       return;
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
@@ -335,10 +335,10 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
     \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     int num1 = (int) xkzemsMs5tGkouk5w1.GetDataValue(_param1.X);
     double num2 = xkzemsMs5tGkouk5w2.GetDataValue(_param1.Y);
-    if (num1 < 0 || num1 >= dataSeries.Count || e5TcobCgwh7srNhlw.\u0023\u003DzlpVGw6E\u003D() <= 0)
+    if (num1 < 0 || num1 >= dataSeries.Count || e5TcobCgwh7srNhlw.Count() <= 0)
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     int index = num1 - (int) e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI()[0].\u0023\u003Dz2_4KSTY\u003D();
-    if (index < 0 || index >= e5TcobCgwh7srNhlw.\u0023\u003DzlpVGw6E\u003D())
+    if (index < 0 || index >= e5TcobCgwh7srNhlw.Count())
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     ref \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D local = ref e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI()[index];
     ChartDrawData.\u0023\u003DzU3TaXFs\u003D zU3TaXfs = local.\u0023\u003Dz2TNMZ47XeEe8()?.\u0023\u003DziY1yn8o8LADVXLk8uw\u003D\u003D(num2, _param2);

@@ -34,7 +34,7 @@ public static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
     _param1.SetValue(AxisCanvas.\u0023\u003DzLd8ENL0vP3HT, (object) double.NaN);
     if (_param0.IsHorizontalAxis)
     {
-      DependencyProperty dependencyProperty = _param0.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Bottom ? AxisCanvas.\u0023\u003DzZpWLYz8\u003D : AxisCanvas.\u0023\u003DzasJeVgQ\u003D;
+      DependencyProperty dependencyProperty = _param0.get_AxisAlignment() == ChartAxisAlignment.Bottom ? AxisCanvas.\u0023\u003DzZpWLYz8\u003D : AxisCanvas.\u0023\u003DzasJeVgQ\u003D;
       if (_param1.ActualHeight >= _param0.Height)
         dependencyProperty = dependencyProperty == AxisCanvas.\u0023\u003DzZpWLYz8\u003D ? AxisCanvas.\u0023\u003DzasJeVgQ\u003D : AxisCanvas.\u0023\u003DzZpWLYz8\u003D;
       _param1.SetValue(dependencyProperty, (object) 0.0);
@@ -56,7 +56,7 @@ public static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQprUvdQdqJil5tuCw3k\u003D
     }
     else
     {
-      DependencyProperty dependencyProperty = _param0.get_AxisAlignment() == dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd.Right ? AxisCanvas.\u0023\u003DztX3bWaM\u003D : AxisCanvas.\u0023\u003DzQLHMxl4\u003D;
+      DependencyProperty dependencyProperty = _param0.get_AxisAlignment() == ChartAxisAlignment.Right ? AxisCanvas.\u0023\u003DztX3bWaM\u003D : AxisCanvas.\u0023\u003DzQLHMxl4\u003D;
       if (_param1.ActualWidth >= _param0.ActualWidth)
         dependencyProperty = dependencyProperty == AxisCanvas.\u0023\u003DztX3bWaM\u003D ? AxisCanvas.\u0023\u003DzQLHMxl4\u003D : AxisCanvas.\u0023\u003DztX3bWaM\u003D;
       _param1.SetValue(dependencyProperty, (object) 0.0);

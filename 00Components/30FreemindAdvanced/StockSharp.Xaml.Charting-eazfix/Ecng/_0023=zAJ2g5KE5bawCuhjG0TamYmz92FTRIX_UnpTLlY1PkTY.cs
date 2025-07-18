@@ -14,7 +14,7 @@ public interface IPointSeries
 
   \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSvLP\u0024zDbYxtEhpMKleCtJGtGqo7ZPw\u003D\u003D<double> \u0023\u003DzPqsSI6C5MOOb();
 
-  int \u0023\u003DzlpVGw6E\u003D();
+  int Count();
 
   [IndexerName("#=zMRIb09I=")]
   \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1] { get; }

@@ -86,7 +86,7 @@ public abstract class SciChartSurfaceBase :
 
   [CompilerGenerated]
   [SpecialName]
-  public void \u0023\u003DzKPHSi1vgK\u0024Fx(EventHandler<EventArgs> _param1)
+  public void Rendered(EventHandler<EventArgs> _param1)
   {
     EventHandler<EventArgs> eventHandler = this.\u0023\u003DzcyGdlF8\u003D;
     EventHandler<EventArgs> comparand;

@@ -19,11 +19,11 @@ public interface IRenderSurface :
   void \u0023\u003DzvM8pYfLF8h8E(
     EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> _param1);
 
-  void \u0023\u003DzKPHSi1vgK\u0024Fx(
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> _param1);
+  void Rendered(
+    EventHandler<RenderedEventArgs> _param1);
 
   void \u0023\u003DzrRRdxqQwy\u0024OJ(
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> _param1);
+    EventHandler<RenderedEventArgs> _param1);
 
   bool \u0023\u003Dzn2tbOrs4ILOI();
 

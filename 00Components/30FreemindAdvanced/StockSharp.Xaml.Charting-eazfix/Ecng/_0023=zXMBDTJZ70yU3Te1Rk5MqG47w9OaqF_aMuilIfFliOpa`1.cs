@@ -11,7 +11,7 @@ public interface \u0023\u003DzXMBDTJZ70yU3Te1Rk5MqG47w9OaqF_aMuilIfFliOpay<T> :
   ITickProvider
   where T : IComparable
 {
-  T[] \u0023\u003Dzctqa9kMCtfQQ(
+  T[] GetMajorTicks(
     IAxisParams _param1);
 
   T[] \u0023\u003Dz65PoZl8ZJBOc(

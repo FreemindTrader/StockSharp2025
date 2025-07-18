@@ -345,7 +345,7 @@ label_11:
           bool flag1 = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dzyv\u0024EfaBUnbgQ(size, num24.GetDecimalLength());
           double? nullable11 = new double?();
           double num25 = 0.0;
-          foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source2).Where<KeyValuePair<double, CandlePriceLevel>>(kvt89B1lUeA7EdfukJs.\u0023\u003DzoD2HtVGZvKav ?? (kvt89B1lUeA7EdfukJs.\u0023\u003DzoD2HtVGZvKav = new Func<KeyValuePair<double, CandlePriceLevel>, bool>(kvt89B1lUeA7EdfukJs.\u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D))))
+          foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source2).Where<KeyValuePair<double, CandlePriceLevel>>(kvt89B1lUeA7EdfukJs.Func_ChartActiveOrdersElementVM_0938 ?? (kvt89B1lUeA7EdfukJs.Func_ChartActiveOrdersElementVM_0938 = new Func<KeyValuePair<double, CandlePriceLevel>, bool>(kvt89B1lUeA7EdfukJs.\u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D))))
           {
             double num26 = key;
             CandlePriceLevel candlePriceLevel2 = candlePriceLevel1;
@@ -434,7 +434,7 @@ label_11:
   {
     public double \u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D;
     public double \u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D;
-    public Func<KeyValuePair<double, CandlePriceLevel>, bool> \u0023\u003DzoD2HtVGZvKav;
+    public Func<KeyValuePair<double, CandlePriceLevel>, bool> Func_ChartActiveOrdersElementVM_0938;
 
     public bool \u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D(
       KeyValuePair<double, CandlePriceLevel> _param1)

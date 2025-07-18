@@ -510,13 +510,13 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     public void \u0023\u003Dzk_1CgJv47CJNqo8WAA\u003D\u003D(
       IAxis _param1)
     {
-      this.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D.Add(_param1.Id, _param1.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+      this.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D.Add(_param1.Id, _param1.GetCurrentCoordinateCalculator());
     }
 
     public void \u0023\u003DzpCJ3SPiIlRwAd0naiA\u003D\u003D(
       IAxis _param1)
     {
-      this.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D.Add(_param1.Id, _param1.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+      this.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D.Add(_param1.Id, _param1.GetCurrentCoordinateCalculator());
     }
   }
 

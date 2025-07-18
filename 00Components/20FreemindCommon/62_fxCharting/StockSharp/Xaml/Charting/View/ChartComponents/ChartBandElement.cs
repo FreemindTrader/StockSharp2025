@@ -111,7 +111,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM _param1 )
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM _param1 )
     {
         // BUG: need to Decode ScichartSurfaceMVVM.cs first
 

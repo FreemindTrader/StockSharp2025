@@ -119,10 +119,10 @@ public sealed class SciChartGroup :
     if (this.\u0023\u003DzBexXE3VONLO6 == null)
       return;
     if (_param1 != null)
-      this.\u0023\u003DzPYYDHvoZo80S(_param1.Cast<IScichartSurfaceVM>());
+      this.\u0023\u003DzPYYDHvoZo80S(_param1.Cast<IDrawingSurfaceVM>());
     if (_param2 == null)
       return;
-    this.\u0023\u003Dzj8GFjnf5ACg2(_param2.Cast<IScichartSurfaceVM>());
+    this.\u0023\u003Dzj8GFjnf5ACg2(_param2.Cast<IDrawingSurfaceVM>());
   }
 
   protected override void OnItemsChanged(NotifyCollectionChangedEventArgs _param1)
@@ -133,10 +133,10 @@ public sealed class SciChartGroup :
     switch (_param1.Action)
     {
       case NotifyCollectionChangedAction.Add:
-        this.\u0023\u003Dzj8GFjnf5ACg2(_param1.NewItems.Cast<IScichartSurfaceVM>());
+        this.\u0023\u003Dzj8GFjnf5ACg2(_param1.NewItems.Cast<IDrawingSurfaceVM>());
         break;
       case NotifyCollectionChangedAction.Remove:
-        this.\u0023\u003DzPYYDHvoZo80S(_param1.OldItems.Cast<IScichartSurfaceVM>());
+        this.\u0023\u003DzPYYDHvoZo80S(_param1.OldItems.Cast<IDrawingSurfaceVM>());
         break;
       case NotifyCollectionChangedAction.Reset:
         this.\u0023\u003DzleRWWIS9Sb_X();
@@ -164,13 +164,13 @@ public sealed class SciChartGroup :
   }
 
   private void \u0023\u003DzPYYDHvoZo80S(
-    IEnumerable<IScichartSurfaceVM> _param1)
+    IEnumerable<IDrawingSurfaceVM> _param1)
   {
-    _param1.\u0023\u003Dz30RSSSygABj_<IScichartSurfaceVM>(new Action<IScichartSurfaceVM>(this.\u0023\u003DzLngL5eSRzHKM7HW4zMEg1WQ\u003D));
+    _param1.\u0023\u003Dz30RSSSygABj_<IDrawingSurfaceVM>(new Action<IDrawingSurfaceVM>(this.\u0023\u003DzLngL5eSRzHKM7HW4zMEg1WQ\u003D));
   }
 
   private \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D \u0023\u003Dz7IDM9DY\u003D(
-    IScichartSurfaceVM _param1)
+    IDrawingSurfaceVM _param1)
   {
     \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D abYiNis93iXoWaCiA = this.\u0023\u003Dzg0gWX4E\u003D.FirstOrDefault<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D>(new Func<\u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D, bool>(new SciChartGroup.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D()
     {
@@ -229,19 +229,19 @@ public sealed class SciChartGroup :
   }
 
   private void \u0023\u003Dzj8GFjnf5ACg2(
-    IEnumerable<IScichartSurfaceVM> _param1)
+    IEnumerable<IDrawingSurfaceVM> _param1)
   {
-    if (this.\u0023\u003DzBexXE3VONLO6.Content == null && _param1.Any<IScichartSurfaceVM>())
+    if (this.\u0023\u003DzBexXE3VONLO6.Content == null && _param1.Any<IDrawingSurfaceVM>())
     {
-      this.\u0023\u003DzllXC_uTwjSwD(_param1.First<IScichartSurfaceVM>());
-      _param1.Skip<IScichartSurfaceVM>(1).\u0023\u003Dz30RSSSygABj_<IScichartSurfaceVM>(new Action<IScichartSurfaceVM>(this.\u0023\u003Dzvq\u0024O7vc\u003D));
+      this.\u0023\u003DzllXC_uTwjSwD(_param1.First<IDrawingSurfaceVM>());
+      _param1.Skip<IDrawingSurfaceVM>(1).\u0023\u003Dz30RSSSygABj_<IDrawingSurfaceVM>(new Action<IDrawingSurfaceVM>(this.\u0023\u003Dzvq\u0024O7vc\u003D));
     }
     else
-      _param1.\u0023\u003Dz30RSSSygABj_<IScichartSurfaceVM>(new Action<IScichartSurfaceVM>(this.\u0023\u003Dzvq\u0024O7vc\u003D));
+      _param1.\u0023\u003Dz30RSSSygABj_<IDrawingSurfaceVM>(new Action<IDrawingSurfaceVM>(this.\u0023\u003Dzvq\u0024O7vc\u003D));
   }
 
   private void \u0023\u003DzllXC_uTwjSwD(
-    IScichartSurfaceVM _param1)
+    IDrawingSurfaceVM _param1)
   {
     FrameworkElement frameworkElement = this.\u0023\u003DzAy0v9i5A19lM();
     \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D abYiNis93iXoWaCiA1 = new \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D();
@@ -255,7 +255,7 @@ public sealed class SciChartGroup :
   }
 
   private void \u0023\u003Dzvq\u0024O7vc\u003D(
-    IScichartSurfaceVM _param1)
+    IDrawingSurfaceVM _param1)
   {
     SciChartGroup.\u0023\u003DzbQEIVhBRscvmjvQLdNZzKp4\u003D brscvmjvQldNzzKp4 = new SciChartGroup.\u0023\u003DzbQEIVhBRscvmjvQLdNZzKp4\u003D();
     brscvmjvQldNzzKp4._variableSome3535 = this;
@@ -302,7 +302,7 @@ public sealed class SciChartGroup :
   }
 
   public void \u0023\u003DzjSk6Jvc\u003D(
-    IScichartSurfaceVM _param1)
+    IDrawingSurfaceVM _param1)
   {
     \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D abYiNis93iXoWaCiA = this.\u0023\u003Dz7IDM9DY\u003D(_param1);
     if (abYiNis93iXoWaCiA == null)
@@ -469,7 +469,7 @@ public sealed class SciChartGroup :
       return;
     SciChartGroup.\u0023\u003DzenwCc\u0024sVGsge.Add(key, _param1);
     SciChartGroup.\u0023\u003Dz3dE3KTgP\u0024pXw(_param0);
-    _param0.\u0023\u003DzKPHSi1vgK\u0024Fx(SciChartGroup.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 ?? (SciChartGroup.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 = new EventHandler<EventArgs>(SciChartGroup.\u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D)));
+    _param0.Rendered(SciChartGroup.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 ?? (SciChartGroup.\u0023\u003Dzj2IY6aE\u003D.\u0023\u003DzYYR_vB10pB8hREkqsGlfVqT3uHU4 = new EventHandler<EventArgs>(SciChartGroup.\u0023\u003Dzgpj0vvz6kQmYv5labCkwdSo\u003D)));
   }
 
   private static void \u0023\u003DzC641\u0024PpiHUo22N9TFU19b5A7dw9m(
@@ -560,7 +560,7 @@ public sealed class SciChartGroup :
   }
 
   private void \u0023\u003DzLngL5eSRzHKM7HW4zMEg1WQ\u003D(
-    IScichartSurfaceVM _param1)
+    IDrawingSurfaceVM _param1)
   {
     this.\u0023\u003Dz7IDM9DY\u003D(_param1);
   }
@@ -729,13 +729,13 @@ public sealed class SciChartGroup :
   private sealed class \u0023\u003Dzf1B6wwNJbrqhpNKVkrNPKgU\u003D
   {
     public AxisAlignment \u0023\u003Dz0V69zGwQUFh\u0024;
-    public Func<AxisBase, bool> \u0023\u003DzoD2HtVGZvKav;
+    public Func<AxisBase, bool> Func_ChartActiveOrdersElementVM_0938;
 
     public IEnumerable<AxisBase> \u0023\u003DzGjtqUzQMvdrNrjgx7OasttW1sq2c(
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyakKyozf37YUHg\u003D\u003D _param1)
     {
       AxisCollection yaxes = _param1.\u0023\u003DzUSgr9afrgN_J81TFBOEZdy4\u003D().get_YAxes();
-      return yaxes == null ? (IEnumerable<AxisBase>) null : yaxes.OfType<AxisBase>().Where<AxisBase>(this.\u0023\u003DzoD2HtVGZvKav ?? (this.\u0023\u003DzoD2HtVGZvKav = new Func<AxisBase, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
+      return yaxes == null ? (IEnumerable<AxisBase>) null : yaxes.OfType<AxisBase>().Where<AxisBase>(this.Func_ChartActiveOrdersElementVM_0938 ?? (this.Func_ChartActiveOrdersElementVM_0938 = new Func<AxisBase, bool>(this.\u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA)));
     }
 
     public bool \u0023\u003DzOaW1WOaSuiY3z\u0024u5DGB4v5mpnjoA(
@@ -775,7 +775,7 @@ public sealed class SciChartGroup :
 
   private sealed class \u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D
   {
-    public IScichartSurfaceVM _someChartElement;
+    public IDrawingSurfaceVM _someChartElement;
 
     public bool \u0023\u003Dz_0lW5QtpqHwetfa5Xg\u003D\u003D(
       \u0023\u003DzzyimtvyB5d3orEuABYi\u0024nis93i\u0024xoWACiA\u003D\u003D _param1)

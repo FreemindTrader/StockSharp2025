@@ -31,7 +31,7 @@ public sealed class \u0023\u003DzKasBY8yFp0kHGchcdspopNuEz657XY3Et8L1BAmkUV5h : 
     IAxis usedAxis = this.\u0023\u003DzIqrOB76fU0aO.GetUsedAxis();
     if (usedAxis == null)
       return (object) null;
-    if (usedAxis is \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe6IW1TrHf1OjeIxI4VnnySGI && usedAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0)
+    if (usedAxis is \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe6IW1TrHf1OjeIxI4VnnySGI && usedAxis.GetCurrentCoordinateCalculator() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
     {
       object obj;
       switch (_param1)

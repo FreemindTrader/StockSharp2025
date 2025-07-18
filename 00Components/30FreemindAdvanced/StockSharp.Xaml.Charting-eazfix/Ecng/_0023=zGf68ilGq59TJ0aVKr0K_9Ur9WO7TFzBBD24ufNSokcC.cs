@@ -46,14 +46,14 @@ public sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZm
   protected override void Clear()
   {
     this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D?.\u0023\u003DziWBXfUI\u003D(this);
-    this.ScichartSurfaceMVVM.\u0023\u003DzBCuJKIIaVAUt();
+    this.ScichartSurfaceMVVM.Refresh();
   }
 
   protected override void UpdateUi()
   {
     lock (this.\u0023\u003DzcU\u0024Li0iEvziI)
       this.\u0023\u003DzcU\u0024Li0iEvziI.Clear();
-    this.ScichartSurfaceMVVM.\u0023\u003DzBCuJKIIaVAUt();
+    this.ScichartSurfaceMVVM.Refresh();
   }
 
   protected override void RootElementPropertyChanged(
@@ -63,7 +63,7 @@ public sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZm
     base.RootElementPropertyChanged(_param1, _param2);
     if (!(_param2 == "UpColor") && !(_param2 == "DownColor") && !(_param2 == "IsVisible"))
       return;
-    this.ScichartSurfaceMVVM.\u0023\u003DzBCuJKIIaVAUt();
+    this.ScichartSurfaceMVVM.Refresh();
   }
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
@@ -101,7 +101,7 @@ public sealed class \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZm
       }
     }
     if (zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1ZKXBqs\u003D)
-      this.ScichartSurfaceMVVM.\u0023\u003DzBCuJKIIaVAUt();
+      this.ScichartSurfaceMVVM.Refresh();
     return zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1ZKXBqs\u003D;
   }
 

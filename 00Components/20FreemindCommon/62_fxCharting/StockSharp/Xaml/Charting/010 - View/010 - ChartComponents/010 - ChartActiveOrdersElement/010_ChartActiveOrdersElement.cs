@@ -250,7 +250,7 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
     //    return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new ChartActiveOrdersElementVM( this );
     //}
 
-    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IScichartSurfaceVM viewModel )
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
     {
         return _baseViewModel = new ChartActiveOrdersElementVM( this );
     }

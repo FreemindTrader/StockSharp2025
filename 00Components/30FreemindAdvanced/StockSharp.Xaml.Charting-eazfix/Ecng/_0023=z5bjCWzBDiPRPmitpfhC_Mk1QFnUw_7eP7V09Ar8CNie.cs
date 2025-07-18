@@ -28,6 +28,6 @@ public sealed class \u0023\u003Dz5bjCWzBDiPRPmitpfhC_Mk1QFnUw_7eP7V09Ar8CNie\u00
 
   public override DataTemplate SelectTemplate(object _param1, DependencyObject _param2)
   {
-    return !(_param1 as \u0023\u003DzGf68ilGq59TJ0aVKr0K_9c1X8_XLOwuwCkANZ8F3lvgpooqqVw\u003D\u003D is \u0023\u003DzkNYFXojT3SDc_K8aE\u0024Ajg285baMQh1LqkdKbY6smnsRH\u0024nQalw\u003D\u003D) ? base.SelectTemplate(_param1, _param2) : this.\u0023\u003DzZHuuQzDpL8K\u00246lVt6w\u003D\u003D();
+    return !(_param1 as ITickLabelViewModel is \u0023\u003DzkNYFXojT3SDc_K8aE\u0024Ajg285baMQh1LqkdKbY6smnsRH\u0024nQalw\u003D\u003D) ? base.SelectTemplate(_param1, _param2) : this.\u0023\u003DzZHuuQzDpL8K\u00246lVt6w\u003D\u003D();
   }
 }

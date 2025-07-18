@@ -450,7 +450,7 @@ public class AnnotationBaseEx : AnnotationBase
 
 //    protected virtual void OnAxisAlignmentChanged(
 //      IAxis axis,
-//      dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd oldAlignment )
+//      ChartAxisAlignment oldAlignment )
 //    {
 //    }
 
@@ -752,7 +752,7 @@ public class AnnotationBaseEx : AnnotationBase
 //        if ( axis == null )
 //            throw new ArgumentNullException( nameof( axis ) );
 //        XyDirection ks34Z259A4NengcEjd = axis.IsHorizontalAxis ? XyDirection.XDirection : XyDirection.YDirection;
-//        return CoordinateMode == AnnotationCoordinateMode.Relative || CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == XyDirection.XDirection || CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == XyDirection.YDirection ? FromRelativeCoordinate( coord, axis ) : ( !( axis.GetCurrentCoordinateCalculator() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0) ? axis.GetDataValue( coord ) : ( IComparable ) ( int ) q9i0MXI7Qb9c1V6c0.GetDataValue( coord ));
+//        return CoordinateMode == AnnotationCoordinateMode.Relative || CoordinateMode == AnnotationCoordinateMode.RelativeX && ks34Z259A4NengcEjd == XyDirection.XDirection || CoordinateMode == AnnotationCoordinateMode.RelativeY && ks34Z259A4NengcEjd == XyDirection.YDirection ? FromRelativeCoordinate( coord, axis ) : ( !( axis.GetCurrentCoordinateCalculator() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0) ? axis.GetDataValue( coord ) : ( IComparable ) ( int ) q9i0MXI7Qb9c1V6c0.GetDataValue( coord ));
 //    }
 
 //    protected virtual IComparable FromRelativeCoordinate(
@@ -799,12 +799,12 @@ public class AnnotationBaseEx : AnnotationBase
 //            return double.NaN;
 //        if ( CoordinateMode == AnnotationCoordinateMode.Relative || CoordinateMode == AnnotationCoordinateMode.RelativeX && direction == XyDirection.XDirection || CoordinateMode == AnnotationCoordinateMode.RelativeY && direction == XyDirection.YDirection )
 //            return dataValue.ToDouble() * canvasMeasurement;
-//        return coordCalc.\u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t() && dataValue is DateTime ? GetCategoryCoordinate( dataValue, coordCalc as \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D) : coordCalc.\u0023\u003DzhL6gsJw\u003D( dataValue.ToDouble() );
+//        return coordCalc.\u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t() && dataValue is DateTime ? GetCategoryCoordinate( dataValue, coordCalc as ICategoryCoordinateCalculator) : coordCalc.\u0023\u003DzhL6gsJw\u003D( dataValue.ToDouble() );
 //    }
 
 //    private double GetCategoryCoordinate(
 //      IComparable dataValue,
-//      \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D categoryCalc)
+//      ICategoryCoordinateCalculator categoryCalc)
 //    {
 //        int num1 = categoryCalc.\u0023\u003DzFk6sufr\u0024co4e( ( DateTime ) dataValue, (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 0);
 //        if ( num1 != -1 )

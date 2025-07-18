@@ -162,7 +162,7 @@ public class RulerAnnotation : AnnotationBase
   private void UpdateData()
   {
     this._needToUpdate = false;
-    if (!(this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() is \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D q9i0MXI7Qb9c1V6c0))
+    if (!(this.XAxis.GetCurrentCoordinateCalculator() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0))
       return;
     int num1;
     switch (this.X1)
@@ -227,7 +227,7 @@ public class RulerAnnotation : AnnotationBase
 
   public override bool IsPointWithinBounds(Point point)
   {
-    AnnotationCoordinates coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+    AnnotationCoordinates coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.GetCurrentCoordinateCalculator(), this.YAxis.GetCurrentCoordinateCalculator());
     return new Rect(new Point(coordinates.\u0023\u003DzS2_K6sVvd5IY, coordinates.\u0023\u003Dz2J4l3QUGwZHE), new Point(coordinates.\u0023\u003Dz6aJoeqoqAzym, coordinates.\u0023\u003DzWp13vlQiZCJc)).Contains(point);
   }
 

@@ -239,8 +239,8 @@ public class ActiveOrderAnnotation : AnnotationBase
     double num2 = num1 > 0 ? Math.Min(1.0, (position.Y - canvas.ActualHeight) / canvas.ActualHeight) : Math.Min(1.0, -position.Y / canvas.ActualHeight);
     double num3 = (double) num1 * (0.3 + num2 * 1.7);
     double num4 = canvas.ActualHeight * num3 * this._scrollTimer.Interval.TotalMilliseconds / 1000.0;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D();
+    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis?.GetCurrentCoordinateCalculator();
+    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.GetCurrentCoordinateCalculator();
     AnnotationCoordinates coordinates1 = this.GetCoordinates(canvas, xCalc, yCalc);
     if (this.YDragStep > 0.0)
     {
@@ -255,7 +255,7 @@ public class ActiveOrderAnnotation : AnnotationBase
     {
       this._totalScrollOffset += num4;
       yaxis.\u0023\u003DzquLnA5Y\u003D(num4, ClipMode.None);
-      AnnotationCoordinates coordinates2 = this.GetCoordinates(canvas, this.XAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis?.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+      AnnotationCoordinates coordinates2 = this.GetCoordinates(canvas, this.XAxis?.GetCurrentCoordinateCalculator(), this.YAxis?.GetCurrentCoordinateCalculator());
       Point point = new Point();
       point.X = coordinates2.\u0023\u003DzS2_K6sVvd5IY;
       point.Y = num1 > 0 ? canvas.ActualHeight - 1.0 : 0.0;
@@ -282,7 +282,7 @@ public class ActiveOrderAnnotation : AnnotationBase
     if (this.IsDraggingByUser && !this.IsCoordinateValid(coord, canvas.ActualHeight))
     {
       if (yaxis.get_AutoRange() == AutoRange.Always)
-        ((DependencyObject) yaxis).SetCurrentValue(AxisBase.\u0023\u003DzKm2_RDWENeyO, (object) AutoRange.Once);
+        ((DependencyObject) yaxis).SetCurrentValue(AxisBase.AutoRangeProperty, (object) AutoRange.Once);
       if (!this._isOutOfBounds)
       {
         this._isOutOfBounds = true;

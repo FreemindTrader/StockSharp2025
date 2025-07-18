@@ -31,9 +31,9 @@ public sealed class PolarXAxis :
     this.\u0023\u003DzMUpWftuaeZ8o().SizeChanged += new SizeChangedEventHandler(this.\u0023\u003Dz0uUIXFWQeRl24snRJn9H6i0\u003D);
   }
 
-  public override \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw3_fwmcVcA0rHXkV5W8VrNVY \u0023\u003Dz0RktzzbyC\u002468()
+  public override AxisParams GetAxisParams()
   {
-    return base.\u0023\u003Dz0RktzzbyC\u002468() with
+    return base.GetAxisParams() with
     {
       \u0023\u003DzWaaoT4e35MUnXIdKsg\u003D\u003D = this.IsPolarAxis
     };

@@ -12,10 +12,10 @@ using System.Linq;
 public abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u0024cPBp2g91_YdMug\u003D\u003D : 
   \u0023\u003DzbcX\u0024ot\u0024Zhy6wUdB9J7NC32XliaaE3r6bFuapa3pO8HOc<IComparable>
 {
-  public override IComparable[] \u0023\u003Dzctqa9kMCtfQQ(
+  public override IComparable[] GetMajorTicks(
     IAxisParams _param1)
   {
-    return this.\u0023\u003Dzctqa9kMCtfQQ(_param1.VisibleRange, (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan>) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(_param1.MinorDelta.\u0023\u003Dzto51K8pl8UAh(), _param1.MajorDelta.\u0023\u003Dzto51K8pl8UAh()));
+    return this.GetMajorTicks(_param1.VisibleRange, (\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan>) new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(_param1.MinorDelta.\u0023\u003Dzto51K8pl8UAh(), _param1.MajorDelta.\u0023\u003Dzto51K8pl8UAh()));
   }
 
   public override IComparable[] \u0023\u003Dz65PoZl8ZJBOc(
@@ -31,7 +31,7 @@ public abstract class \u0023\u003Dz2zU2vmiOzxGfUBTaur1A_kZtb7YQc\u0024kEo5r\u002
 
   protected abstract double \u0023\u003Dz3spHJE8\u003D(IComparable _param1);
 
-  private IComparable[] \u0023\u003Dzctqa9kMCtfQQ(
+  private IComparable[] GetMajorTicks(
     IRange _param1,
     \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDLl9dU6QA5lGfoNJvig\u003D<TimeSpan> _param2)
   {

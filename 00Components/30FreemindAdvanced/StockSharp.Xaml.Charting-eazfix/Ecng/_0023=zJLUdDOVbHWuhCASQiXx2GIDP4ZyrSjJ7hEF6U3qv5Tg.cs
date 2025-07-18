@@ -26,7 +26,7 @@ public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : 
     this.\u0023\u003DzvjWtwj8\u003D(_param1);
   }
 
-  public Type \u0023\u003DzOdcnf0c\u003D() => this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
+  public Type GetAxisType() => this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
 
   public void \u0023\u003DzvjWtwj8\u003D(Type _param1)
   {
@@ -42,7 +42,7 @@ public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : 
 
   public override object ProvideValue(IServiceProvider _param1)
   {
-    if (this.\u0023\u003DzOdcnf0c\u003D() == (Type) null)
+    if (this.GetAxisType() == (Type) null)
     {
       if (string.IsNullOrWhiteSpace(this.\u0023\u003Dz1YkdysghbcyI()))
         throw new InvalidOperationException("No TypeName or Type specified.");
@@ -50,6 +50,6 @@ public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : 
         return DependencyProperty.UnsetValue;
       this.\u0023\u003DzvjWtwj8\u003D(service.Resolve(this.\u0023\u003Dz1YkdysghbcyI()));
     }
-    return (object) this.\u0023\u003DzOdcnf0c\u003D();
+    return (object) this.GetAxisType();
   }
 }

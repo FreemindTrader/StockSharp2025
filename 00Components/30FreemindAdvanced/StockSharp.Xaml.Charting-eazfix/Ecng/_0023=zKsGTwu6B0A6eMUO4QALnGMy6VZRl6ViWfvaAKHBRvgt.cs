@@ -33,9 +33,9 @@ public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX :
   }
 
   [SpecialName]
-  public override int \u0023\u003DzlpVGw6E\u003D()
+  public override int Count()
   {
-    return this.\u0023\u003DzA2V_HFN716My.\u0023\u003DzlpVGw6E\u003D();
+    return this.\u0023\u003DzA2V_HFN716My.Count();
   }
 
   [IndexerName("#=zMRIb09I=")]
@@ -49,7 +49,7 @@ public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX :
 
   public override DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
-    int num1 = this.\u0023\u003DzlpVGw6E\u003D();
+    int num1 = this.Count();
     double num2 = double.MaxValue;
     double num3 = double.MinValue;
     for (int index = 0; index < num1; ++index)
@@ -60,7 +60,7 @@ public sealed class \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX :
       {
         num2 = num2 < d2 ? num2 : d2;
         num3 = num3 > d1 ? num3 : d1;
-        num1 = this.\u0023\u003DzgSwHutwLyn9P.\u0023\u003DzlpVGw6E\u003D();
+        num1 = this.\u0023\u003DzgSwHutwLyn9P.Count();
       }
     }
     return new DoubleRange(num2, num3);

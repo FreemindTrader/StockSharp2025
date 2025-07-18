@@ -71,7 +71,7 @@ public sealed class \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUs\u0024JSMgoXEdmnE5TCobCGw
   }
 
   [SpecialName]
-  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003DzYw05nwk\u003D.Length;
+  public int Count() => this.\u0023\u003DzYw05nwk\u003D.Length;
 
   [IndexerName("#=zMRIb09I=")]
   public \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1]

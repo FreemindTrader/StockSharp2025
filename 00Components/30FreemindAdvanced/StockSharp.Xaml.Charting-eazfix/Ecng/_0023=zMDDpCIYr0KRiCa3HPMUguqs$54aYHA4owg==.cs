@@ -5,7 +5,7 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public abstract class \u0023\u003DzMDDpCIYr0KRiCa3HPMUguqs\u002454aYHA4owg\u003D\u003D
+public abstract class ProviderBase
 {
   private IAxis \u0023\u003Dzf\u0024ulexAe_9gW;
 
@@ -20,7 +20,7 @@ public abstract class \u0023\u003DzMDDpCIYr0KRiCa3HPMUguqs\u002454aYHA4owg\u003D
     this.\u0023\u003Dzf\u0024ulexAe_9gW = _param1;
   }
 
-  public virtual void \u0023\u003DzWzUaFxw\u003D(
+  public virtual void Init(
     IAxis _param1)
   {
     this.\u0023\u003DzkF76BMTQOROh(_param1);

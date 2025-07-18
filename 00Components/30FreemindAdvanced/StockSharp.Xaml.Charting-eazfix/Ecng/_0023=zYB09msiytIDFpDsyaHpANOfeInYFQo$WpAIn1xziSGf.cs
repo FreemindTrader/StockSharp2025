@@ -29,7 +29,7 @@ public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xziSG
   public static TickCoordinates \u0023\u003DzU4j4bt2YhYuc(
     IndexRange  _param0,
     \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D _param1,
-    \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D _param2,
+    ICategoryCoordinateCalculator _param2,
     int _param3,
     int _param4)
   {
@@ -59,7 +59,7 @@ public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xziSG
       \u0023\u003DzPauio66DvxKtWOFEEHOV9Y7gefdi\u0024o2zLQ\u003D\u003D wofeehoV9Y7gefdiO2zLq = btHuGwTeshC8eR8A.\u0023\u003DzAnYO0vLQEDGX();
       karIzshiFbv2m5Lhw1 = new \u0023\u003DzPm\u0024a5jxBEPxWxb6PrKARIzshiFBv2m5Lhw\u003D\u003D(TimeSpan.FromTicks((long) wofeehoV9Y7gefdiO2zLq.\u0023\u003DzZ85DqsktXJL3()), TimeSpan.FromTicks((long) wofeehoV9Y7gefdiO2zLq.\u0023\u003Dzgq30Jn5PclK8()));
     }
-    double[] source1 = new \u0023\u003DzJhc8WdlQgSkcniY\u0024669aniHe9rfoFyUgrbTADSj0lBiy().\u0023\u003Dzctqa9kMCtfQQ((IAxisParams) new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4toVZhpii2xTJMHSIVk\u0024BPGa8()
+    double[] source1 = new \u0023\u003DzJhc8WdlQgSkcniY\u0024669aniHe9rfoFyUgrbTADSj0lBiy().GetMajorTicks((IAxisParams) new \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4toVZhpii2xTJMHSIVk\u0024BPGa8()
     {
       VisibleRange = (IRange) _param1,
       MajorDelta = (IComparable) karIzshiFbv2m5Lhw1.\u0023\u003Dzgq30Jn5PclK8(),
@@ -99,7 +99,7 @@ public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xziSG
   {
     public int \u0023\u003DzkDUgQT\u0024Ndmp3;
     public TimeSpan \u0023\u003DzFYPaJVU_4gr3;
-    public \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D \u0023\u003DzK1JYTZ7MRwYt;
+    public ICategoryCoordinateCalculator \u0023\u003DzK1JYTZ7MRwYt;
 
     public bool \u0023\u003DzB\u0024jkKCKwnbgrDLw6QA\u003D\u003D(TimeSpan _param1)
     {

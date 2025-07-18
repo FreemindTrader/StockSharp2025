@@ -50,7 +50,7 @@ public sealed class FastErrorBarsRenderableSeries :
     this.\u0023\u003Dz3XkQnBHZj9ZA = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI(), this.DataPointWidth);
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
     \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5 joeFg518v349a03h5 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() as \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5;
-    int num1 = joeFg518v349a03h5.\u0023\u003DzlpVGw6E\u003D();
+    int num1 = joeFg518v349a03h5.Count();
     int num2 = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), (IPointSeries) joeFg518v349a03h5, this.DataPointWidth);
     using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity, (double[]) null, PenLineCap.Round))
     {

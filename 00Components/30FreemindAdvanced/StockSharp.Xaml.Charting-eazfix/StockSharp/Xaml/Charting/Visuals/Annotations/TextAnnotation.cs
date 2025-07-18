@@ -87,7 +87,7 @@ public class TextAnnotation : AnchorPointAnnotation
 
   private AnnotationCoordinates CoerceValues()
   {
-    AnnotationCoordinates coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D(), this.YAxis.\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D());
+    AnnotationCoordinates coordinates = this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis.GetCurrentCoordinateCalculator(), this.YAxis.GetCurrentCoordinateCalculator());
     double z6aJoeqoqAzym = coordinates.\u0023\u003Dz6aJoeqoqAzym;
     double zWp13vlQiZcJc = coordinates.\u0023\u003DzWp13vlQiZCJc;
     Point point = new Point(coordinates.\u0023\u003DzS2_K6sVvd5IY, coordinates.\u0023\u003Dz2J4l3QUGwZHE);

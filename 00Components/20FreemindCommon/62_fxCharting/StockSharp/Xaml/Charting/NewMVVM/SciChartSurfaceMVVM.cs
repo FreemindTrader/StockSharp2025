@@ -43,7 +43,7 @@ using SciChart.Charting;
 
 namespace StockSharp.Xaml.Charting;
 
-public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IScichartSurfaceVM, IDisposable
+public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfaceVM, IDisposable
 {
     private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel> _componentsCache = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>();
     private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>> _chartUIRSeries = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>();

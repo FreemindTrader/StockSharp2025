@@ -12,40 +12,40 @@ using System.Diagnostics;
 public sealed class \u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D : EventArgs
 {
   
-  private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz8Toh3hY0dPESLVzrgimLohY\u003D;
+  private ChartAxisAlignment \u0023\u003Dz8Toh3hY0dPESLVzrgimLohY\u003D;
   
-  private dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003DzGJfclzdUC6c5eKMlDA\u003D\u003D;
+  private ChartAxisAlignment \u0023\u003DzGJfclzdUC6c5eKMlDA\u003D\u003D;
   
   private string \u0023\u003DzmjSHvTFV1\u0024jB8ZYlfw\u003D\u003D;
 
   public \u0023\u003Dzro0Io1hfSw7LlH634iIk6OhlZAht_WgAqXxl1bw\u003D(
     string _param1,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param2,
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param3)
+    ChartAxisAlignment _param2,
+    ChartAxisAlignment _param3)
   {
     this.\u0023\u003DzD0z7S\u0024dFzs0W(_param2);
     this.\u0023\u003Dz9MCd6vrkGHiX(_param3);
     this.\u0023\u003Dzj_5NP6oaalMM(_param1);
   }
 
-  public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003Dz4LPnYX_iGIbT()
+  public ChartAxisAlignment \u0023\u003Dz4LPnYX_iGIbT()
   {
     return this.\u0023\u003Dz8Toh3hY0dPESLVzrgimLohY\u003D;
   }
 
   private void \u0023\u003DzD0z7S\u0024dFzs0W(
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param1)
+    ChartAxisAlignment _param1)
   {
     this.\u0023\u003Dz8Toh3hY0dPESLVzrgimLohY\u003D = _param1;
   }
 
-  public dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd \u0023\u003DzCNuGxz6\u0024wjoy()
+  public ChartAxisAlignment \u0023\u003DzCNuGxz6\u0024wjoy()
   {
     return this.\u0023\u003DzGJfclzdUC6c5eKMlDA\u003D\u003D;
   }
 
   private void \u0023\u003Dz9MCd6vrkGHiX(
-    dje_zCT38HR56LBNAEYCND4R6F7KK29QLC68GPV3JWM42DEMYDMPA2K68Q_ejd _param1)
+    ChartAxisAlignment _param1)
   {
     this.\u0023\u003DzGJfclzdUC6c5eKMlDA\u003D\u003D = _param1;
   }

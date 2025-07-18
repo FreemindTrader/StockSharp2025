@@ -44,7 +44,7 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 		get => this.ChartViewModel.ChartComponent;
 	}
 
-	public IScichartSurfaceVM ScichartSurfaceMVVM
+	public IDrawingSurfaceVM ScichartSurfaceMVVM
 	{
 		get
 		{

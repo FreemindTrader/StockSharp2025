@@ -282,7 +282,7 @@ namespace StockSharp.Xaml.Charting
 
         private void ExecuteClosePaneCommand( IChildPane pane )
         {
-            var sciMvvm = ( ( IScichartSurfaceVM )pane );
+            var sciMvvm = ( ( IDrawingSurfaceVM )pane );
 
             var areas = sciMvvm.Chart.ChartAreas;
             var chartArea = areas.FirstOrDefault( a => a.ViewModel == pane );

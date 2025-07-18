@@ -1038,7 +1038,7 @@ public class SciChartSurface :
     if (_param1.get_AxisAlignment() == AxisAlignment.Default)
     {
       AxisAlignment obj = _param1.\u0023\u003DzFrVmckt\u0024NpG6() ? AxisAlignment.Bottom : AxisAlignment.Right;
-      ((DependencyObject) _param1).SetCurrentValue(AxisBase.\u0023\u003DzfMY988N0StOA, (object) obj);
+      ((DependencyObject) _param1).SetCurrentValue(AxisBase.TextFormattingProperty, (object) obj);
     }
     else
       this.\u0023\u003DzU8nRfCfIU\u0024K_(_param1, _param1.get_AxisAlignment(), _param1.get_IsCenterAxis());

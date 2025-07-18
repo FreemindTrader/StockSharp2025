@@ -24,7 +24,7 @@ public sealed class TimeSpanAxis :
   public TimeSpanAxis()
   {
     this.DefaultStyleKey = (object) typeof (TimeSpanAxis);
-    this.DefaultLabelProvider = (\u0023\u003DzkAKUJrbqM7JEiA1NxV8i_U1qeTmG05tjnxhrXf80OTVH) new \u0023\u003DzzsyKnUNUDKjF7rDv70izN0tWzkIzz0JM4yPz3ydodySc();
+    this.DefaultLabelProvider = (ILabelProvider) new \u0023\u003DzzsyKnUNUDKjF7rDv70izN0tWzkIzz0JM4yPz3ydodySc();
     this.SetCurrentValue(AxisBase.\u0023\u003Dz1bLZaITSYGdx, (object) new \u0023\u003DzVZAnYWMfoaQCzNrFMqw3u8VlgKY4UpXGtvXPXNaRp9rB());
   }
 

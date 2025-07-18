@@ -41,7 +41,7 @@ public abstract class RenderSurfaceBase :
   
   private EventHandler<\u0023\u003DzawTMm83sNsuVHdgLsihy4QTJhW0jm4VXhKnou19_nziy> Draw;
   
-  private EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> \u0023\u003DzcyGdlF8\u003D;
+  private EventHandler<RenderedEventArgs> \u0023\u003DzcyGdlF8\u003D;
   
   public static readonly string \u0023\u003Dz8UAGL9e3cOCn = Guid.NewGuid().ToString();
   
@@ -129,15 +129,15 @@ public abstract class RenderSurfaceBase :
 
   [CompilerGenerated]
   [SpecialName]
-  public void \u0023\u003DzKPHSi1vgK\u0024Fx(
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> _param1)
+  public void Rendered(
+    EventHandler<RenderedEventArgs> _param1)
   {
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> eventHandler = this.\u0023\u003DzcyGdlF8\u003D;
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> comparand;
+    EventHandler<RenderedEventArgs> eventHandler = this.\u0023\u003DzcyGdlF8\u003D;
+    EventHandler<RenderedEventArgs> comparand;
     do
     {
       comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr>>(ref this.\u0023\u003DzcyGdlF8\u003D, comparand + _param1, comparand);
+      eventHandler = Interlocked.CompareExchange<EventHandler<RenderedEventArgs>>(ref this.\u0023\u003DzcyGdlF8\u003D, comparand + _param1, comparand);
     }
     while (eventHandler != comparand);
   }
@@ -145,14 +145,14 @@ public abstract class RenderSurfaceBase :
   [CompilerGenerated]
   [SpecialName]
   public void \u0023\u003DzrRRdxqQwy\u0024OJ(
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> _param1)
+    EventHandler<RenderedEventArgs> _param1)
   {
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> eventHandler = this.\u0023\u003DzcyGdlF8\u003D;
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> comparand;
+    EventHandler<RenderedEventArgs> eventHandler = this.\u0023\u003DzcyGdlF8\u003D;
+    EventHandler<RenderedEventArgs> comparand;
     do
     {
       comparand = eventHandler;
-      eventHandler = Interlocked.CompareExchange<EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr>>(ref this.\u0023\u003DzcyGdlF8\u003D, comparand - _param1, comparand);
+      eventHandler = Interlocked.CompareExchange<EventHandler<RenderedEventArgs>>(ref this.\u0023\u003DzcyGdlF8\u003D, comparand - _param1, comparand);
     }
     while (eventHandler != comparand);
   }
@@ -366,10 +366,10 @@ public abstract class RenderSurfaceBase :
 
   protected virtual void UpdateYAxisMarker(double _param1)
   {
-    EventHandler<\u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr> zcyGdlF8 = this.\u0023\u003DzcyGdlF8\u003D;
+    EventHandler<RenderedEventArgs> zcyGdlF8 = this.\u0023\u003DzcyGdlF8\u003D;
     if (zcyGdlF8 == null)
       return;
-    zcyGdlF8((object) this, new \u0023\u003DzuPRmIFUVJkGxyCE55JH19euDoShPRPT3Wvs_KD4jptvr(_param1));
+    zcyGdlF8((object) this, new RenderedEventArgs(_param1));
   }
 
   protected virtual void \u0023\u003DzPqfANn0gaWCSKnTktw\u003D\u003D(

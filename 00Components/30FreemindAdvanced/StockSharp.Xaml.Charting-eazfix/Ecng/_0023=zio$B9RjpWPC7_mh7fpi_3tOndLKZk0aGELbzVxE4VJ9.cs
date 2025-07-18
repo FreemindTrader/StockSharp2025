@@ -7,10 +7,10 @@
 #nullable disable
 public interface ITickProvider
 {
-  void \u0023\u003DzWzUaFxw\u003D(
+  void Init(
     IAxis _param1);
 
-  double[] \u0023\u003Dzctqa9kMCtfQQ(
+  double[] GetMajorTicks(
     IAxisParams _param1);
 
   double[] \u0023\u003Dz65PoZl8ZJBOc(

@@ -232,7 +232,7 @@ public sealed class FastBandRenderableSeries :
       using (IBrush2D xrgcdFbSdWgN9GcT8_2 = _param3.\u0023\u003Dze8WyDhI\u003D(this.BandDownColor, this.Opacity, new bool?()))
       {
         \u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI bxVnSKseFk9GdLpI = (\u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI) this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
-        int num1 = bxVnSKseFk9GdLpI.\u0023\u003DzlpVGw6E\u003D();
+        int num1 = bxVnSKseFk9GdLpI.Count();
         \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param3, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
         foreach (FastBandRenderableSeries.\u0023\u003Dz71mAcyQ\u003D z71mAcyQ in (IEnumerable<FastBandRenderableSeries.\u0023\u003Dz71mAcyQ\u003D>) this.\u0023\u003DzKNuqvbEQzJvP6cmJXg\u003D\u003D(_param3, _param4, bxVnSKseFk9GdLpI.\u0023\u003Dz_\u0024BXHQKXpGkf(), xrgcdFbSdWgN9GcT8_1, bxVnSKseFk9GdLpI.\u0023\u003DzPL7HPIragYCv(), xrgcdFbSdWgN9GcT8_2))
         {
@@ -283,9 +283,9 @@ public sealed class FastBandRenderableSeries :
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param3, "yPointSeries");
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param5, "y1PointSeries");
-    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzsmufvA2pkwpA(_param3.\u0023\u003DzlpVGw6E\u003D(), "yPointSeries", _param5.\u0023\u003DzlpVGw6E\u003D(), "y1PointSeries");
+    \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzsmufvA2pkwpA(_param3.Count(), "yPointSeries", _param5.Count(), "y1PointSeries");
     List<FastBandRenderableSeries.\u0023\u003Dz71mAcyQ\u003D> z71mAcyQList = new List<FastBandRenderableSeries.\u0023\u003Dz71mAcyQ\u003D>();
-    int num1 = _param3.\u0023\u003DzlpVGw6E\u003D();
+    int num1 = _param3.Count();
     List<Point> pointList = new List<Point>(32 /*0x20*/);
     int num2 = 0;
     int num3 = FastBandRenderableSeries.\u0023\u003DzaQ9tpxhMknmu(_param3, _param5, num2, num1);

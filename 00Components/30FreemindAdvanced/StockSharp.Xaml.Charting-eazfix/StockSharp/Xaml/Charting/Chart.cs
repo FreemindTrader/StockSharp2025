@@ -1585,7 +1585,7 @@ public class Chart :
 
     public void \u0023\u003Dqtx1KXraU1keT0uiySlEVOOB5PnDLulwyMJjyjX7rsVjruD1DZyrc16lnN0h2\u0024q6Q()
     {
-      ((ScichartSurfaceMVVM) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).\u0023\u003Dz3p2JBPVHDEUh(this.\u0023\u003Dz6x1I8qQ\u003D);
+      ((ScichartSurfaceMVVM) this.\u0023\u003Dz6x1I8qQ\u003D.DataContext).SetScichartSurface(this.\u0023\u003Dz6x1I8qQ\u003D);
     }
 
     public void \u0023\u003DzvrcTIvo4QYO6VIoIYgtMLK0\u003D(

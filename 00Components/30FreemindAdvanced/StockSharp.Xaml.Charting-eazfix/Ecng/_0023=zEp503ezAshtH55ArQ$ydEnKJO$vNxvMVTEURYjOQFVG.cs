@@ -19,7 +19,7 @@ public sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURY
     \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D.\u0023\u003DzSxTkBL91\u0024nQyhjyA6w\u003D\u003D sxTkBl91NQyhjyA6w = new \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D.\u0023\u003DzSxTkBL91\u0024nQyhjyA6w\u003D\u003D();
     sxTkBl91NQyhjyA6w._variableSome3535 = this;
     TickCoordinates meOmqiz4nIdlTzlok1 = new TickCoordinates(Array.Empty<double>(), Array.Empty<double>(), Array.Empty<float>(), Array.Empty<float>());
-    sxTkBl91NQyhjyA6w.\u0023\u003DzK1JYTZ7MRwYt = this.\u0023\u003DzHZDgUSdfqmkx().\u0023\u003Dz7RSLatA2csE8Xxn\u00246hZKpF8\u003D() as \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D;
+    sxTkBl91NQyhjyA6w.\u0023\u003DzK1JYTZ7MRwYt = this.\u0023\u003DzHZDgUSdfqmkx().GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
     if (sxTkBl91NQyhjyA6w.\u0023\u003DzK1JYTZ7MRwYt != null)
     {
       TickCoordinates meOmqiz4nIdlTzlok2 = base.\u0023\u003DzU4j4bt2YhYuc(_param1, _param2);
@@ -30,7 +30,7 @@ public sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURY
 
   private double \u0023\u003Dz9CDDdsz4i1hw(
     double _param1,
-    \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D _param2)
+    ICategoryCoordinateCalculator _param2)
   {
     int num = (int) Math.Round(_param2.GetDataValue(_param1).ToDouble());
     return _param2.\u0023\u003DzWZQlXHuDrnKc(num).ToDouble();
@@ -39,7 +39,7 @@ public sealed class \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURY
   private sealed class \u0023\u003DzSxTkBL91\u0024nQyhjyA6w\u003D\u003D
   {
     public \u0023\u003DzEp503ezAshtH55ArQ\u0024ydEnKJO\u0024vNxvMVTEURYjOQFVGJMB3rXA\u003D\u003D _variableSome3535;
-    public \u0023\u003Dz5hVyTN88kBn45NAfOxK7MCQZNrLpjKlS2Qc8bb5_oiHXVWVmbJi\u0024\u0024q9i0M\u0024xI7QB9c1V6c0\u003D \u0023\u003DzK1JYTZ7MRwYt;
+    public ICategoryCoordinateCalculator \u0023\u003DzK1JYTZ7MRwYt;
 
     public double \u0023\u003DzB\u0024jkKCKwnbgrDLw6QA\u003D\u003D(float _param1)
     {

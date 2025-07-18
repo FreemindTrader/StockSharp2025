@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 #nullable disable
 public sealed class \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3Bm8RZiwmK4L3EV3D9Q_3Sui7NwtBg1zT9cdY4yX : 
-  \u0023\u003Dzm\u0024__dHBBbeN8TiOszDZ4tpH35HeyDPseaiYdk7NQiMjk
+  NumericTickProvider
 {
   private double \u0023\u003DzCQNtQf8p5cRzMEiHVFCbIW6ZUR\u0024dAulyiA\u003D\u003D;
 

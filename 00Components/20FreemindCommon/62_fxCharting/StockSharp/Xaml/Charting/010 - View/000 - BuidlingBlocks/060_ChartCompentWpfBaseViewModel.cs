@@ -15,6 +15,8 @@ using StockSharp.Charting;
 
 #pragma warning disable CA1416
 
+namespace StockSharp.Xaml.Charting;
+
 /// <summary>
 /// The following class will setup the WFP binding for the following properties
 /// 

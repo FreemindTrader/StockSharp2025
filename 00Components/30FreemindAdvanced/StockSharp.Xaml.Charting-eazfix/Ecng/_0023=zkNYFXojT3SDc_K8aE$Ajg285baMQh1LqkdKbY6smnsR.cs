@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 #nullable disable
 public sealed class \u0023\u003DzkNYFXojT3SDc_K8aE\u0024Ajg285baMQh1LqkdKbY6smnsRH\u0024nQalw\u003D\u003D : 
-  \u0023\u003DzeHqydGt1MYwtwPKPfmmWnLJ77ByVH81gaeQU2i00qjI8QhelTQ\u003D\u003D
+  DefaultTickLabelViewModel
 {
   
   private bool \u0023\u003DzvEWdpLc\u0024gZvh;

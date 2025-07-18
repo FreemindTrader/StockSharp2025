@@ -27,7 +27,7 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
 
     private readonly SynchronizedList<string>   _stackTrace = new SynchronizedList<string>();
     private ChartAxisType                         _xAxisType = ChartAxisType.CategoryDateTime;
-    private IScichartSurfaceVM                     _chartSurfaceVM;
+    private IDrawingSurfaceVM                     _chartSurfaceVM;
     private IChart                                _chart;
     private string                                _title;
     private float                                 _height;
@@ -57,7 +57,7 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
     }
 
 
-    public IScichartSurfaceVM ViewModel
+    public IDrawingSurfaceVM ViewModel
     {
         get
         {
