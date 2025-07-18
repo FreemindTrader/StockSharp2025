@@ -149,7 +149,7 @@ public sealed class FastBubbleRenderableSeries :
     Action<double, double, double, Rect> _param2)
   {
     \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x b9G5KlgWkLJr7a0x = _param1.\u0023\u003DzSKfyjpipx8dI() as \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x;
-    int num1 = b9G5KlgWkLJr7a0x.Count();
+    int num1 = b9G5KlgWkLJr7a0x.\u0023\u003DzlpVGw6E\u003D();
     this.\u0023\u003DztqN4q7SP3Lir = 0.0;
     bool flag = _param1.\u0023\u003DzDoU1CJhSUWFV();
     \u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6 rcCjaxEzD51YrPc6;

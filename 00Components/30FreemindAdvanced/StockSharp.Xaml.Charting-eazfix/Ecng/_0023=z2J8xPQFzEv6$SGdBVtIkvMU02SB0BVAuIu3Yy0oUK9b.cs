@@ -103,7 +103,7 @@ public sealed class \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9
   }
 
   [SpecialName]
-  public int Count() => this.\u0023\u003DzJGH6M80\u003D.Length;
+  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003DzJGH6M80\u003D.Length;
 
   public IEnumerable<double> \u0023\u003DzQJbf5e\u0024oTzuvDw2moQ\u003D\u003D()
   {

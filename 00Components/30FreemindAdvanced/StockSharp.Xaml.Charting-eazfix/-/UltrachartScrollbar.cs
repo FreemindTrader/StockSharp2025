@@ -489,7 +489,7 @@ public sealed class UltrachartScrollbar : Control
     Binding binding = new Binding()
     {
       Source = (object) _param1,
-      Path = new PropertyPath((object) AxisBase.\u0023\u003DzWl3LbWhL1z0D),
+      Path = new PropertyPath((object) AxisBase.VisibleRangeProperty),
       Mode = BindingMode.TwoWay
     };
     this.SetBinding(UltrachartScrollbar.\u0023\u003Dz8z6_NTW32S6R, (BindingBase) binding);

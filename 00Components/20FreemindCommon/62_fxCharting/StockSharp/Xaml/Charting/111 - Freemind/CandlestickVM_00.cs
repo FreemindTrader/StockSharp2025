@@ -421,7 +421,7 @@ namespace StockSharp.Xaml.Charting
         public override void PerformPeriodicalAction( )
         {
             base.PerformPeriodicalAction( );
-            VisbleRangeDp xAxisVisibleRange = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
+            VisibleRangeDpo xAxisVisibleRange = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
 
             if ( xAxisVisibleRange == null )
             {

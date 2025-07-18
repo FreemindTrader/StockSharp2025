@@ -449,7 +449,7 @@ public abstract class BaseRenderableSeries :
 
   protected void \u0023\u003Dzz7UraMUVt1cf<TSeriesPoint>(string _param1) where TSeriesPoint : \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<double>
   {
-    if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() != null && this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().Count() != 0 && !(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(0) is \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<TSeriesPoint>))
+    if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() != null && this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D() != 0 && !(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(0) is \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<TSeriesPoint>))
       throw new InvalidOperationException($"{((object) this).GetType()} is expecting data passed as {typeof (TSeriesPoint)}. Please use dataseries type {_param1}");
   }
 
@@ -495,7 +495,7 @@ public abstract class BaseRenderableSeries :
     IPointSeries _param2,
     double _param3)
   {
-    return this.\u0023\u003Dz6BuO4fnhj6SX(_param1, _param2, (double) _param2.Count(), _param3);
+    return this.\u0023\u003Dz6BuO4fnhj6SX(_param1, _param2, (double) _param2.\u0023\u003DzlpVGw6E\u003D(), _param3);
   }
 
   public int \u0023\u003Dz6BuO4fnhj6SX(
@@ -508,7 +508,7 @@ public abstract class BaseRenderableSeries :
       throw new ArgumentException("WidthFraction should be between 0.0 and 1.0 inclusive", "widthFraction");
     double num = _param1.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? this.\u0023\u003Dz3L36rdwwPqC0.Width : this.\u0023\u003Dz3L36rdwwPqC0.Height;
     if (_param3 > 1.0)
-      num = Math.Abs(_param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(_param2.Count() - 1).\u0023\u003Dz2_4KSTY\u003D()) - _param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(0).\u0023\u003Dz2_4KSTY\u003D())) / (_param3 - 1.0);
+      num = Math.Abs(_param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(_param2.\u0023\u003DzlpVGw6E\u003D() - 1).\u0023\u003Dz2_4KSTY\u003D()) - _param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(0).\u0023\u003Dz2_4KSTY\u003D())) / (_param3 - 1.0);
     return (int) (num * _param4);
   }
 

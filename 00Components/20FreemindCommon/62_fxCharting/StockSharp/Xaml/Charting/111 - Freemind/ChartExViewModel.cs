@@ -346,7 +346,7 @@ namespace StockSharp.Xaml.Charting
 
         public void InitVisibleRangeDP( )
         {
-            VisbleRangeDp.InitRangeDepProperty( this );
+            VisibleRangeDpo.InitRangeDepProperty( this );
         }
 
 

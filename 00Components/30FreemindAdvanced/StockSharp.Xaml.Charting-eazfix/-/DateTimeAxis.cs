@@ -62,13 +62,13 @@ public sealed class DateTimeAxis :
         val1_1 = val1_1 > klqcJ87Zm8UwE3WEjd.Max ? val1_1 : klqcJ87Zm8UwE3WEjd.Max;
       }
     }
-    return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(new DateTime(Math.Min((long) val1_2, DateTime.MaxValue.Ticks)), new DateTime(Math.Max((long) val1_1, DateTime.MinValue.Ticks))).GrowBy(this.GrowBy.Min, this.GrowBy.Max);
+    return (IRange) new DateRange(new DateTime(Math.Min((long) val1_2, DateTime.MaxValue.Ticks)), new DateTime(Math.Max((long) val1_1, DateTime.MinValue.Ticks))).GrowBy(this.GrowBy.Min, this.GrowBy.Max);
   }
 
   public override IRange \u0023\u003DzFwoMKP9juTnt()
   {
     IRange abyLt9clZggmJsWhw = base.\u0023\u003DzFwoMKP9juTnt();
-    return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(abyLt9clZggmJsWhw.Min.\u0023\u003Dzxuo5aY4wjkaI(), abyLt9clZggmJsWhw.Max.\u0023\u003Dzxuo5aY4wjkaI());
+    return (IRange) new DateRange(abyLt9clZggmJsWhw.Min.\u0023\u003Dzxuo5aY4wjkaI(), abyLt9clZggmJsWhw.Max.\u0023\u003Dzxuo5aY4wjkaI());
   }
 
   protected override IRange \u0023\u003DzsB7Y9t30CQ63(
@@ -86,20 +86,20 @@ public sealed class DateTimeAxis :
 
   public override IRange \u0023\u003DzspbjXJnVtbB\u0024()
   {
-    return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D();
+    return (IRange) new DateRange();
   }
 
   public override IRange \u0023\u003Dz8dMR0vhnuqhVVjJNjQ\u003D\u003D()
   {
     DateTime date = DateTime.UtcNow.Date;
-    return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(date.AddDays(-1.0), date.AddDays(1.0));
+    return (IRange) new DateRange(date.AddDays(-1.0), date.AddDays(1.0));
   }
 
   protected override IRange \u0023\u003DzJMGFyjEoHSQY(
     IComparable _param1,
     IComparable _param2)
   {
-    return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(_param1.\u0023\u003Dzxuo5aY4wjkaI(), _param2.\u0023\u003Dzxuo5aY4wjkaI());
+    return (IRange) new DateRange(_param1.\u0023\u003Dzxuo5aY4wjkaI(), _param2.\u0023\u003Dzxuo5aY4wjkaI());
   }
 
   protected override \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWu7vteBmpkBQwFYGp0VhHiJ5hoI4CA\u003D\u003D \u0023\u003Dzgy73vTR0r5jyI3j3hAgwZho\u003D()
@@ -115,7 +115,7 @@ public sealed class DateTimeAxis :
   public override bool \u0023\u003Dz9yvpaTXy3ucx(
     IRange _param1)
   {
-    return _param1 is \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D;
+    return _param1 is DateRange;
   }
 
   protected override List<Type> \u0023\u003DzvwDcRtQA0c4T()

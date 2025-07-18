@@ -9,19 +9,19 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-public sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D : 
+public sealed class DateRange : 
   Range<DateTime>
 {
   
   private static readonly string \u0023\u003Dz_wxyT_Q\u003D = "dd MMM yyyy HH:mm:ss";
 
-  public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D()
+  public DateRange()
   {
     this.Min = DateTime.MaxValue;
     this.Max = DateTime.MaxValue;
   }
 
-  public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(
+  public DateRange(
     DateTime _param1,
     DateTime _param2)
     : base(_param1, _param2)
@@ -32,15 +32,15 @@ public sealed class \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u
   {
     Type type = this.GetType();
     DateTime dateTime = this.Min;
-    string str1 = dateTime.ToString(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D.\u0023\u003Dz_wxyT_Q\u003D);
+    string str1 = dateTime.ToString(DateRange.\u0023\u003Dz_wxyT_Q\u003D);
     dateTime = this.Max;
-    string str2 = dateTime.ToString(\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D.\u0023\u003Dz_wxyT_Q\u003D);
+    string str2 = dateTime.ToString(DateRange.\u0023\u003Dz_wxyT_Q\u003D);
     return $"{type} {{Min={str1}, Max={str2}}}";
   }
 
   public override object Clone()
   {
-    return (object) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(this.Min, this.Max);
+    return (object) new DateRange(this.Min, this.Max);
   }
 
   public override DateTime Diff

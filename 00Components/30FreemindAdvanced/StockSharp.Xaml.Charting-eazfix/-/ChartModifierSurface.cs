@@ -27,14 +27,14 @@ public sealed class ChartModifierSurface :
   
   private readonly Canvas \u0023\u003DzF8_YcFVDbTFB = new Canvas();
   
-  private readonly ObservableCollection<UIElement> _childElements;
+  private readonly ObservableCollection<UIElement> _componentsCache;
   
   public static readonly DependencyProperty \u0023\u003DzPqXZPEJZP3as = DependencyProperty.Register(nameof (ClipToBounds), typeof (bool), typeof (ChartModifierSurface), new PropertyMetadata((object) false, new PropertyChangedCallback(ChartModifierSurface.\u0023\u003DzqcJkhvYEtK_9IQ_Dhw\u003D\u003D)));
 
   public ChartModifierSurface()
   {
-    this._childElements = new ObservableCollection<UIElement>();
-    this._childElements.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003DzPDTy9VNUu6UM);
+    this._componentsCache = new ObservableCollection<UIElement>();
+    this._componentsCache.CollectionChanged += new NotifyCollectionChangedEventHandler(this.\u0023\u003DzPDTy9VNUu6UM);
     this.Content = (object) this.\u0023\u003DzF8_YcFVDbTFB;
     this.HorizontalContentAlignment = HorizontalAlignment.Stretch;
     this.VerticalContentAlignment = VerticalAlignment.Stretch;
@@ -55,7 +55,7 @@ public sealed class ChartModifierSurface :
   [SpecialName]
   public ObservableCollection<UIElement> Children()
   {
-    return this._childElements;
+    return this._componentsCache;
   }
 
   public void Clear() => this.Children().Clear();
@@ -80,7 +80,7 @@ public sealed class ChartModifierSurface :
     if (_param2.Action == NotifyCollectionChangedAction.Reset)
     {
       this.\u0023\u003DzF8_YcFVDbTFB.Children.Clear();
-      this._childElements.\u0023\u003Dz30RSSSygABj_<UIElement>(new Action<UIElement>(this.\u0023\u003DzUOytnwv4WJ5__oZ9iQm4N8k\u003D));
+      this._componentsCache.\u0023\u003Dz30RSSSygABj_<UIElement>(new Action<UIElement>(this.\u0023\u003DzUOytnwv4WJ5__oZ9iQm4N8k\u003D));
     }
     if (_param2.NewItems != null)
       _param2.NewItems.Cast<UIElement>().\u0023\u003Dz30RSSSygABj_<UIElement>(new Action<UIElement>(this.\u0023\u003DzgGK3iO7YQs\u0024JAApqx5sILjM\u003D));

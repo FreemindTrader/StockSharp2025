@@ -253,7 +253,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //{
 //    private readonly ObservableCollection< ChartElementViewModel > _childViewModels = new ObservableCollection< ChartElementViewModel >( );
-//    private readonly DrawableChartElementBaseViewModel[ ] _childElements;
+//    private readonly DrawableChartElementBaseViewModel[ ] _componentsCache;
 //    private double _minFieldWidth;
 //    private readonly IDrawingSurfaceVM _scichartSurfaceVM;
 //    private readonly IChartComponent _iRootElement;
@@ -274,19 +274,19 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //        }
 
 //        _iRootElement = elementXY;
-//        _childElements = childElements.ToArray( );
+//        _componentsCache = childElements.ToArray( );
 
-//        if( _childElements.IsEmpty( ) )
+//        if( _componentsCache.IsEmpty( ) )
 //        {
 //            throw new ArgumentException( "zero child elements" );
 //        }
 
-//        if( _childElements.Length == 1 )
+//        if( _componentsCache.Length == 1 )
 //        {
-//            MapPropertyChangeNotification( _childElements[ 0 ].Element, nameof( Color ), nameof( Color ) );
+//            MapPropertyChangeNotification( _componentsCache[ 0 ].Element, nameof( Color ), nameof( Color ) );
 //        }
 
-//        foreach( DrawableChartElementBaseViewModel childElement in _childElements )
+//        foreach( DrawableChartElementBaseViewModel childElement in _componentsCache )
 //        {
 //            childElement.Init( this );
 //        }
@@ -312,7 +312,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //    {
 //        get
 //        {
-//            return _childElements;
+//            return _componentsCache;
 //        }
 //    }
 
@@ -328,9 +328,9 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //    {
 //        get
 //        {
-//            if( _childElements.Length == 1 )
+//            if( _componentsCache.Length == 1 )
 //            {
-//                return _childElements[ 0 ].Element.Color;
+//                return _componentsCache[ 0 ].Element.Color;
 //            }
 //            return Colors.Transparent;
 //        }
@@ -391,7 +391,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //    {
 //        ChartComponent.Reset( );
 
-//        foreach( DrawableChartElementBaseViewModel child in _childElements )
+//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
 //        {
 //            child.Update( );
 //        }
@@ -399,7 +399,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
 //    public void UpdateChildElementYAxisMarker( )
 //    {
-//        foreach( DrawableChartElementBaseViewModel child in _childElements )
+//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
 //        {
 //            child.UpdateYAxisMarker( );
 //        }
@@ -407,7 +407,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
 //    public void ChildElementPeriodicalAction( )
 //    {
-//        foreach( DrawableChartElementBaseViewModel child in _childElements )
+//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
 //        {
 //            child.PerformPeriodicalAction( );
 //        }
@@ -415,7 +415,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
 //    public void ChildElementUpdateAndClear( )
 //    {
-//        foreach( DrawableChartElementBaseViewModel child in _childElements )
+//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
 //        {
 //            child.GuiUpdateAndClear( );
 //        }

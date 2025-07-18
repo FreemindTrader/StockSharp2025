@@ -211,7 +211,7 @@ public class TransactionDataSeries :
   {
     get
     {
-      return !this._dates.Any<DateTime>() ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(this._dates[0], this._dates[this._dates.Count - 1]).AsDoubleRange();
+      return !this._dates.Any<DateTime>() ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : (IRange) new DateRange(this._dates[0], this._dates[this._dates.Count - 1]).AsDoubleRange();
     }
   }
 

@@ -226,7 +226,7 @@ public class TimeframeSegmentDataSeries :
       DateTime segmentDate = this._segmentDates[0];
       AbstractList<DateTime> segmentDates = this._segmentDates;
       DateTime dateTime = segmentDates[segmentDates.Count - 1];
-      return (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(segmentDate, dateTime).AsDoubleRange();
+      return (IRange) new DateRange(segmentDate, dateTime).AsDoubleRange();
     }
   }
 
@@ -261,7 +261,7 @@ public class TimeframeSegmentDataSeries :
     if (range is IndexRange  g8Oq2rGx6KyfAreq)
       return (IndexRange ) g8Oq2rGx6KyfAreq.Clone();
     IndexRange  indexRange = new IndexRange (-1, -1);
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = !(range is DoubleRange klqcJ87Zm8UwE3WEjd) ? range as \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D : new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(new DateTime((long) klqcJ87Zm8UwE3WEjd.Min), new DateTime((long) klqcJ87Zm8UwE3WEjd.Max));
+    DateRange dx26vpI1xWpwwNqJw = !(range is DoubleRange klqcJ87Zm8UwE3WEjd) ? range as DateRange : new DateRange(new DateTime((long) klqcJ87Zm8UwE3WEjd.Min), new DateTime((long) klqcJ87Zm8UwE3WEjd.Max));
     if (dx26vpI1xWpwwNqJw == null)
     {
       \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("ERROR: SearchDataIndexesOn: unable to convert range type={0}", new object[1]

@@ -28,7 +28,7 @@ public sealed class \u0023\u003DzYB09msiytIDFpDsyaHpANOfeInYFQo\u0024WpAIn1xziSG
 
   public static TickCoordinates \u0023\u003DzU4j4bt2YhYuc(
     IndexRange  _param0,
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D _param1,
+    DateRange _param1,
     ICategoryCoordinateCalculator _param2,
     int _param3,
     int _param4)

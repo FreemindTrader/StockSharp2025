@@ -110,7 +110,7 @@ public sealed class FastBoxPlotRenderableSeries :
     double num1 = 0.0;
     this.\u0023\u003Dzz7UraMUVt1cf<\u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy>("BoxDataSeries");
     \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX rl6ViWfvaAkhbRvgtX = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI() as \u0023\u003DzKsGTwu6B0A6eMUO4QALnGMy6VZRl6ViWfvaAKHBRvgtX;
-    int num2 = rl6ViWfvaAkhbRvgtX.Count();
+    int num2 = rl6ViWfvaAkhbRvgtX.\u0023\u003DzlpVGw6E\u003D();
     this.\u0023\u003DzmZ8\u0024YArgrhlI = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), (IPointSeries) rl6ViWfvaAkhbRvgtX, this.DataPointWidth);
     using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = _param1.\u0023\u003DzL3In9ls\u003D(this.SeriesColor, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity, (double[]) null, PenLineCap.Round))
     {

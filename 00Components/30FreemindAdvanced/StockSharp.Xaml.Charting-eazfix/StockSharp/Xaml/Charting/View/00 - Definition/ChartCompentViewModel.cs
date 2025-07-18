@@ -23,7 +23,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
   #nullable disable
   ObservableCollection<ChartElementViewModel> _childViewModels = new ObservableCollection<ChartElementViewModel>();
 
-    private readonly List<DrawableChartElementBaseViewModel> _childElements = new List<DrawableChartElementBaseViewModel>();
+    private readonly List<DrawableChartElementBaseViewModel> _componentsCache = new List<DrawableChartElementBaseViewModel>();
 
     private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
@@ -70,7 +70,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            return ( IEnumerable<DrawableChartElementBaseViewModel> ) this._childElements;
+            return ( IEnumerable<DrawableChartElementBaseViewModel> ) this._componentsCache;
         }
     }
 
@@ -86,7 +86,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            return this._childElements.Count == 1 ? this._childElements[ 0 ].Element.Color : Colors.Transparent;
+            return this._componentsCache.Count == 1 ? this._componentsCache[ 0 ].Element.Color : Colors.Transparent;
         }
     }
 
@@ -96,11 +96,11 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         if ( CollectionHelper.IsEmpty<DrawableChartElementBaseViewModel>( childElementArray ) )
             throw new ArgumentException( "zero child elements" );
 
-        this._childElements.AddRange( ( IEnumerable<DrawableChartElementBaseViewModel> ) childElementArray );
+        this._componentsCache.AddRange( ( IEnumerable<DrawableChartElementBaseViewModel> ) childElementArray );
         if ( this.IsCandleElement && this.Candles == null )
             this.Candles = childElementArray.OfType<CandlestickUI>().First<CandlestickUI>();
-        if ( this._childElements.Count == 1 )
-            this.MapPropertyChangeNotification( this._childElements[ 0 ].Element, "Color", "Color" );
+        if ( this._componentsCache.Count == 1 )
+            this.MapPropertyChangeNotification( this._componentsCache[ 0 ].Element, "Color", "Color" );
 
         CollectionHelper.ForEach<DrawableChartElementBaseViewModel>( ( IEnumerable<DrawableChartElementBaseViewModel> ) childElementArray, new Action<DrawableChartElementBaseViewModel>( this.OnSomethingMethod0934 ) );
     }
@@ -137,7 +137,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
     {
         this.ChartComponent.Reset();
 
-        foreach ( var child in _childElements )
+        foreach ( var child in _componentsCache )
         {
             child.Reset();
         }
@@ -145,7 +145,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public void UpdateYAxisMarker()
     {
-        foreach ( var child in _childElements )
+        foreach ( var child in _componentsCache )
         {
             child.UpdateYAxisMarker();
         }
@@ -153,7 +153,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public void PerformPeriodicalAction()
     {
-        foreach ( var child in _childElements )
+        foreach ( var child in _componentsCache )
         {
             child.PerformPeriodicalAction();
         }
@@ -161,7 +161,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     public void GuiUpdateAndClear()
     {
-        foreach ( DrawableChartElementBaseViewModel child in _childElements )
+        foreach ( DrawableChartElementBaseViewModel child in _componentsCache )
         {
             child.GuiUpdateAndClear();
         }

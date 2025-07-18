@@ -1,33 +1,37 @@
 ﻿using Ecng.Collections;
+using SciChart.Data.Model;
 using StockSharp.Charting;
+using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows;
 
+namespace StockSharp.Xaml.Charting;
+
 /// <summary>
-/// 
+///
 /// </summary>
 public sealed class VisibleRangeDpo : DependencyObject
 {
     private static readonly Dictionary<(string, string, object), VisibleRangeDpo> _rangePropertyMap = new Dictionary<(string, string, object), VisibleRangeDpo>();
 
-    public static readonly DependencyProperty CategoryDateTimeRangeProperty = DependencyProperty.Register(
-        nameof(CategoryDateTimeRange),
-        typeof(IndexRange),
-        typeof(VisibleRangeDpo),
-        new PropertyMetadata(
-            new PropertyChangedCallback(
-                OnCategoryDateTimeRangePropertyChanged)));
+    public static readonly DependencyProperty CategoryDateTimeRangeProperty 
+        = DependencyProperty.Register(
+                                        nameof(CategoryDateTimeRange),
+                                        typeof(IndexRange),
+                                        typeof(VisibleRangeDpo),
+                                        new PropertyMetadata(new PropertyChangedCallback(OnCategoryDateTimeRangePropertyChanged)));
 
     private IndexRange  _categoryDateTimeRange;
 
-    public static readonly DependencyProperty NumericRangeProperty = DependencyProperty.Register(
-        nameof(NumericRange),
-        typeof(DoubleRange),
-        typeof(VisibleRangeDpo),
-        new PropertyMetadata(new PropertyChangedCallback(OnNumericRangePropertyChanged)));
+    public static readonly DependencyProperty NumericRangeProperty 
+        = DependencyProperty.Register(
+                                        nameof(NumericRange),
+                                        typeof(DoubleRange),
+                                        typeof(VisibleRangeDpo),
+                                        new PropertyMetadata(new PropertyChangedCallback(OnNumericRangePropertyChanged)));
 
     private DoubleRange _numericRange;
 
@@ -37,23 +41,21 @@ public sealed class VisibleRangeDpo : DependencyObject
         typeof(VisibleRangeDpo),
         new PropertyMetadata(new PropertyChangedCallback(OnDateTimeRangePropertyChanged)));
 
-    private static void OnCategoryDateTimeRangePropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    private static void OnCategoryDateTimeRangePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        ( ( VisibleRangeDpo ) d )._categoryDateTimeRange = ( IndexRange ) e.NewValue;
+        ((VisibleRangeDpo) d)._categoryDateTimeRange = (IndexRange) e.NewValue;
     }
 
 
-
-    private static void OnNumericRangePropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    private static void OnNumericRangePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        ( ( VisibleRangeDpo ) d )._numericRange = ( DoubleRange ) e.NewValue;
+        ((VisibleRangeDpo) d)._numericRange = (DoubleRange) e.NewValue;
     }
 
 
-
-    private static void OnDateTimeRangePropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+    private static void OnDateTimeRangePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-        ( ( VisibleRangeDpo ) d )._dateRange = ( DateRange ) e.NewValue;
+        ((VisibleRangeDpo) d)._dateRange = (DateRange) e.NewValue;
     }
 
     private DateRange _dateRange;

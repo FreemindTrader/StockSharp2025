@@ -112,7 +112,7 @@ public sealed class StackedMountainRenderableSeries :
     out IPointSeries _param2)
   {
     IRenderPassData mz4rNexJsSmCjpOm = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D();
-    int num1 = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().Count();
+    int num1 = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D();
     int num2 = this.IsDigitalLine ? num1 * 2 - 1 : num1;
     int num3 = _param1 ? num1 * 2 - 1 : num1;
     int num4 = num2 + num3;

@@ -41,7 +41,7 @@ public abstract class \u0023\u003DzmAi_JN5raoSBYo9w2IEI_5Au6CspSbO6KAfA\u00249ty
   }
 
   [SpecialName]
-  public abstract int Count();
+  public abstract int \u0023\u003DzlpVGw6E\u003D();
 
   [IndexerName("#=zMRIb09I=")]
   public abstract \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1] { get; }

@@ -21,6 +21,6 @@ public sealed class fxTradeChartAxisLabelProvider : LabelProviderBase
         if ( !( this.\u0023\u003DzHZDgUSdfqmkx() is DateTimeAxis y8VrcqY29Qf62Ejd))
       throw new InvalidOperationException( "The DateTimeLabelFormatter is only valid on instances of DateTimeAxis" );
         DateTime dateTime = _param1.\u0023\u003Dzxuo5aY4wjkaI();
-        return ( this.\u0023\u003DzHZDgUSdfqmkx().VisibleRange as \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D).Diff.Ticks > TimeSpan.FromDays( 1.0 ).Ticks ? dateTime.ToString( y8VrcqY29Qf62Ejd.TextFormatting ) : dateTime.ToString( y8VrcqY29Qf62Ejd.SubDayTextFormatting );
+        return ( this.\u0023\u003DzHZDgUSdfqmkx().VisibleRange as DateRange).Diff.Ticks > TimeSpan.FromDays( 1.0 ).Ticks ? dateTime.ToString( y8VrcqY29Qf62Ejd.TextFormatting ) : dateTime.ToString( y8VrcqY29Qf62Ejd.SubDayTextFormatting );
     }
 }

@@ -172,7 +172,7 @@ public abstract class BaseColumnRenderableSeries :
     IRenderPassData _param2)
   {
     IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
-    int num1 = ftrixUnpTllY1PkTyq.Count();
+    int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     double num2 = this.\u0023\u003Dz6bPMsvVWiXoq(ftrixUnpTllY1PkTyq, _param2);
     int num3 = (int) this.\u0023\u003DzySDi0_ve2vLaE3cXlA\u003D\u003D();
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity))
@@ -220,7 +220,7 @@ public abstract class BaseColumnRenderableSeries :
     if (double.IsNaN(_param3))
     {
       int num2 = _param5 + 1;
-      if (num2 < _param1.Count() && !double.IsNaN(_param1.\u0023\u003Dz\u0024CeUvME\u003D(num2).\u0023\u003Dzu7q98_E\u003D()))
+      if (num2 < _param1.\u0023\u003DzlpVGw6E\u003D() && !double.IsNaN(_param1.\u0023\u003Dz\u0024CeUvME\u003D(num2).\u0023\u003Dzu7q98_E\u003D()))
         num1 = (_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(_param1.\u0023\u003Dz\u0024CeUvME\u003D(num2).\u0023\u003Dz2_4KSTY\u003D()) - _param4) * this.DataPointWidth;
     }
     else
@@ -243,7 +243,7 @@ public abstract class BaseColumnRenderableSeries :
     bool flag = _param5.\u0023\u003DzDoU1CJhSUWFV();
     double num1 = this.\u0023\u003DzNfVFwxaLW3jC(_param5);
     \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
-    int length = _param2.Count() * 5;
+    int length = _param2.\u0023\u003DzlpVGw6E\u003D() * 5;
     int num2 = 0;
     if (this.\u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M == null || this.\u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M.Length != length)
       this.\u0023\u003DzXQyRoGqXIpw_Z9_YBkQoqzxx474M = new double[length];

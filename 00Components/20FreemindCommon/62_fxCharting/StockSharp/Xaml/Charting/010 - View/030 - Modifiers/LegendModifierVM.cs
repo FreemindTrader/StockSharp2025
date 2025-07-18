@@ -23,7 +23,7 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     private bool _allowToHide = true;
 
-    private IEnumerable<ChartCompentViewModel> _childElements;
+    private IEnumerable<ChartCompentViewModel> _componentsCache;
 
     private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
@@ -51,10 +51,10 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     public IEnumerable<ChartCompentViewModel> Elements
     {
-        get => this._childElements;
+        get => this._componentsCache;
         set
         {
-            this.SetField<IEnumerable<ChartCompentViewModel>>( ref this._childElements, value, nameof( Elements ) );
+            this.SetField<IEnumerable<ChartCompentViewModel>>( ref this._componentsCache, value, nameof( Elements ) );
         }
     }
 

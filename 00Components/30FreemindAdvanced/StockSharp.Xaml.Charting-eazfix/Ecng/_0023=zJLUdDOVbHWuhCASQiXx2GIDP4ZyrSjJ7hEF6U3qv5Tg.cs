@@ -13,7 +13,7 @@ using System.Windows.Markup;
 public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : MarkupExtension
 {
   
-  private Type \u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
+  private Type _chartAxisType;
   
   private string \u0023\u003DzpTdlR6mowfjqyUqFZA\u003D\u003D;
 
@@ -26,11 +26,11 @@ public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GIDP4ZyrSjJ7hEF6U3qv5Tg2 : 
     this.\u0023\u003DzvjWtwj8\u003D(_param1);
   }
 
-  public Type GetAxisType() => this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
+  public Type GetAxisType() => this._chartAxisType;
 
   public void \u0023\u003DzvjWtwj8\u003D(Type _param1)
   {
-    this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D = _param1;
+    this._chartAxisType = _param1;
   }
 
   public string \u0023\u003Dz1YkdysghbcyI() => this.\u0023\u003DzpTdlR6mowfjqyUqFZA\u003D\u003D;

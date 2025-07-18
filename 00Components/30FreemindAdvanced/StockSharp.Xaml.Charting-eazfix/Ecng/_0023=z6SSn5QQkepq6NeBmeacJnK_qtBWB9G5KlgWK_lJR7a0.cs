@@ -24,9 +24,9 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x :
   }
 
   [SpecialName]
-  public override int Count()
+  public override int \u0023\u003DzlpVGw6E\u003D()
   {
-    return this.\u0023\u003DzA2V_HFN716My.Count();
+    return this.\u0023\u003DzA2V_HFN716My.\u0023\u003DzlpVGw6E\u003D();
   }
 
   public new IPointSeries \u0023\u003Dz_\u0024BXHQKXpGkf()
@@ -50,7 +50,7 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnK_qtBWB9G5KlgWK_lJR7a0x :
 
   public override DoubleRange \u0023\u003DzxNQHuqrEvxH2()
   {
-    int num1 = this.Count();
+    int num1 = this.\u0023\u003DzlpVGw6E\u003D();
     double num2 = double.MaxValue;
     double num3 = double.MinValue;
     for (int index = 0; index < num1; ++index)

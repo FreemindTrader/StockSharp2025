@@ -478,7 +478,7 @@ zu6zyxyyj5lOwEolg( _param1, _param2 );
 
 public void InitRangeDepProperty()
 {
-    VisbleRangeDp.InitRangeDepProperty( ( object ) this );
+    VisibleRangeDpo.InitRangeDepProperty( ( object ) this );
 }
 
 public void \u0023\u003DzzXq5ccDMuPZc( IChartElement _param1 )

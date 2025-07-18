@@ -37,7 +37,7 @@ public static class \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D
     IComparable _param1)
   {
     Type type = _param0.GetType();
-    return !(type == typeof (float)) ? (!(type == typeof (int)) ? (!(type == typeof (long)) ? (!(type == typeof (DateTime)) ? (!(type == typeof (TimeSpan)) ? (IRange) new DoubleRange(_param0.ToDouble(), _param1.ToDouble()) : (IRange) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D((TimeSpan) _param0, (TimeSpan) _param1)) : (IRange) new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D((DateTime) _param0, (DateTime) _param1)) : (IRange) new \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D((long) _param0, (long) _param1)) : (IRange) new \u0023\u003Dz59_koqr2EQdapDcFKycZuFSiStoJv1Yg1g\u003D\u003D((int) _param0, (int) _param1)) : (IRange) new \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw_VCdMZ55IvngQ\u003D\u003D((float) _param0, (float) _param1);
+    return !(type == typeof (float)) ? (!(type == typeof (int)) ? (!(type == typeof (long)) ? (!(type == typeof (DateTime)) ? (!(type == typeof (TimeSpan)) ? (IRange) new DoubleRange(_param0.ToDouble(), _param1.ToDouble()) : (IRange) new \u0023\u003DzAtYWtSRxk8WC\u0024EcJQ7b1L7dHXBxHQWas0w\u003D\u003D((TimeSpan) _param0, (TimeSpan) _param1)) : (IRange) new DateRange((DateTime) _param0, (DateTime) _param1)) : (IRange) new \u0023\u003DzKsGTwu6B0A6eMUO4QALnGBq7U0tKI4St9w\u003D\u003D((long) _param0, (long) _param1)) : (IRange) new \u0023\u003Dz59_koqr2EQdapDcFKycZuFSiStoJv1Yg1g\u003D\u003D((int) _param0, (int) _param1)) : (IRange) new \u0023\u003DzIKGIOuOUyRwFEgUWrfZxw_VCdMZ55IvngQ\u003D\u003D((float) _param0, (float) _param1);
   }
 
   public static IRange \u0023\u003DzLc65\u0024pc\u003D(

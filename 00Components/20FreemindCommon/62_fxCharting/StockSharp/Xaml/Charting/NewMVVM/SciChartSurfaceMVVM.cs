@@ -352,7 +352,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
             return;
         }
 
-        VisbleRangeDp rangeProp = VisbleRangeDp.AddRangeProperty(GetViewModel(), axis.Group, axis.AxisType);
+        VisibleRangeDpo rangeProp = VisibleRangeDpo.AddRangeProperty(GetViewModel(), axis.Group, axis.AxisType);
         _axisIdToGroup[axis.Id] = axis.Group;
 
         axis.PropertyChanged += (s, e) =>
@@ -751,7 +751,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         bandXyZoomModifier.ReceiveHandledEvents = true;
     }
 
-    public VisbleRangeDp GetVisibleRangeDp(string axisId)
+    public VisibleRangeDpo GetVisibleRangeDp(string axisId)
     {
         ChartAxis chartAxis = Area.XAxises.FirstOrDefault(a => a.Id == axisId);
 
@@ -769,7 +769,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
                 "Ecng.Common.StringHelper.Put( LocalizedStrings.Str2071Params, axisId )");
         }
 
-        return VisbleRangeDp.AddRangeProperty(GetViewModel(), group, chartAxis.AxisType);
+        return VisibleRangeDpo.AddRangeProperty(GetViewModel(), group, chartAxis.AxisType);
     }
 
     private void OnShowHiddenAxes()

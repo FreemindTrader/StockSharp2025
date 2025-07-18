@@ -16,14 +16,14 @@ namespace StockSharp.Xaml.Charting;
 public class IndicatorAttribute : Attribute
 {
   
-  private readonly Type \u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
+  private readonly Type _chartAxisType;
 
   public IndicatorAttribute(Type type)
   {
     if (type == (Type) null)
       throw new ArgumentNullException(nameof (type));
-    this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D = TypeHelper.Is<IIndicator>(type, true) ? type : throw new ArgumentException(nameof (type));
+    this._chartAxisType = TypeHelper.Is<IIndicator>(type, true) ? type : throw new ArgumentException(nameof (type));
   }
 
-  public Type Type => this.\u0023\u003DzjIbS_29QSa7sxFGAlg\u003D\u003D;
+  public Type Type => this._chartAxisType;
 }

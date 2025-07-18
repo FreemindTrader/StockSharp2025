@@ -39,7 +39,7 @@ public class TradeChartAxisLabelProvider :
   {
     CategoryDateTimeAxis nu9622VfydaypdeqEjd = (CategoryDateTimeAxis) this.\u0023\u003DzHZDgUSdfqmkx();
     double num1 = nu9622VfydaypdeqEjd.\u0023\u003DzbY7N\u0024Xk2WSr8();
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = nu9622VfydaypdeqEjd.\u0023\u003DzFL7WRclCPBWI((IndexRange ) nu9622VfydaypdeqEjd.VisibleRange);
+    DateRange dx26vpI1xWpwwNqJw = nu9622VfydaypdeqEjd.\u0023\u003DzFL7WRclCPBWI((IndexRange ) nu9622VfydaypdeqEjd.VisibleRange);
     this.\u0023\u003DzTs5gEHtGGnsI = 3;
     if (dx26vpI1xWpwwNqJw != null && dx26vpI1xWpwwNqJw.IsDefined)
     {

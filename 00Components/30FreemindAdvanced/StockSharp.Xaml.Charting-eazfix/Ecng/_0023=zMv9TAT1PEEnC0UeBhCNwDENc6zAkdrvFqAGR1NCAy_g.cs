@@ -54,7 +54,7 @@ public sealed class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DX
     int index1 = this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003DzHlHGfKJZNJsq(_param2, _param3);
     this.\u0023\u003DzPAspEbZEGABL.\u0023\u003DzaTdnGk0\u003D(new RGBA_Bytes((int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1 + 2], (int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1 + 1], (int) this.\u0023\u003Dz_C2GvAoW3_Hr.\u0023\u003Dz9b1_JhA\u003D()[index1]));
     this.\u0023\u003DzkCMzu3TL59D3(_param2, _param3);
-    while (this.\u0023\u003DzR1USoOs\u003D.Count() > 0)
+    while (this.\u0023\u003DzR1USoOs\u003D.\u0023\u003DzlpVGw6E\u003D() > 0)
     {
       \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDENc6zAkdrvFqAGR1NCAy_gP4DXL5o1JwxF0NEF5u2ARvw\u003D\u003D.\u0023\u003DzdbdSPUs\u003D zdbdSpUs = this.\u0023\u003DzR1USoOs\u003D.\u0023\u003DzXHr_BBI\u003D();
       int num1 = zdbdSpUs.\u0023\u003Dzi8jDI4I\u003D - 1;

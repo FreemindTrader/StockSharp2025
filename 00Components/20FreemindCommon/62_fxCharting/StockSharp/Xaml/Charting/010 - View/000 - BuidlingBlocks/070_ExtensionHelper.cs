@@ -26,8 +26,6 @@ using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 using static ExtensionHelper;
 using IChart = StockSharp.Charting.IChart;
 
-namespace StockSharp.Xaml.Charting;
-
 #nullable enable
 public static class AxisBaseHelper
 {
@@ -356,7 +354,7 @@ public static class AxisBaseHelper
 
             IPointSeries ps = this._axisParams.\u0023\u003DznUzlqIN9ReXL;
             IndexRange  indexR = this._axisParams.\u0023\u003DindexR;
-            return ( indexR != null ? ( !indexR.IsDefined ? 1 : 0 ) : 1 ) != 0 || ps == null || ps.Count() == 0 ? base.GetMajorTicks( axisParams ) : this.GetTicksWithinRange( visibleRange, majorDelta ) ?? base.GetMajorTicks( axisParams );
+            return ( indexR != null ? ( !indexR.IsDefined ? 1 : 0 ) : 1 ) != 0 || ps == null || ps.\u0023\u003DzlpVGw6E\u003D() == 0 ? base.GetMajorTicks( axisParams ) : this.GetTicksWithinRange( visibleRange, majorDelta ) ?? base.GetMajorTicks( axisParams );
         }
 
         private int GetDateTimeDifferent( DateTime _param1, DateTime _param2 )

@@ -70,7 +70,7 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN
   }
 
   [SpecialName]
-  public int Count() => this.\u0023\u003Dz91pRWIg\u003D.Count;
+  public int \u0023\u003DzlpVGw6E\u003D() => this.\u0023\u003Dz91pRWIg\u003D.Count;
 
   public void \u0023\u003DzK_5NMsk\u003D()
   {

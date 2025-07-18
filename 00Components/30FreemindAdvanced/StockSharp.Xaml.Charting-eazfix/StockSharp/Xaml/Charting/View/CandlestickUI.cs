@@ -405,7 +405,7 @@ label_4:
   public override void PerformPeriodicalAction()
   {
     base.PerformPeriodicalAction();
-    VisbleRangeDp g72ZksY7iW1Jk3iR = this.ScichartSurfaceMVVM.GetVisibleRangeDp(this.ChartComponentView.XAxisId);
+    VisibleRangeDpo g72ZksY7iW1Jk3iR = this.ScichartSurfaceMVVM.GetVisibleRangeDp(this.ChartComponentView.XAxisId);
     if (g72ZksY7iW1Jk3iR == null)
       return;
     IndexRange  categoryDateTimeRange = g72ZksY7iW1Jk3iR.CategoryDateTimeRange;

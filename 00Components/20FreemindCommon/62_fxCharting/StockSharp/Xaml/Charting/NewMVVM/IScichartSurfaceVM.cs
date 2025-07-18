@@ -91,7 +91,7 @@ namespace StockSharp.Xaml.Charting
 
         void Remove( IChartComponent elementXY );
 
-        VisbleRangeDp GetVisibleRangeDp( string axisId );
+        VisibleRangeDpo GetVisibleRangeDp( string axisId );
 
         bool IsAutoScroll
         {

@@ -263,13 +263,13 @@ public sealed class CategoryDateTimeAxis :
     return _param1 / (double) num;
   }
 
-  public \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D \u0023\u003DzFL7WRclCPBWI(
+  public DateRange \u0023\u003DzFL7WRclCPBWI(
     IndexRange  _param1)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) _param1, "visibleRange");
-    \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D dx26vpI1xWpwwNqJw = (\u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D) null;
+    DateRange dx26vpI1xWpwwNqJw = (DateRange) null;
     if (this.GetCurrentCoordinateCalculator() is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
-      dx26vpI1xWpwwNqJw = new \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D(q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Min).\u0023\u003Dzxuo5aY4wjkaI(), q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Max).\u0023\u003Dzxuo5aY4wjkaI());
+      dx26vpI1xWpwwNqJw = new DateRange(q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Min).\u0023\u003Dzxuo5aY4wjkaI(), q9i0MXI7Qb9c1V6c0.\u0023\u003DzWZQlXHuDrnKc(_param1.Max).\u0023\u003Dzxuo5aY4wjkaI());
     return dx26vpI1xWpwwNqJw;
   }
 

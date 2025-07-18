@@ -13,6 +13,6 @@ public interface \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe6IW1TrHf1OjeIxI4VnnySGI 
   IAxis,
   IHitTestable
 {
-  \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26vpI1xWpwwNQJw\u003D\u003D \u0023\u003DzFL7WRclCPBWI(
+  DateRange \u0023\u003DzFL7WRclCPBWI(
     IndexRange  _param1);
 }

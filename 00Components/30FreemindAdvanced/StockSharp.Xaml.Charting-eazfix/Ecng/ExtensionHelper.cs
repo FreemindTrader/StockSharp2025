@@ -213,7 +213,7 @@ public static class ExtensionHelper
         return base.GetMajorTicks(_param1);
       IPointSeries znUzlqIn9ReXl = this._axisParams.\u0023\u003DznUzlqIN9ReXL;
       IndexRange  zToxB29CkMiO6 = this._axisParams.\u0023\u003DzToxB29CkMiO6;
-      return (zToxB29CkMiO6 != null ? (!zToxB29CkMiO6.IsDefined ? 1 : 0) : 1) != 0 || znUzlqIn9ReXl == null || znUzlqIn9ReXl.Count() == 0 ? base.GetMajorTicks(_param1) : this.GetTicksWithinRange(visibleRange, majorDelta) ?? base.GetMajorTicks(_param1);
+      return (zToxB29CkMiO6 != null ? (!zToxB29CkMiO6.IsDefined ? 1 : 0) : 1) != 0 || znUzlqIn9ReXl == null || znUzlqIn9ReXl.\u0023\u003DzlpVGw6E\u003D() == 0 ? base.GetMajorTicks(_param1) : this.GetTicksWithinRange(visibleRange, majorDelta) ?? base.GetMajorTicks(_param1);
     }
 
     private int GetDateTimeDifferent(DateTime _param1, DateTime _param2)

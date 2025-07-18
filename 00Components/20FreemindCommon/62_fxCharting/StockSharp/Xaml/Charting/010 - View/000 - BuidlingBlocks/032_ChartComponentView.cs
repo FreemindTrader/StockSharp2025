@@ -37,7 +37,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
 
     private readonly SynchronizedSet<string> _extraName = new SynchronizedSet<string>();
 
-    private readonly CachedSynchronizedSet<IChartElement> _childElements = new CachedSynchronizedSet<IChartElement>();
+    private readonly CachedSynchronizedSet<IChartElement> _componentsCache = new CachedSynchronizedSet<IChartElement>();
 
     private IChartArea _chartArea;
 
@@ -208,7 +208,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     [Browsable( false )]
     public IEnumerable<IChartElement> ChildElements
     {
-        get => ( IEnumerable<IChartElement> ) this._childElements.Cache;
+        get => ( IEnumerable<IChartElement> ) this._componentsCache.Cache;
     }
 
 
@@ -238,7 +238,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     {
         if ( element == null )
             throw new ArgumentNullException( nameof( element ) );
-        if ( !( ( SynchronizedSet<IChartElement> ) this._childElements ).TryAdd( element ) )
+        if ( !( ( SynchronizedSet<IChartElement> ) this._componentsCache ).TryAdd( element ) )
             throw new InvalidOperationException( "duplicate element" );
         ( ( IChartComponent ) element ).SetParent( ( IChartElement ) this );
         ( ( IChartComponent ) element ).DontDraw = dontDraw;
@@ -249,7 +249,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     {
         if ( element == null )
             throw new ArgumentNullException( nameof( element ) );
-        if ( !( ( BaseCollection<IChartElement, ISet<IChartElement>> ) this._childElements ).Remove( element ) )
+        if ( !( ( BaseCollection<IChartElement, ISet<IChartElement>> ) this._componentsCache ).Remove( element ) )
             return;
         ( ( IChartComponent ) element ).SetParent( ( IChartElement ) null );
     }
@@ -383,8 +383,8 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         _param1.IsLegend = this.IsLegend;
         _param1.XAxisId = this.XAxisId;
         _param1.YAxisId = this.YAxisId;
-        IChartElement[] cache1 = this._childElements.Cache;
-        IChartElement[] cache2 = _param1._childElements.Cache;
+        IChartElement[] cache1 = this._componentsCache.Cache;
+        IChartElement[] cache2 = _param1._componentsCache.Cache;
         if ( cache1.Length != cache2.Length )
             throw new InvalidOperationException( "unexpected number of clones children" );
         for ( int index = 0 ; index < cache1.Length ; ++index )

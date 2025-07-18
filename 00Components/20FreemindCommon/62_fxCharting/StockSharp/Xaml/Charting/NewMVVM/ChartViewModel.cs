@@ -312,7 +312,7 @@ public sealed partial class ChartViewModel : DependencyObject
 
     public void InitRangeDepProperty( )
     {
-        VisbleRangeDp.InitRangeDepProperty( this );
+        VisibleRangeDpo.InitRangeDepProperty( this );
     }
 
     public void InvokeRemoveElementEvent( StockSharp.Charting.IChartElement element )

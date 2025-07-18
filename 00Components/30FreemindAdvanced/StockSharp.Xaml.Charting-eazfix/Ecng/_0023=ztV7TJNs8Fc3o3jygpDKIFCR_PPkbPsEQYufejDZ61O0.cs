@@ -10,7 +10,7 @@ using System;
 #nullable disable
 public interface \u0023\u003DztV7TJNs8Fc3o3jygpDKIFCR_PPkbPsEQYufejDZ61O06vgNcMQ\u003D\u003D
 {
-  int Count();
+  int \u0023\u003DzlpVGw6E\u003D();
 
   int \u0023\u003Dz8o3wsq506dwJ();
 
