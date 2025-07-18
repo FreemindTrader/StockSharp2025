@@ -40,7 +40,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
     // This is the View of the Chart Component
     private readonly List<DrawableChartComponentBaseViewModel> _chartElementsView = new List<DrawableChartComponentBaseViewModel>();
 
-    private readonly ScichartSurfaceMVVM _drawingSurface;
+    private readonly DrawingSurfaceViewModel _drawingSurface;
 
     private readonly IChartComponent _chartComponent;
 
@@ -50,7 +50,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     private bool _isDisposed;
 
-    public ChartCompentViewModel( ScichartSurfaceMVVM drawingSurface, IChartComponent component )
+    public ChartCompentViewModel( DrawingSurfaceViewModel drawingSurface, IChartComponent component )
     {
         _drawingSurface = drawingSurface ?? throw new ArgumentNullException( "pane" );
         _chartComponent = component ?? throw new ArgumentNullException( "element" );
@@ -59,7 +59,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
         RootChartComponent.PropertyChanged += OnPropertyChanged;
     }
 
-    public ScichartSurfaceMVVM Pane
+    public DrawingSurfaceViewModel Pane
     {
         get => _drawingSurface;
     }

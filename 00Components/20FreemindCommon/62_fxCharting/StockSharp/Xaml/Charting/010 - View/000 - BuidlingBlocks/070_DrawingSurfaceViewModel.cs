@@ -611,50 +611,56 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private void OnTimer( object _param1, EventArgs _param2 )
     {
-        ChartCompentViewModel[] a4VgOpCeDiqsTdzBArray;
-        lock ( ( ( SynchronizedCollection<ChartCompentViewModel, ISet<ChartCompentViewModel>> ) _parentChartViewModelCache ).SyncRoot )
-            a4VgOpCeDiqsTdzBArray = CollectionHelper.CopyAndClear<ChartCompentViewModel>( ( ICollection<ChartCompentViewModel> ) _parentChartViewModelCache );
-        foreach ( ChartCompentViewModel a4VgOpCeDiqsTdzB in a4VgOpCeDiqsTdzBArray )
-            a4VgOpCeDiqsTdzB.PerformPeriodicalAction();
+        ChartCompentViewModel[] vms;
+        lock (  _parentChartViewModelCache.SyncRoot )
+            vms = CollectionHelper.CopyAndClear<ChartCompentViewModel>( _parentChartViewModelCache );
+
+        foreach ( ChartCompentViewModel vm in vms )
+            vm.PerformPeriodicalAction();
     }
 
-    public void Reset( IEnumerable<IChartElement> _param1 )
+    public void Reset( IEnumerable<IChartElement> chartElement )
     {
-        foreach ( IChartComponent ddznyiGmdRlAevOq in _param1 )
+        foreach ( IChartComponent comp in chartElement )
         {
-            ChartCompentViewModel a4VgOpCeDiqsTdzB;
-            if ( \u0023\u003DzKDbpj6zM462r( ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB ))
+            ChartCompentViewModel vm;
+            if ( GetViewModelFromCache( comp, out vm ))
       {
-                ( ( BaseCollection<ChartCompentViewModel, ISet<ChartCompentViewModel>> ) _parentChartViewModelCache ).Add( a4VgOpCeDiqsTdzB );
-                a4VgOpCeDiqsTdzB.Reset();
+                _parentChartViewModelCache.Add( vm );
+                vm.Reset();
             }
         }
     }
 
     private void AssignOrphanedChildElementsWithParent()
     {
-        foreach ( IChartComponent ddznyiGmdRlAevOq in ( ( IEnumerable<KeyValuePair<IChartComponent, ChartCompentViewModel>> ) _componentsCache ).Where<KeyValuePair<IChartComponent, ChartCompentViewModel>>( DrawingSurfaceViewModel.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_bool_ ?? ( DrawingSurfaceViewModel.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_bool_ = new Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel ) ) ).Select<KeyValuePair<IChartComponent, ChartCompentViewModel>, IChartComponent>( DrawingSurfaceViewModel.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_ ?? ( DrawingSurfaceViewModel.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_ = new Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, IChartComponent>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel_033 ) ) ).ToArray<IChartComponent>() )
+        foreach ( var chartComp in ( _componentsCache ).Where(p => p.Value == null ).Select( p => p.Key ).ToArray() )
         {
-            ChartCompentViewModel a4VgOpCeDiqsTdzB = new ChartCompentViewModel(this, ddznyiGmdRlAevOq);
-            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( ddznyiGmdRlAevOq.ChildElements, ( IChartElement ) ddznyiGmdRlAevOq ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( DrawingSurfaceViewModel.SomeClass34343383.Func_IDrawableChartElement_bool_098 ?? ( DrawingSurfaceViewModel.SomeClass34343383.Func_IDrawableChartElement_bool_098 = new Func<IDrawableChartElement, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel_0352 ) ) ).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>( new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>( CreateDrawableChartElementBaseViewModel ) ).Where<DrawableChartElementBaseViewModel>( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel_bool_003 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel_bool_003 = new Func<DrawableChartElementBaseViewModel, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel_4353 ) ) ) );
-            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ ddznyiGmdRlAevOq ] = a4VgOpCeDiqsTdzB;
-            if ( ddznyiGmdRlAevOq.IsLegend )
-                LegendElements.Add( a4VgOpCeDiqsTdzB );
+            ChartCompentViewModel vm = new ChartCompentViewModel(this, chartComp);
+
+            vm.InitializeChildElements( chartComp.ChildElements.Append2( chartComp )
+                                        .OfType<IDrawableChartElement>()
+                                        .Where( e => !e.DontDraw )
+                                        .Select( e => e.CreateViewModel( this ) )
+                                        .Where( e => e != null ));
+
+            
+            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ chartComp ] = vm;
+            if ( chartComp.IsLegend )
+                LegendElements.Add( vm );
         }
-        UpdateSomeUI();
+        CheckForCandles();
     }
 
-    private void UpdateSomeUI()
+    private void CheckForCandles()
     {
-        CandlesCompositeElement = ( ( IEnumerable<KeyValuePair<IChartComponent, ChartCompentViewModel>> ) _componentsCache ).FirstOrDefault<KeyValuePair<IChartComponent, ChartCompentViewModel>>( DrawingSurfaceViewModel.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_ ?? ( DrawingSurfaceViewModel.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_ = new Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_0983 ) ) ).Value;
+        CandlesCompositeElement = _componentsCache.FirstOrDefault( p => p.Key is IChartCandleElement ).Value;
         PaneHasCandles = CandlesCompositeElement != null;
     }
 
-    public bool \u0023\u003DzKDbpj6zM462r(
-      IChartComponent _param1,
-      out ChartCompentViewModel _param2 )
+    public bool GetViewModelFromCache( IChartComponent comp, out ChartCompentViewModel viewModel )
     {
-        return ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).TryGetValue( _param1, ref _param2 );
+        return  _componentsCache.TryGetValue( comp, out viewModel );
     }
 
     public void OnChartAreaElementsAdded( IChartElement _param1 )
@@ -662,27 +668,27 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         IChart chart = Chart;
         if ( chart != null )
             chart.EnsureUIThread();
-        IChartComponent ddznyiGmdRlAevOq = (IChartComponent) _param1;
-        ddznyiGmdRlAevOq.AddAxisesAndEventHandler( Area );
-        if ( ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).ContainsKey( ddznyiGmdRlAevOq ) )
+        IChartComponent chartComp = (IChartComponent) _param1;
+        chartComp.AddAxisesAndEventHandler( Area );
+        if ( ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).ContainsKey( chartComp ) )
             throw new ArgumentException( "duplicate chart element", "element" );
         if ( Chart != null )
         {
-            ChartCompentViewModel a4VgOpCeDiqsTdzB = new ChartCompentViewModel(this, ddznyiGmdRlAevOq);
-            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( ddznyiGmdRlAevOq.ChildElements, ( IChartElement ) ddznyiGmdRlAevOq ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( DrawingSurfaceViewModel.SomeClass34343383.__Func_IDrawableChartElement__bool__903 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_IDrawableChartElement__bool__903 = new Func<IDrawableChartElement, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_0983333 ) ) ).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>( new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>( NewDrawableChartElementBaseViewModel ) ).Where<DrawableChartElementBaseViewModel>( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 = new Func<DrawableChartElementBaseViewModel, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_5498751 ) ) ) );
-            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ ddznyiGmdRlAevOq ] = a4VgOpCeDiqsTdzB;
-            if ( ddznyiGmdRlAevOq.IsLegend )
+            ChartCompentViewModel a4VgOpCeDiqsTdzB = new ChartCompentViewModel(this, chartComp);
+            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( chartComp.ChildElements, ( IChartElement ) chartComp ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( DrawingSurfaceViewModel.SomeClass34343383.__Func_IDrawableChartElement__bool__903 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_IDrawableChartElement__bool__903 = new Func<IDrawableChartElement, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_0983333 ) ) ).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>( new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>( NewDrawableChartElementBaseViewModel ) ).Where<DrawableChartElementBaseViewModel>( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 = new Func<DrawableChartElementBaseViewModel, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_5498751 ) ) ) );
+            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ chartComp ] = a4VgOpCeDiqsTdzB;
+            if ( chartComp.IsLegend )
                 LegendElements.Add( a4VgOpCeDiqsTdzB );
         }
         else
-            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ ddznyiGmdRlAevOq ] = ( ChartCompentViewModel ) null;
-        if ( _modifierGroup != null && ddznyiGmdRlAevOq is IChartCandleElement chartCandleElement )
+            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ chartComp ] = ( ChartCompentViewModel ) null;
+        if ( _modifierGroup != null && chartComp is IChartCandleElement chartCandleElement )
         {
             OnDrawStylePropertyChanged( chartCandleElement );
             chartCandleElement.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
         }
-        UpdateSomeUI();
-        ddznyiGmdRlAevOq.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        CheckForCandles();
+        chartComp.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
     }
 
     public bool OnChartAreaElementsRemoving( IChartElement _param1 )
@@ -690,37 +696,37 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         IChart chart = Chart;
         if ( chart != null )
             chart.EnsureUIThread();
-        IChartComponent ddznyiGmdRlAevOq = (IChartComponent) _param1;
+        IChartComponent chartComp = (IChartComponent) _param1;
         ChartCompentViewModel a4VgOpCeDiqsTdzB;
-        if ( !\u0023\u003DzKDbpj6zM462r( ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB ))
+        if ( !GetViewModelFromCache( chartComp, out a4VgOpCeDiqsTdzB ))
       return false;
-        ddznyiGmdRlAevOq.RemoveAxisesEventHandler();
-        if ( ddznyiGmdRlAevOq is IChartCandleElement chartCandleElement )
+        chartComp.RemoveAxisesEventHandler();
+        if ( chartComp is IChartCandleElement chartCandleElement )
             chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
-        ddznyiGmdRlAevOq.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
-        ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).Remove( ddznyiGmdRlAevOq );
+        chartComp.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).Remove( chartComp );
         if ( a4VgOpCeDiqsTdzB != null )
         {
             a4VgOpCeDiqsTdzB.GuiUpdateAndClear();
             a4VgOpCeDiqsTdzB.Dispose();
             LegendElements.Remove( a4VgOpCeDiqsTdzB );
         }
-        UpdateSomeUI();
+        CheckForCandles();
         return true;
     }
 
     private void OnXYAxisPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
     {
-        IChartComponent ddznyiGmdRlAevOq = (IChartComponent) _param1;
+        IChartComponent chartComp = (IChartComponent) _param1;
         if ( _param2.PropertyName != "XAxisId" && _param2.PropertyName != "YAxisId" )
             return;
         IChart chart = Chart;
         if ( chart != null )
             chart.EnsureUIThread();
         List<IRenderableSeries> koh9jO5RuUcFiAqLcList;
-        if ( _chartUIRSeries.TryGetValue( ddznyiGmdRlAevOq, out koh9jO5RuUcFiAqLcList ) )
+        if ( _chartUIRSeries.TryGetValue( chartComp, out koh9jO5RuUcFiAqLcList ) )
         {
-            if ( ddznyiGmdRlAevOq.TryGetXAxis() != null && ddznyiGmdRlAevOq.TryGetYAxis() != null )
+            if ( chartComp.TryGetXAxis() != null && chartComp.TryGetYAxis() != null )
             {
                 foreach ( IRenderableSeries koh9jO5RuUcFiAqLc in koh9jO5RuUcFiAqLcList )
                 {
@@ -735,9 +741,9 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
             }
         }
         Dictionary<object, IAnnotation> dictionary;
-        if ( !_topChartElmentAnnotationMap.TryGetValue( ddznyiGmdRlAevOq, out dictionary ) )
+        if ( !_topChartElmentAnnotationMap.TryGetValue( chartComp, out dictionary ) )
             return;
-        if ( ddznyiGmdRlAevOq.TryGetXAxis() != null && ddznyiGmdRlAevOq.TryGetYAxis() != null )
+        if ( chartComp.TryGetXAxis() != null && chartComp.TryGetYAxis() != null )
         {
             foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
             {
@@ -1379,9 +1385,9 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         }
 
         public bool public_bool_Method_0983(
-          KeyValuePair<IChartComponent, ChartCompentViewModel> _param1 )
+          KeyValuePair<IChartComponent, ChartCompentViewModel> p )
         {
-            return _param1.Key is IChartCandleElement;
+            return p.Key is IChartCandleElement;
         }
 
         public bool public_bool_Method_0983333(

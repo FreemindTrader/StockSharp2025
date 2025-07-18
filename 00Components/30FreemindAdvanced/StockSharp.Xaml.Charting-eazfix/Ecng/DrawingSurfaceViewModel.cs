@@ -511,7 +511,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         foreach ( IChartComponent ddznyiGmdRlAevOq in _param1 )
         {
             ChartCompentViewModel a4VgOpCeDiqsTdzB;
-            if ( this.\u0023\u003DzKDbpj6zM462r( ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB ))
+            if ( this.GetViewModelFromCache( ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB ))
       {
                 ( ( BaseCollection<ChartCompentViewModel, ISet<ChartCompentViewModel>> ) this._parentChartViewModelCache ).Add( a4VgOpCeDiqsTdzB );
                 a4VgOpCeDiqsTdzB.Reset();
@@ -538,7 +538,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         this.PaneHasCandles = this.CandlesCompositeElement != null;
     }
 
-    public bool \u0023\u003DzKDbpj6zM462r(
+    public bool GetViewModelFromCache(
       IChartComponent _param1,
       out ChartCompentViewModel _param2 )
     {
@@ -580,7 +580,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
             chart.EnsureUIThread();
         IChartComponent ddznyiGmdRlAevOq = (IChartComponent) _param1;
         ChartCompentViewModel a4VgOpCeDiqsTdzB;
-        if ( !this.\u0023\u003DzKDbpj6zM462r( ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB ))
+        if ( !this.GetViewModelFromCache( ddznyiGmdRlAevOq, out a4VgOpCeDiqsTdzB ))
       return false;
         ddznyiGmdRlAevOq.RemoveAxisesEventHandler();
         if ( ddznyiGmdRlAevOq is IChartCandleElement chartCandleElement )
