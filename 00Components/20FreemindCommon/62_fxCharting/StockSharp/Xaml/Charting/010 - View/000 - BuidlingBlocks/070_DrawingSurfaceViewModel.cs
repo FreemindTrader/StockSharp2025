@@ -476,11 +476,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
         DataPointWidth = Math.Round( MathHelper.IsNaN( timeAxis.CurrentDatapointWidth ) ? 0.0 : timeAxis.CurrentDatapointWidth, 1, MidpointRounding.AwayFromZero );
     }
-
-    private void OnTargetPropertyChanged308( object _param1, PropertyChangedEventArgs _param2 )
-    {
         
-    }    
 
     private void SetupAxisBindings()
     {
@@ -514,71 +510,102 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         }
     }
 
-    private bool RemoveAxis( IChartAxis _param1, ICollection<IAxis> _param2 )
+    private bool RemoveAxis( IChartAxis axis, ICollection<IAxis> axisColl )
     {
         DrawingSurfaceViewModel.SomeSealClass083523 jy0mx0yCuWlqEsh0ZdY = new DrawingSurfaceViewModel.SomeSealClass083523();
-        jy0mx0yCuWlqEsh0ZdY._ICollection_IAxis_098 = _param2;
-        jy0mx0yCuWlqEsh0ZdY._IChartAxis_098 = _param1;
+        jy0mx0yCuWlqEsh0ZdY._ICollection_IAxis_098 = axisColl;
+        jy0mx0yCuWlqEsh0ZdY._IChartAxis_098 = axis;
         jy0mx0yCuWlqEsh0ZdY._variableSome3535 = this;
         FrameworkElement chart = (FrameworkElement) Chart;
-        if ( chart != null )
-            ( ( DispatcherObject ) chart ).GuiAsync( new Action( jy0mx0yCuWlqEsh0ZdY._SomeSealClass083523_Metho03 ) );
+        if ( Chart != null )
+        {
+            ( ( DispatcherObject ) chart ).GuiAsync( () =>
+            {
+                var target = (AxisBase) axisColl.FirstOrDefault<IAxis>( x => x.Id == axis.Id);
+                if ( target == null )
+                    return;
+
+                target.PropertyChanged -= OnTargetPropertyChanged;
+                BindingOperations.ClearAllBindings( ( DependencyObject ) target );
+                axisColl.Remove( ( IAxis ) target );
+            } );
+        }
+            
         return true;
-    }
+    }    
 
-    private void OnTargetPropertyChanged308( object _param1, PropertyChangedEventArgs _param2 )
+    private void OnTargetPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
     {
-        if ( !( _param1 is CategoryDateTimeAxis nu9622VfydaypdeqEjd ) || _param2.PropertyName != "CurrentDatapointPixelSize" )
+        if ( !( _param1 is CategoryDateTimeAxis timeAxis ) || _param2.PropertyName != "CurrentDatapointPixelSize" )
             return;
-        IChartCandleElement chartCandleElement = ((SynchronizedDictionary<IChartComponent, ChartCompentViewModel>) _componentsCache).Keys.OfType<IChartCandleElement>().FirstOrDefault<IChartCandleElement>();
-        if ( chartCandleElement != null && chartCandleElement.XAxisId != nu9622VfydaypdeqEjd.Id )
+
+        var candle = _componentsCache.Keys.OfType<IChartCandleElement>().FirstOrDefault();
+
+        if ( candle != null && candle.XAxisId != timeAxis.Id )
             return;
-        DataPointWidth = Math.Round( MathHelper.IsNaN( nu9622VfydaypdeqEjd.CurrentDatapointPixelSize ) ? 0.0 : nu9622VfydaypdeqEjd.CurrentDatapointPixelSize, 1, MidpointRounding.AwayFromZero );
+
+        DataPointWidth = Math.Round( MathHelper.IsNaN( timeAxis.CurrentDatapointWidth ) ? 0.0 : timeAxis.CurrentDatapointWidth, 1, MidpointRounding.AwayFromZero );
     }
 
-    public void SetScichartSurface( SciChartSurface _param1 )
+    public void SetScichartSurface( SciChartSurface s )
     {
-        if ( _sciChartSurface == _param1 )
+        if ( _sciChartSurface == s )
             return;
-        _sciChartSurface = _sciChartSurface == null || _param1 == null ? _param1 : throw new InvalidOperationException( "got unexpected chart surface" );
-        _param1?.RenderSurface.Rendered( new EventHandler<RenderedEventArgs>( OnRenderSurfaceRendered ) );
+
+        _sciChartSurface = _sciChartSurface == null || s == null ? s : throw new InvalidOperationException( "got unexpected chart surface" );
+
+        if ( s?.RenderSurface != null )
+        {            
+            s.RenderSurface.Rendered += OnRenderSurfaceRendered;
+        }
     }
 
-    public void Draw( ChartDrawData _param1 )
+    public void Draw( ChartDrawData d )
     {
         if ( _sciChartSurface != null )
         {
             using ( _sciChartSurface.SuspendUpdates() )
-                Draw( _param1 );
+                StartRenderingChartUIs( d );
         }
         else
-            Draw( _param1 );
+            StartRenderingChartUIs( d );
     }
 
-    private void OnRenderSurfaceRendered(
-      object _param1,
-      RenderedEventArgs _param2 )
+    private void OnRenderSurfaceRendered( object sender, RenderedEventArgs e )
     {
         if ( _sciChartSurface == null )
             return;
-        CollectionHelper.ForEach<CategoryDateTimeAxis>( XAxises.OfType<CategoryDateTimeAxis>(), DrawingSurfaceViewModel.SomeClass34343383.public_static_Action_CategoryDateTimeAxis_009 ?? ( DrawingSurfaceViewModel.SomeClass34343383.public_static_Action_CategoryDateTimeAxis_009 = new Action<CategoryDateTimeAxis>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.SomeMEthod03853 ) ) );
-        CollectionHelper.ForEach<ChartCompentViewModel>( ( IEnumerable<ChartCompentViewModel> ) ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).Values, DrawingSurfaceViewModel.SomeClass34343383.public_static_Action_ChartCompentViewModel_008 ?? ( DrawingSurfaceViewModel.SomeClass34343383.public_static_Action_ChartCompentViewModel_008 = new Action<ChartCompentViewModel>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.SomeMEthod03854 ) ) );
-        if ( !ShowPerfStats || _param2.\u0023\u003DzguiAuOeZYTXy() <= 0.0)
-      return;
-        double num = 1000.0 / _param2.\u0023\u003DzguiAuOeZYTXy();
-        while ( _queue.Count >= 10 )
-            _fpsTotal -= _queue.Dequeue();
-        _queue.Enqueue( num );
-        _fpsTotal += num;
-        PerfStats = $"FPS: {_fpsTotal / ( double ) _queue.Count:0}   Count: {_sciChartSurface.RenderableSeries.Where<IRenderableSeries>( DrawingSurfaceViewModel.SomeClass34343383._public_static_Func_IRenderableSeries_bool_003 ?? ( DrawingSurfaceViewModel.SomeClass34343383._public_static_Func_IRenderableSeries_bool_003 = new Func<IRenderableSeries, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.SomeMEthod03855 ) ) ).Sum<IRenderableSeries>( DrawingSurfaceViewModel.SomeClass34343383.m_public_static_Func_IRenderableSeries__nt_ ?? ( DrawingSurfaceViewModel.SomeClass34343383.m_public_static_Func_IRenderableSeries__nt_ = new Func<IRenderableSeries, int>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_int_Method_IRenderableSeries_ ) ) ):n0}";
+
+        CollectionHelper.ForEach<CategoryDateTimeAxis>( XAxises.OfType<CategoryDateTimeAxis>(),
+            axis =>
+            {
+                if ( axis.Tag is ChartAxis tag )
+                {
+                    tag.DataPointWidth = axis.CurrentDatapointWidth;
+                }
+            } );
+
+        CollectionHelper.ForEach<ChartCompentViewModel>( _componentsCache.CachedValues, component => component.UpdateYAxisMarker() );
+
+        if ( ShowPerfStats && e.Duration > 0.0 )
+        {
+            double fps = 1000.0 / e.Duration;
+            while ( _queue.Count >= 10 )
+                _fpsTotal -= _queue.Dequeue();
+
+            _queue.Enqueue( fps );
+            _fpsTotal += fps;
+
+            PerfStats = $"FPS: {_fpsTotal / _queue.Count:0}   Count: {_sciChartSurface.RenderableSeries.Count( series => series.IsVisible ):n0}";
+        }
     }
 
-    private void Draw( ChartDrawData _param1 )
+    private void StartRenderingChartUIs( ChartDrawData d )
     {
-        foreach ( ChartCompentViewModel a4VgOpCeDiqsTdzB in _componentsCache.GetComponents() )
+        foreach ( var vm in _componentsCache.InitCache() )
         {
-            if ( a4VgOpCeDiqsTdzB.Draw( _param1 ) )
-                ( ( BaseCollection<ChartCompentViewModel, ISet<ChartCompentViewModel>> ) _parentChartViewModelCache ).Add( a4VgOpCeDiqsTdzB );
+            if ( vm.Draw( d ) )
+                 _parentChartViewModelCache.Add( vm );
         }
     }
 
@@ -1404,7 +1431,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
             AxisBase target = (AxisBase) _ICollection_IAxis_098.FirstOrDefault<IAxis>(_Func_IAxis_bool_0835 ?? (_Func_IAxis_bool_0835 = new Func<IAxis, bool>(_function_IAxis__R__void__001)));
             if ( target == null )
                 return;
-            target.PropertyChanged -= new PropertyChangedEventHandler( _variableSome3535.OnTargetPropertyChanged308 );
+            target.PropertyChanged -= new PropertyChangedEventHandler( _variableSome3535.OnTargetPropertyChanged );
             BindingOperations.ClearAllBindings( ( DependencyObject ) target );
             _ICollection_IAxis_098.Remove( ( IAxis ) target );
         }
