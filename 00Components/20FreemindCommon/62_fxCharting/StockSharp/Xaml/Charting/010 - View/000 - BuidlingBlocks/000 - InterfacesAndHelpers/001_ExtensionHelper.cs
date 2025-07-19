@@ -27,7 +27,7 @@ using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 using IChart = StockSharp.Charting.IChart;
 
 #nullable enable
-public static class AxisBaseHelper
+public static class AxisBaseHelper2025
 {
     private sealed class SomeWheireosoe
     {
@@ -91,7 +91,7 @@ public static class AxisBaseHelper
         public override void OnBeginAxisDraw()
         {
             this.InitString();
-            if ( ( ( AxisBase ) this.ParentAxis ).TickProvider is AxisBaseHelper.CategoryDateTimeAxisTickProvider tickProvider )
+            if ( ( ( AxisBase ) this.ParentAxis ).TickProvider is AxisBaseHelper2025.CategoryDateTimeAxisTickProvider tickProvider )
                 tickProvider.SyncParentParams();
             base.OnBeginAxisDraw();
         }
@@ -127,7 +127,7 @@ public static class AxisBaseHelper
                 return base.FormatLabel( _param1 );
             if ( this._string02 == null || this._string01 == null )
                 this.InitString();
-            return StringHelper.Put( ( this.ParentAxis?.TickProvider is AxisBaseHelper.CategoryDateTimeAxisTickProvider tickProvider ? ( tickProvider.DiffAtDate( _param1 ) ? 1 : 0 ) : 0 ) != 0 ? this._string02 : this._string01, new object[ 1 ]
+            return StringHelper.Put( ( this.ParentAxis?.TickProvider is AxisBaseHelper2025.CategoryDateTimeAxisTickProvider tickProvider ? ( tickProvider.DiffAtDate( _param1 ) ? 1 : 0 ) : 0 ) != 0 ? this._string02 : this._string01, new object[ 1 ]
             {
         (object) this.GetDateTime(_param1)
             } );
@@ -157,7 +157,7 @@ public static class AxisBaseHelper
     //private sealed class PrivateSealedClass0392
     //{
     //    public DoubleRange _doubleRange;
-    //    public AxisBaseHelper.SomeWheireosoe _someHelperClassMereber;
+    //    public AxisBaseHelper2025.SomeWheireosoe _someHelperClassMereber;
 
     //    public void SomeMethod0324(
     //      object _param1,
@@ -223,7 +223,7 @@ public static class AxisBaseHelper
         }
         newAxis.Tag = axis; ;
         newAxis.SetBindings( AxisBase.IdProperty, axis, "Id" );
-        newAxis.SetBindings( AxisBase.AutoRangeProperty, axis, "AutoRange", converter: ( IValueConverter ) new AxisBaseHelper.AutoRangeConverter() );
+        newAxis.SetBindings( AxisBase.AutoRangeProperty, axis, "AutoRange", converter: ( IValueConverter ) new AxisBaseHelper2025.AutoRangeConverter() );
         newAxis.SetBindings( AxisBase.DrawLabelsProperty, axis, "DrawLabels" );
         newAxis.SetBindings( AxisBase.DrawMajorGridLinesProperty, axis, "DrawMajorGridLines" );
         newAxis.SetBindings( AxisBase.DrawMajorTicksProperty, axis, "DrawMajorTicks" );
@@ -359,8 +359,8 @@ public static class AxisBaseHelper
 
     //    private int GetDateTimeDifferent( DateTime _param1, DateTime _param2 )
     //    {
-    //        _param1 = this.ParentAxis.LabelProvider is AxisBaseHelper.fxCategoryDateTimeAxisLabelProvider labelProvider1 ? labelProvider1.GetDateTime( ( IComparable ) _param1 ) : _param1;
-    //        _param2 = this.ParentAxis.get_LabelProvider() is AxisBaseHelper.fxCategoryDateTimeAxisLabelProvider labelProvider2 ? labelProvider2.GetDateTime( ( IComparable ) _param2 ) : _param2;
+    //        _param1 = this.ParentAxis.LabelProvider is AxisBaseHelper2025.fxCategoryDateTimeAxisLabelProvider labelProvider1 ? labelProvider1.GetDateTime( ( IComparable ) _param1 ) : _param1;
+    //        _param2 = this.ParentAxis.get_LabelProvider() is AxisBaseHelper2025.fxCategoryDateTimeAxisLabelProvider labelProvider2 ? labelProvider2.GetDateTime( ( IComparable ) _param2 ) : _param2;
     //        if ( _param1.Date != _param2.Date )
     //            return 3;
     //        return _param1.Hour == _param2.Hour ? ( _param1.Second == 0 ? 1 : 0 ) : 2;

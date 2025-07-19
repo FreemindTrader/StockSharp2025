@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 #nullable disable
-public static class AnnotationExtensionHelper
+public static class AnnotationExtensionHelper2025
 {
     private static readonly IDictionary<ChartAnnotationTypes, Type> _annotationTypeMap = (IDictionary<ChartAnnotationTypes, Type>) new Dictionary<ChartAnnotationTypes, Type>()
   {
@@ -32,12 +32,12 @@ public static class AnnotationExtensionHelper
 
     public static Type GetType( this ChartAnnotationTypes type )
     {
-        return AnnotationExtensionHelper._annotationTypeMap[ type ];
+        return AnnotationExtensionHelper2025._annotationTypeMap[ type ];
     }
 
     public static ChartAnnotationTypes GetType( this IAnnotation annotation )
     {
-        AnnotationExtensionHelper.SomeClass1234 _someMemebers1234 = new AnnotationExtensionHelper.SomeClass1234();
+        AnnotationExtensionHelper2025.SomeClass1234 _someMemebers1234 = new AnnotationExtensionHelper2025.SomeClass1234();
         Type myType = annotation != null ? annotation.GetType() : throw new ArgumentNullException( "annotation" );
         if ( !annotation.HasType())
       throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnknownType, new object[ 1 ]

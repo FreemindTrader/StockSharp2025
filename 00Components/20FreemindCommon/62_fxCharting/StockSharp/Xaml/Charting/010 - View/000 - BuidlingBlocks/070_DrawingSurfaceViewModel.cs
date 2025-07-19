@@ -451,7 +451,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         if ( Chart == null )
             return;
 
-        AxisBase xBase = AxisBaseHelper.InitAndSetBinding(axis, this.ParentViewModel?.RemoveAxisCommand, this.ResetAxisTimeZoneCommand, this.Chart);
+        AxisBase xBase = AxisBaseHelper2025.InitAndSetBinding(axis, this.ParentViewModel?.RemoveAxisCommand, this.ResetAxisTimeZoneCommand, this.Chart);
         xBase.PropertyChanged += OnAxisBasePropertyChanged;
         
         ( ( DispatcherObject ) Chart ).GuiAsync( () =>
@@ -459,7 +459,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
             if ( Chart == null )
                 return;
 
-            var ab = AxisBaseHelper.InitAndSetBinding(axis, this.ParentViewModel?.RemoveAxisCommand, this.ResetAxisTimeZoneCommand, this.Chart);
+            var ab = AxisBaseHelper2025.InitAndSetBinding(axis, this.ParentViewModel?.RemoveAxisCommand, this.ResetAxisTimeZoneCommand, this.Chart);
             ab.PropertyChanged += OnAxisBasePropertyChanged;
             axises.Add(ab);
 

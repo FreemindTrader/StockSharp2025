@@ -17,7 +17,7 @@ using System.Linq;
 /// <summary>
 /// This extension helper create a link between the ChartAnnotationTypes enum to its corresponding ChartAnnotationTypes.
 /// </summary>
-public static class AnnotationExtensionHelper
+public static class AnnotationExtensionHelper2025
 {
     private static readonly IDictionary<ChartAnnotationTypes, Type> _annotationTypeMap = (IDictionary<ChartAnnotationTypes, Type>) new Dictionary<ChartAnnotationTypes, Type>()
     {
@@ -40,7 +40,7 @@ public static class AnnotationExtensionHelper
 
     public static Type GetType( this ChartAnnotationTypes type )
     {
-        return AnnotationExtensionHelper._annotationTypeMap[ type ];
+        return AnnotationExtensionHelper2025._annotationTypeMap[ type ];
     }
 
     public static ChartAnnotationTypes GetType( this IAnnotation annotation )

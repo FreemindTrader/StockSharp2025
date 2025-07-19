@@ -195,7 +195,7 @@ namespace StockSharp.Xaml.Charting
             }
             else
             {
-                Type type = AnnotationExtensionHelper.GetType( annotationTypes );
+                Type type = AnnotationExtensionHelper2025.GetType( annotationTypes );
 
                 if ( type == typeof( fxElliotWaveAnnotation ) ||
                      type == typeof( fxFibonacciRetracementAnnotation ) ||
@@ -608,7 +608,7 @@ namespace StockSharp.Xaml.Charting
 
             if ( !_baseToAnnotationPair.TryGetKey( annotation, out s.b ) )
             {
-                Type type    = AnnotationExtensionHelper.GetType( annotation.Type );
+                Type type    = AnnotationExtensionHelper2025.GetType( annotation.Type );
                 s.b = ( AnnotationBase ) Activator.CreateInstance( type );
                 s.b.XAxisId = annotation.XAxisId;
                 s.b.YAxisId = annotation.YAxisId;
