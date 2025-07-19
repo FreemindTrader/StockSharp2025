@@ -19,69 +19,69 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
 public class DefaultPainter : BaseChartIndicatorPainter<IIndicator>
 {
-  
-  private readonly IChartLineElement \u0023\u003Dzc5oaf3eKyon\u00249mHymQ\u003D\u003D;
 
-  public DefaultPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.GetColorProvider();
-    this.\u0023\u003Dzc5oaf3eKyon\u00249mHymQ\u003D\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _line;
+
+    public DefaultPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.AddChildElement((IChartElement) this.Line);
-  }
-
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Line2", Description = "Line2")]
-  public IChartLineElement Line => this.\u0023\u003Dzc5oaf3eKyon\u00249mHymQ\u003D\u003D;
-
-  protected override bool OnDraw(
-    IIndicator indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    if (!(indicator is IComplexIndicator complexIndicator))
-      return this.DrawValues(data[indicator], (IChartElement) this.Line);
-    IReadOnlyList<IIndicator> innerIndicators = complexIndicator.InnerIndicators;
-    int count1 = innerIndicators.Count;
-    int count2 = this.InnerElements.Count;
-    int num1 = count2;
-    int num2 = count1 - num1;
-    if (num2 > 0)
-    {
-      IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.GetColorProvider();
-      for (int index = 0; index < num2; ++index)
-      {
-        IIndicator indicator1 = innerIndicators[count2 + index];
-        ChartLineElement element = new ChartLineElement();
-        Color? color = indicator1.Color;
-        ref Color? local = ref color;
-        element.Color = local.HasValue ? local.GetValueOrDefault().ToWpf() : indicatorColorProvider.GetNextColor();
-        element.Style = indicator1.Style;
-        this.AddChildElement((IChartElement) element);
-      }
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.GetColorProvider();
+        this._line = ( IChartLineElement ) new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this.AddChildElement( ( IChartElement ) this.Line );
     }
-    else if (num2 < 0)
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Line2", Description = "Line2" )]
+    public IChartLineElement Line => this._line;
+
+    protected override bool OnDraw(
+      IIndicator indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data )
     {
-      int num3 = -num2;
-      for (int index = 0; index < num3; ++index)
-        this.RemoveChildElement(this.InnerElements[this.InnerElements.Count - 1]);
+        if ( !( indicator is IComplexIndicator complexIndicator ) )
+            return this.DrawValues( data[ indicator ], ( IChartElement ) this.Line );
+        IReadOnlyList<IIndicator> innerIndicators = complexIndicator.InnerIndicators;
+        int count1 = innerIndicators.Count;
+        int count2 = this.InnerElements.Count;
+        int num1 = count2;
+        int num2 = count1 - num1;
+        if ( num2 > 0 )
+        {
+            IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<IIndicator>.GetColorProvider();
+            for ( int index = 0 ; index < num2 ; ++index )
+            {
+                IIndicator indicator1 = innerIndicators[count2 + index];
+                ChartLineElement element = new ChartLineElement();
+                Color? color = indicator1.Color;
+                ref Color? local = ref color;
+                element.Color = local.HasValue ? local.GetValueOrDefault().ToWpf() : indicatorColorProvider.GetNextColor();
+                element.Style = indicator1.Style;
+                this.AddChildElement( ( IChartElement ) element );
+            }
+        }
+        else if ( num2 < 0 )
+        {
+            int num3 = -num2;
+            for ( int index = 0 ; index < num3 ; ++index )
+                this.RemoveChildElement( this.InnerElements[ this.InnerElements.Count - 1 ] );
+        }
+        bool flag = false;
+        int num4 = 0;
+        foreach ( IIndicator key in ( IEnumerable<IIndicator> ) innerIndicators )
+            flag |= this.DrawValues( data[ key ], this.InnerElements[ num4++ ] );
+        return flag;
     }
-    bool flag = false;
-    int num4 = 0;
-    foreach (IIndicator key in (IEnumerable<IIndicator>) innerIndicators)
-      flag |= this.DrawValues(data[key], this.InnerElements[num4++]);
-    return flag;
-  }
 
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Line, storage, "Line");
-  }
+    public override void Load( SettingsStorage storage )
+    {
+        base.Load( storage );
+        PersistableHelper.Load( ( IPersistable ) this.Line, storage, "Line" );
+    }
 
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("Line", PersistableHelper.Save((IPersistable) this.Line));
-  }
+    public override void Save( SettingsStorage storage )
+    {
+        base.Save( storage );
+        storage.SetValue<SettingsStorage>( "Line", PersistableHelper.Save( ( IPersistable ) this.Line ) );
+    }
 }

@@ -389,7 +389,7 @@ public class Chart :
 		if ( subscription != null )
 			this._subscrptionMap.Add( ( IChartElement ) element, subscription );
 		this._indicatorElementMap.Add( element, new Chart.SomeInternalSealedClass897634( this, element, indicator ) );
-		( ( ChartIndicatorElement ) element ).\u0023\u003Dz2Afk71t1OoFdU8tQ4Q\u003D\u003D(this.IndicatorTypes, indicator);
+		( ( ChartIndicatorElement ) element ).CreateIndicatorPainter(this.IndicatorTypes, indicator);
 		this.AddElement( area, ( IChartElement ) element );
 	}
 
