@@ -44,10 +44,7 @@ public static class ChartHelper2025
             return ( Stream ) file;
         }
 
-        throw new ArgumentException( StringHelper.Put( LocalizedStrings.UnknownType, new object[ 1 ]
-        {
-      (object) chart.GetType()
-        } ), nameof( chart ) );
+        throw new ArgumentException( StringHelper.Put( LocalizedStrings.UnknownType, chart.GetType() ), nameof( chart ) );
     }
 
     public static string ChartSeriesTitle( this Subscription sub )
@@ -55,11 +52,7 @@ public static class ChartHelper2025
         if ( sub == null )
             return string.Empty;
 
-        return StringHelper.Put( LocalizedStrings.ChartSeriesTitleParams, new object[ 2 ]
-        {
-            sub.SecurityId,
-            sub.DataType.Arg
-        } );
+        return StringHelper.Put( LocalizedStrings.ChartSeriesTitleParams, sub.SecurityId, sub.DataType.Arg );
     }
 
     public static string ToChartTheme( this string appTheme )
@@ -109,14 +102,19 @@ public static class ChartHelper2025
 
     public static IIndicator TryGetIndicator( this IChartIndicatorElement indicator )
     {
+        var myChart = ChartHelper2025.GetDrawingChart(indicator);
         throw new NotImplementedException();
-        //var myChart = ChartHelper2025.GetDrawingChart(indicator);
+
+        //BUG:
+
         //return myChart?.GetIndicator( indicator );
     }
 
     public static Subscription TryGetSubscription( this IChartElement element )
     {
-        // TONYFIXME 02
+        var myChart = ChartHelper2025.GetDrawingChart(element);
+        
+        //BUG:
         throw new NotImplementedException();
         //return element.GetDrawingChart()?.TryGetSubscription( element );
     }
