@@ -38,7 +38,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   
   public Chart3D \u0023\u003DzO72kpz0\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public OptimizerChart3D()
   {
@@ -237,9 +237,9 @@ public class OptimizerChart3D : UserControl, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/optimizerchart3d.xaml", UriKind.Relative));
   }
 
@@ -297,7 +297,7 @@ public class OptimizerChart3D : UserControl, IComponentConnector
         this.\u0023\u003DzO72kpz0\u003D = (Chart3D) target;
         break;
       default:
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
         break;
     }
   }

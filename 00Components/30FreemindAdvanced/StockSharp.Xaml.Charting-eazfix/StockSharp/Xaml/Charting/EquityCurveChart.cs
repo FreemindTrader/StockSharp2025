@@ -41,7 +41,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   
   public Chart \u0023\u003DzO72kpz0\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public EquityCurveChart()
   {
@@ -214,9 +214,9 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/equitycurvechart.xaml", UriKind.Relative));
   }
 
@@ -228,7 +228,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     if (connectionId == 1)
       this.\u0023\u003DzO72kpz0\u003D = (Chart) target;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 
   private void \u0023\u003DzzPTbGgY94FCnML89IBWoh_E\u003D(

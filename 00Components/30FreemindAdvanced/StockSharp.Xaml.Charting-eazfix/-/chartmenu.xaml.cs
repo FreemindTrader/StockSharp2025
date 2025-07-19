@@ -25,7 +25,7 @@ public sealed class chartmenu :
   
   public chartmenu \u0023\u003Dz8PNYF8U\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public chartmenu() => this.InitializeComponent();
 
@@ -45,9 +45,9 @@ public sealed class chartmenu :
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/chartmenu.xaml", UriKind.Relative));
   }
 
@@ -59,6 +59,6 @@ public sealed class chartmenu :
     if (_param1 == 1)
       this.\u0023\u003Dz8PNYF8U\u003D = (chartmenu) _param2;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 }

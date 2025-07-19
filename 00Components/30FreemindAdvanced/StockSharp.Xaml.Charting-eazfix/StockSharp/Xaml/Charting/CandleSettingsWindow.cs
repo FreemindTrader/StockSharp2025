@@ -32,7 +32,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
   
   public SimpleButton \u0023\u003DzR8YHGiJOGNl5;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public CandleSettingsWindow() => this.InitializeComponent();
 
@@ -81,9 +81,9 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/candlesettingswindow.xaml", UriKind.Relative));
   }
 
@@ -100,7 +100,7 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
         this.\u0023\u003DzR8YHGiJOGNl5.Click += new RoutedEventHandler(this.\u0023\u003DzdcCnJSj8d2oz);
       }
       else
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
     }
     else
       this.\u0023\u003DzSBQp\u0024Vhxv74c = (PropertyGridEx) target;

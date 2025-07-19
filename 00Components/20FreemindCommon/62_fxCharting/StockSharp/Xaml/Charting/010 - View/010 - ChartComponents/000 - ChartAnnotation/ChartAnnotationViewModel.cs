@@ -3,9 +3,11 @@
 //using System;
 //using System.Collections;
 //using System.Linq;
-//namespace StockSharp.Xaml.Charting;
+
 //#nullable disable
-//internal sealed class ChartAnnotationViewModel( ChartAnnotation annotation ) : ChartCompentWpfBaseViewModel<ChartAnnotation>( annotation )
+//internal sealed class ChartAnnotationViewModel(
+//  ChartAnnotation _param1 ) :
+//  ChartCompentWpfBaseViewModel<ChartAnnotation>( _param1 )
 //{
 //    protected override void UpdateUi()
 //    {
@@ -18,31 +20,30 @@
 
 //    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
 //    {
-//        this.\u0023\u003DzY_lPK_VP\u0024B7_( new Action( new ChartAnnotationViewModel.SomeShit333()
+//        this.PerformUIAction2( new Action( new ChartAnnotationViewModel.SomeSealClass03823()
 //        {
-//            _variableSome3535 = this,
-//            _drawValue0384 = _param1
-//        }.SomeMethod0333 ), true );
+//            _ChartAnnotationViewModel = this,
+//            _IDrawValue = _param1
+//        }.SomeInternalMethod ), true );
 //        return true;
 //    }
 
-//    private sealed class SomeShit333
+//    private sealed class SomeSealClass03823
 //    {
-//        public ChartAnnotationViewModel _variableSome3535;
-//        public IEnumerableEx<ChartDrawData.IDrawValue> _drawValue0384;
+//        public ChartAnnotationViewModel _ChartAnnotationViewModel;
+//        public IEnumerableEx<ChartDrawData.IDrawValue> _IDrawValue;
 
-//        internal void SomeMethod0333()
+//        internal void SomeInternalMethod()
 //        {
-//            this._variableSome3535.ScichartSurfaceMVVM.AnnotationModifier.Draw( this._variableSome3535.ChartComponentView, ( ( IEnumerable ) this._drawValue0384 ).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>() );
+//            this._ChartAnnotationViewModel.DrawingSurface.AnnotationModifier.Draw( this._ChartAnnotationViewModel.ChartComponentView, ( ( IEnumerable ) this._IDrawValue ).Cast<ChartDrawData.AnnotationData>().Single<ChartDrawData.AnnotationData>() );
 //        }
 //    }
 //}
 
-
-////using Ecng.Collections;
-////using StockSharp.Xaml.Charting;
-////using System;
-////using System.Linq;
+//using Ecng.Collections;
+//using StockSharp.Xaml.Charting;
+//using System;
+//using System.Linq;
 
 
 

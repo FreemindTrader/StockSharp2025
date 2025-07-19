@@ -32,9 +32,9 @@ public sealed class ultrachartlegend :
   
   private readonly CandleDataTypeEdit \u0023\u003DzXTZs02hFk44D3c5vJw\u003D\u003D;
   
-  public ultrachartlegend \u0023\u003Dzv4BS1WQ\u003D;
+  public ultrachartlegend _annotationEditor;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public ultrachartlegend()
   {
@@ -85,9 +85,9 @@ public sealed class ultrachartlegend :
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/ultrachart/ultrachartlegend.xaml", UriKind.Relative));
   }
 
@@ -101,10 +101,10 @@ public sealed class ultrachartlegend :
       if (_param1 == 2)
         ((ButtonBase) _param2).Click += new RoutedEventHandler(this.OnButtonClicked);
       else
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
     }
     else
-      this.\u0023\u003Dzv4BS1WQ\u003D = (ultrachartlegend) _param2;
+      this._annotationEditor = (ultrachartlegend) _param2;
   }
 
   [DebuggerNonUserCode]

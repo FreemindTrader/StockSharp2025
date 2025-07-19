@@ -170,6 +170,7 @@
         <Folder Include="Ecng\Xaml\Charting\Utility\Mouse\" />
         <Folder Include="Ecng\Xaml\Charting\Visuals\Events\" />
         <Folder Include="Properties\" />
+        <Folder Include="StockSharp\Xaml\Charting\010 - View\030 - Modifiers\020_FxAnnotationModifier\" />
         <Folder Include="themes\" />
     </ItemGroup>
     <ItemGroup>

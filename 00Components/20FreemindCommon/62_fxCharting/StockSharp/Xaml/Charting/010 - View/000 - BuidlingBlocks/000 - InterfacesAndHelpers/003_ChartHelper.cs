@@ -25,7 +25,7 @@ using System.Linq;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
-public static class ChartHelper
+public static class NewChartHelper
 {
 
     private static readonly Lazy<IndicatorColorProvider> _indicatorColorProviders = new Lazy<IndicatorColorProvider>();
@@ -44,7 +44,10 @@ public static class ChartHelper
             return ( Stream ) file;
         }
 
-        throw new ArgumentException( StringHelper.Put( LocalizedStrings.UnknownType, chart.GetType() ), nameof( chart ) );
+        throw new ArgumentException( StringHelper.Put( LocalizedStrings.UnknownType, new object[ 1 ]
+        {
+      (object) chart.GetType()
+        } ), nameof( chart ) );
     }
 
     public static string ChartSeriesTitle( this Subscription sub )
@@ -59,21 +62,23 @@ public static class ChartHelper
         } );
     }
 
-    public static string CurrChartTheme()
-    {
-        return ApplicationThemeHelper.ApplicationThemeName.ToChartTheme();
-    }
-
     public static string ToChartTheme( this string appTheme )
     {
         return !appTheme.IsDark() ? "Chrome" : "ExpressionDark";
     }
 
+    public static string CurrChartTheme()
+    {
+        return ApplicationThemeHelper.ApplicationThemeName.ToChartTheme();
+    }
+
+    
+
     public static void UpdateTheme( this IThemeableChart chart )
     {
         if ( chart == null )
             throw new ArgumentNullException( nameof( chart ) );
-        chart.ChartTheme = ChartHelper.CurrChartTheme();
+        chart.ChartTheme = NewChartHelper.CurrChartTheme();
     }
 
     public static IEnumerable<IndicatorType> GetIndicatorTypes()
@@ -81,32 +86,32 @@ public static class ChartHelper
         return IChartExtensions.IndicatorProvider.All;
     }
 
-    public static void FillDefaultValues( this OptimizerChart3D chart )
+    //public static void FillDefaultValues( this OptimizerChart3D chart )
+    //{
+    //    // TONYFIXME 01
+
+    //    throw new NotImplementedException();
+
+    //    //ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
+    //    //skXz9pb7XdulaJda._optimizerChart3d = chart;
+    //    //if ( skXz9pb7XdulaJda._optimizerChart3d == null )
+    //    //    throw new ArgumentNullException( nameof( chart ) );
+    //    //skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
+    //    //skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
+    //    //skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
+    //}
+
+    public static Chart GetDrawingChart( this IChartElement comp )
     {
-        // TONYFIXME 01
-
-        throw new NotImplementedException();
-
-        //ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
-        //skXz9pb7XdulaJda._optimizerChart3d = chart;
-        //if ( skXz9pb7XdulaJda._optimizerChart3d == null )
-        //    throw new ArgumentNullException( nameof( chart ) );
-        //skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
-        //skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
-        //skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
+        StockSharp.Charting.IChartExtensions.TryGetChart(  comp );
+        return ( Chart ) comp.TryGetChart();
     }
 
-    public static Chart GetDrawingChart( this IChartElement _param0 )
+    public static IIndicator TryGetIndicator( this IChartIndicatorElement indicator )
     {
-        StockSharp.Charting.
-        return ( Chart ) _param0.TryGetChart();
-    }
-
-    public static IIndicator TryGetIndicator( this IChartIndicatorElement element )
-    {
-        // TONYFIXME 01
         throw new NotImplementedException();
-        //return element.GetDrawingChart()?.GetIndicatorElement( element );
+        //var myChart = NewChartHelper.GetDrawingChart(indicator);
+        //return myChart?.GetIndicator( indicator );
     }
 
     public static Subscription TryGetSubscription( this IChartElement element )
@@ -121,32 +126,32 @@ public static class ChartHelper
         get => ConfigManager.TryGetService<IIndicatorColorProvider>();
     }
 
-    public static IIndicatorColorProvider EnsureColorProvider()
-    {
-        return ChartHelper.TryColorProvider ?? ( IIndicatorColorProvider ) ChartHelper._indicatorColorProviders.Value;
-    }
+    //public static IIndicatorColorProvider EnsureColorProvider()
+    //{
+    //    return ChartHelper.TryColorProvider ?? ( IIndicatorColorProvider ) ChartHelper._indicatorColorProviders.Value;
+    //}
 
-    public static void DrawPnL(
-      this EquityCurveChart chart,
-      Strategy strategy,
-      IChartBandElement pnl,
-      IChartBandElement unrealized,
-      IChartBandElement commission )
-    {
-        if ( chart == null )
-            throw new ArgumentNullException( nameof( chart ) );
-        if ( strategy == null )
-            throw new ArgumentNullException( nameof( strategy ) );
-        if ( pnl == null )
-            throw new ArgumentNullException( nameof( pnl ) );
-        if ( unrealized == null )
-            throw new ArgumentNullException( nameof( unrealized ) );
-        if ( commission == null )
-            throw new ArgumentNullException( nameof( commission ) );
-        IChartDrawData data = chart.CreateData();
-        data.Group( ( ( BaseLogSource ) strategy ).CurrentTime ).Add( pnl, strategy.PnL ).Add( unrealized, strategy.PnLManager.UnrealizedPnL ).Add( commission, strategy.Commission.GetValueOrDefault() );
-        chart.Draw( data );
-    }
+    //public static void DrawPnL(
+    //  this EquityCurveChart chart,
+    //  Strategy strategy,
+    //  IChartBandElement pnl,
+    //  IChartBandElement unrealized,
+    //  IChartBandElement commission )
+    //{
+    //    if ( chart == null )
+    //        throw new ArgumentNullException( nameof( chart ) );
+    //    if ( strategy == null )
+    //        throw new ArgumentNullException( nameof( strategy ) );
+    //    if ( pnl == null )
+    //        throw new ArgumentNullException( nameof( pnl ) );
+    //    if ( unrealized == null )
+    //        throw new ArgumentNullException( nameof( unrealized ) );
+    //    if ( commission == null )
+    //        throw new ArgumentNullException( nameof( commission ) );
+    //    IChartDrawData data = chart.CreateData();
+    //    data.Group( ( ( BaseLogSource ) strategy ).CurrentTime ).Add( pnl, strategy.PnL ).Add( unrealized, strategy.PnLManager.UnrealizedPnL ).Add( commission, strategy.Commission.GetValueOrDefault() );
+    //    chart.Draw( data );
+    //}
 
     [Obsolete( "Use Subscription overload." )]
     public static void AddElement(

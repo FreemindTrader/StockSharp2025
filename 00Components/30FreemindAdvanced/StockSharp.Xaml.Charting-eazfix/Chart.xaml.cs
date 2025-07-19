@@ -41,7 +41,7 @@ public sealed class Chart :
   
   public SciChartSurface \u0023\u003Dz_PI_EIE\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public Chart()
   {
@@ -317,9 +317,9 @@ public sealed class Chart :
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/simplechart.xaml", UriKind.Relative));
   }
 
@@ -338,6 +338,6 @@ public sealed class Chart :
     if (_param1 == 1)
       this.\u0023\u003Dz_PI_EIE\u003D = (SciChartSurface) _param2;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 }

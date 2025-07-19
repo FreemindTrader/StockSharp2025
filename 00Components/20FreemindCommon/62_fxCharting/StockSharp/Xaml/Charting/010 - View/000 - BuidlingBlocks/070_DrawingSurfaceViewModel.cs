@@ -730,19 +730,19 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         if ( chart != null )
             chart.EnsureUIThread();
         IChartComponent chartComp = (IChartComponent) _param1;
-        ChartComponentViewModel a4VgOpCeDiqsTdzB;
-        if ( !GetViewModelFromCache( chartComp, out a4VgOpCeDiqsTdzB ))
+        ChartComponentViewModel vm;
+        if ( !GetViewModelFromCache( chartComp, out vm ))
       return false;
         chartComp.RemoveAxisesEventHandler();
         if ( chartComp is IChartCandleElement chartCandleElement )
             chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
         chartComp.PropertyChanged -= new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
         ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) _componentsCache ).Remove( chartComp );
-        if ( a4VgOpCeDiqsTdzB != null )
+        if ( vm != null )
         {
-            a4VgOpCeDiqsTdzB.GuiUpdateAndClear();
-            a4VgOpCeDiqsTdzB.Dispose();
-            LegendElements.Remove( a4VgOpCeDiqsTdzB );
+            vm.GuiUpdateAndClear();
+            vm.Dispose();
+            LegendElements.Remove( vm );
         }
         CheckForCandles();
         return true;
@@ -1204,7 +1204,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         throw new NotImplementedException();
     }
 
-    private void ChangeApplicationTheme() => SelectedTheme = ChartHelper.CurrChartTheme();
+    private void ChangeApplicationTheme() => SelectedTheme = NewChartHelper.CurrChartTheme();
 
     public void Dispose()
     {

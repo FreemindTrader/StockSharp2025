@@ -1,5 +1,5 @@
 ﻿// Decompiled with JetBrains decompiler
-// Type: -.dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd
+// Type: -.UltrachartAnnotationEditor
 // Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
@@ -16,18 +16,18 @@ using System.Windows.Markup;
 #nullable disable
 namespace StockSharp.Charting;
 
-public sealed class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd : 
+public sealed class UltrachartAnnotationEditor : 
   NonTopmostPopup,
   IComponentConnector
 {
   
-  public static readonly DependencyProperty \u0023\u003DzZ_thYDJka4Sb = DependencyProperty.Register(nameof (PropertyDefinitions), typeof (IEnumerable<DevExpress.Xpf.PropertyGrid.PropertyDefinition>), typeof (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DzZ_thYDJka4Sb = DependencyProperty.Register(nameof (PropertyDefinitions), typeof (IEnumerable<DevExpress.Xpf.PropertyGrid.PropertyDefinition>), typeof (UltrachartAnnotationEditor), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd \u0023\u003Dzv4BS1WQ\u003D;
+  public UltrachartAnnotationEditor _annotationEditor;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
-  public dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd()
+  public UltrachartAnnotationEditor()
   {
     this.InitializeComponent();
   }
@@ -36,11 +36,11 @@ public sealed class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6Z
   {
     get
     {
-      return (IEnumerable<DevExpress.Xpf.PropertyGrid.PropertyDefinition>) this.GetValue(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd.\u0023\u003DzZ_thYDJka4Sb);
+      return (IEnumerable<DevExpress.Xpf.PropertyGrid.PropertyDefinition>) this.GetValue(UltrachartAnnotationEditor.\u0023\u003DzZ_thYDJka4Sb);
     }
     set
     {
-      this.SetValue(dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd.\u0023\u003DzZ_thYDJka4Sb, (object) value);
+      this.SetValue(UltrachartAnnotationEditor.\u0023\u003DzZ_thYDJka4Sb, (object) value);
     }
   }
 
@@ -48,9 +48,9 @@ public sealed class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6Z
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/ultrachart/ultrachartannotationeditor.xaml", UriKind.Relative));
   }
 
@@ -60,8 +60,8 @@ public sealed class dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6Z
   void IComponentConnector.\u0023\u003DzuNHLeGEnMjz9FDFZ6wymuXfyw_Iz(int _param1, object _param2)
   {
     if (_param1 == 1)
-      this.\u0023\u003Dzv4BS1WQ\u003D = (dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd) _param2;
+      this._annotationEditor = (UltrachartAnnotationEditor) _param2;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 }

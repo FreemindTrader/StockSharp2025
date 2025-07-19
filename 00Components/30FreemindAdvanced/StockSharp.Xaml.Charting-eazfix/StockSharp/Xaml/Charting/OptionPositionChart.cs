@@ -69,7 +69,7 @@ public class OptionPositionChart :
   
   public Chart \u0023\u003DzO72kpz0\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public OptionPositionChart()
   {
@@ -329,9 +329,9 @@ public class OptionPositionChart :
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/optionpositionchart.xaml", UriKind.Relative));
   }
 
@@ -343,7 +343,7 @@ public class OptionPositionChart :
     if (connectionId == 1)
       this.\u0023\u003DzO72kpz0\u003D = (Chart) target;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 
   public static ChartLineElement \u0023\u003Dq0HLdWTESvQ6GGDGtNBBTLK5Qq8Y\u0024H3q\u00248gIXe0eWBbj5IK92tA5V4eLCtjG2o_mj(

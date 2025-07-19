@@ -160,7 +160,7 @@ public class Chart :
 
 	public SciChartGroup \u0023\u003DzxYLKFqWiCEs\u0024;
   
-	private bool \u0023\u003DzQGCmQMjHdLKS;
+	private bool _someInternalBoolean;
 
   public Chart()
 	{
@@ -935,7 +935,7 @@ public class Chart :
     zmMdfCucSnZwz(_param1);
   }
 
-  public void \u0023\u003Dz49m\u0024QLWwKQs9(ChartAnnotation _param1)
+  public void InvokeAnnotationCreatedEvent(ChartAnnotation _param1)
   {
     Action<IChartAnnotationElement> z6KsbJRt22Hb = this.\u0023\u003Dz6KSbJ_RT22HB;
     if (z6KsbJRt22Hb == null)
@@ -943,7 +943,7 @@ public class Chart :
     z6KsbJRt22Hb((IChartAnnotationElement) _param1);
   }
 
-  public void \u0023\u003Dz5mEkRaZSEt9m(
+  public void InvokeAnnotationModifiedEvent(
     ChartAnnotation _param1,
     ChartDrawData.AnnotationData _param2)
   {
@@ -961,7 +961,7 @@ public class Chart :
     z53l3VmDrGxpJ((IChartAnnotationElement) _param1);
   }
 
-  public void \u0023\u003DzSZqzgFQySfHr(
+  public void InvokeAnnotationSelectedEvent(
     ChartAnnotation _param1,
     ChartDrawData.AnnotationData _param2)
   {
@@ -1219,9 +1219,9 @@ public class Chart :
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/chart.xaml", UriKind.Relative));
   }
 
@@ -1240,7 +1240,7 @@ public class Chart :
     if (connectionId == 1)
       this.\u0023\u003DzxYLKFqWiCEs\u0024 = (SciChartGroup) target;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 
   private Security \u0023\u003DqWFLBlYXsZ6MGzXnc3yqMfUBG1YSw2WmShVXKtnoKBjE\u003D(ChartArea _param1)

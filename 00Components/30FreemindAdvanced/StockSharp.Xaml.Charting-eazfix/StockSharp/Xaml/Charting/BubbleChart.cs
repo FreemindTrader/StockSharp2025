@@ -24,7 +24,7 @@ public class BubbleChart : UserControl, IComponentConnector
   
   public XYDiagram2D \u0023\u003DzC0s2qwQ\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public BubbleChart() => this.InitializeComponent();
 
@@ -53,9 +53,9 @@ public class BubbleChart : UserControl, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/bubblechart.xaml", UriKind.Relative));
   }
 
@@ -67,7 +67,7 @@ public class BubbleChart : UserControl, IComponentConnector
     if (connectionId == 1)
       this.\u0023\u003DzC0s2qwQ\u003D = (XYDiagram2D) target;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 
   private sealed class \u0023\u003Dz3j8PT5y_w1jq<TX>(

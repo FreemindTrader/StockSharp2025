@@ -80,7 +80,7 @@ public class ChartPanel :
   
   private bool \u0023\u003DzCm\u0024a_RJSIzjb8Je3X21wN90\u003D;
   
-  public ChartPanel \u0023\u003Dzv4BS1WQ\u003D;
+  public ChartPanel _annotationEditor;
   
   public QuickOrderPanel \u0023\u003DzW15YPW8yFbIF;
   
@@ -98,7 +98,7 @@ public class ChartPanel :
   
   public Chart \u0023\u003DzO72kpz0\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   static ChartPanel()
   {
@@ -784,9 +784,9 @@ public class ChartPanel :
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/chartpanel.xaml", UriKind.Relative));
   }
 
@@ -805,7 +805,7 @@ public class ChartPanel :
     switch (connectionId)
     {
       case 1:
-        this.\u0023\u003Dzv4BS1WQ\u003D = (ChartPanel) target;
+        this._annotationEditor = (ChartPanel) target;
         break;
       case 2:
         ((CommandBinding) target).Executed += new ExecutedRoutedEventHandler(this.\u0023\u003DzJeZjj6FzeNO\u0024l09CVA\u003D\u003D);
@@ -884,7 +884,7 @@ public class ChartPanel :
         this.\u0023\u003DzO72kpz0\u003D = (Chart) target;
         break;
       default:
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
         break;
     }
   }

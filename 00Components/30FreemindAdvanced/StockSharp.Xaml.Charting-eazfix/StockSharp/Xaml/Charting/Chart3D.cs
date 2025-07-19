@@ -27,7 +27,7 @@ public class Chart3D : Chart3DControl, IComponentConnector
   
   public SeriesPoint3DStorage \u0023\u003DzedqXoAU\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public Chart3D() => this.InitializeComponent();
 
@@ -48,9 +48,9 @@ public class Chart3D : Chart3DControl, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/chart3d.xaml", UriKind.Relative));
   }
 
@@ -74,7 +74,7 @@ public class Chart3D : Chart3DControl, IComponentConnector
         this.\u0023\u003DzedqXoAU\u003D = (SeriesPoint3DStorage) target;
         break;
       default:
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
         break;
     }
   }

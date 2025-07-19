@@ -58,7 +58,7 @@ internal abstract class ChartCompentWpfBaseViewModel< T > : DrawableChartCompone
         }
     }
 
-    public override sealed void GuiUpdateAndClear( )
+    public sealed override void GuiUpdateAndClear( )
     {
         foreach( IChartComponent elementXY in _componentUIMap.ToArray( ) )
         {

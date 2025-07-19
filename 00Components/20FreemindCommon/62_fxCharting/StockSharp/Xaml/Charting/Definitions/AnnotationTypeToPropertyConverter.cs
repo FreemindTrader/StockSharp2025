@@ -66,7 +66,7 @@ namespace StockSharp.Xaml.Charting
                 return null;
             }
 
-            var annotationType = annotation.GetAnnotationType( );
+            var annotationType = AnnotationExtensionHelper.GetType( annotation );
 
             PooledList<PropertyDefinition> propertyDefinitionList;
 

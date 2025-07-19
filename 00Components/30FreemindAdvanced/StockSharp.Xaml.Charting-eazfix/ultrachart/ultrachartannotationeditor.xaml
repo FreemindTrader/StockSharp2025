@@ -1,4 +1,4 @@
-<s:dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<s:UltrachartAnnotationEditor xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                                                                                             xmlns:s="clr-namespace:-"
                                                                                             xmlns:lll="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
                                                                                             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -17,4 +17,4 @@
                                      PropertyDefinitionsSource="{Binding ElementName=Ctrl, Path=PlacementTarget, Converter={StaticResource Converter}}"/>
     </Grid>
   </Border>
-</s:dje_zY25VVVU5M2ZF8FXMUB8J3DLXXCBCF2R6BFXD35AJMNZAG8VPWQ3UE6ZFKM53T5BWGTPBKV9Z_ejd>
+</s:UltrachartAnnotationEditor>

@@ -23,7 +23,7 @@ public class ChartElementEditor : UserControl, IComponentConnector
   
   public CheckEdit \u0023\u003DzW4kuZJQvOGhM;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public ChartElementEditor() => this.InitializeComponent();
 
@@ -41,9 +41,9 @@ public class ChartElementEditor : UserControl, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/chartelementeditor.xaml", UriKind.Relative));
   }
 
@@ -57,7 +57,7 @@ public class ChartElementEditor : UserControl, IComponentConnector
       if (connectionId == 2)
         ((PropertyGridControl) target).CustomExpand += new CustomExpandEventHandler(this.\u0023\u003DzhBeNwsJCF1_yklWLow\u003D\u003D);
       else
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
     }
     else
       this.\u0023\u003DzW4kuZJQvOGhM = (CheckEdit) target;

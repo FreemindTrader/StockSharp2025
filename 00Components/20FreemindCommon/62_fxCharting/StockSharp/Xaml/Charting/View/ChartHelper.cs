@@ -223,7 +223,7 @@ public static class ChartHelper
             throw new ArgumentNullException(nameof(chart));
 
         chart.IndicatorTypes.Clear();
-        chart.IndicatorTypes.AddRange(GetIndicatorTypes());
+        chart.IndicatorTypes.AddRange( NewChartHelper.GetIndicatorTypes());
     }
 
     private static readonly Lazy<IndicatorColorProvider> _indicatorColorProviders = new Lazy<IndicatorColorProvider>();
@@ -260,27 +260,27 @@ public static class ChartHelper
         } );
     }
 
-    public static string CurrChartTheme()
-    {
-        return ApplicationThemeHelper.ApplicationThemeName.ToChartTheme();
-    }
+    //public static string CurrChartTheme()
+    //{
+    //    return ApplicationThemeHelper.ApplicationThemeName.ToChartTheme();
+    //}
 
-    public static string ToChartTheme( this string appTheme )
-    {
-        return !appTheme.IsDark() ? "Chrome" : "ExpressionDark";
-    }
+    //public static string ToChartTheme( this string appTheme )
+    //{
+    //    return !appTheme.IsDark() ? "Chrome" : "ExpressionDark";
+    //}
 
-    public static void UpdateTheme( this IThemeableChart chart )
-    {
-        if ( chart == null )
-            throw new ArgumentNullException( nameof( chart ) );
-        chart.ChartTheme = ChartHelper.CurrChartTheme();
-    }
+    //public static void UpdateTheme( this IThemeableChart chart )
+    //{
+    //    if ( chart == null )
+    //        throw new ArgumentNullException( nameof( chart ) );
+    //    chart.ChartTheme = ChartHelper.CurrChartTheme();
+    //}
 
-    public static IEnumerable<IndicatorType> GetIndicatorTypes()
-    {
-        return IChartExtensions.IndicatorProvider.All;
-    }
+    //public static IEnumerable<IndicatorType> GetIndicatorTypes()
+    //{
+    //    return IChartExtensions.IndicatorProvider.All;
+    //}
 
     //public static void FillDefaultValues( this OptimizerChart3D chart )
     //{

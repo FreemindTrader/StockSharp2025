@@ -26,7 +26,7 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
   
   public SimpleButton \u0023\u003Dzs4BdTaM\u003D;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public ChartCandleElementPicker() => this.InitializeComponent();
 
@@ -56,9 +56,9 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/chartcandleelementpicker.xaml", UriKind.Relative));
   }
 
@@ -72,7 +72,7 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
       if (connectionId == 2)
         this.\u0023\u003Dzs4BdTaM\u003D = (SimpleButton) target;
       else
-        this.\u0023\u003DzQGCmQMjHdLKS = true;
+        this._someInternalBoolean = true;
     }
     else
     {

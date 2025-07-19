@@ -26,7 +26,7 @@ public class HeatmapChart : UserControl, IComponentConnector
   
   public HeatmapControl \u0023\u003Dz5ZPAD\u0024Ikyftb;
   
-  private bool \u0023\u003DzQGCmQMjHdLKS;
+  private bool _someInternalBoolean;
 
   public HeatmapChart()
   {
@@ -53,9 +53,9 @@ public class HeatmapChart : UserControl, IComponentConnector
   [GeneratedCode("PresentationBuildTasks", "9.0.0.0")]
   public void InitializeComponent()
   {
-    if (this.\u0023\u003DzQGCmQMjHdLKS)
+    if (this._someInternalBoolean)
       return;
-    this.\u0023\u003DzQGCmQMjHdLKS = true;
+    this._someInternalBoolean = true;
     Application.LoadComponent((object) this, new Uri("/StockSharp.Xaml.Charting;V5.0.0;component/heatmapchart.xaml", UriKind.Relative));
   }
 
@@ -67,6 +67,6 @@ public class HeatmapChart : UserControl, IComponentConnector
     if (connectionId == 1)
       this.\u0023\u003Dz5ZPAD\u0024Ikyftb = (HeatmapControl) target;
     else
-      this.\u0023\u003DzQGCmQMjHdLKS = true;
+      this._someInternalBoolean = true;
   }
 }
