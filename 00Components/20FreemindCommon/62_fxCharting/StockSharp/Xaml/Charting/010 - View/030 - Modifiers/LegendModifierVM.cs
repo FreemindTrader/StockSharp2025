@@ -23,38 +23,38 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     private bool _allowToHide = true;
 
-    private IEnumerable<ChartCompentViewModel> _componentsCache;
+    private IEnumerable<ChartComponentViewModel> _componentsCache;
 
-    private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
+    private readonly DrawingSurfaceViewModel _scichartSurfaceVM;
 
     private readonly ICommand _removeElementCommand;
 
-    public event Action<IChartElement> RemoveElmentEvent;
+    public event Action<IChartElement> RemoveElementEvent;
 
-    public LegendModifierVM( ScichartSurfaceMVVM vm )
+    public LegendModifierVM( DrawingSurfaceViewModel vm )
     {
         this._scichartSurfaceVM = vm ?? throw new ArgumentNullException( "pane" );
-        this.Elements = ( IEnumerable<ChartCompentViewModel> ) vm.LegendElements;
+        this.Elements = ( IEnumerable<ChartComponentViewModel> ) vm.LegendElements;
 
-        // BUG: need to work on ChartCompentViewModel first
-        //this._removeElementCommand = new ActionCommand<ChartCompentViewModel>(
-        //    vm => RemoveElmentEvent?.Invoke( vm.ChartComponent ),
+        // BUG: need to work on ChartComponentViewModel first
+        //this._removeElementCommand = new ActionCommand<ChartComponentViewModel>(
+        //    vm => RemoveElementEvent?.Invoke( vm.ChartComponent ),
         //    p => p.AllowToRemove );
     }
 
-    public ScichartSurfaceMVVM Pane
+    public DrawingSurfaceViewModel Pane
     {
         get => this._scichartSurfaceVM;
     }
 
     public ICommand RemoveElementCommand => this._removeElementCommand;
 
-    public IEnumerable<ChartCompentViewModel> Elements
+    public IEnumerable<ChartComponentViewModel> Elements
     {
         get => this._componentsCache;
         set
         {
-            this.SetField<IEnumerable<ChartCompentViewModel>>( ref this._componentsCache, value, nameof( Elements ) );
+            this.SetField<IEnumerable<ChartComponentViewModel>>( ref this._componentsCache, value, nameof( Elements ) );
         }
     }
 

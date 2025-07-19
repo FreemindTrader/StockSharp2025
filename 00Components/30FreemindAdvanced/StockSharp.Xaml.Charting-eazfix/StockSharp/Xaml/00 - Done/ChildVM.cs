@@ -19,7 +19,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
     private string _value;
     private Color _color;
     private SeriesInfo _seriesInfo;
-    private ChartCompentViewModel _parent;
+    private ChartComponentViewModel _parent;
 
     public ChartElementViewModel( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this( null, mypropertyOwner, getColorFunc, getValueFunc, string_2 )
     {
@@ -47,7 +47,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
         };
     }
 
-    public ChartCompentViewModel Parent
+    public ChartComponentViewModel Parent
     {
         get
         {

@@ -46,7 +46,7 @@ public sealed class ultrachartlegend :
   private void \u0023\u003DzFEhTVIBjIbf8(object _param1, RoutedEventArgs _param2)
   {
     Hyperlink hyperlink = (Hyperlink) _param1;
-    if (!(hyperlink.DataContext is ChartCompentViewModel dataContext) || !(dataContext.ChartComponent is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
+    if (!(hyperlink.DataContext is ChartComponentViewModel dataContext) || !(dataContext.ChartComponent is IChartCandleElement) || !dataContext.Pane.GroupChart.IsInteracted)
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
     Subscription subscription = dataContext.GetSubscription(dataContext.ChartComponent);
@@ -60,7 +60,7 @@ public sealed class ultrachartlegend :
 
   private void OnButtonClicked(object _param1, RoutedEventArgs _param2)
   {
-    if (!((_param1 is FrameworkElement frameworkElement ? frameworkElement.DataContext : (object) null) is ChartCompentViewModel dataContext))
+    if (!((_param1 is FrameworkElement frameworkElement ? frameworkElement.DataContext : (object) null) is ChartComponentViewModel dataContext))
       return;
     this.\u0023\u003DzKkX3SOgS26uy.IsOpen = false;
     Subscription subscription1 = dataContext.GetSubscription(dataContext.ChartComponent);

@@ -421,7 +421,7 @@ namespace StockSharp.Xaml.Charting
         public override void PerformPeriodicalAction( )
         {
             base.PerformPeriodicalAction( );
-            VisibleRangeDpo xAxisVisibleRange = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
+            VisibleRangeDpo xAxisVisibleRange = DrawingSurface.GetVisibleRangeDpo( ChartComponentView.XAxisId );
 
             if ( xAxisVisibleRange == null )
             {
@@ -540,7 +540,7 @@ namespace StockSharp.Xaml.Charting
                 _barEventsSubscribed = true;
             }
 
-            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
+            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDpo( ChartComponentView.XAxisId );
             bool xAxisIsDateTime = xAxisIdRange != null && xAxisIdRange.GetAxisType( ) == ChartAxisType.CategoryDateTime;
             int count            = barRange.Count;
             var lastBarTime      = _dateTimeUtc;
@@ -687,7 +687,7 @@ namespace StockSharp.Xaml.Charting
                 return false;
             }
 
-            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDp( ChartComponentView.XAxisId );
+            var xAxisIdRange     = DrawingSurface.GetVisibleRangeDpo( ChartComponentView.XAxisId );
             bool xAxisIsDateTime = xAxisIdRange != null && xAxisIdRange.GetAxisType( ) == ChartAxisType.CategoryDateTime;
             int count            = candles.Count;
             var lastBarTime      = _dateTimeUtc;

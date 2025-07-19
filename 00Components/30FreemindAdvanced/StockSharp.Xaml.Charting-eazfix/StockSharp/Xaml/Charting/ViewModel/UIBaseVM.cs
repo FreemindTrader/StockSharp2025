@@ -19,9 +19,9 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 	
 	private readonly Dictionary<IRenderableSeries, AxisMarkerAnnotation> _renderseries2AxisMarker = new Dictionary<IRenderableSeries, AxisMarkerAnnotation>();
 	
-	private ChartCompentViewModel _parentChartViewModel;
+	private ChartComponentViewModel _parentChartViewModel;
 
-	protected ChartCompentViewModel ChartViewModel
+	protected ChartComponentViewModel ChartViewModel
 	{
 		get
 		{
@@ -101,7 +101,7 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 	}
 
 	public void Init(
-		ChartCompentViewModel _param1 )
+		ChartComponentViewModel _param1 )
 	{
 		if ( this.ChartViewModel != null )
 			throw new InvalidOperationException( "parent was already added" );

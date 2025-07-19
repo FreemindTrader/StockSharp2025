@@ -31,7 +31,7 @@ namespace StockSharp.Xaml.Charting;
 ///     2) Bid Line - Children two, BidLine
 /// 
 /// </summary>
-public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
+public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 {
 
     // This is the View Model of the Chart Component
@@ -50,7 +50,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     private bool _isDisposed;
 
-    public ChartCompentViewModel( DrawingSurfaceViewModel drawingSurface, IChartComponent component )
+    public ChartComponentViewModel( DrawingSurfaceViewModel drawingSurface, IChartComponent component )
     {
         _drawingSurface = drawingSurface ?? throw new ArgumentNullException( "pane" );
         _chartComponent = component ?? throw new ArgumentNullException( "element" );
@@ -250,7 +250,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //using System.Linq;
 //using System.Windows.Media;
 
-//public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
+//public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 //{
 //    private readonly ObservableCollection< ChartElementViewModel > _childViewModels = new ObservableCollection< ChartElementViewModel >( );
 //    private readonly DrawableChartElementBaseViewModel[ ] _componentsCache;
@@ -259,7 +259,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 //    private readonly IChartComponent _iRootElement;
 //    private bool _isDisposed;
 
-//    public ChartCompentViewModel( IDrawingSurfaceVM pane, IChartComponent elementXY, IEnumerable< DrawableChartElementBaseViewModel > childElements )
+//    public ChartComponentViewModel( IDrawingSurfaceVM pane, IChartComponent elementXY, IEnumerable< DrawableChartElementBaseViewModel > childElements )
 //    {
 //        if( pane == null )
 //        {

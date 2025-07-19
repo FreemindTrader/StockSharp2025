@@ -16,7 +16,8 @@ using StockSharp.BusinessEntities;
 using StockSharp.Localization;
 using StockSharp.Xaml.Charting;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
@@ -30,6 +31,7 @@ using DevExpress.Xpf.Grid;
 using SciChart.Charting.Visuals;
 using fx.Common;
 using StockSharp.Xaml;
+using StockSharp.Charting;
 
 
 
@@ -37,7 +39,7 @@ using StockSharp.Xaml;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IChart, IPersistable, IThemeableChart
+    public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IPersistable, IThemeableChart
     {
         #region Bindable Properties
 

@@ -38,7 +38,7 @@ using SciChart.Data.Model;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IChart, IPersistable, IThemeableChart
+    public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IPersistable, IThemeableChart
     {
         public void ShowMoreWaves()
         {

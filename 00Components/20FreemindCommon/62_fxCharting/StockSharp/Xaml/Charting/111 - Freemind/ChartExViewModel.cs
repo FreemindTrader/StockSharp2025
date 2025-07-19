@@ -42,7 +42,7 @@ using DevExpress.Xpf.Charts;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartExViewModel : ViewModelBase, IChart, IPersistable, IThemeableChart
+    public partial class ChartExViewModel : ViewModelBase, IPersistable, IThemeableChart
     {
         protected TimeSpan _period;
         private sealed class NotifyPropertiesMap

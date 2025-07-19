@@ -247,7 +247,7 @@ public sealed class AnnotationCollection :
     if (!_param1.get_IsEditable() || _param1.get_IsSelected() || !_param1.IsAttached)
       return false;
     if (\u0023\u003DzAuXtmwo_UFdzWVVSiImlM31xDLNQayoP0V5CDOs\u003D.\u0023\u003DzNFIr3TSkl0uk() != MouseModifier.Shift || !this.\u0023\u003DzbjRX\u0024PUuuOXT(_param1))
-      this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(AnnotationCollection.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ ?? (AnnotationCollection.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ = new Action<IAnnotation>(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D)));
+      this.\u0023\u003Dz30RSSSygABj_<IAnnotation>(AnnotationCollection.SomeClass34343383.m_public_static_Func_ChartComponentViewModel_bool_ ?? (AnnotationCollection.SomeClass34343383.m_public_static_Func_ChartComponentViewModel_bool_ = new Action<IAnnotation>(AnnotationCollection.SomeClass34343383.SomeMethond0343.\u0023\u003DzVRk6KEtjy1UCzmcX5OcvFww\u003D)));
     this.\u0023\u003DzdkkvQAq7ppeh(_param1);
     return true;
   }
@@ -307,7 +307,7 @@ public sealed class AnnotationCollection :
     public static Action<IAnnotation> \u0023\u003Dz9026KON3YHnz1feVRw\u003D\u003D;
     public static Action<IAnnotation> \u0023\u003DzvUis2ceeooAA32k3YQ\u003D\u003D;
     public static Action<IAnnotation> \u0023\u003DzUsoE\u00244KLHwOEYi4PCA\u003D\u003D;
-    public static Action<IAnnotation> m_public_static_Func_ChartCompentViewModel_bool_;
+    public static Action<IAnnotation> m_public_static_Func_ChartComponentViewModel_bool_;
 
     public void \u0023\u003DzP7tHDC_yuYcRLkKl1Q\u003D\u003D()
     {

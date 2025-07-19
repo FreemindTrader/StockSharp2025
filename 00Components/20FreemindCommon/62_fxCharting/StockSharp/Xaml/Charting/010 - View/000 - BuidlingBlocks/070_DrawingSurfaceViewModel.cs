@@ -51,25 +51,25 @@ namespace StockSharp.Xaml.Charting;
 /// 
 /// </summary>
 public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
-                                          IDisposable,
-                                          IScichartSurfaceVM
+                                                IDisposable,
+                                                IDrawingSurfaceViewModel
 {
     /// <summary>
     /// Chart Components Cache 
     /// </summary>
-    private sealed class ChartComponentsCache : CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>
+    private sealed class ChartComponentsCache : CachedSynchronizedDictionary<IChartComponent, ChartComponentViewModel>
     {
 
-        private ChartCompentViewModel[ ]? _componentViewModels =  null;
+        private ChartComponentViewModel[ ]? _componentViewModels =  null;
 
-        public ChartCompentViewModel[ ] InitCache()
+        public ChartComponentViewModel[ ] InitCache()
         {
-            lock ( ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) this ).SyncRoot )
+            lock ( ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) this ).SyncRoot )
             {
                 if ( _componentViewModels == null )
                 {
-                    var holders = new List<ChartCompentViewModel>();
-                    holders.AddRange( ( ( IEnumerable<KeyValuePair<IChartComponent, ChartCompentViewModel>> ) this ).OrderBy( p => p.Key.Priority ).Select( x => x.Value ) );
+                    var holders = new List<ChartComponentViewModel>();
+                    holders.AddRange( ( ( IEnumerable<KeyValuePair<IChartComponent, ChartComponentViewModel>> ) this ).OrderBy( p => p.Key.Priority ).Select( x => x.Value ) );
                     _componentViewModels = holders.ToArray();
                 }
 
@@ -100,13 +100,13 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private readonly DispatcherTimer _dispatcherTimer;
 
-    private readonly SynchronizedSet<ChartCompentViewModel> _parentChartViewModelCache = new SynchronizedSet<ChartCompentViewModel>();
+    private readonly SynchronizedSet<ChartComponentViewModel> _parentChartViewModelCache = new SynchronizedSet<ChartComponentViewModel>();
 
     private readonly Queue<double> _queue = new Queue<double>();
 
     private double _fpsTotal;
 
-    private readonly ObservableCollection<ChartCompentViewModel> _legendElements = new ObservableCollection<ChartCompentViewModel>();
+    private readonly ObservableCollection<ChartComponentViewModel> _legendElements = new ObservableCollection<ChartComponentViewModel>();
 
     public event Action<IChartElement> RemoveElementEvent;
 
@@ -126,7 +126,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private bool _paneHasCandles;
 
-    private ChartCompentViewModel _candleCompositeElement;
+    private ChartComponentViewModel _candleCompositeElement;
 
     private readonly AnnotationCollection _annotationCollection = new AnnotationCollection();
 
@@ -163,10 +163,6 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     public DrawingSurfaceViewModel( ChartArea area ) : base()
     {
-        DrawingSurfaceViewModel.SomeClass6409 _someInstance08383 = new DrawingSurfaceViewModel.SomeClass6409();
-
-
-        _someInstance08383._variableSome3535 = this;
         _chartArea = area ?? throw new ArgumentNullException( "area" );
         _dispatcherTimer = new DispatcherTimer( ( DispatcherPriority ) 7, Application.Current.Dispatcher );
         _dispatcherTimer.Tick += new EventHandler( OnTimer );
@@ -175,15 +171,22 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         Height = area.Height;
         area.Elements.Added += new Action<IChartElement>( OnChartAreaElementsAdded );
         area.Elements.Removing += new Func<IChartElement, bool>( OnChartAreaElementsRemoving );
-        area.Elements.RemovingAt += new Func<int, bool>( _someInstance08383.OnChartAreaElementsRemovingAt );
-        area.Elements.Clearing += new Func<bool>( _someInstance08383.OnChartAreaElementsClearing );
-        area.XAxises.Added += new Action<IChartAxis>( _someInstance08383.OnAreaXAxisesAdded );
-        area.XAxises.Removing += new Func<IChartAxis, bool>( _someInstance08383.OnAreaXAxisesRemoving );
-        area.XAxises.RemovingAt += new Func<int, bool>( _someInstance08383.OnAreaXAxisesRemovingAt );
-        area.YAxises.Added += new Action<IChartAxis>( _someInstance08383.OnAreaYAxisesAdded );
-        area.YAxises.Removing += new Func<IChartAxis, bool>( _someInstance08383.OnAreaYAxisesRemoving );
-        area.YAxises.RemovingAt += new Func<int, bool>( _someInstance08383.OnAreaYAxisesRemovingAt );
-        ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler( _someInstance08383.OnApplicationThemeChanged );
+        area.Elements.RemovingAt += ( i => OnChartAreaElementsRemoving(  area.Elements[ i ] ));
+
+        area.Elements.Clearing += () =>
+        {
+            CollectionHelper.ForEach<IChartElement>( area.Elements, ( i => OnChartAreaElementsRemoving( i ) ) );
+            return true;
+        };
+        area.XAxises.Added += ( x => AddAxis( x, XAxises ) );
+        area.XAxises.Removing += ( a => RemoveAxis( a, XAxises ) );
+        area.XAxises.RemovingAt += ( i => RemoveAxis( area.XAxises[ i ], XAxises ) );
+        area.YAxises.Added += ( y => AddAxis( y, YAxises ) );
+        area.YAxises.Removing += ( y => RemoveAxis( y, YAxises ) );
+        area.YAxises.RemovingAt += ( i => RemoveAxis( area.YAxises[ i ], YAxises ) );
+
+        
+        ThemeManager.ApplicationThemeChanged += (d,e) => ChangeApplicationTheme();
         ChangeApplicationTheme();
         CollectionHelper.ForEach<IChartElement>( ( IEnumerable<IChartElement> ) Area.Elements, new Action<IChartElement>( OnChartAreaElementsAdded ) );
         Area.PropertyChanged += new PropertyChangedEventHandler( OnAreaPropertyChanged );
@@ -194,9 +197,11 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         _rubberBandXyZoomModifier = rb;
     }
 
+    
+
     private object GetRootElement() => ( object ) ParentViewModel ?? ( object ) this;
 
-    public ObservableCollection<ChartCompentViewModel> LegendElements
+    public ObservableCollection<ChartComponentViewModel> LegendElements
     {
         get => _legendElements;
     }
@@ -512,14 +517,9 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private bool RemoveAxis( IChartAxis axis, ICollection<IAxis> axisColl )
     {
-        DrawingSurfaceViewModel.SomeSealClass083523 jy0mx0yCuWlqEsh0ZdY = new DrawingSurfaceViewModel.SomeSealClass083523();
-        jy0mx0yCuWlqEsh0ZdY._ICollection_IAxis_098 = axisColl;
-        jy0mx0yCuWlqEsh0ZdY._IChartAxis_098 = axis;
-        jy0mx0yCuWlqEsh0ZdY._variableSome3535 = this;
-        FrameworkElement chart = (FrameworkElement) Chart;
         if ( Chart != null )
         {
-            ( ( DispatcherObject ) chart ).GuiAsync( () =>
+            ( ( DispatcherObject ) Chart ).GuiAsync( () =>
             {
                 var target = (AxisBase) axisColl.FirstOrDefault<IAxis>( x => x.Id == axis.Id);
                 if ( target == null )
@@ -532,8 +532,9 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         }
             
         return true;
-    }    
+    }
 
+    
     private void OnTargetPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
     {
         if ( !( _param1 is CategoryDateTimeAxis timeAxis ) || _param2.PropertyName != "CurrentDatapointPixelSize" )
@@ -585,7 +586,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
                 }
             } );
 
-        CollectionHelper.ForEach<ChartCompentViewModel>( _componentsCache.CachedValues, component => component.UpdateYAxisMarker() );
+        CollectionHelper.ForEach<ChartComponentViewModel>( _componentsCache.CachedValues, component => component.UpdateYAxisMarker() );
 
         if ( ShowPerfStats && e.Duration > 0.0 )
         {
@@ -611,11 +612,11 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private void OnTimer( object _param1, EventArgs _param2 )
     {
-        ChartCompentViewModel[] vms;
+        ChartComponentViewModel[] vms;
         lock (  _parentChartViewModelCache.SyncRoot )
-            vms = CollectionHelper.CopyAndClear<ChartCompentViewModel>( _parentChartViewModelCache );
+            vms = CollectionHelper.CopyAndClear<ChartComponentViewModel>( _parentChartViewModelCache );
 
-        foreach ( ChartCompentViewModel vm in vms )
+        foreach ( ChartComponentViewModel vm in vms )
             vm.PerformPeriodicalAction();
     }
 
@@ -623,7 +624,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     {
         foreach ( IChartComponent comp in chartElement )
         {
-            ChartCompentViewModel vm;
+            ChartComponentViewModel vm;
             if ( GetViewModelFromCache( comp, out vm ))
       {
                 _parentChartViewModelCache.Add( vm );
@@ -636,7 +637,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     {
         foreach ( var chartComp in ( _componentsCache ).Where(p => p.Value == null ).Select( p => p.Key ).ToArray() )
         {
-            ChartCompentViewModel vm = new ChartCompentViewModel(this, chartComp);
+            ChartComponentViewModel vm = new ChartComponentViewModel(this, chartComp);
 
             vm.InitializeChildElements( chartComp.ChildElements.Append2( chartComp )
                                         .OfType<IDrawableChartElement>()
@@ -645,7 +646,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
                                         .Where( e => e != null ));
 
             
-            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ chartComp ] = vm;
+            ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) _componentsCache )[ chartComp ] = vm;
             if ( chartComp.IsLegend )
                 LegendElements.Add( vm );
         }
@@ -658,37 +659,69 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         PaneHasCandles = CandlesCompositeElement != null;
     }
 
-    public bool GetViewModelFromCache( IChartComponent comp, out ChartCompentViewModel viewModel )
+    public bool GetViewModelFromCache( IChartComponent comp, out ChartComponentViewModel viewModel )
     {
         return  _componentsCache.TryGetValue( comp, out viewModel );
     }
 
-    public void OnChartAreaElementsAdded( IChartElement _param1 )
+
+    /// <summary>
+    /// This is the event handler when we add a new chart element to the chart area. 
+    /// 
+    /// eg. If we are going to add a CandleStick Viusal UI to the chart, this is what is happening behind the scene.
+    ///     1) First thing first, WPF UI drawing routine has to be done in the UI main thread. 
+    ///         * Chart.EnsureUIThread();
+    ///         
+    ///     2) When we scroll the XAxis or YAxis, the candleStick need to scroll as well. This is accomplished by the following code.
+    ///         * chartComponent.AddAxisesAndEventHandler( Area );
+    ///         
+    ///     3) Since a Candle is made up of multiple children UI elements (High, Low, Open, Close ), we need to create and initialize all the children UI.
+    /// </summary>
+    /// <param name="anyChartUI"></param>
+    /// <exception cref="ArgumentException"></exception>
+    public void OnChartAreaElementsAdded( IChartElement anyChartUI )
     {
         IChart chart = Chart;
-        if ( chart != null )
-            chart.EnsureUIThread();
-        IChartComponent chartComp = (IChartComponent) _param1;
-        chartComp.AddAxisesAndEventHandler( Area );
-        if ( ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).ContainsKey( chartComp ) )
-            throw new ArgumentException( "duplicate chart element", "element" );
         if ( Chart != null )
         {
-            ChartCompentViewModel a4VgOpCeDiqsTdzB = new ChartCompentViewModel(this, chartComp);
-            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( chartComp.ChildElements, ( IChartElement ) chartComp ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( DrawingSurfaceViewModel.SomeClass34343383.__Func_IDrawableChartElement__bool__903 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_IDrawableChartElement__bool__903 = new Func<IDrawableChartElement, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_0983333 ) ) ).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>( new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>( NewDrawableChartElementBaseViewModel ) ).Where<DrawableChartElementBaseViewModel>( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 ?? ( DrawingSurfaceViewModel.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 = new Func<DrawableChartElementBaseViewModel, bool>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_5498751 ) ) ) );
-            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ chartComp ] = a4VgOpCeDiqsTdzB;
-            if ( chartComp.IsLegend )
-                LegendElements.Add( a4VgOpCeDiqsTdzB );
+            Chart.EnsureUIThread();
+        }
+            
+        IChartComponent chartComponent = (IChartComponent) anyChartUI;
+        chartComponent.AddAxisesAndEventHandler( Area );
+        
+        if ( _componentsCache.ContainsKey( chartComponent ) )
+        {
+            throw new ArgumentException( "duplicate chart element", "element" );
+        }
+
+        if ( Chart != null )
+        {
+            var vm = new ChartComponentViewModel(this, chartComponent);
+            vm.InitializeChildElements( CollectionHelper.Append2( chartComponent.ChildElements, chartComponent ).OfType<IDrawableChartElement>()
+                                                        .Where( e => !e.DontDraw )
+                                                        .Select( d => d.CreateViewModel( this ) ) );
+
+            _componentsCache[ chartComponent ] = vm;
+
+            if ( chartComponent.IsLegend )
+            {
+                LegendElements.Add( vm );
+            }
+
         }
         else
-            ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache )[ chartComp ] = ( ChartCompentViewModel ) null;
-        if ( _modifierGroup != null && chartComp is IChartCandleElement chartCandleElement )
         {
-            OnDrawStylePropertyChanged( chartCandleElement );
-            chartCandleElement.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
+            _componentsCache[ chartComponent ] = null;
+        }
+            
+        if ( _modifierGroup != null && chartComponent is IChartCandleElement candle )
+        {
+            OnDrawStylePropertyChanged( candle );
+            candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
         }
         CheckForCandles();
-        chartComp.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        chartComponent.PropertyChanged += new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
     }
 
     public bool OnChartAreaElementsRemoving( IChartElement _param1 )
@@ -697,14 +730,14 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         if ( chart != null )
             chart.EnsureUIThread();
         IChartComponent chartComp = (IChartComponent) _param1;
-        ChartCompentViewModel a4VgOpCeDiqsTdzB;
+        ChartComponentViewModel a4VgOpCeDiqsTdzB;
         if ( !GetViewModelFromCache( chartComp, out a4VgOpCeDiqsTdzB ))
       return false;
         chartComp.RemoveAxisesEventHandler();
         if ( chartComp is IChartCandleElement chartCandleElement )
             chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
-        chartComp.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
-        ( ( SynchronizedDictionary<IChartComponent, ChartCompentViewModel> ) _componentsCache ).Remove( chartComp );
+        chartComp.PropertyChanged -= new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
+        ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) _componentsCache ).Remove( chartComp );
         if ( a4VgOpCeDiqsTdzB != null )
         {
             a4VgOpCeDiqsTdzB.GuiUpdateAndClear();
@@ -715,37 +748,40 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         return true;
     }
 
-    private void OnXYAxisPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
+    private void OnChartComponentPropertiesChanged( object chartComponent, PropertyChangedEventArgs e )
     {
-        IChartComponent chartComp = (IChartComponent) _param1;
-        if ( _param2.PropertyName != "XAxisId" && _param2.PropertyName != "YAxisId" )
+        IChartComponent chartComp = (IChartComponent) chartComponent;
+        if ( e.PropertyName != "XAxisId" && e.PropertyName != "YAxisId" )
             return;
         IChart chart = Chart;
         if ( chart != null )
             chart.EnsureUIThread();
-        List<IRenderableSeries> koh9jO5RuUcFiAqLcList;
-        if ( _chartUIRSeries.TryGetValue( chartComp, out koh9jO5RuUcFiAqLcList ) )
+
+        List<IRenderableSeries> multipleSeries;
+
+        if ( _chartUIRSeries.TryGetValue( chartComp, out multipleSeries ) )
         {
             if ( chartComp.TryGetXAxis() != null && chartComp.TryGetYAxis() != null )
             {
-                foreach ( IRenderableSeries koh9jO5RuUcFiAqLc in koh9jO5RuUcFiAqLcList )
+                foreach ( IRenderableSeries oneSerie in multipleSeries )
                 {
-                    if ( !_advanceChartRenderableSeries.Contains( koh9jO5RuUcFiAqLc ) )
-                        _advanceChartRenderableSeries.Add( koh9jO5RuUcFiAqLc );
+                    if ( !_advanceChartRenderableSeries.Contains( oneSerie ) )
+                        _advanceChartRenderableSeries.Add( oneSerie );
                 }
             }
             else
             {
-                foreach ( IRenderableSeries koh9jO5RuUcFiAqLc in koh9jO5RuUcFiAqLcList )
-                    _advanceChartRenderableSeries.Remove( koh9jO5RuUcFiAqLc );
+                foreach ( IRenderableSeries oneSerie in multipleSeries )
+                    _advanceChartRenderableSeries.Remove( oneSerie );
             }
         }
-        Dictionary<object, IAnnotation> dictionary;
-        if ( !_topChartElmentAnnotationMap.TryGetValue( chartComp, out dictionary ) )
+        Dictionary<object, IAnnotation> objectAnnotation;
+        if ( !_topChartElmentAnnotationMap.TryGetValue( chartComp, out objectAnnotation ) )
             return;
+
         if ( chartComp.TryGetXAxis() != null && chartComp.TryGetYAxis() != null )
         {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in objectAnnotation )
             {
                 if ( !Annotations.Contains( keyValuePair.Value ) )
                     Annotations.Add( keyValuePair.Value );
@@ -753,39 +789,51 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         }
         else
         {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in objectAnnotation )
                 Annotations.Remove( keyValuePair.Value );
         }
     }
 
-    private void Candle_PropertyChanged(
-      object _param1,
-      PropertyChangedEventArgs _param2 )
+    /// <summary>
+    /// We only care about the DrawStyle property change of the candle, since that is the only property that can change the draw style of the candle.
+    /// 
+    /// This code is mainly used to take care of changing the drawing color of the candle.
+    /// 
+    /// In China, trader use red color for rising candle, and other color for falling candle.
+    /// In USA, trader use green color for rishing candle and red color for falling candle.
+    /// </summary>
+    /// <param name="candle"></param>
+    /// <param name="e"></param>
+    private void Candle_PropertyChanged( object candle, PropertyChangedEventArgs e )
     {
-        if ( !( _param2.PropertyName == "DrawStyle" ) )
+        if ( ( e.PropertyName != "DrawStyle" ) )
             return;
-        OnDrawStylePropertyChanged( ( IChartCandleElement ) _param1 );
+        OnDrawStylePropertyChanged( ( IChartCandleElement ) candle );
     }
 
-    private void OnDrawStylePropertyChanged( IChartCandleElement _param1 )
+    private void OnDrawStylePropertyChanged( IChartCandleElement candle )
     {
-        _rubberBandXyZoomModifier.IsXAxisOnly = !_param1.DrawStyle.IsVolumeProfileChart();
+        _rubberBandXyZoomModifier.IsXAxisOnly = !candle.DrawStyle.IsVolumeProfileChart();
     }
 
-    public VisibleRangeDpo GetVisibleRangeDp(
-      string _param1 )
+    public VisibleRangeDpo GetVisibleRangeDpo( string axisId )
     {
-        IChartAxis chartAxis = ((IEnumerable<IChartAxis>) Area.XAxises).FirstOrDefault<IChartAxis>(new Func<IChartAxis, bool>(new DrawingSurfaceViewModel.SomeSealClass0833352()
-        {
-            _someString0382 = _param1
-        }.bool_Method02_IChartAxis_));
-        return chartAxis == null ? ( VisibleRangeDpo ) null : VisibleRangeDpo.AddRangeProperty( GetRootElement(), chartAxis.Group, PaneGroupSuffix, chartAxis.AxisType );
+        IChartAxis chartAxis =  Area.XAxises.FirstOrDefault<IChartAxis>( p => p.Id == axisId );
+
+        return chartAxis == null ? null : VisibleRangeDpo.AddRangeProperty( GetRootElement(), chartAxis.Group, PaneGroupSuffix, chartAxis.AxisType );
     }
 
     private void OnShowHiddenAxes()
     {
-        CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) Area.XAxises, DrawingSurfaceViewModel.SomeClass34343383._Action_IChartAxis_0932 ?? ( DrawingSurfaceViewModel.SomeClass34343383._Action_IChartAxis_0932 = new Action<IChartAxis>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_303403 ) ) );
-        CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) Area.YAxises, DrawingSurfaceViewModel.SomeClass34343383._Action_IChartAxis_0932323 ?? ( DrawingSurfaceViewModel.SomeClass34343383._Action_IChartAxis_0932323 = new Action<IChartAxis>( DrawingSurfaceViewModel.SomeClass34343383.SomeMethond0343.public_bool_Method_938745 ) ) );
+        foreach ( ChartAxis xAxis in Area.XAxises )
+        {
+            xAxis.IsVisible = true;
+        }
+
+        foreach ( ChartAxis yAxis in Area.YAxises )
+        {
+            yAxis.IsVisible = true;
+        }
     }
 
     public string PaneGroupSuffix
@@ -809,8 +857,14 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         get
         {
             object[] objArray = new object[2];
-            objArray[ 0 ] = ( object ) ( GroupChart ?? throw new NotSupportedException() ).GetInstanceCount();
-            objArray[ 1 ] = ( object ) _paneGroupSuffix;
+
+            if ( GroupChart != null )
+            {
+                throw new NotSupportedException();
+            }
+
+            objArray[ 0 ] = GroupChart.ViewModel.InstanceCount;
+            objArray[ 1 ] = _paneGroupSuffix;
             return StringHelper.Put( "ssharpultrachart{0}_{1}", objArray );
         }
     }
@@ -834,9 +888,10 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
                 return _legendViewModel;
             _legendViewModel = new LegendModifierVM( this )
             {
-                LegendModifier = new LegendModifier()
+                LegendModifier = new LegendModifierEx()
             };
-            _legendViewModel.RemoveElementEvent( new Action<IChartElement>( OnRemoveElementEvent ) );
+            
+            _legendViewModel.RemoveElementEvent +=  OnRemoveElementEvent;
             return _legendViewModel;
         }
     }
@@ -845,14 +900,16 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     {
         get
         {
-            FxAnnotationModifier zIfS1UpijEycx = _annotationModifier;
-            if ( zIfS1UpijEycx != null )
-                return zIfS1UpijEycx;
-            FxAnnotationModifier g7AaupM52GhwgqEjd = new FxAnnotationModifier(Area, Annotations);
-            g7AaupM52GhwgqEjd.IsEnabled = false;
-            FxAnnotationModifier annotationModifier = g7AaupM52GhwgqEjd;
-            _annotationModifier = g7AaupM52GhwgqEjd;
-            return annotationModifier;
+            if ( _annotationModifier != null )
+            {
+                return _annotationModifier;
+            }
+
+            var annotation = new FxAnnotationModifier(Area, Annotations);
+            annotation.IsEnabled = false;
+            _annotationModifier = annotation;
+
+            return annotation;
         }
     }
 
@@ -864,74 +921,64 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         }
     }
 
-    public void AddAxisMakerAnnotation(
-      IChartComponent _param1,
-      IAnnotation _param2,
-      object _param3 )
+    public void AddAxisMakerAnnotation( IChartComponent component, IAnnotation annotation, object axisMarker )
     {
-        if ( _param3 == null )
+        if ( axisMarker == null )
             throw new ArgumentNullException( "key" );
-        Dictionary<object, IAnnotation> dictionary;
-        if ( !_topChartElmentAnnotationMap.TryGetValue( _param1, out dictionary ) )
-            _topChartElmentAnnotationMap[ _param1 ] = dictionary = new Dictionary<object, IAnnotation>();
-        dictionary.Add( _param3, _param2 );
-        if ( _param1.TryGetXAxis() == null || _param1.TryGetYAxis() == null )
+        Dictionary<object, IAnnotation> objectAnnotation;
+        if ( !_topChartElmentAnnotationMap.TryGetValue( component, out objectAnnotation ) )
+            _topChartElmentAnnotationMap[ component ] = objectAnnotation = new Dictionary<object, IAnnotation>();
+        objectAnnotation.Add( axisMarker, annotation );
+        if ( component.TryGetXAxis() == null || component.TryGetYAxis() == null )
             return;
-        Annotations.Add( _param2 );
+        Annotations.Add( annotation );
     }
 
-    public IAnnotation GetAxisMakerAnnotation(
-      IChartComponent _param1,
-      object _param2 )
+    public IAnnotation GetAxisMakerAnnotation( IChartComponent component, object annotationPair )
     {
-        Dictionary<object, IAnnotation> dictionary;
-        return !_topChartElmentAnnotationMap.TryGetValue( _param1, out dictionary ) ? ( IAnnotation ) null : CollectionHelper.TryGetValue<object, IAnnotation>( ( IDictionary<object, IAnnotation> ) dictionary, _param2 );
+        Dictionary<object, IAnnotation> objectAnnotation;
+        return !_topChartElmentAnnotationMap.TryGetValue( component, out objectAnnotation ) ? ( IAnnotation ) null : CollectionHelper.TryGetValue<object, IAnnotation>( ( IDictionary<object, IAnnotation> ) objectAnnotation, annotationPair );
     }
 
-    public void RemoveAnnotation(
-      IChartComponent _param1,
-      object _param2 )
+    public void RemoveAnnotation( IChartComponent component, object objAnnoPair )
     {
-        Dictionary<object, IAnnotation> dictionary;
-        if ( !_topChartElmentAnnotationMap.TryGetValue( _param1, out dictionary ) )
+        Dictionary<object, IAnnotation> objectAnnotation;
+        if ( !_topChartElmentAnnotationMap.TryGetValue( component, out objectAnnotation ) )
             return;
-        if ( _param2 == null )
+        if ( objAnnoPair == null )
         {
-            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in objectAnnotation )
                 Annotations.Remove( keyValuePair.Value );
-            _topChartElmentAnnotationMap.Remove( _param1 );
+            _topChartElmentAnnotationMap.Remove( component );
         }
         else
         {
-            IAnnotation hhh93Q0DqkV5Sv90k;
-            if ( !dictionary.TryGetValue( _param2, out hhh93Q0DqkV5Sv90k ) )
+            IAnnotation annotation;
+            if ( !objectAnnotation.TryGetValue( objAnnoPair, out annotation ) )
                 return;
-            Annotations.Remove( hhh93Q0DqkV5Sv90k );
-            dictionary.Remove( _param2 );
+            Annotations.Remove( annotation );
+            objectAnnotation.Remove( objAnnoPair );
         }
     }
 
-    public void AddSeriesViewModelsToRoot(
-      IChartComponent _param1,
-      IRenderableSeries _param2 )
+    public void AddSeriesViewModelsToRoot( IChartComponent component, IRenderableSeries rSeries )
     {
-        List<IRenderableSeries> koh9jO5RuUcFiAqLcList;
-        if ( !_chartUIRSeries.TryGetValue( _param1, out koh9jO5RuUcFiAqLcList ) )
-            _chartUIRSeries[ _param1 ] = koh9jO5RuUcFiAqLcList = new List<IRenderableSeries>();
-        if ( !koh9jO5RuUcFiAqLcList.Contains( _param2 ) )
-            koh9jO5RuUcFiAqLcList.Add( _param2 );
-        OnXYAxisPropertyChanged( ( object ) _param1, new PropertyChangedEventArgs( "XAxisId" ) );
+        List<IRenderableSeries> componentRSeries;
+        if ( !_chartUIRSeries.TryGetValue( component, out componentRSeries ) )
+            _chartUIRSeries[ component ] = componentRSeries = new List<IRenderableSeries>();
+        if ( !componentRSeries.Contains( rSeries ) )
+            componentRSeries.Add( rSeries );
+        OnChartComponentPropertiesChanged( ( object ) component, new PropertyChangedEventArgs( "XAxisId" ) );
     }
 
-    public void RemoveChartComponent(
-      IChartComponent _param1 )
+    public void RemoveChartComponent( IChartComponent component )
     {
-        List<IRenderableSeries> koh9jO5RuUcFiAqLcList;
-        if ( !_chartUIRSeries.TryGetValue( _param1, out koh9jO5RuUcFiAqLcList ) )
+        List<IRenderableSeries> componentRSeries;
+        if ( !_chartUIRSeries.TryGetValue( component, out componentRSeries ) )
             return;
-        foreach ( IRenderableSeries koh9jO5RuUcFiAqLc in koh9jO5RuUcFiAqLcList )
-            _advanceChartRenderableSeries.Remove( koh9jO5RuUcFiAqLc );
-        _chartUIRSeries.Remove( _param1 );
+        foreach ( IRenderableSeries serie in componentRSeries )
+            _advanceChartRenderableSeries.Remove( serie );
+        _chartUIRSeries.Remove( component );
     }
 
     public void Refresh()
@@ -941,15 +988,15 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     public AxisCollection XAxises
     {
-        get => _xAxisNotifyList;
+        get => _xAxises;
     }
 
     public AxisCollection YAxises
     {
-        get => _yAxisNotifyList;
+        get => _yAxises;
     }
 
-    public ChartCompentViewModel CandlesCompositeElement
+    public ChartComponentViewModel CandlesCompositeElement
     {
         get => _candleCompositeElement;
         private set => _candleCompositeElement = value;
@@ -1012,7 +1059,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         set
         {
             SetField<double>( ref _height, value, nameof( Height ) );
-            Area.Height = value;
+            Area.Height = (float) value;
         }
     }
 
@@ -1021,7 +1068,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         get
         {
             StockSharp.Xaml.Charting.Chart groupChart = GroupChart;
-            return groupChart == null ? _showPerfStats : __nonvirtual( groupChart.ShowPerfStats );
+            return groupChart == null ? _showPerfStats :  groupChart.ShowPerfStats;
         }
         set
         {
@@ -1150,11 +1197,11 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         set => _closePaneCommand = value;
     }
 
-    public ICommand ShowHiddenAxesCommand => _showHiddenAxesCommand;
+    public ICommand ShowHiddenAxesCommand => _showHiddenAxesCommand;    
 
-    void IDrawingSurfaceVM.ZoomExtents()
+    public void ZoomExtents()
     {
-        throw new NotSupportedException();
+        throw new NotImplementedException();
     }
 
     private void ChangeApplicationTheme() => SelectedTheme = ChartHelper.CurrChartTheme();
@@ -1165,12 +1212,13 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         _sciChartSurface = ( SciChartSurface ) null;
     }
 
-    public bool AllowElementToBeRemoved( ChartCompentViewModel _param1 )
+    public bool AllowElementToBeRemoved( ChartComponentViewModel vm )
     {
         if ( ParentViewModel == null || !ParentViewModel.IsInteracted )
             return false;
+        
         bool flag;
-        switch ( _param1.ChartComponent )
+        switch ( vm.RootChartComponent )
         {
             case IChartCandleElement _:
                 flag = ParentViewModel.AllowAddCandles;
@@ -1248,34 +1296,35 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     {
         RemoveAxis( _param1, ( ICollection<IAxis> ) YAxises );
     }
-
-    private DrawableChartElementBaseViewModel CreateDrawableChartElementBaseViewModel(
-      IDrawableChartElement _param1 )
+    
+    private DrawableChartComponentBaseViewModel CreateDrawableChartElementBaseViewModel( IDrawableChartElement _param1 )
     {
         return _param1.CreateViewModel( this );
     }
 
-    private DrawableChartElementBaseViewModel NewDrawableChartElementBaseViewModel(
-      IDrawableChartElement _param1 )
+    private DrawableChartComponentBaseViewModel NewDrawableChartElementBaseViewModel( IDrawableChartElement d )
     {
-        return _param1.CreateViewModel( this );
+        return d.CreateViewModel( this );
     }
 
     private void OnRemoveElementEvent( IChartElement _param1 )
     {
-        ParentViewModel?.\u0023\u003DzzXq5ccDMuPZc( _param1 );
-        Action<IChartElement> zeBeQvx4 = RemoveElementEvent;
-        if ( zeBeQvx4 == null )
+        ParentViewModel?.OnRemoveElementEvent( _param1 );
+
+        Action<IChartElement> myAction = RemoveElementEvent;
+        if ( myAction == null )
             return;
-        zeBeQvx4( _param1 );
+        myAction( _param1 );
     }
+
+    
 
     private sealed class PrivateSealedClass0835
     {
         public Func<Order, bool> m_public_Func_Order_bool_;
         public Func<ChartActiveOrdersElementVM, IEnumerable<Order>> Func_ChartActiveOrdersElementVM_0938;
 
-        public IEnumerable<Order> public_IEnumerable_Order_098( ChartCompentViewModel x )
+        public IEnumerable<Order> public_IEnumerable_Order_098( ChartComponentViewModel x )
         {
             return x.Elements.OfType<ChartActiveOrdersElementVM>().SelectMany<ChartActiveOrdersElementVM, Order>( Func_ChartActiveOrdersElementVM_0938 ?? ( Func_ChartActiveOrdersElementVM_0938 = new Func<ChartActiveOrdersElementVM, IEnumerable<Order>>( public_IEnumerable_Order__ ) ) );
         }
@@ -1286,226 +1335,146 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         }
     }
 
-    private sealed class PrivateSealedClass_3Ins_1Met
-    {
-        public DrawingSurfaceViewModel _variableSome3535;
-        public IChartAxis _IChartAxis_098;
-        public ICollection<IAxis> _ICollection_IAxis_098;
+    //private sealed class PrivateSealedClass_3Ins_1Met
+    //{
+    //    public DrawingSurfaceViewModel _variableSome3535;
+    //    public IChartAxis _IChartAxis_098;
+    //    public ICollection<IAxis> _ICollection_IAxis_098;
 
-        //public void OnGuiAsyncDoStuff()
-        //{
-        //    if ( _variableSome3535.Chart == null )
-        //        return;
-        //    AxisBase axF9ZgQ7NbH9KsEjd = _IChartAxis_098.InitAndSetBinding(_variableSome3535.ParentViewModel?.RemoveAxisCommand, _variableSome3535.ResetAxisTimeZoneCommand, _variableSome3535.Chart);
-        //    axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler( _variableSome3535.OnTargetPropertyChanged308 );
-        //    _ICollection_IAxis_098.Add( ( IAxis ) axF9ZgQ7NbH9KsEjd );
-        //    if ( _ICollection_IAxis_098 != _variableSome3535.XAxises )
-        //        return;
-        //    _variableSome3535.SetupAxisBindings();
-        //}
-    }
+    //    //public void OnGuiAsyncDoStuff()
+    //    //{
+    //    //    if ( _variableSome3535.Chart == null )
+    //    //        return;
+    //    //    AxisBase axF9ZgQ7NbH9KsEjd = _IChartAxis_098.InitAndSetBinding(_variableSome3535.ParentViewModel?.RemoveAxisCommand, _variableSome3535.ResetAxisTimeZoneCommand, _variableSome3535.Chart);
+    //    //    axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler( _variableSome3535.OnTargetPropertyChanged308 );
+    //    //    _ICollection_IAxis_098.Add( ( IAxis ) axF9ZgQ7NbH9KsEjd );
+    //    //    if ( _ICollection_IAxis_098 != _variableSome3535.XAxises )
+    //    //        return;
+    //    //    _variableSome3535.SetupAxisBindings();
+    //    //}
+    //}
 
-    [Serializable]
-    private new sealed class SomeClass34343383
-    {
-        public static readonly DrawingSurfaceViewModel.SomeClass34343383 SomeMethond0343 = new DrawingSurfaceViewModel.SomeClass34343383();
-        public static Action<ChartAxis> pubStatic_Action_ChartAxis_;
-        public static Func<ChartCompentViewModel, bool> m_public_static_Func_ChartCompentViewModel_bool_;
-        public static Action<CategoryDateTimeAxis> public_static_Action_CategoryDateTimeAxis_009;
-        public static Action<ChartCompentViewModel> public_static_Action_ChartCompentViewModel_008;
-        public static Func<IRenderableSeries, bool> _public_static_Func_IRenderableSeries_bool_003;
-        public static Func<IRenderableSeries, int> m_public_static_Func_IRenderableSeries__nt_;
-        public static Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, bool> public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_bool_;
-        public static Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, IChartComponent> public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_;
-        public static Func<IDrawableChartElement, bool> Func_IDrawableChartElement_bool_098;
-        public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
-        public static Func<KeyValuePair<IChartComponent, ChartCompentViewModel>, bool> _Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_;
-        public static Func<IDrawableChartElement, bool> __Func_IDrawableChartElement__bool__903;
-        public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
-        public static Action<IChartAxis> _Action_IChartAxis_0932;
-        public static Action<IChartAxis> _Action_IChartAxis_0932323;
-
-
-
-        public bool SomeMEthod03852(
-          ChartCompentViewModel _param1 )
-        {
-            return _param1 != null;
-        }
-
-        public void SomeMEthod03853(
-          CategoryDateTimeAxis _param1 )
-        {
-            if ( !( _param1.Tag is ChartAxis tag ) )
-                return;
-            tag.DataPointWidth = _param1.CurrentDatapointPixelSize;
-        }
-
-        public void SomeMEthod03854(
-          ChartCompentViewModel _param1 )
-        {
-            _param1.UpdateYAxisMarker();
-        }
-
-        public bool SomeMEthod03855(
-          IRenderableSeries _param1 )
-        {
-            return _param1.IsVisible;
-        }
-
-        public int public_int_Method_IRenderableSeries_(
-          IRenderableSeries _param1 )
-        {
-            var dataSeries = _param1.get_DataSeries();
-            return dataSeries == null ? 0 : dataSeries.get_Count();
-        }
-
-        public bool public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel(
-          KeyValuePair<IChartComponent, ChartCompentViewModel> _param1 )
-        {
-            return _param1.Value == null;
-        }
-
-        public IChartComponent public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel_033(
-          KeyValuePair<IChartComponent, ChartCompentViewModel> _param1 )
-        {
-            return _param1.Key;
-        }
-
-        public bool public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel_0352(
-          IDrawableChartElement _param1 )
-        {
-            return !_param1.DontDraw;
-        }
-
-        public bool public_bool_Method_KeyValuePair_IChartComponent_ChartCompentViewModel_4353(
-          DrawableChartElementBaseViewModel _param1 )
-        {
-            return _param1 != null;
-        }
-
-        public bool public_bool_Method_0983(
-          KeyValuePair<IChartComponent, ChartCompentViewModel> p )
-        {
-            return p.Key is IChartCandleElement;
-        }
-
-        public bool public_bool_Method_0983333(
-          IDrawableChartElement _param1 )
-        {
-            return !_param1.DontDraw;
-        }
-
-        public bool public_bool_Method_5498751(
-          DrawableChartElementBaseViewModel _param1 )
-        {
-            return _param1 != null;
-        }
-
-        public void public_bool_Method_303403( IChartAxis _param1 )
-        {
-            _param1.IsVisible = true;
-        }
-
-        public void public_bool_Method_938745( IChartAxis _param1 )
-        {
-            _param1.IsVisible = true;
-        }
-    }
-
-    private sealed class SomeSealClass0833352
-    {
-        public string _someString0382;
-
-        public bool bool_Method02_IChartAxis_( IChartAxis _param1 )
-        {
-            return _param1.Id == _someString0382;
-        }
-    }
+    //[Serializable]
+    //private new sealed class SomeClass34343383
+    //{
+    //    public static readonly DrawingSurfaceViewModel.SomeClass34343383 SomeMethond0343 = new DrawingSurfaceViewModel.SomeClass34343383();
+    //    public static Action<ChartAxis> pubStatic_Action_ChartAxis_;
+    //    public static Func<ChartComponentViewModel, bool> m_public_static_Func_ChartComponentViewModel_bool_;
+    //    public static Action<CategoryDateTimeAxis> public_static_Action_CategoryDateTimeAxis_009;
+    //    public static Action<ChartComponentViewModel> public_static_Action_ChartComponentViewModel_008;
+    //    public static Func<IRenderableSeries, bool> _public_static_Func_IRenderableSeries_bool_003;
+    //    public static Func<IRenderableSeries, int> m_public_static_Func_IRenderableSeries__nt_;
+    //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_;
+    //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_;
+    //    public static Func<IDrawableChartElement, bool> Func_IDrawableChartElement_bool_098;
+    //    public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
+    //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> _Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_;
+    //    public static Func<IDrawableChartElement, bool> __Func_IDrawableChartElement__bool__903;
+    //    public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
+    //    public static Action<IChartAxis> _Action_IChartAxis_0932;
+    //    public static Action<IChartAxis> _Action_IChartAxis_0932323;
 
 
 
-    private sealed class SomeSealClass083523
-    {
-        public ICollection<IAxis> _ICollection_IAxis_098;
-        public IChartAxis _IChartAxis_098;
-        public DrawingSurfaceViewModel _variableSome3535;
-        public Func<IAxis, bool> _Func_IAxis_bool_0835;
+    //    public bool SomeMEthod03852(
+    //      ChartComponentViewModel _param1 )
+    //    {
+    //        return _param1 != null;
+    //    }
 
-        public void _SomeSealClass083523_Metho03()
-        {
-            AxisBase target = (AxisBase) _ICollection_IAxis_098.FirstOrDefault<IAxis>(_Func_IAxis_bool_0835 ?? (_Func_IAxis_bool_0835 = new Func<IAxis, bool>(_function_IAxis__R__void__001)));
-            if ( target == null )
-                return;
-            target.PropertyChanged -= new PropertyChangedEventHandler( _variableSome3535.OnTargetPropertyChanged );
-            BindingOperations.ClearAllBindings( ( DependencyObject ) target );
-            _ICollection_IAxis_098.Remove( ( IAxis ) target );
-        }
+    //    public void SomeMEthod03853(
+    //      CategoryDateTimeAxis _param1 )
+    //    {
+    //        if ( !( _param1.Tag is ChartAxis tag ) )
+    //            return;
+    //        tag.DataPointWidth = _param1.CurrentDatapointPixelSize;
+    //    }
 
-        public bool _function_IAxis__R__void__001(
-          IAxis _param1 )
-        {
-            return _param1.Id == _IChartAxis_098.Id;
-        }
-    }
+    //    public void SomeMEthod03854(
+    //      ChartComponentViewModel _param1 )
+    //    {
+    //        _param1.UpdateYAxisMarker();
+    //    }
 
-    private sealed class SomeClass6409
-    {
-        public DrawingSurfaceViewModel _variableSome3535;
-        public ChartArea _chartArea_093;
-        public Action<IChartElement> _action_IChartElement_023;
+    //    public bool SomeMEthod03855(
+    //      IRenderableSeries _param1 )
+    //    {
+    //        return _param1.IsVisible;
+    //    }
 
-        public bool OnChartAreaElementsRemovingAt( int _param1 )
-        {
-            return _variableSome3535.OnChartAreaElementsRemoving( ( ( IList<IChartElement> ) _chartArea_093.Elements )[ _param1 ] );
-        }
+    //    public int public_int_Method_IRenderableSeries_(
+    //      IRenderableSeries _param1 )
+    //    {
+    //        var dataSeries = _param1.get_DataSeries();
+    //        return dataSeries == null ? 0 : dataSeries.get_Count();
+    //    }
 
-        public bool OnChartAreaElementsClearing()
-        {
-            CollectionHelper.ForEach<IChartElement>( ( IEnumerable<IChartElement> ) _chartArea_093.Elements, _action_IChartElement_023 ?? ( _action_IChartElement_023 = new Action<IChartElement>( _function1_IChartElement____void__001 ) ) );
-            return true;
-        }
+    //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel(
+    //      KeyValuePair<IChartComponent, ChartComponentViewModel> _param1 )
+    //    {
+    //        return _param1.Value == null;
+    //    }
 
-        public void _function1_IChartElement____void__001( IChartElement _param1 )
-        {
-            _variableSome3535.OnChartAreaElementsRemoving( _param1 );
-        }
+    //    public IChartComponent public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_033(
+    //      KeyValuePair<IChartComponent, ChartComponentViewModel> _param1 )
+    //    {
+    //        return _param1.Key;
+    //    }
 
-        public void OnAreaXAxisesAdded( IChartAxis _param1 )
-        {
-            _variableSome3535.AddAxis( _param1, ( ICollection<IAxis> ) _variableSome3535.XAxises );
-        }
+    //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_0352(
+    //      IDrawableChartElement _param1 )
+    //    {
+    //        return !_param1.DontDraw;
+    //    }
 
-        public bool OnAreaXAxisesRemoving( IChartAxis _param1 )
-        {
-            return _variableSome3535.RemoveAxis( _param1, ( ICollection<IAxis> ) _variableSome3535.XAxises );
-        }
+    //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_4353(
+    //      DrawableChartElementBaseViewModel _param1 )
+    //    {
+    //        return _param1 != null;
+    //    }
 
-        public bool OnAreaXAxisesRemovingAt( int _param1 )
-        {
-            return _variableSome3535.RemoveAxis( ( ( IList<IChartAxis> ) _chartArea_093.XAxises )[ _param1 ], ( ICollection<IAxis> ) _variableSome3535.XAxises );
-        }
+    //    public bool public_bool_Method_0983(
+    //      KeyValuePair<IChartComponent, ChartComponentViewModel> p )
+    //    {
+    //        return p.Key is IChartCandleElement;
+    //    }
 
-        public void OnAreaYAxisesAdded( IChartAxis _param1 )
-        {
-            _variableSome3535.AddAxis( _param1, ( ICollection<IAxis> ) _variableSome3535.YAxises );
-        }
+    //    public bool public_bool_Method_0983333(
+    //      IDrawableChartElement e )
+    //    {
+    //        return !e.DontDraw;
+    //    }
 
-        public bool OnAreaYAxisesRemoving( IChartAxis _param1 )
-        {
-            return _variableSome3535.RemoveAxis( _param1, ( ICollection<IAxis> ) _variableSome3535.YAxises );
-        }
+    //    public bool public_bool_Method_5498751(
+    //      DrawableChartElementBaseViewModel _param1 )
+    //    {
+    //        return _param1 != null;
+    //    }
 
-        public bool OnAreaYAxisesRemovingAt( int _param1 )
-        {
-            return _variableSome3535.RemoveAxis( ( ( IList<IChartAxis> ) _chartArea_093.YAxises )[ _param1 ], ( ICollection<IAxis> ) _variableSome3535.YAxises );
-        }
+    //    public void public_bool_Method_303403( IChartAxis _param1 )
+    //    {
+    //        _param1.IsVisible = true;
+    //    }
 
-        public void OnApplicationThemeChanged(
-          DependencyObject _param1,
-          ThemeChangedRoutedEventArgs _param2 )
-        {
-            _variableSome3535.ChangeApplicationTheme();
-        }
-    }
+    //    public void public_bool_Method_938745( IChartAxis _param1 )
+    //    {
+    //        _param1.IsVisible = true;
+    //    }
+    //}
+
+    //private sealed class SomeSealClass0833352
+    //{
+    //    public string _someString0382;
+
+    //    public bool bool_Method02_IChartAxis_( IChartAxis p )
+    //    {
+    //        return p.Id == _someString0382;
+    //    }
+    //}
+
+
+
+    
+
+    
 }

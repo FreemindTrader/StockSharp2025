@@ -40,7 +40,7 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IChart, IPersistable, IThemeableChart
+    public partial class ChartExViewModel : DevExpress.Mvvm.ViewModelBase, IPersistable, IThemeableChart
     {
         private PivotPointLevelsAnnotation _monthly;
         private PivotPointLevelsAnnotation _weekly;

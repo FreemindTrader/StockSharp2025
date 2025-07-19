@@ -26,6 +26,16 @@ public sealed partial class ChartViewModel : DependencyObject
     private bool _isProgrammable;
     private int _minimumRange;
 
+    private static int staticChartCount;
+
+    public int _instanceCount = ++staticChartCount;
+    public int InstanceCount
+    {
+        get
+        {
+            return _instanceCount;
+        }
+    }
 
     public ChartViewModel( )
     {
@@ -308,6 +318,14 @@ public sealed partial class ChartViewModel : DependencyObject
         {
             return _closePaneCommand;
         }
+    }
+
+    public void OnRemoveElementEvent( IChartElement component )
+    {
+        Action<IChartElement> myRemoveAction = this.RemoveElementEvent;
+        if ( myRemoveAction == null )
+            return;
+        myRemoveAction( component );
     }
 
     public void InitRangeDepProperty( )

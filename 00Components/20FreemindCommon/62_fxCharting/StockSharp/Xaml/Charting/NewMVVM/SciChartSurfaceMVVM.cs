@@ -45,13 +45,13 @@ namespace StockSharp.Xaml.Charting;
 
 public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfaceVM, IDisposable
 {
-    private readonly CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel> _componentsCache = new CachedSynchronizedDictionary<IChartComponent, ChartCompentViewModel>();
+    private readonly CachedSynchronizedDictionary<IChartComponent, ChartComponentViewModel> _componentsCache = new CachedSynchronizedDictionary<IChartComponent, ChartComponentViewModel>();
     private readonly PooledDictionary<IChartComponent, PooledList<IRenderableSeries>> _chartUIRSeries = new PooledDictionary<IChartComponent, PooledList<IRenderableSeries>>();
 
     private readonly PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>> _topChartElmentAnnotationMap = new PooledDictionary<IChartComponent, PooledDictionary<object, IAnnotation>>();
     private readonly PooledDictionary<string, string> _axisIdToGroup = new PooledDictionary<string, string>();
-    private readonly ObservableCollection<ChartCompentViewModel> _legendElements = new ObservableCollection<ChartCompentViewModel>();
-    private readonly SynchronizedSet<ChartCompentViewModel> _parentChartViewModelCache = new SynchronizedSet<ChartCompentViewModel>();
+    private readonly ObservableCollection<ChartComponentViewModel> _legendElements = new ObservableCollection<ChartComponentViewModel>();
+    private readonly SynchronizedSet<ChartComponentViewModel> _parentChartViewModelCache = new SynchronizedSet<ChartComponentViewModel>();
 
     private readonly PooledList<ChartModifierBase> _chartModifiers = new PooledList<ChartModifierBase>( );
     private ObservableCollection<IRenderableSeries> _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>();
@@ -155,7 +155,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         return ChartExViewModel ?? (object)this;
     }
 
-    public ObservableCollection<ChartCompentViewModel> LegendElements
+    public ObservableCollection<ChartComponentViewModel> LegendElements
     {
         get
         {
@@ -546,14 +546,14 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
 
     private void OnTimer(object sender, EventArgs e)
     {
-        ChartCompentViewModel[ ] vms;
+        ChartComponentViewModel[ ] vms;
 
         lock(_parentChartViewModelCache.SyncRoot)
         {
             vms = _parentChartViewModelCache.CopyAndClear();
         }
 
-        //foreach ( ChartCompentViewModel ParentChartViewModel in vms )
+        //foreach ( ChartComponentViewModel ParentChartViewModel in vms )
         //{
         //    ParentChartViewModel.ChildElementPeriodicalAction( );
         //}
@@ -587,7 +587,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
             //                                    .Select( e => e.CreateViewModel( this ) )
             //                                    .Where( e => e != null );
 
-            //ChartCompentViewModel parentVm = new ChartCompentViewModel( this, element, childElements );
+            //ChartComponentViewModel parentVm = new ChartComponentViewModel( this, element, childElements );
 
             //_componentsCache[ element ] = parentVm;
 
@@ -634,7 +634,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         //        }
         //    }
 
-        //    ChartCompentViewModel ParentChartViewModel = new ChartCompentViewModel( this, anyChartUiXY, childElements );
+        //    ChartComponentViewModel ParentChartViewModel = new ChartComponentViewModel( this, anyChartUiXY, childElements );
 
         //    if ( foundFastQuotes )
         //    {
@@ -674,7 +674,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         //    candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
         //}
 
-        //anyChartUiXY.PropertyChanged += new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        //anyChartUiXY.PropertyChanged += new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
     }
 
     public bool OnChartAreaElementsRemoving(IChartElement element)
@@ -687,7 +687,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         //IChartComponent elementXY = ( IChartComponent )element;
         //elementXY?.RemoveAxisesEventHandler( );
 
-        //ChartCompentViewModel ParentChartViewModel;
+        //ChartComponentViewModel ParentChartViewModel;
         //if ( !_componentsCache.TryGetValue( elementXY, out ParentChartViewModel ) )
         //{
         //    return false;
@@ -698,7 +698,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         //    candle.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
         //}
 
-        //elementXY.PropertyChanged -= new PropertyChangedEventHandler( OnXYAxisPropertyChanged );
+        //elementXY.PropertyChanged -= new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
         //_componentsCache.Remove( elementXY );
 
         //if ( ParentChartViewModel != null )
@@ -751,7 +751,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         bandXyZoomModifier.ReceiveHandledEvents = true;
     }
 
-    public VisibleRangeDpo GetVisibleRangeDp(string axisId)
+    public VisibleRangeDpo GetVisibleRangeDpo(string axisId)
     {
         ChartAxis chartAxis = Area.XAxises.FirstOrDefault(a => a.Id == axisId);
 
@@ -877,7 +877,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
 
             LegendModifier.ViewModel = _legendViewModel;
 
-            _legendViewModel.RemoveElmentEvent += OnRemoveElementEvent;
+            _legendViewModel.RemoveElementEvent += OnRemoveElementEvent;
             return _legendViewModel;
         }
     }
@@ -968,7 +968,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
         }
 
         dictionary.Add(axisMarker, axisMakerAnnotation);
-        OnXYAxisPropertyChanged(elementXY, new PropertyChangedEventArgs("XAxis"));
+        OnChartComponentPropertiesChanged(elementXY, new PropertyChangedEventArgs("XAxis"));
     }
 
     public IAnnotation GetAxisMakerAnnotation(IChartComponent elementXY, object objAnnoPair)
@@ -1026,7 +1026,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
     //        chartSeriesViewModelList.Add( seriesViewModel );
     //    }
 
-    //    OnXYAxisPropertyChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
+    //    OnChartComponentPropertiesChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
     //}
 
 
@@ -1533,7 +1533,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
             rSeriesList.Add(renderableSeries);
         }
 
-        OnXYAxisPropertyChanged(elementXY, new PropertyChangedEventArgs("XAxis"));
+        OnChartComponentPropertiesChanged(elementXY, new PropertyChangedEventArgs("XAxis"));
     }
 
     public void Remove(IChartComponent elementXY)
@@ -1561,7 +1561,7 @@ public class ScichartSurfaceMVVM : ChartBaseViewModel, IChildPane, IDrawingSurfa
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void OnXYAxisPropertyChanged(object sender, PropertyChangedEventArgs e)
+    private void OnChartComponentPropertiesChanged(object sender, PropertyChangedEventArgs e)
     {
         IChartComponent elementXY = (IChartComponent)sender;
 

@@ -39,7 +39,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
     private string _value;
     private Color _color;
     private SeriesInfo _seriesInfo;
-    private ChartCompentViewModel _chartComponent;
+    private ChartComponentViewModel _chartComponent;
 
     public ChartElementViewModel( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this(null, mypropertyOwner, getColorFunc, getValueFunc, string_2)
     {
@@ -72,7 +72,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
     /// 
     /// eg. CandleStickUI is the ChartCompent and the childrens are the High ChartComponent, Low ChartComponent, Open ChartComponent, Close ChartComponent
     /// </summary>
-    public ChartCompentViewModel ChartComponent
+    public ChartComponentViewModel ChartComponent
     {
         get
         {

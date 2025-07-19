@@ -447,7 +447,7 @@ public abstract class VerticalSliceModifierBase :
   {
     if (this.ParentSurface == null || this.ParentSurface.get_RenderableSeries() == null)
       return;
-    this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(VerticalSliceModifierBase.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_ ?? (VerticalSliceModifierBase.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_ = new Func<IRenderableSeries, bool>(VerticalSliceModifierBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228))).\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003Dzw9s7TrZ4QMkFRbgXlOyM52Lqlxec));
+    this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(VerticalSliceModifierBase.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_ ?? (VerticalSliceModifierBase.SomeClass34343383._Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_ = new Func<IRenderableSeries, bool>(VerticalSliceModifierBase.SomeClass34343383.SomeMethond0343.\u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228))).\u0023\u003Dz30RSSSygABj_<IRenderableSeries>(new Action<IRenderableSeries>(this.\u0023\u003Dzw9s7TrZ4QMkFRbgXlOyM52Lqlxec));
   }
 
   protected override void \u0023\u003Dz9otdS\u0024TJZ4U8t8zXqw\u003D\u003D()
@@ -478,7 +478,7 @@ public abstract class VerticalSliceModifierBase :
   private new sealed class SomeClass34343383
   {
     public static readonly VerticalSliceModifierBase.SomeClass34343383 SomeMethond0343 = new VerticalSliceModifierBase.SomeClass34343383();
-    public static Func<IRenderableSeries, bool> _Func_KeyValuePair_IChartComponent_ChartCompentViewModel__bool_;
+    public static Func<IRenderableSeries, bool> _Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_;
 
     public bool \u0023\u003Dzm45_WtFfYT4tvUJMHg7mOs2IT228(
       IRenderableSeries _param1)

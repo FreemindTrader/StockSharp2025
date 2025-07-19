@@ -22,20 +22,20 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     private bool _allowToHide = true;
 
-    private IEnumerable<ChartCompentViewModel> _componentsCache;
+    private IEnumerable<ChartComponentViewModel> _componentsCache;
 
     private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
     private readonly ICommand _removeElementCommand;
 
-    public event Action<IChartElement> RemoveElmentEvent;
+    public event Action<IChartElement> RemoveElementEvent;
 
     public LegendModifierVM(ScichartSurfaceMVVM vm)
     {
         this._scichartSurfaceVM = vm ?? throw new ArgumentNullException("pane");
-        this.Elements = (IEnumerable<ChartCompentViewModel>) vm.LegendElements;
-        this._removeElementCommand = new ActionCommand<ChartCompentViewModel>(
-            vm => RemoveElmentEvent?.Invoke(vm.ChartComponent),
+        this.Elements = (IEnumerable<ChartComponentViewModel>) vm.LegendElements;
+        this._removeElementCommand = new ActionCommand<ChartComponentViewModel>(
+            vm => RemoveElementEvent?.Invoke(vm.ChartComponent),
             p => p.AllowToRemove);
     }
 
@@ -46,12 +46,12 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     public ICommand RemoveElementCommand => this._removeElementCommand;
 
-    public IEnumerable<ChartCompentViewModel> Elements
+    public IEnumerable<ChartComponentViewModel> Elements
     {
         get => this._componentsCache;
         set
         {
-            this.SetField<IEnumerable<ChartCompentViewModel>>(ref this._componentsCache, value, nameof(Elements));
+            this.SetField<IEnumerable<ChartComponentViewModel>>(ref this._componentsCache, value, nameof(Elements));
         }
     }
 

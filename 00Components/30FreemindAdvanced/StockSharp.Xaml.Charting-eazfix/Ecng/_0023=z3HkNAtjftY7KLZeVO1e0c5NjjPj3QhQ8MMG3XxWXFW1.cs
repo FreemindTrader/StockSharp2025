@@ -138,7 +138,7 @@ public sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a :
 
   private Point \u0023\u003Dz6Fh6_ls\u003D()
   {
-    return new Point(this.\u0023\u003DzdXHzI2qgXcUL.Average<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.m_public_static_Func_ChartCompentViewModel_bool_ = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.SomeMethond0343.\u0023\u003DzRMoXG\u0024QaQ7qrkIPxk3zAzyc\u003D))), this.\u0023\u003DzdXHzI2qgXcUL.Average<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.\u0023\u003DzFrKZ2idkhLzP6ElHlg\u003D\u003D ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.\u0023\u003DzFrKZ2idkhLzP6ElHlg\u003D\u003D = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.SomeMethond0343.\u0023\u003DzQb1UTA78853CAcRtIcxw1T4\u003D))));
+    return new Point(this.\u0023\u003DzdXHzI2qgXcUL.Average<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.m_public_static_Func_ChartComponentViewModel_bool_ ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.m_public_static_Func_ChartComponentViewModel_bool_ = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.SomeMethond0343.\u0023\u003DzRMoXG\u0024QaQ7qrkIPxk3zAzyc\u003D))), this.\u0023\u003DzdXHzI2qgXcUL.Average<KeyValuePair<int, Point>>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.\u0023\u003DzFrKZ2idkhLzP6ElHlg\u003D\u003D ?? (\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.\u0023\u003DzFrKZ2idkhLzP6ElHlg\u003D\u003D = new Func<KeyValuePair<int, Point>, double>(\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a.SomeClass34343383.SomeMethond0343.\u0023\u003DzQb1UTA78853CAcRtIcxw1T4\u003D))));
   }
 
   private double \u0023\u003DzC520uIs\u003D(double _param1)
@@ -191,7 +191,7 @@ public sealed class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c5NjjPj3QhQ8MMG3XxWXFW1a :
     public static Func<KeyValuePair<int, Point>, double> \u0023\u003DzMRTIPs6OoCcj5pN\u0024xQ\u003D\u003D;
     public static Func<KeyValuePair<int, Point>, double> \u0023\u003DzNMIp7invDKUnL7ASHg\u003D\u003D;
     public static Func<KeyValuePair<int, Point>, double> \u0023\u003DzJ4our6IdSBQJOV6WDQ\u003D\u003D;
-    public static Func<KeyValuePair<int, Point>, double> m_public_static_Func_ChartCompentViewModel_bool_;
+    public static Func<KeyValuePair<int, Point>, double> m_public_static_Func_ChartComponentViewModel_bool_;
     public static Func<KeyValuePair<int, Point>, double> \u0023\u003DzFrKZ2idkhLzP6ElHlg\u003D\u003D;
 
     public double \u0023\u003DzqcNouvrU0rNE8lSQc4iox31rT88n(KeyValuePair<int, Point> _param1)

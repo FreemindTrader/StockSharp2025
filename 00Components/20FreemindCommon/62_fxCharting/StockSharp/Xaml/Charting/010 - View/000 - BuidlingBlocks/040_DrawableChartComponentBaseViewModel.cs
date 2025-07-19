@@ -32,9 +32,9 @@ namespace StockSharp.Xaml.Charting;
 public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
 {
     private readonly PooledDictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new PooledDictionary< IRenderableSeries, AxisMarkerAnnotation >( );
-    private ChartCompentViewModel _chartComponentViewModel;    
+    private ChartComponentViewModel _chartComponentViewModel;    
 
-    protected ChartCompentViewModel ChartViewModel
+    protected ChartComponentViewModel ChartViewModel
     {
         get
         {
@@ -122,7 +122,7 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
     {
     }
 
-    public void Init( ChartCompentViewModel parentVM )
+    public void Init( ChartComponentViewModel parentVM )
     {
         if( ChartViewModel != null )
         {

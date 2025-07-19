@@ -528,9 +528,9 @@ private sealed class ChartElementNotifyList( ChartArea area ) : ChartArea.Proper
         Height = this.Height,
         XAxisType = this.XAxisType
     });
-    CollectionHelper.AddRange<IChartElement>( ( ICollection<IChartElement> ) chartArea.Elements, ( ( IEnumerable<IChartElement> ) this.Elements ).Select<IChartElement, IChartElement>( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_bool_ ?? ( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_bool_ = new Func<IChartElement, IChartElement>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzLhPQ\u0024JfQhEkyu0vUWg\u003D\u003D) ) ));
+    CollectionHelper.AddRange<IChartElement>( ( ICollection<IChartElement> ) chartArea.Elements, ( ( IEnumerable<IChartElement> ) this.Elements ).Select<IChartElement, IChartElement>( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_ ?? ( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_ = new Func<IChartElement, IChartElement>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzLhPQ\u0024JfQhEkyu0vUWg\u003D\u003D) ) ));
     ( ( ICollection<IChartAxis> ) chartArea.XAxises ).Clear();
-    CollectionHelper.AddRange<IChartAxis>( ( ICollection<IChartAxis> ) chartArea.XAxises, ( ( IEnumerable<IChartAxis> ) this.XAxises ).Select<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_ ?? ( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_ = new Func<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzGeF_1AAuPyWwDbL_iA\u003D\u003D) ) ));
+    CollectionHelper.AddRange<IChartAxis>( ( ICollection<IChartAxis> ) chartArea.XAxises, ( ( IEnumerable<IChartAxis> ) this.XAxises ).Select<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_ ?? ( ChartArea.SomeShittyClass33434.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_ = new Func<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzGeF_1AAuPyWwDbL_iA\u003D\u003D) ) ));
     ( ( ICollection<IChartAxis> ) chartArea.YAxises ).Clear();
     CollectionHelper.AddRange<IChartAxis>( ( ICollection<IChartAxis> ) chartArea.YAxises, ( ( IEnumerable<IChartAxis> ) this.YAxises ).Select<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434.Func_IDrawableChartElement_bool_098 ?? ( ChartArea.SomeShittyClass33434.Func_IDrawableChartElement_bool_098 = new Func<IChartAxis, IChartAxis>( ChartArea.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003Dzf4yIUkrz2a0As47tiA\u003D\u003D) ) ));
     return chartArea;
@@ -566,8 +566,8 @@ private sealed class SomeShittyClass33434
     public static Func<IChartAxis, SettingsStorage> Method04;
     public static Func<IChartAxis, SettingsStorage> Method05;
     public static Func<SettingsStorage, ChartAxis> \u0023\u003DzXRCsJbKV5qeZQYBJDA\u003D\u003D;
-    public static Func<IChartElement, IChartElement> public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_bool_;
-    public static Func<IChartAxis, IChartAxis> public_static_Func_KeyValuePair_IChartComponent_ChartCompentViewModel_IChartComponent_;
+    public static Func<IChartElement, IChartElement> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_;
+    public static Func<IChartAxis, IChartAxis> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_;
     public static Func<IChartAxis, IChartAxis> Func_IDrawableChartElement_bool_098;
 
     public bool \u0023\u003DzfnNqP9jz3szEAuvQ\u0024gr5C7U\u003D(IChartAxis _param1)

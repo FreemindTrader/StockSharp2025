@@ -16,7 +16,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// 
 /// </summary>
-public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
+public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 {
 
     private readonly 
@@ -35,7 +35,7 @@ public sealed class ChartCompentViewModel : ChartBaseViewModel, IDisposable
 
     private bool _isDisposed;
 
-    public ChartCompentViewModel( ScichartSurfaceMVVM _param1, IChartComponent _param2 )
+    public ChartComponentViewModel( ScichartSurfaceMVVM _param1, IChartComponent _param2 )
     {
         this._scichartSurfaceVM = _param1 ?? throw new ArgumentNullException( "pane" );
         this._chartElement = _param2 ?? throw new ArgumentNullException( "element" );

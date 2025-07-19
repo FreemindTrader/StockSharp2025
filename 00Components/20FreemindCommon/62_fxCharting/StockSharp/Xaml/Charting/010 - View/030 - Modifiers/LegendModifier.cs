@@ -104,7 +104,7 @@ namespace StockSharp.Xaml.Charting
                         return;
                     }
 
-                    ChartCompentViewModel parentVm = null;
+                    ChartComponentViewModel parentVm = null;
 
                     foreach ( ChartElementViewModel vm in tag.Item2 )
                     {
@@ -117,7 +117,7 @@ namespace StockSharp.Xaml.Charting
                     {
                         if ( ViewModel.Elements != null )
                         {
-                            var e = ( ObservableCollection<ChartCompentViewModel> )ViewModel.Elements;
+                            var e = ( ObservableCollection<ChartComponentViewModel> )ViewModel.Elements;
                             //e.Add( parentVm );
                         }
 

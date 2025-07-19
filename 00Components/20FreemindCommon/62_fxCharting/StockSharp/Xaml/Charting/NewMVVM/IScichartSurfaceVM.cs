@@ -59,7 +59,7 @@ namespace StockSharp.Xaml.Charting
         {
             get;
         }
-        ObservableCollection<ChartCompentViewModel> LegendElements
+        ObservableCollection<ChartComponentViewModel> LegendElements
         {
             get;
         }
@@ -91,7 +91,7 @@ namespace StockSharp.Xaml.Charting
 
         void Remove( IChartComponent elementXY );
 
-        VisibleRangeDpo GetVisibleRangeDp( string axisId );
+        VisibleRangeDpo GetVisibleRangeDpo( string axisId );
 
         bool IsAutoScroll
         {
