@@ -25,7 +25,7 @@ using System.Linq;
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
-public static class NewChartHelper
+public static class ChartHelper2025
 {
 
     private static readonly Lazy<IndicatorColorProvider> _indicatorColorProviders = new Lazy<IndicatorColorProvider>();
@@ -78,7 +78,7 @@ public static class NewChartHelper
     {
         if ( chart == null )
             throw new ArgumentNullException( nameof( chart ) );
-        chart.ChartTheme = NewChartHelper.CurrChartTheme();
+        chart.ChartTheme = ChartHelper2025.CurrChartTheme();
     }
 
     public static IEnumerable<IndicatorType> GetIndicatorTypes()
@@ -110,7 +110,7 @@ public static class NewChartHelper
     public static IIndicator TryGetIndicator( this IChartIndicatorElement indicator )
     {
         throw new NotImplementedException();
-        //var myChart = NewChartHelper.GetDrawingChart(indicator);
+        //var myChart = ChartHelper2025.GetDrawingChart(indicator);
         //return myChart?.GetIndicator( indicator );
     }
 

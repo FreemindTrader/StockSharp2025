@@ -1204,7 +1204,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         throw new NotImplementedException();
     }
 
-    private void ChangeApplicationTheme() => SelectedTheme = NewChartHelper.CurrChartTheme();
+    private void ChangeApplicationTheme() => SelectedTheme = ChartHelper2025.CurrChartTheme();
 
     public void Dispose()
     {

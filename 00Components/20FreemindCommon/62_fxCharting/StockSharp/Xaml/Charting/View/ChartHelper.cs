@@ -223,7 +223,7 @@ public static class ChartHelper
             throw new ArgumentNullException(nameof(chart));
 
         chart.IndicatorTypes.Clear();
-        chart.IndicatorTypes.AddRange( NewChartHelper.GetIndicatorTypes());
+        chart.IndicatorTypes.AddRange( ChartHelper2025.GetIndicatorTypes());
     }
 
     private static readonly Lazy<IndicatorColorProvider> _indicatorColorProviders = new Lazy<IndicatorColorProvider>();
