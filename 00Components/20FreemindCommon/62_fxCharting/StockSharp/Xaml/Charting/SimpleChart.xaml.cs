@@ -18,7 +18,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public sealed partial class SimpleChartDx : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChart, IThemeableChart
+    public sealed partial class SimpleChartDx : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChartEx, IThemeableChart
     {
         private ChartAxisType _xAxisType = ChartAxisType.Numeric;
         private readonly ChartArea _area;
@@ -137,7 +137,7 @@ namespace StockSharp.Xaml.Charting
             Area.ViewModel.Reset( elements );
         }
 
-        IList<IndicatorType> IChart.IndicatorTypes
+        IList<IndicatorType> IChartEx.IndicatorTypes
         {
             get
             {
@@ -149,7 +149,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        bool IChart.IsAutoScroll
+        bool IChartEx.IsAutoScroll
         {
             get
             {
@@ -163,7 +163,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        bool IChart.IsAutoRange
+        bool IChartEx.IsAutoRange
         {
             get
             {
@@ -191,37 +191,37 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        IIndicator IChart.GetIndicator( ChartIndicatorElement element )
+        IIndicator IChartEx.GetIndicator( ChartIndicatorElement element )
         {
             throw new NotSupportedException( );
         }
 
-        object IChart.GetSource( IChartElement element )
+        object IChartEx.GetSource( IChartElement element )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.AddArea( ChartArea area )
+        void IChartEx.AddArea( ChartArea area )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.RemoveArea( ChartArea area )
+        void IChartEx.RemoveArea( ChartArea area )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.ClearAreas( )
+        void IChartEx.ClearAreas( )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.AddElement( ChartArea area, IChartElement element )
+        void IChartEx.AddElement( ChartArea area, IChartElement element )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.AddElement(
+        void IChartEx.AddElement(
           ChartArea area,
           ChartCandleElement element,
           CandleSeries candleSeries )
@@ -229,7 +229,7 @@ namespace StockSharp.Xaml.Charting
             throw new NotSupportedException( );
         }
 
-        void IChart.AddElement(
+        void IChartEx.AddElement(
           ChartArea area,
           ChartIndicatorElement element,
           CandleSeries candleSeries,
@@ -238,17 +238,17 @@ namespace StockSharp.Xaml.Charting
             throw new NotSupportedException( );
         }
 
-        void IChart.AddElement( ChartArea area, OrdersUI element, Security security )
+        void IChartEx.AddElement( ChartArea area, OrdersUI element, Security security )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.AddElement( ChartArea area, TradesUI element, Security security )
+        void IChartEx.AddElement( ChartArea area, TradesUI element, Security security )
         {
             throw new NotSupportedException( );
         }
 
-        void IChart.RemoveElement( ChartArea area, IChartElement element )
+        void IChartEx.RemoveElement( ChartArea area, IChartElement element )
         {
             throw new NotSupportedException( );
         }

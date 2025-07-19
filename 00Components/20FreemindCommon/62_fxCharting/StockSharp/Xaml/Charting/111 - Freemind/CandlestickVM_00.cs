@@ -393,9 +393,11 @@ namespace StockSharp.Xaml.Charting
 
             ClearAll( );
 
-            SetupAxisMarkerAndBinding( _candlestickSeries, ChartComponentView, "ShowAxisMarker", null );
+            throw new NotImplementedException();
 
-            DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _candlestickSeries );
+            //SetupAxisMarkerAndBinding( _candlestickSeries, ChartComponentView, "ShowAxisMarker", null );
+
+            //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _candlestickSeries );
 
 
         }
@@ -406,9 +408,12 @@ namespace StockSharp.Xaml.Charting
             {
                 return;
             }
-            DrawingSurface.Remove( RootElem );
 
-            _candlestickSeries = null;
+            throw new NotImplementedException();
+
+            //DrawingSurface.Remove( RootElem );
+
+            //_candlestickSeries = null;
         }
 
 
@@ -454,32 +459,34 @@ namespace StockSharp.Xaml.Charting
                 categoryDateTimeRange.SetMinMax( 0.0, DrawingSurface.MinimumRange );
             }
 
-            bool autoScroll      = false;
+            throw new NotImplementedException();
 
-            bool cantSrcoll      = ( count <= 0 || ( !categoryDateTimeRange.IsDefined || DrawingSurface.IsAutoRange ) );
+            //bool autoScroll      = false;
 
-            bool chartAutoScroll = DrawingSurface.IsAutoScroll;
+            //bool cantSrcoll      = ( count <= 0 || ( !categoryDateTimeRange.IsDefined || DrawingSurface.IsAutoRange ) );
 
-            bool condition3      = _setNewRange && _indexRange == categoryDateTimeRange || !_setNewRange && categoryDateTimeRange.Max >= count;
+            //bool chartAutoScroll = DrawingSurface.IsAutoScroll;
 
-            autoScroll = !cantSrcoll && chartAutoScroll;
+            //bool condition3      = _setNewRange && _indexRange == categoryDateTimeRange || !_setNewRange && categoryDateTimeRange.Max >= count;
 
-            int max = count;
+            //autoScroll = !cantSrcoll && chartAutoScroll;
 
-            if ( autoScroll && categoryDateTimeRange.Max < max )
-            {
-                int showBarCount                   = categoryDateTimeRange.Max - categoryDateTimeRange.Min + 1;
-                var indexRange                     = new IndexRange( max - showBarCount + 1, max+ DrawingSurface.RightMarginBars );
-                xAxisVisibleRange.CategoryDateTimeRange = indexRange;
-                _indexRange = indexRange;
-            }
-            else
-            {
-                _indexRange = categoryDateTimeRange;
-            }
+            //int max = count;
 
-            _setNewRange = autoScroll;
-            _setMinMax = false;
+            //if ( autoScroll && categoryDateTimeRange.Max < max )
+            //{
+            //    int showBarCount                   = categoryDateTimeRange.Max - categoryDateTimeRange.Min + 1;
+            //    var indexRange                     = new IndexRange( max - showBarCount + 1, max+ DrawingSurface.RightMarginBars );
+            //    xAxisVisibleRange.CategoryDateTimeRange = indexRange;
+            //    _indexRange = indexRange;
+            //}
+            //else
+            //{
+            //    _indexRange = categoryDateTimeRange;
+            //}
+
+            //_setNewRange = autoScroll;
+            //_setMinMax = false;
         }
 
         public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
@@ -610,7 +617,9 @@ namespace StockSharp.Xaml.Charting
 
             if ( lastBarTime > _dateTimeUtc )
             {
-                _setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !DrawingSurface.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= DrawingSurface.MinimumRange ? 1 : 0 ) ) ) != 0;
+                throw new NotImplementedException();
+
+                //_setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !DrawingSurface.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= DrawingSurface.MinimumRange ? 1 : 0 ) ) ) != 0;
             }
 
             Array.Resize( ref timeArray, index + 1 );
@@ -765,7 +774,9 @@ namespace StockSharp.Xaml.Charting
 
             if ( lastBarTime > _dateTimeUtc )
             {
-                _setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !DrawingSurface.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= DrawingSurface.MinimumRange ? 1 : 0 ) ) ) != 0;
+                throw new NotImplementedException();
+
+                //_setMinMax = ( ( _setMinMax ? 1 : 0 ) | ( !( !DrawingSurface.IsAutoRange & xAxisIsDateTime ) ? 0 : ( _ohlcDataSeries.Count <= DrawingSurface.MinimumRange ? 1 : 0 ) ) ) != 0;
             }
 
             Array.Resize( ref timeArray, index + 1 );

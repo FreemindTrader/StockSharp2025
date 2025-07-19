@@ -488,7 +488,7 @@ namespace StockSharp.Xaml.Charting
                 element = indicator.ParentElement;
             }
 
-            ( ( IChart ) this ).RemoveElement( ( ChartArea ) element.ChartArea, element );
+            ( ( IChartEx ) this ).RemoveElement( ( ChartArea ) element.ChartArea, element );
 
             RefreshView();
         }

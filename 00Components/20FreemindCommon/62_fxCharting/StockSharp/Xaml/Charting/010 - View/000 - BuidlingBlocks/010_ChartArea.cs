@@ -27,8 +27,8 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
 
     private readonly SynchronizedList<string>   _stackTrace = new SynchronizedList<string>();
     private ChartAxisType                         _xAxisType = ChartAxisType.CategoryDateTime;
-    private IDrawingSurfaceVM                     _chartSurfaceVM;
-    private IChart                                _chart;
+    private ScichartSurfaceMVVM                     _chartSurfaceVM;
+    private IChartEx                                _chart;
     private string                                _title;
     private float                                 _height;
     private readonly INotifyList<IChartElement> _chartElementNotifyList;
@@ -57,7 +57,7 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
     }
 
 
-    public IDrawingSurfaceVM ViewModel
+    public ScichartSurfaceMVVM ViewModel
     {
         get
         {
@@ -110,7 +110,7 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
     }
 
     [Browsable(false)]
-    public IChart Chart
+    public IChartEx Chart
     {
         get
         {
@@ -205,7 +205,7 @@ public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChang
                 chartAxisList.Add(chartAxis);
             }
 
-            IChart resetChart = Chart;
+            IChartEx resetChart = Chart;
             Chart = null;
 
             XAxises.RemoveRange(XAxises.ToArray());

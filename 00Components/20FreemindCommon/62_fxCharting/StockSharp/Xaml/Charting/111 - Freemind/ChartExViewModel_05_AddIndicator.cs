@@ -53,7 +53,7 @@ namespace StockSharp.Xaml.Charting
             ChartCount++;
 
             var indicatorArea = new ChartArea(ChartCount) { Title = "MACD", XAxisType = XAxisType };
-            var indicatorSurface = new ScichartSurfaceMVVM(indicatorArea, true);
+            var indicatorSurface = new ScichartSurfaceMVVM(indicatorArea);
 
             indicatorArea.ViewModel = indicatorSurface;
 
@@ -79,7 +79,7 @@ namespace StockSharp.Xaml.Charting
             ChartCount++;
 
             indicatorArea = new ChartArea(ChartCount) { Title = "RSI", XAxisType = XAxisType };
-            indicatorSurface = new ScichartSurfaceMVVM(indicatorArea, true);
+            indicatorSurface = new ScichartSurfaceMVVM(indicatorArea);
 
 
 

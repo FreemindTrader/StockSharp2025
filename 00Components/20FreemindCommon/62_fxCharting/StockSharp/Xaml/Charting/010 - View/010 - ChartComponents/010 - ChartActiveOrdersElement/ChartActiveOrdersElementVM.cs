@@ -408,7 +408,10 @@ namespace StockSharp.Xaml.Charting
             Decimal num4 = num3;
             if ( price == num4 )
                 return;
-            DrawingSurface.GroupChartEx.InvokeMoveOrderEvent( order, num3 );
+
+            throw new NotImplementedException();
+
+            //DrawingSurface.GroupChartEx.InvokeMoveOrderEvent( order, num3 );
         }
 
         private void OnAnimationDone( ActiveOrderAnnotation _param1 )
@@ -426,7 +429,9 @@ namespace StockSharp.Xaml.Charting
             Order order = GetActiveOrderInfo( _param1, out activeOrderInfo );
             if ( order == null )
                 return;
-            DrawingSurface.GroupChartEx.InvokeCancelOrderEvent( order );
+
+            throw new NotImplementedException();
+            //DrawingSurface.GroupChartEx.InvokeCancelOrderEvent( order );
         }
     }
 }

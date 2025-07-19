@@ -25,13 +25,13 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     private IEnumerable<ChartComponentViewModel> _componentsCache;
 
-    private readonly DrawingSurfaceViewModel _scichartSurfaceVM;
+    private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
     private readonly ICommand _removeElementCommand;
 
     public event Action<IChartElement> RemoveElementEvent;
 
-    public LegendModifierVM( DrawingSurfaceViewModel vm )
+    public LegendModifierVM( ScichartSurfaceMVVM vm )
     {
         this._scichartSurfaceVM = vm ?? throw new ArgumentNullException( "pane" );
         this.Elements = ( IEnumerable<ChartComponentViewModel> ) vm.LegendElements;
@@ -42,7 +42,7 @@ public sealed class LegendModifierVM : ChartBaseViewModel
         //    p => p.AllowToRemove );
     }
 
-    public DrawingSurfaceViewModel Pane
+    public ScichartSurfaceMVVM Pane
     {
         get => this._scichartSurfaceVM;
     }

@@ -30,7 +30,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartPanelEx : UserControl, IPersistable, IChart, IThemeableChart
+    public partial class ChartPanelEx : UserControl, IPersistable, IChartEx, IThemeableChart
     {
         public static RoutedCommand RegisterOrderCommand = new RoutedCommand( );
         public static RoutedCommand AddAreaCommand       = new RoutedCommand( );
@@ -249,7 +249,7 @@ namespace StockSharp.Xaml.Charting
 
         public void RemoveElement( ChartArea area, IChartElement element )
         {
-            ( ( IChart )Chart ).RemoveElement( area, element );
+            ( ( IChartEx )Chart ).RemoveElement( area, element );
         }
 
         public IIndicator GetIndicator( ChartIndicatorElement element )
@@ -479,9 +479,9 @@ namespace StockSharp.Xaml.Charting
                 return;
             }
 
-            Stream image = Chart.SaveToImage( );
-            BackupEntry backup = new BackupEntry( );
-            backup.Name = ( fileName );
+            //Stream image = Chart.SaveToImage( );
+            //BackupEntry backup = new BackupEntry( );
+            //backup.Name = ( fileName );
 
             //using ( new Scope<Window>( XamlHelper.GetWindow( ( DependencyObject )this ) ) )
             //{

@@ -270,8 +270,10 @@ namespace StockSharp.Xaml.Charting
 
         public void WaveScenarioNo( int waveScenarioNo )
         {
-            _drawSurface.WaveScenarioNo = waveScenarioNo;
-            _candleStickUI.WaveScenarioNo = waveScenarioNo;
+            throw new NotImplementedException();
+
+            //_drawSurface.WaveScenarioNo = waveScenarioNo;
+            //_candleStickUI.WaveScenarioNo = waveScenarioNo;
         }
 
         public void ShowGannPriceTime( bool show )
@@ -347,13 +349,18 @@ namespace StockSharp.Xaml.Charting
         {
             get
             {
-                return _drawSurface.HasMultipleBarsHighlighted;
+                throw new NotImplementedException();
+                //return _drawSurface.HasMultipleBarsHighlighted;
             }
         }
 
         public PooledList<long> HighlightedBarLinuxTime
         {
-            get { return _drawSurface.HighlightedBarLinxTime; }
+            get 
+            {
+                throw new NotImplementedException();
+                //return _drawSurface.HighlightedBarLinxTime; 
+            }
         }
 
         public bool IsSpecialBar { get; set; }

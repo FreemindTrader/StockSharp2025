@@ -42,8 +42,12 @@ namespace StockSharp.Xaml.Charting
     {        
         public void ResearchPastTA( bool show )
         {
-            var selectionModifer = ( fxDataPointSelectionModifier ) _drawSurface.PointSelectionModifier;
-            selectionModifer.SendMessageWhenSelectionChange = true;
+            // BUG:
+
+            throw new NotImplementedException();
+
+            //var selectionModifer = ( fxDataPointSelectionModifier ) _drawSurface.PointSelectionModifier;
+            //selectionModifer.SendMessageWhenSelectionChange = true;
         }
     }
 }

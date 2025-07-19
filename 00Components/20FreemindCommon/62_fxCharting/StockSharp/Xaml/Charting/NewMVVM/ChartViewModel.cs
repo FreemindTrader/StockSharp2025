@@ -166,15 +166,15 @@ public sealed partial class ChartViewModel : DependencyObject
 
     internal void ExecuteClosePaneCommand( IChildPane c )
     {
-        var areas     = ( ( ScichartSurfaceMVVM )c ).Chart.ChartAreas;
-        var chartArea = areas.FirstOrDefault( a => a.ViewModel == c );
+        //var areas     = ( ( ScichartSurfaceMVVM )c ).Chart.ChartAreas;
+        //var chartArea = areas.FirstOrDefault( a => a.ViewModel == c );
 
-        if ( chartArea == null )
-        {
-            return;
-        }
+        //if ( chartArea == null )
+        //{
+        //    return;
+        //}
 
-        areas.Remove( chartArea );
+        //areas.Remove( chartArea );
     }
 
     public ObservableCollection<ScichartSurfaceMVVM> ScichartSurfaceViewModels

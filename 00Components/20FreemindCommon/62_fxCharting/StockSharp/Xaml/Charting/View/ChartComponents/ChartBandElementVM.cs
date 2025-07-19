@@ -95,9 +95,10 @@ internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< Ch
             _lineTwoRSerie.DataSeries = _lineTwoData;
         }
 
-        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineOneRSerie );
-        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineTwoRSerie );
-        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _wholeBandRSerie );
+        throw new NotImplementedException();
+        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineOneRSerie );
+        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineTwoRSerie );
+        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _wholeBandRSerie );
 
         SetIncludeSeries( );
     }
@@ -185,7 +186,7 @@ internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< Ch
 
     protected override void Clear( )
     {
-        DrawingSurface.Remove( RootElem );
+        //DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )

@@ -42,7 +42,7 @@ using DevExpress.Xpf.Charts;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartExViewModel : ViewModelBase, IPersistable, IThemeableChart
+    public partial class ChartExViewModel : ViewModelBase, IPersistable, IThemeableChart, IChartEx
     {
         protected TimeSpan _period;
         private sealed class NotifyPropertiesMap
@@ -648,10 +648,11 @@ namespace StockSharp.Xaml.Charting
 
             public void UpdateQuotes( DateTime offerTime, double bid, double ask )
             {
-                foreach ( ChartArea chartArea in this )
-                {
-                    chartArea.ViewModel.UpdateQuote( offerTime,  bid, ask );
-                }
+                throw new NotImplementedException();
+                //foreach ( ChartArea chartArea in this )
+                //{
+                //    chartArea.ViewModel.UpdateQuote( offerTime,  bid, ask );
+                //}
             }
 
             public void ResetChartAreas( IChartElement[ ] element )
@@ -677,7 +678,7 @@ namespace StockSharp.Xaml.Charting
                 foreach ( SettingsStorage storage in settings.GetValue<IEnumerable<SettingsStorage>>( "Areas", null ) )
                 {
                     ChartArea chartArea = new ChartArea( );
-                    var viewModel = new ScichartSurfaceMVVM( chartArea, true );
+                    var viewModel = new ScichartSurfaceMVVM( chartArea );
                     chartArea.ViewModel = viewModel;
 
                     chartArea.Load( storage );
@@ -729,7 +730,7 @@ namespace StockSharp.Xaml.Charting
 
         
 
-        IList<IndicatorType> IChart.IndicatorTypes => IndicatorTypes;
+        IList<IndicatorType> IChartEx.IndicatorTypes => IndicatorTypes;
 
         public string ChartTheme
         {
@@ -748,7 +749,7 @@ namespace StockSharp.Xaml.Charting
             DispatcherService.BeginInvoke( ( ) => _chartAreas.Clear( ) );            
         }
 
-        void IChart.RemoveElement( ChartArea area, IChartElement element )
+        void IChartEx.RemoveElement( ChartArea area, IChartElement element )
         {
             if ( area == null )
             {

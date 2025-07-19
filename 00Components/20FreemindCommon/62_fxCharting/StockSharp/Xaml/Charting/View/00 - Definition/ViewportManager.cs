@@ -59,7 +59,7 @@ public sealed class ViewportManager : ViewportManagerBase
         }
 
         var service          = Services.GetService<ISciChartSurface>( );
-        var ultraChartPaneVM = ( IDrawingSurfaceVM )( ( FrameworkElement )service ).DataContext;
+        var ultraChartPaneVM = ( ScichartSurfaceMVVM )( ( FrameworkElement )service ).DataContext;
         var yAxisAnnotation  = service.Annotations.Where( i => i.YAxis == yAxis ).ToArray( );
 
         if ( yAxisAnnotation.Length == 0 )
@@ -73,23 +73,25 @@ public sealed class ViewportManager : ViewportManagerBase
 
         bool isYrangeDefined = false;
 
-        Chart mainChart = ultraChartPaneVM.Chart as Chart;
+        throw new NotImplementedException();
 
-        if ( mainChart != null )
-        {
-            isYrangeDefined = mainChart.AutoRangeByAnnotations || !yrange.IsDefined;
-        }
-        else
-        {
-            if ( ultraChartPaneVM.ChartExViewModel != null )
-            {
-                isYrangeDefined = ultraChartPaneVM.ChartExViewModel.AutoRangeByAnnotations || !yrange.IsDefined;
-            }
-            else
-            {
-                isYrangeDefined = !yrange.IsDefined;
-            }
-        }
+        //Chart mainChart = ultraChartPaneVM.Chart as Chart;
+
+        //if ( mainChart != null )
+        //{
+        //    isYrangeDefined = mainChart.AutoRangeByAnnotations || !yrange.IsDefined;
+        //}
+        //else
+        //{
+        //    if ( ultraChartPaneVM.ChartExViewModel != null )
+        //    {
+        //        isYrangeDefined = ultraChartPaneVM.ChartExViewModel.AutoRangeByAnnotations || !yrange.IsDefined;
+        //    }
+        //    else
+        //    {
+        //        isYrangeDefined = !yrange.IsDefined;
+        //    }
+        //}
 
          
 

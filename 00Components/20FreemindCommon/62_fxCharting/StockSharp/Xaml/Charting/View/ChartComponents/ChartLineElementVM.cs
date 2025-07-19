@@ -228,7 +228,8 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfBaseViewModel< Ch
         if ( _lineData != null )
         {
             _lineSeries.DataSeries = _lineData;
-            DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineSeries );
+
+            //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _lineSeries );
         }
 
         SetupLineExtraProperties( );
@@ -280,7 +281,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfBaseViewModel< Ch
 
     protected override void Clear( )
     {
-        DrawingSurface.Remove( RootElem );
+        //DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )

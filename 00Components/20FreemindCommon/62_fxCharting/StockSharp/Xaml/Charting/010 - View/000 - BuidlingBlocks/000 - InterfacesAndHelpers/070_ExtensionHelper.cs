@@ -23,7 +23,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
-using static ExtensionHelper;
+
 using IChart = StockSharp.Charting.IChart;
 
 #nullable enable
@@ -55,7 +55,7 @@ public static class AxisBaseHelper
 
     public sealed class fxCategoryDateTimeAxisLabelProvider : TradeChartAxisLabelProvider
     {
-        private readonly IChart _chart;
+        private readonly IChartEx _chart;
         private readonly IChartAxis _ichartAxis;
         private CategoryDateTimeAxis _CategoryDateTimeAxis;
         private string _string01;
@@ -65,7 +65,7 @@ public static class AxisBaseHelper
         {
         }
 
-        public fxCategoryDateTimeAxisLabelProvider( IChart theChart, IChartAxis axis )
+        public fxCategoryDateTimeAxisLabelProvider( IChartEx theChart, IChartAxis axis )
         {
             this._chart = theChart ?? throw new ArgumentNullException( "chart" );
             this._ichartAxis = axis ?? throw new ArgumentNullException( "axis" );
@@ -92,7 +92,7 @@ public static class AxisBaseHelper
         {
             this.InitString();
             if ( ( ( AxisBase ) this.ParentAxis ).TickProvider is AxisBaseHelper.CategoryDateTimeAxisTickProvider tickProvider )
-                tickProvider.OnBeginAxisDraw();
+                tickProvider.SyncParentParams();
             base.OnBeginAxisDraw();
         }
 
@@ -154,23 +154,23 @@ public static class AxisBaseHelper
         }
     }
 
-    private sealed class PrivateSealedClass0392
-    {
-        public DoubleRange _doubleRange;
-        public AxisBaseHelper.SomeWheireosoe _someHelperClassMereber;
+    //private sealed class PrivateSealedClass0392
+    //{
+    //    public DoubleRange _doubleRange;
+    //    public AxisBaseHelper.SomeWheireosoe _someHelperClassMereber;
 
-        public void SomeMethod0324(
-          object _param1,
-          MouseButtonEventArgs _param2 )
-        {
-            _param2.Handled = true;
-            this._someHelperClassMereber._IChartAxis_098.AutoRange = true;
-            this._someHelperClassMereber._axisBase_032.SetValue( AxisBase.\u0023\u003Dz3kyPJRWoiKq0, ( object ) this._doubleRange );
-            this._someHelperClassMereber._axisBase_032.ParentSurface?.InvalidateElement();
-        }
-    }
+    //    public void SomeMethod0324(
+    //      object _param1,
+    //      MouseButtonEventArgs _param2 )
+    //    {
+    //        _param2.Handled = true;
+    //        this._someHelperClassMereber._IChartAxis_098.AutoRange = true;
+    //        this._someHelperClassMereber._axisBase_032.SetValue( AxisBase.\u0023\u003Dz3kyPJRWoiKq0, ( object ) this._doubleRange );
+    //        this._someHelperClassMereber._axisBase_032.ParentSurface?.InvalidateElement();
+    //    }
+    //}
 
-    public static AxisBase InitAndSetBinding( this IChartAxis axis, ICommand removeAxisCommand, ICommand resetAxisTimeZoneCommand, StockSharp.Charting.IChart theChart )
+    public static AxisBase InitAndSetBinding( this IChartAxis axis, ICommand removeAxisCommand, ICommand resetAxisTimeZoneCommand, IChartEx theChart )
     {
         AxisBase newAxis = null;
         DoubleRange myDoubleRange;
@@ -334,100 +334,223 @@ public static class AxisBaseHelper
         }
     }
 
-    public sealed class CategoryDateTimeAxisTickProvider :
-      NumericTickProvider
+    //public sealed class CategoryDateTimeAxisTickProvider :
+    //  NumericTickProvider
+    //{
+    //    private AxisParams _axisParams;
+    //    private ICategoryCoordinateCalculator _categoryCoordinateCalc;
+
+    //    public void OnBeginAxisDraw()
+    //    {
+    //        this._axisParams = ( ( AxisBase ) this.ParentAxis ).GetAxisParams();
+    //    }
+
+    //    public override double[ ] GetMajorTicks( IAxisParams axisParams )
+    //    {
+    //        IndexRange  visibleRange = axisParams.VisibleRange as IndexRange ;
+    //        double majorDelta = (double) axisParams.MajorDelta;
+    //        if ( ( visibleRange != null ? ( !visibleRange.IsDefined ? 1 : 0 ) : 1 ) != 0 )
+    //            return ( double[ ] )base.GetMajorTicks( axisParams );
+
+    //        IPointSeries ps = this._axisParams.\u0023\u003DznUzlqIN9ReXL;
+    //        IndexRange  indexR = this._axisParams.\u0023\u003DindexR;
+    //        return ( indexR != null ? ( !indexR.IsDefined ? 1 : 0 ) : 1 ) != 0 || ps == null || ps.\u0023\u003DzlpVGw6E\u003D() == 0 ? base.GetMajorTicks( axisParams ) : this.GetTicksWithinRange( visibleRange, majorDelta ) ?? base.GetMajorTicks( axisParams );
+    //    }
+
+    //    private int GetDateTimeDifferent( DateTime _param1, DateTime _param2 )
+    //    {
+    //        _param1 = this.ParentAxis.LabelProvider is AxisBaseHelper.fxCategoryDateTimeAxisLabelProvider labelProvider1 ? labelProvider1.GetDateTime( ( IComparable ) _param1 ) : _param1;
+    //        _param2 = this.ParentAxis.get_LabelProvider() is AxisBaseHelper.fxCategoryDateTimeAxisLabelProvider labelProvider2 ? labelProvider2.GetDateTime( ( IComparable ) _param2 ) : _param2;
+    //        if ( _param1.Date != _param2.Date )
+    //            return 3;
+    //        return _param1.Hour == _param2.Hour ? ( _param1.Second == 0 ? 1 : 0 ) : 2;
+    //    }
+
+    //    public bool DiffAtDate( IComparable _param1 )
+    //    {
+    //        if ( this._categoryCoordinateCalc == null)
+    //    return false;
+    //        int num = this._categoryCoordinateCalc.\u0023\u003DzFk6sufr\u0024co4e( _param1 );
+    //        DateTime dateTime = this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num - 1 );
+    //        return num == 0 || this.GetDateTimeDifferent( ( DateTime ) _param1, dateTime ) == 3;
+    //    }
+
+    //    private double[ ] GetTicksWithinRange(
+    //      IndexRange _param1,
+    //      double _param2 )
+    //    {
+    //        this._categoryCoordinateCalc = ( ( AxisBase ) this.ParentAxis ).GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
+    //        if ( this._categoryCoordinateCalc == null)
+    //    return ( double[ ] ) null;
+    //        List<double> doubleList = new List<double>();
+    //        int min = _param1.Min;
+    //        int max = _param1.Max;
+    //        int num1 = min;
+    //        int num2 = int.MinValue;
+    //        int num3 = (int) Math.Max(1.0, Math.Round(_param2));
+    //        int val2 = (int) Math.Round(Math.Min(_param2 / 2.0, 1000.0));
+    //        int num4 = max - min + 1;
+    //        int num5;
+    //        for ( int index1 = 0 ; num1 <= max && ++index1 <= num4 ; num1 = Math.Max( num5 + Math.Max( 1, val2 ), Math.Min( num5 + num3, max ) ) )
+    //        {
+    //            num5 = num1;
+    //            int num6 = num1 == 0 ? 3 : this.GetDateTimeDifferent( this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num5 ), this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num5 - 1 ) );
+    //            for ( int index2 = 1 ; index2 <= val2 && num6 < 3 ; ++index2 )
+    //            {
+    //                int num7 = num1 - index2;
+    //                if ( num7 > num2 && num7 <= max )
+    //                {
+    //                    int num8 = num7 == 0 ? 3 : this.GetDateTimeDifferent( this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num7 ), this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc(num7 - 1));
+    //                    if ( num8 > num6 )
+    //                    {
+    //                        num5 = num7;
+    //                        num6 = num8;
+    //                        if ( num8 == 3 )
+    //                            break;
+    //                    }
+    //                }
+    //                int num9 = num1 + index2;
+    //                if ( num9 <= max )
+    //                {
+    //                    int num10 = num9 == 0 ? 3 : this.GetDateTimeDifferent(this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc(num9), this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc(num9 - 1));
+    //                    if ( num10 > num6 )
+    //                    {
+    //                        num5 = num9;
+    //                        num6 = num10;
+    //                    }
+    //                }
+    //            }
+    //            doubleList.Add( ( double ) num5 );
+    //            num2 = num5;
+    //        }
+    //        return doubleList.ToArray();
+    //    }
+    //}
+
+    public sealed class CategoryDateTimeAxisTickProvider : NumericTickProvider
     {
         private AxisParams _axisParams;
         private ICategoryCoordinateCalculator _categoryCoordinateCalc;
 
-        public void OnBeginAxisDraw()
+        public void SyncParentParams()
         {
-            this._axisParams = ( ( AxisBase ) this.ParentAxis ).GetAxisParams();
+            _axisParams = ( ( AxisBase ) ParentAxis ).GetAxisParams();
         }
 
-        public override double[ ] GetMajorTicks( IAxisParams axisParams )
+        public override IList<double> GetMajorTicks( IAxisParams axisParams )
         {
-            IndexRange  visibleRange = axisParams.VisibleRange as IndexRange ;
-            double majorDelta = (double) axisParams.MajorDelta;
+            var visibleRange = axisParams.VisibleRange as IndexRange;
+            var majorDelta   = ( double )axisParams.MajorDelta;
+
             if ( ( visibleRange != null ? ( !visibleRange.IsDefined ? 1 : 0 ) : 1 ) != 0 )
-                return ( double[ ] )base.GetMajorTicks( axisParams );
-
-            IPointSeries ps = this._axisParams.\u0023\u003DznUzlqIN9ReXL;
-            IndexRange  indexR = this._axisParams.\u0023\u003DindexR;
-            return ( indexR != null ? ( !indexR.IsDefined ? 1 : 0 ) : 1 ) != 0 || ps == null || ps.\u0023\u003DzlpVGw6E\u003D() == 0 ? base.GetMajorTicks( axisParams ) : this.GetTicksWithinRange( visibleRange, majorDelta ) ?? base.GetMajorTicks( axisParams );
-        }
-
-        private int GetDateTimeDifferent( DateTime _param1, DateTime _param2 )
-        {
-            _param1 = this.ParentAxis.LabelProvider is AxisBaseHelper.fxCategoryDateTimeAxisLabelProvider labelProvider1 ? labelProvider1.GetDateTime( ( IComparable ) _param1 ) : _param1;
-            _param2 = this.ParentAxis.get_LabelProvider() is AxisBaseHelper.fxCategoryDateTimeAxisLabelProvider labelProvider2 ? labelProvider2.GetDateTime( ( IComparable ) _param2 ) : _param2;
-            if ( _param1.Date != _param2.Date )
-                return 3;
-            return _param1.Hour == _param2.Hour ? ( _param1.Second == 0 ? 1 : 0 ) : 2;
-        }
-
-        public bool DiffAtDate( IComparable _param1 )
-        {
-            if ( this._categoryCoordinateCalc == null)
-        return false;
-            int num = this._categoryCoordinateCalc.\u0023\u003DzFk6sufr\u0024co4e( _param1 );
-            DateTime dateTime = this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num - 1 );
-            return num == 0 || this.GetDateTimeDifferent( ( DateTime ) _param1, dateTime ) == 3;
-        }
-
-        private double[ ] GetTicksWithinRange(
-          IndexRange _param1,
-          double _param2 )
-        {
-            this._categoryCoordinateCalc = ( ( AxisBase ) this.ParentAxis ).GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
-            if ( this._categoryCoordinateCalc == null)
-        return ( double[ ] ) null;
-            List<double> doubleList = new List<double>();
-            int min = _param1.Min;
-            int max = _param1.Max;
-            int num1 = min;
-            int num2 = int.MinValue;
-            int num3 = (int) Math.Max(1.0, Math.Round(_param2));
-            int val2 = (int) Math.Round(Math.Min(_param2 / 2.0, 1000.0));
-            int num4 = max - min + 1;
-            int num5;
-            for ( int index1 = 0 ; num1 <= max && ++index1 <= num4 ; num1 = Math.Max( num5 + Math.Max( 1, val2 ), Math.Min( num5 + num3, max ) ) )
             {
-                num5 = num1;
-                int num6 = num1 == 0 ? 3 : this.GetDateTimeDifferent( this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num5 ), this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num5 - 1 ) );
-                for ( int index2 = 1 ; index2 <= val2 && num6 < 3 ; ++index2 )
+                return base.GetMajorTicks( axisParams );
+            }
+
+            IList<double> majorTicks = GetTicksWithinRange( visibleRange, majorDelta );
+
+            if ( majorTicks == null )
+            {
+                majorTicks = base.GetMajorTicks( axisParams );
+            }
+
+            return majorTicks;
+
+        }
+
+        private int GetDateTimeDifferent( DateTime first, DateTime second )
+        {
+            //var labelProvider = ParentAxis.LabelProvider as ExtensionHelper.CategoryDateTimeAxisLabelProvider;
+            //first             = labelProvider != null ? labelProvider.GetDateTime( first ) : first;            
+            //second            = labelProvider != null ? labelProvider.GetDateTime( second ) : second;
+
+            if ( first.Date != second.Date )
+            {
+                return 3;
+            }
+
+            if ( first.Hour != second.Hour )
+            {
+                return 2;
+            }
+
+            return first.Second != 0 ? 0 : 1;
+        }
+
+        public bool DiffAtDate( IComparable icomparable_0 )
+        {
+            if ( _categoryCoordinateCalc == null )
+                return false;
+
+            int index = _categoryCoordinateCalc.TransformDataToIndex( icomparable_0 );
+
+            DateTime data = ( DateTime ) _categoryCoordinateCalc.TransformIndexToData( index - 1 );
+
+            if ( index != 0 )
+            {
+                return GetDateTimeDifferent( ( DateTime ) icomparable_0, data ) == 3;
+            }
+
+            return true;
+        }
+
+        private double[ ] GetTicksWithinRange( IndexRange visibleRange, double majorDelta )
+        {
+            _categoryCoordinateCalc = ( ( AxisBase ) ParentAxis ).GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
+            if ( _categoryCoordinateCalc == null )
+            {
+                return null;
+            }
+
+            List<double> majorTicks = new List<double>( );
+
+            int min         = visibleRange.Min;
+            int max         = visibleRange.Max;
+            int visiableMin = min;
+            int lastValue   = int.MinValue;
+            int delta       = ( int )Math.Max( 1.0, Math.Round( majorDelta ) );
+            int deltaAvg    = ( int )Math.Round( Math.Min( majorDelta / 2.0, 1000.0 ) );
+            int range       = max - min + 1;
+            int lowerBound;
+
+            for ( int i = 0 ; visiableMin <= max && ++i <= range ; visiableMin = Math.Max( lowerBound + Math.Max( 1, deltaAvg ), Math.Min( lowerBound + delta, max ) ) )
+            {
+                lowerBound = visiableMin;
+                int diffDateHour = visiableMin == 0 ? 3 : GetDateTimeDifferent( ( DateTime ) _categoryCoordinateCalc.TransformIndexToData( lowerBound ), ( DateTime )_categoryCoordinateCalc.TransformIndexToData( lowerBound - 1 ) );
+
+                for ( int j = 1 ; j <= deltaAvg && diffDateHour < 3 ; ++j )
                 {
-                    int num7 = num1 - index2;
-                    if ( num7 > num2 && num7 <= max )
+                    int iMinBackward = visiableMin - j;
+                    if ( iMinBackward > lastValue && iMinBackward <= max )
                     {
-                        int num8 = num7 == 0 ? 3 : this.GetDateTimeDifferent( this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc( num7 ), this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc(num7 - 1));
-                        if ( num8 > num6 )
+                        int dtDiff = iMinBackward == 0 ? 3 : GetDateTimeDifferent( ( DateTime ) _categoryCoordinateCalc.TransformIndexToData( iMinBackward ), ( DateTime )_categoryCoordinateCalc.TransformIndexToData( iMinBackward - 1 ) );
+                        if ( dtDiff > diffDateHour )
                         {
-                            num5 = num7;
-                            num6 = num8;
-                            if ( num8 == 3 )
+                            lowerBound = iMinBackward;
+                            diffDateHour = dtDiff;
+                            if ( dtDiff == 3 )
+                            {
                                 break;
+                            }
                         }
                     }
-                    int num9 = num1 + index2;
-                    if ( num9 <= max )
+                    int iMinForward = visiableMin + j;
+                    if ( iMinForward <= max )
                     {
-                        int num10 = num9 == 0 ? 3 : this.GetDateTimeDifferent(this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc(num9), this._categoryCoordinateCalc.\u0023\u003DzWZQlXHuDrnKc(num9 - 1));
-                        if ( num10 > num6 )
+                        int dtDiff = iMinForward == 0 ? 3 : GetDateTimeDifferent( ( DateTime ) _categoryCoordinateCalc.TransformIndexToData( iMinForward ), ( DateTime ) _categoryCoordinateCalc.TransformIndexToData( iMinForward - 1 ) );
+                        if ( dtDiff > diffDateHour )
                         {
-                            num5 = num9;
-                            num6 = num10;
+                            lowerBound = iMinForward;
+                            diffDateHour = dtDiff;
                         }
                     }
                 }
-                doubleList.Add( ( double ) num5 );
-                num2 = num5;
+                majorTicks.Add( lowerBound );
+                lastValue = lowerBound;
             }
-            return doubleList.ToArray();
+            return majorTicks.ToArray();
         }
     }
-
-
 
 
 }

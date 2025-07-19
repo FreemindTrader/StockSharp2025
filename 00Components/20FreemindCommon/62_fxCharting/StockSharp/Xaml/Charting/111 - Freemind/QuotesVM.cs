@@ -82,18 +82,19 @@ internal sealed class QuotesVM : ChartCompentWpfBaseViewModel<QuotesUI>, IFastQu
         SetupAxisMarkerAndBinding( _askLineRSerie, ChartComponentView.AskLine, "ShowAxisMarker", "Color" );
         SetupAxisMarkerAndBinding( _bidLineRSerie, ChartComponentView.BidLine, "ShowAxisMarker", "Color" );        
 
-        if ( _askLineRSerie != null )
-        {
-            _askLineRSerie.DataSeries = _askLine;
-        }
+        //TODO: need to add this back to ScichartMVVM
+        //if ( _askLineRSerie != null )
+        //{
+        //    _askLineRSerie.DataSeries = _askLine;
+        //}
 
-        if ( _bidLineRSerie != null )
-        {
-            _bidLineRSerie.DataSeries = _bidLine;
-        }
+        //if ( _bidLineRSerie != null )
+        //{
+        //    _bidLineRSerie.DataSeries = _bidLine;
+        //}
 
-        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _askLineRSerie );
-        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _bidLineRSerie );        
+        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _askLineRSerie );
+        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _bidLineRSerie );        
 
         SetIncludeSeries( );        
     }
@@ -158,7 +159,8 @@ internal sealed class QuotesVM : ChartCompentWpfBaseViewModel<QuotesUI>, IFastQu
 
     protected override void Clear( )
     {
-        DrawingSurface.Remove( RootElem );
+        throw new NotImplementedException();
+        //DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )

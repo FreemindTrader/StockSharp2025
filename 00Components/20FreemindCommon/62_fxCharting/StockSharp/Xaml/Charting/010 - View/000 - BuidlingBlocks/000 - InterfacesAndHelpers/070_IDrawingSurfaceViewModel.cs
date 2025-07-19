@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 
 #nullable disable
-public interface IDrawingSurfaceViewModel
+public interface IScichartSurfaceMVVM
 {
     string Title
     {

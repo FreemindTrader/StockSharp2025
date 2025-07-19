@@ -74,7 +74,7 @@ namespace StockSharp.Xaml.Charting
         private void Step02_OnChartAreaAddedEventInvoke()
         {
             _mainChartArea = new ChartArea() { Title = LocalizedStrings.Panel + " " + (ChartAreas.Count + 1), XAxisType = XAxisType };
-            _drawSurface = new ScichartSurfaceMVVM(_mainChartArea, true);
+            _drawSurface = new ScichartSurfaceMVVM(_mainChartArea );
 
             _mainChartArea.ViewModel = _drawSurface;
 

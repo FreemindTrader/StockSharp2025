@@ -64,7 +64,7 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
     /// <summary>
     /// This is the Scichart Drawing Surface
     /// </summary>
-    protected IDrawingSurfaceVM DrawingSurface
+    protected ScichartSurfaceMVVM DrawingSurface
     {
         get
         {

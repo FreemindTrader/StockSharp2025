@@ -64,8 +64,8 @@ namespace StockSharp.Xaml.Charting
             {
                 if ( _chartVM.SurfaceVM != null && _chartVM.IsActive && quote.Security == _chartVM.SelectedSecurity )
                 {
-
-                    _chartVM.SurfaceVM.UpdateQuote( quote.QuoteTime, quote.Bid, quote.Ask );
+                    throw new NotImplementedException();
+                    //_chartVM.SurfaceVM.UpdateQuote( quote.QuoteTime, quote.Bid, quote.Ask );
                 }
             }                        
         }

@@ -30,7 +30,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class Chart : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChart, IThemeableChart
+    public partial class Chart : UserControl, INotifyPropertyChanged, IComponentConnector, IPersistable, INotifyPropertyChangedEx, IChartEx, IThemeableChart
     {
         private readonly SynchronizedDictionary<ChartIndicatorElement, IIndicator> _indicators   = new SynchronizedDictionary<ChartIndicatorElement, IIndicator>( );
         private readonly SynchronizedDictionary<IChartElement, object>   _uiDatasource = new SynchronizedDictionary<IChartElement, object>( );
@@ -438,7 +438,7 @@ namespace StockSharp.Xaml.Charting
             AddElement( area, element );
         }
 
-        void IChart.RemoveElement( ChartArea area, IChartElement element )
+        void IChartEx.RemoveElement( ChartArea area, IChartElement element )
         {
             if ( area == null )
             {
@@ -1344,7 +1344,7 @@ namespace StockSharp.Xaml.Charting
                 element = indicator.ParentElement;
             }
 
-            ( ( IChart )this ).RemoveElement( (ChartArea) element.ChartArea, element );
+            ( ( IChartEx )this ).RemoveElement( (ChartArea) element.ChartArea, element );
         }
 
 
@@ -1354,22 +1354,22 @@ namespace StockSharp.Xaml.Charting
             UnSubscribeElement?.Invoke( element );
         }
 
-        void IChart.InvokeAnnotationCreatedEvent( ChartAnnotation annotation )
+        void IChartEx.InvokeAnnotationCreatedEvent( ChartAnnotation annotation )
         {
             AnnotationCreated?.Invoke( annotation );
         }
 
-        void IChart.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawData.AnnotationData d )
+        void IChartEx.InvokeAnnotationModifiedEvent( ChartAnnotation a, ChartDrawData.AnnotationData d )
         {
             AnnotationModified?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawData.AnnotationData d )
+        void IChartEx.InvokeAnnotationSelectedEvent( ChartAnnotation a, ChartDrawData.AnnotationData d )
         {
             AnnotationSelected?.Invoke( a, d );
         }
 
-        void IChart.InvokeAnnotationDeletedEvent( ChartAnnotation a )
+        void IChartEx.InvokeAnnotationDeletedEvent( ChartAnnotation a )
         {
             AnnotationDeleted?.Invoke( a );
         }
@@ -1445,7 +1445,9 @@ namespace StockSharp.Xaml.Charting
                     return;
                 }
 
-                chartArea.ViewModel.Height = chartArea.Height;
+                var vm = (ScichartSurfaceMVVM) chartArea.ViewModel;
+
+                vm.Height = chartArea.Height;
             }
 
             public void DrawChartAreas( ChartDrawData drawData )
@@ -1463,7 +1465,8 @@ namespace StockSharp.Xaml.Charting
                 */
                 foreach ( ChartArea chartArea in this )
                 {
-                    chartArea.ViewModel.Draw( drawData );
+                    var vm = (ScichartSurfaceMVVM) chartArea.ViewModel;
+                    vm.Draw( drawData );
                 }
             }
 
@@ -1471,7 +1474,8 @@ namespace StockSharp.Xaml.Charting
             {
                 foreach ( ChartArea chartArea in this )
                 {
-                    chartArea.ViewModel.Reset( element );
+                    var vm = (ScichartSurfaceMVVM) chartArea.ViewModel;
+                    vm.Reset( element );
                 }
             }
 
@@ -1516,7 +1520,10 @@ namespace StockSharp.Xaml.Charting
                         }
                     }
                     Add( chartArea );
-                    chartArea.ViewModel.Height = storage.GetValue( "Height", double.NaN );
+
+                    var vm = (ScichartSurfaceMVVM) chartArea.ViewModel;
+
+                    vm.Height = storage.GetValue( "Height", double.NaN );
                 }
             }
 
@@ -1530,7 +1537,10 @@ namespace StockSharp.Xaml.Charting
                 settings.SetValue( "Areas", this.Select( a =>
                 {
                     var s = a.Save( );
-                    s.SetValue( "Height", a.ViewModel.Height );
+
+                    var vm = (ScichartSurfaceMVVM) a.ViewModel;
+
+                    s.SetValue( "Height", vm.Height );
                     return s;
                 } ).ToArray( ) );
             }

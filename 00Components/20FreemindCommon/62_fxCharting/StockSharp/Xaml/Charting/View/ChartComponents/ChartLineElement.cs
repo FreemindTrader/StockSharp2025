@@ -29,7 +29,7 @@ namespace StockSharp.Xaml.Charting
         private DrawStyles _indicatorDrawStyle;
         private double                   _dataPointWidth = double.NaN;
 
-        private IDrawingSurfaceVM _scichartSurfaceVM;
+        private ScichartSurfaceMVVM _scichartSurfaceVM;
         private CategoryDateTimeAxis     _xAxis;
 
         private static int               _pointSize = 24;            // This is the size for the star.
@@ -47,8 +47,8 @@ namespace StockSharp.Xaml.Charting
 
         DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
-            _scichartSurfaceVM = viewModel;
-            _lineViewModel     = viewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( DrawableChartComponentBaseViewModel )new ChartLineElementVM<DateTime>( this );
+            _scichartSurfaceVM = ( ScichartSurfaceMVVM) viewModel;
+            _lineViewModel     = _scichartSurfaceVM.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( DrawableChartComponentBaseViewModel )new ChartLineElementVM<DateTime>( this );
 
             var xAxis = _scichartSurfaceVM.XAxises.FirstOrDefault( );
 

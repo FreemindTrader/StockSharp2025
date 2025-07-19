@@ -110,7 +110,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        private IChart ChartArea
+        private IChartEx ChartArea
         {
             get
             {

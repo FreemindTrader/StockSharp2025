@@ -50,9 +50,9 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// 
 /// </summary>
-public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
-                                                IDisposable,
-                                                IDrawingSurfaceViewModel
+public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
+                                                IDisposable, 
+                                                IDrawingSurfaceVM
 {
     /// <summary>
     /// Chart Components Cache 
@@ -161,7 +161,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private fxDataPointSelectionModifier _dataPointSelector;
 
-    public DrawingSurfaceViewModel( ChartArea area ) : base()
+    public ScichartSurfaceMVVM( ChartArea area ) : base()
     {
         _chartArea = area ?? throw new ArgumentNullException( "area" );
         _dispatcherTimer = new DispatcherTimer( ( DispatcherPriority ) 7, Application.Current.Dispatcher );
@@ -225,7 +225,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     private void OnChartOrderMouseEvent( ModifierMouseArgs _param1 )
     {
-        IChart chart = Chart;
+        var chart = Chart;
         if ( chart == null )
             return;
         chart.IsAutoRange = false;
@@ -234,13 +234,13 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     private void OnChartOrderMouseMove(
     ModifierMouseArgs _param1 )
     {
-        IChart chart = Chart;
+        var chart = Chart;
         if ( chart == null )
             return;
         chart.IsAutoRange = false;
     }
 
-    public StockSharp.Charting.IChart Chart => Area.Chart;
+    public StockSharp.Xaml.Charting.IChartEx Chart => Area.Chart;
 
     public ChartArea Area => _chartArea;
 
@@ -681,7 +681,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     /// <exception cref="ArgumentException"></exception>
     public void OnChartAreaElementsAdded( IChartElement anyChartUI )
     {
-        IChart chart = Chart;
+        var chart = Chart;
         if ( Chart != null )
         {
             Chart.EnsureUIThread();
@@ -726,7 +726,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     public bool OnChartAreaElementsRemoving( IChartElement _param1 )
     {
-        IChart chart = Chart;
+        var chart = Chart;
         if ( chart != null )
             chart.EnsureUIThread();
         IChartComponent chartComp = (IChartComponent) _param1;
@@ -753,7 +753,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
         IChartComponent chartComp = (IChartComponent) chartComponent;
         if ( e.PropertyName != "XAxisId" && e.PropertyName != "YAxisId" )
             return;
-        IChart chart = Chart;
+        var chart = Chart;
         if ( chart != null )
             chart.EnsureUIThread();
 
@@ -1337,7 +1337,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
 
     //private sealed class PrivateSealedClass_3Ins_1Met
     //{
-    //    public DrawingSurfaceViewModel _variableSome3535;
+    //    public ScichartSurfaceMVVM _variableSome3535;
     //    public IChartAxis _IChartAxis_098;
     //    public ICollection<IAxis> _ICollection_IAxis_098;
 
@@ -1357,7 +1357,7 @@ public sealed class DrawingSurfaceViewModel : ChartBaseViewModel,
     //[Serializable]
     //private new sealed class SomeClass34343383
     //{
-    //    public static readonly DrawingSurfaceViewModel.SomeClass34343383 SomeMethond0343 = new DrawingSurfaceViewModel.SomeClass34343383();
+    //    public static readonly ScichartSurfaceMVVM.SomeClass34343383 SomeMethond0343 = new ScichartSurfaceMVVM.SomeClass34343383();
     //    public static Action<ChartAxis> pubStatic_Action_ChartAxis_;
     //    public static Func<ChartComponentViewModel, bool> m_public_static_Func_ChartComponentViewModel_bool_;
     //    public static Action<CategoryDateTimeAxis> public_static_Action_CategoryDateTimeAxis_009;

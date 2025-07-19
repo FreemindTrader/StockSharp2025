@@ -167,11 +167,17 @@ namespace StockSharp.Xaml.Charting
         {
             if ( area != null )
             {
-                area.ViewModel.ShowHiddenAxesCommand.Execute( null );
+                var vm = (ScichartSurfaceMVVM) area.ViewModel;
+                vm.ShowHiddenAxesCommand.Execute( null );
             }
             else
             {
-                Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p => p.Area.ViewModel.ShowHiddenAxesCommand.Execute( null ) );
+                Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p =>
+                    {
+                        var vm = (ScichartSurfaceMVVM) p.Area.ViewModel;
+                        vm.ShowHiddenAxesCommand.Execute(null);
+
+                    } );
                 
             }
 
@@ -282,17 +288,21 @@ namespace StockSharp.Xaml.Charting
 
         private void ExecuteClosePaneCommand( IChildPane pane )
         {
-            var sciMvvm = ( ( IDrawingSurfaceVM )pane );
+            throw new NotImplementedException();
 
-            var areas = sciMvvm.Chart.ChartAreas;
-            var chartArea = areas.FirstOrDefault( a => a.ViewModel == pane );
+            //var sciMvvm = ( ( IDrawingSurfaceVM )pane );
 
-            if ( chartArea == null )
-            {
-                return;
-            }
+            //var vm = (ScichartSurfaceMVVM) sciMvvm;
 
-            areas.Remove( chartArea );
+            //var areas = vm.Chart.ChartAreas;
+            //var chartArea = areas.FirstOrDefault( a => a.ViewModel == pane );
+
+            //if ( chartArea == null )
+            //{
+            //    return;
+            //}
+
+            //areas.Remove( chartArea );
         }
 
         private bool CanExecuteClosePaneCommand( IChildPane pane )

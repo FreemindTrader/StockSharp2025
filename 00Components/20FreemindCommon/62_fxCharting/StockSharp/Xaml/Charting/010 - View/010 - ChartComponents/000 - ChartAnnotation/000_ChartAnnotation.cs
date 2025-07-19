@@ -61,6 +61,8 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
         return ( DrawableChartComponentBaseViewModel ) ( this._baseViewModel = new ChartAnnotationViewModel( this ) );
     }
 
+    //public DrawableChartComponentBaseViewModel CreateViewModel( ScichartSurfaceMVVM _param1 );
+
     bool IDrawableChartElement.StartDrawing(
       IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
     {

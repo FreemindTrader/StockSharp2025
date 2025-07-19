@@ -67,12 +67,12 @@ internal sealed class ChartAnnotationViewModel : ChartCompentWpfBaseViewModel<Ch
 
     protected override void Clear()
     {
-        DrawingSurface.RemoveAnnotation( ChartComponentView );
+        DrawingSurface.RemoveAnnotation( ChartComponentView, null );
     }
 
     public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> e )
     {
-        PerformUIAction2( () => DrawingSurface.SetupAnnotation( ChartComponentView, e.Cast<ChartDrawData.AnnotationData>().Single() ), true );
+        //PerformUIAction2( () => DrawingSurface.SetupAnnotation( ChartComponentView, e.Cast<ChartDrawData.AnnotationData>().Single() ) );
 
         return true;
     }
