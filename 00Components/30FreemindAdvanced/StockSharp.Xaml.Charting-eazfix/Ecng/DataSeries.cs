@@ -248,7 +248,7 @@ public abstract class DataSeries<TX, TY> :
     {
       this.\u0023\u003Dzz6J3NZIzdU\u0024X();
       this.\u0023\u003DztwHsLGWnHCVU((\u0023\u003DzzD2ECOV\u00240uL7JoS8n7YFSt8unP4d2NFH7w5lsUs\u003D) 3);
-      this.DataDistributionCalculator = DataDistributionCalculatorFactory.\u0023\u003DzpxJeWbQ\u003D<TX>(this.IsFifo);
+      this.DataDistributionCalculator = DataDistributionCalculatorFactory.CreateSxTuple<TX>(this.IsFifo);
       this.DataDistributionCalculator.Clear();
     }
   }

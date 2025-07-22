@@ -181,11 +181,11 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.Draw<TX>(CollectionHelper.ToEx<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX>>(((IEnumerable) _param1).Cast<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX>>(), ((IEnumerableEx) _param1).Count));
+    return this.Draw<TX>(CollectionHelper.ToEx<ChartDrawData.sxTuple<TX>>(((IEnumerable) _param1).Cast<ChartDrawData.sxTuple<TX>>(), ((IEnumerableEx) _param1).Count));
   }
 
   public bool Draw<TX1>(
-    IEnumerableEx<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>> _param1)
+    IEnumerableEx<ChartDrawData.sxTuple<TX1>> _param1)
     where TX1 : struct, IComparable
   {
     if (_param1 == null)
@@ -196,7 +196,7 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
     TX[] array1 = new TX[count];
     double[] array2 = new double[count];
     double[] array3 = new double[count];
-    foreach (ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1> z6MdlWkBsH4 in (IEnumerable<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>) _param1)
+    foreach (ChartDrawData.sxTuple<TX1> z6MdlWkBsH4 in (IEnumerable<ChartDrawData.sxTuple<TX1>>) _param1)
     {
       TX zulcL8Ra = (TX) (ValueType) z6MdlWkBsH4.\u0023\u003Dz2_4KSTY\u003D();
       switch (zulcL8Ra.CompareTo((object) comparable))

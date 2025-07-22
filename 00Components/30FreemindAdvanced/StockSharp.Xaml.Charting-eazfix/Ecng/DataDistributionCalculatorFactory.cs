@@ -9,7 +9,7 @@ using System;
 #nullable disable
 public static class DataDistributionCalculatorFactory
 {
-  public static IDataDistributionCalculator<TX> \u0023\u003DzpxJeWbQ\u003D<TX>(
+  public static IDataDistributionCalculator<TX> CreateSxTuple<TX>(
     bool _param0)
     where TX : IComparable
   {

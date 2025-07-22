@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable enable
-public sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T> : 
+public sealed class List<T> : 
   IList<
   #nullable disable
   T>,
@@ -25,7 +25,7 @@ public sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T> :
   
   private readonly T \u0023\u003Dznoh6bv8\u003D;
 
-  public \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D(T _param1)
+  public List(T _param1)
   {
     this.\u0023\u003Dznoh6bv8\u003D = _param1;
   }
@@ -33,7 +33,7 @@ public sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T> :
   #nullable enable
   IEnumerator IEnumerable.\u0023\u003DzSV_TZe7ftMh2SQ86i417Nok\u003D()
   {
-    return (IEnumerator) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
+    return (IEnumerator) new List<T>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
   }
 
   int ICollection.\u0023\u003Dzl6H\u0024MU\u0024Y9eNBxHLmAI_uHK8\u003D() => 1;
@@ -102,7 +102,7 @@ public sealed class \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T> :
   #nullable disable
   T> IEnumerable<T>.\u0023\u003DzeZA2Ff9OcH6BD7PGVCI6viR78aQH()
   {
-    return (IEnumerator<T>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<T>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
+    return (IEnumerator<T>) new List<T>.\u0023\u003DzdFhhG7w\u003D(this.\u0023\u003Dznoh6bv8\u003D);
   }
 
   int IReadOnlyCollection<T>.\u0023\u003DzgFtIrs4ENSc_WWxv3LSeKDD\u0024hCiHOapNIw\u003D\u003D()

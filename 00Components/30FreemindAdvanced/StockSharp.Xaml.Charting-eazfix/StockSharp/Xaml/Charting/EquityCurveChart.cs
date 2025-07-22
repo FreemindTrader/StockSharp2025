@@ -71,7 +71,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     RolloverModifier jhzfqwrsvK3MyA6SqEjd = new RolloverModifier();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
     jhzfqwrsvK3MyA6SqEjd.UseInterpolation = false;
-    \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartModifier> issiadppaSwGkbOr8 = new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartModifier>((IChartModifier) jhzfqwrsvK3MyA6SqEjd);
+    List<IChartModifier> issiadppaSwGkbOr8 = new List<IChartModifier>((IChartModifier) jhzfqwrsvK3MyA6SqEjd);
     CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) childModifiers, (IEnumerable<IChartModifier>) issiadppaSwGkbOr8);
     this.\u0023\u003DzO72kpz0\u003D.PreviewMouseWheel += new MouseWheelEventHandler(this.\u0023\u003DzzPTbGgY94FCnML89IBWoh_E\u003D);
     this.\u0023\u003DzO72kpz0\u003D.PreviewMouseDoubleClick += new MouseButtonEventHandler(this.\u0023\u003DzihheewX0KTANlZbr4wNeex8\u003D);
@@ -340,7 +340,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
     protected virtual void OnCleared()
     {
-      this._parentElement.\u0023\u003DzO72kpz0\u003D.Reset((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
+      this._parentElement.\u0023\u003DzO72kpz0\u003D.Reset((IEnumerable<IChartElement>) new List<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
       ((BaseCollection<LineData<DateTime>, IList<LineData<DateTime>>>) this).OnCleared();
     }
   }

@@ -79,7 +79,7 @@ public class OptionVolatilitySmileChart :
     RolloverModifier jhzfqwrsvK3MyA6SqEjd = new RolloverModifier();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
     jhzfqwrsvK3MyA6SqEjd.UseInterpolation = false;
-    \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartModifier> issiadppaSwGkbOr8 = new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartModifier>((IChartModifier) jhzfqwrsvK3MyA6SqEjd);
+    List<IChartModifier> issiadppaSwGkbOr8 = new List<IChartModifier>((IChartModifier) jhzfqwrsvK3MyA6SqEjd);
     CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) childModifiers, (IEnumerable<IChartModifier>) issiadppaSwGkbOr8);
     this.\u0023\u003DzO72kpz0\u003D.PreviewMouseWheel += new MouseWheelEventHandler(this.\u0023\u003DzBsahwWdfdEWjKOxCgMVywFE\u003D);
     this.\u0023\u003DzO72kpz0\u003D.PreviewMouseDoubleClick += new MouseButtonEventHandler(this.\u0023\u003DzHIax\u0024yo0Oo2CNG1giLPOKl4\u003D);
@@ -331,7 +331,7 @@ public class OptionVolatilitySmileChart :
 
     private void \u0023\u003DzgHn_8Jw\u003D()
     {
-      this.\u0023\u003DzASpaYkPu0U\u0024F().Reset((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
+      this.\u0023\u003DzASpaYkPu0U\u0024F().Reset((IEnumerable<IChartElement>) new List<IChartElement>((IChartElement) this.\u0023\u003Dzj_CyhS4\u003D()));
       IChartDrawData data = this.\u0023\u003DzASpaYkPu0U\u0024F().CreateData();
       foreach (LineData<double> lineData in (BaseCollection<LineData<double>, IList<LineData<double>>>) this)
         data.Group(lineData.X).Add(this.\u0023\u003Dzj_CyhS4\u003D().Values, (double) lineData.Y);

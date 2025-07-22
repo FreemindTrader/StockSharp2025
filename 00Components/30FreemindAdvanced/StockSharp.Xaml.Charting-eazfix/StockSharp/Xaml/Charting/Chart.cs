@@ -1155,7 +1155,7 @@ public class Chart :
       uyozsiG5aIcl2VmAkuos._variableSome3535 = this;
       uyozsiG5aIcl2VmAkuos.\u0023\u003DzgZ3Boxc\u003D = this.TryGetSubscription(_param1);
       List<IChartElement> chartElementList = new List<IChartElement>();
-      chartElementList.AddRange(this.GetElements().Where<IChartElement>(new Func<IChartElement, bool>(uyozsiG5aIcl2VmAkuos.\u0023\u003Dzdtmu9eDzQDfVd61b8w\u003D\u003D)).Concat<IChartElement>((IEnumerable<IChartElement>) new \u0023\u003DzxOY_ppISsiadppaSwGkbOR8\u003D<IChartElement>(_param1)).Distinct<IChartElement>());
+      chartElementList.AddRange(this.GetElements().Where<IChartElement>(new Func<IChartElement, bool>(uyozsiG5aIcl2VmAkuos.\u0023\u003Dzdtmu9eDzQDfVd61b8w\u003D\u003D)).Concat<IChartElement>((IEnumerable<IChartElement>) new List<IChartElement>(_param1)).Distinct<IChartElement>());
       elements = chartElementList.ToArray();
     }
     else

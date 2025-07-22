@@ -226,11 +226,11 @@ public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
   {
-    return this.Draw<TX>(CollectionHelper.ToEx<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX>>(((IEnumerable) _param1).Cast<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX>>(), ((IEnumerableEx) _param1).Count));
+    return this.Draw<TX>(CollectionHelper.ToEx<ChartDrawData.sxTuple<TX>>(((IEnumerable) _param1).Cast<ChartDrawData.sxTuple<TX>>(), ((IEnumerableEx) _param1).Count));
   }
 
   public bool Draw<TX1>(
-    IEnumerableEx<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>> _param1)
+    IEnumerableEx<ChartDrawData.sxTuple<TX1>> _param1)
     where TX1 : struct, IComparable
   {
     if (this.\u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D != this.ChartComponentView.Colorer)
@@ -238,7 +238,7 @@ public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8
       this.\u0023\u003DzpGDlrKJMgW0aU9TwiA\u003D\u003D = this.ChartComponentView.Colorer;
       this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries.Services()?.GetService<ISciChartSurface>()?.InvalidateElement();
     }
-    if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>((IEnumerable<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>) _param1))
+    if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.sxTuple<TX1>>((IEnumerable<ChartDrawData.sxTuple<TX1>>) _param1))
       return false;
     int count = ((IEnumerableEx) _param1).Count;
     IComparable comparable = this.\u0023\u003DzFEDR40ugZMK3;
@@ -246,8 +246,8 @@ public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8
     TX[] array1 = new TX[count];
     double[] array2 = new double[count];
     double[] array3 = new double[count];
-    List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>> z6MdlWkBsH4List = new List<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>();
-    foreach (ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1> z6MdlWkBsH4 in (IEnumerable<ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1>>) _param1)
+    List<ChartDrawData.sxTuple<TX1>> z6MdlWkBsH4List = new List<ChartDrawData.sxTuple<TX1>>();
+    foreach (ChartDrawData.sxTuple<TX1> z6MdlWkBsH4 in (IEnumerable<ChartDrawData.sxTuple<TX1>>) _param1)
     {
       TX zulcL8Ra = (TX) (ValueType) z6MdlWkBsH4.\u0023\u003Dz2_4KSTY\u003D();
       switch (zulcL8Ra.CompareTo((object) comparable))
@@ -288,7 +288,7 @@ public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8
     this.\u0023\u003DzlkmfHYgr1H49.\u0023\u003Dznc8esWY\u003D((IEnumerable<TX>) array1, (IEnumerable<double>) array2, (IEnumerable<double>) array3);
     if (z6MdlWkBsH4List.Count > 0)
     {
-      foreach (ChartDrawData.\u0023\u003Dz6MdlWkBS_h\u00244<TX1> z6MdlWkBsH4 in z6MdlWkBsH4List)
+      foreach (ChartDrawData.sxTuple<TX1> z6MdlWkBsH4 in z6MdlWkBsH4List)
         this.\u0023\u003DzlkmfHYgr1H49.UpdateOrderAdornerLayer((TX) (ValueType) z6MdlWkBsH4.\u0023\u003Dz2_4KSTY\u003D(), z6MdlWkBsH4.\u0023\u003DzZB\u0024O5xT4bzKv(), z6MdlWkBsH4.\u0023\u003Dzggdh\u0024\u00245CXRMA(), z6MdlWkBsH4.\u0023\u003Dz6qkMxm4QKemy());
     }
     this.\u0023\u003DzFEDR40ugZMK3 = comparable;

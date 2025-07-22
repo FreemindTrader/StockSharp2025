@@ -15,7 +15,7 @@ using StockSharp.Charting;
 namespace StockSharp.Xaml.Charting
 {
     
-    public sealed class ChartIndicatorElement : ChartComponentView< ChartIndicatorElement >
+    public sealed class ChartIndicatorElement : ChartComponentView< ChartIndicatorElement >, IChartIndicatorElement
     {
         private DefaultPainter _defaultPainter;
         private IChartIndicatorPainter _chartIndicatorPainter;
