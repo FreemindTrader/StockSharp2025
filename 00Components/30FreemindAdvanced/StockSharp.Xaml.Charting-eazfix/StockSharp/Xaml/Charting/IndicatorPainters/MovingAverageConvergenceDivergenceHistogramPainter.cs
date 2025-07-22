@@ -17,78 +17,78 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Indicator(typeof (MovingAverageConvergenceDivergenceHistogram))]
-public class MovingAverageConvergenceDivergenceHistogramPainter : 
+[Indicator(typeof(MovingAverageConvergenceDivergenceHistogram))]
+public class MovingAverageConvergenceDivergenceHistogramPainter :
   BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>
 {
-  
-  private readonly IChartLineElement \u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzzDv8WsjezxtjXG3nKA\u003D\u003D;
 
-  public MovingAverageConvergenceDivergenceHistogramPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>.GetColorProvider();
-    this.\u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _macd;
+
+    private readonly IChartLineElement _signal;
+
+    private readonly IChartLineElement _histogram;
+
+    public MovingAverageConvergenceDivergenceHistogramPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D = (IChartLineElement) new ChartLineElement()
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>.GetColorProvider();
+        this._macd = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._signal = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._histogram = (IChartLineElement)new ChartLineElement()
+        {
+            Style = DrawStyles.Histogram
+        };
+        this.AddChildElement((IChartElement)this.Macd);
+        this.AddChildElement((IChartElement)this.Signal);
+        this.AddChildElement((IChartElement)this.Histogram);
+    }
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "MACD", Description = "SignalMaDesc")]
+    public IChartLineElement Macd => this._macd;
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "SignalMa", Description = "SignalMaDesc")]
+    public IChartLineElement Signal => this._signal;
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "Histogram", Description = "HistogramDesc")]
+    public IChartLineElement Histogram => this._histogram;
+
+    protected override bool OnDraw(
+      MovingAverageConvergenceDivergenceHistogram indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzzDv8WsjezxtjXG3nKA\u003D\u003D = (IChartLineElement) new ChartLineElement()
+        return ( 0 | ( this.DrawValues(data[(IIndicator)indicator.Macd], (IChartElement)this.Macd) ? 1 : 0 ) | ( this.DrawValues(data[(IIndicator)indicator.SignalMa], (IChartElement)this.Signal) ? 1 : 0 ) | ( this.DrawValues(data[(IIndicator)indicator.Macd], data[(IIndicator)indicator.SignalMa], (IChartElement)this.Histogram, MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? ( MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Func<double, double, double>(MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.SomeMethond0343.\u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D)) ) ? 1 : 0 )) != 0;
+    }
+
+    public override void Load(SettingsStorage storage)
     {
-      Style = DrawStyles.Histogram
-    };
-    this.AddChildElement((IChartElement) this.Macd);
-    this.AddChildElement((IChartElement) this.Signal);
-    this.AddChildElement((IChartElement) this.Histogram);
-  }
+        base.Load(storage);
+        PersistableHelper.Load((IPersistable)this.Macd, storage, "Macd");
+        PersistableHelper.Load((IPersistable)this.Signal, storage, "Signal");
+        PersistableHelper.Load((IPersistable)this.Histogram, storage, "Histogram");
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "MACD", Description = "SignalMaDesc")]
-  public IChartLineElement Macd => this.\u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D;
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue<SettingsStorage>("Macd", PersistableHelper.Save((IPersistable)this.Macd));
+        storage.SetValue<SettingsStorage>("Signal", PersistableHelper.Save((IPersistable)this.Signal));
+        storage.SetValue<SettingsStorage>("Histogram", PersistableHelper.Save((IPersistable)this.Histogram));
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "SignalMa", Description = "SignalMaDesc")]
-  public IChartLineElement Signal => this.\u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D;
-
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Histogram", Description = "HistogramDesc")]
-  public IChartLineElement Histogram => this.\u0023\u003DzzDv8WsjezxtjXG3nKA\u003D\u003D;
-
-  protected override bool OnDraw(
-    MovingAverageConvergenceDivergenceHistogram indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    return (0 | (this.DrawValues(data[(IIndicator) indicator.Macd], (IChartElement) this.Macd) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.SignalMa], (IChartElement) this.Signal) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.Macd], data[(IIndicator) indicator.SignalMa], (IChartElement) this.Histogram, MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? (MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Func<double, double, double>(MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383.SomeMethond0343.\u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D))) ? 1 : 0)) != 0;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Macd, storage, "Macd");
-    PersistableHelper.Load((IPersistable) this.Signal, storage, "Signal");
-    PersistableHelper.Load((IPersistable) this.Histogram, storage, "Histogram");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("Macd", PersistableHelper.Save((IPersistable) this.Macd));
-    storage.SetValue<SettingsStorage>("Signal", PersistableHelper.Save((IPersistable) this.Signal));
-    storage.SetValue<SettingsStorage>("Histogram", PersistableHelper.Save((IPersistable) this.Histogram));
-  }
-
-  [Serializable]
-  private new sealed class SomeClass34343383
-  {
-    public static readonly MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383 SomeMethond0343 = new MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383();
-    public static Func<double, double, double> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
+    [Serializable]
+    private new sealed class SomeClass34343383
+    {
+        public static readonly MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383 SomeMethond0343 = new MovingAverageConvergenceDivergenceHistogramPainter.SomeClass34343383();
+        public static Func<double, double, double> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
     public double \u0023\u003DzfNQ20tJQMKdiKg4IJQRgukE\u003D(double _param1, double _param2)
     {
       return _param1 - _param2;
     }
-  }
+}
 }

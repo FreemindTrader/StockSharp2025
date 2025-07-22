@@ -16,55 +16,53 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Indicator(typeof (GatorOscillator))]
+[Indicator(typeof(GatorOscillator))]
 public class GatorOscillatorPainter : BaseChartIndicatorPainter<GatorOscillator>
 {
-  
-  private readonly IChartLineElement \u0023\u003Dzhomr8GNw5jahnu6U\u0024A\u003D\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzAUSthr5NvxGtnAJT\u0024g\u003D\u003D;
 
-  public GatorOscillatorPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<GatorOscillator>.GetColorProvider();
-    this.\u0023\u003Dzhomr8GNw5jahnu6U\u0024A\u003D\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _histogram1;
+
+    private readonly IChartLineElement _histogram2;
+
+    public GatorOscillatorPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzAUSthr5NvxGtnAJT\u0024g\u003D\u003D = (IChartLineElement) new ChartLineElement()
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<GatorOscillator>.GetColorProvider();
+        this._histogram1 = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._histogram2 = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this.Histogram1.Style = this.Histogram2.Style = DrawStyles.Histogram;
+        this.Histogram1.StrokeThickness = this.Histogram2.StrokeThickness = 4;
+        this.AddChildElement((IChartElement)this.Histogram1);
+        this.AddChildElement((IChartElement)this.Histogram2);
+    }
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "Up", Description = "TopHistogram")]
+    public IChartLineElement Histogram1 => this._histogram1;
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "Down", Description = "LowHistogram")]
+    public IChartLineElement Histogram2 => this._histogram2;
+
+    protected override bool OnDraw(GatorOscillator indicator, IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.Histogram1.Style = this.Histogram2.Style = DrawStyles.Histogram;
-    this.Histogram1.StrokeThickness = this.Histogram2.StrokeThickness = 4;
-    this.AddChildElement((IChartElement) this.Histogram1);
-    this.AddChildElement((IChartElement) this.Histogram2);
-  }
+        return ( 0 | ( this.DrawValues(data[(IIndicator)indicator.Histogram1], (IChartElement)this.Histogram1) ? 1 : 0 ) | ( this.DrawValues(data[(IIndicator)indicator.Histogram2], (IChartElement)this.Histogram2) ? 1 : 0 ) ) != 0;
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Up", Description = "TopHistogram")]
-  public IChartLineElement Histogram1 => this.\u0023\u003Dzhomr8GNw5jahnu6U\u0024A\u003D\u003D;
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        PersistableHelper.Load((IPersistable)this.Histogram1, storage, "Histogram1");
+        PersistableHelper.Load((IPersistable)this.Histogram2, storage, "Histogram2");
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Down", Description = "LowHistogram")]
-  public IChartLineElement Histogram2 => this.\u0023\u003DzAUSthr5NvxGtnAJT\u0024g\u003D\u003D;
-
-  protected override bool OnDraw(
-    GatorOscillator indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    return (0 | (this.DrawValues(data[(IIndicator) indicator.Histogram1], (IChartElement) this.Histogram1) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator.Histogram2], (IChartElement) this.Histogram2) ? 1 : 0)) != 0;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Histogram1, storage, "Histogram1");
-    PersistableHelper.Load((IPersistable) this.Histogram2, storage, "Histogram2");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("Histogram1", PersistableHelper.Save((IPersistable) this.Histogram1));
-    storage.SetValue<SettingsStorage>("Histogram2", PersistableHelper.Save((IPersistable) this.Histogram2));
-  }
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue<SettingsStorage>("Histogram1", PersistableHelper.Save((IPersistable)this.Histogram1));
+        storage.SetValue<SettingsStorage>("Histogram2", PersistableHelper.Save((IPersistable)this.Histogram2));
+    }
 }

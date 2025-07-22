@@ -3,6 +3,7 @@ using fx.Indicators;
 using StockSharp.Algo.Indicators;
 using StockSharp.Localization;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
@@ -10,7 +11,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
     [Indicator( typeof( HewRsiComplex ) )]
-    public class HewRsiPainter : BaseChartIndicatorPainter
+    public class HewRsiPainter : BaseChartIndicatorPainter<HewRsiComplex>
     {
         private readonly ChartLineElement _overBought;
         private readonly ChartLineElement _hewRsi;
@@ -65,12 +66,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
             }
         }
 
-        protected override bool OnDraw()
-        {
-            HewRsiComplex indicator = ( HewRsiComplex )Indicator;
-
-            return ( DrawValues( indicator.OverBought, OverBought ) | DrawValues( indicator.Rsi, HewRsi ) | DrawValues( indicator.OverSold, OverSold ) );
-        }
+        
 
         public override void Load( SettingsStorage storage )
         {
@@ -86,6 +82,14 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
             storage.SetValue( "OverBought", OverBought.Save() );
             storage.SetValue( "HewRsi", HewRsi.Save() );
             storage.SetValue( "OverSold", OverSold.Save() );
+        }
+
+        protected override bool OnDraw(HewRsiComplex indicator, IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
+        {
+            return ( DrawValues(data[(IIndicator)indicator.OverBought], OverBought)
+                     | ( DrawValues(data[(IIndicator)indicator.Rsi], HewRsi) ) )
+                     | ( DrawValues(data[(IIndicator)indicator.OverSold], OverSold) )
+            ;
         }
     }
 }

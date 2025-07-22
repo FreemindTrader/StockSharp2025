@@ -15,69 +15,69 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Indicator(typeof (AverageDirectionalIndex))]
+[Indicator( typeof( AverageDirectionalIndex ) )]
 public class AverageDirectionalIndexPainter : BaseChartIndicatorPainter<AverageDirectionalIndex>
 {
-  
-  private readonly IChartLineElement \u0023\u003DzVMUE9pivzG3g3vV8wlSj5XA\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzjH1IaGlfmFp\u0024VdbCE5Sqc5w\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzzFD5DAgXC8w5n5O1Xw\u003D\u003D;
 
-  public AverageDirectionalIndexPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<AverageDirectionalIndex>.GetColorProvider();
-    this.\u0023\u003DzVMUE9pivzG3g3vV8wlSj5XA\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _diPlusLine;
+
+    private readonly IChartLineElement _diMinusLine;
+
+    private readonly IChartLineElement _adxLine;
+
+    public AverageDirectionalIndexPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzjH1IaGlfmFp\u0024VdbCE5Sqc5w\u003D = (IChartLineElement) new ChartLineElement()
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<AverageDirectionalIndex>.GetColorProvider();
+        this._diPlusLine = ( IChartLineElement ) new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._diMinusLine = ( IChartLineElement ) new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._adxLine = ( IChartLineElement ) new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this.AddChildElement( ( IChartElement ) this.DiPlus );
+        this.AddChildElement( ( IChartElement ) this.DiMinus );
+        this.AddChildElement( ( IChartElement ) this.Adx );
+    }
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "DiPlus", Description = "DiPlusLine" )]
+    public IChartLineElement DiPlus => this._diPlusLine;
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "DiMinus", Description = "DiMinusLine" )]
+    public IChartLineElement DiMinus => this._diMinusLine;
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Adx", Description = "AdxLine" )]
+    public IChartLineElement Adx => this._adxLine;
+
+    protected override bool OnDraw(
+      AverageDirectionalIndex indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data )
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzzFD5DAgXC8w5n5O1Xw\u003D\u003D = (IChartLineElement) new ChartLineElement()
+        bool flag = false | this.DrawValues(data[(IIndicator) indicator.Dx.Plus], (IChartElement) this.DiPlus) | this.DrawValues(data[(IIndicator) indicator.Dx.Minus], (IChartElement) this.DiMinus);
+        IList<ChartDrawData.IndicatorData> vals;
+        if ( data.TryGetValue( ( IIndicator ) indicator.MovingAverage, out vals ) )
+            flag |= this.DrawValues( vals, ( IChartElement ) this.Adx );
+        return flag;
+    }
+
+    public override void Load( SettingsStorage storage )
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.AddChildElement((IChartElement) this.DiPlus);
-    this.AddChildElement((IChartElement) this.DiMinus);
-    this.AddChildElement((IChartElement) this.Adx);
-  }
+        base.Load( storage );
+        PersistableHelper.Load( ( IPersistable ) this.DiPlus, storage, "DiPlus" );
+        PersistableHelper.Load( ( IPersistable ) this.DiMinus, storage, "DiMinus" );
+        PersistableHelper.Load( ( IPersistable ) this.Adx, storage, "Adx" );
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "DiPlus", Description = "DiPlusLine")]
-  public IChartLineElement DiPlus => this.\u0023\u003DzVMUE9pivzG3g3vV8wlSj5XA\u003D;
-
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "DiMinus", Description = "DiMinusLine")]
-  public IChartLineElement DiMinus => this.\u0023\u003DzjH1IaGlfmFp\u0024VdbCE5Sqc5w\u003D;
-
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Adx", Description = "AdxLine")]
-  public IChartLineElement Adx => this.\u0023\u003DzzFD5DAgXC8w5n5O1Xw\u003D\u003D;
-
-  protected override bool OnDraw(
-    AverageDirectionalIndex indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    bool flag = false | this.DrawValues(data[(IIndicator) indicator.Dx.Plus], (IChartElement) this.DiPlus) | this.DrawValues(data[(IIndicator) indicator.Dx.Minus], (IChartElement) this.DiMinus);
-    IList<ChartDrawData.IndicatorData> vals;
-    if (data.TryGetValue((IIndicator) indicator.MovingAverage, out vals))
-      flag |= this.DrawValues(vals, (IChartElement) this.Adx);
-    return flag;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.DiPlus, storage, "DiPlus");
-    PersistableHelper.Load((IPersistable) this.DiMinus, storage, "DiMinus");
-    PersistableHelper.Load((IPersistable) this.Adx, storage, "Adx");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("DiPlus", PersistableHelper.Save((IPersistable) this.DiPlus));
-    storage.SetValue<SettingsStorage>("DiMinus", PersistableHelper.Save((IPersistable) this.DiMinus));
-    storage.SetValue<SettingsStorage>("Adx", PersistableHelper.Save((IPersistable) this.Adx));
-  }
+    public override void Save( SettingsStorage storage )
+    {
+        base.Save( storage );
+        storage.SetValue<SettingsStorage>( "DiPlus", PersistableHelper.Save( ( IPersistable ) this.DiPlus ) );
+        storage.SetValue<SettingsStorage>( "DiMinus", PersistableHelper.Save( ( IPersistable ) this.DiMinus ) );
+        storage.SetValue<SettingsStorage>( "Adx", PersistableHelper.Save( ( IPersistable ) this.Adx ) );
+    }
 }

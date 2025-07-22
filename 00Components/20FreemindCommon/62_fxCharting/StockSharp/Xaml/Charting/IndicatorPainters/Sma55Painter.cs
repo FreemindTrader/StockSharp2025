@@ -1,11 +1,13 @@
 ﻿using Ecng.Serialization;
+using StockSharp.Algo.Indicators;
 using StockSharp.Localization;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting.IndicatorPainters
 {
-    public class Sma55Painter : BaseChartIndicatorPainter
+    public class Sma55Painter : BaseChartIndicatorPainter<SimpleMovingAverage>
     {
         private readonly ChartLineElement _line;
 
@@ -39,9 +41,9 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters
             }
         }
 
-        protected override bool OnDraw()
+        protected override bool OnDraw(SimpleMovingAverage indicator, IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
         {
-            return DrawValues(Indicator, Line);
+            return ( DrawValues(data[(IIndicator)indicator.Length ], Line)
         }
 
         public override void Load(SettingsStorage storage)

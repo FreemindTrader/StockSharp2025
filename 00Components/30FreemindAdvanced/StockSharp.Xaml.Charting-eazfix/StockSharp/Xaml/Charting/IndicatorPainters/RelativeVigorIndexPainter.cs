@@ -15,58 +15,58 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Display(ResourceType = typeof (LocalizedStrings), Name = "RVI")]
-[Indicator(typeof (RelativeVigorIndex))]
+[Display(ResourceType = typeof(LocalizedStrings), Name = "RVI")]
+[Indicator(typeof(RelativeVigorIndex))]
 public class RelativeVigorIndexPainter : BaseChartIndicatorPainter<RelativeVigorIndex>
 {
-  
-  private readonly IChartLineElement \u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzgPhsiGaFv1khCrU7gg\u003D\u003D;
 
-  public RelativeVigorIndexPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<RelativeVigorIndex>.GetColorProvider();
-    this.\u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _signal;
+
+    private readonly IChartLineElement _average;
+
+    public RelativeVigorIndexPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzgPhsiGaFv1khCrU7gg\u003D\u003D = (IChartLineElement) new ChartLineElement()
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<RelativeVigorIndex>.GetColorProvider();
+        this._signal = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._average = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this.AddChildElement((IChartElement)this.Signal);
+        this.AddChildElement((IChartElement)this.Average);
+    }
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "Signal", Description = "SignalPart")]
+    public IChartLineElement Signal => this._signal;
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "Average", Description = "AveragePart")]
+    public IChartLineElement Average => this._average;
+
+    protected override bool OnDraw(
+      RelativeVigorIndex indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.AddChildElement((IChartElement) this.Signal);
-    this.AddChildElement((IChartElement) this.Average);
-  }
+        bool flag = false | this.DrawValues(data[(IIndicator)indicator.Average], (IChartElement)this.Average);
+        IList<ChartDrawData.IndicatorData> vals;
+        if ( data.TryGetValue((IIndicator)indicator.Signal, out vals) )
+            flag |= this.DrawValues(vals, (IChartElement)this.Signal);
+        return flag;
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Signal", Description = "SignalPart")]
-  public IChartLineElement Signal => this.\u0023\u003DzCN3S7rEn1IGLGTzJlg\u003D\u003D;
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        PersistableHelper.Load((IPersistable)this.Signal, storage, "Signal");
+        PersistableHelper.Load((IPersistable)this.Average, storage, "Average");
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "Average", Description = "AveragePart")]
-  public IChartLineElement Average => this.\u0023\u003DzgPhsiGaFv1khCrU7gg\u003D\u003D;
-
-  protected override bool OnDraw(
-    RelativeVigorIndex indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    bool flag = false | this.DrawValues(data[(IIndicator) indicator.Average], (IChartElement) this.Average);
-    IList<ChartDrawData.IndicatorData> vals;
-    if (data.TryGetValue((IIndicator) indicator.Signal, out vals))
-      flag |= this.DrawValues(vals, (IChartElement) this.Signal);
-    return flag;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Signal, storage, "Signal");
-    PersistableHelper.Load((IPersistable) this.Average, storage, "Average");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("Signal", PersistableHelper.Save((IPersistable) this.Signal));
-    storage.SetValue<SettingsStorage>("Average", PersistableHelper.Save((IPersistable) this.Average));
-  }
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue<SettingsStorage>("Signal", PersistableHelper.Save((IPersistable)this.Signal));
+        storage.SetValue<SettingsStorage>("Average", PersistableHelper.Save((IPersistable)this.Average));
+    }
 }

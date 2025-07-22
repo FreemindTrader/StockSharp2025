@@ -15,58 +15,58 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Indicator(typeof (MovingAverageConvergenceDivergenceSignal))]
-public class MovingAverageConvergenceDivergenceSignalPainter : 
+[Indicator(typeof(MovingAverageConvergenceDivergenceSignal))]
+public class MovingAverageConvergenceDivergenceSignalPainter :
   BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceSignal>
 {
-  
-  private readonly IChartLineElement \u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzyDj2A4Ua\u0024B5a1WsoNzN9XeU\u003D;
 
-  public MovingAverageConvergenceDivergenceSignalPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceSignal>.GetColorProvider();
-    this.\u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _macd;
+
+    private readonly IChartLineElement _signal;
+
+    public MovingAverageConvergenceDivergenceSignalPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzyDj2A4Ua\u0024B5a1WsoNzN9XeU\u003D = (IChartLineElement) new ChartLineElement()
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceSignal>.GetColorProvider();
+        this._macd = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._signal = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this.AddChildElement((IChartElement)this.Macd);
+        this.AddChildElement((IChartElement)this.SignalMa);
+    }
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "MACD", Description = "MACDDesc")]
+    public IChartLineElement Macd => this._macd;
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "SignalMa", Description = "SignalMaDesc")]
+    public IChartLineElement SignalMa => this._signal;
+
+    protected override bool OnDraw(
+      MovingAverageConvergenceDivergenceSignal indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.AddChildElement((IChartElement) this.Macd);
-    this.AddChildElement((IChartElement) this.SignalMa);
-  }
+        bool flag = false | this.DrawValues(data[(IIndicator)indicator.Macd], (IChartElement)this.Macd);
+        IList<ChartDrawData.IndicatorData> vals;
+        if ( data.TryGetValue((IIndicator)indicator.SignalMa, out vals) )
+            flag |= this.DrawValues(vals, (IChartElement)this.SignalMa);
+        return flag;
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "MACD", Description = "MACDDesc")]
-  public IChartLineElement Macd => this.\u0023\u003Dzp7lb78Uy6qMoJVXiX8l3ZdU\u003D;
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        PersistableHelper.Load((IPersistable)this.Macd, storage, "Macd");
+        PersistableHelper.Load((IPersistable)this.SignalMa, storage, "SignalMa");
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "SignalMa", Description = "SignalMaDesc")]
-  public IChartLineElement SignalMa => this.\u0023\u003DzyDj2A4Ua\u0024B5a1WsoNzN9XeU\u003D;
-
-  protected override bool OnDraw(
-    MovingAverageConvergenceDivergenceSignal indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    bool flag = false | this.DrawValues(data[(IIndicator) indicator.Macd], (IChartElement) this.Macd);
-    IList<ChartDrawData.IndicatorData> vals;
-    if (data.TryGetValue((IIndicator) indicator.SignalMa, out vals))
-      flag |= this.DrawValues(vals, (IChartElement) this.SignalMa);
-    return flag;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.Macd, storage, "Macd");
-    PersistableHelper.Load((IPersistable) this.SignalMa, storage, "SignalMa");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("Macd", PersistableHelper.Save((IPersistable) this.Macd));
-    storage.SetValue<SettingsStorage>("SignalMa", PersistableHelper.Save((IPersistable) this.SignalMa));
-  }
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue<SettingsStorage>("Macd", PersistableHelper.Save((IPersistable)this.Macd));
+        storage.SetValue<SettingsStorage>("SignalMa", PersistableHelper.Save((IPersistable)this.SignalMa));
+    }
 }
