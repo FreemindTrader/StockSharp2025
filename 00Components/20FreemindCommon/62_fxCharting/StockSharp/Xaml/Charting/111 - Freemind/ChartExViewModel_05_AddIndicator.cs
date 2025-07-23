@@ -138,7 +138,7 @@ namespace StockSharp.Xaml.Charting
              */
             var sma55indicatorUI = new ChartIndicatorElement();
 
-            sma55indicatorUI.IndicatorPainter = new Sma55Painter();
+            //sma55indicatorUI.IndicatorPainter = new Sma55Painter();
 
             if (_period == TimeSpan.FromMinutes(1))
             {                

@@ -314,7 +314,7 @@ namespace StockSharp.Xaml.Charting
 
                 
 
-                indicatorUI.IndicatorPainter = (StockSharp.Xaml.Charting.IChartIndicatorPainter ) indicatorPainter;
+                indicatorUI.IndicatorPainter =  indicatorPainter;
 
                 var tonyCandleSeries         = GetSeries<CandleSeries>( chartUi );
 

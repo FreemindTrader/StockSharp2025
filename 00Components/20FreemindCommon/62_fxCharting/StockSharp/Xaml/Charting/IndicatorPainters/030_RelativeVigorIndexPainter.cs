@@ -9,6 +9,9 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
+/// <summary>
+/// The chart element for <see cref="T:StockSharp.Algo.Indicators.RelativeVigorIndex" />.
+/// </summary>
 [Display(ResourceType = typeof(LocalizedStrings), Name = "RVI")]
 [Indicator(typeof(RelativeVigorIndex))]
 public class RelativeVigorIndexPainter : BaseChartIndicatorPainter<RelativeVigorIndex>
@@ -18,6 +21,7 @@ public class RelativeVigorIndexPainter : BaseChartIndicatorPainter<RelativeVigor
 
     private readonly IChartLineElement _average;
 
+    /// <summary>Create instance.</summary>
     public RelativeVigorIndexPainter()
     {
         IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<RelativeVigorIndex>.GetColorProvider();
@@ -33,9 +37,15 @@ public class RelativeVigorIndexPainter : BaseChartIndicatorPainter<RelativeVigor
         this.AddChildElement((IChartElement)this.Average);
     }
 
+    /// <summary>
+    ///     <see cref="P:StockSharp.Algo.Indicators.RelativeVigorIndex.Signal" />.
+    /// </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "Signal", Description = "SignalPart")]
     public IChartLineElement Signal => this._signal;
 
+    /// <summary>
+    ///     <see cref="P:StockSharp.Algo.Indicators.RelativeVigorIndex.Average" />.
+    /// </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "Average", Description = "AveragePart")]
     public IChartLineElement Average => this._average;
 

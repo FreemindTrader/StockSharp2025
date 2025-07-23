@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Drawing;
+using System.Windows.Media;
 
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
@@ -28,6 +29,17 @@ public class DefaultPainter : BaseChartIndicatorPainter<IIndicator>
         };
 
         AddChildElement( ( IChartElement ) Line );
+    }
+
+    public DefaultPainter(int fifoCapacity)
+    {
+        _line =(IChartLineElement) new ChartLineElement()
+        {
+            FifoCapacity = fifoCapacity,
+            Color        = Colors.Blue
+        };
+
+        AddChildElement(Line);
     }
 
     /// <summary>Default indicator line element.</summary>

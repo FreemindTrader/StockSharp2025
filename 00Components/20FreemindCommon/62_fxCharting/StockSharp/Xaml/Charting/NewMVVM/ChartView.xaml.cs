@@ -1290,7 +1290,7 @@ namespace StockSharp.Xaml.Charting
                 
                 var indicatorPainter                  = indicatorPicker.SelectedIndicatorType.CreatePainter();                               
 
-                indicatorUI.IndicatorPainter = (StockSharp.Xaml.Charting.IChartIndicatorPainter) indicatorPainter;
+                indicatorUI.IndicatorPainter =  indicatorPainter;
 
                 var tonyCandleSeries         = GetSeries< CandleSeries >( ChartCandleElement );
 

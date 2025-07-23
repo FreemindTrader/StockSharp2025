@@ -36,6 +36,22 @@ public sealed class ChartIndicatorElement : ChartComponentView<ChartIndicatorEle
         this._defaultPainter.OnAttached((IChartIndicatorElement)this);
     }
 
+
+    /// <summary>
+    /// TonyAdded: 
+    /// This constructor is used to setup the First in First Out capabilities for the Indicator.
+    /// 
+    /// I guess I meant to do a scrolling of the indicator values, so that the oldest values are removed when new values are added.
+    /// </summary>
+    /// <param name="fifoCapacity"></param>
+    public ChartIndicatorElement(int fifoCapacity)
+    {
+        _defaultPainter = new DefaultPainter(fifoCapacity);
+        FifoCapacity    = fifoCapacity;
+
+        _defaultPainter.OnAttached(this);
+    }
+
     public override string ToString() => this.FullTitle;
 
     public bool AutoAssignYAxis

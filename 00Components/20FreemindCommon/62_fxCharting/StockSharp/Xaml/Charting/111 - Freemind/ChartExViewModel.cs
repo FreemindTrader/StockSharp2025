@@ -165,7 +165,7 @@ namespace StockSharp.Xaml.Charting
 
                 //var indicatorPainter         = ( object )painter != null ? painter.CreateInstance<IChartIndicatorPainter>( ) : null;
 
-                indicatorUI.IndicatorPainter = ( StockSharp.Xaml.Charting.IChartIndicatorPainter ) indicatorPainter;
+                indicatorUI.IndicatorPainter = indicatorPainter;
 
                 
 

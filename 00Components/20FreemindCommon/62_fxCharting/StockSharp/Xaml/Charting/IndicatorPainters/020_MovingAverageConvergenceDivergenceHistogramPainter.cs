@@ -17,6 +17,9 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
+/// <summary>
+/// The chart element for <see cref="T:StockSharp.Algo.Indicators.MovingAverageConvergenceDivergenceHistogram" />.
+/// </summary>
 [Indicator(typeof(MovingAverageConvergenceDivergenceHistogram))]
 public class MovingAverageConvergenceDivergenceHistogramPainter :
   BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>
@@ -28,6 +31,7 @@ public class MovingAverageConvergenceDivergenceHistogramPainter :
 
     private readonly IChartLineElement _histogram;
 
+    /// <summary>Create instance.</summary>
     public MovingAverageConvergenceDivergenceHistogramPainter()
     {
         IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<MovingAverageConvergenceDivergenceHistogram>.GetColorProvider();
@@ -48,12 +52,23 @@ public class MovingAverageConvergenceDivergenceHistogramPainter :
         this.AddChildElement((IChartElement)this.Histogram);
     }
 
+    /// <summary>
+    /// <see cref="P:StockSharp.Xaml.Charting.IndicatorPainters.MovingAverageConvergenceDivergenceHistogramPainter.Macd" /> line.
+    ///     </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "MACD", Description = "SignalMaDesc")]
     public IChartLineElement Macd => this._macd;
 
+
+    /// <summary>
+    /// <see cref="P:StockSharp.Xaml.Charting.IndicatorPainters.MovingAverageConvergenceDivergenceHistogramPainter.Signal" /> line.
+    ///     </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "SignalMa", Description = "SignalMaDesc")]
     public IChartLineElement Signal => this._signal;
 
+
+    /// <summary>
+    /// <see cref="P:StockSharp.Xaml.Charting.IndicatorPainters.MovingAverageConvergenceDivergenceHistogramPainter.Histogram" /> line.
+    ///     </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "Histogram", Description = "HistogramDesc")]
     public IChartLineElement Histogram => this._histogram;
 

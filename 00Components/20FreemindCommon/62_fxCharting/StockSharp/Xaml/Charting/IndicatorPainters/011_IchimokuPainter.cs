@@ -10,6 +10,10 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
+
+/// <summary>
+/// The chart element for <see cref="T:StockSharp.Algo.Indicators.Ichimoku" />.
+/// </summary>
 [Indicator(typeof(Ichimoku))]
 public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
 {
@@ -22,6 +26,7 @@ public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
 
     private readonly IChartBandElement _senkou;
 
+    /// <summary>Create instance.</summary>
     public IchimokuPainter()
     {
         IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<Ichimoku>.GetColorProvider();
@@ -46,15 +51,25 @@ public class IchimokuPainter : BaseChartIndicatorPainter<Ichimoku>
         chartBandElement.AddName((IChartElement)this.Senkou.Line2, "SenkouB");
     }
 
+    /// <summary>
+    /// <see cref="P:StockSharp.Algo.Indicators.Ichimoku.Tenkan" /> line.
+    ///     </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "TenkanLine", Description = "TenkanLine")]
     public IChartLineElement Tenkan => this._tenKan;
 
+    /// <summary>
+    /// <see cref="P:StockSharp.Algo.Indicators.Ichimoku.Kijun" /> line.
+    ///     </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "KijunLine", Description = "KijunLine")]
     public IChartLineElement Kijun => this._kijun;
 
+    /// <summary>
+    /// <see cref="P:StockSharp.Algo.Indicators.Ichimoku.Chinkou" /> line.
+    ///     </summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "ChinkouLine", Description = "ChinkouLine")]
     public IChartLineElement Chinkou => this._chinkou;
 
+    /// <summary>Senkou range.</summary>
     [Display(ResourceType = typeof(LocalizedStrings), Name = "SenkouRange", Description = "SenkouRange")]
     public IChartBandElement Senkou => this._senkou;
 

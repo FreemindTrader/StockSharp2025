@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.IndicatorPainters.VolumePainter
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using Ecng.Drawing;
+﻿using Ecng.Drawing;
 using Ecng.Serialization;
 using StockSharp.Algo.Indicators;
 using StockSharp.Charting;
@@ -19,81 +13,69 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Indicator(typeof (VolumeIndicator))]
+/// <summary>
+/// The chart element for <see cref="T:StockSharp.Algo.Indicators.VolumeIndicator" />.
+/// </summary>
+
+[Indicator(typeof(VolumeIndicator))]
 public class VolumePainter : BaseChartIndicatorPainter<VolumeIndicator>
 {
-  
-  private readonly IChartLineElement \u0023\u003DzA_pKfoSCgXJNJvgk60qKe4k\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzpZ7H_10udEV9\u0024GGb0g555yM\u003D;
 
-  public VolumePainter()
-  {
-    this.\u0023\u003DzA_pKfoSCgXJNJvgk60qKe4k\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _upVolume;
+
+    private readonly IChartLineElement _downVolume;
+
+    /// <summary>Create instance.</summary>
+    public VolumePainter()
     {
-      Color = Colors.Green
-    };
-    this.\u0023\u003DzpZ7H_10udEV9\u0024GGb0g555yM\u003D = (IChartLineElement) new ChartLineElement()
-    {
-      Color = Colors.Red
-    };
-    this.UpVolume.Style = this.DownVolume.Style = DrawStyles.Histogram;
-    this.AddChildElement((IChartElement) this.UpVolume);
-    this.AddChildElement((IChartElement) this.DownVolume);
-  }
+        _upVolume = (IChartLineElement)new ChartLineElement()
+        {
+            Color = Colors.Green
+        };
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "UpColor", Description = "UpCandleColor")]
-  public IChartLineElement UpVolume => this.\u0023\u003DzA_pKfoSCgXJNJvgk60qKe4k\u003D;
+        _downVolume = (IChartLineElement)new ChartLineElement()
+        {
+            Color = Colors.Red
+        };
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "DownColor", Description = "DownCandleColor")]
-  public IChartLineElement DownVolume => this.\u0023\u003DzpZ7H_10udEV9\u0024GGb0g555yM\u003D;
-
-  protected override bool OnDraw(
-    VolumeIndicator indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    return (0 | (this.DrawValues(data[(IIndicator) indicator], (IChartElement) this.UpVolume, VolumePainter.SomeClass34343383.\u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D ?? (VolumePainter.SomeClass34343383.\u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D = new Func<ChartDrawData.IndicatorData, double>(VolumePainter.SomeClass34343383.SomeMethond0343.\u0023\u003DzCqJJ\u0024wgpxEVd_TJWqw\u003D\u003D))) ? 1 : 0) | (this.DrawValues(data[(IIndicator) indicator], (IChartElement) this.DownVolume, VolumePainter.SomeClass34343383.\u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D ?? (VolumePainter.SomeClass34343383.\u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D = new Func<ChartDrawData.IndicatorData, double>(VolumePainter.SomeClass34343383.SomeMethond0343.\u0023\u003Dz2dmg6iDJoRoCFC4spg\u003D\u003D))) ? 1 : 0)) != 0;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.UpVolume, storage, "UpVolume");
-    PersistableHelper.Load((IPersistable) this.DownVolume, storage, "DownVolume");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("UpVolume", PersistableHelper.Save((IPersistable) this.UpVolume));
-    storage.SetValue<SettingsStorage>("DownVolume", PersistableHelper.Save((IPersistable) this.DownVolume));
-  }
-
-  public static bool \u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(
-    IIndicatorValue _param0)
-  {
-    if (_param0 == null)
-      return false;
-    ICandleMessage icandleMessage = _param0.GetValue<ICandleMessage>();
-    return icandleMessage == null || icandleMessage.OpenPrice < icandleMessage.ClosePrice;
-  }
-
-  [Serializable]
-  private new sealed class SomeClass34343383
-  {
-    public static readonly VolumePainter.SomeClass34343383 SomeMethond0343 = new VolumePainter.SomeClass34343383();
-    public static Func<ChartDrawData.IndicatorData, double> \u0023\u003DzwZAh_kxQ5NwXvdudRw\u003D\u003D;
-    public static Func<ChartDrawData.IndicatorData, double> \u0023\u003Dz9FkMhQuPxTObvFx1sg\u003D\u003D;
-
-    public double \u0023\u003DzCqJJ\u0024wgpxEVd_TJWqw\u003D\u003D(
-      ChartDrawData.IndicatorData _param1)
-    {
-      return !VolumePainter.\u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(_param1.Value) ? double.NaN : (double) _param1.Value.ToDecimal();
+        UpVolume.Style = DownVolume.Style = DrawStyles.Histogram;
+        AddChildElement((IChartElement)UpVolume);
+        AddChildElement((IChartElement)DownVolume);
     }
 
-    public double \u0023\u003Dz2dmg6iDJoRoCFC4spg\u003D\u003D(ChartDrawData.IndicatorData _param1)
+    /// <summary>Up line color.</summary>
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "UpColor", Description = "UpCandleColor")]
+    public IChartLineElement UpVolume => _upVolume;
+
+    /// <summary>Down line color.</summary>
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "DownColor", Description = "DownCandleColor")]
+    public IChartLineElement DownVolume => _downVolume;
+
+    protected override bool OnDraw(VolumeIndicator indicator, IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
     {
-      return !VolumePainter.\u0023\u003DqEc67BxG9dg23wtiNP0FWDik0fpoX7z9zoraohHfyiMo\u003D(_param1.Value) ? (double) _param1.Value.ToDecimal() : double.NaN;
+        return (     ( DrawValues(data[(IIndicator)indicator], (IChartElement)UpVolume,   p=> !VolumePainter.IsUpOrDown(p.Value) ? double.NaN : (double)p.Value.ToDecimal())  ) 
+                   | ( DrawValues(data[(IIndicator)indicator], (IChartElement)DownVolume, p=> !VolumePainter.IsUpOrDown(p.Value) ? (double)p.Value.ToDecimal() : double.NaN)  ) ) ;
     }
-  }
+
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        PersistableHelper.Load((IPersistable)UpVolume, storage, "UpVolume");
+        PersistableHelper.Load((IPersistable)DownVolume, storage, "DownVolume");
+    }
+
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue<SettingsStorage>("UpVolume", PersistableHelper.Save((IPersistable)UpVolume));
+        storage.SetValue<SettingsStorage>("DownVolume", PersistableHelper.Save((IPersistable)DownVolume));
+    }
+
+    public static bool IsUpOrDown(IIndicatorValue indicatorValue)
+    {
+        if ( indicatorValue == null )
+            return false;
+        ICandleMessage icandleMessage = indicatorValue.GetValue<ICandleMessage>();
+        return icandleMessage == null || icandleMessage.OpenPrice<icandleMessage.ClosePrice;
+    }    
 }

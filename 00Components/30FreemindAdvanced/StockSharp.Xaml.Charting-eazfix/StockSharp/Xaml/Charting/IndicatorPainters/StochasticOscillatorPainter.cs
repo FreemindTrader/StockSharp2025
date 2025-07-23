@@ -15,57 +15,57 @@ using System.Diagnostics;
 #nullable disable
 namespace StockSharp.Xaml.Charting.IndicatorPainters;
 
-[Indicator(typeof (StochasticOscillator))]
+[Indicator(typeof(StochasticOscillator))]
 public class StochasticOscillatorPainter : BaseChartIndicatorPainter<StochasticOscillator>
 {
-  
-  private readonly IChartLineElement \u0023\u003DzSFmzZHfa8iS1i6kLog\u003D\u003D;
-  
-  private readonly IChartLineElement \u0023\u003DzQ1Aqc6A\u0024OGXVEu80\u0024g\u003D\u003D;
 
-  public StochasticOscillatorPainter()
-  {
-    IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<StochasticOscillator>.GetColorProvider();
-    this.\u0023\u003DzSFmzZHfa8iS1i6kLog\u003D\u003D = (IChartLineElement) new ChartLineElement()
+    private readonly IChartLineElement _lineK;
+
+    private readonly IChartLineElement _lineD;
+
+    public StochasticOscillatorPainter()
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.\u0023\u003DzQ1Aqc6A\u0024OGXVEu80\u0024g\u003D\u003D = (IChartLineElement) new ChartLineElement()
+        IIndicatorColorProvider indicatorColorProvider = BaseChartIndicatorPainter<StochasticOscillator>.GetColorProvider();
+        this._lineK = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this._lineD = (IChartLineElement)new ChartLineElement()
+        {
+            Color = indicatorColorProvider.GetNextColor()
+        };
+        this.AddChildElement((IChartElement)this.K);
+        this.AddChildElement((IChartElement)this.D);
+    }
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "SOK", Description = "SOK")]
+    public IChartLineElement K => this._lineK;
+
+    [Display(ResourceType = typeof(LocalizedStrings), Name = "SOD", Description = "SOD")]
+    public IChartLineElement D => this._lineD;
+
+    protected override bool OnDraw(
+      StochasticOscillator indicator,
+      IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
     {
-      Color = indicatorColorProvider.GetNextColor()
-    };
-    this.AddChildElement((IChartElement) this.K);
-    this.AddChildElement((IChartElement) this.D);
-  }
+        bool flag = false | this.DrawValues(data[(IIndicator)indicator.K], (IChartElement)this.K);
+        IList<ChartDrawData.IndicatorData> vals;
+        if ( data.TryGetValue((IIndicator)indicator.D, out vals) )
+            flag |= this.DrawValues(vals, (IChartElement)this.D);
+        return flag;
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "SOK", Description = "SOK")]
-  public IChartLineElement K => this.\u0023\u003DzSFmzZHfa8iS1i6kLog\u003D\u003D;
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        PersistableHelper.Load((IPersistable)this.K, storage, "K");
+        PersistableHelper.Load((IPersistable)this.D, storage, "D");
+    }
 
-  [Display(ResourceType = typeof (LocalizedStrings), Name = "SOD", Description = "SOD")]
-  public IChartLineElement D => this.\u0023\u003DzQ1Aqc6A\u0024OGXVEu80\u0024g\u003D\u003D;
-
-  protected override bool OnDraw(
-    StochasticOscillator indicator,
-    IDictionary<IIndicator, IList<ChartDrawData.IndicatorData>> data)
-  {
-    bool flag = false | this.DrawValues(data[(IIndicator) indicator.K], (IChartElement) this.K);
-    IList<ChartDrawData.IndicatorData> vals;
-    if (data.TryGetValue((IIndicator) indicator.D, out vals))
-      flag |= this.DrawValues(vals, (IChartElement) this.D);
-    return flag;
-  }
-
-  public override void Load(SettingsStorage storage)
-  {
-    base.Load(storage);
-    PersistableHelper.Load((IPersistable) this.K, storage, "K");
-    PersistableHelper.Load((IPersistable) this.D, storage, "D");
-  }
-
-  public override void Save(SettingsStorage storage)
-  {
-    base.Save(storage);
-    storage.SetValue<SettingsStorage>("K", PersistableHelper.Save((IPersistable) this.K));
-    storage.SetValue<SettingsStorage>("D", PersistableHelper.Save((IPersistable) this.D));
-  }
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue<SettingsStorage>("K", PersistableHelper.Save((IPersistable)this.K));
+        storage.SetValue<SettingsStorage>("D", PersistableHelper.Save((IPersistable)this.D));
+    }
 }
