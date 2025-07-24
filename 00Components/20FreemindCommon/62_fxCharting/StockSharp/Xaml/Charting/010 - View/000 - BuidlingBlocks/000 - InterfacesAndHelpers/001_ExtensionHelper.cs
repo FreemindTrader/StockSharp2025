@@ -55,7 +55,7 @@ public static class AxisBaseHelper2025
 
     public sealed class fxCategoryDateTimeAxisLabelProvider : TradeChartAxisLabelProvider
     {
-        private readonly IChartEx _chart;
+        private readonly IChart _chart;
         private readonly IChartAxis _ichartAxis;
         private CategoryDateTimeAxis _CategoryDateTimeAxis;
         private string _string01;
@@ -65,7 +65,7 @@ public static class AxisBaseHelper2025
         {
         }
 
-        public fxCategoryDateTimeAxisLabelProvider( IChartEx theChart, IChartAxis axis )
+        public fxCategoryDateTimeAxisLabelProvider( IChart theChart, IChartAxis axis )
         {
             this._chart = theChart ?? throw new ArgumentNullException( "chart" );
             this._ichartAxis = axis ?? throw new ArgumentNullException( "axis" );
@@ -170,7 +170,7 @@ public static class AxisBaseHelper2025
     //    }
     //}
 
-    public static AxisBase InitAndSetBinding( this IChartAxis axis, ICommand removeAxisCommand, ICommand resetAxisTimeZoneCommand, IChartEx theChart )
+    public static AxisBase InitAndSetBinding( this IChartAxis axis, ICommand removeAxisCommand, ICommand resetAxisTimeZoneCommand, IChart theChart )
     {
         AxisBase newAxis = null;
         DoubleRange myDoubleRange;

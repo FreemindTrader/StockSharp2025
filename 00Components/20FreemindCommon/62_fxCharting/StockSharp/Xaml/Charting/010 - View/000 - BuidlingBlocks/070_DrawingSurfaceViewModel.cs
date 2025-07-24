@@ -240,7 +240,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         chart.IsAutoRange = false;
     }
 
-    public StockSharp.Xaml.Charting.IChartEx Chart => Area.Chart;
+    public StockSharp.Charting.IChart Chart => Area.Chart;
 
     public ChartArea Area => _chartArea;
 

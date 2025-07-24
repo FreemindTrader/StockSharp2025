@@ -44,7 +44,7 @@ namespace StockSharp.Xaml.Charting
 
             _area.XAxisType = XAxisType;
 
-            _area.Chart = this;
+            //_area.Chart = this;
         }
 
 

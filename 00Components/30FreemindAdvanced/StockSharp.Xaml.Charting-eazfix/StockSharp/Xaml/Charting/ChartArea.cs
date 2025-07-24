@@ -1,4 +1,5 @@
-﻿using DevExpress.Xpf.Charts;
+﻿using DevExpress.Charts.Model;
+using DevExpress.Xpf.Charts;
 using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
@@ -13,6 +14,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading;
 using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 
 #nullable enable
@@ -22,113 +24,7 @@ namespace StockSharp.Xaml.Charting;
 public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartPart<IChartArea>
 {
     private ScichartSurfaceMVVM _chartSurfaceVM = null;
-    private class PropertiesNotifyList<T> : BaseList<T>, INotifyPropertyChanged, INotifyCollectionChanged
-    {
-
-        private int _index;
-
-        private T _property;
-
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public event NotifyCollectionChangedEventHandler? CollectionChanged;
-
-        protected override bool OnRemove( T _param1 )
-        {
-            this._index = base.IndexOf( _param1 );
-            return base.OnRemove( _param1 );
-        }
-
-        protected override void OnRemoved( T _param1 )
-        {
-            if ( this._index >= 0 )
-                this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Remove, _param1, this._index );
-            base.OnRemoved( _param1 );
-        }
-
-        protected override void OnInserted( int _param1, T isX )
-        {
-            this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Add, isX, _param1 );
-            base.OnInserted( _param1, isX );
-        }
-
-        protected override void OnAdded( T _param1 )
-        {
-            this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Add, _param1, base.Count - 1 );
-            base.OnAdded( _param1 );
-        }
-
-        protected override void OnRemoveAt( int _param1 )
-        {
-            this._property = base[ _param1 ];
-            base.OnRemoveAt( _param1 );
-        }
-
-        protected override void OnRemovedAt( int _param1 )
-        {
-            if ( _property != null )
-                this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Remove, this._property, _param1 );
-            base.OnRemovedAt( _param1 );
-        }
-
-        protected override void OnCleared()
-        {
-            this.ResetCollectionChangedEvent();
-            base.OnCleared();
-        }
-
-        private void RaiseCollectionChangedEvent( NotifyCollectionChangedAction action, T changedItem, int index )
-        {
-            this.RaisePropertyChangedEvent( "Count" );
-            this.RaisePropertyChangedEvent( "Item[]" );
-
-            CollectionChanged?.Invoke( this, new NotifyCollectionChangedEventArgs( action, changedItem, index ) );
-        }
-
-        private void ResetCollectionChangedEvent()
-        {
-            this.RaisePropertyChangedEvent( "Count" );
-            this.RaisePropertyChangedEvent( "Item[]" );
-
-            CollectionChanged?.Invoke( this, new NotifyCollectionChangedEventArgs( NotifyCollectionChangedAction.Reset ) );
-        }
-
-        private void RaisePropertyChangedEvent( string _param1 )
-        {
-            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( _param1 ) );
-        }
-    }
-
-    public IChart Chart
-    {
-        get => this._chart;
-
-        set
-        {
-            if ( this._chart == value )
-                return;
-
-            if ( value == null )
-                this.ViewModel.Release();
-
-            this._chart = value;
-
-            if ( value == null )
-                return;
-
-            this.ViewModel.InitPropertiesEventHandlers();
-
-            Elements.ForEach( x =>
-            {
-                if ( !( x is IChartComponent elem ) )
-                    return;
-                elem.ResetUI();
-            } );
-        }
-    }
-
     public INotifyList<IChartElement> Elements => this._chartElementNotifyList;
-
 
     private IChart _chart;
 
@@ -168,18 +64,18 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         public ChartArea _variableSome3535;
 
         public bool SomeLinqFunction3596(
-          IChartComponent _param1 )
+          IChartComponent _param1)
         {
-            return !_param1.CheckAxesCompatible( new ChartAxisType?( this._someChartAxisType ), new ChartAxisType?() );
+            return !_param1.CheckAxesCompatible(new ChartAxisType?(this._someChartAxisType), new ChartAxisType?());
         }
 
-        public bool AnotherSomeLinqFunction3596( IChartArea a )
+        public bool AnotherSomeLinqFunction3596(IChartArea a)
         {
             return a != this._variableSome3535 && a.XAxisType != this._someChartAxisType;
         }
     }
 
-    [Browsable( false )]
+    [Browsable(false)]
     public ChartAxisType XAxisType
     {
         get => this._xAxisType;
@@ -196,9 +92,9 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 Chart.EnsureUIThread();
             }
 
-            if ( Elements.Cast<IChartComponent>().Any( i => !i.CheckAxesCompatible( new ChartAxisType?( value ), new ChartAxisType?() ) ) )
+            if ( Elements.Cast<IChartComponent>().Any(i => !i.CheckAxesCompatible(new ChartAxisType?(value), new ChartAxisType?())) )
             {
-                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.ElementDontSupportAxisTypeParams, value ) );
+                throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.ElementDontSupportAxisTypeParams, value));
             }
 
             ChartArea.DictionaryStruct03894 dkfA7SK9Zsjh7b7evY = new ChartArea.DictionaryStruct03894();
@@ -206,14 +102,14 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             dkfA7SK9Zsjh7b7evY._variableSome3535 = this;
 
 
-            if ( this.Chart != null && this.Chart.Areas.Any( a => a != this && a.XAxisType != value ) )
+            if ( this.Chart != null && this.Chart.Areas.Any(a => a != this && a.XAxisType != value) )
             {
-                throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+                throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
             }
-                
-            this._xAxisType = dkfA7SK9Zsjh7b7evY._someChartAxisType;
+
+            this._xAxisType = value;
             List<ChartAxis> chartAxisList = new List<ChartAxis>();
-            foreach ( IChartAxis xaxise in ( IEnumerable<IChartAxis> ) this.XAxises )
+            foreach ( IChartAxis xaxise in (IEnumerable<IChartAxis>)this.XAxises )
             {
                 ChartAxis chartAxis = new ChartAxis()
                 {
@@ -221,57 +117,126 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                     AutoRange = xaxise.AutoRange,
                     AxisType = this._xAxisType
                 };
-                chartAxisList.Add( chartAxis );
+                chartAxisList.Add(chartAxis);
             }
             IChart chart2 = this.Chart;
-            this.Chart = ( IChart ) null;
-            ICollection<IChartAxis> xaxises1 = (ICollection<IChartAxis>) this.XAxises;
+            this.Chart = (IChart)null;
+            ICollection<IChartAxis> xaxises1 = (ICollection<IChartAxis>)this.XAxises;
             INotifyList<IChartAxis> xaxises2 = this.XAxises;
             int index = 0;
-            IChartAxis[] chartAxisArray = new IChartAxis[((ICollection<IChartAxis>) xaxises2).Count];
-            foreach ( IChartAxis chartAxis in ( IEnumerable<IChartAxis> ) xaxises2 )
+            IChartAxis[] chartAxisArray = new IChartAxis[( (ICollection<IChartAxis>)xaxises2 ).Count];
+            foreach ( IChartAxis chartAxis in (IEnumerable<IChartAxis>)xaxises2 )
             {
-                chartAxisArray[ index ] = chartAxis;
+                chartAxisArray[index] = chartAxis;
                 ++index;
             }
-            CollectionHelper.RemoveRange<IChartAxis>( xaxises1, ( IEnumerable<IChartAxis> ) new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D< IChartAxis > ( chartAxisArray ) );
-            CollectionHelper.AddRange<IChartAxis>( ( ICollection<IChartAxis> ) this.XAxises, ( IEnumerable<IChartAxis> ) chartAxisList );
+            CollectionHelper.RemoveRange<IChartAxis>(xaxises1, (IEnumerable<IChartAxis>)new \u0023\u003DzFxYNKQ1M2eiqODEcXA\u003D\u003D< IChartAxis > ( chartAxisArray ));
+            CollectionHelper.AddRange<IChartAxis>((ICollection<IChartAxis>)this.XAxises, (IEnumerable<IChartAxis>)chartAxisList);
             this.Chart = chart2;
         }
     }
+    private class PropertiesNotifyList<T> : BaseList<T>, INotifyPropertyChanged, INotifyCollectionChanged
+    {
+        private int _index;
+        private T _property;
 
-    private sealed class AxisNotifyList( ChartArea _param1, bool isX ) : ChartArea.PropertiesNotifyList<IChartAxis>
+        public event PropertyChangedEventHandler? PropertyChanged;
+        public event NotifyCollectionChangedEventHandler? CollectionChanged;
+
+        protected override bool OnRemove( T property )
+        {
+            this._index = base.IndexOf( property );
+            return base.OnRemove( property );
+        }
+
+        protected override void OnRemoved( T property )
+        {
+            if ( this._index >= 0 )
+                this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Remove, property, this._index );
+            base.OnRemoved( property );
+        }
+
+        protected override void OnInserted( int _param1, T property )
+        {
+            this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Add, property, _param1 );
+            base.OnInserted( _param1, property );
+        }
+
+        protected override void OnAdded( T property )
+        {
+            this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Add, property, Count - 1 );
+            base.OnAdded( property );
+        }
+
+        protected override void OnRemoveAt( int index )
+        {
+            this._property = base[ index ];
+            base.OnRemoveAt( index );
+        }
+
+        protected override void OnRemovedAt( int index )
+        {
+            if ( _property != null )
+                this.RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Remove, this._property, index );
+            base.OnRemovedAt( index );
+        }
+
+        protected override void OnCleared()
+        {
+            this.ResetCollectionChangedEvent();
+            base.OnCleared();
+        }
+
+        private void RaiseCollectionChangedEvent( NotifyCollectionChangedAction action, T changedItem, int index )
+        {
+            this.RaisePropertyChangedEvent( "Count" );
+            this.RaisePropertyChangedEvent( "Item[]" );
+
+            CollectionChanged?.Invoke( this, new NotifyCollectionChangedEventArgs( action, changedItem, index ) );
+        }
+
+        private void ResetCollectionChangedEvent()
+        {
+            this.RaisePropertyChangedEvent( "Count" );
+            this.RaisePropertyChangedEvent( "Item[]" );
+
+            CollectionChanged?.Invoke( this, new NotifyCollectionChangedEventArgs( NotifyCollectionChangedAction.Reset ) );
+        }
+
+        private void RaisePropertyChangedEvent( string _param1 )
+        {
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( _param1 ) );
+        }
+    }
+
+    private sealed class AxisNotifyList(ChartArea area, bool isX) : ChartArea.PropertiesNotifyList<IChartAxis>
     {
         private sealed class SomeClass34343
         {
             public IChartAxis _someChartElement;
 
-            public bool SomeClass34343Method01( IChartAxis _param1 )
+            public bool SomeClass34343Method01(IChartAxis _param1)
             {
                 return _param1.Id == this._someChartElement.Id;
             }
         }
 
         private static int _xAxisCount;
-
         private static int _yAxisCount;
-
         private readonly bool _isX = isX;
-
-        private readonly ChartArea _chartArea = _param1 ?? throw new ArgumentNullException("area");
+        private readonly ChartArea _chartArea = area ?? throw new ArgumentNullException("area");
 
         private bool GetIsX()
         {
             return this._isX;
         }
 
-        protected override bool OnAdding( IChartAxis axis )
+        protected override bool OnAdding(IChartAxis axis)
         {
             ChartArea.AxisNotifyList.SomeClass34343 zPKCmcad6Nxc5A8A = new ChartArea.AxisNotifyList.SomeClass34343();
             zPKCmcad6Nxc5A8A._someChartElement = axis;
 
-
-            string str = this.GetIsX() ? "X" : "Y";
+            string axisId = this.GetIsX() ? "X" : "Y";
 
             int yCount;
 
@@ -283,76 +248,76 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 _xAxisCount = yCount;
             }
 
-            if ( StringHelper.IsEmpty( axis.Id ) )
+            if ( StringHelper.IsEmpty(axis.Id) )
             {
-                axis.Id = $"{str}({Guid.NewGuid()})";
+                axis.Id = $"{axisId}({Guid.NewGuid()})";
             }
 
-            if ( this.Any( a => a.Id == axis.Id ) )
+            if ( this.Any(a => a.Id == axis.Id) )
             {
-                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.AxisAlreadyAdded, axis.Id ) );
+                throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.AxisAlreadyAdded, axis.Id));
             }
 
-
+            
 
             if ( this == _chartArea.XAxises && axis.AxisType != _chartArea.XAxisType )
             {
-                axis.AxisType = _chartArea.XAxisType;
+                //axis.AxisType = _chartArea.XAxisType;
 
-                //throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+                throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
             }
 
-            foreach ( IChartComponent elem in ( ( IEnumerable ) this._chartArea.Elements ).Cast<IChartComponent>() )
+            foreach ( IChartComponent elem in ( (IEnumerable)this._chartArea.Elements ).Cast<IChartComponent>() )
             {
-                if ( elem.TryGetXAxis() == null && this == this._area.XAxises && zPKCmcad6Nxc5A8A._someChartElement.Id == elem.XAxisId && !elem.CheckAxesCompatible( new ChartAxisType?( zPKCmcad6Nxc5A8A._someChartElement.AxisType ), new ChartAxisType?() ) )
-                    throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
-                if ( elem.TryGetYAxis() == null && this == this._area.YAxises && zPKCmcad6Nxc5A8A._someChartElement.Id == elem.YAxisId && !elem.CheckAxesCompatible( new ChartAxisType?(), new ChartAxisType?( zPKCmcad6Nxc5A8A._someChartElement.AxisType ) ) )
-                    throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+                if ( elem.TryGetXAxis() == null && this == this._area.XAxises && zPKCmcad6Nxc5A8A._someChartElement.Id == elem.XAxisId && !elem.CheckAxesCompatible(new ChartAxisType?(zPKCmcad6Nxc5A8A._someChartElement.AxisType), new ChartAxisType?()) )
+                    throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+                if ( elem.TryGetYAxis() == null && this == this._area.YAxises && zPKCmcad6Nxc5A8A._someChartElement.Id == elem.YAxisId && !elem.CheckAxesCompatible(new ChartAxisType?(), new ChartAxisType?(zPKCmcad6Nxc5A8A._someChartElement.AxisType)) )
+                    throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
             }
 
 
-            if ( this.GetIsX() && StringHelper.IsEmpty( zPKCmcad6Nxc5A8A._someChartElement.Group ) )
+            if ( this.GetIsX() && StringHelper.IsEmpty(zPKCmcad6Nxc5A8A._someChartElement.Group) )
                 zPKCmcad6Nxc5A8A._someChartElement.Group = zPKCmcad6Nxc5A8A._someChartElement.AxisType.ToString() + zPKCmcad6Nxc5A8A._someChartElement.Id;
-            if ( StringHelper.IsEmpty( zPKCmcad6Nxc5A8A._someChartElement.Title ) )
-                zPKCmcad6Nxc5A8A._someChartElement.Title = str + num2.ToString();
-            ( ( ChartAxis ) zPKCmcad6Nxc5A8A._someChartElement ).ChartArea = ( IChartArea ) this._area;
-            return ( ( BaseCollection<IChartAxis, IList<IChartAxis>> ) this ).OnAdding( zPKCmcad6Nxc5A8A._someChartElement );
+            if ( StringHelper.IsEmpty(zPKCmcad6Nxc5A8A._someChartElement.Title) )
+                zPKCmcad6Nxc5A8A._someChartElement.Title = axisId + num2.ToString();
+            ( (ChartAxis)zPKCmcad6Nxc5A8A._someChartElement ).ChartArea = (IChartArea)this._area;
+            return ( (BaseCollection<IChartAxis, IList<IChartAxis>>)this ).OnAdding(zPKCmcad6Nxc5A8A._someChartElement);
         }
 
-        protected virtual bool OnRemoving( IChartAxis _param1 )
+        protected override bool OnRemoving(IChartAxis _param1)
         {
-            ChartAxis chartAxis = (ChartAxis) _param1;
-            bool flag = ((BaseCollection<IChartAxis, IList<IChartAxis>>) this).Contains((IChartAxis) chartAxis);
-            if ( flag && this._area.Chart != null && CompareHelper.IsDefault<ChartAxis>( chartAxis ) )
-                throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
-            int num = ((BaseCollection<IChartAxis, IList<IChartAxis>>) this).OnRemoving((IChartAxis) chartAxis) ? 1 : 0;
+            ChartAxis chartAxis = (ChartAxis)_param1;
+            bool flag = ( (BaseCollection<IChartAxis, IList<IChartAxis>>)this ).Contains((IChartAxis)chartAxis);
+            if ( flag && this._area.Chart != null && CompareHelper.IsDefault<ChartAxis>(chartAxis) )
+                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            int num = ( (BaseCollection<IChartAxis, IList<IChartAxis>>)this ).OnRemoving((IChartAxis)chartAxis) ? 1 : 0;
             if ( ( num & ( flag ? 1 : 0 ) ) == 0 )
                 return num != 0;
-            chartAxis.ChartArea = ( IChartArea ) null;
+            chartAxis.ChartArea = (IChartArea)null;
             return num != 0;
         }
 
-        protected virtual bool OnRemovingAt( int _param1 )
+        protected override bool OnRemovingAt(int _param1)
         {
-            ChartAxis chartAxis = (ChartAxis) ((BaseCollection<IChartAxis, IList<IChartAxis>>) this)[_param1];
-            if ( CompareHelper.IsDefault<ChartAxis>( chartAxis ) && this._area.Chart != null )
-                throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
-            int num = ((BaseCollection<IChartAxis, IList<IChartAxis>>) this).OnRemovingAt(_param1) ? 1 : 0;
+            ChartAxis chartAxis = (ChartAxis)( (BaseCollection<IChartAxis, IList<IChartAxis>>)this )[_param1];
+            if ( CompareHelper.IsDefault<ChartAxis>(chartAxis) && this._area.Chart != null )
+                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            int num = ( (BaseCollection<IChartAxis, IList<IChartAxis>>)this ).OnRemovingAt(_param1) ? 1 : 0;
             if ( num == 0 )
                 return num != 0;
-            chartAxis.ChartArea = ( IChartArea ) null;
+            chartAxis.ChartArea = (IChartArea)null;
             return num != 0;
         }
 
-        protected virtual bool OnClearing()
+        protected override bool OnClearing()
         {
             if ( this._area.Chart != null )
-                throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
-            IChartAxis[] array = ((IEnumerable<IChartAxis>) this).ToArray<IChartAxis>();
-            int num = ((BaseCollection<IChartAxis, IList<IChartAxis>>) this).OnClearing() ? 1 : 0;
+                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            IChartAxis[] array = ( (IEnumerable<IChartAxis>)this ).ToArray<IChartAxis>();
+            int num = ( (BaseCollection<IChartAxis, IList<IChartAxis>>)this ).OnClearing() ? 1 : 0;
             if ( num == 0 )
                 return num != 0;
-            CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) array, ChartArea.AxisNotifyList.SomeShittyClass33434.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? ( ChartArea.AxisNotifyList.SomeShittyClass33434.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Action<IChartAxis>( ChartArea.AxisNotifyList.SomeShittyClass33434._someMemberOfShittyClass.\u0023\u003DzE70qt2sPjBBv095jMVMFSaY\u003D) ));
+            CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>)array, ChartArea.AxisNotifyList.SomeShittyClass33434.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D ?? ( ChartArea.AxisNotifyList.SomeShittyClass33434.\u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D = new Action<IChartAxis>(ChartArea.AxisNotifyList.SomeShittyClass33434._someMemberOfShittyClass.Method034)));
             return num != 0;
         }
 
@@ -362,11 +327,47 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             public static readonly ChartArea.AxisNotifyList.SomeShittyClass33434 _someMemberOfShittyClass = new ChartArea.AxisNotifyList.SomeShittyClass33434();
             public static Action<IChartAxis> \u0023\u003DzaObIckm5bO9Zm0ifDA\u003D\u003D;
 
-      public void \u0023\u003DzE70qt2sPjBBv095jMVMFSaY\u003D(IChartAxis _param1)
+      public void Method034(IChartAxis _param1)
       {
         ((ChartAxis) _param1).ChartArea = (IChartArea) null;
       }
     }
+
+    public IChart Chart
+    {
+        get => this._chart;
+
+        set
+        {
+            if ( this._chart == value )
+                return;
+
+            if ( value == null )
+                this.ViewModel.Release();
+
+            this._chart = value;
+
+            if ( value == null )
+                return;
+
+            this.ViewModel.InitPropertiesEventHandlers();
+
+            Elements.ForEach( x =>
+            {
+                if ( !( x is IChartComponent elem ) )
+                    return;
+                elem.ResetUI();
+            } );
+        }
+    }
+
+    
+
+    
+
+    
+
+    
 
 
 }
@@ -625,4 +626,682 @@ public bool \u0023\u003Dz\u0024PoY\u0024FfmSWryZZmtwAl\u0024D38\u003D(IChartAxis
   
 
   
+}
+
+
+using Ecng.Collections;
+using Ecng.Common;
+using Ecng.Serialization;
+using Ecng.Xaml;
+using SciChart.Charting.Common;
+using StockSharp.Localization;
+using System;
+using System.Collections.Generic; 
+using fx.Collections;
+using System.Collections.Specialized;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading;
+using StockSharp.Xaml.Charting.ATony;
+using StockSharp.Xaml.Charting.Definitions;
+using SciChart.Charting.ChartModifiers;
+using StockSharp.Charting;
+
+namespace StockSharp.Xaml.Charting;
+
+
+/// <summary>Chart area.</summary>
+
+[Display(ResourceType = typeof(LocalizedStrings), Name = "ChartArea")]
+public class ChartArea : ChartPart<ChartArea>, IDisposable, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable
+{
+    public static readonly string XAxisId = "X";
+    public static readonly string YAxisId = "Y";
+
+    private readonly SynchronizedList<string> _stackTrace = new SynchronizedList<string>();
+    private ChartAxisType _xAxisType = ChartAxisType.CategoryDateTime;
+    private ScichartSurfaceMVVM _chartSurfaceVM;
+    private IChartEx _chart;
+    private string _title;
+    private float _height;
+    private readonly INotifyList<IChartElement> _chartElementNotifyList;
+    private readonly INotifyList<ChartAxis> _xAxisNotifyList;
+    private readonly INotifyList<ChartAxis> _yAxisNotifyList;
+    private int _indicatorCount = 0;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartArea" />.
+    /// </summary>
+    public ChartArea()
+    {
+        _chartElementNotifyList = new ChartElementNotifyList(this);
+        _xAxisNotifyList = new AxisNotifyList(this, XAxisId, (a, i) => ( (int)a.AxisType ).ToString() + a.Id);
+        _yAxisNotifyList = new AxisNotifyList(this, YAxisId, (a, i) => ( (int)a.AxisType ).ToString() + a.Id + i);
+        InitAxises();
+        Height = 100f;
+    }
+
+
+    public ChartArea(int count)
+    {
+        _indicatorCount = count;
+        _chartElementNotifyList = new ChartElementNotifyList(this);
+        _xAxisNotifyList = new AxisNotifyList(this, XAxisId, (a, i) => ( (int)a.AxisType ).ToString() + a.Id);
+        _yAxisNotifyList = new AxisNotifyList(this, YAxisId, (a, i) => ( (int)a.AxisType ).ToString() + a.Id + i);
+        InitAxises(count);
+        Height = 200f;
+    }
+
+
+    public ScichartSurfaceMVVM ViewModel
+    {
+        get
+        {
+            return _chartSurfaceVM;
+        }
+
+        set
+        {
+            _chartSurfaceVM = value;
+        }
+    }
+
+    private void InitAxises()
+    {
+        if ( XAxises.FirstOrDefault(x => x.Id == XAxisId) == null )
+        {
+            XAxises.Add(new ChartAxis() { Id = XAxisId, AxisType = ChartAxisType.CategoryDateTime });
+        }
+
+        if ( YAxises.FirstOrDefault(y => y.Id == YAxisId) != null )
+        {
+            return;
+        }
+
+        var yAxis = new ChartAxis() { Id = YAxisId, AxisType = ChartAxisType.Numeric };
+
+        YAxises.Add(yAxis);
+    }
+
+    private void InitAxises(int count)
+    {
+        string newX = XAxisId;// + count.ToString( );
+
+        if ( XAxises.FirstOrDefault(x => x.Id == newX) == null )
+        {
+            XAxises.Add(new ChartAxis() { Id = newX, AxisType = ChartAxisType.CategoryDateTime });
+        }
+
+        string newY = YAxisId;// + count.ToString( );
+
+        if ( YAxises.FirstOrDefault(y => y.Id == newY) == null )
+        {
+            YAxises.Add(new ChartAxis() { Id = newY, AxisType = ChartAxisType.Numeric });
+        }
+    }
+
+    internal SynchronizedList<string> GetStackTrace()
+    {
+        return _stackTrace;
+    }
+
+    [Browsable(false)]
+    public IChartEx Chart
+    {
+        get
+        {
+            return _chart;
+        }
+        internal set
+        {
+            if ( _chart == value )
+            {
+                return;
+            }
+
+            GetStackTrace()
+                .Add(string.Format("(tid={0})\n", Thread.CurrentThread.ManagedThreadId) + Environment.StackTrace);
+
+            if ( value == null )
+            {
+                ViewModel.Release();
+            }
+
+            _chart = value;
+
+            if ( value == null )
+            {
+                return;
+            }
+
+            int count = 0;
+
+            if ( value is ChartExViewModel )
+            {
+                count = ( (ChartExViewModel)value ).ChartCount;
+            }
+
+
+            if ( count > 0 )
+            {
+                InitAxises(count);
+            }
+            else
+            {
+                InitAxises();
+            }
+
+
+            ViewModel.InitPropertiesEventHandlers();
+        }
+    }
+
+
+    [Browsable(false)]
+    public ChartAxisType XAxisType
+    {
+        get
+        {
+            return _xAxisType;
+        }
+        set
+        {
+            if ( _xAxisType == value )
+            {
+                return;
+            }
+            if ( Chart != null )
+            {
+                Chart.EnsureUIThread();
+            }
+
+            if ( Elements.Cast<IChartComponent>()
+                .Any(i => !i.CheckAxesCompatible(new ChartAxisType?(value), new ChartAxisType?())) )
+            {
+                throw new InvalidOperationException(
+                    StringHelper.Put(LocalizedStrings.ElementDontSupportAxisTypeParams, value));
+            }
+
+            if ( Chart != null && Chart.XAxisType != value )
+            {
+                throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+            }
+
+            _xAxisType = value;
+
+            PooledList<ChartAxis> chartAxisList = new PooledList<ChartAxis>();
+
+            foreach ( ChartAxis xAxis in XAxises )
+            {
+                ChartAxis chartAxis = new ChartAxis()
+                {
+                    Id = xAxis.Id,
+                    AutoRange = xAxis.AutoRange,
+                    AxisType = _xAxisType
+                };
+                chartAxisList.Add(chartAxis);
+            }
+
+            IChartEx resetChart = Chart;
+            Chart = null;
+
+            XAxises.RemoveRange(XAxises.ToArray());
+            XAxises.AddRange(chartAxisList);
+            Chart = resetChart;
+        }
+    }
+
+    [Display(
+        Description = "Str1905",
+        GroupName = "Common",
+        Name = "Name",
+        Order = 0,
+        ResourceType = typeof(LocalizedStrings))]
+    public string Title
+    {
+        get
+        {
+            return _title;
+        }
+        set
+        {
+            _title = value;
+            RaisePropertyChanged(nameof(Title));
+        }
+    }
+
+    [Browsable(false)]
+    public float Height
+    {
+        get
+        {
+            return _height;
+        }
+        set
+        {
+            _height = value;
+        }
+    }
+
+    [Browsable(false)]
+    public INotifyList<IChartElement> Elements
+    {
+        get
+        {
+            return _chartElementNotifyList;
+        }
+    }
+
+    public INotifyList<ChartAxis> XAxises
+    {
+        get
+        {
+            return _xAxisNotifyList;
+        }
+    }
+
+    public INotifyList<ChartAxis> YAxises
+    {
+        get
+        {
+            return _yAxisNotifyList;
+        }
+    }
+
+    public override void Load(SettingsStorage storage)
+    {
+        Elements.Clear();
+        base.Load(storage);
+        Title = storage.GetValue<string>("Title", null);
+        Height = storage.GetValue<float>("Height", 0);
+        XAxisType = ChartAxisType.CategoryDateTime;
+        //XAxisType = storage.GetValue<ChartAxisType>( "XAxisType", ChartAxisType.CategoryDateTime );
+        LoadAxises(storage, "XAxises", XAxises);
+        LoadAxises(storage, "YAxises", YAxises);
+        LoadChartElements<ChartCandleElement>(storage, "Candles");
+        LoadChartElements<ChartIndicatorElement>(storage, "Indicators");
+        LoadChartElements<TradesUI>(storage, "Trades");
+        LoadChartElements<OrdersUI>(storage, "Orders");
+    }
+
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.SetValue("Title", Title);
+        storage.SetValue("Height", Height);
+        storage.SetValue("XAxisType", XAxisType);
+        storage.SetValue("XAxises", XAxises.Select(x => x.Save()).ToArray());
+        storage.SetValue("YAxises", YAxises.Select(y => y.Save()).ToArray());
+        SaveChartElments<ChartCandleElement>(storage, "Candles");
+        SaveChartElments<ChartIndicatorElement>(storage, "Indicators");
+        SaveChartElments<TradesUI>(storage, "Trades");
+        SaveChartElments<OrdersUI>(storage, "Orders");
+    }
+
+    private void LoadChartElements<T>(SettingsStorage settings, string name) where T : ChartComponentView<T>, new()
+    {
+        Elements.AddRange(settings.GetValue<IEnumerable<SettingsStorage>>(name, null).Select(s => s.Load<T>()));
+    }
+
+    private void SaveChartElments<T>(SettingsStorage settings, string name) where T : ChartComponentView<T>
+    {
+        settings.SetValue(name, Elements.OfType<T>().Select(s => s.Save()).ToArray());
+    }
+
+    private static void LoadAxises(SettingsStorage settings, string axisName, ICollection<ChartAxis> Axises)
+    {
+        var source = settings.GetValue<IEnumerable<SettingsStorage>>(axisName, null);
+
+        if ( source == null )
+        {
+            return;
+        }
+        Axises.Clear();
+
+        Axises.AddRange(source.Select(s => s.Load<ChartAxis>()));
+    }
+
+    public override ChartArea Clone()
+    {
+        ChartArea chartArea = Clone(new ChartArea() { Title = Title, Height = Height, XAxisType = XAxisType });
+
+        chartArea.Elements.AddRange(Elements.Select(e => e.Clone()));
+
+        chartArea.XAxises.Clear();
+        chartArea.XAxises.AddRange(XAxises.Select(x => x.Clone()));
+
+        chartArea.YAxises.Clear();
+        chartArea.YAxises.AddRange(YAxises.Select(y => y.Clone()));
+        return chartArea;
+    }
+
+    public override string ToString()
+    {
+        return Title;
+    }
+
+    public void Dispose()
+    {
+        ViewModel.Dispose();
+    }
+
+    private sealed class AxisNotifyList : PropertiesNotifyList<ChartAxis>
+    {
+        private static int _xAxisCount;
+        private static int _yAxisCount;
+        private readonly string _defaultId;
+        private readonly ChartArea _chartArea;
+        private readonly Func<ChartAxis, int, string> _getDefaultGroupFunc;
+
+        public AxisNotifyList(ChartArea chartArea_1, string string_1, Func<ChartAxis, int, string> func_1)
+        {
+            ChartArea chartArea = chartArea_1;
+            if ( chartArea == null )
+            {
+                throw new ArgumentNullException("area");
+            }
+            _chartArea = chartArea;
+            string str = string_1;
+            if ( str == null )
+            {
+                throw new ArgumentNullException("defaultId");
+            }
+            _defaultId = str;
+            Func<ChartAxis, int, string> func = func_1;
+            if ( func == null )
+            {
+                throw new ArgumentNullException("getDefaultGroup");
+            }
+            _getDefaultGroupFunc = func;
+        }
+
+        private static int GetAxisCount(string string_1)
+        {
+            if ( !( string_1 == XAxisId ) )
+            {
+                return ++_yAxisCount;
+            }
+            return ++_xAxisCount;
+        }
+
+        protected override bool OnAdding(ChartAxis axis)
+        {
+            // FIXME:
+
+
+            throw new NotImplementedException();
+            //int num = GetAxisCount( _defaultId );
+
+            //if( StringHelper.IsEmpty( axis.Id ) )
+            //{
+            //    axis.Id = string.Format( "{0}({1})", _defaultId, Guid.NewGuid( ) );
+            //}
+
+            //if( this.Any( a => a.Id == axis.Id ) )
+            //{
+            //    throw new InvalidOperationException( "StringHelper.Put( LocalizedStrings.Str1904Params, axis.Id )" );
+            //}
+
+            //if( this == _chartArea.XAxises && axis.AxisType != _chartArea.XAxisType )
+            //{
+            //    axis.AxisType = _chartArea.XAxisType;
+
+            //    //throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+            //}
+
+            //foreach( IChartComponent axisElement in _chartArea.Elements.Cast< IChartComponent >( ) )
+            //{
+            //    if( axisElement.XAxis == null && this == _chartArea.XAxises && axis.Id == axisElement.XAxisId && !axisElement.CheckAxesCompatible( new ChartAxisType?( axis.AxisType ), new ChartAxisType?( ) ) )
+            //    {
+            //        throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+            //    }
+
+            //    if( axisElement.YAxis == null && this == _chartArea.YAxises && axis.Id == axisElement.YAxisId && !axisElement.CheckAxesCompatible( new ChartAxisType?( ), new ChartAxisType?( axis.AxisType ) ) )
+            //    {
+            //        throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
+            //    }
+            //}
+
+            //if( axis.Group.IsEmpty( ) )
+            //{
+            //    axis.Group = _getDefaultGroupFunc( axis, num );
+            //}
+
+            //if( axis.Title.IsEmpty( ) )
+            //{
+            //    axis.Title = _defaultId + num;
+            //}
+
+            //axis.ChartArea = _chartArea;
+            //return base.OnAdding( axis );
+        }
+
+        protected override bool OnRemoving(ChartAxis axis)
+        {
+            bool hasAxis = Contains(axis);
+
+            if ( hasAxis && _chartArea.Chart != null/*&& axis.IsDefault*/)
+            {
+                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            }
+
+            if ( ( base.OnRemoving(axis) & hasAxis ) == false )
+            {
+                return false;
+            }
+
+            axis.ChartArea = null;
+
+            return true;
+        }
+
+        protected override bool OnRemovingAt(int index)
+        {
+            ChartAxis chartAxis = this[index];
+
+            if (/*chartAxis.IsDefault &&*/_chartArea.Chart != null )
+            {
+                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            }
+
+            if ( base.OnRemovingAt(index) )
+            {
+                chartAxis.ChartArea = null;
+
+                return true;
+            }
+
+            return false;
+        }
+
+        protected override bool OnClearing()
+        {
+            if ( _chartArea.Chart != null )
+            {
+                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            }
+
+            ChartAxis[] axises = this.ToArray();
+
+            if ( base.OnClearing() )
+            {
+                foreach ( ChartAxis axis in axises )
+                {
+                    axis.ChartArea = null;
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+    }
+
+    private class PropertiesNotifyList<T> : BaseList<T>, INotifyPropertyChanged, INotifyCollectionChanged
+    {
+        private int _index;
+        private T _property;
+
+        public event PropertyChangedEventHandler PropertyChangedEvent;
+
+        public event NotifyCollectionChangedEventHandler NotifyCollectionChangedEvent;
+
+        protected override bool OnRemove(T property)
+        {
+            _index = IndexOf(property);
+            return base.OnRemove(property);
+        }
+
+        protected override void OnRemoved(T property)
+        {
+            if ( _index >= 0 )
+            {
+                RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Remove, property, _index);
+            }
+            base.OnRemoved(property);
+        }
+
+        protected override void OnInserted(int index, T property)
+        {
+            RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Add, property, index);
+            base.OnInserted(index, property);
+        }
+
+
+        /* -------------------------------------------------------------------------------------------------------------------------------------------
+         *  When we clicked on the Add Candle Command from the context menu, the following function get executed.
+         *  
+         *  Step A ----------> 2 Here we are subscribing to the Area Notifying PooledList OnAdded Event
+         * 
+         * ------------------------------------------------------------------------------------------------------------------------------------------- 
+         */
+        protected override void OnAdded(T property)
+        {
+            RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Add, property, Count - 1);
+            base.OnAdded(property);
+        }
+
+        protected override void OnRemoveAt(int index)
+        {
+            _property = this[index];
+            base.OnRemoveAt(index);
+        }
+
+        protected override void OnRemovedAt(int index)
+        {
+            if ( _property != null )
+            {
+                RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Remove, _property, index);
+            }
+            base.OnRemovedAt(index);
+        }
+
+        protected override void OnCleared()
+        {
+            RaiseCollectionChangedEvent();
+            base.OnCleared();
+        }
+
+        private void RaiseCollectionChangedEvent(
+            NotifyCollectionChangedAction notifyCollectionChangedAction_0,
+            T gparam_1,
+            int index)
+        {
+            RaisePropertyChangedEvent("Count");
+            RaisePropertyChangedEvent("Item[]");
+
+            NotifyCollectionChangedEvent?.Invoke(
+            this,
+            new NotifyCollectionChangedEventArgs(notifyCollectionChangedAction_0, gparam_1, index));
+        }
+
+        private void RaiseCollectionChangedEvent()
+        {
+            RaisePropertyChangedEvent("Count");
+            RaisePropertyChangedEvent("Item[]");
+
+            NotifyCollectionChangedEvent?.Invoke(
+            this,
+            new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+
+        private void RaisePropertyChangedEvent(string string_0)
+        {
+            PropertyChangedEvent?.Invoke(this, new PropertyChangedEventArgs(string_0));
+        }
+
+        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
+        {
+            add
+            {
+                PropertyChangedEvent += value;
+            }
+
+            remove
+            {
+                PropertyChangedEvent -= value;
+            }
+        }
+
+        event NotifyCollectionChangedEventHandler INotifyCollectionChanged.CollectionChanged
+        {
+            add
+            {
+                NotifyCollectionChangedEvent += value;
+            }
+            remove
+            {
+                NotifyCollectionChangedEvent -= value;
+            }
+        }
+    }
+
+    private sealed class ChartElementNotifyList : PropertiesNotifyList<IChartElement>
+    {
+        private readonly ChartArea _area;
+
+        public ChartElementNotifyList(ChartArea area)
+        {
+            ChartArea chartArea = area;
+            if ( chartArea == null )
+            {
+                throw new ArgumentNullException("area");
+            }
+            _area = chartArea;
+        }
+
+        protected override bool OnAdding(IChartElement element)
+        {
+            var myChart = element.CheckOnNull(nameof(element)).ChartArea?.Chart;
+
+            if ( myChart != null )
+            {
+                throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
+            }
+
+            if ( this.Any(i => i.Id == element.Id) )
+            {
+                throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
+            }
+
+            var elementXY = element as IChartComponent;
+
+            Maybe.Do(
+                elementXY,
+                a =>
+                {
+                    var axis = _area.YAxises.FirstOrDefault(i => i.Id == a.YAxisId);
+                    if ( !a.CheckAxesCompatible(new ChartAxisType?(_area.XAxisType), axis?.AxisType) )
+                    {
+                        throw new InvalidOperationException(
+                            StringHelper.Put(
+                                LocalizedStrings.AxesTypesNotSupportedParams,
+                                new object[] { a.GetType().Name, _area.XAxisType, axis?.AxisType }));
+                    }
+                });
+
+            return base.OnAdding(element);
+        }
+    }
 }

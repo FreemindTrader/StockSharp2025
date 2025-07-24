@@ -160,7 +160,7 @@ namespace StockSharp.Xaml.Charting
             area.Elements.Added += new Action<IChartElement>( Step3b_OnNewChartAreaAdded );
             area.Elements.Removed += new Action<IChartElement>( OnUIRemovedFromArea );
 
-            area.Chart = this;
+            //area.Chart = this;
 
             ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ViewModel );
 

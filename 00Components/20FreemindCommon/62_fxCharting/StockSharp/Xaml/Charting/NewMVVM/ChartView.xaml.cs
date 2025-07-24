@@ -1069,12 +1069,13 @@ namespace StockSharp.Xaml.Charting
         {
             area.Elements.Added   += new Action<IChartElement>( OnNewUIAddedToArea );
             area.Elements.Removed += new Action<IChartElement>( OnUIRemovedFromArea );
-            
-            area.Chart = ( this );
-            
-            ViewModel.ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ViewModel );
 
-            Ecng.Collections.CollectionHelper.ForEach( area.Elements, new Action<IChartElement>( OnNewUIAddedToArea ) );
+            throw new NotImplementedException();
+            //area.Chart = ( this );
+            
+            //ViewModel.ScichartSurfaceViewModels.Add( ( ScichartSurfaceMVVM ) area.ViewModel );
+
+            //Ecng.Collections.CollectionHelper.ForEach( area.Elements, new Action<IChartElement>( OnNewUIAddedToArea ) );
             
         }
 
@@ -1395,10 +1396,10 @@ namespace StockSharp.Xaml.Charting
 
                 if ( newArea.Chart!= null )
                 {
-                    lock ( newArea.GetStackTrace( ).SyncRoot )
-                    {
-                        ;
-                    }
+                    //lock ( newArea.GetStackTrace( ).SyncRoot )
+                    //{
+                    //    ;
+                    //}
 
                     throw new ArgumentException( "area" );
                 }

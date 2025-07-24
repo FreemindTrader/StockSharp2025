@@ -574,10 +574,10 @@ namespace StockSharp.Xaml.Charting
 
                 if ( newArea.Chart != null )
                 {
-                    lock ( newArea.GetStackTrace( ).SyncRoot )
-                    {
-                        ;
-                    }
+                    //lock ( newArea.GetStackTrace( ).SyncRoot )
+                    //{
+                    //    ;
+                    //}
 
                     throw new ArgumentException( "area" );
                 }
