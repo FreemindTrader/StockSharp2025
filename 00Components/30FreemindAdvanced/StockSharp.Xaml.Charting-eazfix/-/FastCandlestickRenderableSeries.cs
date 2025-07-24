@@ -218,11 +218,11 @@ public sealed class FastCandlestickRenderableSeries :
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR> iwzGyvO4YaqDkpiI = ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index) as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>;
       double num2 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D());
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+      ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
       \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double num3 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzolXXlhDBER_c();
       double num4 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(num3);
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+      ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double num5 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
       double num6 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num5);

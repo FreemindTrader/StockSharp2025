@@ -1,5 +1,5 @@
 ﻿<charting:fxAnnotationCreationModifier
-    x:Class="StockSharp.Xaml.Charting.FxAnnotationModifier"
+    x:Class="StockSharp.Xaml.Charting.AnnotationModifier"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ann="clr-namespace:StockSharp.Xaml.Charting.CustomAnnotations"

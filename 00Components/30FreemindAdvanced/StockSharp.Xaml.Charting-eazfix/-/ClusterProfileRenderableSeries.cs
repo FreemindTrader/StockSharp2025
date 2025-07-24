@@ -102,7 +102,7 @@ public sealed class ClusterProfileRenderableSeries :
     IRenderContext2D _param1,
     IRenderPassData _param2)
   {
-    ClusterProfileRenderableSeries.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW = new ClusterProfileRenderableSeries.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D();
+    ClusterProfileRenderableSeries.Struct1 vm6DexIkyzzokCaW = new ClusterProfileRenderableSeries.Struct1();
     if (!(this.DataSeries is TimeframeSegmentDataSeries))
       return;
     \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D anaOdfaeo1Ed4fSw = (\u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D) this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
@@ -203,14 +203,14 @@ public sealed class ClusterProfileRenderableSeries :
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param9,
     \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J _param10)
   {
-    ClusterProfileRenderableSeries.SomeClass343 vqd1Qhu2nAw1nzwT0;
+    ClusterProfileRenderableSeries.Struct0 vqd1Qhu2nAw1nzwT0;
     vqd1Qhu2nAw1nzwT0._variableSome3535 = this;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dzn1rOk95o\u0024Igg = _param7;
     vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D = _param3;
     if (_param5 <= 1.0)
       return;
     double num1 = Math.Max(1.0, _param5 - 5.0);
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w;
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w;
     int num2;
     int num3;
     if (_param6 == (ClusterProfileRenderableSeries.\u0023\u003Dz8jhANg_IhueX) 0 || _param6 == (ClusterProfileRenderableSeries.\u0023\u003Dz8jhANg_IhueX) 2)
@@ -326,7 +326,7 @@ public sealed class ClusterProfileRenderableSeries :
     Point _param4,
     AlignmentX _param5,
     AlignmentY _param6,
-    ref ClusterProfileRenderableSeries.SomeClass343 _param7)
+    ref ClusterProfileRenderableSeries.Struct0 _param7)
   {
     string str = ((CandlePriceLevel) ref _param2).TotalVolume.ToString();
     Rect rect = new Rect(_param3, _param4);
@@ -342,7 +342,7 @@ public sealed class ClusterProfileRenderableSeries :
     Point _param1,
     Point _param2,
     ClusterProfileRenderableSeries.\u0023\u003DzZk\u00246lEW\u0024ffR3 _param3,
-    ref ClusterProfileRenderableSeries.SomeClass343 _param4)
+    ref ClusterProfileRenderableSeries.Struct0 _param4)
   {
     CandlePriceLevel candlePriceLevel1 = _param3.Value;
     Decimal totalVolume = ((CandlePriceLevel) ref candlePriceLevel1).TotalVolume;
@@ -392,7 +392,7 @@ public sealed class ClusterProfileRenderableSeries :
   }
 
   [StructLayout(LayoutKind.Auto)]
-  private struct SomeClass343
+  private struct Struct0
   {
     
     public ClusterProfileRenderableSeries _variableSome3535;
@@ -404,7 +404,7 @@ public sealed class ClusterProfileRenderableSeries :
     public bool \u0023\u003DzyHjx46Y\u003D;
   }
 
-  private sealed class \u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D
+  private sealed class Struct1
   {
     public IndexRange  \u0023\u003DzEB3J6TW\u0024NW8A;
     public \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D \u0023\u003Dz\u0024sDnaZw\u003D;
@@ -424,7 +424,7 @@ public sealed class ClusterProfileRenderableSeries :
   {
     public KeyValuePair<double, CandlePriceLevel>[] \u0023\u003DzVx\u0024XeSiQ8z2B;
     public Decimal \u0023\u003DztZE33alm_OfT;
-    public ClusterProfileRenderableSeries.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+    public ClusterProfileRenderableSeries.Struct1 \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
     public void \u0023\u003DzKQDGlIy9KhTj9Lexow\u003D\u003D(
       ClusterProfileRenderableSeries.\u0023\u003DzZk\u00246lEW\u0024ffR3 _param1)
@@ -444,8 +444,8 @@ public sealed class ClusterProfileRenderableSeries :
 
   private sealed class \u0023\u003DzNgOs\u00249Qu1W4t
   {
-    public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzCwhW74E\u003D;
-    public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003Dzcd8FewQ\u003D;
+    public ICoordinateCalculator<<double> \u0023\u003DzCwhW74E\u003D;
+    public ICoordinateCalculator<<double> \u0023\u003Dzcd8FewQ\u003D;
     public double \u0023\u003Dzv5V3epBeFArY;
     public double \u0023\u003DzvTWpIBJwyiW8;
     public double \u0023\u003DzfuDyOX2LBzuJ;

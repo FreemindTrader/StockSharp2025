@@ -47,8 +47,8 @@ public sealed class FastXORenderableSeries :
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
     if (num1 == 1 || xoBoxSize <= 0.0)
       return;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     int num2 = this.\u0023\u003Dz6BuO4fnhj6SX(xkzemsMs5tGkouk5w1, ftrixUnpTllY1PkTyq, this.DataPointWidth);
     double num3 = Math.Abs(xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(xoBoxSize) - xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(0.0));
     bool flag2 = (double) num2 < 3.0 || num3 < 3.0;

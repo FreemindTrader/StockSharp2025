@@ -201,8 +201,8 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     }
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz4ASrz8c\u0024JOa7(zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D, zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn);
     \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz3rSTr1zRgknd(zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D, zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn);
-    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D = (IDictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>>) new Dictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>>();
-    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D = (IDictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>>) new Dictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>>();
+    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D = (IDictionary<string, ICoordinateCalculator<<double>>) new Dictionary<string, ICoordinateCalculator<<double>>();
+    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D = (IDictionary<string, ICoordinateCalculator<<double>>) new Dictionary<string, ICoordinateCalculator<<double>>();
     zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.get_YAxes().\u0023\u003Dz30RSSSygABj_<IAxis>(new Action<IAxis>(zPKCmcad6Nxc5A8A1.\u0023\u003Dzk_1CgJv47CJNqo8WAA\u003D\u003D));
     zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.get_XAxes().\u0023\u003Dz30RSSSygABj_<IAxis>(new Action<IAxis>(zPKCmcad6Nxc5A8A1.\u0023\u003DzpCJ3SPiIlRwAd0naiA\u003D\u003D));
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D wkz2jl56XjoPdfqB4 = zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.Services().GetService<\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSXWkz2jl56XJoPdfqB4\u003D>();
@@ -365,8 +365,8 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     int _param3)
   {
     IRenderableSeries uhIm4pSg8PxqhyA71 = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[_param3];
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2;
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1;
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2;
     if (!_param1.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D.TryGetValue(uhIm4pSg8PxqhyA71.get_YAxisId(), out xkzemsMs5tGkouk5w1) || !_param1.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D.TryGetValue(uhIm4pSg8PxqhyA71.get_XAxisId(), out xkzemsMs5tGkouk5w2))
       return;
     RenderPassData  euujfPtWyKeLacKm = new RenderPassData (_param1.\u0023\u003Dz8O95DKv93zY9[_param3], xkzemsMs5tGkouk5w2, xkzemsMs5tGkouk5w1, _param1.\u0023\u003Dz4nxjMSnapDjJ[_param3], _param1.\u0023\u003Dzh7CDlE8GGxyy);

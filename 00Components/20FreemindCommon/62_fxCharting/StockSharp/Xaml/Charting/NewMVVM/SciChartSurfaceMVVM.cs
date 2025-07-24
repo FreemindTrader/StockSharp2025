@@ -72,7 +72,7 @@
 
 //    private readonly ChartArea _chartArea;
 //    private LegendModifierVM _legendViewModel;
-//    private FxAnnotationModifier _annotationModifier;
+//    private AnnotationModifier _annotationModifier;
 
 //    private readonly AxisCollection _xAxises = new AxisCollection();
 //    private readonly AxisCollection _yAxises = new AxisCollection();
@@ -882,7 +882,7 @@
 //        }
 //    }
 
-//    public FxAnnotationModifier AnnotationModifier
+//    public AnnotationModifier AnnotationModifier
 //    {
 //        get
 //        {
@@ -891,7 +891,7 @@
 //                return _annotationModifier;
 //            }
 
-//            var annotation = new FxAnnotationModifier(Area, Annotations);
+//            var annotation = new AnnotationModifier(Area, Annotations);
 //            annotation.IsEnabled = false;
 //            _annotationModifier = annotation;
 
@@ -1411,7 +1411,7 @@
 //        SetupModifiers();
 //        ChartModifier.ChildModifiers.AddRange(_chartModifiers);
 //        AnnotationModifier.SetBindings(
-//            FxAnnotationModifier.UserAnnotationTypeProperty,
+//            AnnotationModifier.UserAnnotationTypeProperty,
 //            chart,
 //            "AnnotationType",
 //            BindingMode.TwoWay,

@@ -22,9 +22,9 @@ public struct \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D
   
   public IndexRange [] \u0023\u003Dz8O95DKv93zY9;
   
-  public IDictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>> \u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D;
+  public IDictionary<string, ICoordinateCalculator<<double>> \u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D;
   
-  public IDictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>> \u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D;
+  public IDictionary<string, ICoordinateCalculator<<double>> \u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D;
   
   public \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dzh7CDlE8GGxyy;
   

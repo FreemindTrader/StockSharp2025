@@ -8,7 +8,7 @@ using \u002D;
 using System;
 
 #nullable disable
-public interface \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<T>
+public interface ICoordinateCalculator<<T>
   where T : IComparable
 {
   bool \u0023\u003DzcNWwm_gWa4NJdtQNJ1Cl\u0024zStdK0t();

@@ -57,7 +57,7 @@
 //                return;
 //            ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).Remove( _param1 );
 //            ( ( ICollection<IChartElement> ) this._variableSome3535._chartArea.Elements ).Remove( ( IChartElement ) chartAnnotation );
-//            this._variableSome3535.ChartArea?.\u0023\u003DzXartur54T48t( chartAnnotation );
+//            this._variableSome3535.ChartArea?.InvokeAnnotationDeletedEvent( chartAnnotation );
 //        }
 
 //        public void Method002( AnnotationBase _param1 )
@@ -66,7 +66,7 @@
 //            wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083 = _param1;
 //            UltrachartAnnotationEditor m53T5BwgtpbkV9ZEjd = this._variableSome3535.GetAnnotationEditor();
 //            m53T5BwgtpbkV9ZEjd.IsOpen = false;
-//            CollectionHelper.ForEach<IAnnotation>( this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>( new Func<IAnnotation, bool>( wd3zPhu0dS2ZqhuzuE.Method009) ), AnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D ?? ( AnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D = new Action<IAnnotation>( AnnotationModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1 ) ));
+//            CollectionHelper.ForEach<IAnnotation>( this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>( new Func<IAnnotation, bool>( wd3zPhu0dS2ZqhuzuE.Method009) ), AnnotationModifier.SomeClass34343383._Action_IAnnotation_003 ?? ( AnnotationModifier.SomeClass34343383._Action_IAnnotation_003 = new Action<IAnnotation>( AnnotationModifier.SomeClass34343383.SomeMethond0343.Setset_IsSelected_false_ ) ));
 //            wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083.IsSelected = true;
 //            m53T5BwgtpbkV9ZEjd.PlacementTarget = ( UIElement ) wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083;
 //            m53T5BwgtpbkV9ZEjd.IsOpen = true;
@@ -345,8 +345,8 @@
 //        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 = _param1;
 //        if ( this.ChartArea == null )
 //            return;
-//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Selected += new EventHandler( doDcwiev7trI4Ny0.\u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D);
-//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Unselected += new EventHandler( doDcwiev7trI4Ny0.\u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D);
+//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Selected += new EventHandler( doDcwiev7trI4Ny0.Method0845);
+//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Unselected += new EventHandler( doDcwiev7trI4Ny0.Method0833);
 //        List<DependencyProperty> dependencyPropertyList = new List<DependencyProperty>()
 //    {
 //      AnnotationBase.IsHiddenProperty,
@@ -393,22 +393,22 @@
 //        }
 //        else
 //            dependencyPropertyList.Add( FrameworkElement.HorizontalAlignmentProperty );
-//        dependencyPropertyList.ForEach( new Action<DependencyProperty>( doDcwiev7trI4Ny0.\u0023\u003Dz2YagnOQq\u0024fEh5b7gci8gwU8\u003D) );
+//        dependencyPropertyList.ForEach( new Action<DependencyProperty>( doDcwiev7trI4Ny0.DoSomePropertyListStuff034) );
 //    }
 
 //    private ChartDrawData.AnnotationData GetAnnotationData( AnnotationBase _param1 )
 //    {
-//        AnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW;
+//        AnnotationModifier.Struct1 vm6DexIkyzzokCaW;
 //        vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 = _param1;
 //        ChartDrawData.AnnotationData annotationData = new ChartDrawData.AnnotationData();
-//        vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
+//        vm6DexIkyzzokCaW.sCalc = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
 //        annotationData.IsVisible = new bool?( !vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.IsHidden );
 //        annotationData.IsEditable = new bool?( this.HasAnnotation( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 ) );
 //        annotationData.CoordinateMode = new AnnotationCoordinateMode?( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.CoordinateMode );
-//        annotationData.X1 = AnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X1, ref vm6DexIkyzzokCaW );
-//        annotationData.X2 = AnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X2, ref vm6DexIkyzzokCaW );
-//        annotationData.Y1 = AnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y1, ref vm6DexIkyzzokCaW );
-//        annotationData.Y2 = AnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y2, ref vm6DexIkyzzokCaW );
+//        annotationData.X1 = AnnotationModifier.IndexToData( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X1, ref vm6DexIkyzzokCaW );
+//        annotationData.X2 = AnnotationModifier.IndexToData( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X2, ref vm6DexIkyzzokCaW );
+//        annotationData.Y1 = AnnotationModifier.DataToIndex( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y1, ref vm6DexIkyzzokCaW );
+//        annotationData.Y2 = AnnotationModifier.DataToIndex( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y2, ref vm6DexIkyzzokCaW );
 //        if ( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1 )
 //        {
 //            annotationData.Stroke = z2vouRgM1.Stroke;
@@ -460,14 +460,14 @@
 //        this._annotationCollection.Remove( ( IAnnotation ) annotationBase );
 //        ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._baseToAnnotationPair ).Remove( annotationBase );
 //        ( ( ICollection<IChartElement> ) this._chartArea.Elements ).Remove( ( IChartElement ) _param1 );
-//        this.ChartArea?.\u0023\u003DzXartur54T48t( _param1 );
+//        this.ChartArea?.InvokeAnnotationDeletedEvent( _param1 );
 //    }
 
 //    public void Draw(
 //      ChartAnnotation _param1,
 //      ChartDrawData.AnnotationData _param2 )
 //    {
-//        AnnotationModifier.SomeClass343 vqd1Qhu2nAw1nzwT0;
+//        AnnotationModifier.Struct0 vqd1Qhu2nAw1nzwT0;
 //        bool? nullable;
 //        if ( !this._baseToAnnotationPair.TryGetKey( _param1, ref vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ) )
 //        {
@@ -485,7 +485,7 @@
 //            this._annotationCollection.Add( ( IAnnotation ) vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 );
 //            this.ChartArea?.InvokeAnnotationCreatedEvent( _param1 );
 //        }
-//        vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
+//        vqd1Qhu2nAw1nzwT0.sCalc = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
 //        try
 //        {
 //            this._isUpdating = true;
@@ -507,8 +507,8 @@
 //            }
 //            if ( _param2.CoordinateMode.HasValue )
 //                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.CoordinateMode = _param2.CoordinateMode.Value;
-//            IComparable comparable1 = AnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
-//            IComparable comparable2 = AnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
+//            IComparable comparable1 = AnnotationModifier.DataToIndex(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
+//            IComparable comparable2 = AnnotationModifier.DataToIndex(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
 //            IComparable comparable3 = AnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D( _param2.Y1 );
 //            IComparable comparable4 = AnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D( _param2.Y2 );
 //            if ( comparable1 != null )
@@ -627,16 +627,16 @@
 //        this._someInternalBoolean = true;
 //    }
 
-//    public static IComparable \u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(
+//    public static IComparable IndexToData(
 //      IComparable _param0,
-//      ref AnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
+//      ref AnnotationModifier.Struct1 _param1)
 //    {
 //        switch ( _param0 )
 //        {
 //            case null:
 //                return ( IComparable ) null;
 //            case int num1:
-//                if ( !( _param1.\u0023\u003DzFlkZpfJp6G9R is ICategoryCoordinateCalculator zFlkZpfJp6G9R))
+//                if ( !( _param1.sCalc is ICategoryCoordinateCalculator zFlkZpfJp6G9R))
 //          throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
 //          {
 //            (object) "int"
@@ -654,9 +654,9 @@
 //        }
 //    }
 
-//    public static IComparable \u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(
+//    public static IComparable DataToIndex(
 //      IComparable _param0,
-//      ref AnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
+//      ref AnnotationModifier.Struct1 _param1)
 //    {
 //        if ( _param0 == null )
 //            return ( IComparable ) null;
@@ -668,9 +668,9 @@
 //        } ) );
 //    }
 
-//    public static IComparable \u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(
+//    public static IComparable DataToIndex(
 //      IComparable _param0,
-//      ref AnnotationModifier.SomeClass343 _param1)
+//      ref AnnotationModifier.Struct0 _param1)
 //  {
 //    if (_param0 == null)
 //      return (IComparable) null;
@@ -678,7 +678,7 @@
 //      return (IComparable) dateTimeOffset.UtcDateTime;
 //    if (_param0 is DateTime dateTime)
 //      return (IComparable) dateTime;
-//    if (_param1.\u0023\u003DzFlkZpfJp6G9R is ICategoryCoordinateCalculator && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
+//    if (_param1.sCalc is ICategoryCoordinateCalculator && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
 //      throw new InvalidOperationException( StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
 //      {
 //        (object) _param0.GetType().Name
@@ -720,8 +720,8 @@
 //private new sealed class SomeClass34343383
 //{
 //    public static readonly AnnotationModifier.SomeClass34343383 SomeMethond0343 = new AnnotationModifier.SomeClass34343383();
-//    public static Action<IAnnotation> \u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D;
-//    public static Action<IAnnotation> \u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D;
+//    public static Action<IAnnotation> _Action_IAnnotation_002;
+//    public static Action<IAnnotation> _Action_IAnnotation_003;
 
 //    public void SomeImportantMethod3234(
 //      IAnnotation _param1 )
@@ -729,7 +729,7 @@
 //        _param1.set_IsEditable( true );
 //    }
 
-//    public void \u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1(
+//    public void Setset_IsSelected_false_(
 //      IAnnotation _param1 )
 //    {
 //        _param1.set_IsSelected( false );
@@ -737,20 +737,20 @@
 //}
 
 //[StructLayout( LayoutKind.Auto )]
-//private struct SomeClass343
+//private struct Struct0
 //{
 
-//    public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzFlkZpfJp6G9R;
+//    public ICoordinateCalculator<<double> sCalc;
     
 //    public AnnotationBase _public_ActiveOrderAnnotation_083;
 //}
 
 //[StructLayout( LayoutKind.Auto )]
-//private struct \u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D
+//private struct Struct1
 //  {
 
 
-//    public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzFlkZpfJp6G9R;
+//    public ICoordinateCalculator<<double> sCalc;
     
 //    public AnnotationBase _public_ActiveOrderAnnotation_083;
 //  }
@@ -774,7 +774,7 @@
 //    public AnnotationBase _public_ActiveOrderAnnotation_083;
 //    public Action<DependencyPropertyChangedEventArgs> \u0023\u003DzDg_APFfs\u0024qGS;
 
-//    public void \u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D(
+//    public void Method0845(
 //    #nullable enable
 //    object? _param1, EventArgs _param2)
 //    {
@@ -783,19 +783,19 @@
 //      this._variableSome3535.ChartArea?.InvokeAnnotationSelectedEvent(chartAnnotation, Equatable<ChartAnnotation>.op_Equality((Equatable<ChartAnnotation>) chartAnnotation, (ChartAnnotation) null) ? (ChartDrawData.AnnotationData) null : this._variableSome3535.GetAnnotationData(annotationBase));
 //    }
 
-//    public void \u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D(object? _param1, EventArgs _param2)
+//    public void Method0833(object? _param1, EventArgs _param2)
 //    {
 //      this._variableSome3535.ChartArea?.InvokeAnnotationSelectedEvent((ChartAnnotation) null, (ChartDrawData.AnnotationData) null);
 //    }
 
-//    public void \u0023\u003Dz2YagnOQq\u0024fEh5b7gci8gwU8\u003D(
+//    public void DoSomePropertyListStuff034(
 //    #nullable disable
 //    DependencyProperty _param1)
 //    {
-//      this._public_ActiveOrderAnnotation_083.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
+//      this._public_ActiveOrderAnnotation_083.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.Method0844)));
 //    }
 
-//    public void \u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D(
+//    public void Method0844(
 //      DependencyPropertyChangedEventArgs _param1)
 //    {
 //      ChartAnnotation chartAnnotation;

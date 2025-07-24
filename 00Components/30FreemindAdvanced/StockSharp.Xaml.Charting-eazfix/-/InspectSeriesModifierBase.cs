@@ -158,7 +158,7 @@ public abstract class InspectSeriesModifierBase :
   protected virtual IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.SomeClass343()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.Struct0()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       _variableSome3535 = this
@@ -358,7 +358,7 @@ label_10:
     }
   }
 
-  private sealed class SomeClass343
+  private sealed class Struct0
   {
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public 

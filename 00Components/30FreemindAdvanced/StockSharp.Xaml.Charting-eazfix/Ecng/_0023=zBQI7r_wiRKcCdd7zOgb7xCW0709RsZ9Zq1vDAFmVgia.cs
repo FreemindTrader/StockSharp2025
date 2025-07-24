@@ -224,7 +224,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqW
       this.\u0023\u003DzeUisW3maAY9U.\u0023\u003DzpFPvRIy2dIIbCgyeOpBw_g0\u003D().\u0023\u003DzsRNLsf05Xrz4fphw7Q\u003D\u003D();
       if (_param1 is \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D)
       {
-        \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D()
+        \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeSealedClassAgain032 wd3zPhu0dS2ZqhuzuE = new \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqWCDAaSbFLFPC8x.SomeSealedClassAgain032()
         {
           \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D = jq9Llz3ahZ2LrQl4,
           \u0023\u003Dz32bgjTM\u003D = (\u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D) _param1
@@ -753,7 +753,7 @@ public sealed class \u0023\u003DzBQI7r_wiRKcCdd7zOgb7xCW0709RsZ9Zq1vDAFmVgiaSQqW
     public double \u0023\u003DzoxmYZFvB84ZN(double _param1) => 1.0;
   }
 
-  private sealed class \u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D
+  private sealed class SomeSealedClassAgain032
   {
     public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D \u0023\u003Dz32bgjTM\u003D;
     public byte[] \u0023\u003DzVIwEApk\u003D;

@@ -28,7 +28,7 @@ public class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u00
     this.\u0023\u003Dzjsd5bsWN_iJC9g3Wpg\u003D\u003D.Clear();
     this.\u0023\u003DzDi26vlWukOA5T4p1DA\u003D\u003D.Clear();
     this.\u0023\u003DzYy\u0024VrU8bBAGC = this.\u0023\u003DzeuxrJCE00Q0n();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003DzHZDgUSdfqmkx().GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w = this.\u0023\u003DzHZDgUSdfqmkx().GetCurrentCoordinateCalculator();
     if (xkzemsMs5tGkouk5w != null && Math.Abs(this.\u0023\u003DzYy\u0024VrU8bBAGC) >= double.Epsilon)
     {
       this.\u0023\u003DzO_MoV2Kpn\u0024rL = this.\u0023\u003DzHZDgUSdfqmkx().GetOffsetForLabels();
@@ -54,7 +54,7 @@ public class \u0023\u003DzMv9TAT1PEEnC0UeBhCNwDO3VFM5XbySLODko9bHLvrDkMuy0qw\u00
 
   protected virtual void \u0023\u003DzrfVZUmcocqSCBDcs2A\u003D\u003D(
     double[] _param1,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param2,
+    ICoordinateCalculator<<double> _param2,
     bool _param3)
   {
     List<double> doubleList = _param3 ? this.\u0023\u003DzlBZQ9Hda4_JM : this._minorTicks;

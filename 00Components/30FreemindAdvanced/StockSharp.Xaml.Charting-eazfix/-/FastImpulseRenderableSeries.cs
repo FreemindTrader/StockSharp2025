@@ -47,7 +47,7 @@ public sealed class FastImpulseRenderableSeries :
       if (!zldchDrVsrVyHh6WyiGy2.\u0023\u003Dzmh1LiTa467ce() && zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw() != -1 && this.DataSeries.\u0023\u003DzPqsSI6C5MOOb().Count != 0)
       {
         double num2 = ((IComparable) this.DataSeries.\u0023\u003DzPqsSI6C5MOOb()[zldchDrVsrVyHh6WyiGy2.\u0023\u003DzSkvCFWUKQ7Fw()]).ToDouble();
-        \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+        ICoordinateCalculator<<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
         Point point = this.\u0023\u003Dzop6vn0GowyiR(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
         double y = point.Y;
         double num3 = xkzemsMs5tGkouk5w.GetDataValue(y);

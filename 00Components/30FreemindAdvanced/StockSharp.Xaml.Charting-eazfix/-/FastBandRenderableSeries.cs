@@ -170,7 +170,7 @@ public sealed class FastBandRenderableSeries :
     if (!zldchDrVsrVyHh6WyiGy.\u0023\u003DzMeGSfVE\u003D())
     {
       bool flag = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV();
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+      ICoordinateCalculator<<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
       double num1 = flag ? zldchDrVsrVyHh6WyiGy.\u0023\u003DzxZfJER0dbHuS().Y : zldchDrVsrVyHh6WyiGy.\u0023\u003DzxZfJER0dbHuS().X;
       double num2 = zldchDrVsrVyHh6WyiGy.\u0023\u003DzpV2MuX1Y\u0024EoN().ToDouble();
       double num3 = xkzemsMs5tGkouk5w.\u0023\u003DzhL6gsJw\u003D(num2);
@@ -317,8 +317,8 @@ public sealed class FastBandRenderableSeries :
         Point point1;
         if (\u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003Dz_Q3WCiJm2fzt(new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(num4, num5, num7, num8), new \u0023\u003Dz4lH8q7tXMt_gtLJO2itFkzhZW4NvR\u00246A4_TU938\u003D.\u0023\u003DzRKlLwRo\u003D(num4, num6, num7, num9), out point1))
         {
-          \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-          \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+          ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+          ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
           bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
           float num11 = (float) xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(num7);
           float num12 = (float) xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(num4);
@@ -384,8 +384,8 @@ public sealed class FastBandRenderableSeries :
     bool _param3,
     IRenderPassData _param4)
   {
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = _param4.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = _param4.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = _param4.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = _param4.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     bool flag1 = _param4.\u0023\u003DzDoU1CJhSUWFV();
     double num1 = _param1.\u0023\u003Dzu7q98_E\u003D();
     float num2 = (float) xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num1);

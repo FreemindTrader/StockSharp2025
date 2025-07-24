@@ -91,7 +91,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private LegendModifierVM _legendViewModel;
 
-    private FxAnnotationModifier _annotationModifier;
+    private AnnotationModifier _annotationModifier;
 
     private readonly ObservableCollection<IRenderableSeries> _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>();
 
@@ -340,7 +340,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         {
             this.SetupModifiers();
             CollectionHelper.AddRange<IChartModifier>( ( ICollection<IChartModifier> ) this.ChartModifier.ChildModifiers, ( IEnumerable<IChartModifier> ) this._chartModifiers );
-            this.AnnotationModifier.SetBindings( FxAnnotationModifier.UserAnnotationTypeProperty, ( object ) groupChart, "AnnotationType" );
+            this.AnnotationModifier.SetBindings( AnnotationModifier.UserAnnotationTypeProperty, ( object ) groupChart, "AnnotationType" );
             UltrachartCursormodifier yx2796KwcrF36XmmEjd = this.ChartModifier.ChildModifiers.OfType<UltrachartCursormodifier>().Single<UltrachartCursormodifier>();
             yx2796KwcrF36XmmEjd.SetBindings( ChartModifierBase._isEnabled, ( object ) this.Chart, "CrossHair" );
             yx2796KwcrF36XmmEjd.SetBindings( TooltipModifierBase.ShowAxisLabelsProperty, ( object ) this.Chart, "CrossHairAxisLabels" );
@@ -723,16 +723,16 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         }
     }
 
-    public FxAnnotationModifier AnnotationModifier
+    public AnnotationModifier AnnotationModifier
     {
         get
         {
-            FxAnnotationModifier zIfS1UpijEycx = this._annotationModifier;
+            AnnotationModifier zIfS1UpijEycx = this._annotationModifier;
             if ( zIfS1UpijEycx != null )
                 return zIfS1UpijEycx;
-            FxAnnotationModifier g7AaupM52GhwgqEjd = new FxAnnotationModifier(this.Area, this.Annotations);
+            AnnotationModifier g7AaupM52GhwgqEjd = new AnnotationModifier(this.Area, this.Annotations);
             g7AaupM52GhwgqEjd.IsEnabled = false;
-            FxAnnotationModifier annotationModifier = g7AaupM52GhwgqEjd;
+            AnnotationModifier annotationModifier = g7AaupM52GhwgqEjd;
             this._annotationModifier = g7AaupM52GhwgqEjd;
             return annotationModifier;
         }

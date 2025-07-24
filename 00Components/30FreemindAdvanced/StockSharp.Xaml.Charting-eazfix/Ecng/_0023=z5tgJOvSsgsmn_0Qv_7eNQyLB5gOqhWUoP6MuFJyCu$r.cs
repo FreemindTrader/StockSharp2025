@@ -11,7 +11,7 @@ using System.Collections;
 #nullable disable
 public sealed class \u0023\u003Dz5tgJOvSsgsmn_0Qv_7eNQyLB5gOqhWUoP6MuFJyCu\u0024rQqXo4LTiJvVgyCa_6Bm39_Yn25sk\u003D : 
   \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D,
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>,
+  ICoordinateCalculator<<double>,
   ICategoryCoordinateCalculator
 {
   private bool \u0023\u003DzOU8wceErNMhUttw6c6n4ESA\u003D;

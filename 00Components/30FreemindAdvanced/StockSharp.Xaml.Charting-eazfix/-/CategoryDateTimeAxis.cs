@@ -152,7 +152,7 @@ public sealed class CategoryDateTimeAxis :
 
   public override double \u0023\u003DzhL6gsJw\u003D(IComparable _param1)
   {
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w = this.GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w = this.GetCurrentCoordinateCalculator();
     if (xkzemsMs5tGkouk5w == null)
       return double.NaN;
     if (xkzemsMs5tGkouk5w is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0 && _param1 is DateTime)

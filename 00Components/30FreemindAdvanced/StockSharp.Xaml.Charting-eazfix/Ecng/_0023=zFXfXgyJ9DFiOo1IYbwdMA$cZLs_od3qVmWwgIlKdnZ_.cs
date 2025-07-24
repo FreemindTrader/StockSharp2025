@@ -13,8 +13,8 @@ public static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     Func<double, double, IPathColor> _param1,
     IPointSeries _param2,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param4)
+    ICoordinateCalculator<<double> _param3,
+    ICoordinateCalculator<<double> _param4)
   {
     \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(_param0, _param1, _param2.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param2.\u0023\u003DzlpVGw6E\u003D(), _param3, _param4);
   }
@@ -22,8 +22,8 @@ public static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ
   public static void \u0023\u003DzjBmQkSQ797ct(
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX _param0,
     IPointSeries _param1,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param2,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param3)
+    ICoordinateCalculator<<double> _param2,
+    ICoordinateCalculator<<double> _param3)
   {
     \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.\u0023\u003DzjBmQkSQ797ct(_param0, \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D ?? (\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383.\u0023\u003DzMJsSoL5rX24oRR6rOw\u003D\u003D = new Func<double, double, IPathColor>(\u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ_XFod55ir8\u0024xo\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzJu67dK0kkhLjQsBBw\u00245SnFg\u003D)), _param1.\u0023\u003DzwQnyySN6xaVC().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003DzRr4AYdnHaTxa(), _param1.\u0023\u003DzlpVGw6E\u003D(), _param2, _param3);
   }
@@ -34,8 +34,8 @@ public static class \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA\u0024cZLs_od3qVmWwgIlKdnZ
     double[] _param2,
     double[] _param3,
     int _param4,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param5,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param6)
+    ICoordinateCalculator<<double> _param5,
+    ICoordinateCalculator<<double> _param6)
   {
     bool flag = !_param5.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K();
     \u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024 v1qkdyQymVhxLr4oDq = (\u0023\u003Dz_\u0024BhX3lQii9_VUtVozqEe_IXeV1qkdyQymVhxLr4oDQ\u0024) null;

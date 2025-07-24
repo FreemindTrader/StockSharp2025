@@ -386,7 +386,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
 
     protected void AddChildElement( IChartElement element )
     {
-        BaseChartIndicatorPainter<TIndicator>.SomeClass343 vqd1Qhu2nAw1nzwT0 = new BaseChartIndicatorPainter<TIndicator>.SomeClass343(
+        BaseChartIndicatorPainter<TIndicator>.Struct0 vqd1Qhu2nAw1nzwT0 = new BaseChartIndicatorPainter<TIndicator>.Struct0(
             );
         vqd1Qhu2nAw1nzwT0._variableSome3535 = this;
         vqd1Qhu2nAw1nzwT0.\u0023\u003D
@@ -423,7 +423,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
     }
 
 
-    private sealed class SomeClass343
+    private sealed class Struct0
     {
         public BaseChartIndicatorPainter<T> _variableSome3535;
         public IChartElement \u0023\u003Dz_i6sZDg\u003D;

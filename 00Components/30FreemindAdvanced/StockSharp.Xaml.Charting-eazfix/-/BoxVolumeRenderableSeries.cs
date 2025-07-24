@@ -213,8 +213,8 @@ public sealed class BoxVolumeRenderableSeries :
     BoxVolumeRenderableSeries.\u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D kvt89B1lUeA7EdfukJs = new BoxVolumeRenderableSeries.\u0023\u003DzE1noKVt89B1lUeA7EDfukJs\u003D();
     if (!(this.DataSeries is TimeframeSegmentDataSeries))
       return;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     TimeSpan? nullable1 = this.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D();
     TimeSpan? nullable2 = nullable1;
     TimeSpan zero1 = TimeSpan.Zero;
@@ -299,7 +299,7 @@ label_11:
           num5 = index + (source1.Count - 1);
           (double num6, double num7) = \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003Dz\u0024zWmmGTAbDON(source1.Select<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D ?? (BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D))));
           double num8 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(source1[0].\u0023\u003Dz2_4KSTY\u003D()) - num4;
-          \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w3 = xkzemsMs5tGkouk5w1;
+          ICoordinateCalculator<<double> xkzemsMs5tGkouk5w3 = xkzemsMs5tGkouk5w1;
           List<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB> j9sJkRf4wMmhD3hBList = source1;
           double num9 = j9sJkRf4wMmhD3hBList[j9sJkRf4wMmhD3hBList.Count - 1].\u0023\u003Dz2_4KSTY\u003D();
           double num10 = xkzemsMs5tGkouk5w3.\u0023\u003DzhL6gsJw\u003D(num9) + num4;
@@ -319,7 +319,7 @@ label_11:
           num14 = index + (source1.Count - 1);
           (double num15, double num16) = \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003Dz\u0024zWmmGTAbDON(source1.Select<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D ?? (BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D))));
           double num17 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(source1[0].\u0023\u003Dz2_4KSTY\u003D()) - num4;
-          \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w4 = xkzemsMs5tGkouk5w1;
+          ICoordinateCalculator<<double> xkzemsMs5tGkouk5w4 = xkzemsMs5tGkouk5w1;
           List<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB> j9sJkRf4wMmhD3hBList = source1;
           double num18 = j9sJkRf4wMmhD3hBList[j9sJkRf4wMmhD3hBList.Count - 1].\u0023\u003Dz2_4KSTY\u003D();
           double num19 = xkzemsMs5tGkouk5w4.\u0023\u003DzhL6gsJw\u003D(num18) + num4;

@@ -18,17 +18,9 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 public class fxAnnotationCreationModifier : ChartModifierBase
 {
-    public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(
-        nameof(YAxisId),
-        typeof(string),
-        typeof(fxAnnotationCreationModifier),
-        new PropertyMetadata((object) "DefaultAxisId"));
+    public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof(YAxisId), typeof(string), typeof(fxAnnotationCreationModifier), new PropertyMetadata((object)"DefaultAxisId"));
 
-    public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(
-        nameof(XAxisId),
-        typeof(string),
-        typeof(fxAnnotationCreationModifier),
-        new PropertyMetadata((object) "DefaultAxisId"));
+    public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof(XAxisId), typeof(string), typeof(fxAnnotationCreationModifier), new PropertyMetadata((object)"DefaultAxisId"));
 
     private Point _draggingStartPoint;
 
@@ -42,7 +34,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
 
 
     /// <summary>
-    ///
+    /// The ID for YAxis
     /// </summary>
     public string YAxisId
     {
@@ -57,7 +49,7 @@ public class fxAnnotationCreationModifier : ChartModifierBase
     }
 
     /// <summary>
-    ///
+    /// The ID for XAxis
     /// </summary>
     public string XAxisId
     {
@@ -72,7 +64,11 @@ public class fxAnnotationCreationModifier : ChartModifierBase
     }
 
     /// <summary>
-    ///
+    /// Annotation Type
+    /// There are a total of 10 types of annotations at this time. They are defined in 
+    /// 
+    ///     Charting.Interfaces.ChartAnnotationTypes.cs files
+    ///     
     /// </summary>
     public Type AnnotationType
     {

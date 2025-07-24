@@ -214,8 +214,8 @@ public sealed class AnnotationCollection :
   {
     foreach (IAnnotation hhh93Q0DqkV5Sv90k in (Collection<IAnnotation>) this)
     {
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003DzvhansM3Nsebc9y\u0024i3fZ48OU\u003D(_param1.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D, hhh93Q0DqkV5Sv90k, hhh93Q0DqkV5Sv90k.get_XAxisId(), true);
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003DzvhansM3Nsebc9y\u0024i3fZ48OU\u003D(_param1.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D, hhh93Q0DqkV5Sv90k, hhh93Q0DqkV5Sv90k.get_YAxisId(), false);
+      ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003DzvhansM3Nsebc9y\u0024i3fZ48OU\u003D(_param1.\u0023\u003DzSBrmxtNmmDcWbby6Gm0UVio\u003D, hhh93Q0DqkV5Sv90k, hhh93Q0DqkV5Sv90k.get_XAxisId(), true);
+      ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003DzvhansM3Nsebc9y\u0024i3fZ48OU\u003D(_param1.\u0023\u003DzPmZCkENGGLQws2poeTWSb6E\u003D, hhh93Q0DqkV5Sv90k, hhh93Q0DqkV5Sv90k.get_YAxisId(), false);
       hhh93Q0DqkV5Sv90k.Update(xkzemsMs5tGkouk5w1, xkzemsMs5tGkouk5w2);
       if (xkzemsMs5tGkouk5w1 == null)
         _param1.\u0023\u003Dz38sEjvRVtcBw().Add($"Could not draw an annotation of type {hhh93Q0DqkV5Sv90k.GetType()}. XAxis with Id == {hhh93Q0DqkV5Sv90k.get_XAxisId() ?? "NULL"} doesn't exist. Please ensure that the XAxisId property is set to a valid value.");
@@ -224,16 +224,16 @@ public sealed class AnnotationCollection :
     }
   }
 
-  private \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzvhansM3Nsebc9y\u0024i3fZ48OU\u003D(
-    IDictionary<string, \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>> _param1,
+  private ICoordinateCalculator<<double> \u0023\u003DzvhansM3Nsebc9y\u0024i3fZ48OU\u003D(
+    IDictionary<string, ICoordinateCalculator<<double>> _param1,
     IAnnotation _param2,
     string _param3,
     bool _param4)
   {
     if (_param3 == null)
-      return (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w;
-    return _param1.TryGetValue(_param3, out xkzemsMs5tGkouk5w) ? xkzemsMs5tGkouk5w : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
+      return (ICoordinateCalculator<<double>) null;
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w;
+    return _param1.TryGetValue(_param3, out xkzemsMs5tGkouk5w) ? xkzemsMs5tGkouk5w : (ICoordinateCalculator<<double>) null;
   }
 
   private void \u0023\u003DzFeNr2Uw\u003D()

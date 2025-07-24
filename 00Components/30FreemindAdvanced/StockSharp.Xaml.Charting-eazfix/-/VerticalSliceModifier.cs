@@ -217,7 +217,7 @@ public sealed class VerticalSliceModifier :
 
   private void \u0023\u003DzxYNK3fP2Smwj(object _param1, NotifyCollectionChangedEventArgs _param2)
   {
-    VerticalSliceModifier.SomeClass343 vqd1Qhu2nAw1nzwT0 = new VerticalSliceModifier.SomeClass343();
+    VerticalSliceModifier.Struct0 vqd1Qhu2nAw1nzwT0 = new VerticalSliceModifier.Struct0();
     if (this.ParentSurface == null || this.ParentSurface.get_Annotations() == null)
       return;
     vqd1Qhu2nAw1nzwT0.\u0023\u003DzcY2SqgU\u003D = this.VerticalLines;
@@ -283,7 +283,7 @@ public sealed class VerticalSliceModifier :
     }
   }
 
-  private new sealed class SomeClass343
+  private new sealed class Struct0
   {
     public \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u00249CwG0Zwlkee45cZ96xFA\u0024Wy \u0023\u003DzcY2SqgU\u003D;
 

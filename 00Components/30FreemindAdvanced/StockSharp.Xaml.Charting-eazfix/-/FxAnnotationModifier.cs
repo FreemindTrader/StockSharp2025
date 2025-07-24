@@ -1,824 +1,1894 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.FxAnnotationModifier
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using DevExpress.Xpf.Bars;
-using DevExpress.Xpf.Editors.Helpers;
-using Ecng.Collections;
-using Ecng.Common;
-using Ecng.Xaml;
+﻿using SciChart.Charting.ChartModifiers;
+using SciChart.Charting.DrawingTools.TradingAnnotations;
 using SciChart.Charting.Visuals.Annotations;
-using StockSharp.BusinessEntities;
-using StockSharp.Charting;
-using StockSharp.Localization;
-using StockSharp.Messages;
-using StockSharp.Xaml;
-using StockSharp.Xaml.Charting;
-using StockSharp.Xaml.Charting.Ultrachart;
-using StockSharp.Xaml.Charting.Visuals.Annotations;
+using SciChart.Core.Extensions;
+using SciChart.Core.Framework;
+using SciChart.Core.Utility.Mouse;
+using StockSharp.Xaml.Charting.HewFibonacci;
 using System;
+using System.Windows;
+using MoreLinq;
+using StockSharp.Xaml.Charting.CustomAnnotations;
+using System.Windows.Media;
+using Ecng.Xaml;
+using SciChart.Charting.Numerics.CoordinateCalculators;
+using StockSharp.Localization;
+using Ecng.Common;
+using System.Runtime.InteropServices;
+using Ecng.Collections;
+using StockSharp.Charting;
+using SciChart.Charting.Common;
 using System.CodeDom.Compiler;
-using System.Collections;
 using System.Collections.Generic;
+using fx.Collections;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Markup;
-using System.Windows.Media;
+using StockSharp.Xaml.Charting.Definitions;
+using SciChart.Charting.Common.Helpers;
+using SciChart.Charting.DrawingTools.TradingModifiers;
+using SciChart.Charting.DrawingTools.TradingAnnotations.FibonacciAnnotation;
+using DevExpress.Mvvm;
+using fx.Definitions;
+using StockSharp.Algo.Candles;
+using DevExpress.Xpf.Bars;
+using StockSharp.Xaml;
+using SciChart.Charting.Visuals.Axes;
+using StockSharp.Xaml.Charting.Xaml;
+using DevExpress.Mvvm.Native;
+using StockSharp.Charting;
 
-#nullable enable
-namespace StockSharp.Xaml.Charting;
-
-public sealed class FxAnnotationModifier :
-  fxAnnotationCreationModifier,
-  IComponentConnector
+namespace StockSharp.Xaml.Charting
 {
+    /// <summary>
+    /// Interaction logic for AnnotationModifier.xaml
+    /// </summary>
 
-    private sealed class SomeClass398
+    /* -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+     * 
+     * 1)   In the ChartPanel, clicking on any on Annotation will cause Chart's AnnotationType to be changed.
+     *      IsChecked="{Binding ElementName=Chart, Path=AnnotationType, Converter={StaticResource EnumBooleanConverter}, ConverterParameter=TextAnnotation}"
+     * 
+     * 2)   Chart's AnnotationType is bind to AnnotationModifier's UserAnnotationTypeProperty dependency property
+     *      AnnotationModifier.SetBindings( ultrachartannotationmodifier.UserAnnotationTypeProperty, chart, "AnnotationType", BindingMode.TwoWay, null, null );
+     *      
+     * 3)   Clicking on different Annotation Button on the UI will cause OnUserAnnotationTypePropertyChanged to be invoked.     
+     * 
+     * ----------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    public partial class AnnotationModifier : fxAnnotationCreationModifier
     {
-        public FxAnnotationModifier _variableSome3535;
-        public AnnotationBase _AnnotationBase11;
-        public DelegateCommand<AnnotationBase> _DelegateCommand_0001;
+        #region variables
+        private readonly PairSet<AnnotationBase, ChartAnnotation> _baseToAnnotationPair = new PairSet<AnnotationBase, ChartAnnotation>();
+        private readonly UltrachartAnnotationEditor _annotationEditor = new UltrachartAnnotationEditor();
+        private readonly PooledSet<AnnotationBase> _annotationBaseSet = new PooledSet<AnnotationBase>();
 
-        public void Method001(
-          AnnotationBase _param1 )
+        private readonly AnnotationCollection _annotationCollection;
+        private RulerAnnotation _rulerAnnotation;
+        private readonly ChartArea _chartArea;
+        private bool _isUpdating;
+
+        //private bool _oneClickAnnotation = true;
+        #endregion
+        public AnnotationModifier()
         {
-            this._variableSome3535._annotationCollection.Remove( ( IAnnotation ) _param1 );
-            ChartAnnotation chartAnnotation;
-            if ( !( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).TryGetValue( _param1, ref chartAnnotation ) )
-                return;
-            ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).Remove( _param1 );
-            ( ( ICollection<IChartElement> ) this._variableSome3535._chartArea.Elements ).Remove( ( IChartElement ) chartAnnotation );
-            this._variableSome3535.ChartArea?.\u0023\u003DzXartur54T48t( chartAnnotation );
+            InitializeComponent();
         }
 
-        public void Method002( AnnotationBase _param1 )
+        public AnnotationModifier(ChartArea area, AnnotationCollection collection)
         {
-            FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new FxAnnotationModifier.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D();
-            wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083 = _param1;
-            UltrachartAnnotationEditor m53T5BwgtpbkV9ZEjd = this._variableSome3535.GetAnnotationEditor();
-            m53T5BwgtpbkV9ZEjd.IsOpen = false;
-            CollectionHelper.ForEach<IAnnotation>( this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>( new Func<IAnnotation, bool>( wd3zPhu0dS2ZqhuzuE.Method009) ), FxAnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D ?? ( FxAnnotationModifier.SomeClass34343383.\u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D = new Action<IAnnotation>( FxAnnotationModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1 ) ));
-            wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083.IsSelected = true;
-            m53T5BwgtpbkV9ZEjd.PlacementTarget = ( UIElement ) wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083;
-            m53T5BwgtpbkV9ZEjd.IsOpen = true;
-        }
+            InitializeComponent();
 
-        public void Method003(
-          object _param1,
-          KeyEventArgs _param2 )
-        {
-            if ( !this._AnnotationBase11.IsSelected || Keyboard.Modifiers != null )
-                return;
-            if ( _param2.Key == 32 /*0x20*/)
+            if ( area == null )
             {
-                this._DelegateCommand_0001.TryExecute( ( object ) this._AnnotationBase11 );
+                throw new ArgumentNullException("area");
+            }
+
+            _chartArea = area;
+
+
+            if ( collection == null )
+            {
+                throw new ArgumentNullException("annotations");
+            }
+
+            _annotationCollection = collection;
+        }
+
+        static AnnotationModifier()
+        {
+            //AnnotationTypeProperty.OverrideMetadata( typeof( AnnotationModifier ), new PropertyMetadata( null, new PropertyChangedCallback( OnAnnotationTypeChanged ) ) );
+        }
+
+
+        #region Change of Annotation Type
+        public static readonly DependencyProperty UserAnnotationTypeProperty = DependencyProperty.Register(nameof(UserAnnotationType), typeof(ChartAnnotationTypes), typeof(AnnotationModifier), new PropertyMetadata(ChartAnnotationTypes.None, new PropertyChangedCallback(OnUserAnnotationTypePropertyChanged)));
+
+
+        public ChartAnnotationTypes UserAnnotationType
+        {
+            get
+            {
+                return (ChartAnnotationTypes)GetValue(UserAnnotationTypeProperty);
+            }
+            set
+            {
+                SetValue(UserAnnotationTypeProperty, value);
+            }
+        }
+
+        private IChartEx ChartArea
+        {
+            get
+            {
+                return _chartArea.Chart;
+            }
+        }
+
+        private static void OnUserAnnotationTypePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            ( (AnnotationModifier)d ).SetAnnotationStyleAndType((ChartAnnotationTypes)e.NewValue);
+        }
+
+        private void SetAnnotationStyleAndType(ChartAnnotationTypes annotationTypes)
+        {
+            if ( annotationTypes == ChartAnnotationTypes.None )
+            {
+                Ecng.Collections.CollectionHelper.ForEach(_annotationCollection, i => i.IsEditable = true);
+
+                AnnotationType = null;
+                IsEnabled = false;
             }
             else
             {
-                if ( _param2.Key != 13 || !( this._AnnotationBase11 is TextAnnotation zLxiKoA ) )
-                    return;
-                zLxiKoA.RemoveFocusFromInputTextArea();
+                Type type = AnnotationExtensionHelper2025.GetType(annotationTypes);
+
+                string str = type.Name + "Style";
+
+                if ( Resources.Contains(str) )
+                {
+                    AnnotationStyle = (Style)Resources[str];
+                }
+
+                AnnotationType = type;
+                //Annotation     = null;
+                IsEnabled      = true;
+
+                //if ( annotationTypes == ChartAnnotationTypes.HorizontalLineAnnotation || annotationTypes == ChartAnnotationTypes.VerticalLineAnnotation )
+                //{
+                //    _oneClickAnnotation = true;
+                //}
+                //else
+                //{
+                //    _oneClickAnnotation = false;
+                //}
+
+            }
+        }
+        #endregion
+
+
+
+        private Point _lastClick;
+        private int _clickCount;
+        private bool _isMouseDown;
+
+        public event EventHandler<AnnotationCreationArgs> fxTraderAnnotationCreated;
+
+
+
+        protected override void OnIsEnabledChanged()
+        {
+            //Annotation = null;
+        }
+
+
+
+
+
+
+        protected override AnnotationBase CreateAnnotation(Type annotationType, Style annotationStyle)
+        {
+            if ( annotationType == typeof(RulerAnnotation) )
+            {
+                RemoveRulerAnnotation();
+                double num = (double)( ( ( _chartArea.Chart.GetSource(_chartArea.Elements.OfType<ChartCandleElement>().FirstOrDefault()) as CandleSeries )?.Security?.PriceStep ) ?? new Decimal(1, 0, 0, false, 2) );
+                RulerAnnotation ruler = new RulerAnnotation();
+                ruler.YAxisId = YAxisId;
+                ruler.XAxisId = XAxisId;
+                ruler.PriceStep = num;
+                ruler.RemoveOnClick = true;
+
+                _rulerAnnotation = ruler;
+
+                ParentSurface.Annotations.Add(ruler);
+                return ruler;
+            }
+            else
+            {
+                var instance = (AnnotationBaseEx)Activator.CreateInstance(annotationType);
+
+                instance.YAxisId = YAxisId;
+                instance.XAxisId = XAxisId;
+
+                if ( annotationStyle != null && annotationStyle.TargetType == annotationType )
+                {
+                    Style style = new Style(annotationType) { BasedOn = annotationStyle };
+                    instance.Style = style;
+                }
+
+                ParentSurface.Annotations.Add(instance);
+                return instance;
             }
         }
 
-        public void Method004(
-          object _param1,
-          EventArgs _param2 )
+        private void RemoveRulerAnnotation()
         {
-            Keyboard.Focus( ( IInputElement ) this._AnnotationBase11 );
+            if ( _rulerAnnotation == null )
+                return;
+            ParentSurface.Annotations.Remove(_rulerAnnotation);
+            _rulerAnnotation = null;
         }
 
-        public void Method005(
-          object _param1,
-          MouseButtonEventArgs _param2 )
+        #region Mouse Movement 
+        public override void OnModifierMouseUp(ModifierMouseArgs mouseButtonEventArgs)
         {
-            Keyboard.Focus( ( IInputElement ) this._AnnotationBase11 );
+            if ( AnnotationType == null || !MatchesExecuteOn(mouseButtonEventArgs.MouseButtons, ExecuteOn) || !mouseButtonEventArgs.IsMaster )
+            {
+                return;
+            }
+
+            if ( !_isMouseDown )
+            {
+                OnModifierMouseDown(mouseButtonEventArgs);
+                ParentSurface.Annotations.ForEachDo(iannotation_0 => iannotation_0.IsSelected = false);
+            }
+
+            if ( Annotation == null )
+            {
+                _lastClick = GetPointRelativeTo(mouseButtonEventArgs.MousePoint, ModifierSurface);
+
+                throw new NotImplementedException();
+                //Annotation = CreateAnnotation( AnnotationType, AnnotationStyle );
+
+                //ITradingAnnotation annotation = Annotation as ITradingAnnotation;
+
+                //if ( annotation != null )
+                //{
+                //    annotation.AnnotationCreated += new EventHandler<AnnotationCreationArgs>( AdvancedAnnotationCreated );
+                //    IComparable xAxisDateTime     = XAxis.GetDataValue( _lastClick.X );
+                //    IComparable yAxisPrice        = YAxis.GetDataValue( _lastClick.Y );
+
+                //    annotation.SetBasePoint( xAxisDateTime, yAxisPrice );
+                //    _clickCount = 1;
+                //}
+            }
+            else
+            {
+                if ( Annotation is IfxFibonacciAnnotation annotation )
+                {
+                    _lastClick = GetPointRelativeTo(mouseButtonEventArgs.MousePoint, ModifierSurface);
+
+                    IComparable xAxisDateTime = XAxis.GetDataValue(_lastClick.X);
+                    IComparable yAxisPrice = YAxis.GetDataValue(_lastClick.Y);
+
+                    annotation.SetBasePoint(xAxisDateTime, yAxisPrice);
+
+                    ++_clickCount;
+
+                    if ( _clickCount >= annotation.BasePointsCount )
+                    {
+                        OnAnnotationCreated();
+                    }
+
+                }
+                else if ( Annotation is fxElliotWaveAnnotation ew )
+                {
+                    if ( _clickCount >= ew.BasePointsCount )
+                    {
+                        OnAnnotationCreated();
+                    }
+                }
+                else
+                {
+                    if ( Annotation != null && Annotation.IsAttached )
+                    {
+                        Annotation.IsSelected = false;
+                    }
+
+                    if ( _clickCount == 1 )
+                    {
+                        OnAnnotationCreated();
+                    }
+
+                }
+            }
+
+            _isMouseDown = false;
         }
 
-        public void Method006(
-          object _param1,
-          EventArgs _param2 )
+        public override void OnModifierMouseMove(ModifierMouseArgs mouseEventArgs)
         {
-            this._variableSome3535.GetAnnotationEditor().IsOpen = false;
+            if ( AnnotationType == null || Annotation == null || ( !Annotation.IsAttached || Annotation.IsSelected ) )
+            {
+                return;
+            }
+
+            /*
+             * 
+             * Transforms the input point relative to the SciChart.Core.Framework.IHitTestable element. 
+             * Can be used to transform points relative to the SciChart.Charting.Visuals.SciChartSurfaceBase.ModifierSurface, or SciChart.Charting.Visuals.SciChartSurface.XAxis for instance.
+             * 
+             */
+
+            Point pointRelativeTo = GetPointRelativeTo(mouseEventArgs.MousePoint, ModifierSurface);
+
+            if ( Annotation is ITradingAnnotation annotation )
+            {
+                IComparable xAxisDateTime = XAxis.GetDataValue(pointRelativeTo.X);
+                IComparable yAxisPrice = YAxis.GetDataValue(pointRelativeTo.Y);
+
+                annotation.UpdateBasePoint(_clickCount, xAxisDateTime, yAxisPrice);
+            }
+            else if ( Annotation is fxElliotWaveAnnotation ew )
+            {
+
+            }
+            else
+            {
+                IComparable xAxisDateTime = XAxis.GetDataValue(pointRelativeTo.X);
+                IComparable yAxisPrice = YAxis.GetDataValue(pointRelativeTo.Y);
+
+                Annotation.X2 = xAxisDateTime;
+                Annotation.Y2 = yAxisPrice;
+            }
         }
 
-        public void Method007(
-          object _param1,
-          EventArgs _param2 )
+        public override void OnModifierMouseDown(ModifierMouseArgs mouseButtonEventArgs)
         {
-            this._variableSome3535._isUpdating = true;
+            if ( AnnotationType == null || ( !MatchesExecuteOn(mouseButtonEventArgs.MouseButtons, ExecuteOn) || !mouseButtonEventArgs.IsMaster ) )
+            {
+                return;
+            }
+
+            _lastClick = GetPointRelativeTo(mouseButtonEventArgs.MousePoint, ModifierSurface);
+
+            _isMouseDown = true;
+
+            if ( Annotation is fxElliotWaveAnnotation ew )
+            {
+                IComparable xAxisDateTime = XAxis.GetDataValue(_lastClick.X);
+                IComparable yAxisPrice = YAxis.GetDataValue(_lastClick.Y);
+                ew.SetBasePoint(xAxisDateTime, yAxisPrice);
+
+                _clickCount++;
+            }
+
+            if ( Annotation != null )
+            {
+                return;
+            }
+
+
+            var instance = CreateAnnotation(AnnotationType, AnnotationStyle);
+
+            throw new NotImplementedException();
+
+            //Annotation = instance;
+
+            //if ( instance is ITradingAnnotation annotation )
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //    IComparable yAxisPrice = YAxis.GetDataValue( _lastClick.Y );
+
+            //    annotation.SetBasePoint( xAxisDateTime, yAxisPrice );
+
+            //    _clickCount = 1;
+            //}
+            //else if ( instance is VerticalLineAnnotation )
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+
+            //    ICategoryCoordinateCalculator coordCalc = XAxis.GetCurrentCoordinateCalculator() as ICategoryCoordinateCalculator;
+            //    int index = coordCalc.TransformDataToIndex( xAxisDateTime );
+            //    instance.X1 = index;
+
+            //    OnAnnotationCreated( );
+            //}
+            //else if ( instance is HorizontalLineAnnotation )
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //    IComparable yAxisPrice    = YAxis.GetDataValue( _lastClick.Y );
+
+            //    instance.X1 = xAxisDateTime;
+            //    instance.Y1 = yAxisPrice;
+
+            //    OnAnnotationCreated( );
+            //}
+            //else
+            //{
+            //    IComparable xAxisDateTime = XAxis.GetDataValue( _lastClick.X );
+            //    IComparable yAxisPrice    = YAxis.GetDataValue( _lastClick.Y );
+
+            //    instance.X1 = xAxisDateTime;
+            //    instance.Y1 = yAxisPrice;
+
+            //    _clickCount = 1;
+            //}
         }
 
-        public void Method008(
-          object _param1,
-          EventArgs _param2 )
+        #endregion
+
+        private void AdvancedAnnotationCreated(object sender, AnnotationCreationArgs annotationCreationArgs)
         {
-            AnnotationBase annotationBase = (AnnotationBase) _param1;
+            ITradingAnnotation tradingAnnotation = sender as ITradingAnnotation;
+
+            if ( tradingAnnotation != null )
+            {
+                tradingAnnotation.AnnotationCreated -= new EventHandler<AnnotationCreationArgs>(AdvancedAnnotationCreated);
+            }
+
+            fxTraderAnnotationCreated?.Invoke(this, new AnnotationCreationArgs((AnnotationBase)Annotation));
+
+            OnAnnotationCreated();
+        }
+
+        private void fxAnnotationCreationModifier_AnnotationCreated(object sender, AnnotationCreationArgs e)
+        {
+            var lastAnnotation = (AnnotationBase)Annotation;
+            var justAddedAnnoType = UserAnnotationType;
+
+            UserAnnotationType = ChartAnnotationTypes.None;
+            AnnotationType = null;
+            IsEnabled = false;
+
+
+            if ( lastAnnotation == null )
+            {
+                return;
+            }
+
+            bool notRuler = !( lastAnnotation is RulerAnnotation );
+
+            if ( lastAnnotation is IfxFibonacciAnnotation )
+            {
+                // Here we add the delete menu to the Class itself.
+            }
+            else
+            {
+                AddNewMenu(lastAnnotation, notRuler);
+                AddDependencyProperties(lastAnnotation);
+            }
+
+
+
+            var chartAnnotation = new ChartAnnotation()
+            {
+                Type = justAddedAnnoType
+            };
+
+            _baseToAnnotationPair.Add(lastAnnotation, chartAnnotation);
+            _chartArea.Elements.Add(chartAnnotation);
+
+            MayBe.Do(ChartArea, c =>
+            {
+                c.InvokeAnnotationCreatedEvent(chartAnnotation);
+                c.InvokeAnnotationModifiedEvent(chartAnnotation, GetAnnotationData(lastAnnotation));
+            });
+
+
+
+            if ( !lastAnnotation.IsSelected )
+            {
+                return;
+            }
+
+            Keyboard.Focus(lastAnnotation);
+
+            ChartArea?.InvokeAnnotationSelectedEvent(chartAnnotation, GetAnnotationData(lastAnnotation));
+        }
+
+        private static void OnAnnotationTypeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            AnnotationModifier creationModifier = (AnnotationModifier)d;
+
+            var surface = creationModifier.ParentSurface;
+
+            if ( surface == null ) return;
+
+            if ( (Type)e.NewValue == typeof(BrushAnnotation) )
+            {
+                surface.Annotations.ForEachDo(annotation =>
+                {
+                    annotation.IsSelected = false;
+                    annotation.IsEditable = false;
+                });
+            }
+            else
+            {
+                surface.Annotations.ForEachDo(annotation => annotation.IsEditable = true);
+            }
+        }
+
+        public void SetupAnnotation(ChartAnnotation annotation, ChartDrawData.AnnotationData data)
+        {
+            Struct0 s;
+            //bool? nullable;
+
+            if ( !_baseToAnnotationPair.TryGetKey(annotation, out s.b) )
+            {
+                Type type = AnnotationExtensionHelper2025.GetType(annotation.Type);
+                s.b = (AnnotationBase)Activator.CreateInstance(type);
+                s.b.XAxisId = annotation.XAxisId;
+                s.b.YAxisId = annotation.YAxisId;
+                s.b.IsHidden = false;
+
+                //AnnotationBase annotationBase0 = s.b;
+
+                var hasAnno = ( data.IsEditable.GetValueOrDefault() & data.IsEditable.HasValue );
+                AddNewMenu(s.b, hasAnno);
+                AddDependencyProperties(s.b);
+
+                _baseToAnnotationPair[s.b] = annotation;
+                _annotationCollection.Add(s.b);
+
+                ChartArea.InvokeAnnotationCreatedEvent(annotation);
+            }
+
+            s.sCalc = s.b.XAxis?.GetCurrentCoordinateCalculator();
+
+            _isUpdating = true;
+
             try
             {
-                UltrachartAnnotationEditor m53T5BwgtpbkV9ZEjd = this._variableSome3535.GetAnnotationEditor();
-                if ( !m53T5BwgtpbkV9ZEjd.IsOpen )
-                    return;
-                m53T5BwgtpbkV9ZEjd.IsOpen = false;
-                m53T5BwgtpbkV9ZEjd.IsOpen = true;
+                if ( data.IsVisible.HasValue )
+                {
+                    s.b.IsHidden = !data.IsVisible.Value;
+                }
+
+                if ( data.IsEditable.HasValue )
+                {
+                    AddNewMenu(s.b, data.IsEditable.Value);
+                }
+
+                if ( data.CoordinateMode.HasValue )
+                {
+                    s.b.CoordinateMode = (SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode)data.CoordinateMode.Value;
+                }
+
+                IComparable x1 = GetYCoordinate(data.X1, ref s);
+                IComparable x2 = GetYCoordinate(data.X2, ref s);
+                IComparable y1 = GetYCoordinate(data.Y1);
+                IComparable y2 = GetYCoordinate(data.Y2);
+
+                if ( x1 != null )
+                    s.b.X1 = x1;
+                if ( x2 != null )
+                    s.b.X2 = x2;
+                if ( y1 != null )
+                    s.b.Y1 = y1;
+                if ( y2 != null )
+                    s.b.Y2 = y2;
+
+                if ( s.b is LineAnnotationBase lineAnno )
+                {
+                    if ( data.Stroke != null )
+                        lineAnno.Stroke = data.Stroke;
+                    if ( data.Thickness.HasValue )
+                        lineAnno.StrokeThickness = data.Thickness.Value.Left;
+                }
+                else if ( s.b is HorizontalLineAnnotation hLine )
+                {
+                    if ( data.HorizontalAlignment.HasValue )
+                    {
+                        hLine.HorizontalAlignment = data.HorizontalAlignment.Value;
+                    }
+
+                    if ( data.LabelPlacement.HasValue )
+                    {
+                        hLine.LabelPlacement = (SciChart.Charting.Visuals.Annotations.LabelPlacement)data.LabelPlacement.Value;
+                    }
+
+                    if ( !data.ShowLabel.HasValue )
+                        return;
+
+                    hLine.ShowLabel = data.ShowLabel.Value;
+                }
+                else if ( s.b is VerticalLineAnnotation vLine )
+                {
+                    if ( data.VerticalAlignment.HasValue )
+                        vLine.VerticalAlignment = data.VerticalAlignment.Value;
+                    if ( data.LabelPlacement.HasValue )
+                        vLine.LabelPlacement = (SciChart.Charting.Visuals.Annotations.LabelPlacement)data.LabelPlacement.Value;
+
+                    if ( !data.ShowLabel.HasValue )
+                        return;
+
+                    vLine.ShowLabel = data.ShowLabel.Value;
+                }
+                else if ( s.b is BoxAnnotation box )
+                {
+                    if ( data.Fill != null )
+                        box.Background = data.Fill;
+                    if ( data.Stroke != null )
+                        box.BorderBrush = data.Stroke;
+                    if ( !data.Thickness.HasValue )
+                        return;
+                    box.BorderThickness = data.Thickness.Value;
+                }
+                else if ( s.b is TextAnnotation text )
+                {
+                    if ( data.Foreground != null )
+                        text.Foreground = data.Foreground;
+                    if ( data.Text != null )
+                        text.Text = data.Text;
+                    if ( data.Fill != null )
+                        text.Background = data.Fill;
+                    if ( data.Stroke != null )
+                        text.BorderBrush = data.Stroke;
+                    if ( !data.Thickness.HasValue )
+                        return;
+                    text.BorderThickness = data.Thickness.Value;
+                }
+                else
+                {
+                    RulerAnnotation ruler = s.b as RulerAnnotation;
+                    if ( ruler == null || data.Fill == null )
+                        return;
+                    RulerAnnotation rulerAnnotation = ruler;
+                    SolidColorBrush fill = data.Fill as SolidColorBrush;
+                    Brush brush = fill != null ? new SolidColorBrush(fill.Color.ToTransparent(50)) : data.Fill;
+                    rulerAnnotation.Background = brush;
+                }
             }
             finally
             {
-                this._variableSome3535._isUpdating = false;
-                ChartAnnotation chartAnnotation;
-                if ( ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).TryGetValue( annotationBase, ref chartAnnotation ) )
-                    this._variableSome3535.ChartArea.InvokeAnnotationModifiedEvent( chartAnnotation, this._variableSome3535.GetAnnotationData( annotationBase ) );
+                _isUpdating = false;
+                ChartArea?.InvokeAnnotationModifiedEvent(annotation, GetAnnotationData(s.b));
             }
         }
-    }
-    private readonly 
-  #nullable disable
-  ChartArea _chartArea;
 
-    private readonly AnnotationCollection _annotationCollection;
-
-    private readonly PairSet<AnnotationBase, ChartAnnotation> _baseToAnnotationPair = new PairSet<AnnotationBase, ChartAnnotation>();
-
-    private readonly HashSet<AnnotationBase> _annotationBaseHashset = new HashSet<AnnotationBase>();
-
-    private RulerAnnotation _rulerAnnotation;
-
-    private bool _isUpdating;
-
-    private UltrachartAnnotationEditor _annotationEditor;
-
-    public static readonly DependencyProperty UserAnnotationTypeProperty = DependencyProperty.Register(nameof (UserAnnotationType), typeof (ChartAnnotationTypes), typeof (FxAnnotationModifier), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(FxAnnotationModifier.OnUserAnnotationTypePropertyChanged)));
-
-    private bool _someInternalBoolean;
-
-    public FxAnnotationModifier(
-      ChartArea area,
-      AnnotationCollection annotation )
-    {
-        this.InitializeComponent();
-        this._chartArea = area ?? throw new ArgumentNullException( "area" );
-        this._annotationCollection = annotation ?? throw new ArgumentNullException( "annotations" );
-    }
-
-    private Chart ChartArea => this._chartArea.Chart as Chart;
-
-    private UltrachartAnnotationEditor GetAnnotationEditor()
-    {
-        return this._annotationEditor ?? ( this._annotationEditor = new UltrachartAnnotationEditor() );
-    }
-
-    private static void OnUserAnnotationTypePropertyChanged(
-      DependencyObject d,
-      DependencyPropertyChangedEventArgs _param1 )
-    {
-        ( ( FxAnnotationModifier ) d ).SetAnnotationStyleAndType( ( ChartAnnotationTypes ) _param1.NewValue );
-    }
-
-    public ChartAnnotationTypes UserAnnotationType
-    {
-        get
+        private ChartDrawData.AnnotationData GetAnnotationData(AnnotationBase anno)
         {
-            return ( ChartAnnotationTypes ) this.GetValue( FxAnnotationModifier.UserAnnotationTypeProperty );
-        }
-        set
-        {
-            this.SetValue( FxAnnotationModifier.UserAnnotationTypeProperty, ( object ) value );
-        }
-    }
+            Struct1 s;
 
-    private void RemoveRulerAnnotation()
-    {
-        if ( this._rulerAnnotation == null )
-            return;
-        this.ParentSurface.Annotations.Remove( ( IAnnotation ) this._rulerAnnotation );
-        this._rulerAnnotation = ( RulerAnnotation ) null;
-    }
+            s.b = anno;
+            var data = new ChartDrawData.AnnotationData();
+            s.sCalc = s.b.XAxis?.GetCurrentCoordinateCalculator();
 
-    protected override AnnotationBase CreateAnnotation( Type annotationType, Style annotationStyle )
-    {
-        if ( annotationType != typeof( RulerAnnotation ) )
-            return base.CreateAnnotation( annotationType, annotationStyle );
-        this.RemoveRulerAnnotation();
-        var candle =  this._chartArea.Elements.OfType<IChartCandleElement>().FirstOrDefault<IChartCandleElement>();
+            data.IsVisible = new bool?(!s.b.IsHidden);
+            data.IsEditable = new bool?(HasAnnotation(s.b));
+            data.CoordinateMode = (StockSharp.Charting.AnnotationCoordinateMode)( s.b.CoordinateMode );
 
-        double num = (double) ((Decimal?) ( (candle == null ? null :  this._chartArea.Chart.TryGetSubscription( candle ) )?.MarketData).PriceStep ?? 0.01M);
+            data.X1 = IndexToData(s.b.X1, ref s);
+            data.X2 = IndexToData(s.b.X2, ref s);
+            data.Y1 = DataToIndex(s.b.Y1, ref s);
+            data.Y2 = DataToIndex(s.b.Y2, ref s);
 
-        var ruler = new RulerAnnotation();
-        ruler.YAxisId = this.YAxisId;
-        ruler.XAxisId = this.XAxisId;
-        ruler.PriceStep = num;
-        ruler.RemoveOnClick = true;
-
-
-        this._rulerAnnotation = ruler;
-
-        this.ParentSurface.Annotations.Add( ruler );
-        return ( AnnotationBase ) ruler;
-    }
-
-    public override void OnModifierMouseDown( ModifierMouseArgs e )
-    {
-        if ( MathHelper.IsNaN( ( double ) this.YAxis.GetDataValue( e.MousePoint().Y ) ) )
-            this.UserAnnotationType = ChartAnnotationTypes.None;
-        else
-            base.OnModifierMouseDown( e );
-    }
-
-    private void SetAnnotationStyleAndType( ChartAnnotationTypes annotationTypes )
-    {
-        if ( annotationTypes == ChartAnnotationTypes.None )
-        {
-            CollectionHelper.ForEach<IAnnotation>( this._annotationCollection, i => i.IsEditable = true );
-            this.AnnotationType = ( Type ) null;
-            this.IsEnabled = false;
-        }
-        else
-        {
-            Type type = annotationTypes.GetType();
-            string key = type.Name + "Style";
-            if ( this.Resources.Contains( ( object ) key ) )
-                this.AnnotationStyle = ( Style ) this.Resources[ ( object ) key ];
-            this.AnnotationType = type;
-            this.IsEnabled = true;
-        }
-    }
-
-    private void fxAnnotationCreationModifier_AnnotationCreated( object _param1, EventArgs _param2 )
-    {
-        var lastAnnotation = (AnnotationBase) this.Annotation;
-        var justAddedAnnoType = this.UserAnnotationType;
-
-        this.UserAnnotationType = ChartAnnotationTypes.None;
-        this.AnnotationType = ( Type ) null;
-        this.IsEnabled = false;
-
-        if ( lastAnnotation == null )
-            return;
-
-        bool notRuler = !(lastAnnotation is RulerAnnotation);
-        this.AddMenuItems( lastAnnotation, notRuler );
-        this.AddDependencyProperties( lastAnnotation );
-
-        ChartAnnotation chartAnnotation = new ChartAnnotation()
-        {
-            Type = justAddedAnnoType
-        };
-
-        _baseToAnnotationPair[ lastAnnotation ] = chartAnnotation;
-        _chartArea.Elements.Add( chartAnnotation );
-
-        Chart chart = this.ChartArea;
-        if ( chart != null )
-        {
-            chart.InvokeAnnotationCreatedEvent( chartAnnotation );
-            chart.InvokeAnnotationModifiedEvent( chartAnnotation, this.GetAnnotationData( lastAnnotation ) );
-        }
-        if ( !lastAnnotation.IsSelected )
-            return;
-        Keyboard.Focus( lastAnnotation );
-        this.ChartArea?.InvokeAnnotationSelectedEvent( chartAnnotation, this.GetAnnotationData( lastAnnotation ) );
-    }
-
-    private bool HasAnnotation( AnnotationBase _param1 )
-    {
-        return this._annotationBaseHashset.Contains( _param1 );
-    }
-
-    private void AddMenuItems( AnnotationBase annoBase, bool hasAnnotation )
-    {
-        FxAnnotationModifier.SomeClass398 localVariable = new FxAnnotationModifier.SomeClass398();
-        localVariable._variableSome3535 = this;
-        localVariable._AnnotationBase11 = annoBase;
-
-        if ( hasAnnotation == HasAnnotation( annoBase ) )
-        {
-            return;
-        }
-
-        if ( hasAnnotation )
-        {
-            _annotationBaseSet.Add( annoBase );
-        }
-        else
-        {
-            _annotationBaseSet.Remove( annoBase );
-        }
-
-        annoBase.IsEditable = hasAnnotation;
-        annoBase.CanEditText = hasAnnotation;
-        annoBase.FocusVisualStyle = null;
-
-
-        localVariable._DelegateCommand_0001 = new DelegateCommand<AnnotationBase>( new Action<AnnotationBase>( localVariable.Method001 ) );
-        PopupMenu popupMenu1 = new PopupMenu();
-        CommonBarItemCollection items1 = popupMenu1.Items;
-        BarButtonItem barButtonItem1 = new BarButtonItem();
-        barButtonItem1.Glyph = ThemedIconsExtension.GetImage( "Settings" );
-        barButtonItem1.Content = ( object ) ( LocalizedStrings.Properties + "…" );
-        barButtonItem1.Command = ( ICommand ) new DelegateCommand<AnnotationBase>( new Action<AnnotationBase>( localVariable.Method002 ) );
-        barButtonItem1.CommandParameter = ( object ) localVariable._AnnotationBase11;
-        items1.Add( ( IBarItem ) barButtonItem1 );
-        CommonBarItemCollection items2 = popupMenu1.Items;
-        BarButtonItem barButtonItem2 = new BarButtonItem();
-        barButtonItem2.Glyph = ThemedIconsExtension.GetImage( "Remove2" );
-        barButtonItem2.Content = ( object ) LocalizedStrings.Delete;
-        barButtonItem2.Command = ( ICommand ) localVariable._DelegateCommand_0001;
-        barButtonItem2.CommandParameter = ( object ) localVariable._AnnotationBase11;
-        items2.Add( ( IBarItem ) barButtonItem2 );
-        PopupMenu popupMenu2 = popupMenu1;
-        if ( hasAnnotation )
-            BarManager.SetDXContextMenu( ( UIElement ) localVariable._AnnotationBase11, ( IPopupControl ) popupMenu2 );
-        if ( hasAnnotation )
-        {
-            localVariable._AnnotationBase11.KeyDown += new KeyEventHandler( localVariable.Method003 );
-            localVariable._AnnotationBase11.Selected += new EventHandler( localVariable.Method004 );
-            localVariable._AnnotationBase11.PreviewMouseLeftButtonDown += new MouseButtonEventHandler( localVariable.Method005 );
-            localVariable._AnnotationBase11.Unselected += new EventHandler( localVariable.Method006 );
-            localVariable._AnnotationBase11.DragStarted += new EventHandler<EventArgs>( localVariable.Method007 );
-            localVariable._AnnotationBase11.DragEnded += new EventHandler<EventArgs>( localVariable.Method008 );
-        }
-        else
-        {
-            localVariable._AnnotationBase11.KeyDown -= new KeyEventHandler( localVariable.Method003 );
-            localVariable._AnnotationBase11.Selected -= new EventHandler( localVariable.Method004 );
-            localVariable._AnnotationBase11.PreviewMouseLeftButtonDown -= new MouseButtonEventHandler( localVariable.Method005 );
-            localVariable._AnnotationBase11.Unselected -= new EventHandler( localVariable.Method006 );
-            localVariable._AnnotationBase11.DragStarted -= new EventHandler<EventArgs>( localVariable.Method007 );
-            localVariable._AnnotationBase11.DragEnded -= new EventHandler<EventArgs>( localVariable.Method008 );
-        }
-    }
-
-    private void AddDependencyProperties( AnnotationBase _param1 )
-    {
-        FxAnnotationModifier.SomeClass7237 doDcwiev7trI4Ny0 = new FxAnnotationModifier.SomeClass7237();
-        doDcwiev7trI4Ny0._variableSome3535 = this;
-        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 = _param1;
-        if ( this.ChartArea == null )
-            return;
-        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Selected += new EventHandler( doDcwiev7trI4Ny0.\u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D);
-        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Unselected += new EventHandler( doDcwiev7trI4Ny0.\u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D);
-        List<DependencyProperty> dependencyPropertyList = new List<DependencyProperty>()
-    {
-      AnnotationBase.IsHiddenProperty,
-      AnnotationBase.IsEditableProperty,
-      AnnotationBase.X1Property,
-      AnnotationBase.X2Property,
-      AnnotationBase.Y1Property,
-      AnnotationBase.Y2Property,
-      AnnotationBase.CoordinateModeProperty
-    };
-        if ( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is LineAnnotationBase )
-        {
-            dependencyPropertyList.Add( LineAnnotationBase.StrokeThicknessProperty );
-            dependencyPropertyList.Add( LineAnnotationBase.StrokeProperty );
-        }
-        if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation ) )
-        {
-            if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation ) )
+            if ( s.b is LineAnnotationBase lineAnno )
             {
-                if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is BoxAnnotation ) )
-                {
-                    if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is TextAnnotation ) )
-                    {
-                        if ( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is RulerAnnotation )
-                            dependencyPropertyList.Add( Control.BackgroundProperty );
-                    }
-                    else
-                    {
-                        dependencyPropertyList.Add( TextAnnotation.TextProperty );
-                        dependencyPropertyList.Add( Control.BackgroundProperty );
-                        dependencyPropertyList.Add( Control.BorderBrushProperty );
-                        dependencyPropertyList.Add( Control.BorderThicknessProperty );
-                    }
-                }
-                else
-                {
-                    dependencyPropertyList.Add( Control.BackgroundProperty );
-                    dependencyPropertyList.Add( Control.BorderBrushProperty );
-                    dependencyPropertyList.Add( Control.BorderThicknessProperty );
-                }
+                data.Stroke = lineAnno.Stroke;
+                data.Thickness = new Thickness?(new Thickness(lineAnno.StrokeThickness));
             }
-            else
-                dependencyPropertyList.Add( FrameworkElement.VerticalAlignmentProperty );
-        }
-        else
-            dependencyPropertyList.Add( FrameworkElement.HorizontalAlignmentProperty );
-        dependencyPropertyList.ForEach( new Action<DependencyProperty>( doDcwiev7trI4Ny0.\u0023\u003Dz2YagnOQq\u0024fEh5b7gci8gwU8\u003D) );
-    }
-
-    private ChartDrawData.AnnotationData GetAnnotationData( AnnotationBase _param1 )
-    {
-        FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D vm6DexIkyzzokCaW;
-        vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 = _param1;
-        ChartDrawData.AnnotationData annotationData = new ChartDrawData.AnnotationData();
-        vm6DexIkyzzokCaW.\u0023\u003DzFlkZpfJp6G9R = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
-        annotationData.IsVisible = new bool?( !vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.IsHidden );
-        annotationData.IsEditable = new bool?( this.HasAnnotation( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 ) );
-        annotationData.CoordinateMode = new AnnotationCoordinateMode?( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.CoordinateMode );
-        annotationData.X1 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X1, ref vm6DexIkyzzokCaW );
-        annotationData.X2 = FxAnnotationModifier.\u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X2, ref vm6DexIkyzzokCaW );
-        annotationData.Y1 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y1, ref vm6DexIkyzzokCaW );
-        annotationData.Y2 = FxAnnotationModifier.\u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y2, ref vm6DexIkyzzokCaW );
-        if ( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1 )
-        {
-            annotationData.Stroke = z2vouRgM1.Stroke;
-            annotationData.Thickness = new Thickness?( new Thickness( z2vouRgM1.StrokeThickness ) );
-        }
-        if ( !( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation z2vouRgM5 ) )
-        {
-            if ( !( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation z2vouRgM4 ) )
+            else if ( s.b is HorizontalLineAnnotation hLine )
             {
-                if ( !( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is BoxAnnotation z2vouRgM3 ) )
+                data.HorizontalAlignment = new HorizontalAlignment?(hLine.HorizontalAlignment);
+                data.LabelPlacement = (StockSharp.Charting.LabelPlacement)( hLine.LabelPlacement );
+                data.ShowLabel = new bool?(hLine.ShowLabel);
+            }
+            else if ( s.b is VerticalLineAnnotation vLine )
+            {
+                data.VerticalAlignment = new VerticalAlignment?(vLine.VerticalAlignment);
+                data.LabelPlacement = (StockSharp.Charting.LabelPlacement)( vLine.LabelPlacement );
+                data.ShowLabel = new bool?(vLine.ShowLabel);
+            }
+            else if ( s.b is BoxAnnotation box )
+            {
+                data.Fill = box.Background;
+                data.Stroke = box.BorderBrush;
+                data.Thickness = new Thickness?(box.BorderThickness);
+            }
+            else if ( s.b is TextAnnotation text )
+            {
+                data.Foreground = text.Foreground;
+                data.Text = text.Text;
+                data.Fill = text.Background;
+                data.Stroke = text.BorderBrush;
+                data.Thickness = new Thickness?(text.BorderThickness);
+            }
+
+
+            return data;
+        }
+
+        public void RemoveAnnotation(ChartAnnotation annotation)
+        {
+            AnnotationBase annotationBase;
+            if ( !_baseToAnnotationPair.TryGetKey(annotation, out annotationBase) )
+            {
+                return;
+            }
+
+            _annotationCollection.Remove(annotationBase);
+            _baseToAnnotationPair.Remove(annotationBase);
+            _chartArea.Elements.Remove(annotation);
+
+            ChartArea?.InvokeAnnotationDeletedEvent(annotation);
+        }
+
+
+
+
+
+        public static IComparable IndexToData(IComparable input, ref Struct1 s)
+        {
+            if ( input == null )
+                return null;
+
+            if ( input is int )
+            {
+                int index = (int)input;
+
+                if ( !( s.sCalc is ICategoryCoordinateCalculator calculator ) )
                 {
-                    if ( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is TextAnnotation z2vouRgM2 )
-                    {
-                        annotationData.Foreground = z2vouRgM2.Foreground;
-                        annotationData.Text = z2vouRgM2.Text;
-                        annotationData.Fill = z2vouRgM2.Background;
-                        annotationData.Stroke = z2vouRgM2.BorderBrush;
-                        annotationData.Thickness = new Thickness?( z2vouRgM2.BorderThickness );
-                    }
+                    throw new InvalidOperationException(LocalizedStrings.UnexpectedCoordTypeParams.Put("int"));
                 }
-                else
+
+                var datetimeData = (DateTime)calculator.TransformIndexToData(index);
+
+                return new DateTimeOffset(datetimeData, TimeSpan.Zero);
+            }
+
+            if ( input is DateTime )
+            {
+                return new DateTimeOffset((DateTime)input, TimeSpan.Zero);
+            }
+
+            if ( input is double )
+            {
+                return (double)input;
+            }
+
+            throw new InvalidOperationException(LocalizedStrings.UnexpectedCoordTypeParams.Put(input.GetType().Name));
+        }
+
+        internal static IComparable DataToIndex(IComparable input, ref Struct1 s)
+        {
+            if ( input == null )
+            {
+                return null;
+            }
+
+            if ( input is double )
+            {
+                double output = (double)input;
+
+                if ( s.b.CoordinateMode != SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.Relative && s.b.CoordinateMode != SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeY )
                 {
-                    annotationData.Fill = z2vouRgM3.Background;
-                    annotationData.Stroke = z2vouRgM3.BorderBrush;
-                    annotationData.Thickness = new Thickness?( z2vouRgM3.BorderThickness );
+                    return output.To<Decimal>();
                 }
+
+                return output;
+            }
+
+            throw new InvalidOperationException(LocalizedStrings.UnexpectedCoordTypeParams.Put(input.GetType().Name));
+        }
+
+        internal static IComparable GetYCoordinate(IComparable input, ref Struct0 s)
+        {
+            if ( input == null )
+            {
+                return null;
+            }
+
+            if ( input is DateTimeOffset )
+            {
+                return ( (DateTimeOffset)input ).UtcDateTime;
+            }
+
+            if ( s.sCalc is ICategoryCoordinateCalculator && ( s.b.CoordinateMode == SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.Absolute || s.b.CoordinateMode == SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeY ) )
+            {
+                throw new InvalidOperationException(LocalizedStrings.UnexpectedCoordTypeParams.Put(input.GetType().Name));
+            }
+
+            if ( input is Decimal )
+            {
+                return Decimal.ToDouble((Decimal)input);
+            }
+
+            if ( !( input is double ) )
+            {
+                throw new InvalidOperationException(LocalizedStrings.UnexpectedCoordTypeParams.Put(input.GetType().Name));
+            }
+
+            return (double)input;
+        }
+
+        internal static IComparable GetYCoordinate(IComparable input)
+        {
+            if ( input == null )
+            {
+                return null;
+            }
+
+            if ( input is Decimal )
+            {
+                return Decimal.ToDouble((Decimal)input);
+            }
+
+            if ( input is double )
+            {
+                return (double)input;
+            }
+
+
+            throw new InvalidOperationException(LocalizedStrings.UnexpectedCoordTypeParams.Put(input.GetType().Name));
+        }
+
+        private void AddNewMenu(AnnotationBase annoBase, bool hasAnnotation)
+        {
+            if ( hasAnnotation == HasAnnotation(annoBase) )
+            {
+                return;
+            }
+
+            if ( hasAnnotation )
+            {
+                _annotationBaseSet.Add(annoBase);
             }
             else
             {
-                annotationData.VerticalAlignment = new VerticalAlignment?( z2vouRgM4.VerticalAlignment );
-                annotationData.LabelPlacement = new LabelPlacement?( z2vouRgM4.LabelPlacement );
-                annotationData.ShowLabel = new bool?( z2vouRgM4.ShowLabel );
+                _annotationBaseSet.Remove(annoBase);
             }
-        }
-        else
-        {
-            annotationData.HorizontalAlignment = new HorizontalAlignment?( z2vouRgM5.HorizontalAlignment );
-            annotationData.LabelPlacement = new LabelPlacement?( z2vouRgM5.LabelPlacement );
-            annotationData.ShowLabel = new bool?( z2vouRgM5.ShowLabel );
-        }
-        return annotationData;
-    }
 
-    public void GuiUpdateAndClear( ChartAnnotation _param1 )
-    {
-        AnnotationBase annotationBase;
-        if ( !this._baseToAnnotationPair.TryGetKey( _param1, ref annotationBase ) )
-            return;
-        this._annotationCollection.Remove( ( IAnnotation ) annotationBase );
-        ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._baseToAnnotationPair ).Remove( annotationBase );
-        ( ( ICollection<IChartElement> ) this._chartArea.Elements ).Remove( ( IChartElement ) _param1 );
-        this.ChartArea?.\u0023\u003DzXartur54T48t( _param1 );
-    }
+            annoBase.IsEditable = hasAnnotation;
+            annoBase.CanEditText = hasAnnotation;
+            annoBase.FocusVisualStyle = null;
+            //vlaHqpwJgrmBsvfI.\u0023\u003Dz8yBlZ7wLyGMQ = new \u0023\u003DzSQJobdqtH0NktyvbaGGemSPQUc7tX1uNXA\u003D\u003D< AnnotationBase > ( new Action<AnnotationBase>( vlaHqpwJgrmBsvfI.Func1 ) );
 
-    public void Draw(
-      ChartAnnotation _param1,
-      ChartDrawData.AnnotationData _param2 )
-    {
-        FxAnnotationModifier.SomeClass343 vqd1Qhu2nAw1nzwT0;
-        bool? nullable;
-        if ( !this._baseToAnnotationPair.TryGetKey( _param1, ref vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ) )
-        {
-            Type type = _param1.Type.GetType();
-            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 = ( AnnotationBase ) Activator.CreateInstance( type );
-            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxisId = _param1.XAxisId;
-            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.YAxisId = _param1.YAxisId;
-            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.IsHidden = false;
-            AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
-            nullable = _param2.IsEditable;
-            int num = !(!nullable.GetValueOrDefault() & nullable.HasValue) ? 1 : 0;
-            this.AddMenuItems( z2vouRgM, num != 0 );
-            this.AddDependencyProperties( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 );
-            ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._baseToAnnotationPair )[ vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ] = _param1;
-            this._annotationCollection.Add( ( IAnnotation ) vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 );
-            this.ChartArea?.InvokeAnnotationCreatedEvent( _param1 );
-        }
-        vqd1Qhu2nAw1nzwT0.\u0023\u003DzFlkZpfJp6G9R = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
-        try
-        {
-            this._isUpdating = true;
-            nullable = _param2.IsVisible;
-            if ( nullable.HasValue )
+
+            PopupMenu menu = new PopupMenu();
+            //CommonBarItemCollection items1 = menu.Items;
+            BarButtonItem mItem = new BarButtonItem();
+            mItem.Glyph = ThemedIconsExtension.GetImage("remove");
+            mItem.Content = ( "LocalizedStrings.Str1507" + "…" );
+            mItem.Command = new ActionCommand<AnnotationBase>(b =>
             {
-                AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
-                nullable = _param2.IsVisible;
-                int num = !nullable.Value ? 1 : 0;
-                z2vouRgM.IsHidden = num != 0;
-            }
-            nullable = _param2.IsEditable;
-            if ( nullable.HasValue )
+                _annotationEditor.IsOpen = false;
+
+                Ecng.Collections.CollectionHelper.ForEach(ParentSurface.Annotations.Where(i => i != b), i => i.IsSelected = false);
+
+
+                b.IsSelected = true;
+                _annotationEditor.PlacementTarget = b;
+                _annotationEditor.IsOpen = true;
+            });
+            mItem.CommandParameter = annoBase;
+            menu.Items.Add(mItem);
+
+            var deleteCommand = new ActionCommand<AnnotationBase>(b =>
             {
-                AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
-                nullable = _param2.IsEditable;
-                int num = nullable.Value ? 1 : 0;
-                this.AddMenuItems( z2vouRgM, num != 0 );
-            }
-            if ( _param2.CoordinateMode.HasValue )
-                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.CoordinateMode = _param2.CoordinateMode.Value;
-            IComparable comparable1 = FxAnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
-            IComparable comparable2 = FxAnnotationModifier.\u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
-            IComparable comparable3 = FxAnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D( _param2.Y1 );
-            IComparable comparable4 = FxAnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D( _param2.Y2 );
-            if ( comparable1 != null )
-                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.X1 = comparable1;
-            if ( comparable2 != null )
-                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.X2 = comparable2;
-            if ( comparable3 != null )
-                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.Y1 = comparable3;
-            if ( comparable4 != null )
-                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.Y2 = comparable4;
-            if ( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1 )
-            {
-                if ( _param2.Stroke != null )
-                    z2vouRgM1.Stroke = _param2.Stroke;
-                if ( _param2.Thickness.HasValue )
-                    z2vouRgM1.StrokeThickness = _param2.Thickness.Value.Left;
-            }
-            if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation z2vouRgM6 ) )
-            {
-                if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation z2vouRgM5 ) )
+                _annotationCollection.Remove(b);
+
+                ChartAnnotation annotation;
+                if ( !_baseToAnnotationPair.TryGetValue(b, out annotation) )
                 {
-                    if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is BoxAnnotation z2vouRgM4 ) )
-                    {
-                        if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is TextAnnotation z2vouRgM3 ) )
-                        {
-                            if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is RulerAnnotation z2vouRgM2 ) || _param2.Fill == null )
-                                return;
-                            Brush brush = _param2.Fill is SolidColorBrush fill ? (Brush) new SolidColorBrush(fill.Color.ToTransparent((byte) 50)) : _param2.Fill;
-                            z2vouRgM2.Background = brush;
-                        }
-                        else
-                        {
-                            if ( _param2.Foreground != null )
-                                z2vouRgM3.Foreground = _param2.Foreground;
-                            if ( _param2.Text != null )
-                                z2vouRgM3.Text = _param2.Text;
-                            if ( _param2.Fill != null )
-                                z2vouRgM3.Background = _param2.Fill;
-                            if ( _param2.Stroke != null )
-                                z2vouRgM3.BorderBrush = _param2.Stroke;
-                            if ( !_param2.Thickness.HasValue )
-                                return;
-                            z2vouRgM3.BorderThickness = _param2.Thickness.Value;
-                        }
-                    }
-                    else
-                    {
-                        if ( _param2.Fill != null )
-                            z2vouRgM4.Background = _param2.Fill;
-                        if ( _param2.Stroke != null )
-                            z2vouRgM4.BorderBrush = _param2.Stroke;
-                        if ( !_param2.Thickness.HasValue )
-                            return;
-                        z2vouRgM4.BorderThickness = _param2.Thickness.Value;
-                    }
-                }
-                else
-                {
-                    if ( _param2.VerticalAlignment.HasValue )
-                        z2vouRgM5.VerticalAlignment = _param2.VerticalAlignment.Value;
-                    if ( _param2.LabelPlacement.HasValue )
-                        z2vouRgM5.LabelPlacement = _param2.LabelPlacement.Value;
-                    nullable = _param2.ShowLabel;
-                    if ( !nullable.HasValue )
-                        return;
-                    VerticalLineAnnotation verticalLineAnnotation = z2vouRgM5;
-                    nullable = _param2.ShowLabel;
-                    int num = nullable.Value ? 1 : 0;
-                    verticalLineAnnotation.ShowLabel = num != 0;
-                }
-            }
-            else
-            {
-                if ( _param2.HorizontalAlignment.HasValue )
-                    z2vouRgM6.HorizontalAlignment = _param2.HorizontalAlignment.Value;
-                if ( _param2.LabelPlacement.HasValue )
-                    z2vouRgM6.LabelPlacement = _param2.LabelPlacement.Value;
-                nullable = _param2.ShowLabel;
-                if ( !nullable.HasValue )
                     return;
-                HorizontalLineAnnotation horizontalLineAnnotation = z2vouRgM6;
-                nullable = _param2.ShowLabel;
-                int num = nullable.Value ? 1 : 0;
-                horizontalLineAnnotation.ShowLabel = num != 0;
+                }
+
+                //_baseToAnnotationPair.Remove( b );
+                _chartArea.Elements.Remove(annotation);
+
+                ChartArea?.InvokeAnnotationDeletedEvent(annotation);
+            });
+
+            BarButtonItem mItem2 = new BarButtonItem();
+            mItem2.Glyph = ThemedIconsExtension.GetImage("remove2");
+            mItem2.Content = "LocalizedStrings.Str2060";
+            mItem2.Command = deleteCommand;
+            mItem2.CommandParameter = annoBase;
+            menu.Items.Add(mItem2);
+
+
+            if ( hasAnnotation )
+            {
+                BarManager.SetDXContextMenu(annoBase, menu);
+            }
+
+
+            EventHandler<EventArgs> dragEndedCommand = (s, e) =>
+            {
+                if ( !_annotationEditor.IsOpen )
+                {
+                    return;
+                }
+
+                _annotationEditor.IsOpen = false;
+                _annotationEditor.IsOpen = true;
+            };
+
+            KeyEventHandler keyDownHandler = (s, e) =>
+            {
+                if ( !annoBase.IsSelected || Keyboard.Modifiers != ModifierKeys.None )
+                {
+                    return;
+                }
+
+                if ( e.Key == Key.Delete && deleteCommand.CanExecute(annoBase) )
+                {
+                    deleteCommand.Execute(annoBase);
+                }
+                else
+                {
+                    if ( e.Key != Key.Escape )
+                    {
+                        return;
+                    }
+
+                    // Tony Fix
+                    // ( annoBase as TextAnnotation )?.RemoveFocusFromInputTextArea( );
+                }
+            };
+
+            if ( hasAnnotation )
+            {
+                annoBase.KeyDown += keyDownHandler;
+                annoBase.Selected += (s, e) => Keyboard.Focus(annoBase);
+                annoBase.PreviewMouseLeftButtonDown += (s, e) => Keyboard.Focus(annoBase);
+                annoBase.Unselected += (s, e) => _annotationEditor.IsOpen = false;
+                annoBase.DragStarted += AnnoBase_DragStarted;
+                annoBase.DragEnded += dragEndedCommand;
+            }
+            else
+            {
+                annoBase.KeyDown -= keyDownHandler;
+                annoBase.Selected -= (s, e) => Keyboard.Focus(annoBase);
+                annoBase.PreviewMouseLeftButtonDown -= (s, e) => Keyboard.Focus(annoBase);
+                annoBase.Unselected -= (s, e) => _annotationEditor.IsOpen = false;
+                annoBase.DragStarted -= AnnoBase_DragStarted;
+                annoBase.DragEnded -= dragEndedCommand;
             }
         }
-        finally
+
+        private void AddDependencyProperties(AnnotationBase b)
         {
-            this._isUpdating = false;
-            this.ChartArea?.InvokeAnnotationModifiedEvent( _param1, this.GetAnnotationData( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ) );
-        }
-    }
+            if ( ChartArea == null )
+            {
+                return;
+            }
 
-    [DebuggerNonUserCode]
-    [GeneratedCode( "PresentationBuildTasks", "9.0.0.0" )]
-    public void InitializeComponent()
-    {
-        if ( this._someInternalBoolean )
-            return;
-        this._someInternalBoolean = true;
-        Application.LoadComponent( ( object ) this, new Uri( "/StockSharp.Xaml.Charting;V5.0.0;component/ultrachart/ultrachartannotationmodifier.xaml", UriKind.Relative ) );
-    }
+            b.Selected += (s, e) =>
+            {
+                var myBase = (AnnotationBase)s;
 
-    [DebuggerNonUserCode]
-    [GeneratedCode( "PresentationBuildTasks", "9.0.0.0" )]
-    public Delegate \u0023\u003DzciIj4U627yBM( Type _param1, string _param2 )
-    {
-        return Delegate.CreateDelegate( _param1, ( object ) this, _param2 );
-    }
+                var a = Ecng.Collections.CollectionHelper.TryGetValue(_baseToAnnotationPair, myBase);
 
-    [DebuggerNonUserCode]
-    [GeneratedCode( "PresentationBuildTasks", "9.0.0.0" )]
-    [EditorBrowsable( EditorBrowsableState.Never )]
-    void IComponentConnector.\u0023\u003DzuNHLeGEnMjz9FDFZ6wymuXfyw_Iz(int _param1, object _param2)
-    {
-        this._someInternalBoolean = true;
-    }
+                ChartArea?.InvokeAnnotationSelectedEvent(a, ( a == null ) ? null : GetAnnotationData(myBase));
+            };
 
-    public static IComparable \u0023\u003DqilGCdp9aFjNd5SLe7I3UCUsoNPZA2A4LqGx2E87OFI3Oof40izFV2yt8T4S4jCDk(
-      IComparable _param0,
-      ref FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
-    {
-        switch ( _param0 )
-        {
-            case null:
-                return ( IComparable ) null;
-            case int num1:
-                if ( !( _param1.\u0023\u003DzFlkZpfJp6G9R is ICategoryCoordinateCalculator zFlkZpfJp6G9R))
-          throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
-          {
-            (object) "int"
-          } ) );
-                return ( IComparable ) new DateTimeOffset( zFlkZpfJp6G9R.\u0023\u003DzWZQlXHuDrnKc( num1 ), TimeSpan.Zero );
-            case DateTime dateTime:
-                return ( IComparable ) new DateTimeOffset( dateTime, TimeSpan.Zero );
-            case double num2:
-                return ( IComparable ) num2;
-            default:
-                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+            b.Unselected += (s, e) =>
+            {
+                ChartArea?.InvokeAnnotationSelectedEvent(null, null);
+            };
+
+
+            PooledList<DependencyProperty> propList = new PooledList<DependencyProperty>()
+            {
+                AnnotationBase.IsHiddenProperty,
+                AnnotationBase.IsEditableProperty,
+                AnnotationBase.X1Property,
+                AnnotationBase.X2Property,
+                AnnotationBase.Y1Property,
+                AnnotationBase.Y2Property,
+                AnnotationBase.CoordinateModeProperty
+            };
+
+            if ( b is LineAnnotationBase )
+            {
+                propList.Add(LineAnnotationBase.StrokeThicknessProperty);
+                propList.Add(LineAnnotationBase.StrokeProperty);
+            }
+
+            if ( b is HorizontalLineAnnotation )
+            {
+                propList.Add(HorizontalAlignmentProperty);
+            }
+            else if ( b is VerticalLineAnnotation )
+            {
+                propList.Add(VerticalAlignmentProperty);
+            }
+            else if ( b is BoxAnnotation )
+            {
+                propList.Add(BackgroundProperty);
+                propList.Add(BorderBrushProperty);
+                propList.Add(BorderThicknessProperty);
+            }
+            else if ( b is TextAnnotation )
+            {
+                propList.Add(TextAnnotation.TextProperty);
+                propList.Add(BackgroundProperty);
+                propList.Add(BorderBrushProperty);
+                propList.Add(BorderThicknessProperty);
+            }
+            else if ( b is RulerAnnotation )
+            {
+                propList.Add(BackgroundProperty);
+            }
+
+            foreach ( DependencyProperty d in propList )
+            {
+                b.AddPropertyListener(d, e =>
                 {
-          (object) _param0.GetType().Name
-                } ) );
+                    var annotation = Ecng.Collections.CollectionHelper.TryGetValue(_baseToAnnotationPair, b);
+
+
+                    if ( annotation == null )
+                    {
+                        return;
+                    }
+
+                    Maybe.Do(annotation, a =>
+                    {
+                        if ( _isUpdating )
+                        {
+                            return;
+                        }
+
+                        ChartArea.InvokeAnnotationModifiedEvent(a, GetAnnotationData(b));
+                    });
+                });
+            }
         }
-    }
 
-    public static IComparable \u0023\u003DqTAamYC40X7Nd2JjKg0gRJnEFqikmgfX0UtSubtvET0wvj813KCUIgmYrc9ybxFYK(
-      IComparable _param0,
-      ref FxAnnotationModifier.\u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D _param1)
-    {
-        if ( _param0 == null )
-            return ( IComparable ) null;
-        if ( _param0 is double num )
-            return _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Relative || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY ? ( IComparable ) num : ( IComparable ) Converter.To<Decimal>( ( object ) num );
-        throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+        private void AnnoBase_DragStarted(object sender, EventArgs e)
         {
-      (object) _param0.GetType().Name
-        } ) );
-    }
+            _isUpdating = true;
+        }
 
-    public static IComparable \u0023\u003DqB_tciyqtNGJB3PpHZflMM\u0024N9EO6XlBaG688iDCFvTDc\u003D(
-      IComparable _param0,
-      ref FxAnnotationModifier.SomeClass343 _param1)
-  {
-    if (_param0 == null)
-      return (IComparable) null;
-    if (_param0 is DateTimeOffset dateTimeOffset)
-      return (IComparable) dateTimeOffset.UtcDateTime;
-    if (_param0 is DateTime dateTime)
-      return (IComparable) dateTime;
-    if (_param1.\u0023\u003DzFlkZpfJp6G9R is ICategoryCoordinateCalculator && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
-      throw new InvalidOperationException( StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
-      {
-        (object) _param0.GetType().Name
-}));
-    switch (_param0)
-    {
-      case Decimal num1:
-        return (IComparable) (double) num1;
-      case double num2:
-        return (IComparable) num2;
-      default:
-        throw new InvalidOperationException( StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+        private bool HasAnnotation(AnnotationBase b)
         {
-          (object) _param0.GetType().Name
-        }));
-    }
-  }
+            return _annotationBaseSet.Contains(b);
+        }
 
-  public static IComparable \u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(
-    IComparable _param0)
-  {
-    switch (_param0)
-    {
-      case null:
-        return ( IComparable ) null;
-      case Decimal num1:
-    return ( IComparable ) ( double ) num1;
-case double num2:
-    return ( IComparable ) num2;
-default:
-    throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
-    {
-          (object) _param0.GetType().Name
-    } ) );
-}
-  }
+        [StructLayout(LayoutKind.Auto)]
+        public struct Struct0
+        {
+            public ICoordinateCalculator<double> sCalc;
+            public AnnotationBase b;
+        }
 
-  [Serializable]
-private new sealed class SomeClass34343383
-{
-    public static readonly FxAnnotationModifier.SomeClass34343383 SomeMethond0343 = new FxAnnotationModifier.SomeClass34343383();
-    public static Action<IAnnotation> \u0023\u003Dzm5iuiBtfSUf6PnApUQ\u003D\u003D;
-    public static Action<IAnnotation> \u0023\u003Dz\u0024KPevpYcSl7cnlctrA\u003D\u003D;
+        [StructLayout(LayoutKind.Auto)]
+        public struct Struct1
+        {
+            public ICoordinateCalculator<double> sCalc;
+            public AnnotationBase b;
+        }
 
-    public void SomeImportantMethod3234(
-      IAnnotation _param1 )
-    {
-        _param1.set_IsEditable( true );
-    }
 
-    public void \u0023\u003DzvGJdbcfbzF5NLww3X__o_JGpcRO1(
-      IAnnotation _param1 )
-    {
-        _param1.set_IsSelected( false );
     }
 }
 
-[StructLayout( LayoutKind.Auto )]
-private struct SomeClass343
-{
-
-    public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzFlkZpfJp6G9R;
-    
-    public AnnotationBase _public_ActiveOrderAnnotation_083;
-}
-
-[StructLayout( LayoutKind.Auto )]
-private struct \u0023\u003DzN3EMs6Vm6DExIKYZZOKCa\u0024w\u003D
-  {
 
 
-    public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzFlkZpfJp6G9R;
-    
-    public AnnotationBase _public_ActiveOrderAnnotation_083;
-  }
+//// Decompiled with JetBrains decompiler
+//// Type: -.AnnotationModifier
+//// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+//// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
+//// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
-  
+//using DevExpress.Xpf.Bars;
+//using DevExpress.Xpf.Editors.Helpers;
+//using Ecng.Collections;
+//using Ecng.Common;
+//using Ecng.Xaml;
+//using SciChart.Charting.Visuals.Annotations;
+//using StockSharp.BusinessEntities;
+//using StockSharp.Charting;
+//using StockSharp.Localization;
+//using StockSharp.Messages;
+//using StockSharp.Xaml;
+//using StockSharp.Xaml.Charting;
+//using StockSharp.Xaml.Charting.Ultrachart;
+//using StockSharp.Xaml.Charting.Visuals.Annotations;
+//using System;
+//using System.CodeDom.Compiler;
+//using System.Collections;
+//using System.Collections.Generic;
+//using System.ComponentModel;
+//using System.Diagnostics;
+//using System.Linq;
+//using System.Runtime.InteropServices;
+//using System.Windows;
+//using System.Windows.Controls;
+//using System.Windows.Input;
+//using System.Windows.Markup;
+//using System.Windows.Media;
 
-  private sealed class \u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D
-  {
-    public AnnotationBase _public_ActiveOrderAnnotation_083;
+//#nullable enable
+//namespace StockSharp.Xaml.Charting;
 
-    public bool Method009(
-      IAnnotation _param1)
-    {
-      return _param1 != this._public_ActiveOrderAnnotation_083;
-    }
-  }
+//public sealed class AnnotationModifier :
+//  fxAnnotationCreationModifier,
+//  IComponentConnector
+//{
 
-  private sealed class SomeClass7237
-  {
-    public FxAnnotationModifier _variableSome3535;
-    public AnnotationBase _public_ActiveOrderAnnotation_083;
-    public Action<DependencyPropertyChangedEventArgs> \u0023\u003DzDg_APFfs\u0024qGS;
+//    private sealed class SomeClass398
+//    {
+//        public AnnotationModifier _variableSome3535;
+//        public AnnotationBase _AnnotationBase11;
+//        public DelegateCommand<AnnotationBase> _DelegateCommand_0001;
 
-    public void \u0023\u003DzO2Calw5PtJlYUGt7JwufXn8\u003D(
-    #nullable enable
-    object? _param1, EventArgs _param2)
-    {
-      AnnotationBase annotationBase = (AnnotationBase) _param1;
-      ChartAnnotation chartAnnotation = CollectionHelper.TryGetValue<AnnotationBase, ChartAnnotation>((IDictionary<AnnotationBase, ChartAnnotation>) this._variableSome3535._baseToAnnotationPair, annotationBase);
-      this._variableSome3535.ChartArea?.InvokeAnnotationSelectedEvent(chartAnnotation, Equatable<ChartAnnotation>.op_Equality((Equatable<ChartAnnotation>) chartAnnotation, (ChartAnnotation) null) ? (ChartDrawData.AnnotationData) null : this._variableSome3535.GetAnnotationData(annotationBase));
-    }
+//        public void Method001(AnnotationBase _param1)
+//        {
+//            this._variableSome3535._annotationCollection.Remove( ( IAnnotation ) _param1 );
+//            ChartAnnotation chartAnnotation;
+//            if ( !( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).TryGetValue( _param1, ref chartAnnotation ) )
+//                return;
+//            ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).Remove( _param1 );
+//            ( ( ICollection<IChartElement> ) this._variableSome3535._chartArea.Elements ).Remove( ( IChartElement ) chartAnnotation );
+//            this._variableSome3535.ChartArea?.InvokeAnnotationDeletedEvent( chartAnnotation );
+//        }
 
-    public void \u0023\u003DzMAzDDfbdHsJSDAK_mit5cEE\u003D(object? _param1, EventArgs _param2)
-    {
-      this._variableSome3535.ChartArea?.InvokeAnnotationSelectedEvent((ChartAnnotation) null, (ChartDrawData.AnnotationData) null);
-    }
+//        public void Method002( AnnotationBase _param1 )
+//        {
+//            AnnotationModifier.SomeSealedClassAgain032 wd3zPhu0dS2ZqhuzuE = new AnnotationModifier.SomeSealedClassAgain032();
+//            wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083 = _param1;
+//            UltrachartAnnotationEditor m53T5BwgtpbkV9ZEjd = this._variableSome3535.GetAnnotationEditor();
+//            m53T5BwgtpbkV9ZEjd.IsOpen = false;
+//            CollectionHelper.ForEach<IAnnotation>( this._variableSome3535.ParentSurface.get_Annotations().Where<IAnnotation>( new Func<IAnnotation, bool>( wd3zPhu0dS2ZqhuzuE.Method009) ), AnnotationModifier.SomeClass34343383._Action_IAnnotation_003 ?? ( AnnotationModifier.SomeClass34343383._Action_IAnnotation_003 = new Action<IAnnotation>( AnnotationModifier.SomeClass34343383.SomeMethond0343.Setset_IsSelected_false_ ) ));
+//            wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083.IsSelected = true;
+//            m53T5BwgtpbkV9ZEjd.PlacementTarget = ( UIElement ) wd3zPhu0dS2ZqhuzuE._public_ActiveOrderAnnotation_083;
+//            m53T5BwgtpbkV9ZEjd.IsOpen = true;
+//        }
 
-    public void \u0023\u003Dz2YagnOQq\u0024fEh5b7gci8gwU8\u003D(
-    #nullable disable
-    DependencyProperty _param1)
-    {
-      this._public_ActiveOrderAnnotation_083.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.\u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D)));
-    }
+//        public void Method003(
+//          object _param1,
+//          KeyEventArgs _param2 )
+//        {
+//            if ( !this._AnnotationBase11.IsSelected || Keyboard.Modifiers != null )
+//                return;
+//            if ( _param2.Key == 32 /*0x20*/)
+//            {
+//                this._DelegateCommand_0001.TryExecute( ( object ) this._AnnotationBase11 );
+//            }
+//            else
+//            {
+//                if ( _param2.Key != 13 || !( this._AnnotationBase11 is TextAnnotation zLxiKoA ) )
+//                    return;
+//                zLxiKoA.RemoveFocusFromInputTextArea();
+//            }
+//        }
 
-    public void \u0023\u003DzBSmoA83lp78GLXOjbXNge4A\u003D(
-      DependencyPropertyChangedEventArgs _param1)
-    {
-      ChartAnnotation chartAnnotation;
-      if (!((KeyedCollection<AnnotationBase, ChartAnnotation>) this._variableSome3535._baseToAnnotationPair).TryGetValue(this._public_ActiveOrderAnnotation_083, ref chartAnnotation) || this._variableSome3535._isUpdating)
-        return;
-      this._variableSome3535.ChartArea.InvokeAnnotationModifiedEvent(chartAnnotation, this._variableSome3535.GetAnnotationData(this._public_ActiveOrderAnnotation_083));
-    }
-  }
-}
+//        public void Method004(
+//          object _param1,
+//          EventArgs _param2 )
+//        {
+//            Keyboard.Focus( ( IInputElement ) this._AnnotationBase11 );
+//        }
+
+//        public void Method005(
+//          object _param1,
+//          MouseButtonEventArgs _param2 )
+//        {
+//            Keyboard.Focus( ( IInputElement ) this._AnnotationBase11 );
+//        }
+
+//        public void Method006(
+//          object _param1,
+//          EventArgs _param2 )
+//        {
+//            this._variableSome3535.GetAnnotationEditor().IsOpen = false;
+//        }
+
+//        public void Method007(
+//          object _param1,
+//          EventArgs _param2 )
+//        {
+//            this._variableSome3535._isUpdating = true;
+//        }
+
+//        public void Method008(
+//          object _param1,
+//          EventArgs _param2 )
+//        {
+//            AnnotationBase annotationBase = (AnnotationBase) _param1;
+//            try
+//            {
+//                UltrachartAnnotationEditor m53T5BwgtpbkV9ZEjd = this._variableSome3535.GetAnnotationEditor();
+//                if ( !m53T5BwgtpbkV9ZEjd.IsOpen )
+//                    return;
+//                m53T5BwgtpbkV9ZEjd.IsOpen = false;
+//                m53T5BwgtpbkV9ZEjd.IsOpen = true;
+//            }
+//            finally
+//            {
+//                this._variableSome3535._isUpdating = false;
+//                ChartAnnotation chartAnnotation;
+//                if ( ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._variableSome3535._baseToAnnotationPair ).TryGetValue( annotationBase, ref chartAnnotation ) )
+//                    this._variableSome3535.ChartArea.InvokeAnnotationModifiedEvent( chartAnnotation, this._variableSome3535.GetAnnotationData( annotationBase ) );
+//            }
+//        }
+//    }
+//    private readonly 
+//  #nullable disable
+//  ChartArea _chartArea;
+
+//    private readonly AnnotationCollection _annotationCollection;
+
+//    private readonly PairSet<AnnotationBase, ChartAnnotation> _baseToAnnotationPair = new PairSet<AnnotationBase, ChartAnnotation>();
+
+//    private readonly HashSet<AnnotationBase> _annotationBaseSet = new HashSet<AnnotationBase>();
+
+//    private RulerAnnotation _rulerAnnotation;
+
+//    private bool _isUpdating;
+
+//    private UltrachartAnnotationEditor _annotationEditor = new UltrachartAnnotationEditor();
+
+//    public static readonly DependencyProperty UserAnnotationTypeProperty = DependencyProperty.Register(nameof (UserAnnotationType), typeof (ChartAnnotationTypes), typeof (AnnotationModifier), new PropertyMetadata((object) ChartAnnotationTypes.None, new PropertyChangedCallback(AnnotationModifier.OnUserAnnotationTypePropertyChanged)));
+
+//    private bool _someInternalBoolean;
+
+//    public AnnotationModifier(ChartArea area, AnnotationCollection annotation)
+//    {
+//        this.InitializeComponent();
+//        this._chartArea = area ?? throw new ArgumentNullException( "area" );
+//        this._annotationCollection = annotation ?? throw new ArgumentNullException( "annotations" );
+//    }
+
+//    private Chart ChartArea => this._chartArea.Chart as Chart;
+
+//    private UltrachartAnnotationEditor GetAnnotationEditor()
+//    {
+//        return this._annotationEditor ?? ( this._annotationEditor = new UltrachartAnnotationEditor() );
+//    }
+
+//    private static void OnUserAnnotationTypePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs _param1)
+//    {
+//        ( ( AnnotationModifier ) d ).SetAnnotationStyleAndType( ( ChartAnnotationTypes ) _param1.NewValue );
+//    }
+
+//    public ChartAnnotationTypes UserAnnotationType
+//    {
+//        get
+//        {
+//            return ( ChartAnnotationTypes ) this.GetValue( AnnotationModifier.UserAnnotationTypeProperty );
+//        }
+//        set
+//        {
+//            this.SetValue( AnnotationModifier.UserAnnotationTypeProperty, ( object ) value );
+//        }
+//    }
+
+//    private void RemoveRulerAnnotation()
+//    {
+//        if ( this._rulerAnnotation == null )
+//            return;
+//        this.ParentSurface.Annotations.Remove( ( IAnnotation ) this._rulerAnnotation );
+//        this._rulerAnnotation = ( RulerAnnotation ) null;
+//    }
+
+//    protected override AnnotationBase CreateAnnotation( Type annotationType, Style annotationStyle )
+//    {
+//        if ( annotationType != typeof( RulerAnnotation ) )
+//            return base.CreateAnnotation( annotationType, annotationStyle );
+//        this.RemoveRulerAnnotation();
+//        var candle =  this._chartArea.Elements.OfType<IChartCandleElement>().FirstOrDefault<IChartCandleElement>();
+
+//        double num = (double) ((Decimal?) ( (candle == null ? null :  this._chartArea.Chart.TryGetSubscription( candle ) )?.MarketData).PriceStep ?? 0.01M);
+
+//        var ruler = new RulerAnnotation();
+//        ruler.YAxisId = this.YAxisId;
+//        ruler.XAxisId = this.XAxisId;
+//        ruler.PriceStep = num;
+//        ruler.RemoveOnClick = true;
+
+
+//        this._rulerAnnotation = ruler;
+
+//        this.ParentSurface.Annotations.Add( ruler );
+//        return ( AnnotationBase ) ruler;
+//    }
+
+//    public override void OnModifierMouseDown( ModifierMouseArgs e )
+//    {
+//        if ( MathHelper.IsNaN( ( double ) this.YAxis.GetDataValue( e.MousePoint().Y ) ) )
+//            this.UserAnnotationType = ChartAnnotationTypes.None;
+//        else
+//            base.OnModifierMouseDown( e );
+//    }
+
+//    private void SetAnnotationStyleAndType( ChartAnnotationTypes annotationTypes )
+//    {
+//        if ( annotationTypes == ChartAnnotationTypes.None )
+//        {
+//            CollectionHelper.ForEach<IAnnotation>( this._annotationCollection, i => i.IsEditable = true );
+//            this.AnnotationType = ( Type ) null;
+//            this.IsEnabled = false;
+//        }
+//        else
+//        {
+//            Type type = annotationTypes.GetType();
+//            string key = type.Name + "Style";
+//            if ( this.Resources.Contains( ( object ) key ) )
+//                this.AnnotationStyle = ( Style ) this.Resources[ ( object ) key ];
+//            this.AnnotationType = type;
+//            this.IsEnabled = true;
+//        }
+//    }
+
+//    private void fxAnnotationCreationModifier_AnnotationCreated( object _param1, EventArgs _param2 )
+//    {
+//        var lastAnnotation = (AnnotationBase) this.Annotation;
+//        var justAddedAnnoType = this.UserAnnotationType;
+
+//        this.UserAnnotationType = ChartAnnotationTypes.None;
+//        this.AnnotationType = ( Type ) null;
+//        this.IsEnabled = false;
+
+//        if ( lastAnnotation == null )
+//            return;
+
+//        bool notRuler = !(lastAnnotation is RulerAnnotation);
+//        this.AddMenuItems( lastAnnotation, notRuler );
+//        this.AddDependencyProperties( lastAnnotation );
+
+//        ChartAnnotation chartAnnotation = new ChartAnnotation()
+//        {
+//            Type = justAddedAnnoType
+//        };
+
+//        _baseToAnnotationPair[ lastAnnotation ] = chartAnnotation;
+//        _chartArea.Elements.Add( chartAnnotation );
+
+//        Chart chart = this.ChartArea;
+//        if ( chart != null )
+//        {
+//            chart.InvokeAnnotationCreatedEvent( chartAnnotation );
+//            chart.InvokeAnnotationModifiedEvent( chartAnnotation, this.GetAnnotationData( lastAnnotation ) );
+//        }
+//        if ( !lastAnnotation.IsSelected )
+//            return;
+//        Keyboard.Focus( lastAnnotation );
+//        this.ChartArea?.InvokeAnnotationSelectedEvent( chartAnnotation, this.GetAnnotationData( lastAnnotation ) );
+//    }
+
+//    private bool HasAnnotation( AnnotationBase _param1 )
+//    {
+//        return this._annotationBaseSet.Contains( _param1 );
+//    }
+
+//    private void AddMenuItems( AnnotationBase annoBase, bool hasAnnotation )
+//    {
+//        AnnotationModifier.SomeClass398 localVariable = new AnnotationModifier.SomeClass398();
+//        localVariable._variableSome3535 = this;
+//        localVariable._AnnotationBase11 = annoBase;
+
+//        if ( hasAnnotation == HasAnnotation( annoBase ) )
+//        {
+//            return;
+//        }
+
+//        if ( hasAnnotation )
+//        {
+//            _annotationBaseSet.Add( annoBase );
+//        }
+//        else
+//        {
+//            _annotationBaseSet.Remove( annoBase );
+//        }
+
+//        annoBase.IsEditable = hasAnnotation;
+//        annoBase.CanEditText = hasAnnotation;
+//        annoBase.FocusVisualStyle = null;
+
+
+//        localVariable._DelegateCommand_0001 = new DelegateCommand<AnnotationBase>( new Action<AnnotationBase>( localVariable.Method001 ) );
+//        PopupMenu popupMenu1 = new PopupMenu();
+//        CommonBarItemCollection items1 = popupMenu1.Items;
+//        BarButtonItem barButtonItem1 = new BarButtonItem();
+//        barButtonItem1.Glyph = ThemedIconsExtension.GetImage( "Settings" );
+//        barButtonItem1.Content = ( object ) ( LocalizedStrings.Properties + "…" );
+//        barButtonItem1.Command = ( ICommand ) new DelegateCommand<AnnotationBase>( new Action<AnnotationBase>( localVariable.Method002 ) );
+//        barButtonItem1.CommandParameter = ( object ) localVariable._AnnotationBase11;
+//        items1.Add( ( IBarItem ) barButtonItem1 );
+//        CommonBarItemCollection items2 = popupMenu1.Items;
+//        BarButtonItem barButtonItem2 = new BarButtonItem();
+//        barButtonItem2.Glyph = ThemedIconsExtension.GetImage( "Remove2" );
+//        barButtonItem2.Content = ( object ) LocalizedStrings.Delete;
+//        barButtonItem2.Command = ( ICommand ) localVariable._DelegateCommand_0001;
+//        barButtonItem2.CommandParameter = ( object ) localVariable._AnnotationBase11;
+//        items2.Add( ( IBarItem ) barButtonItem2 );
+//        PopupMenu popupMenu2 = popupMenu1;
+//        if ( hasAnnotation )
+//            BarManager.SetDXContextMenu( ( UIElement ) localVariable._AnnotationBase11, ( IPopupControl ) popupMenu2 );
+//        if ( hasAnnotation )
+//        {
+//            localVariable._AnnotationBase11.KeyDown += new KeyEventHandler( localVariable.Method003 );
+//            localVariable._AnnotationBase11.Selected += new EventHandler( localVariable.Method004 );
+//            localVariable._AnnotationBase11.PreviewMouseLeftButtonDown += new MouseButtonEventHandler( localVariable.Method005 );
+//            localVariable._AnnotationBase11.Unselected += new EventHandler( localVariable.Method006 );
+//            localVariable._AnnotationBase11.DragStarted += new EventHandler<EventArgs>( localVariable.Method007 );
+//            localVariable._AnnotationBase11.DragEnded += new EventHandler<EventArgs>( localVariable.Method008 );
+//        }
+//        else
+//        {
+//            localVariable._AnnotationBase11.KeyDown -= new KeyEventHandler( localVariable.Method003 );
+//            localVariable._AnnotationBase11.Selected -= new EventHandler( localVariable.Method004 );
+//            localVariable._AnnotationBase11.PreviewMouseLeftButtonDown -= new MouseButtonEventHandler( localVariable.Method005 );
+//            localVariable._AnnotationBase11.Unselected -= new EventHandler( localVariable.Method006 );
+//            localVariable._AnnotationBase11.DragStarted -= new EventHandler<EventArgs>( localVariable.Method007 );
+//            localVariable._AnnotationBase11.DragEnded -= new EventHandler<EventArgs>( localVariable.Method008 );
+//        }
+//    }
+
+//    private void AddDependencyProperties( AnnotationBase _param1 )
+//    {
+//        AnnotationModifier.SomeClass7237 doDcwiev7trI4Ny0 = new AnnotationModifier.SomeClass7237();
+//        doDcwiev7trI4Ny0._variableSome3535 = this;
+//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 = _param1;
+//        if ( this.ChartArea == null )
+//            return;
+//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Selected += new EventHandler( doDcwiev7trI4Ny0.Method0845);
+//        doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083.Unselected += new EventHandler( doDcwiev7trI4Ny0.Method0833);
+//        List<DependencyProperty> dependencyPropertyList = new List<DependencyProperty>()
+//    {
+//      AnnotationBase.IsHiddenProperty,
+//      AnnotationBase.IsEditableProperty,
+//      AnnotationBase.X1Property,
+//      AnnotationBase.X2Property,
+//      AnnotationBase.Y1Property,
+//      AnnotationBase.Y2Property,
+//      AnnotationBase.CoordinateModeProperty
+//    };
+//        if ( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is LineAnnotationBase )
+//        {
+//            dependencyPropertyList.Add( LineAnnotationBase.StrokeThicknessProperty );
+//            dependencyPropertyList.Add( LineAnnotationBase.StrokeProperty );
+//        }
+//        if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation ) )
+//        {
+//            if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation ) )
+//            {
+//                if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is BoxAnnotation ) )
+//                {
+//                    if ( !( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is TextAnnotation ) )
+//                    {
+//                        if ( doDcwiev7trI4Ny0._public_ActiveOrderAnnotation_083 is RulerAnnotation )
+//                            dependencyPropertyList.Add( Control.BackgroundProperty );
+//                    }
+//                    else
+//                    {
+//                        dependencyPropertyList.Add( TextAnnotation.TextProperty );
+//                        dependencyPropertyList.Add( Control.BackgroundProperty );
+//                        dependencyPropertyList.Add( Control.BorderBrushProperty );
+//                        dependencyPropertyList.Add( Control.BorderThicknessProperty );
+//                    }
+//                }
+//                else
+//                {
+//                    dependencyPropertyList.Add( Control.BackgroundProperty );
+//                    dependencyPropertyList.Add( Control.BorderBrushProperty );
+//                    dependencyPropertyList.Add( Control.BorderThicknessProperty );
+//                }
+//            }
+//            else
+//                dependencyPropertyList.Add( FrameworkElement.VerticalAlignmentProperty );
+//        }
+//        else
+//            dependencyPropertyList.Add( FrameworkElement.HorizontalAlignmentProperty );
+//        dependencyPropertyList.ForEach( new Action<DependencyProperty>( doDcwiev7trI4Ny0.DoSomePropertyListStuff034) );
+//    }
+
+//    private ChartDrawData.AnnotationData GetAnnotationData( AnnotationBase _param1 )
+//    {
+//        AnnotationModifier.Struct1 vm6DexIkyzzokCaW;
+//        vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 = _param1;
+//        ChartDrawData.AnnotationData annotationData = new ChartDrawData.AnnotationData();
+//        vm6DexIkyzzokCaW.sCalc = vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
+//        annotationData.IsVisible = new bool?( !vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.IsHidden );
+//        annotationData.IsEditable = new bool?( this.HasAnnotation( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 ) );
+//        annotationData.CoordinateMode = new AnnotationCoordinateMode?( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.CoordinateMode );
+//        annotationData.X1 = AnnotationModifier.IndexToData( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X1, ref vm6DexIkyzzokCaW );
+//        annotationData.X2 = AnnotationModifier.IndexToData( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.X2, ref vm6DexIkyzzokCaW );
+//        annotationData.Y1 = AnnotationModifier.DataToIndex( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y1, ref vm6DexIkyzzokCaW );
+//        annotationData.Y2 = AnnotationModifier.DataToIndex( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083.Y2, ref vm6DexIkyzzokCaW );
+//        if ( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1 )
+//        {
+//            annotationData.Stroke = z2vouRgM1.Stroke;
+//            annotationData.Thickness = new Thickness?( new Thickness( z2vouRgM1.StrokeThickness ) );
+//        }
+//        if ( !( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation z2vouRgM5 ) )
+//        {
+//            if ( !( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation z2vouRgM4 ) )
+//            {
+//                if ( !( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is BoxAnnotation z2vouRgM3 ) )
+//                {
+//                    if ( vm6DexIkyzzokCaW._public_ActiveOrderAnnotation_083 is TextAnnotation z2vouRgM2 )
+//                    {
+//                        annotationData.Foreground = z2vouRgM2.Foreground;
+//                        annotationData.Text = z2vouRgM2.Text;
+//                        annotationData.Fill = z2vouRgM2.Background;
+//                        annotationData.Stroke = z2vouRgM2.BorderBrush;
+//                        annotationData.Thickness = new Thickness?( z2vouRgM2.BorderThickness );
+//                    }
+//                }
+//                else
+//                {
+//                    annotationData.Fill = z2vouRgM3.Background;
+//                    annotationData.Stroke = z2vouRgM3.BorderBrush;
+//                    annotationData.Thickness = new Thickness?( z2vouRgM3.BorderThickness );
+//                }
+//            }
+//            else
+//            {
+//                annotationData.VerticalAlignment = new VerticalAlignment?( z2vouRgM4.VerticalAlignment );
+//                annotationData.LabelPlacement = new LabelPlacement?( z2vouRgM4.LabelPlacement );
+//                annotationData.ShowLabel = new bool?( z2vouRgM4.ShowLabel );
+//            }
+//        }
+//        else
+//        {
+//            annotationData.HorizontalAlignment = new HorizontalAlignment?( z2vouRgM5.HorizontalAlignment );
+//            annotationData.LabelPlacement = new LabelPlacement?( z2vouRgM5.LabelPlacement );
+//            annotationData.ShowLabel = new bool?( z2vouRgM5.ShowLabel );
+//        }
+//        return annotationData;
+//    }
+
+//    public void GuiUpdateAndClear( ChartAnnotation _param1 )
+//    {
+//        AnnotationBase annotationBase;
+//        if ( !this._baseToAnnotationPair.TryGetKey( _param1, ref annotationBase ) )
+//            return;
+//        this._annotationCollection.Remove( ( IAnnotation ) annotationBase );
+//        ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._baseToAnnotationPair ).Remove( annotationBase );
+//        ( ( ICollection<IChartElement> ) this._chartArea.Elements ).Remove( ( IChartElement ) _param1 );
+//        this.ChartArea?.InvokeAnnotationDeletedEvent( _param1 );
+//    }
+
+//    public void Draw(
+//      ChartAnnotation _param1,
+//      ChartDrawData.AnnotationData _param2 )
+//    {
+//        AnnotationModifier.Struct0 vqd1Qhu2nAw1nzwT0;
+//        bool? nullable;
+//        if ( !this._baseToAnnotationPair.TryGetKey( _param1, ref vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ) )
+//        {
+//            Type type = _param1.Type.GetType();
+//            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 = ( AnnotationBase ) Activator.CreateInstance( type );
+//            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxisId = _param1.XAxisId;
+//            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.YAxisId = _param1.YAxisId;
+//            vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.IsHidden = false;
+//            AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
+//            nullable = _param2.IsEditable;
+//            int num = !(!nullable.GetValueOrDefault() & nullable.HasValue) ? 1 : 0;
+//            this.AddMenuItems( z2vouRgM, num != 0 );
+//            this.AddDependencyProperties( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 );
+//            ( ( KeyedCollection<AnnotationBase, ChartAnnotation> ) this._baseToAnnotationPair )[ vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ] = _param1;
+//            this._annotationCollection.Add( ( IAnnotation ) vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 );
+//            this.ChartArea?.InvokeAnnotationCreatedEvent( _param1 );
+//        }
+//        vqd1Qhu2nAw1nzwT0.sCalc = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.XAxis?.GetCurrentCoordinateCalculator();
+//        try
+//        {
+//            this._isUpdating = true;
+//            nullable = _param2.IsVisible;
+//            if ( nullable.HasValue )
+//            {
+//                AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
+//                nullable = _param2.IsVisible;
+//                int num = !nullable.Value ? 1 : 0;
+//                z2vouRgM.IsHidden = num != 0;
+//            }
+//            nullable = _param2.IsEditable;
+//            if ( nullable.HasValue )
+//            {
+//                AnnotationBase z2vouRgM = vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083;
+//                nullable = _param2.IsEditable;
+//                int num = nullable.Value ? 1 : 0;
+//                this.AddMenuItems( z2vouRgM, num != 0 );
+//            }
+//            if ( _param2.CoordinateMode.HasValue )
+//                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.CoordinateMode = _param2.CoordinateMode.Value;
+//            IComparable comparable1 = AnnotationModifier.DataToIndex(_param2.X1, ref vqd1Qhu2nAw1nzwT0);
+//            IComparable comparable2 = AnnotationModifier.DataToIndex(_param2.X2, ref vqd1Qhu2nAw1nzwT0);
+//            IComparable comparable3 = AnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D( _param2.Y1 );
+//            IComparable comparable4 = AnnotationModifier.\u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D( _param2.Y2 );
+//            if ( comparable1 != null )
+//                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.X1 = comparable1;
+//            if ( comparable2 != null )
+//                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.X2 = comparable2;
+//            if ( comparable3 != null )
+//                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.Y1 = comparable3;
+//            if ( comparable4 != null )
+//                vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083.Y2 = comparable4;
+//            if ( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is LineAnnotationBase z2vouRgM1 )
+//            {
+//                if ( _param2.Stroke != null )
+//                    z2vouRgM1.Stroke = _param2.Stroke;
+//                if ( _param2.Thickness.HasValue )
+//                    z2vouRgM1.StrokeThickness = _param2.Thickness.Value.Left;
+//            }
+//            if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is HorizontalLineAnnotation z2vouRgM6 ) )
+//            {
+//                if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is VerticalLineAnnotation z2vouRgM5 ) )
+//                {
+//                    if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is BoxAnnotation z2vouRgM4 ) )
+//                    {
+//                        if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is TextAnnotation z2vouRgM3 ) )
+//                        {
+//                            if ( !( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 is RulerAnnotation z2vouRgM2 ) || _param2.Fill == null )
+//                                return;
+//                            Brush brush = _param2.Fill is SolidColorBrush fill ? (Brush) new SolidColorBrush(fill.Color.ToTransparent((byte) 50)) : _param2.Fill;
+//                            z2vouRgM2.Background = brush;
+//                        }
+//                        else
+//                        {
+//                            if ( _param2.Foreground != null )
+//                                z2vouRgM3.Foreground = _param2.Foreground;
+//                            if ( _param2.Text != null )
+//                                z2vouRgM3.Text = _param2.Text;
+//                            if ( _param2.Fill != null )
+//                                z2vouRgM3.Background = _param2.Fill;
+//                            if ( _param2.Stroke != null )
+//                                z2vouRgM3.BorderBrush = _param2.Stroke;
+//                            if ( !_param2.Thickness.HasValue )
+//                                return;
+//                            z2vouRgM3.BorderThickness = _param2.Thickness.Value;
+//                        }
+//                    }
+//                    else
+//                    {
+//                        if ( _param2.Fill != null )
+//                            z2vouRgM4.Background = _param2.Fill;
+//                        if ( _param2.Stroke != null )
+//                            z2vouRgM4.BorderBrush = _param2.Stroke;
+//                        if ( !_param2.Thickness.HasValue )
+//                            return;
+//                        z2vouRgM4.BorderThickness = _param2.Thickness.Value;
+//                    }
+//                }
+//                else
+//                {
+//                    if ( _param2.VerticalAlignment.HasValue )
+//                        z2vouRgM5.VerticalAlignment = _param2.VerticalAlignment.Value;
+//                    if ( _param2.LabelPlacement.HasValue )
+//                        z2vouRgM5.LabelPlacement = _param2.LabelPlacement.Value;
+//                    nullable = _param2.ShowLabel;
+//                    if ( !nullable.HasValue )
+//                        return;
+//                    VerticalLineAnnotation verticalLineAnnotation = z2vouRgM5;
+//                    nullable = _param2.ShowLabel;
+//                    int num = nullable.Value ? 1 : 0;
+//                    verticalLineAnnotation.ShowLabel = num != 0;
+//                }
+//            }
+//            else
+//            {
+//                if ( _param2.HorizontalAlignment.HasValue )
+//                    z2vouRgM6.HorizontalAlignment = _param2.HorizontalAlignment.Value;
+//                if ( _param2.LabelPlacement.HasValue )
+//                    z2vouRgM6.LabelPlacement = _param2.LabelPlacement.Value;
+//                nullable = _param2.ShowLabel;
+//                if ( !nullable.HasValue )
+//                    return;
+//                HorizontalLineAnnotation horizontalLineAnnotation = z2vouRgM6;
+//                nullable = _param2.ShowLabel;
+//                int num = nullable.Value ? 1 : 0;
+//                horizontalLineAnnotation.ShowLabel = num != 0;
+//            }
+//        }
+//        finally
+//        {
+//            this._isUpdating = false;
+//            this.ChartArea?.InvokeAnnotationModifiedEvent( _param1, this.GetAnnotationData( vqd1Qhu2nAw1nzwT0._public_ActiveOrderAnnotation_083 ) );
+//        }
+//    }
+
+//    [DebuggerNonUserCode]
+//    [GeneratedCode( "PresentationBuildTasks", "9.0.0.0" )]
+//    public void InitializeComponent()
+//    {
+//        if ( this._someInternalBoolean )
+//            return;
+//        this._someInternalBoolean = true;
+//        Application.LoadComponent( ( object ) this, new Uri( "/StockSharp.Xaml.Charting;V5.0.0;component/ultrachart/ultrachartannotationmodifier.xaml", UriKind.Relative ) );
+//    }
+
+//    [DebuggerNonUserCode]
+//    [GeneratedCode( "PresentationBuildTasks", "9.0.0.0" )]
+//    public Delegate \u0023\u003DzciIj4U627yBM( Type _param1, string _param2 )
+//    {
+//        return Delegate.CreateDelegate( _param1, ( object ) this, _param2 );
+//    }
+
+//    [DebuggerNonUserCode]
+//    [GeneratedCode( "PresentationBuildTasks", "9.0.0.0" )]
+//    [EditorBrowsable( EditorBrowsableState.Never )]
+//    void IComponentConnector.\u0023\u003DzuNHLeGEnMjz9FDFZ6wymuXfyw_Iz(int _param1, object _param2)
+//    {
+//        this._someInternalBoolean = true;
+//    }
+
+//    public static IComparable IndexToData(
+//      IComparable _param0,
+//      ref AnnotationModifier.Struct1 _param1)
+//    {
+//        switch ( _param0 )
+//        {
+//            case null:
+//                return ( IComparable ) null;
+//            case int num1:
+//                if ( !( _param1.sCalc is ICategoryCoordinateCalculator zFlkZpfJp6G9R))
+//          throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+//          {
+//            (object) "int"
+//          } ) );
+//                return ( IComparable ) new DateTimeOffset( zFlkZpfJp6G9R.\u0023\u003DzWZQlXHuDrnKc( num1 ), TimeSpan.Zero );
+//            case DateTime dateTime:
+//                return ( IComparable ) new DateTimeOffset( dateTime, TimeSpan.Zero );
+//            case double num2:
+//                return ( IComparable ) num2;
+//            default:
+//                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+//                {
+//          (object) _param0.GetType().Name
+//                } ) );
+//        }
+//    }
+
+//    public static IComparable DataToIndex(
+//      IComparable _param0,
+//      ref AnnotationModifier.Struct1 _param1)
+//    {
+//        if ( _param0 == null )
+//            return ( IComparable ) null;
+//        if ( _param0 is double num )
+//            return _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Relative || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY ? ( IComparable ) num : ( IComparable ) Converter.To<Decimal>( ( object ) num );
+//        throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+//        {
+//      (object) _param0.GetType().Name
+//        } ) );
+//    }
+
+//    public static IComparable DataToIndex(
+//      IComparable _param0,
+//      ref AnnotationModifier.Struct0 _param1)
+//  {
+//    if (_param0 == null)
+//      return (IComparable) null;
+//    if (_param0 is DateTimeOffset dateTimeOffset)
+//      return (IComparable) dateTimeOffset.UtcDateTime;
+//    if (_param0 is DateTime dateTime)
+//      return (IComparable) dateTime;
+//    if (_param1.sCalc is ICategoryCoordinateCalculator && (_param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.Absolute || _param1._public_ActiveOrderAnnotation_083.CoordinateMode == AnnotationCoordinateMode.RelativeY))
+//      throw new InvalidOperationException( StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+//      {
+//        (object) _param0.GetType().Name
+//}));
+//    switch (_param0)
+//    {
+//      case Decimal num1:
+//        return (IComparable) (double) num1;
+//      case double num2:
+//        return (IComparable) num2;
+//      default:
+//        throw new InvalidOperationException( StringHelper.Put(LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+//        {
+//          (object) _param0.GetType().Name
+//        }));
+//    }
+//  }
+
+//  public static IComparable \u0023\u003Dq8f\u0024Kf3mr1qpotJDNtCA37\u0024_mt5h9RLbGp_SzHkzBWCc\u003D(
+//    IComparable _param0)
+//  {
+//    switch (_param0)
+//    {
+//      case null:
+//        return ( IComparable ) null;
+//      case Decimal num1:
+//    return ( IComparable ) ( double ) num1;
+//case double num2:
+//    return ( IComparable ) num2;
+//default:
+//    throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnexpectedCoordTypeParams, new object[ 1 ]
+//    {
+//          (object) _param0.GetType().Name
+//    } ) );
+//}
+//  }
+
+//  [Serializable]
+//private new sealed class SomeClass34343383
+//{
+//    public static readonly AnnotationModifier.SomeClass34343383 SomeMethond0343 = new AnnotationModifier.SomeClass34343383();
+//    public static Action<IAnnotation> _Action_IAnnotation_002;
+//    public static Action<IAnnotation> _Action_IAnnotation_003;
+
+//    public void SomeImportantMethod3234(
+//      IAnnotation _param1 )
+//    {
+//        _param1.set_IsEditable( true );
+//    }
+
+//    public void Setset_IsSelected_false_(
+//      IAnnotation _param1 )
+//    {
+//        _param1.set_IsSelected( false );
+//    }
+//}
+
+//[StructLayout( LayoutKind.Auto )]
+//private struct Struct0
+//{
+
+//    public ICoordinateCalculator<<double> sCalc;
+
+//    public AnnotationBase _public_ActiveOrderAnnotation_083;
+//}
+
+//[StructLayout( LayoutKind.Auto )]
+//private struct Struct1
+//  {
+
+
+//    public ICoordinateCalculator<<double> sCalc;
+
+//    public AnnotationBase _public_ActiveOrderAnnotation_083;
+//  }
+
+
+
+//  private sealed class SomeSealedClassAgain032
+//  {
+//    public AnnotationBase _public_ActiveOrderAnnotation_083;
+
+//    public bool Method009(
+//      IAnnotation _param1)
+//    {
+//      return _param1 != this._public_ActiveOrderAnnotation_083;
+//    }
+//  }
+
+//  private sealed class SomeClass7237
+//  {
+//    public AnnotationModifier _variableSome3535;
+//    public AnnotationBase _public_ActiveOrderAnnotation_083;
+//    public Action<DependencyPropertyChangedEventArgs> \u0023\u003DzDg_APFfs\u0024qGS;
+
+//    public void Method0845(
+//    #nullable enable
+//    object? _param1, EventArgs _param2)
+//    {
+//      AnnotationBase annotationBase = (AnnotationBase) _param1;
+//      ChartAnnotation chartAnnotation = CollectionHelper.TryGetValue<AnnotationBase, ChartAnnotation>((IDictionary<AnnotationBase, ChartAnnotation>) this._variableSome3535._baseToAnnotationPair, annotationBase);
+//      this._variableSome3535.ChartArea?.InvokeAnnotationSelectedEvent(chartAnnotation, Equatable<ChartAnnotation>.op_Equality((Equatable<ChartAnnotation>) chartAnnotation, (ChartAnnotation) null) ? (ChartDrawData.AnnotationData) null : this._variableSome3535.GetAnnotationData(annotationBase));
+//    }
+
+//    public void Method0833(object? _param1, EventArgs _param2)
+//    {
+//      this._variableSome3535.ChartArea?.InvokeAnnotationSelectedEvent((ChartAnnotation) null, (ChartDrawData.AnnotationData) null);
+//    }
+
+//    public void DoSomePropertyListStuff034(
+//    #nullable disable
+//    DependencyProperty _param1)
+//    {
+//      this._public_ActiveOrderAnnotation_083.AddPropertyListener(_param1, this.\u0023\u003DzDg_APFfs\u0024qGS ?? (this.\u0023\u003DzDg_APFfs\u0024qGS = new Action<DependencyPropertyChangedEventArgs>(this.Method0844)));
+//    }
+
+//    public void Method0844(
+//      DependencyPropertyChangedEventArgs _param1)
+//    {
+//      ChartAnnotation chartAnnotation;
+//      if (!((KeyedCollection<AnnotationBase, ChartAnnotation>) this._variableSome3535._baseToAnnotationPair).TryGetValue(this._public_ActiveOrderAnnotation_083, ref chartAnnotation) || this._variableSome3535._isUpdating)
+//        return;
+//      this._variableSome3535.ChartArea.InvokeAnnotationModifiedEvent(chartAnnotation, this._variableSome3535.GetAnnotationData(this._public_ActiveOrderAnnotation_083));
+//    }
+//  }
+//}

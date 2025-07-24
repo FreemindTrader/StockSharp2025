@@ -10,7 +10,7 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public abstract class \u0023\u003DzRxKCQfwuO1Ym7C1efUUjvwsh_Yip\u00243_SfLJCROuCo7J59ZG9moAjHGXdMI6r60c7Fw\u003D\u003D : 
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>
+  ICoordinateCalculator<<double>
 {
   private bool \u0023\u003DzTa0f7MrlqCnyuqCeoen4IP4EvkLiOGRl9w\u003D\u003D;
   private bool \u0023\u003Dzz_LHUZxT_rMe71OlvhDNxiqtKZSAXGhlBFHX3kAQA\u0024Ep2O7_SA\u003D\u003D;

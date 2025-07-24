@@ -95,8 +95,8 @@ public sealed class StackedMountainRenderableSeries :
         \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(\u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzUVX2hzSJiUvkgg4NgQ6FCHrRuz_S(_param1, mz4rNexJsSmCjpOm, num1), xrgcdFbSdWgN9GcT8, (IPointSeries) p09swszfkFaReRy0aAtDn3C, mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D(), false, false);
         \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = rhwYsZxA33iRu6Id7J1;
         IPointSeries ftrixUnpTllY1PkTyq2 = ftrixUnpTllY1PkTyq1;
-        \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-        \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+        ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+        ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
         int num2 = this.IsDigitalLine ? 1 : 0;
         \u0023\u003DzESFnl\u0024cpXbmAnH3LhxCsqQMMUpdrYizZh1\u0024TejAsPVdnlvpPU6Az\u0024I4\u003D.\u0023\u003DzftEp\u0024x4VdHnj(sgkqEcPv0Ah3hMaVex, rhwYsZxA33iRu6Id7J2, ftrixUnpTllY1PkTyq2, xkzemsMs5tGkouk5w1, xkzemsMs5tGkouk5w2, num2 != 0, false);
         \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT hw1ki13vvK4WxOgoljkHyInT = this.\u0023\u003Dz_Y6pODRV4VXF();

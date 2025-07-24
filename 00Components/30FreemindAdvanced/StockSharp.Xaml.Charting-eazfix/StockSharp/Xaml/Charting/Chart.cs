@@ -168,7 +168,7 @@ public class Chart :
 		ucNpCcsOdkLfs7Ks._variableSome3535 = this;
 		this.InitializeComponent();
 		this.DataContext = ( object ) ( this._chartSurfaceVM = new ChartViewModel() );
-		this.ViewModel.\u0023\u003DzgNd4ReliYq4x( new Action<Order>( this.\u0023\u003DzrMNjBJFuBLP3 ) );
+		this.ViewModel.\u0023\u003DzgNd4ReliYq4x( new Action<Order>( this.InvokeCancelOrderEvent ) );
 		this.ViewModel.\u0023\u003DzqMcw8k8QHzu3( new Action<ChartArea>( this.\u0023\u003DzYhCvVp5ZsuEOxZPGgrZ6vLQ\u003D) );
 		this.AreaAdding += new Action( this.OnAreaAdding );
 		this.AddCandles += new Action<ChartArea>( this.OnAddCandles );
@@ -919,7 +919,7 @@ public class Chart :
     zlaBqx5E(_param1, _param2);
   }
 
-  public void \u0023\u003DzoSyIfjNKL9Ta(Order _param1, Decimal _param2)
+  public void InvokeMoveOrderEvent(Order _param1, Decimal _param2)
   {
     Action<Order, Decimal> zJiM5nvc = this.\u0023\u003DzJIM5nvc\u003D;
     if (zJiM5nvc == null)
@@ -927,7 +927,7 @@ public class Chart :
     zJiM5nvc(_param1, _param2);
   }
 
-  public void \u0023\u003DzrMNjBJFuBLP3(Order _param1)
+  public void InvokeCancelOrderEvent(Order _param1)
   {
     Action<Order> zmMdfCucSnZwz = this.CancelActiveOrderEvent ;
     if (zmMdfCucSnZwz == null)
@@ -953,7 +953,7 @@ public class Chart :
     zygdSp72uKvhL((IChartAnnotationElement) _param1, _param2);
   }
 
-  public void \u0023\u003DzXartur54T48t(ChartAnnotation _param1)
+  public void InvokeAnnotationDeletedEvent(ChartAnnotation _param1)
   {
     Action<IChartAnnotationElement> z53l3VmDrGxpJ = this.\u0023\u003Dz53l3VMDrGxpJ;
     if (z53l3VmDrGxpJ == null)

@@ -593,7 +593,7 @@ public sealed class \u0023\u003Dza9eQbgAsftIGbI_4wdfcZHvhZ0MvmL4S\u0024g\u003D\u
     set => this.\u0023\u003DzRoux7W5jZAVE88YvvTzQyR6QfsrTykyeBA\u003D\u003D = value;
   }
 
-  public \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> GetCurrentCoordinateCalculator()
+  public ICoordinateCalculator<<double> GetCurrentCoordinateCalculator()
   {
     throw new NotImplementedException();
   }

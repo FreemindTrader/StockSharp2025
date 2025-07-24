@@ -116,7 +116,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private LegendModifierVM _legendViewModel;
 
-    private FxAnnotationModifier _annotationModifier;
+    private AnnotationModifier _annotationModifier;
 
     private readonly ObservableCollection<IRenderableSeries> _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>();
 
@@ -391,7 +391,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         {
             SetupModifiers();
             CollectionHelper.AddRange( ChartModifier.ChildModifiers, _chartModifiers );
-            AnnotationModifier.SetBindings( FxAnnotationModifier.UserAnnotationTypeProperty, GroupChart, "AnnotationType" );
+            AnnotationModifier.SetBindings( AnnotationModifier.UserAnnotationTypeProperty, GroupChart, "AnnotationType" );
 
             var cursor = ChartModifier.ChildModifiers.OfType<UltrachartCursormodifier>().Single();
             cursor.SetBindings( ChartModifierBase.IsEnabledProperty, Chart, "CrossHair" );
@@ -896,7 +896,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         }
     }
 
-    public FxAnnotationModifier AnnotationModifier
+    public AnnotationModifier AnnotationModifier
     {
         get
         {
@@ -905,7 +905,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
                 return _annotationModifier;
             }
 
-            var annotation = new FxAnnotationModifier(Area, Annotations);
+            var annotation = new AnnotationModifier(Area, Annotations);
             annotation.IsEnabled = false;
             _annotationModifier = annotation;
 

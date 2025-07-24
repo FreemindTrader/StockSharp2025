@@ -210,7 +210,7 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxW
       numArray1[index5] = (int) array[0].Y - 1;
       if (_param1 is \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D)
       {
-        \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D wd3zPhu0dS2ZqhuzuE = new \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H.\u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D()
+        \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H.SomeSealedClassAgain032 wd3zPhu0dS2ZqhuzuE = new \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxWU\u0024D_ZV6c\u0024V_0H.SomeSealedClassAgain032()
         {
           \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D = jq9Llz3ahZ2LrQl4,
           \u0023\u003Dz32bgjTM\u003D = (\u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D) _param1
@@ -409,7 +409,7 @@ public sealed class \u0023\u003DzCp5d2Zte2oCosmmx2S7no_qZ5mg8Hgg3z7JzuvgnBlRXkxW
     }
   }
 
-  private sealed class \u0023\u003DzckhZYWd3zPHu0dS2ZQhuzuE\u003D
+  private sealed class SomeSealedClassAgain032
   {
     public \u0023\u003Dz03BSxVLolBnG92GmtCJpdk\u00249dLYzyTumCw\u003D\u003D \u0023\u003Dz32bgjTM\u003D;
     public int[] \u0023\u003Dzjzt0LxM\u003D;

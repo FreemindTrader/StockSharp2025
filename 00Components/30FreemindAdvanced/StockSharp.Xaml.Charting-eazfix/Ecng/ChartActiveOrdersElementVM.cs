@@ -230,7 +230,7 @@ private void \u0023\u003DzZe__axziAicn(object _param1, EventArgs _param2)
     Decimal num3 = num2;
     if (price == num3)
       return;
-    this.ScichartSurfaceMVVM.GroupChart?.\u0023\u003DzoSyIfjNKL9Ta(order, num2);
+    this.ScichartSurfaceMVVM.GroupChart?.InvokeMoveOrderEvent(order, num2);
   }
 
   private void \u0023\u003DzVh15ej24l3Pl(ActiveOrderAnnotation _param1)
@@ -247,7 +247,7 @@ private void \u0023\u003DzZe__axziAicn(object _param1, EventArgs _param2)
     Order order = this.\u0023\u003Dz28gLj6T_roD8(_param1, out ChartActiveOrdersElementVM.AnnotationInfo _);
     if (order == null)
       return;
-    this.ScichartSurfaceMVVM.GroupChart?.\u0023\u003DzrMNjBJFuBLP3(order);
+    this.ScichartSurfaceMVVM.GroupChart?.InvokeCancelOrderEvent(order);
   }
 
   private static bool \u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(

@@ -1,4 +1,4 @@
-<s:FxAnnotationModifier xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+<s:AnnotationModifier xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 xmlns:s="clr-namespace:-"
 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 xmlns:a="clr-namespace:StockSharp.Xaml.Charting.Visuals.Annotations"
@@ -53,4 +53,4 @@ ReceiveHandledEvents="True">
             <Setter Property="a:AnnotationBase.XAxisId" Value="X"/>
         </Style>
     </FrameworkElement.Resources>
-</s:FxAnnotationModifier>
+</s:AnnotationModifier>

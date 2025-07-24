@@ -438,13 +438,13 @@ public partial class ChartDrawData : IChartDrawData
 
         private bool? _ShowLabel;
 
-        private LabelPlacement? _LabelPlacement;
+        private StockSharp.Charting.LabelPlacement? _LabelPlacement;
 
         private System.Windows.HorizontalAlignment? _HorizontalAlignment;
 
         private System.Windows.VerticalAlignment? _VerticalAlignment;
 
-        private AnnotationCoordinateMode? _CoordinateMode;
+        private StockSharp.Charting.AnnotationCoordinateMode? _CoordinateMode;
 
         private string _Text;
 

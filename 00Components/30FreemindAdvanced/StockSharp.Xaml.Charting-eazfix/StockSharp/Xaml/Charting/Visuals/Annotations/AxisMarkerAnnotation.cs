@@ -84,8 +84,8 @@ public class AxisMarkerAnnotation : AnchorPointAnnotation
   }
 
   public override void Update(
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordinateCalculator,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator)
+    ICoordinateCalculator<<double> xCoordinateCalculator,
+    ICoordinateCalculator<<double> yCoordinateCalculator)
   {
     base.Update(xCoordinateCalculator, yCoordinateCalculator);
     if (!(this.Axis is AxisBase axis))
@@ -106,7 +106,7 @@ public class AxisMarkerAnnotation : AnchorPointAnnotation
   protected override double ToCoordinate(
     IComparable dataValue,
     double canvasMeasurement,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc,
+    ICoordinateCalculator<<double> coordCalc,
     XyDirection direction)
   {
     return base.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction) - coordCalc.\u0023\u003DzV1bNkSgej_yk();

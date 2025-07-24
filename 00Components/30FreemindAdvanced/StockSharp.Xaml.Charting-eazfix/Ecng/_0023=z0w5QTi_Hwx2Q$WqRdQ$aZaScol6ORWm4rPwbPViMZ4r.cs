@@ -13,9 +13,9 @@ public interface IRenderPassData
 
   bool \u0023\u003DzDoU1CJhSUWFV();
 
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+  ICoordinateCalculator<<double> \u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
 
-  \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+  ICoordinateCalculator<<double> \u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
 
   \u0023\u003DzUJpBz2W8IzAtBIqVtQXHB99xo8DgCb_3ha_wTIg\u003D \u0023\u003Dzy9phceyLTfoo();
 }

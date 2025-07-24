@@ -491,7 +491,7 @@ public abstract class BaseRenderableSeries :
     IRenderPassData _param2);
 
   public int \u0023\u003Dz6BuO4fnhj6SX(
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param1,
+    ICoordinateCalculator<<double> _param1,
     IPointSeries _param2,
     double _param3)
   {
@@ -499,7 +499,7 @@ public abstract class BaseRenderableSeries :
   }
 
   public int \u0023\u003Dz6BuO4fnhj6SX(
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param1,
+    ICoordinateCalculator<<double> _param1,
     IPointSeries _param2,
     double _param3,
     double _param4)
@@ -606,8 +606,8 @@ public abstract class BaseRenderableSeries :
   protected Tuple<IComparable, IComparable> \u0023\u003Dzs0Y0\u0024lrpmkkQ(Point _param1)
   {
     _param1 = this.\u0023\u003Dzop6vn0GowyiR(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     double num1 = xkzemsMs5tGkouk5w1.GetDataValue(_param1.X);
     IComparable comparable1 = \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNXCE4EvjzL\u0024mX84Druo\u003D.\u0023\u003DzsQE9ClE\u003D(num1, this.DataSeries.\u0023\u003DzwQnyySN6xaVC()[0].GetType());
     if (xkzemsMs5tGkouk5w1 is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
@@ -756,8 +756,8 @@ public abstract class BaseRenderableSeries :
 
   protected Point \u0023\u003Dz1TAi3SadJ4Un(double _param1, double _param2)
   {
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+    ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     if (xkzemsMs5tGkouk5w1 is ICategoryCoordinateCalculator q9i0MXI7Qb9c1V6c0)
       _param1 = (double) q9i0MXI7Qb9c1V6c0.\u0023\u003DzFk6sufr\u0024co4e((IComparable) _param1);
     return this.\u0023\u003Dzop6vn0GowyiR(new Point(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(_param1), xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(_param2)), this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzDoU1CJhSUWFV());

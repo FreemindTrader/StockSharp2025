@@ -275,8 +275,8 @@ public void StartDrag( bool isPrimaryDrag )
     this._isDragging = true;
     this._isPrimaryDrag = isPrimaryDrag;
     IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D< double > yCalc = this.YAxis?.GetCurrentCoordinateCalculator();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D< double > xCalc = this.XAxis?.GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<< double > yCalc = this.YAxis?.GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<< double > xCalc = this.XAxis?.GetCurrentCoordinateCalculator();
     this._startDragAnnotationCoordinates = this.GetCoordinates( canvas, xCalc, yCalc );
     this.OnDragStarted();
     this.RaiseAnnotationDragStarted( this._isPrimaryDrag, false );
@@ -513,16 +513,16 @@ public bool Refresh()
 {
     if ( this.IsSuspended || !this._isLoaded || !this.IsAttached )
         return false;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordinateCalculator = this.XAxis != null ? this.XAxis.GetCurrentCoordinateCalculator() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator = this.YAxis != null ? this.YAxis.GetCurrentCoordinateCalculator() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
+    ICoordinateCalculator<<double> xCoordinateCalculator = this.XAxis != null ? this.XAxis.GetCurrentCoordinateCalculator() : (ICoordinateCalculator<<double>) null;
+    ICoordinateCalculator<<double> yCoordinateCalculator = this.YAxis != null ? this.YAxis.GetCurrentCoordinateCalculator() : (ICoordinateCalculator<<double>) null;
     if (xCoordinateCalculator != null && yCoordinateCalculator != null)
       this.Update(xCoordinateCalculator, yCoordinateCalculator);
     return true;
   }
 
   public virtual void Update(
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordinateCalculator,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordinateCalculator)
+    ICoordinateCalculator<<double> xCoordinateCalculator,
+    ICoordinateCalculator<<double> yCoordinateCalculator)
   {
     IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (canvas == null)
@@ -681,7 +681,7 @@ public bool Refresh()
     IAxis axis)
   {
     IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc = axis.GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<<double> coordCalc = axis.GetCurrentCoordinateCalculator();
     XyDirection direction = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? XyDirection.XDirection : XyDirection.YDirection;
     double canvasMeasurement = coordCalc.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? canvas.ActualWidth : canvas.ActualHeight;
     return this.ToCoordinate(dataValue, canvasMeasurement, coordCalc, direction);
@@ -691,8 +691,8 @@ public bool Refresh()
     IComparable xDataValue,
     IComparable yDataValue,
     IAnnotationCanvas canvas,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCoordCalc,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCoordCalc)
+    ICoordinateCalculator<<double> xCoordCalc,
+    ICoordinateCalculator<<double> yCoordCalc)
   {
     double coordinate1 = this.GetCoordinate(xDataValue, canvas, xCoordCalc);
     double coordinate2 = this.GetCoordinate(yDataValue, canvas, yCoordCalc);
@@ -704,7 +704,7 @@ public bool Refresh()
   private double GetCoordinate(
     IComparable dataValue,
     IAnnotationCanvas canvas,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc)
+    ICoordinateCalculator<<double> coordCalc)
   {
     if (coordCalc == null)
       return 0.0;
@@ -716,7 +716,7 @@ public bool Refresh()
   protected virtual double ToCoordinate(
     IComparable dataValue,
     double canvasMeasurement,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> coordCalc,
+    ICoordinateCalculator<<double> coordCalc,
     XyDirection direction)
   {
     if (dataValue == null)
@@ -745,8 +745,8 @@ public bool Refresh()
 
   protected AnnotationCoordinates GetCoordinates(
     IAnnotationCanvas canvas,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc,
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc)
+    ICoordinateCalculator<<double> xCalc,
+    ICoordinateCalculator<<double> yCalc)
   {
     Point coordinates1 = this.ToCoordinates(this.X1, this.Y1, canvas, xCalc, yCalc);
     Point coordinates2 = this.ToCoordinates(this.X2, this.Y2, canvas, xCalc, yCalc);
@@ -769,8 +769,8 @@ public bool Refresh()
     IAnnotationCanvas canvas = this.GetCanvas(this.AnnotationCanvas);
     if (this.XAxis == null || this.YAxis == null)
       return;
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = this.YAxis.GetCurrentCoordinateCalculator();
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = this.XAxis.GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<<double> yCalc = this.YAxis.GetCurrentCoordinateCalculator();
+    ICoordinateCalculator<<double> xCalc = this.XAxis.GetCurrentCoordinateCalculator();
     using (this.SuspendUpdates())
       this.MoveAnnotationTo(this.GetCoordinates(canvas, xCalc, yCalc), horizOffset, vertOffset);
   }
@@ -792,7 +792,7 @@ public bool Refresh()
 
   public Point[] GetBasePoints()
   {
-    return this.GetBasePoints(this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis != null ? this.XAxis.GetCurrentCoordinateCalculator() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null, this.YAxis != null ? this.YAxis.GetCurrentCoordinateCalculator() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null));
+    return this.GetBasePoints(this.GetCoordinates(this.GetCanvas(this.AnnotationCanvas), this.XAxis != null ? this.XAxis.GetCurrentCoordinateCalculator() : (ICoordinateCalculator<<double>) null, this.YAxis != null ? this.YAxis.GetCurrentCoordinateCalculator() : (ICoordinateCalculator<<double>) null));
   }
 
   protected virtual Point[] GetBasePoints(
@@ -983,8 +983,8 @@ public bool Refresh()
     }
     else
     {
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> xCalc = annotationBase.XAxis != null ? annotationBase.XAxis.GetCurrentCoordinateCalculator() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
-      \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> yCalc = annotationBase.YAxis != null ? annotationBase.YAxis.GetCurrentCoordinateCalculator() : (\u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double>) null;
+      ICoordinateCalculator<<double> xCalc = annotationBase.XAxis != null ? annotationBase.XAxis.GetCurrentCoordinateCalculator() : (ICoordinateCalculator<<double>) null;
+      ICoordinateCalculator<<double> yCalc = annotationBase.YAxis != null ? annotationBase.YAxis.GetCurrentCoordinateCalculator() : (ICoordinateCalculator<<double>) null;
       IAnnotationCanvas canvas = annotationBase.GetCanvas(annotationBase.AnnotationCanvas);
       AnnotationCoordinates coordinates = new AnnotationCoordinates();
       if (xCalc != null && yCalc != null && canvas != null)

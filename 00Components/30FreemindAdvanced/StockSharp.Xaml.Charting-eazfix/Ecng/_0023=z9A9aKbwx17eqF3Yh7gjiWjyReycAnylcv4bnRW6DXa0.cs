@@ -11,10 +11,10 @@ using System;
 public sealed class \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZWo1GN8_OWPxtqME : 
   \u0023\u003DzFDK4fEILkMRswIjIg1\u0024y3MZjK6kEswW_XYNXMkMl\u0024H7TxZaHyXLiZ9wXJZ_c
 {
-  private readonly \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> \u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA;
+  private readonly ICoordinateCalculator<<double> \u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA;
 
   public \u0023\u003Dz9A9aKbwx17eqF3Yh7gjiWjyReycAnylcv4bnRW6DXa0wZWo1GN8_OWPxtqME(
-    \u0023\u003DzTNhhT9A_S5PTAzjbiBFcpNIoInlQX1N\u0024OPHOD8Iz0mvW4gRY24UkaXKzemsMS5t\u0024gkouk5w\u003D<double> _param1)
+    ICoordinateCalculator<<double> _param1)
   {
     this.\u0023\u003DzDwftsBnB60LHk\u0024_PYJqwmLP2gNVA = _param1;
   }
