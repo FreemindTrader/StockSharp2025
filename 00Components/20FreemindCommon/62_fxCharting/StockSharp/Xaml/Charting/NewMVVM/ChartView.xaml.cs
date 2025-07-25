@@ -665,11 +665,13 @@ namespace StockSharp.Xaml.Charting
         {
             add
             {
-                ViewModel.AreaAddedEvent += value;
+                throw new NotImplementedException();
+                //ViewModel.AreaAddedEvent += value;
             }
             remove
             {
-                ViewModel.AreaAddedEvent -= value;
+                throw new NotImplementedException();
+                //ViewModel.AreaAddedEvent -= value;
             }
         }
 
@@ -1083,7 +1085,7 @@ namespace StockSharp.Xaml.Charting
         {
             area.Elements.Added   -= new Action<IChartElement>( OnNewUIAddedToArea );
             area.Elements.Removed -= new Action<IChartElement>( OnUIRemovedFromArea );
-            ViewModel.ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ViewModel );
+            //ViewModel.ScichartSurfaceViewModels.Remove( ( ScichartSurfaceMVVM ) area.ViewModel );
 
             Ecng.Collections.CollectionHelper.ForEach( area.Elements, new Action<IChartElement>( OnUIRemovedFromArea ) );
 

@@ -9,6 +9,7 @@ using DevExpress.Xpf.Editors.Helpers;
 using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Xaml;
+using StockSharp.Algo.Candles;
 using StockSharp.Algo.Indicators;
 using StockSharp.BusinessEntities;
 using StockSharp.Charting;
@@ -26,6 +27,22 @@ using System.Windows.Input;
 
 public sealed class ChartViewModel : DependencyObject
 {
+    #region ---------------------------- Tony Added ----------------------------------
+
+    public event EventHandler<AddCandlesEventArgs>  CodingAddCandlesEvent;
+
+    
+    public void ExecuteCodingAddCandles(ChartArea chartArea, CandleSeries series)
+    {
+        CodingAddCandlesEvent?.Invoke(this, new AddCandlesEventArgs(chartArea, series));
+    }
+
+    public bool CanExecuteCodingAddCandles()
+    {
+        return true;
+    }
+    #endregion
+    
     public string SelectedTheme
     {
         get
@@ -155,7 +172,7 @@ public sealed class ChartViewModel : DependencyObject
     {
         CommandManager.InvalidateRequerySuggested();
         this.ClosePaneCommand.RaiseCanExecuteChanged();
-        Action izKc6jG0gptPuO01M = ChartViewModel.AllowToRemoveEvent;
+        Action izKc6jG0gptPuO01M = ChartViewModel.InteractedEvent;
         if ( izKc6jG0gptPuO01M == null )
             return;
         izKc6jG0gptPuO01M();
@@ -240,7 +257,7 @@ public sealed class ChartViewModel : DependencyObject
 
     public static readonly DependencyProperty ShowLegendProperty = DependencyProperty.Register(nameof(ShowLegend), typeof(bool), typeof(ChartViewModel));
 
-    public static Action AllowToRemoveEvent;
+    public static Action InteractedEvent;
 
     public static readonly DependencyProperty IsInteractedProperty = DependencyProperty.Register(nameof(IsInteracted), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnIsInteractedCallback)));
 
@@ -336,11 +353,11 @@ public sealed class ChartViewModel : DependencyObject
         ChartViewModel.SomeInternalSealedClassXQw ccsreH3nwJbFwtEpkxQw = new ChartViewModel.SomeInternalSealedClassXQw();
         ccsreH3nwJbFwtEpkxQw._order_action = this.CancelActiveOrderEvent;
         if ( _param1 == null )
-            _param1 = ChartViewModel.SomeClass34343383._fuction_order_bool_093 ?? ( ChartViewModel.SomeClass34343383._fuction_order_bool_093 = new Func<Order, bool>(ChartViewModel.SomeClass34343383.SomeMethond0343.CanCancelActiveOrders));
-        CollectionHelper.ForEach<Order>((IEnumerable<Order>)CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<ScichartSurfaceMVVM, Order>(ChartViewModel.SomeClass34343383._fuction_order_bool_333 ?? ( ChartViewModel.SomeClass34343383._fuction_order_bool_333 = new Func<ScichartSurfaceMVVM, IEnumerable<Order>>(ChartViewModel.SomeClass34343383.SomeMethond0343.selectActiverOrders))).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.Method034));
+            _param1 = ChartViewModel.SomeClass34343383._fuction_order_bool_093 ?? ( ChartViewModel.SomeClass34343383._fuction_order_bool_093 = new Func<Order, bool>(ChartViewModel.SomeClass34343383.SomeMethond0343.CanCancelActiveOrders) );
+        CollectionHelper.ForEach<Order>((IEnumerable<Order>)CollectionHelper.ToSet<Order>(this.ChartPaneViewModels.SelectMany<ScichartSurfaceMVVM, Order>(ChartViewModel.SomeClass34343383._fuction_order_bool_333 ?? ( ChartViewModel.SomeClass34343383._fuction_order_bool_333 = new Func<ScichartSurfaceMVVM, IEnumerable<Order>>(ChartViewModel.SomeClass34343383.SomeMethond0343.selectActiverOrders) )).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.Method034));
     }
 
-    private void ChangeApplicationTheme() => this.SelectedTheme = ChartHelper.CurrChartTheme();
+    private void ChangeApplicationTheme() => this.SelectedTheme = ChartHelper2025.CurrChartTheme();
 
 
 
@@ -653,81 +670,554 @@ public sealed class ChartViewModel : DependencyObject
     {
         public static readonly ChartViewModel.SomeClass34343383 SomeMethond0343 = new ChartViewModel.SomeClass34343383();
         public static Action<ScichartSurfaceMVVM> _action_scichartsufaceMvvm_093;
-    public static Action<ChartAxis> ExecuteRemoveAxisCommand;
+        public static Action<ChartAxis> ExecuteRemoveAxisCommand;
         public static Action<IDrawingSurfaceVM> ExecuteClosePaneCommand;
         public static Func<Order, bool> _fuction_order_bool_093;
-    public static Func<Order, bool> _fuction_order_bool_087;
-    public static Func<ScichartSurfaceMVVM,
+        public static Func<Order, bool> _fuction_order_bool_087;
+        public static Func<ScichartSurfaceMVVM,
 #nullable enable
-    IEnumerable<
+        IEnumerable<
 #nullable disable
-    Order>> _fuction_order_bool_333;
+        Order>> _fuction_order_bool_333;
 
-    public void Method083(
-      ScichartSurfaceMVVM _param1)
-    {
-      _param1.Area.ViewModel.ShowHiddenAxesCommand.TryExecute((object) null);
+        public void Method083(
+          ScichartSurfaceMVVM _param1)
+        {
+            _param1.Area.ViewModel.ShowHiddenAxesCommand.TryExecute((object)null);
+        }
+
+        public void ExecuteRemoveAxisCommand2(ChartAxis _param1)
+        {
+            IChartArea chartArea = _param1.ChartArea;
+            if ( ( (ICollection<IChartAxis>)chartArea.XAxises ).Contains((IChartAxis)_param1) )
+                ( (ICollection<IChartAxis>)chartArea.XAxises ).Remove((IChartAxis)_param1);
+            if ( !( (ICollection<IChartAxis>)chartArea.YAxises ).Contains((IChartAxis)_param1) )
+                return;
+            ( (ICollection<IChartAxis>)chartArea.YAxises ).Remove((IChartAxis)_param1);
+        }
+
+        public void ExecuteClosePaneCommand2(
+          IDrawingSurfaceVM _param1)
+        {
+            ChartViewModel.SomeInternalSealedClass4RRo lrrNtIjstOuVg4Rro = new ChartViewModel.SomeInternalSealedClass4RRo();
+            lrrNtIjstOuVg4Rro._IDrawingSurfaceVM = _param1;
+            IChart chart = ( (ScichartSurfaceMVVM)lrrNtIjstOuVg4Rro._IDrawingSurfaceVM ).Chart;
+            IChartArea area = chart.Areas.FirstOrDefault<IChartArea>(new Func<IChartArea, bool>(lrrNtIjstOuVg4Rro.Method01));
+            if ( area == null )
+                return;
+            chart.RemoveArea(area);
+        }
+
+        public bool CanCancelActiveOrders(Order o) => true;
+
+        public IEnumerable<Order> selectActiverOrders(
+          ScichartSurfaceMVVM _param1)
+        {
+            return _param1.GetActiveOrders(o => o.State == OrderStates.Active || o.State == OrderStates.Pending);
+        }
+
+
+        public void OnMinimumRangeCallback(
+          DependencyObject _param1,
+          DependencyPropertyChangedEventArgs _param2)
+        {
+            ( (ChartViewModel)_param1 )._minimumRange = (int)_param2.NewValue;
+        }
     }
 
-    public void ExecuteRemoveAxisCommand2(ChartAxis _param1)
+    private sealed class SomeInternalSealedClass4RRo
     {
-        IChartArea chartArea = _param1.ChartArea;
-        if ( ( (ICollection<IChartAxis>)chartArea.XAxises ).Contains((IChartAxis)_param1) )
-            ( (ICollection<IChartAxis>)chartArea.XAxises ).Remove((IChartAxis)_param1);
-        if ( !( (ICollection<IChartAxis>)chartArea.YAxises ).Contains((IChartAxis)_param1) )
-            return;
-        ( (ICollection<IChartAxis>)chartArea.YAxises ).Remove((IChartAxis)_param1);
+        public IDrawingSurfaceVM _IDrawingSurfaceVM;
+
+        public bool Method01(IChartArea _param1)
+        {
+            return ( (ChartArea)_param1 ).ViewModel == this._IDrawingSurfaceVM;
+        }
     }
 
-    public void ExecuteClosePaneCommand2(
-      IDrawingSurfaceVM _param1)
+    private sealed class SomeInternalSealedClassXQw
     {
-        ChartViewModel.SomeInternalSealedClass4RRo lrrNtIjstOuVg4Rro = new ChartViewModel.SomeInternalSealedClass4RRo();
-        lrrNtIjstOuVg4Rro._IDrawingSurfaceVM = _param1;
-        IChart chart = ( (ScichartSurfaceMVVM)lrrNtIjstOuVg4Rro._IDrawingSurfaceVM ).Chart;
-        IChartArea area = chart.Areas.FirstOrDefault<IChartArea>(new Func<IChartArea, bool>(lrrNtIjstOuVg4Rro.Method01));
-        if ( area == null )
-            return;
-        chart.RemoveArea(area);
-    }
+        public Action<Order> _order_action;
 
-    public bool CanCancelActiveOrders(Order o) => true;
-
-    public IEnumerable<Order> selectActiverOrders(
-      ScichartSurfaceMVVM _param1)
-    {
-        return _param1.GetActiveOrders(o => o.State == OrderStates.Active || o.State == OrderStates.Pending);
-    }
-
-
-    public void OnMinimumRangeCallback(
-      DependencyObject _param1,
-      DependencyPropertyChangedEventArgs _param2)
-    {
-        ( (ChartViewModel)_param1 )._minimumRange = (int)_param2.NewValue;
+        public void Method034(Order _param1)
+        {
+            Action<Order> zXcEqv64 = this._order_action;
+            if ( zXcEqv64 == null )
+                return;
+            zXcEqv64(_param1);
+        }
     }
 }
 
-private sealed class SomeInternalSealedClass4RRo
-{
-    public IDrawingSurfaceVM _IDrawingSurfaceVM;
 
-    public bool Method01(IChartArea _param1)
-    {
-        return ( (ChartArea)_param1 ).ViewModel == this._IDrawingSurfaceVM;
-    }
-}
+//using DevExpress.Xpf.Core;
+//using Ecng.Collections;
+//using Ecng.Xaml;
+//using StockSharp.Charting;
+//using SciChart.Charting.Common.Helpers;
+//using SciChart.Charting.Visuals.TradeChart;
+//using StockSharp.Algo.Candles;
+//using StockSharp.Xaml;
+//using StockSharp.Xaml.Charting;
+//using System;
+//using System.Collections.ObjectModel;
+//using System.Linq;
+//using System.Windows;
+//using System.Windows.Input;
+//using MoreLinq;
+//using StockSharp.BusinessEntities;
+//using StockSharp.Messages;
+//using System.Collections.Generic; 
+//using fx.Collections;
+//using StockSharp.Algo.Indicators;
+//using StockSharp.Charting;
 
-private sealed class SomeInternalSealedClassXQw
-{
-    public Action<Order> _order_action;
+//public sealed partial class ChartViewModel : DependencyObject
+//{
+//    private bool _isInteracted = false;
+//    private bool _isProgrammable;
+//    private int _minimumRange;
 
-    public void Method034(Order _param1)
-    {
-        Action<Order> zXcEqv64 = this._order_action;
-        if ( zXcEqv64 == null )
-            return;
-        zXcEqv64(_param1);
-    }
-}
-}
+//    private static int staticChartCount;
+
+//    public int _instanceCount = ++staticChartCount;
+//    public int InstanceCount
+//    {
+//        get
+//        {
+//            return _instanceCount;
+//        }
+//    }
+
+//    public ChartViewModel( )
+//    {
+//        ScichartSurfaceViewModels = new ObservableCollection<ScichartSurfaceMVVM>( );
+//        MinimumRange              = 50;
+//        ShowOverview              = false;
+//        ShowLegend                = true;
+//        IndicatorTypes            = new ObservableCollection<IndicatorType>( );
+//        AddAreaCommand            = new ActionCommand( ExecuteAddAreaCommand,                   CanExecuteAddAreaCommand      );
+//        AddCandlesCommand         = new ActionCommand<ChartArea>( ExecuteAddCandlesCommand,     CanExecuteAddCandlesCommand   );
+//        AddIndicatorCommand       = new ActionCommand<ChartArea>( ExecuteAddIndicatorCommand,   CanExecuteAddIndicatorCommand );
+//        AddOrdersCommand          = new ActionCommand<ChartArea>( ExecuteAddOrdersCommand,      CanExecuteAddOrdersCommand    );
+//        AddTradesCommand          = new ActionCommand<ChartArea>( ExecuteAddTradesCommand,      CanExecuteAddTradesCommand    );
+//        ShowHiddenAxesCommand     = new ActionCommand<ChartArea>( ExecuteShowHiddenAxesCommand, CanExecuteShowHiddenAxes      );
+//        AddXAxisCommand           = new ActionCommand<ChartArea>( ExecuteAddXAxisCommand,       a => AllowAddAxis             );
+//        AddYAxisCommand           = new ActionCommand<ChartArea>( ExecuteAddYAxisCommand,       a => AllowAddAxis             );
+//        RemoveAxisCommand         = new ActionCommand<ChartAxis>( ExecuteRemoveAxisCommand,     CanExecuteRemoveAxisCommand   );
+//        InitRangeDepProperty(                                                                                                 );
+//        _closePaneCommand         = new ActionCommand<IChildPane>( ExecuteClosePaneCommand,     a => IsInteracted             );
+
+//        CancelActiveOrdersCommand = new ActionCommand<ChartArea>( ExecuteCancelActiveOrders, CanExecuteCancelActiveOrders     );
+
+//        if ( this.IsDesignMode( ) )
+//        {
+//            return;
+//        }
+
+//        ChangeApplicationTheme( );
+//        DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler( ThemeManager_ApplicationThemeChanged );
+//    }
+
+//    //internal static void OnIsInteractedPropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+//    //{
+//    //    ( ( ChartViewModel ) d )._isInteracted = ( bool ) e.NewValue;
+//    //}
+
+//    private static void OnIsInteractedPropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+//    {
+//        ChartViewModel vm = (ChartViewModel) d;
+//        vm.CoerceValue( AllowAddAreaProperty );
+//        vm.CoerceValue( AllowAddAxisProperty );
+//        vm.CoerceValue( AllowAddCandlesProperty );
+//        vm.CoerceValue( AllowAddIndicatorsProperty );
+//        vm.CoerceValue( AllowAddOrdersProperty );
+//        vm.CoerceValue( AllowAddOwnTradesProperty );
+//        ( ( ChartViewModel ) d ).AllowAddXPropertyChanged( );
+//    }
+
+//    internal static void OnIsProgrammablePropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+//    {
+//        ( ( ChartViewModel ) d )._isProgrammable = ( bool ) e.NewValue;
+//    }
+
+//    internal static void OnMinimumRangePropertyChanged( DependencyObject d, DependencyPropertyChangedEventArgs e )
+//    {
+//        ( ( ChartViewModel ) d )._minimumRange = ( int ) e.NewValue;
+//    }
+
+//    internal void ExecuteAddXAxisCommand( ChartArea a )
+//    {
+//        var area = GetRealChartArea( a );
+//        if ( area == null )
+//            return;
+
+//        area.XAxises.Add
+//        (
+//            new ChartAxis( )
+//            {
+//                AxisType = ChartAxisType.CategoryDateTime,                
+//                TimeZone = ( a.XAxises ).LastOrDefault( )?.TimeZone
+//            }
+//        );
+//    }
+
+//    private ChartArea GetRealChartArea( ChartArea area )
+//    {    
+//        if ( area != null)
+//            return area;
+
+//        ObservableCollection<ScichartSurfaceMVVM> vm = ScichartSurfaceViewModels;
+//        if ( vm == null )
+//            return null;
+
+//        return vm.FirstOrDefault()?.Area;
+//    }
+
+//    internal void ExecuteAddYAxisCommand( ChartArea a )
+//    {
+//        ChartArea area = GetRealChartArea( a );
+//        if ( area == null )
+//            return;
+
+//        area.YAxises.Add
+//        (
+//            new ChartAxis( )
+//            {
+//                AxisType = ChartAxisType.Numeric                
+//            }
+//        );
+//    }
+
+//    internal void ExecuteRemoveAxisCommand( ChartAxis axis )
+//    {
+//        var area = axis.ChartArea;
+
+//        if ( area.XAxises.Contains( axis ) )
+//        {
+//            area.XAxises.Remove( axis );
+//        }
+
+//        if ( !area.YAxises.Contains( axis ) )
+//        {
+//            return;
+//        }
+
+//        area.YAxises.Remove( axis );
+//    }
+
+//    private bool CanExecuteRemoveAxisCommand( ChartAxis a )
+//    {
+//        if ( IsInteracted && ( a?.ChartArea != null ) /*&& !a.IsDefault*/ )
+//        {
+//            return AllowAddAxis;
+//        }
+
+//        return false;
+//    }
+
+//    internal void ExecuteClosePaneCommand( IChildPane c )
+//    {
+//        //var areas     = ( ( ScichartSurfaceMVVM )c ).Chart.ChartAreas;
+//        //var chartArea = areas.FirstOrDefault( a => a.ViewModel == c );
+
+//        //if ( chartArea == null )
+//        //{
+//        //    return;
+//        //}
+
+//        //areas.Remove( chartArea );
+//    }
+
+//    public ObservableCollection<ScichartSurfaceMVVM> ScichartSurfaceViewModels
+//    {
+//        get
+//        {
+//            return ( ObservableCollection<ScichartSurfaceMVVM> ) GetValue( ScichartSurfaceViewModelsProperty );
+//        }
+//        set
+//        {
+//            SetValue( ScichartSurfaceViewModelsProperty, value );
+//        }
+//    }
+
+//    private void ChangeApplicationTheme( )
+//    {
+//        SelectedTheme = ApplicationThemeHelper.ApplicationThemeName.ToChartTheme( );
+//    }
+
+
+
+//    public ICommand AddAreaCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddAreaCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddAreaCommandProperty, value );
+//        }
+//    }
+
+//    public ICommand AddCandlesCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddCandlesCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddCandlesCommandProperty, value );
+//        }
+//    }
+
+//    public ICommand AddIndicatorCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddIndicatorCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddIndicatorCommandProperty, value );
+//        }
+//    }
+
+//    public ICommand AddOrdersCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddOrdersCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddOrdersCommandProperty, value );
+//        }
+//    }
+
+//    public ICommand AddTradesCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddTradesCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddTradesCommandProperty, value );
+//        }
+//    }
+
+//    internal void RaiseRebuildCandlesEvent( StockSharp.Charting.IChartElement chartUI, CandleSeries candleSeries )
+//    {
+//        var rebuildEvent = RebuildCandlesEvent;
+//        if ( rebuildEvent == null )
+//            return;
+//        rebuildEvent( chartUI, candleSeries );
+//    }
+
+//    public ICommand AddXAxisCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddXAxisCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddXAxisCommandProperty, value );
+//        }
+//    }
+
+//    public ICommand AddYAxisCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( AddYAxisCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( AddYAxisCommandProperty, value );
+//        }
+//    }
+
+//    public ICommand RemoveAxisCommand
+//    {
+//        get
+//        {
+//            return ( ICommand ) GetValue( RemoveAxisCommandProperty );
+//        }
+//        set
+//        {
+//            SetValue( RemoveAxisCommandProperty, value );
+//        }
+//    }
+
+//    public ObservableCollection<IndicatorType> IndicatorTypes
+//    {
+//        get
+//        {
+//            return ( ObservableCollection<IndicatorType> ) GetValue( IndicatorTypesProperty );
+//        }
+//        set
+//        {
+//            SetValue( IndicatorTypesProperty, value );
+//        }
+//    }
+
+//    public ActionCommand<IChildPane> ClosePaneCommand
+//    {
+//        get
+//        {
+//            return _closePaneCommand;
+//        }
+//    }
+
+//    public void OnRemoveElementEvent( IChartElement component )
+//    {
+//        Action<IChartElement> myRemoveAction = this.RemoveElementEvent;
+//        if ( myRemoveAction == null )
+//            return;
+//        myRemoveAction( component );
+//    }
+
+//    public void InitRangeDepProperty( )
+//    {
+//        VisibleRangeDpo.InitRangeDepProperty( this );
+//    }
+
+//    public void InvokeRemoveElementEvent( StockSharp.Charting.IChartElement element )
+//    {
+//        RemoveElementEvent?.Invoke( element );
+//    }
+
+//    public void ExecuteAddAreaCommand( )
+//    {
+//        AreaAddedEvent?.Invoke( );
+//    }
+
+//    public bool CanExecuteAddAreaCommand( )
+//    {
+//        return AllowAddArea;
+//    }
+
+//    private void ExecuteAddCandlesCommand( ChartArea area )
+//    {
+//        Action<ChartArea> myEvent = AddCandlesEvent;
+//        if ( myEvent == null )
+//            return;
+
+//        myEvent( GetRealChartArea( area ) );        
+//    }
+
+
+//    private bool CanExecuteAddCandlesCommand( ChartArea chartArea )
+//    {
+//        return AllowAddCandles;
+//    }
+
+//    private void ExecuteAddIndicatorCommand( ChartArea area )
+//    {
+//        Action<ChartArea> myEvent = AddIndicatorEvent;
+//        if ( myEvent == null )
+//            return;
+
+//        myEvent( GetRealChartArea( area ) );        
+//    }
+
+//    private bool CanExecuteAddIndicatorCommand( ChartArea chartArea )
+//    {
+//        return AllowAddIndicators;
+//    }
+
+//    private void ExecuteAddOrdersCommand( ChartArea area )
+//    {
+//        Action<ChartArea> myEvent = AddOrdersEvent;
+//        if ( myEvent == null )
+//            return;
+
+//        myEvent( GetRealChartArea( area ) );        
+//    }
+
+//    private bool CanExecuteAddOrdersCommand( ChartArea chartArea )
+//    {
+//        return AllowAddOrders;
+//    }
+
+//    private void ExecuteAddTradesCommand( ChartArea area )
+//    {
+//        Action<ChartArea> myEvent = AddTradesEvent;
+//        if ( myEvent == null )
+//            return;
+
+//        myEvent( GetRealChartArea( area ) );
+//    }
+
+//    private bool CanExecuteAddTradesCommand( ChartArea chartArea )
+//    {
+//        return AllowAddOwnTrades;
+//    }
+
+//    private void ThemeManager_ApplicationThemeChanged( DependencyObject d, ThemeChangedRoutedEventArgs e )
+//    {
+//        ChangeApplicationTheme( );
+//    }
+
+//    private void ExecuteShowHiddenAxesCommand( ChartArea area )
+//    {
+//        if ( area != null )
+//        {
+//            area.ViewModel.ShowHiddenAxesCommand.Execute( null );
+//        }
+//        else
+//        {
+//            Ecng.Collections.CollectionHelper.ForEach( ScichartSurfaceViewModels, p => p.Area.ViewModel.ShowHiddenAxesCommand.Execute( null ) );
+
+//        }
+
+//    }
+
+//    private bool CanExecuteShowHiddenAxes( ChartArea _param1 )
+//    {
+//        return IsInteracted;
+//    }
+
+//    private void ExecuteCancelActiveOrders( ChartArea _param1 )
+//    {
+//        OnExecuteCancelActiveOrders( null );
+//    }
+
+//    public void OnExecuteCancelActiveOrders( Func<Order, bool> cancelOrdersFunc )
+//    {        
+//        if( cancelOrdersFunc == null )
+//        {
+//            cancelOrdersFunc = ( p => true );
+//        }
+
+//        IEnumerable<Order> selectActiverOrders( ScichartSurfaceMVVM s )
+//        {
+//            return s.GetActiveOrders( o =>
+//                                    {
+//                                        if( o.State != OrderStates.Active )
+//                                            return o.State == OrderStates.Pending;
+//                                        return true;
+//                                    } );
+//        }
+
+//        var some = ScichartSurfaceViewModels.SelectMany( selectActiverOrders).Where( cancelOrdersFunc);
+//        var ordersSet = Enumerable.ToHashSet( some);
+
+//        foreach ( var order in ordersSet )
+//        {
+//            var cancelOrder = CancelActiveOrderEvent;
+//            if ( cancelOrder == null )
+//                return;
+//            cancelOrder( order );            
+//        }
+//    }
+
+//    private bool CanExecuteCancelActiveOrders( ChartArea _param1 )
+//    {
+//        return IsInteracted;
+//    }    
+//    
+//}

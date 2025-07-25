@@ -1145,7 +1145,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private void OnRemoveElementEvent( IChartElement _param1 )
     {
-        this.ParentViewModel?.\u0023\u003DzzXq5ccDMuPZc( _param1 );
+        this.ParentViewModel?.InvokeRemoveElementEvent( _param1 );
         Action<IChartElement> zeBeQvx4 = this.RemoveElementEvent;
         if ( zeBeQvx4 == null )
             return;

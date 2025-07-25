@@ -1485,7 +1485,7 @@ public class Chart :
 
     public void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
     {
-      this._variableSome3535.ViewModel.\u0023\u003Dz\u0024DK5seweHzSZIyjEhw\u003D\u003D(this.m_public_Func_Order_bool_);
+      this._variableSome3535.ViewModel.InternalExecuteCancelActiveOrders(this.m_public_Func_Order_bool_);
     }
   }
 

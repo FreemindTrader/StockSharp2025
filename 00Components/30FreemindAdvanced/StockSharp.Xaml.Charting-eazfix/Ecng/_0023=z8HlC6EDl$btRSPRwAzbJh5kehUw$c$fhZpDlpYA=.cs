@@ -261,7 +261,7 @@ public sealed class AnnotationCollection :
   private bool \u0023\u003DzbjRX\u0024PUuuOXT(
     IAnnotation _param1)
   {
-    AnnotationCollection.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D lrrNtIjstOuVg4Rro = new AnnotationCollection.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D()
+    AnnotationCollection.SomeInternalSealedClass4RRo lrrNtIjstOuVg4Rro = new AnnotationCollection.SomeInternalSealedClass4RRo()
     {
       _public_ActiveOrderAnnotation_083 = _param1
     };
@@ -353,7 +353,7 @@ public sealed class AnnotationCollection :
     }
   }
 
-  private sealed class \u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D
+  private sealed class SomeInternalSealedClass4RRo
   {
     public IAnnotation _public_ActiveOrderAnnotation_083;
     public IAnnotation[] \u0023\u003DzAG7Twks\u003D;

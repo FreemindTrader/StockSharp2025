@@ -55,7 +55,9 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
         _drawingSurface = drawingSurface ?? throw new ArgumentNullException( "pane" );
         _chartComponent = component ?? throw new ArgumentNullException( "element" );
         _isCandleElement = component is IChartCandleElement;
-        ChartViewModel.AddInteractedEvent( OnAllowToRemove );
+
+        
+        ChartViewModel.InteractedEvent += ( OnAllowToRemove );
         RootChartComponent.PropertyChanged += OnPropertyChanged;
     }
 
@@ -225,7 +227,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         // BUG: I believe there is a problem here. Doesn't look like OnAllToRemove should be binded to InteractedEvent
         //      Should probably be linked to AllowToRemoveEvent
-        ChartViewModel.RemoveInteractedEvent( new Action( OnAllowToRemove ) );
+        ChartViewModel.InteractedEvent -= OnAllowToRemove;
         IsDisposed = true;
     }
 

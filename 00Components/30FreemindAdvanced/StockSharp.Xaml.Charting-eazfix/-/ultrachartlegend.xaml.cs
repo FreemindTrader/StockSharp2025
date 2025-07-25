@@ -78,7 +78,7 @@ public sealed class ultrachartlegend :
       DataType2 = dataType,
       IsSubscribe = true
     }, (SecurityMessage) subscription1.MarketData);
-    dataContext.Pane.ParentViewModel.\u0023\u003Dzld7tWxZuooQ2UzOmtQ\u003D\u003D((IChartElement) dataContext.ChartComponent, subscription2);
+    dataContext.Pane.ParentViewModel.InvokeRebuildCandlesEvent((IChartElement) dataContext.ChartComponent, subscription2);
   }
 
   [DebuggerNonUserCode]

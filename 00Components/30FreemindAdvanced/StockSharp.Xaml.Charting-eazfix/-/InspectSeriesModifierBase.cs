@@ -169,7 +169,7 @@ public abstract class InspectSeriesModifierBase :
     Point _param1,
     double _param2)
   {
-    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.\u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D()
+    return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.SomeInternalSealedClass4RRo()
     {
       \u0023\u003Dz_hWqBbI\u003D = _param1,
       \u0023\u003DzADxu\u00246OzU_cF = _param2,
@@ -372,7 +372,7 @@ label_10:
     }
   }
 
-  private sealed class \u0023\u003DzNCeF9LrrNtIjst\u0024ouVg4RRo\u003D
+  private sealed class SomeInternalSealedClass4RRo
   {
     public Point \u0023\u003Dz_hWqBbI\u003D;
     public double \u0023\u003DzADxu\u00246OzU_cF;

@@ -863,9 +863,11 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
                 throw new NotSupportedException();
             }
 
-            objArray[ 0 ] = GroupChart.ViewModel.InstanceCount;
-            objArray[ 1 ] = _paneGroupSuffix;
-            return StringHelper.Put( "ssharpultrachart{0}_{1}", objArray );
+            throw new NotSupportedException();
+
+            //objArray[ 0 ] = GroupChart.ViewModel.InstanceCount;
+            //objArray[ 1 ] = _paneGroupSuffix;
+            //return StringHelper.Put( "ssharpultrachart{0}_{1}", objArray );
         }
     }
 
@@ -1309,7 +1311,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private void OnRemoveElementEvent( IChartElement _param1 )
     {
-        ParentViewModel?.OnRemoveElementEvent( _param1 );
+        ParentViewModel?.InvokeRemoveElementEvent( _param1 );
 
         Action<IChartElement> myAction = RemoveElementEvent;
         if ( myAction == null )
@@ -1319,21 +1321,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     
 
-    private sealed class PrivateSealedClass0835
-    {
-        public Func<Order, bool> m_public_Func_Order_bool_;
-        public Func<ChartActiveOrdersElementVM, IEnumerable<Order>> Func_ChartActiveOrdersElementVM_0938;
-
-        public IEnumerable<Order> public_IEnumerable_Order_098( ChartComponentViewModel x )
-        {
-            return x.Elements.OfType<ChartActiveOrdersElementVM>().SelectMany<ChartActiveOrdersElementVM, Order>( Func_ChartActiveOrdersElementVM_0938 ?? ( Func_ChartActiveOrdersElementVM_0938 = new Func<ChartActiveOrdersElementVM, IEnumerable<Order>>( public_IEnumerable_Order__ ) ) );
-        }
-
-        public IEnumerable<Order> public_IEnumerable_Order__( ChartActiveOrdersElementVM _param1 )
-        {
-            return _param1.GetActiveOrders( m_public_Func_Order_bool_ );
-        }
-    }
+    
 
     //private sealed class PrivateSealedClass_3Ins_1Met
     //{
