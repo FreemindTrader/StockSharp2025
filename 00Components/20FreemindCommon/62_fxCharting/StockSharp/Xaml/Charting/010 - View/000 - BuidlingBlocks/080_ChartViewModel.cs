@@ -41,8 +41,8 @@ public sealed class ChartViewModel : DependencyObject
     {
         return true;
     }
-    #endregion
-    
+    #endregion ---------------------------- Tony Added ----------------------------------
+
     public string SelectedTheme
     {
         get
