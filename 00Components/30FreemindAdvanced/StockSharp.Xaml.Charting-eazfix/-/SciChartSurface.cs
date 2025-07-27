@@ -1207,7 +1207,7 @@ public class SciChartSurface :
     if (!source.Any<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>())
       return zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange != null && !zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange.IsDefined ? abyLt9clZggmJsWhw1 : zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange;
     IRange[] array = source.Select<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(new Func<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(zq1a0vCkinf2sWxYoWqM.\u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz)).Where<IRange>(SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D = new Func<IRange, bool>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D))).ToArray<IRange>();
-    IRange abyLt9clZggmJsWhw2 = \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzVqxLKNDqEV82<IRange>(array);
+    IRange abyLt9clZggmJsWhw2 = TemplateTypeHelper.GetFirstElement<IRange>(array);
     if (abyLt9clZggmJsWhw2 != null)
     {
       for (int index = 1; index < array.Length; ++index)

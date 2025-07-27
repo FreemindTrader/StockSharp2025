@@ -393,7 +393,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
         z_i6sZDg\u003D  = element;
         if ( !CollectionHelper.TryAdd<IChartElement>(
             ( ICollection<IChartElement> ) _innerElements,
-            vqd1Qhu2nAw1nzwT0.\u0023\u003Dz_i6sZDg\u003D) )
+            vqd1Qhu2nAw1nzwT0._someChartElement0343123) )
             throw new ArgumentException( nameof( element ) );
         if ( !IsAttached )
             return;
@@ -426,13 +426,13 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
     private sealed class Struct0
     {
         public BaseChartIndicatorPainter<T> _variableSome3535;
-        public IChartElement \u0023\u003Dz_i6sZDg\u003D;
+        public IChartElement _someChartElement0343123;
 
     public void Method01()
     {
       _variableSome3535.GetIndicatorElement().
 
-        AddChildElement( \u0023\u003Dz_i6sZDg\u003D);
+        AddChildElement( _someChartElement0343123);
         // ISSUE: explicit non-virtual call
         ScichartSurfaceMVVM tdnKj06Uu87Wzk09Wj = ((ChartArea) __nonvirtual(_variableSome3535.Element)
             .PersistentChartArea).ViewModel;
@@ -446,7 +446,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
         a4VgOpCeDiqsTdzB.
             InitializeChildElements((IEnumerable<DrawableChartElementBaseViewModel>) new List<DrawableChartElementBaseViewModel>
 
-        (((IDrawableChartElement) \u0023\u003Dz_i6sZDg\u003D
+        (((IDrawableChartElement) _someChartElement0343123
             ).
             CreateViewModel( tdnKj06Uu87Wzk09Wj)));
     }

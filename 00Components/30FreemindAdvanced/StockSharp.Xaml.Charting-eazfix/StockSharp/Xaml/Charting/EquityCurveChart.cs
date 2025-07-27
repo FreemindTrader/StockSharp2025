@@ -107,7 +107,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     {
       List<IChartBandElement> chartBandElementList = new List<IChartBandElement>();
       chartBandElementList.AddRange(((IEnumerable) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Cast<IChartBandElement>());
-      return (IEnumerable<IChartBandElement>) new \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<IChartBandElement>(chartBandElementList);
+      return (IEnumerable<IChartBandElement>) new List<IChartBandElement>(chartBandElementList);
     }
   }
 

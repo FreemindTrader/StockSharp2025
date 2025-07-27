@@ -150,10 +150,10 @@ public static class ElementExtensions
     object _param2)
   {
     ElementExtensions.\u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D lmbTiAitFc7nJ884 = new ElementExtensions.\u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D();
-    lmbTiAitFc7nJ884.\u0023\u003Dz_i6sZDg\u003D = _param0;
+    lmbTiAitFc7nJ884._someChartElement0343123 = _param0;
     lmbTiAitFc7nJ884.\u0023\u003Dz89jjF1s\u003D = _param1;
     lmbTiAitFc7nJ884.\u0023\u003DzxGz2_8k\u003D = _param2;
-    Dispatcher dispatcher = ((DispatcherObject) lmbTiAitFc7nJ884.\u0023\u003Dz_i6sZDg\u003D).Dispatcher;
+    Dispatcher dispatcher = ((DispatcherObject) lmbTiAitFc7nJ884._someChartElement0343123).Dispatcher;
     Action action = new Action(lmbTiAitFc7nJ884.\u0023\u003DzjX0s_IsrHsVW2ijiPdnNHq0\u003D);
     if (dispatcher.CheckAccess())
       action();
@@ -175,13 +175,13 @@ public static class ElementExtensions
 
   private sealed class \u0023\u003Dz4sSy7LmbTiAIt\u0024fc7nJ88\u00244\u003D
   {
-    public FrameworkElement \u0023\u003Dz_i6sZDg\u003D;
+    public FrameworkElement _someChartElement0343123;
     public DependencyProperty \u0023\u003Dz89jjF1s\u003D;
     public object \u0023\u003DzxGz2_8k\u003D;
 
     public void \u0023\u003DzjX0s_IsrHsVW2ijiPdnNHq0\u003D()
     {
-      this.\u0023\u003Dz_i6sZDg\u003D.SetValue(this.\u0023\u003Dz89jjF1s\u003D, this.\u0023\u003DzxGz2_8k\u003D);
+      this._someChartElement0343123.SetValue(this.\u0023\u003Dz89jjF1s\u003D, this.\u0023\u003DzxGz2_8k\u003D);
     }
   }
 }

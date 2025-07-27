@@ -137,7 +137,7 @@ public class ChartPanel :
     this.\u0023\u003DzO72kpz0\u003D.SubscribeOrderElement += new Action<IChartOrderElement, Subscription>(this.\u0023\u003Dz1aDyDm3zg_Rs2wBbVgacVkc\u003D);
     this.\u0023\u003DzO72kpz0\u003D.SubscribeTradeElement += new Action<IChartTradeElement, Subscription>(this.\u0023\u003DzKAwimyvAzaY\u0024AMPMBCjXySc\u003D);
     this.\u0023\u003DzO72kpz0\u003D.UnSubscribeElement += new Action<IChartElement>(this.\u0023\u003Dzk9_ZG7Umjd_3nlcCpYJ42Hc\u003D);
-    this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzTWNYl4Ujpxot(new Action<IChartArea>(this.\u0023\u003DzP98lXRlARNrXZxrvU5arwx8\u003D));
+    this.\u0023\u003DzO72kpz0\u003D.AddiChartAreaEvent(new Action<IChartArea>(this.\u0023\u003DzP98lXRlARNrXZxrvU5arwx8\u003D));
     this.\u0023\u003DzO72kpz0\u003D.AreaAdded += new Action<IChartArea>(this.\u0023\u003Dzwg4hEbZtsdrK12xCFTj_Fyg\u003D);
     this.\u0023\u003DzO72kpz0\u003D.AreaRemoved += new Action<IChartArea>(this.\u0023\u003Dz_zYN8JxCohXIKNL2XV\u0024B6P4\u003D);
     this.\u0023\u003Dz5wj51j\u0024m7KHERsE\u0024DA\u003D\u003D.ItemsSource = (object) ChartPanel.\u0023\u003DzoQNjsvS8x7txZ62LTQ\u003D\u003D;
@@ -163,7 +163,7 @@ public class ChartPanel :
     this.\u0023\u003DzMtehrzRObGK8 = observableCollection;
     this.\u0023\u003Dz1jt7bIJr0f0_.ItemsSource = (object) this.\u0023\u003DzMtehrzRObGK8;
     this.\u0023\u003Dzb98_9e4umo9R.EditValue = (object) TimeSpan.Zero;
-    this.\u0023\u003DzO72kpz0\u003D.\u0023\u003Dzz6Byf1ItRSMq(new Action(this.\u0023\u003DzjfWxqcPIhQTyy4aKxIZ6mn8\u003D));
+    this.\u0023\u003DzO72kpz0\u003D.AddsomeActionEvent(new Action(this.\u0023\u003DzjfWxqcPIhQTyy4aKxIZ6mn8\u003D));
     this.\u0023\u003DzW15YPW8yFbIF.SettingsChanged += new Action(this.\u0023\u003DzJ2e2vCmK2SDuOdabPwfX1Ms\u003D);
     txCngvmYeggNuKzD8.\u0023\u003DzwqcAXcxvUggD = new string[1]
     {
@@ -300,7 +300,7 @@ public class ChartPanel :
     {
       _variableSome3535 = this,
       m_public_Func_Order_bool_ = predicate
-    }.\u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D));
+    }.SomeCancelOrdersMethod03343));
   }
 
   public bool IsInteracted
@@ -704,7 +704,7 @@ public class ChartPanel :
     {
       if (!(this.\u0023\u003Dzb98_9e4umo9R.EditValue is TimeSpan editValue) || !(editValue > TimeSpan.Zero))
         return;
-      this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzBF\u0024LAMIgiEWk(editValue);
+      this.\u0023\u003DzO72kpz0\u003D.ChangeCandleTimeFrame(editValue);
     }
     finally
     {
@@ -719,7 +719,7 @@ public class ChartPanel :
     this.\u0023\u003DzCm\u0024a_RJSIzjb8Je3X21wN90\u003D = true;
     try
     {
-      Subscription subscription = this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzgDVjqFRN8sR7();
+      Subscription subscription = this.\u0023\u003DzO72kpz0\u003D.GetSubscription();
       if (subscription != null && subscription.DataType.Arg is TimeSpan timeSpan)
       {
         if (this.\u0023\u003DzMtehrzRObGK8.Contains(timeSpan))
@@ -945,7 +945,7 @@ public class ChartPanel :
 
   private void \u0023\u003DzsIUgZC\u0024bsMzwntYtdPR0Dww\u003D(Order _param1, Decimal _param2)
   {
-    Action<Order, Decimal> zJiM5nvc = this.\u0023\u003DzJIM5nvc\u003D;
+    Action<Order, Decimal> zJiM5nvc = this.MoveOrder;
     if (zJiM5nvc == null)
       return;
     zJiM5nvc(_param1, _param2);
@@ -999,7 +999,7 @@ public class ChartPanel :
     IChartCandleElement _param1,
     Subscription _param2)
   {
-    Action<IChartCandleElement, Subscription> wdiUyNemvFqkVapq = this.\u0023\u003DzlWdi\u0024uyNemvFQkVAPQ\u003D\u003D;
+    Action<IChartCandleElement, Subscription> wdiUyNemvFqkVapq = this.SubscribeCandleElement;
     if (wdiUyNemvFqkVapq == null)
       return;
     wdiUyNemvFqkVapq(_param1, _param2);
@@ -1010,7 +1010,7 @@ public class ChartPanel :
     Subscription _param2,
     IIndicator _param3)
   {
-    Action<IChartIndicatorElement, Subscription, IIndicator> zLdfE1FxkiHdr = this.\u0023\u003DzLDFE1FXkiHDr;
+    Action<IChartIndicatorElement, Subscription, IIndicator> zLdfE1FxkiHdr = this.SubscribeIndicatorElement;
     if (zLdfE1FxkiHdr == null)
       return;
     zLdfE1FxkiHdr(_param1, _param2, _param3);
@@ -1020,7 +1020,7 @@ public class ChartPanel :
     IChartOrderElement _param1,
     Subscription _param2)
   {
-    Action<IChartOrderElement, Subscription> zh7nXgYWoKl = this.\u0023\u003Dzh7nXgY\u0024WoKL\u0024;
+    Action<IChartOrderElement, Subscription> zh7nXgYWoKl = this.SubscribeOrderElement;
     if (zh7nXgYWoKl == null)
       return;
     zh7nXgYWoKl(_param1, _param2);
@@ -1030,7 +1030,7 @@ public class ChartPanel :
     IChartTradeElement _param1,
     Subscription _param2)
   {
-    Action<IChartTradeElement, Subscription> ssvKvae0LsR0LbUsEg = this.\u0023\u003DzSSvKVae0LsR0LbUSEg\u003D\u003D;
+    Action<IChartTradeElement, Subscription> ssvKvae0LsR0LbUsEg = this.SubscribeTradeElement;
     if (ssvKvae0LsR0LbUsEg == null)
       return;
     ssvKvae0LsR0LbUsEg(_param1, _param2);
@@ -1038,7 +1038,7 @@ public class ChartPanel :
 
   private void \u0023\u003Dzk9_ZG7Umjd_3nlcCpYJ42Hc\u003D(IChartElement _param1)
   {
-    Action<IChartElement> z9PnYjM29SjfT = this.\u0023\u003Dz9PnYjM29SjfT;
+    Action<IChartElement> z9PnYjM29SjfT = this.RemoveElement;
     if (z9PnYjM29SjfT == null)
       return;
     z9PnYjM29SjfT(_param1);
@@ -1070,7 +1070,7 @@ public class ChartPanel :
 
   private void \u0023\u003DzjfWxqcPIhQTyy4aKxIZ6mn8\u003D()
   {
-    this.\u0023\u003DzW15YPW8yFbIF.Security = this.\u0023\u003DzO72kpz0\u003D.\u0023\u003Dz3OPaBTitYMD\u0024();
+    this.\u0023\u003DzW15YPW8yFbIF.Security = this.\u0023\u003DzO72kpz0\u003D.GetSecurity();
     this.\u0023\u003DzfU3Fd_StOx0y3VLx1m\u0024UMKE\u003D();
   }
 
@@ -1445,7 +1445,7 @@ label_14:
     ChartPanel _variableSome3535;
     public Func<Order, bool> m_public_Func_Order_bool_;
 
-    public void \u0023\u003DzjckDB_EnwpKPCaWFi4pW638\u003D()
+    public void SomeCancelOrdersMethod03343()
     {
       this._variableSome3535.\u0023\u003DzO72kpz0\u003D.CancelOrders(this.m_public_Func_Order_bool_);
     }

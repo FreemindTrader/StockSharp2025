@@ -22,9 +22,9 @@ namespace StockSharp.Xaml.Charting;
 public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
 {
   
-  public ComboBoxEditEx \u0023\u003DzjQEUHP_xvugS;
+  public ComboBoxEditEx ElementsCtrl;
   
-  public SimpleButton \u0023\u003Dzs4BdTaM\u003D;
+  public SimpleButton Ok;
   
   private bool _someInternalBoolean;
 
@@ -35,21 +35,21 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
     get => throw new NotSupportedException();
     set
     {
-      this.\u0023\u003DzjQEUHP_xvugS.SetItemsSource<IChartCandleElement>(value, ChartCandleElementPicker.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (ChartCandleElementPicker.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IChartCandleElement, string>(ChartCandleElementPicker.SomeClass34343383.SomeMethond0343.\u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D)));
+      this.ElementsCtrl.SetItemsSource<IChartCandleElement>(value, ChartCandleElementPicker.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D ?? (ChartCandleElementPicker.SomeClass34343383.\u0023\u003DzJ1auo2GPZ5hDBQwI8w\u003D\u003D = new Func<IChartCandleElement, string>(ChartCandleElementPicker.SomeClass34343383.SomeMethond0343.\u0023\u003Dz7sz5TH9XD46\u0024YVn18a9wvho\u003D)));
     }
   }
 
   public IChartCandleElement SelectedElement
   {
-    get => this.\u0023\u003DzjQEUHP_xvugS.GetSelected<IChartCandleElement>();
-    set => this.\u0023\u003DzjQEUHP_xvugS.SetSelected<IChartCandleElement>(value);
+    get => this.ElementsCtrl.GetSelected<IChartCandleElement>();
+    set => this.ElementsCtrl.SetSelected<IChartCandleElement>(value);
   }
 
-  private void \u0023\u003DzI9GYslJ_NW0_rxbvlA\u003D\u003D(
+  private void SomeMethods0382(
     object _param1,
     EditValueChangedEventArgs _param2)
   {
-    this.\u0023\u003Dzs4BdTaM\u003D.IsEnabled = this.SelectedElement != null;
+    this.Ok.IsEnabled = this.SelectedElement != null;
   }
 
   [DebuggerNonUserCode]
@@ -70,14 +70,14 @@ public class ChartCandleElementPicker : ThemedWindow, IComponentConnector
     if (connectionId != 1)
     {
       if (connectionId == 2)
-        this.\u0023\u003Dzs4BdTaM\u003D = (SimpleButton) target;
+        this.Ok = (SimpleButton) target;
       else
         this._someInternalBoolean = true;
     }
     else
     {
-      this.\u0023\u003DzjQEUHP_xvugS = (ComboBoxEditEx) target;
-      this.\u0023\u003DzjQEUHP_xvugS.EditValueChanged += new EditValueChangedEventHandler(this.\u0023\u003DzI9GYslJ_NW0_rxbvlA\u003D\u003D);
+      this.ElementsCtrl = (ComboBoxEditEx) target;
+      this.ElementsCtrl.EditValueChanged += new EditValueChangedEventHandler(this.SomeMethods0382);
     }
   }
 

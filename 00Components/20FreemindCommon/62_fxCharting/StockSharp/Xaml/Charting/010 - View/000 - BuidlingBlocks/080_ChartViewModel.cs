@@ -27,7 +27,7 @@ using System.Windows.Input;
 
 public sealed class ChartViewModel : DependencyObject
 {
-    #region ---------------------------- Tony Added ----------------------------------
+    #region Tony Added
 
     public event EventHandler<AddCandlesEventArgs>  CodingAddCandlesEvent;
 
@@ -41,7 +41,7 @@ public sealed class ChartViewModel : DependencyObject
     {
         return true;
     }
-    #endregion ---------------------------- Tony Added ----------------------------------
+    #endregion Tony Added
 
     public string SelectedTheme
     {

@@ -26,13 +26,13 @@ public abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8V
     XmlWriter _param2)
   {
     \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass1234 _someMemebers1234 = new \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass1234();
-    _someMemebers1234.\u0023\u003Dz_i6sZDg\u003D = _param1;
+    _someMemebers1234._someChartElement0343123 = _param1;
     foreach (string str in this.\u0023\u003Dz6DunSwc\u003D)
-      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _someMemebers1234.\u0023\u003Dz_i6sZDg\u003D, str);
+      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _someMemebers1234._someChartElement0343123, str);
     if (this.\u0023\u003DzU1bOEY1Ldlir6qBx51Rdl_k\u003D == null)
       return;
     foreach (string str in this.\u0023\u003DzU1bOEY1Ldlir6qBx51Rdl_k\u003D.Where<KeyValuePair<Type, string[]>>(new Func<KeyValuePair<Type, string[]>, bool>(_someMemebers1234.\u0023\u003DztbYFMhd9VetwIFGIeQ\u003D\u003D)).SelectMany<KeyValuePair<Type, string[]>, string>(\u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass34343383.somemoerehoer ?? (\u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass34343383.somemoerehoer = new Func<KeyValuePair<Type, string[]>, IEnumerable<string>>(\u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass34343383.SomeMethond0343.\u0023\u003DzllFLfGFO1_8H9XmntQ\u003D\u003D))))
-      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _someMemebers1234.\u0023\u003Dz_i6sZDg\u003D, str);
+      _param2.\u0023\u003DzVjDFK7Q\u003D((object) _someMemebers1234._someChartElement0343123, str);
   }
 
   public virtual void \u0023\u003Dz4EJs3pc\u003D(
@@ -40,13 +40,13 @@ public abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8V
     XmlReader _param2)
   {
     \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D u5Svx6MhYdSkOpoa = new \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.\u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D();
-    u5Svx6MhYdSkOpoa.\u0023\u003Dz_i6sZDg\u003D = _param1;
+    u5Svx6MhYdSkOpoa._someChartElement0343123 = _param1;
     foreach (string str in this.\u0023\u003Dz6DunSwc\u003D)
-      _param2.\u0023\u003DzpJLX1I844aD6zcceiA\u003D\u003D((object) u5Svx6MhYdSkOpoa.\u0023\u003Dz_i6sZDg\u003D, str);
+      _param2.\u0023\u003DzpJLX1I844aD6zcceiA\u003D\u003D((object) u5Svx6MhYdSkOpoa._someChartElement0343123, str);
     if (this.\u0023\u003DzU1bOEY1Ldlir6qBx51Rdl_k\u003D == null)
       return;
     foreach (string str in this.\u0023\u003DzU1bOEY1Ldlir6qBx51Rdl_k\u003D.Where<KeyValuePair<Type, string[]>>(new Func<KeyValuePair<Type, string[]>, bool>(u5Svx6MhYdSkOpoa.\u0023\u003Dz6QPdyiLfsgITxtjnxQ\u003D\u003D)).SelectMany<KeyValuePair<Type, string[]>, string>(\u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass34343383.\u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D ?? (\u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass34343383.\u0023\u003Dz01OeJ1\u0024vz10AkFmm0w\u003D\u003D = new Func<KeyValuePair<Type, string[]>, IEnumerable<string>>(\u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8VzeOSw\u003D\u003D<T>.SomeClass34343383.SomeMethond0343.\u0023\u003Dze\u002495iAM12dgsBeqnXg\u003D\u003D))))
-      _param2.\u0023\u003DzpJLX1I844aD6zcceiA\u003D\u003D((object) u5Svx6MhYdSkOpoa.\u0023\u003Dz_i6sZDg\u003D, str);
+      _param2.\u0023\u003DzpJLX1I844aD6zcceiA\u003D\u003D((object) u5Svx6MhYdSkOpoa._someChartElement0343123, str);
   }
 
   public void \u0023\u003DzT642HR8\u003D(
@@ -73,11 +73,11 @@ public abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8V
 
   private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D
   {
-    public T \u0023\u003Dz_i6sZDg\u003D;
+    public T _someChartElement0343123;
 
     public bool \u0023\u003Dz6QPdyiLfsgITxtjnxQ\u003D\u003D(KeyValuePair<Type, string[]> _param1)
     {
-      return _param1.Key.IsInstanceOfType((object) this.\u0023\u003Dz_i6sZDg\u003D);
+      return _param1.Key.IsInstanceOfType((object) this._someChartElement0343123);
     }
   }
 
@@ -117,11 +117,11 @@ public abstract class \u0023\u003Dz6RuI7w1XIc38iQTeDB5TvWfY_h5S2Y_Vli8ECWL1cMw8V
 
   private sealed class SomeClass1234
   {
-    public T \u0023\u003Dz_i6sZDg\u003D;
+    public T _someChartElement0343123;
 
     public bool \u0023\u003DztbYFMhd9VetwIFGIeQ\u003D\u003D(KeyValuePair<Type, string[]> _param1)
     {
-      return _param1.Key.IsInstanceOfType((object) this.\u0023\u003Dz_i6sZDg\u003D);
+      return _param1.Key.IsInstanceOfType((object) this._someChartElement0343123);
     }
   }
 

@@ -9,19 +9,19 @@ using System.Runtime.InteropServices;
 
 #nullable disable
 [StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
-public static class \u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3
+public static class TemplateTypeHelper
 {
-  public static T \u0023\u003DzVqxLKNDqEV82<T>(T[] _param0)
-  {
-    if (_param0 == null)
-      throw new ArgumentNullException();
-    return _param0.Length != 0 ? _param0[0] : default (T);
-  }
+    public static T GetFirstElement<T>(T[] _param0)
+    {
+        if ( _param0 == null )
+            throw new ArgumentNullException();
+        return _param0.Length != 0 ? _param0[0] : default(T);
+    }
 
-  public static bool \u0023\u003DzDCv6G5Q\u003D<T>(T[] _param0)
-  {
-    if (_param0 == null)
-      throw new ArgumentNullException();
-    return _param0.Length != 0;
-  }
+    public static bool IsNotEmpty<T>(T[] _param0)
+    {
+        if ( _param0 == null )
+            throw new ArgumentNullException();
+        return _param0.Length != 0;
+    }
 }

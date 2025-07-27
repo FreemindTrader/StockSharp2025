@@ -149,7 +149,7 @@ public sealed class ClusterProfileRenderableSeries :
     objArray[4] = (object) vm6DexIkyzzokCaW.\u0023\u003DzEB3J6TW\u0024NW8A.Max;
     ao0kEjY6wcnQ6fBfXg.\u0023\u003Dz3jAE7bQ\u003D("ClusterProfile: started render {0} segments. Indexes: {1}-{2}, VisibleRange: {3}-{4}", objArray);
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB[] array = ((IEnumerable<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>) source).Where<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>(new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, bool>(vm6DexIkyzzokCaW.\u0023\u003DzkaVrqD4ggnSfmpwokg\u003D\u003D)).ToArray<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>();
-    if (!\u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzDCv6G5Q\u003D<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>(array))
+    if (!TemplateTypeHelper.IsNotEmpty<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB>(array))
       return;
     vm6DexIkyzzokCaW.\u0023\u003Dz\u0024sDnaZw\u003D = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, false, (float) this.StrokeThickness, this.Opacity);
     try

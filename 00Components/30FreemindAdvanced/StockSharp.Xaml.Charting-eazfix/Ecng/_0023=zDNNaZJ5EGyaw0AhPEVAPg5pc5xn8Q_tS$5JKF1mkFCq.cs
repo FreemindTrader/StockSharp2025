@@ -85,8 +85,8 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
     this DependencyObject _param0)
   {
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
-    zeaY3Uu1m4CyxerxRw.\u0023\u003Dz_i6sZDg\u003D = _param0;
-    return zeaY3Uu1m4CyxerxRw.\u0023\u003Dz_i6sZDg\u003D.\u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D().Where<DependencyObject>(new Func<DependencyObject, bool>(zeaY3Uu1m4CyxerxRw.\u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D));
+    zeaY3Uu1m4CyxerxRw._someChartElement0343123 = _param0;
+    return zeaY3Uu1m4CyxerxRw._someChartElement0343123.\u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D().Where<DependencyObject>(new Func<DependencyObject, bool>(zeaY3Uu1m4CyxerxRw.\u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D));
   }
 
   public static IEnumerable<DependencyObject> \u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D(
@@ -99,15 +99,15 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
   public static void \u0023\u003DznHdRJtnS158H(this FrameworkElement _param0, Action _param1)
   {
     \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc dop2SzA2WchXh2wc = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc();
-    dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D = _param0;
+    dop2SzA2WchXh2wc._someChartElement0343123 = _param0;
     dop2SzA2WchXh2wc.\u0023\u003Dz07PQx44\u003D = _param1;
-    if (dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D == null)
+    if (dop2SzA2WchXh2wc._someChartElement0343123 == null)
       throw new ArgumentNullException("element");
     if (dop2SzA2WchXh2wc.\u0023\u003Dz07PQx44\u003D == null)
       throw new ArgumentNullException("action");
     dop2SzA2WchXh2wc.\u0023\u003DzZla_cGQ\u003D = (EventHandler) null;
     dop2SzA2WchXh2wc.\u0023\u003DzZla_cGQ\u003D = new EventHandler(dop2SzA2WchXh2wc.\u0023\u003Dz2lTnWh\u0024GuTatQNZ7qQjhg38\u003D);
-    dop2SzA2WchXh2wc.\u0023\u003Dz_i6sZDg\u003D.LayoutUpdated += dop2SzA2WchXh2wc.\u0023\u003DzZla_cGQ\u003D;
+    dop2SzA2WchXh2wc._someChartElement0343123.LayoutUpdated += dop2SzA2WchXh2wc.\u0023\u003DzZla_cGQ\u003D;
   }
 
   public static IEnumerable<FrameworkElement> \u0023\u003DzJcuveXBsPuYu(
@@ -149,7 +149,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
-    private DependencyObject \u0023\u003Dz_i6sZDg\u003D;
+    private DependencyObject _someChartElement0343123;
     
     public DependencyObject \u0023\u003DzU1yXtTruEocq;
     
@@ -176,7 +176,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
         case 0:
           this.\u0023\u003Dz4fzyEZ1SsHYa = -1;
           this.\u0023\u003Dzz66MIjVparq3tYlmvw\u003D\u003D = new Queue<DependencyObject>();
-          this.\u0023\u003Dzz66MIjVparq3tYlmvw\u003D\u003D.Enqueue(this.\u0023\u003Dz_i6sZDg\u003D);
+          this.\u0023\u003Dzz66MIjVparq3tYlmvw\u003D\u003D.Enqueue(this._someChartElement0343123);
           break;
         case 1:
           this.\u0023\u003Dz4fzyEZ1SsHYa = -1;
@@ -227,7 +227,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
       }
       else
         azSlboAzTpf7Qqnir = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dz1_jmZlaoBpyAzSlboAzTpf7QQnir(0);
-      azSlboAzTpf7Qqnir.\u0023\u003Dz_i6sZDg\u003D = this.\u0023\u003DzU1yXtTruEocq;
+      azSlboAzTpf7Qqnir._someChartElement0343123 = this.\u0023\u003DzU1yXtTruEocq;
       return (IEnumerator<DependencyObject>) azSlboAzTpf7Qqnir;
     }
 
@@ -243,7 +243,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
   {
     public 
     #nullable disable
-    FrameworkElement \u0023\u003Dz_i6sZDg\u003D;
+    FrameworkElement _someChartElement0343123;
     public EventHandler \u0023\u003DzZla_cGQ\u003D;
     public Action \u0023\u003Dz07PQx44\u003D;
 
@@ -251,7 +251,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
     #nullable enable
     object? _param1, EventArgs _param2)
     {
-      this.\u0023\u003Dz_i6sZDg\u003D.LayoutUpdated -= this.\u0023\u003DzZla_cGQ\u003D;
+      this._someChartElement0343123.LayoutUpdated -= this.\u0023\u003DzZla_cGQ\u003D;
       this.\u0023\u003Dz07PQx44\u003D();
     }
   }
@@ -272,7 +272,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
-    private DependencyObject \u0023\u003Dz_i6sZDg\u003D;
+    private DependencyObject _someChartElement0343123;
     
     public DependencyObject \u0023\u003DzU1yXtTruEocq;
     
@@ -296,7 +296,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
       {
         case 0:
           this.\u0023\u003Dz4fzyEZ1SsHYa = -1;
-          this.\u0023\u003Dz3\u00249alDp1vu9\u0024 = this.\u0023\u003Dz_i6sZDg\u003D;
+          this.\u0023\u003Dz3\u00249alDp1vu9\u0024 = this._someChartElement0343123;
           break;
         case 1:
           this.\u0023\u003Dz4fzyEZ1SsHYa = -1;
@@ -347,7 +347,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
       }
       else
         noyRhhpYsTn01e4Kq8 = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003DzFjpiurVBHNoyRHhpYsTN01e4KQ_8(0);
-      noyRhhpYsTn01e4Kq8.\u0023\u003Dz_i6sZDg\u003D = this.\u0023\u003DzU1yXtTruEocq;
+      noyRhhpYsTn01e4Kq8._someChartElement0343123 = this.\u0023\u003DzU1yXtTruEocq;
       return (IEnumerator<DependencyObject>) noyRhhpYsTn01e4Kq8;
     }
 
@@ -548,7 +548,7 @@ label_22:
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
-    private DependencyObject \u0023\u003Dz_i6sZDg\u003D;
+    private DependencyObject _someChartElement0343123;
     
     public DependencyObject \u0023\u003DzU1yXtTruEocq;
     
@@ -574,12 +574,12 @@ label_22:
       {
         case 0:
           this.\u0023\u003Dz4fzyEZ1SsHYa = -1;
-          this.\u0023\u003Dzaev1bhaFFIDX = this.\u0023\u003Dz_i6sZDg\u003D;
+          this.\u0023\u003Dzaev1bhaFFIDX = this._someChartElement0343123;
           this.\u0023\u003Dz4fzyEZ1SsHYa = 1;
           return true;
         case 1:
           this.\u0023\u003Dz4fzyEZ1SsHYa = -1;
-          this.\u0023\u003DzL\u0024Xr64NSxnt6F6ntkg\u003D\u003D = VisualTreeHelper.GetChildrenCount(this.\u0023\u003Dz_i6sZDg\u003D);
+          this.\u0023\u003DzL\u0024Xr64NSxnt6F6ntkg\u003D\u003D = VisualTreeHelper.GetChildrenCount(this._someChartElement0343123);
           this.\u0023\u003DzMZLB9Gb5m9U_ = 0;
           break;
         case 2:
@@ -591,7 +591,7 @@ label_22:
       }
       if (this.\u0023\u003DzMZLB9Gb5m9U_ >= this.\u0023\u003DzL\u0024Xr64NSxnt6F6ntkg\u003D\u003D)
         return false;
-      this.\u0023\u003Dzaev1bhaFFIDX = VisualTreeHelper.GetChild(this.\u0023\u003Dz_i6sZDg\u003D, this.\u0023\u003DzMZLB9Gb5m9U_);
+      this.\u0023\u003Dzaev1bhaFFIDX = VisualTreeHelper.GetChild(this._someChartElement0343123, this.\u0023\u003DzMZLB9Gb5m9U_);
       this.\u0023\u003Dz4fzyEZ1SsHYa = 2;
       return true;
     }
@@ -628,7 +628,7 @@ label_22:
       }
       else
         for4LjtWwNl1zHfOhr = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003DzcayRut_IthFor4LJTWwNl1zHfOHr(0);
-      for4LjtWwNl1zHfOhr.\u0023\u003Dz_i6sZDg\u003D = this.\u0023\u003DzU1yXtTruEocq;
+      for4LjtWwNl1zHfOhr._someChartElement0343123 = this.\u0023\u003DzU1yXtTruEocq;
       return (IEnumerator<DependencyObject>) for4LjtWwNl1zHfOhr;
     }
 
@@ -644,11 +644,11 @@ label_22:
   {
     public 
     #nullable disable
-    DependencyObject \u0023\u003Dz_i6sZDg\u003D;
+    DependencyObject _someChartElement0343123;
 
     public bool \u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D(DependencyObject _param1)
     {
-      return _param1 != this.\u0023\u003Dz_i6sZDg\u003D;
+      return _param1 != this._someChartElement0343123;
     }
   }
 }

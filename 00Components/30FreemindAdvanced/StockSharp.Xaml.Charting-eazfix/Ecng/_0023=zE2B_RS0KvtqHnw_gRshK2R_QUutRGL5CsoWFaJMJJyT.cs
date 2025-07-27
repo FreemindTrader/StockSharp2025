@@ -255,7 +255,7 @@ public sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jj
     public bool \u0023\u003DzGS7ArEz1TYN_xgj89w\u003D\u003D(
       \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzdryKO5c\u003D _param1)
     {
-      return _param1.\u0023\u003DzgDVjqFRN8sR7().\u0023\u003DzMCIjdFq21D\u0024F() == this.\u0023\u003DzPZ9muos\u003D;
+      return _param1.GetSubscription().\u0023\u003DzMCIjdFq21D\u0024F() == this.\u0023\u003DzPZ9muos\u003D;
     }
   }
 
@@ -298,14 +298,14 @@ public sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jj
   private sealed class \u0023\u003DzdryKO5c\u003D
   {
     private \u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd \u0023\u003DzKU2NEeyKPfkqiXIsEQ\u003D\u003D;
-    private \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzhXVdagMJuODon\u0024JES0mZOWR \u0023\u003DzAFpdFZRw72NT1DPyxQ\u003D\u003D;
+    private \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzhXVdagMJuODon\u0024JES0mZOWR _subscription2;
 
     public \u0023\u003DzdryKO5c\u003D(
       \u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd _param1,
       \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzhXVdagMJuODon\u0024JES0mZOWR _param2)
     {
       this.\u0023\u003DzHPj32tFLJPtb(_param1);
-      this.\u0023\u003DzoVkyaxlnrQ61(_param2);
+      this.SetSubscription(_param2);
     }
 
     public \u0023\u003DzITX8mZ2jbGEtwuB21HaSb0\u0024TgKxWuMqOP_Y1kyXE\u0024xPd \u0023\u003DzmnmlYhLJrzAR()
@@ -319,15 +319,15 @@ public sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jj
       this.\u0023\u003DzKU2NEeyKPfkqiXIsEQ\u003D\u003D = _param1;
     }
 
-    public \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzhXVdagMJuODon\u0024JES0mZOWR \u0023\u003DzgDVjqFRN8sR7()
+    public \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzhXVdagMJuODon\u0024JES0mZOWR GetSubscription()
     {
-      return this.\u0023\u003DzAFpdFZRw72NT1DPyxQ\u003D\u003D;
+      return this._subscription2;
     }
 
-    private void \u0023\u003DzoVkyaxlnrQ61(
+    private void SetSubscription(
       \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzhXVdagMJuODon\u0024JES0mZOWR _param1)
     {
-      this.\u0023\u003DzAFpdFZRw72NT1DPyxQ\u003D\u003D = _param1;
+      this._subscription2 = _param1;
     }
   }
 
@@ -338,7 +338,7 @@ public sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jj
     public bool \u0023\u003Dz3wgsWJPqh7oEil79Eg\u003D\u003D(
       \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jjm1xDOFlg\u003D.\u0023\u003DzdryKO5c\u003D _param1)
     {
-      return _param1.\u0023\u003DzgDVjqFRN8sR7().\u0023\u003DzuQpudYl1gIxa((\u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D) this.\u0023\u003DzN\u0024HHLTk\u003D);
+      return _param1.GetSubscription().\u0023\u003DzuQpudYl1gIxa((\u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D) this.\u0023\u003DzN\u0024HHLTk\u003D);
     }
 
     public void \u0023\u003DzqYPCE28F0mu5XR6dPw\u003D\u003D(
@@ -346,7 +346,7 @@ public sealed class \u0023\u003DzE2B_RS0KvtqHnw_gRshK2R_QUutRGL5CsoWFaJMJJyTN1jj
     {
       try
       {
-        _param1.\u0023\u003DzmnmlYhLJrzAR().\u0023\u003DzHUAY4CE\u003D((\u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D) this.\u0023\u003DzN\u0024HHLTk\u003D, _param1.\u0023\u003DzgDVjqFRN8sR7());
+        _param1.\u0023\u003DzmnmlYhLJrzAR().\u0023\u003DzHUAY4CE\u003D((\u0023\u003Dzxn9vS9UX4BfDgK8stUp1bU9TbfoDtGpTtZMbxfI\u003D) this.\u0023\u003DzN\u0024HHLTk\u003D, _param1.GetSubscription());
       }
       catch (Exception ex)
       {

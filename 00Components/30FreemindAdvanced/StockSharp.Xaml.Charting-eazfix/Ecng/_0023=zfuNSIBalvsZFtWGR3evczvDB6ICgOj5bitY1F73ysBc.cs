@@ -309,7 +309,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     Color volBarsFontColor = this.VolBarsFontColor;
     LinearGradientBrush linearGradientBrush = volumeBarsBrush as LinearGradientBrush;
     Dictionary<double, Tuple<double, CandlePriceLevel>> dictionary = new Dictionary<double, Tuple<double, CandlePriceLevel>>();
-    if (!\u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzDCv6G5Q\u003D<KeyValuePair<double, CandlePriceLevel>>(array))
+    if (!TemplateTypeHelper.IsNotEmpty<KeyValuePair<double, CandlePriceLevel>>(array))
       return;
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, false, (float) this.StrokeThickness, this.Opacity))
     {

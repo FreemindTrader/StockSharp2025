@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 #nullable enable
-public sealed class \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<T> : 
+public sealed class List<T> : 
   IList<
   #nullable disable
   T>,
@@ -25,7 +25,7 @@ public sealed class \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<T> :
   
   private readonly List<T> \u0023\u003Dzg0gWX4E\u003D;
 
-  public \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D(List<T> _param1)
+  public List(List<T> _param1)
   {
     this.\u0023\u003Dzg0gWX4E\u003D = _param1;
   }

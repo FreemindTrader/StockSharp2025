@@ -114,7 +114,7 @@ public sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur
   {
     bool flag = !this.ParentSurface.get_SelectedRenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>();
     \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D[] array = this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1).ToArray<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>();
-    if (\u0023\u003DzsIIzg9COgILMyUKVNisy8sT1ePq3.\u0023\u003DzDCv6G5Q\u003D<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(array))
+    if (TemplateTypeHelper.IsNotEmpty<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(array))
     {
       IRenderableSeries renderableSeries = ((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) array).First<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>().RenderableSeries;
       if (this.\u0023\u003Dz5h4MErOTnNi_)

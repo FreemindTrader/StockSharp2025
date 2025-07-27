@@ -104,7 +104,7 @@ public class OptionVolatilitySmileChart :
     {
       List<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>> keyValuePairList = new List<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>();
       keyValuePairList.AddRange(this.\u0023\u003Dz1I2yIarPUD_j.Select<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D ?? (OptionVolatilitySmileChart.SomeClass34343383.\u0023\u003Dz2VqJw9mMZbQw3wwD\u0024A\u003D\u003D = new Func<OptionVolatilitySmileChart.\u0023\u003DzITGG9JH6wfpA, KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(OptionVolatilitySmileChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzWW8oopirOPrw56aXJ46tTLo\u003D))));
-      return (IEnumerable<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>) new \u0023\u003DzUqahKaP3EIK\u0024L1yMVA\u003D\u003D<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(keyValuePairList);
+      return (IEnumerable<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>) new List<KeyValuePair<ICollection<LineData<double>>, IChartVolatilitySmileElement>>(keyValuePairList);
     }
   }
 
