@@ -46,7 +46,7 @@ public sealed class SimpleChart :
   public SimpleChart()
   {
     this.InitializeComponent();
-    SimpleChart.\u0023\u003Dz370H8OFDsNyA(this._drawingSurface);
+    SimpleChart.SetupScichartSurface(this._drawingSurface);
     this._chartArea = new ChartArea()
     {
       XAxisType = ChartAxisType.Numeric,

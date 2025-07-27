@@ -86,7 +86,7 @@
               <s:chartmenu DataContext="{Binding ParentViewModel}"
                                                                           Area="{Binding DataContext.Area, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}"/>
             </li11l:BarManager.DXContextMenu>
-            <s:SciChartSurface Initialized="dje_zZBGLMJSS5D7A5HB5JY6ZP4E8JMHA_ejd" ClipModifierSurface="True"
+            <s:SciChartSurface Initialized="OnInitialized" ClipModifierSurface="True"
                                                                                             s:SciChartGroup.VerticalChartGroup="{Binding PaneGroup}"
                                                                                             ChartModifier="{Binding ChartModifier}" ViewportManager="{Binding ViewportManager}">
               <s:SciChartSurface.Annotations>

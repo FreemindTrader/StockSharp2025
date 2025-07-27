@@ -46,7 +46,7 @@ public sealed class Chart :
   public Chart()
   {
     this.InitializeComponent();
-    Chart.\u0023\u003Dz370H8OFDsNyA(this._drawingSurface);
+    Chart.SetupScichartSurface(this._drawingSurface);
     this._chartArea = new ChartArea()
     {
       XAxisType = ChartAxisType.Numeric,
