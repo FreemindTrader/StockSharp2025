@@ -1395,8 +1395,7 @@ public partial class Chart : UserControl,
     {
         if ( _subscription == null )
             _subscription = new Subscription((ISubscriptionMessage)DefaultCandlesSettings, (SecurityMessage)null);
-        
-        CandleSettingsWindow wnd = new CandleSettingsWindow();
+        CandleSettingsWindow wnd = new CandleSettingsWindow()
         {
             Subscription = ( (Cloneable<Subscription>)_subscription ).Clone()
         };

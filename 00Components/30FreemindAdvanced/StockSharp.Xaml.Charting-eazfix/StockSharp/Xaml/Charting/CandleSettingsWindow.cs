@@ -26,11 +26,11 @@ namespace StockSharp.Xaml.Charting;
 public class CandleSettingsWindow : ThemedWindow, IComponentConnector
 {
   
-  private Subscription \u0023\u003Dzh4DsglU\u003D;
+  private Subscription _subscription;
   
-  public PropertyGridEx \u0023\u003DzSBQp\u0024Vhxv74c;
+  public PropertyGridEx SubscriptionCtrl;
   
-  public SimpleButton \u0023\u003DzR8YHGiJOGNl5;
+  public SimpleButton OkBtn;
   
   private bool _someInternalBoolean;
 
@@ -38,22 +38,22 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
 
   public Subscription Subscription
   {
-    get => this.\u0023\u003Dzh4DsglU\u003D;
+    get => this._subscription;
     set
     {
-      this.\u0023\u003Dzh4DsglU\u003D = value;
-      this.\u0023\u003DzSBQp\u0024Vhxv74c.SelectedObject = value == null ? (object) (CandleSettingsWindow.\u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D) null : (object) new CandleSettingsWindow.\u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D(value);
-      this.\u0023\u003DzR8YHGiJOGNl5.IsEnabled = value != null;
+      this._subscription = value;
+      this.SubscriptionCtrl.SelectedObject = value == null ? (object) (CandleSettingsWindow.SubscriptionBindingList) null : (object) new CandleSettingsWindow.SubscriptionBindingList(value);
+      this.OkBtn.IsEnabled = value != null;
     }
   }
 
   public ISecurityProvider SecurityProvider
   {
-    get => this.\u0023\u003DzSBQp\u0024Vhxv74c.SecurityProvider;
-    set => this.\u0023\u003DzSBQp\u0024Vhxv74c.SecurityProvider = value;
+    get => this.SubscriptionCtrl.SecurityProvider;
+    set => this.SubscriptionCtrl.SecurityProvider = value;
   }
 
-  private void \u0023\u003DzdcCnJSj8d2oz(object _param1, RoutedEventArgs _param2)
+  private void OkButtonClicked(object _param1, RoutedEventArgs _param2)
   {
     if (!this.Subscription.SecurityId.HasValue)
     {
@@ -96,24 +96,24 @@ public class CandleSettingsWindow : ThemedWindow, IComponentConnector
     {
       if (connectionId == 2)
       {
-        this.\u0023\u003DzR8YHGiJOGNl5 = (SimpleButton) target;
-        this.\u0023\u003DzR8YHGiJOGNl5.Click += new RoutedEventHandler(this.\u0023\u003DzdcCnJSj8d2oz);
+        this.OkBtn = (SimpleButton) target;
+        this.OkBtn.Click += new RoutedEventHandler(this.OkButtonClicked);
       }
       else
         this._someInternalBoolean = true;
     }
     else
-      this.\u0023\u003DzSBQp\u0024Vhxv74c = (PropertyGridEx) target;
+      this.SubscriptionCtrl = (PropertyGridEx) target;
   }
 
-  private sealed class \u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D : NotifiableObject
+  private sealed class SubscriptionBindingList : NotifiableObject
   {
     
     private readonly MarketDataMessage \u0023\u003Dz7LtG0SkMrvA7;
     
     private Security \u0023\u003DzpaXnuR8\u003D;
 
-    public \u0023\u003DzYlNSvXB2xb3ElCeVJA\u003D\u003D(Subscription _param1)
+    public SubscriptionBindingList(Subscription _param1)
     {
       this.\u0023\u003Dz7LtG0SkMrvA7 = _param1 != null ? _param1.MarketData : throw new ArgumentNullException("subscription");
       DateTimeOffset? nullable = this.\u0023\u003Dz7LtG0SkMrvA7.From;
