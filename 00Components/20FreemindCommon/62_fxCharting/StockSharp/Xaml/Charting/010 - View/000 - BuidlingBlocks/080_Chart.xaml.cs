@@ -1666,6 +1666,7 @@ public partial class Chart : UserControl,
         }
     }
 
+
     private sealed class SomeInternalClass033435
     {
         public SciChartSurface _drawingSurface;
