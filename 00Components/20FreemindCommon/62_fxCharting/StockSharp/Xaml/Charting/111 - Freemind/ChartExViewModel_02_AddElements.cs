@@ -66,7 +66,7 @@ namespace StockSharp.Xaml.Charting
 
         private void OnRebuildCandles( IChartElement element, CandleSeries series )
         {
-            var candleUI = element as ChartCandleElement;
+            var candleUI = element as ChartCandleElementEx;
             if ( candleUI == null )
                 return;
 
@@ -79,7 +79,7 @@ namespace StockSharp.Xaml.Charting
                                                                 {
                                                                     /* -------------------------------------------------------------------------------------------------------------------------------------------
                                                                      * 
-                                                                     *  If the UI has the same CandleSeries, but not the ChartCandleElement,
+                                                                     *  If the UI has the same CandleSeries, but not the ChartCandleElementEx,
                                                                      *  then it must be ChartIndicatorElement
                                                                      * 
                                                                      * ------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -117,7 +117,7 @@ namespace StockSharp.Xaml.Charting
 
         private void RefreshView()
         {
-            Tuple< ChartCandleElement, CandleSeries> tuple = GetCandleUISeries();
+            Tuple< ChartCandleElementEx, CandleSeries> tuple = GetCandleUISeries();
 
             if ( tuple == null )
                 return;
@@ -133,11 +133,11 @@ namespace StockSharp.Xaml.Charting
             myEvent();
         }
 
-        private Tuple<ChartCandleElement, CandleSeries> GetCandleUISeries()
+        private Tuple<ChartCandleElementEx, CandleSeries> GetCandleUISeries()
         {
             foreach ( var chartElement in ChartAreas.SelectMany( a => a.Elements ) )
             {
-                var candle = chartElement as ChartCandleElement;
+                var candle = chartElement as ChartCandleElementEx;
 
                 if ( candle != null )
                 {
@@ -213,7 +213,7 @@ namespace StockSharp.Xaml.Charting
         */
         private void OnAddCandlesArea( ChartArea candleArea )
         {
-            _candleStickUI = new ChartCandleElement();
+            _candleStickUI = new ChartCandleElementEx();
 
             _candleStickUI.ShowAxisMarker = false;
 
@@ -281,8 +281,8 @@ namespace StockSharp.Xaml.Charting
         {
             var indicatorPicker = CustomShowWindowService.ShowIndicatorWindow( true, IndicatorTypes );
 
-            var array   = Elements.OfType<ChartCandleElement>( ).ToArray( );
-            var chartUi = area.Elements.OfType<ChartCandleElement>( ).Concat( array ).FirstOrDefault( );
+            var array   = Elements.OfType<ChartCandleElementEx>( ).ToArray( );
+            var chartUi = area.Elements.OfType<ChartCandleElementEx>( ).Concat( array ).FirstOrDefault( );
 
             if ( chartUi == null )
             {
@@ -378,7 +378,7 @@ namespace StockSharp.Xaml.Charting
 
         private void OnCodingAddQuotes( ChartArea area, Tuple<double, double> quotes )
         {
-            //var candleUI = new ChartCandleElement( );
+            //var candleUI = new ChartCandleElementEx( );
             //_candleSeries = candleSeries.Clone( );
             //_candleSeries.Security = null;
 
@@ -389,7 +389,7 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        public void AddElement( ChartArea area, ChartCandleElement element, CandleSeries candleSeries )
+        public void AddElement( ChartArea area, ChartCandleElementEx element, CandleSeries candleSeries )
         {
             if ( area == null )
             {
@@ -424,11 +424,11 @@ namespace StockSharp.Xaml.Charting
 
             foreach ( IChartElement element in Elements.Where( x => GetSource( x ) == candleSeries ).ToArray() )
             {
-                var ChartCandleElement = element as ChartCandleElement;
+                var ChartCandleElementEx = element as ChartCandleElementEx;
 
-                if ( ChartCandleElement != null )
+                if ( ChartCandleElementEx != null )
                 {
-                    ChartCandleElement.Title = candleSeries.Title();
+                    ChartCandleElementEx.Title = candleSeries.Title();
                 }
 
                 ResetElement( element, true );
@@ -550,7 +550,7 @@ namespace StockSharp.Xaml.Charting
         {
             switch ( chartElement )
             {
-                case ChartCandleElement ChartCandleElement:
+                case ChartCandleElementEx ChartCandleElementEx:
                 {
                     /* -------------------------------------------------------------------------------------------------------------------------------------------
                     *  When we clicked on the Add Candle Command from the context menu, the following function get executed.
@@ -559,7 +559,7 @@ namespace StockSharp.Xaml.Charting
                     * 
                     * ------------------------------------------------------------------------------------------------------------------------------------------- 
                     */
-                    SubscribeCandleElement?.Invoke( ChartCandleElement, GetSeries<CandleSeries>( ChartCandleElement ) );
+                    SubscribeCandleElement?.Invoke( ChartCandleElementEx, GetSeries<CandleSeries>( ChartCandleElementEx ) );
                 }
                 break;
 
@@ -635,7 +635,7 @@ namespace StockSharp.Xaml.Charting
         private void ResetElement( IChartElement element, bool needAddElement )
         {
             IChartElement[ ] elementArray;
-            if ( element is ChartCandleElement )
+            if ( element is ChartCandleElementEx )
             {
                 elementArray = Elements.Where( e => GetSource( e ) == GetSeries<CandleSeries>( element ) ).ToArray();
             }

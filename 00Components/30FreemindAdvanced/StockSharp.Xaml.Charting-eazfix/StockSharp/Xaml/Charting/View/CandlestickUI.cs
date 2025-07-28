@@ -457,21 +457,21 @@ label_4:
     {
       case null:
         return false;
-      case ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D _:
-        return this.Draw(CollectionHelper.ToEx<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>(((IEnumerable) _param1).Cast<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>(), ((IEnumerableEx) _param1).Count));
-      case ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D _:
-        return this.Draw(CollectionHelper.ToEx<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>(((IEnumerable) _param1).Cast<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>(), ((IEnumerableEx) _param1).Count));
+      case ChartDrawData.sCandle _:
+        return this.Draw(CollectionHelper.ToEx<ChartDrawData.sCandle>(((IEnumerable) _param1).Cast<ChartDrawData.sCandle>(), ((IEnumerableEx) _param1).Count));
+      case ChartDrawData.sCandleColor _:
+        return this.Draw(CollectionHelper.ToEx<ChartDrawData.sCandleColor>(((IEnumerable) _param1).Cast<ChartDrawData.sCandleColor>(), ((IEnumerableEx) _param1).Count));
       default:
         throw new ArgumentOutOfRangeException("values");
     }
   }
 
   private bool Draw(
-    IEnumerableEx<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D> _param1)
+    IEnumerableEx<ChartDrawData.sCandleColor> _param1)
   {
-    if (CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>((IEnumerable<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>) _param1))
+    if (CollectionHelper.IsEmpty<ChartDrawData.sCandleColor>((IEnumerable<ChartDrawData.sCandleColor>) _param1))
       return false;
-    foreach (ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D zs3gDb01RWCzVlS5w in (IEnumerable<ChartDrawData.\u0023\u003Dzs3gDB01R_wCz\u0024vlS5w\u003D\u003D>) _param1)
+    foreach (ChartDrawData.sCandleColor zs3gDb01RWCzVlS5w in (IEnumerable<ChartDrawData.sCandleColor>) _param1)
     {
       Color? color1 = zs3gDb01RWCzVlS5w.Color;
       if (color1.HasValue)
@@ -490,14 +490,14 @@ label_4:
   }
 
   private bool Draw(
-    IEnumerableEx<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D> _param1)
+    IEnumerableEx<ChartDrawData.sCandle> _param1)
   {
     if (this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D != this.ChartComponentView.Colorer)
     {
       this.\u0023\u003DzVnKR\u0024HeQJSKTkReJlfF5mAk\u003D = this.ChartComponentView.Colorer;
       this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries.Services()?.GetService<ISciChartSurface>()?.InvalidateElement();
     }
-    if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>((IEnumerable<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>) _param1))
+    if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.sCandle>((IEnumerable<ChartDrawData.sCandle>) _param1))
       return false;
     int count = ((IEnumerableEx) _param1).Count;
     DateTime dateTime = this.\u0023\u003DzTqpoRUfBxm2O;
@@ -508,7 +508,7 @@ label_4:
     double[] array3 = new double[count];
     double[] array4 = new double[count];
     double[] array5 = new double[count];
-    foreach (ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D zbzWrwPExZ6TzuVkEg in (IEnumerable<ChartDrawData.\u0023\u003DzbzWrw_pExZ6TZuVkEg\u003D\u003D>) _param1)
+    foreach (ChartDrawData.sCandle zbzWrwPExZ6TzuVkEg in (IEnumerable<ChartDrawData.sCandle>) _param1)
     {
       object obj = zbzWrwPExZ6TzuVkEg.\u0023\u003DzdR0PhFO4Br84().Arg;
       if (obj is TimeSpan timeSpan)

@@ -14,7 +14,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public partial class ChartCandleElement : ChartComponentView<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElementEx : ChartComponentView<ChartCandleElementEx>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         [Display( Description = "CandlePattern", GroupName = "StyleString", Name = "TechnicalAnalysis", Order = 32, ResourceType = typeof( LocalizedStrings ) )]
         public bool ShowCandlePattern

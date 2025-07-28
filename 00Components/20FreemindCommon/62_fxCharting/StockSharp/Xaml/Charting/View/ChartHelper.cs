@@ -119,28 +119,29 @@ public static class ChartHelper
 
     public static ChartArea GetArea(this Chart chart, int index)
     {
-        if(chart == null)
-        {
-            throw new ArgumentNullException(nameof(chart));
-        }
-        if(index < 0)
-        {
-            throw new ArgumentOutOfRangeException(nameof(index));
-        }
-        while(chart.ChartAreas.Count < index + 1)
-        {
-            ChartArea chartArea = new ChartArea()
-            {
-                Title = LocalizedStrings.Panel + " " + index,
-                XAxisType = chart.XAxisType
-            };
+        throw new NotImplementedException();
+        //if(chart == null)
+        //{
+        //    throw new ArgumentNullException(nameof(chart));
+        //}
+        //if(index < 0)
+        //{
+        //    throw new ArgumentOutOfRangeException(nameof(index));
+        //}
+        //while(chart.ChartAreas.Count < index + 1)
+        //{
+        //    ChartArea chartArea = new ChartArea()
+        //    {
+        //        Title = LocalizedStrings.Panel + " " + index,
+        //        XAxisType = chart.XAxisType
+        //    };
 
-            var viewModel = new ScichartSurfaceMVVM(chartArea);
-            chartArea.ViewModel = viewModel;
+        //    var viewModel = new ScichartSurfaceMVVM(chartArea);
+        //    chartArea.ViewModel = viewModel;
 
-            chart.ChartAreas.Add(chartArea);
-        }
-        return chart.ChartAreas[index];
+        //    chart.ChartAreas.Add(chartArea);
+        //}
+        //return chart.ChartAreas[index];
     }
 
     public static IChart GetChart(this Strategy strategy)

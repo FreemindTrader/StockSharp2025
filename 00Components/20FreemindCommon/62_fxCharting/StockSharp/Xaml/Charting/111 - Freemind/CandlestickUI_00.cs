@@ -17,7 +17,7 @@ using StockSharp.Charting;
 namespace StockSharp.Xaml.Charting
 {
     
-    public partial class ChartCandleElement : ChartComponentView<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElementEx : ChartComponentView<ChartCandleElementEx>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
     {
         private Func<DateTimeOffset, bool, bool, Color?> _colorer;
         private CandlestickVM _viewModel;
@@ -73,7 +73,7 @@ namespace StockSharp.Xaml.Charting
         private int                  _waveScenarioNo;
         private bool _isSimulation;
 
-        public ChartCandleElement( )
+        public ChartCandleElementEx( )
         {
             DownFillColor   = _fxFallingBarFill;
             DownBorderColor = _fxFallingBarPen;
@@ -85,7 +85,7 @@ namespace StockSharp.Xaml.Charting
             DrawStyle       = ChartCandleDrawStyles.CandleStick;
         }
 
-        public ChartCandleElement( int fifoCapcity )
+        public ChartCandleElementEx( int fifoCapcity )
         {
             DownFillColor   = _fxFallingBarFill;
             DownBorderColor = _fxFallingBarPen;
@@ -641,7 +641,7 @@ namespace StockSharp.Xaml.Charting
             return settingsStorage;
         }
 
-        internal override ChartCandleElement Clone( ChartCandleElement other )
+        internal override ChartCandleElementEx Clone( ChartCandleElementEx other )
         {
             other                               = base.Clone( other );
             other.DownFillColor                 = DownFillColor;

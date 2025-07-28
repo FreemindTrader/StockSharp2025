@@ -113,8 +113,8 @@ namespace StockSharp.Xaml.Charting
 
         private void Step06_OnCodingAddIndicators(object sender, AddIndicatorEventArgs e)
         {
-            var array = Elements.OfType<ChartCandleElement>().ToArray();
-            var chartUi = e.ChartArea.Elements.OfType<ChartCandleElement>().Concat(array).FirstOrDefault();
+            var array = Elements.OfType<ChartCandleElementEx>().ToArray();
+            var chartUi = e.ChartArea.Elements.OfType<ChartCandleElementEx>().Concat(array).FirstOrDefault();
 
             var tonyCandleSeries = GetSeries<CandleSeries>(chartUi);
 

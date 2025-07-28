@@ -14,7 +14,7 @@
     x:Name="Ctrl"
     dxb:BarNameScope.IsScopeOwner="true">
 
-    <UIElement.CommandBindings>
+    <!--<UIElement.CommandBindings>
         <CommandBinding
             CanExecute="CanExecuteRegisterOrderCommand"
             Command="{x:Static local:ChartPanelEx.RegisterOrderCommand}"
@@ -23,7 +23,7 @@
             CanExecute="CanExecuteAddAreaCommand"
             Command="{x:Static local:ChartPanelEx.AddAreaCommand}"
             Executed="ExecuteAddAreaCommand" />
-    </UIElement.CommandBindings>
+    </UIElement.CommandBindings>-->
 
     <FrameworkElement.Resources>
         <Style x:Key="ImgStyle" TargetType="{x:Type Image}">
@@ -51,14 +51,14 @@
                         <dxb:BarDockInfo ContainerType="Left" />
                     </dxb:Bar.DockInfo>
                     <dxb:BarButtonItem
-                        Command="{x:Static local:ChartPanelEx.AddAreaCommand}"
+                        
                         CommandTarget="{Binding ElementName=Ctrl, Mode=OneWay}"
                         Glyph="{dx:DXImage SvgImages/Dashboards/AddQuery.svg}"
                         ToolTip="{x:Static loc:LocalizedStrings.Area}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarEditItem
                         x:Name="CandleStyles"
-                        EditValueChanged="CandleStyles_EditValueChanged"
+                        
                         EditWidth="120">
                         <dxb:BarEditItem.EditSettings>
                             <dxes:ComboBoxEditSettings
@@ -88,45 +88,45 @@
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/Arrows/Last.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=IsAutoScroll}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.Settings}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/Dashboards/GridColumnFixedWidth.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=AutoRangeByAnnotations}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.AutoRange}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/Dashboards/AlignmentTopLeft.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=ShowLegend}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.AutoAlign}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/Reports/GroupFooter.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=ShowOverview}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.OverviewArea}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/RichEdit/BordersInside.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=CrossHair}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.ShowCross}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/Icon Builder/Actions_Comment.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=CrossHairTooltip}"
                         IsEnabled="{Binding ElementName=Chart, Path=CrossHair}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.ShowTooltip}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarCheckItem
                         Glyph="{dx:DXImage SvgImages/Spreadsheet/ChartAxesGroup.svg}"
                         IsChecked="{Binding ElementName=Chart, Path=CrossHairAxisLabels}"
                         IsEnabled="{Binding ElementName=Chart, Path=CrossHair}"
-                        ItemClick="OnSettingsClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.AxisLabels}"
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarItemSeparator />
@@ -190,10 +190,10 @@
                         ToolTipService.ShowOnDisabled="true" />
                     <dxb:BarItemSeparator />
                     <dxb:BarSplitButtonItem
-                        Command="{x:Static local:ChartPanelEx.RegisterOrderCommand}"
+                        
                         CommandTarget="{Binding ElementName=Ctrl, Mode=OneWay}"
                         DataContext="{Binding ElementName=Chart}"
-                        ItemClick="RegisterOrderCommandItemClick"
+                        
                         ToolTipService.ShowOnDisabled="true">
                         <dxb:BarItem.SuperTip>
                             <dx:SuperTip>
@@ -220,7 +220,7 @@
                     </dxb:BarSplitButtonItem>
                     <dxb:BarButtonItem
                         Glyph="{dx:DXImage SvgImages/Outlook Inspired/SaveAs.svg}"
-                        ItemClick="SaveButtonClicked"
+                        
                         ToolTip="{x:Static loc:LocalizedStrings.Save}" />
                     <dxb:BarSplitButtonItem
                         x:Name="ShareButton"

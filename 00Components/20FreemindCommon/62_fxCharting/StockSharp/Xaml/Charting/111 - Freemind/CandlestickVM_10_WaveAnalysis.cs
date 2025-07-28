@@ -29,7 +29,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal partial class CandlestickVM : ChartCompentWpfBaseViewModel<ChartCandleElement>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
+    internal partial class CandlestickVM : ChartCompentWpfBaseViewModel<ChartCandleElementEx>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {
         public void ShowLessWaves( )
         {

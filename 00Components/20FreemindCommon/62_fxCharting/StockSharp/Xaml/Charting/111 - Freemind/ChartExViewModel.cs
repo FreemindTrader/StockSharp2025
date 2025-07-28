@@ -116,8 +116,8 @@ namespace StockSharp.Xaml.Charting
         {                        
             var indicatorPicker = CustomShowWindowService.ShowIndicatorWindow( true, IndicatorTypes );
 
-            var array   = Elements.OfType<ChartCandleElement>( ).ToArray( );
-            var chartUi = e.ChartArea.Elements.OfType<ChartCandleElement>( ).Concat( array ).FirstOrDefault( );
+            var array   = Elements.OfType<ChartCandleElementEx>( ).ToArray( );
+            var chartUi = e.ChartArea.Elements.OfType<ChartCandleElementEx>( ).Concat( array ).FirstOrDefault( );
 
             if ( chartUi == null )
             {
@@ -394,7 +394,7 @@ namespace StockSharp.Xaml.Charting
 
         public event Action<ChartAnnotation, ChartDrawData.AnnotationData> AnnotationSelected;
 
-        public event Action<ChartCandleElement, CandleSeries> SubscribeCandleElement;        
+        public event Action<ChartCandleElementEx, CandleSeries> SubscribeCandleElement;        
 
         public event Action<ChartIndicatorElement, CandleSeries, IIndicator> SubscribeIndicatorElement;
 
@@ -1004,6 +1004,11 @@ namespace StockSharp.Xaml.Charting
         {
             AnnotationSelected?.Invoke( annotation, aData );
         }
+
+        public void AddElement(ChartArea area, ChartCandleElement element, CandleSeries candleSeries)
+        {
+            throw new NotImplementedException();
+        }
         #endregion
 
         #region Initialization Stuff
@@ -1041,7 +1046,7 @@ namespace StockSharp.Xaml.Charting
 
         #endregion
 
-        
+
 
     }
 
@@ -1053,7 +1058,7 @@ namespace StockSharp.Xaml.Charting
 
         IndicatorPickerWindow ShowIndicatorWindow( bool autoSelectCandles, IList< IndicatorType > indicatorTypes );
 
-        ChartCandleElement ShowCandlestickUIPicker( ChartCandleElement[ ] array, ChartCandleElement ChartCandleElement );
+        ChartCandleElementEx ShowCandlestickUIPicker( ChartCandleElementEx[ ] array, ChartCandleElementEx ChartCandleElementEx );
 
         Security ShowSecurityPickerWindow( MultiSelectMode SelectionMode );
     }
@@ -1065,15 +1070,17 @@ namespace StockSharp.Xaml.Charting
     {
         public CandleSeries ShowCandleWindow( CandleSeries series )
         {
-            var w = new CandleSettingsWindow( );
+            throw new NotImplementedException();
 
-            w.Series = series;
-            w.SecurityProvider = ServicesRegistry.SecurityProvider;
-            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            //var w = new CandleSettingsWindow( );
 
-            w.ShowDialog( );
+            //w.Series = series;
+            //w.SecurityProvider = ServicesRegistry.SecurityProvider;
+            //w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
-            return w.Series;
+            //w.ShowDialog( );
+
+            //return w.Series;
         }
 
         public IndicatorPickerWindow ShowIndicatorWindow( bool autoSelectCandles, IList<IndicatorType> indicatorTypes )
@@ -1091,19 +1098,21 @@ namespace StockSharp.Xaml.Charting
             return w;
         }
 
-        public ChartCandleElement ShowCandlestickUIPicker( ChartCandleElement[ ] array, ChartCandleElement ChartCandleElement )
+        public ChartCandleElementEx ShowCandlestickUIPicker( ChartCandleElementEx[ ] array, ChartCandleElementEx ChartCandleElementEx )
         {
-            CandlestickUIPicker w = new CandlestickUIPicker( )
-            {
-                Elements = array,
-                SelectedElement = ChartCandleElement
-            };
+            throw new NotImplementedException();
 
-            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            //CandlestickUIPicker w = new CandlestickUIPicker( )
+            //{
+            //    Elements = array,
+            //    SelectedElement = ChartCandleElementEx
+            //};
 
-            w.ShowDialog( );
+            //w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 
-            return w.SelectedElement;
+            //w.ShowDialog( );
+
+            //return w.SelectedElement;
         }
 
         public Security ShowSecurityPickerWindow( MultiSelectMode SelectionMode )

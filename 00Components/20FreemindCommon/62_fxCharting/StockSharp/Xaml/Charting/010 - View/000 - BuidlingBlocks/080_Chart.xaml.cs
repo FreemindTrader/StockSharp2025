@@ -1395,22 +1395,22 @@ public partial class Chart : UserControl,
     {
         if ( _subscription == null )
             _subscription = new Subscription((ISubscriptionMessage)DefaultCandlesSettings, (SecurityMessage)null);
-        CandleSettingsWindow wnd = new CandleSettingsWindow()
-        {
-            Subscription = ( (Cloneable<Subscription>)_subscription ).Clone()
-        };
-        if ( SecurityProvider != null )
-            wnd.SecurityProvider = SecurityProvider;
-        if ( !wnd.ShowModal((DependencyObject)this) )
-            return;
-        Subscription subscription = wnd.Subscription;
-        _subscription = subscription;
-        ChartCandleElement element = new ChartCandleElement()
-        {
-            PriceStep = (Decimal?)( (SecurityMessage)subscription?.MarketData )?.PriceStep,
-            DrawStyle = CandleDrawStyles()
-        };
-        AddElement((IChartArea)_param1, (IChartCandleElement)element, subscription);
+        //CandleSettingsWindow wnd = new CandleSettingsWindow()
+        //{
+        //    Subscription = ( (Cloneable<Subscription>)_subscription ).Clone()
+        //};
+        //if ( SecurityProvider != null )
+        //    wnd.SecurityProvider = SecurityProvider;
+        //if ( !wnd.ShowModal((DependencyObject)this) )
+        //    return;
+        //Subscription subscription = wnd.Subscription;
+        //_subscription = subscription;
+        //ChartCandleElement element = new ChartCandleElement()
+        //{
+        //    PriceStep = (Decimal?)( (SecurityMessage)subscription?.MarketData )?.PriceStep,
+        //    DrawStyle = CandleDrawStyles()
+        //};
+        //AddElement((IChartArea)_param1, (IChartCandleElement)element, subscription);
     }
 
     private void OnAddIndicator(ChartArea _param1)
@@ -1420,34 +1420,34 @@ public partial class Chart : UserControl,
             AutoSelectCandles = true,
             IndicatorTypes = (IEnumerable<IndicatorType>)IndicatorTypes
         };
-        if ( !wnd1.ShowModal((DependencyObject)this) )
-            return;
-        IChartCandleElement[] array = GetElements<IChartCandleElement>().ToArray<IChartCandleElement>();
-        IChartCandleElement element1 = ( (IEnumerable)_param1.Elements ).OfType<IChartCandleElement>().Concat<IChartCandleElement>((IEnumerable<IChartCandleElement>)array).FirstOrDefault<IChartCandleElement>();
-        if ( element1 == null )
-        {
-            int num = (int)new MessageBoxBuilder().Error().Text(LocalizedStrings.NoData2).Owner((DependencyObject)this).Show();
-        }
-        else
-        {
-            if ( !wnd1.AutoSelectCandles )
-            {
-                ChartCandleElementPicker wnd2 = new ChartCandleElementPicker()
-                {
-                    Elements = (IEnumerable<IChartCandleElement>)array,
-                    SelectedElement = element1
-                };
-                if ( !wnd2.ShowModal((DependencyObject)this) )
-                    return;
-                element1 = wnd2.SelectedElement;
-            }
-            ChartIndicatorElement element2 = new ChartIndicatorElement()
-            {
-                IndicatorPainter = wnd1.SelectedIndicatorType.CreatePainter(),
-                AutoAssignYAxis = true
-            };
-            AddElement((IChartArea)_param1, (IChartIndicatorElement)element2, TryGetSubscription((IChartElement)element1), wnd1.Indicator);
-        }
+        //if ( !wnd1.ShowModal((DependencyObject)this) )
+        //    return;
+        //IChartCandleElement[] array = GetElements<IChartCandleElement>().ToArray<IChartCandleElement>();
+        //IChartCandleElement element1 = ( (IEnumerable)_param1.Elements ).OfType<IChartCandleElement>().Concat<IChartCandleElement>((IEnumerable<IChartCandleElement>)array).FirstOrDefault<IChartCandleElement>();
+        //if ( element1 == null )
+        //{
+        //    int num = (int)new MessageBoxBuilder().Error().Text(LocalizedStrings.NoData2).Owner((DependencyObject)this).Show();
+        //}
+        //else
+        //{
+        //    if ( !wnd1.AutoSelectCandles )
+        //    {
+        //        ChartCandleElementPicker wnd2 = new ChartCandleElementPicker()
+        //        {
+        //            Elements = (IEnumerable<IChartCandleElement>)array,
+        //            SelectedElement = element1
+        //        };
+        //        if ( !wnd2.ShowModal((DependencyObject)this) )
+        //            return;
+        //        element1 = wnd2.SelectedElement;
+        //    }
+        //    ChartIndicatorElement element2 = new ChartIndicatorElement()
+        //    {
+        //        IndicatorPainter = wnd1.SelectedIndicatorType.CreatePainter(),
+        //        AutoAssignYAxis = true
+        //    };
+        //    AddElement((IChartArea)_param1, (IChartIndicatorElement)element2, TryGetSubscription((IChartElement)element1), wnd1.Indicator);
+        //}
     }
 
     private void OnAddOrders(ChartArea _param1)
@@ -1455,7 +1455,8 @@ public partial class Chart : UserControl,
         Security security = GetSelectedSecurity(_param1);
         if ( security == null )
             return;
-        AddElement((IChartArea)_param1, (IChartOrderElement)new ChartOrderElement(), new Subscription(DataType.Transactions, security));
+        
+        //AddElement((IChartArea)_param1, (IChartOrderElement)new ChartOrderElement(), new Subscription(DataType.Transactions, security));
     }
 
     private void OnAddTrades(ChartArea _param1)
@@ -1463,7 +1464,8 @@ public partial class Chart : UserControl,
         Security security = GetSelectedSecurity(_param1);
         if ( security == null )
             return;
-        AddElement((IChartArea)_param1, (IChartTradeElement)new ChartTradeElement(), new Subscription(DataType.Transactions, security));
+
+        //AddElement((IChartArea)_param1, (IChartTradeElement)new ChartTradeElement(), new Subscription(DataType.Transactions, security));
     }
 
     private void SomeInternalFunction34382084(string p)
@@ -1585,30 +1587,30 @@ public partial class Chart : UserControl,
 
         public void Method03()
         {
-            if ( area.Chart != null )
-                throw new ArgumentException("area.Chart != null", "area");
-            if ( area == null || _meChart._iChartAreaList.Contains(area) )
-                throw new ArgumentException("area2");
-            ChartAxisType? xaxisType = _meChart._iChartAreaList.FirstOrDefault<IChartArea>()?.XAxisType;
-            if ( xaxisType.HasValue )
-            {
-                if ( CollectionHelper.IsEmpty<IChartElement>((ICollection<IChartElement>)area.Elements) )
-                    area.XAxisType = xaxisType.Value;
-                else if ( area.XAxisType != xaxisType.Value )
-                    throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
-            }
-            CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>)area.XAxises, _Func_IAxis_bool_0835 ?? ( _Func_IAxis_bool_0835 = new Action<IChartAxis>(SetSomeAutoRange) ));
-            area.PropertyChanged += new PropertyChangedEventHandler(_meChart.OnHeightPropertyChanged);
-            ( (INotifyCollection<IChartElement>)area.Elements ).Added += new Action<IChartElement>(_meChart.OnChartAreaElementAdded);
-            ( (INotifyCollection<IChartElement>)area.Elements ).Removed += new Action<IChartElement>(_meChart.OnChartAreaElementRemoved);
-            _meChart._iChartAreaList.Add(area);
-            area.Chart = (IChart)_meChart;
-            _meChart.ViewModel.ChartPaneViewModels.Add(( (ChartArea)area ).ViewModel);
-            CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)area.Elements, new Action<IChartElement>(_meChart.OnChartAreaElementAdded));
-            Action<IChartArea> zk8cjLwfRrDki = _meChart.\u0023\u003Dzk8cjLWfRrDKI;
-            if ( zk8cjLwfRrDki == null )
-                return;
-            zk8cjLwfRrDki(area);
+            //if ( area.Chart != null )
+            //    throw new ArgumentException("area.Chart != null", "area");
+            //if ( area == null || _meChart._iChartAreaList.Contains(area) )
+            //    throw new ArgumentException("area2");
+            //ChartAxisType? xaxisType = _meChart._iChartAreaList.FirstOrDefault<IChartArea>()?.XAxisType;
+            //if ( xaxisType.HasValue )
+            //{
+            //    if ( CollectionHelper.IsEmpty<IChartElement>((ICollection<IChartElement>)area.Elements) )
+            //        area.XAxisType = xaxisType.Value;
+            //    else if ( area.XAxisType != xaxisType.Value )
+            //        throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+            //}
+            //CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>)area.XAxises, _Func_IAxis_bool_0835 ?? ( _Func_IAxis_bool_0835 = new Action<IChartAxis>(SetSomeAutoRange) ));
+            //area.PropertyChanged += new PropertyChangedEventHandler(_meChart.OnHeightPropertyChanged);
+            //( (INotifyCollection<IChartElement>)area.Elements ).Added += new Action<IChartElement>(_meChart.OnChartAreaElementAdded);
+            //( (INotifyCollection<IChartElement>)area.Elements ).Removed += new Action<IChartElement>(_meChart.OnChartAreaElementRemoved);
+            //_meChart._iChartAreaList.Add(area);
+            //area.Chart = (IChart)_meChart;
+            //_meChart.ViewModel.ChartPaneViewModels.Add(( (ChartArea)area ).ViewModel);
+            //CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)area.Elements, new Action<IChartElement>(_meChart.OnChartAreaElementAdded));
+            //Action<IChartArea> zk8cjLwfRrDki = _meChart.\u0023\u003Dzk8cjLWfRrDKI;
+            //if ( zk8cjLwfRrDki == null )
+            //    return;
+            //zk8cjLwfRrDki(area);
         }
 
         public void SetSomeAutoRange(IChartAxis p)
@@ -1699,21 +1701,21 @@ public partial class Chart : UserControl,
 
         public void Method0833421()
         {
-            if ( !_meChart._iChartAreaList.Remove(area) )
-                return;
-            area.PropertyChanged -= new PropertyChangedEventHandler(_meChart.OnHeightPropertyChanged);
-            ( (INotifyCollection<IChartElement>)area.Elements ).Added -= new Action<IChartElement>(_meChart.OnChartAreaElementAdded);
-            ( (INotifyCollection<IChartElement>)area.Elements ).Removed -= new Action<IChartElement>(_meChart.OnChartAreaElementRemoved);
-            _meChart.ViewModel.ChartPaneViewModels.Remove(( (ChartArea)area ).ViewModel);
-            CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)area.Elements, new Action<IChartElement>(_meChart.OnChartAreaElementRemoved));
-            area.Chart = (IChart)null;
-            TypeHelper.DoDispose<IChartArea>(area);
-            Action<IChartArea> z0aBkRs4Mkj0a = _meChart.\u0023\u003Dz0aBkRs4Mkj0a;
-            if ( z0aBkRs4Mkj0a != null )
-                z0aBkRs4Mkj0a(area);
-            if ( !CollectionHelper.IsEmpty<IChartArea>((ICollection<IChartArea>)_meChart._iChartAreaList) )
-                return;
-            _meChart.ViewModel.InitRangeDepProperty();
+            //if ( !_meChart._iChartAreaList.Remove(area) )
+            //    return;
+            //area.PropertyChanged -= new PropertyChangedEventHandler(_meChart.OnHeightPropertyChanged);
+            //( (INotifyCollection<IChartElement>)area.Elements ).Added -= new Action<IChartElement>(_meChart.OnChartAreaElementAdded);
+            //( (INotifyCollection<IChartElement>)area.Elements ).Removed -= new Action<IChartElement>(_meChart.OnChartAreaElementRemoved);
+            //_meChart.ViewModel.ChartPaneViewModels.Remove(( (ChartArea)area ).ViewModel);
+            //CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)area.Elements, new Action<IChartElement>(_meChart.OnChartAreaElementRemoved));
+            //area.Chart = (IChart)null;
+            //TypeHelper.DoDispose<IChartArea>(area);
+            //Action<IChartArea> z0aBkRs4Mkj0a = _meChart.\u0023\u003Dz0aBkRs4Mkj0a;
+            //if ( z0aBkRs4Mkj0a != null )
+            //    z0aBkRs4Mkj0a(area);
+            //if ( !CollectionHelper.IsEmpty<IChartArea>((ICollection<IChartArea>)_meChart._iChartAreaList) )
+            //    return;
+            //_meChart.ViewModel.InitRangeDepProperty();
         }
     }
 }

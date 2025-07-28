@@ -102,11 +102,11 @@ namespace StockSharp.Xaml.Charting
         {
             if (e.UseFifo)
             {
-                _candleStickUI = new ChartCandleElement() { FifoCapacity = e.FifoCapcity };
+                _candleStickUI = new ChartCandleElementEx() { FifoCapacity = e.FifoCapcity };
             }
             else
             {
-                _candleStickUI = new ChartCandleElement();
+                _candleStickUI = new ChartCandleElementEx();
             }
 
 
