@@ -75,7 +75,7 @@
         <s:RadialPanel />
     </ItemsPanelTemplate>
     <Style x:Key="UltrachartSurfaceBase" TargetType="{x:Type s:SciChartSurface}">
-        <Setter Property="Control.Background" Value="{s:ThemeBinding Path=UltrachartBackground}" />
+        <Setter Property="Control.Background" Value="{s:ThemeBinding Path=SciChartBackground}" />
         <Setter Property="Control.BorderBrush" Value="{s:ThemeBinding Path=GridBorderBrush}" />
         <Setter Property="Control.BorderThickness" Value="1" />
         <Setter Property="Control.Padding" Value="20,20,15,15" />
@@ -1770,7 +1770,7 @@
     <Style TargetType="{x:Type s:UltrachartOverview}">
         <Setter Property="Control.FontSize" Value="20" />
         <Setter Property="Control.FontWeight" Value="Normal" />
-        <Setter Property="Control.Background" Value="{s:ThemeBinding Path=UltrachartBackground}" />
+        <Setter Property="Control.Background" Value="{s:ThemeBinding Path=SciChartBackground}" />
         <Setter Property="Control.Foreground" Value="{s:ThemeBinding Path=TickTextBrush}" />
         <Setter Property="Control.Padding" Value="0" />
         <Setter Property="s:UltrachartOverview.AreaBrush" Value="{s:ThemeBinding Path=DefaultMountainAreaBrush}" />
@@ -2050,7 +2050,7 @@
     </Style>
     <Style BasedOn="{StaticResource DefaultGroupPaneStyle}" TargetType="{x:Type s:UltrachartGroupPane}" />
     <Style TargetType="{x:Type s:SciChartGroup}">
-        <Setter Property="Control.Background" Value="{s:ThemeBinding Path=UltrachartBackground}" />
+        <Setter Property="Control.Background" Value="{s:ThemeBinding Path=SciChartBackground}" />
         <Setter Property="Control.Foreground" Value="{s:ThemeBinding Path=TickTextBrush}" />
         <Setter Property="ItemsControl.ItemContainerStyle" Value="{StaticResource DefaultGroupPaneStyle}" />
         <Setter Property="Control.Template">
@@ -2082,7 +2082,7 @@
                             </FrameworkElement.Resources>
                             <FrameworkElement.Style>
                                 <Style TargetType="{x:Type s:TabControlCompatible}">
-                                    <Setter Property="Control.Background" Value="{s:ThemeBinding Path=UltrachartBackground}" />
+                                    <Setter Property="Control.Background" Value="{s:ThemeBinding Path=SciChartBackground}" />
                                     <Setter Property="Control.BorderThickness" Value="0" />
                                     <Setter Property="Control.HorizontalContentAlignment" Value="Stretch" />
                                     <Setter Property="Control.Padding" Value="0" />

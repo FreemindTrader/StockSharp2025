@@ -41,11 +41,11 @@ public sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI :
   }
 
   [IndexerName("#=zMRIb09I=")]
-  public override \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1]
+  public override IPoint this[int _param1]
   {
     get
     {
-      return (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD>(this.\u0023\u003DzA2V_HFN716My.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dz2_4KSTY\u003D(), new \u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD(this.\u0023\u003DzA2V_HFN716My != null ? this.\u0023\u003DzA2V_HFN716My.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D() : 0.0, this.\u0023\u003DzakA_8Bh5_9jJ.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D()));
+      return (IPoint) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD>(this.\u0023\u003DzA2V_HFN716My.\u0023\u003Dz\u0024CeUvME\u003D(_param1).X, new \u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD(this.\u0023\u003DzA2V_HFN716My != null ? this.\u0023\u003DzA2V_HFN716My.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y : 0.0, this.\u0023\u003DzakA_8Bh5_9jJ.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y));
     }
   }
 
@@ -56,8 +56,8 @@ public sealed class \u0023\u003Dz59_koqr2EQdapDcFKycZuMFujzBx_Vn_sKSeFk9GdLpI :
     double num3 = double.MinValue;
     for (int index = 0; index < num1; ++index)
     {
-      double num4 = this.\u0023\u003DzakA_8Bh5_9jJ.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
-      double num5 = this.\u0023\u003DzA2V_HFN716My.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
+      double num4 = this.\u0023\u003DzakA_8Bh5_9jJ.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
+      double num5 = this.\u0023\u003DzA2V_HFN716My.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
       if (!double.IsNaN(num5) && !double.IsNaN(num4))
       {
         double num6 = Math.Min(num4, num5);

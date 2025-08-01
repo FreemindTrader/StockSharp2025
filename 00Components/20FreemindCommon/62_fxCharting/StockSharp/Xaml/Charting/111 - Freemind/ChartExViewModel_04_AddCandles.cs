@@ -102,21 +102,21 @@ namespace StockSharp.Xaml.Charting
         {
             if (e.UseFifo)
             {
-                _candleStickUI = new ChartCandleElementEx() { FifoCapacity = e.FifoCapcity };
+                _ChartCandleElementViewModel = new ChartCandleElementEx() { FifoCapacity = e.FifoCapcity };
             }
             else
             {
-                _candleStickUI = new ChartCandleElementEx();
+                _ChartCandleElementViewModel = new ChartCandleElementEx();
             }
 
 
-            _candleStickUI.ShowAxisMarker = false;
+            _ChartCandleElementViewModel.ShowAxisMarker = false;
 
             _candleSeries = e.CandleSerie.Clone();
             _period = (TimeSpan)_candleSeries.Arg;
             _candleSeries.Security = null;
 
-            AddElement(e.ChartArea, _candleStickUI, e.CandleSerie);
+            AddElement(e.ChartArea, _ChartCandleElementViewModel, e.CandleSerie);
 
             e.CandleSerie.PropertyChanged += new PropertyChangedEventHandler(OnCandleSeriesPropertyChanged);
         }

@@ -150,12 +150,12 @@ public class FastOhlcRenderableSeries :
     ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
+    IXxxPaletteProvider paletteProvider = this.PaletteProvider;
     \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
     for (int index = 0; index < num1; ++index)
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR> iwzGyvO4YaqDkpiI = ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index) as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>;
-      double num2 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D());
+      double num2 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.X);
       ICoordinateCalculator<<double> xkzemsMs5tGkouk5w3 = xkzemsMs5tGkouk5w2;
       \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double num3 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzolXXlhDBER_c();
@@ -171,8 +171,8 @@ public class FastOhlcRenderableSeries :
       Color? nullable = new Color?();
       if (paletteProvider != null)
       {
-        \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D htg5ScQrmCkwmAaNyPa = paletteProvider;
-        double num8 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+        IXxxPaletteProvider htg5ScQrmCkwmAaNyPa = paletteProvider;
+        double num8 = iwzGyvO4YaqDkpiI.X;
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double num9 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzGze4a8XU7KvB();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
@@ -181,7 +181,7 @@ public class FastOhlcRenderableSeries :
         double num11 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double close = r84WmWxFxQ0dZvA0kR.Close;
-        nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, num8, num9, num10, num11, close);
+        nullable = htg5ScQrmCkwmAaNyPa.GetColor02((IRenderableSeries) this, num8, num9, num10, num11, close);
         if (nullable.HasValue)
           rhwYsZxA33iRu6Id7J = _param3.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
       }
@@ -203,7 +203,7 @@ public class FastOhlcRenderableSeries :
       return;
     this.\u0023\u003DzBz9v6qHDJbMP = this.\u0023\u003Dz6BuO4fnhj6SX(_param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D(), ftrixUnpTllY1PkTyq, this.DataPointWidth);
     this.\u0023\u003DzBz9v6qHDJbMP = this.\u0023\u003DzBz9v6qHDJbMP <= 1 || this.\u0023\u003DzBz9v6qHDJbMP % 2 != 0 ? this.\u0023\u003DzBz9v6qHDJbMP : this.\u0023\u003DzBz9v6qHDJbMP - 1;
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
+    IXxxPaletteProvider paletteProvider = this.PaletteProvider;
     \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
     for (int index = 0; index < num1; ++index)
     {
@@ -217,7 +217,7 @@ public class FastOhlcRenderableSeries :
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double num4 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
       int num5 = close1 >= num2 ? 1 : 0;
-      int num6 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D()).\u0023\u003DzYNd6r7dW43yr();
+      int num6 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.X).\u0023\u003DzYNd6r7dW43yr();
       int num7 = ((double) num6 - (double) this.\u0023\u003DzBz9v6qHDJbMP * 0.5).\u0023\u003DzYNd6r7dW43yr();
       int num8 = ((double) num6 + (double) this.\u0023\u003DzBz9v6qHDJbMP * 0.5).\u0023\u003DzYNd6r7dW43yr();
       int num9 = _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(num2).\u0023\u003DzYNd6r7dW43yr();
@@ -227,8 +227,8 @@ public class FastOhlcRenderableSeries :
       \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = num5 != 0 ? this.\u0023\u003DzCuIJmYsDJgLxaAWxjg\u003D\u003D : this.\u0023\u003Dz\u0024a39MFSHPCym0Lo_LQ\u003D\u003D;
       if (paletteProvider != null)
       {
-        \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D htg5ScQrmCkwmAaNyPa = paletteProvider;
-        double num13 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+        IXxxPaletteProvider htg5ScQrmCkwmAaNyPa = paletteProvider;
+        double num13 = iwzGyvO4YaqDkpiI.X;
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double num14 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzGze4a8XU7KvB();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
@@ -237,7 +237,7 @@ public class FastOhlcRenderableSeries :
         double num16 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double close2 = r84WmWxFxQ0dZvA0kR.Close;
-        Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, num13, num14, num15, num16, close2);
+        Color? nullable = htg5ScQrmCkwmAaNyPa.GetColor02((IRenderableSeries) this, num13, num14, num15, num16, close2);
         if (nullable.HasValue)
           rhwYsZxA33iRu6Id7J = _param3.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());
       }
@@ -248,8 +248,8 @@ public class FastOhlcRenderableSeries :
   }
 
   protected override void \u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1,
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param2)
+    IDataSeries _param1,
+    IDataSeries _param2)
   {
     switch (_param2)
     {

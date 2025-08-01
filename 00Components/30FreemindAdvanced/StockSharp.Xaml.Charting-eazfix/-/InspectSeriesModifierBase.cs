@@ -155,7 +155,7 @@ public abstract class InspectSeriesModifierBase :
     return uaaCmXpj7JdmPvp0w;
   }
 
-  protected virtual IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
+  protected virtual IEnumerable<SeriesInfo> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
     return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new InspectSeriesModifierBase.Struct0()
@@ -165,7 +165,7 @@ public abstract class InspectSeriesModifierBase :
     }.\u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D));
   }
 
-  protected virtual IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
+  protected virtual IEnumerable<SeriesInfo> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1,
     double _param2)
   {
@@ -177,10 +177,10 @@ public abstract class InspectSeriesModifierBase :
     }.\u0023\u003DzvJtlk3txQNN91rBG8dcpcj0\u003D));
   }
 
-  protected IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
+  protected IEnumerable<SeriesInfo> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Func<IRenderableSeries, HitTestInfo> _param1)
   {
-    return (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) new InspectSeriesModifierBase.\u0023\u003Dz89RgnopV4nZgv5NePKVh5qU\u003D(-2)
+    return (IEnumerable<SeriesInfo>) new InspectSeriesModifierBase.\u0023\u003Dz89RgnopV4nZgv5NePKVh5qU\u003D(-2)
     {
       _variableSome3535 = this,
       \u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D = _param1
@@ -211,13 +211,13 @@ public abstract class InspectSeriesModifierBase :
     IDisposable,
     IEnumerable,
     IEnumerator,
-    IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>,
-    IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>
+    IEnumerable<SeriesInfo>,
+    IEnumerator<SeriesInfo>
   {
     
     private int \u0023\u003Dz4fzyEZ1SsHYa;
     
-    private \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dzaev1bhaFFIDX;
+    private SeriesInfo \u0023\u003Dzaev1bhaFFIDX;
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
@@ -312,7 +312,7 @@ label_10:
     }
 
     [DebuggerHidden]
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>.\u0023\u003Dz4\u0024vcRAdnkf8XAMQ6U6I6aJAVdQshEFF3YrEuKf9hCSePAnpiCKyv8pQ\u003D()
+    SeriesInfo IEnumerator<SeriesInfo>.\u0023\u003Dz4\u0024vcRAdnkf8XAMQ6U6I6aJAVdQshEFF3YrEuKf9hCSePAnpiCKyv8pQ\u003D()
     {
       return this.\u0023\u003Dzaev1bhaFFIDX;
     }
@@ -333,7 +333,7 @@ label_10:
     #nullable enable
     IEnumerator<
     #nullable disable
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>.\u0023\u003DzdCr_FD\u0024knmYtmaB5oybNnJEENtOXJw7Q1xWzDzSUVGdOwwA2iYK9I4g\u003D()
+    SeriesInfo> IEnumerable<SeriesInfo>.\u0023\u003DzdCr_FD\u0024knmYtmaB5oybNnJEENtOXJw7Q1xWzDzSUVGdOwwA2iYK9I4g\u003D()
     {
       InspectSeriesModifierBase.\u0023\u003Dz89RgnopV4nZgv5NePKVh5qU\u003D v4nZgv5NePkVh5qU;
       if (this.\u0023\u003Dz4fzyEZ1SsHYa == -2 && this.\u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D == Environment.CurrentManagedThreadId)
@@ -347,7 +347,7 @@ label_10:
         v4nZgv5NePkVh5qU._variableSome3535 = this._variableSome3535;
       }
       v4nZgv5NePkVh5qU.\u0023\u003DzMYNk\u0024KRnKslk = this.\u0023\u003Dz3Z3OTONWhHvl8dsqDA\u003D\u003D;
-      return (IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) v4nZgv5NePkVh5qU;
+      return (IEnumerator<SeriesInfo>) v4nZgv5NePkVh5qU;
     }
 
     [DebuggerHidden]

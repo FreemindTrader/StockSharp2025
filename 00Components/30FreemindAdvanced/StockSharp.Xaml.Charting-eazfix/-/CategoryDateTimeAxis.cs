@@ -326,7 +326,7 @@ public sealed class CategoryDateTimeAxis :
   {
     if (!(_param1.get_XAxisId() == this.Id))
       return false;
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = _param1.get_DataSeries();
+    IDataSeries dataSeries = _param1.get_DataSeries();
     return dataSeries != null && dataSeries.get_HasValues();
   }
 }

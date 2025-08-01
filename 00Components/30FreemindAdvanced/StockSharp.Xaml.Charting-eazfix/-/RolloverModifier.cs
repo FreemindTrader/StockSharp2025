@@ -57,17 +57,17 @@ public sealed class RolloverModifier :
   }
 
   protected override void \u0023\u003Dz_HFvQ2jjCDBP(
-    IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1,
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param2)
+    IEnumerable<SeriesInfo> _param1,
+    ObservableCollection<SeriesInfo> _param2)
   {
-    _param1.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new RolloverModifier.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc()
+    _param1.\u0023\u003Dz30RSSSygABj_<SeriesInfo>(new Action<SeriesInfo>(new RolloverModifier.PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc()
     {
       \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D = _param2
     }.\u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D));
   }
 
   protected override FrameworkElement \u0023\u003DzoHJDgDlSejs6FIKEDvqYw6U\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     BandSeriesInfo k3zbmiw1OaRAdtq7psDwa = _param1 as BandSeriesInfo;
     FastBandRenderableSeries renderableSeries = _param1.RenderableSeries as FastBandRenderableSeries;
@@ -153,10 +153,10 @@ public sealed class RolloverModifier :
 
   private sealed class PrivateSealedClassDz4hWzOvDOp2Sz_a2WchXH2wc
   {
-    public ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
+    public ObservableCollection<SeriesInfo> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
 
     public void \u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       if (!_param1.RenderableSeries.\u0023\u003DzVxrZQ3k9ZBGJ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 0))
         return;

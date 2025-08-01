@@ -91,7 +91,7 @@ public sealed class ChartActiveOrdersElementVM( ChartActiveOrdersElement _param1
 
     public IEnumerable<Order> GetActiveOrders( Func<Order, bool> _param1 )
     {
-        if ( !DrawableChartElementBaseViewModel.IsUiThread() )
+        if ( !DrawableChartComponentBaseViewModel.IsUiThread() )
             throw new InvalidOperationException( "must be called from ui thread" );
         if ( _param1 == null )
             _param1 = ChartActiveOrdersElementVM.SomeClass34343383._public_static_Func_Order_bool_001 ?? ( ChartActiveOrdersElementVM.SomeClass34343383._public_static_Func_Order_bool_001 = new Func<Order, bool>( ChartActiveOrdersElementVM.SomeClass34343383.SomeMethond0343._public_bool_Method09_Order_param1 ) );
@@ -112,7 +112,7 @@ public sealed class ChartActiveOrdersElementVM( ChartActiveOrdersElement _param1
         if ( CollectionHelper.TryGetValue<Order, ChartActiveOrdersElementVM.AnnotationInfo>( ( IDictionary<Order, ChartActiveOrdersElementVM.AnnotationInfo> ) this._orderAnnotationInfoPairSet, _param1 ) == null )
             return;
         ( ( KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo> ) this._orderAnnotationInfoPairSet).Remove( _param1 );
-        this.ScichartSurfaceMVVM.RemoveAnnotation( this.RootElem, ( object ) _param1 );
+        this.DrawingSurface.RemoveAnnotation( this.RootElem, ( object ) _param1 );
     }
 
     private void \u0023\u003Dz4ka8DEp6gsYz(
@@ -121,7 +121,7 @@ public sealed class ChartActiveOrdersElementVM( ChartActiveOrdersElement _param1
         ChartActiveOrdersElementVM.PrivateSealedClass0830 z9r5QdtX0xdsJ15Nf5Q = new ChartActiveOrdersElementVM.PrivateSealedClass0830();
         z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
         z9r5QdtX0xdsJ15Nf5Q._public_ChartDrawData_sActiveOrder = _param1;
-        if ( !DrawableChartElementBaseViewModel.IsUiThread() )
+        if ( !DrawableChartComponentBaseViewModel.IsUiThread() )
         {
             this.\u0023\u003DzY_lPK_VP\u0024B7_( new Action( z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzQwL2KivU7y6PEO6v7A\u003D\u003D), true );
         }
@@ -135,7 +135,7 @@ public sealed class ChartActiveOrdersElementVM( ChartActiveOrdersElement _param1
           return;
                 annotationInfo = this.CreateAnnotation( z9r5QdtX0xdsJ15Nf5Q._public_ChartDrawData_sActiveOrder );
                 ( ( KeyedCollection<Order, ChartActiveOrdersElementVM.AnnotationInfo> ) this._orderAnnotationInfoPairSet).Add( z9r5QdtX0xdsJ15Nf5Q._public_Order_instance, annotationInfo );
-                this.ScichartSurfaceMVVM.AddAxisMakerAnnotation( this.RootElem, ( IAnnotation ) annotationInfo.Annotation, ( object ) z9r5QdtX0xdsJ15Nf5Q._public_Order_instance );
+                this.DrawingSurface.AddAxisMakerAnnotation( this.RootElem, ( IAnnotation ) annotationInfo.Annotation, ( object ) z9r5QdtX0xdsJ15Nf5Q._public_Order_instance );
                 z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DqUoIStFNKe3Db8yit\u0024T30pXMQNkBLGDj5wZnB6AKllphaeL2REmryfSg0ry3XMnZ4RJdd0z20pme_G3GAImmhDQ\u003D\u003D(annotationInfo, true);
             }
       else if ( ChartActiveOrdersElementVM.\u0023\u003Dz6DZCOhRx49tQ_8lPpw\u003D\u003D(z9r5QdtX0xdsJ15Nf5Q._public_Order_instance, annotationInfo.AutoRemoveFromChart, z9r5QdtX0xdsJ15Nf5Q._public_ChartDrawData_sActiveOrder.\u0023\u003Dzj7Cw0iE\u003D(), z9r5QdtX0xdsJ15Nf5Q._public_ChartDrawData_sActiveOrder.IsError))

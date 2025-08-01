@@ -7,14 +7,14 @@
 using System.Windows.Media;
 
 #nullable disable
-public interface \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
+public interface IXxxPaletteProvider
 {
-  Color? \u0023\u003DzP50Orng\u003D(
+  Color? GetColor01(
     IRenderableSeries _param1,
     double _param2,
     double _param3);
 
-  Color? \u0023\u003DzLCyKrYI\u003D(
+  Color? GetColor02(
     IRenderableSeries _param1,
     double _param2,
     double _param3,
@@ -22,7 +22,7 @@ public interface \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRm
     double _param5,
     double _param6);
 
-  Color? \u0023\u003DzLCyKrYI\u003D(
+  Color? GetColor02(
     IRenderableSeries _param1,
     double _param2,
     double _param3,

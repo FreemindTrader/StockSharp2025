@@ -57,12 +57,12 @@ public class ChartAnnotation :
     return Colors.Transparent;
     }
 
-    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
       ScichartSurfaceMVVM _param1 )
     {
         if ( this.Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );
-        return ( DrawableChartElementBaseViewModel ) ( this._baseViewModel = new ChartAnnotationViewModel( this ) );
+        return ( DrawableChartComponentBaseViewModel ) ( this._baseViewModel = new ChartAnnotationViewModel( this ) );
     }
 
     bool IDrawableChartElement.StartDrawing(

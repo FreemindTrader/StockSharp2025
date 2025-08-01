@@ -17,7 +17,7 @@ public sealed class \u0023\u003DzlbW67NDum9APBLuSxcbgNFrHbXEQ3PaVam0xJhsXKfF7<TX
   \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhip318DMhXaWOsdXxIKq2Zfn_,
   \u0023\u003DzKsGTwu6B0A6eMUO4QALnGEFyuKuisWdfO6O5SJH\u00244l_vSJGnVw\u003D\u003D<TX, TY, \u0023\u003DzPqz5cUs\u003D>,
   ISuspendable,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
+  IDataSeries
   where TX : IComparable
   where TY : IComparable
   where \u0023\u003DzPqz5cUs\u003D : IComparable

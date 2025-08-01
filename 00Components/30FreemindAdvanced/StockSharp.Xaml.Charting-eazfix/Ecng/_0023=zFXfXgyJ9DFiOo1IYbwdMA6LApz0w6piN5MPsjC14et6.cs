@@ -9,7 +9,7 @@ using System.Collections;
 #nullable disable
 public interface \u0023\u003DzFXfXgyJ9DFiOo1IYbwdMA6LApz0w6piN5MPsjC14et6W : 
   ISuspendable,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
+  IDataSeries
 {
   IList \u0023\u003DzEmZkqhUjn\u0024Dl();
 

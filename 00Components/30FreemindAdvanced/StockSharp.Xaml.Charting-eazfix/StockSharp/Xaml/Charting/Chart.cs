@@ -1268,7 +1268,7 @@ namespace StockSharp.Xaml.Charting
             {
                 if ( !indicatorPicker.AutoSelectCandles )
                 {
-                    CandlestickUIPicker wnd2 = new CandlestickUIPicker()
+                    ChartCandleElementViewModelPicker wnd2 = new ChartCandleElementViewModelPicker()
                     {
                         Elements = array,
                         SelectedElement = ChartCandleElement

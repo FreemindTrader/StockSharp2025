@@ -444,7 +444,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
             return
             ;
         a4VgOpCeDiqsTdzB.
-            InitializeChildElements((IEnumerable<DrawableChartElementBaseViewModel>) new List<DrawableChartElementBaseViewModel>
+            InitializeChildElements((IEnumerable<DrawableChartComponentBaseViewModel>) new List<DrawableChartComponentBaseViewModel>
 
         (((IDrawableChartElement) _someChartElement0343123
             ).

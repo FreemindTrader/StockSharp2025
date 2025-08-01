@@ -524,7 +524,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         foreach ( IChartComponent ddznyiGmdRlAevOq in ( ( IEnumerable<KeyValuePair<IChartComponent, ChartComponentViewModel>> ) this._componentsCache ).Where<KeyValuePair<IChartComponent, ChartComponentViewModel>>( ScichartSurfaceMVVM.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_ ?? ( ScichartSurfaceMVVM.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_ = new Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel ) ) ).Select<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent>( ScichartSurfaceMVVM.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_ ?? ( ScichartSurfaceMVVM.SomeClass34343383.public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_ = new Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_033 ) ) ).ToArray<IChartComponent>() )
         {
             ChartComponentViewModel a4VgOpCeDiqsTdzB = new ChartComponentViewModel(this, ddznyiGmdRlAevOq);
-            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( ddznyiGmdRlAevOq.ChildElements, ( IChartElement ) ddznyiGmdRlAevOq ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( ScichartSurfaceMVVM.SomeClass34343383.Func_IDrawableChartElement_bool_098 ?? ( ScichartSurfaceMVVM.SomeClass34343383.Func_IDrawableChartElement_bool_098 = new Func<IDrawableChartElement, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_0352 ) ) ).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>( new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>( this.CreateDrawableChartElementBaseViewModel) ).Where<DrawableChartElementBaseViewModel>( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel_bool_003 ?? ( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel_bool_003 = new Func<DrawableChartElementBaseViewModel, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_4353 ) ) ) );
+            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( ddznyiGmdRlAevOq.ChildElements, ( IChartElement ) ddznyiGmdRlAevOq ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( ScichartSurfaceMVVM.SomeClass34343383.Func_IDrawableChartElement_bool_098 ?? ( ScichartSurfaceMVVM.SomeClass34343383.Func_IDrawableChartElement_bool_098 = new Func<IDrawableChartElement, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_0352 ) ) ).Select<IDrawableChartElement, DrawableChartComponentBaseViewModel>( new Func<IDrawableChartElement, DrawableChartComponentBaseViewModel>( this.CreateDrawableChartElementBaseViewModel) ).Where<DrawableChartComponentBaseViewModel>( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel_bool_003 ?? ( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel_bool_003 = new Func<DrawableChartComponentBaseViewModel, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_4353 ) ) ) );
             ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) this._componentsCache )[ ddznyiGmdRlAevOq ] = a4VgOpCeDiqsTdzB;
             if ( ddznyiGmdRlAevOq.IsLegend )
                 this.LegendElements.Add( a4VgOpCeDiqsTdzB );
@@ -557,7 +557,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         if ( this.Chart != null )
         {
             ChartComponentViewModel a4VgOpCeDiqsTdzB = new ChartComponentViewModel(this, ddznyiGmdRlAevOq);
-            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( ddznyiGmdRlAevOq.ChildElements, ( IChartElement ) ddznyiGmdRlAevOq ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( ScichartSurfaceMVVM.SomeClass34343383.__Func_IDrawableChartElement__bool__903 ?? ( ScichartSurfaceMVVM.SomeClass34343383.__Func_IDrawableChartElement__bool__903 = new Func<IDrawableChartElement, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_0983333 ) ) ).Select<IDrawableChartElement, DrawableChartElementBaseViewModel>( new Func<IDrawableChartElement, DrawableChartElementBaseViewModel>( this.NewDrawableChartElementBaseViewModel) ).Where<DrawableChartElementBaseViewModel>( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 ?? ( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 = new Func<DrawableChartElementBaseViewModel, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_5498751 ) ) ) );
+            a4VgOpCeDiqsTdzB.InitializeChildElements( CollectionHelper.Append2<IChartElement>( ddznyiGmdRlAevOq.ChildElements, ( IChartElement ) ddznyiGmdRlAevOq ).OfType<IDrawableChartElement>().Where<IDrawableChartElement>( ScichartSurfaceMVVM.SomeClass34343383.__Func_IDrawableChartElement__bool__903 ?? ( ScichartSurfaceMVVM.SomeClass34343383.__Func_IDrawableChartElement__bool__903 = new Func<IDrawableChartElement, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_0983333 ) ) ).Select<IDrawableChartElement, DrawableChartComponentBaseViewModel>( new Func<IDrawableChartElement, DrawableChartComponentBaseViewModel>( this.NewDrawableChartElementBaseViewModel) ).Where<DrawableChartComponentBaseViewModel>( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 ?? ( ScichartSurfaceMVVM.SomeClass34343383.__Func_DrawableChartElementBaseViewModel__bool__003 = new Func<DrawableChartComponentBaseViewModel, bool>( ScichartSurfaceMVVM.SomeClass34343383.SomeMethond0343.public_bool_Method_5498751 ) ) ) );
             ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) this._componentsCache )[ ddznyiGmdRlAevOq ] = a4VgOpCeDiqsTdzB;
             if ( ddznyiGmdRlAevOq.IsLegend )
                 this.LegendElements.Add( a4VgOpCeDiqsTdzB );
@@ -1131,13 +1131,13 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         this.RemoveAxis( _param1, ( ICollection<IAxis> ) this.YAxises );
     }
 
-    private DrawableChartElementBaseViewModel CreateDrawableChartElementBaseViewModel(
+    private DrawableChartComponentBaseViewModel CreateDrawableChartElementBaseViewModel(
       IDrawableChartElement _param1)
   {
     return _param1.CreateViewModel(this);
     }
 
-    private DrawableChartElementBaseViewModel NewDrawableChartElementBaseViewModel(
+    private DrawableChartComponentBaseViewModel NewDrawableChartElementBaseViewModel(
       IDrawableChartElement _param1)
   {
     return _param1.CreateViewModel(this);
@@ -1200,10 +1200,10 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_;
         public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_;
         public static Func<IDrawableChartElement, bool> Func_IDrawableChartElement_bool_098;
-        public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
+        public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
         public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> _Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_;
         public static Func<IDrawableChartElement, bool> __Func_IDrawableChartElement__bool__903;
-        public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
+        public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
         public static Action<IChartAxis> _Action_IChartAxis_0932;
         public static Action<IChartAxis> _Action_IChartAxis_0932323;
 
@@ -1261,7 +1261,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         }
 
         public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_4353(
-          DrawableChartElementBaseViewModel _param1 )
+          DrawableChartComponentBaseViewModel _param1 )
         {
             return _param1 != null;
         }
@@ -1279,7 +1279,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         }
 
         public bool public_bool_Method_5498751(
-          DrawableChartElementBaseViewModel _param1 )
+          DrawableChartComponentBaseViewModel _param1 )
         {
             return _param1 != null;
         }

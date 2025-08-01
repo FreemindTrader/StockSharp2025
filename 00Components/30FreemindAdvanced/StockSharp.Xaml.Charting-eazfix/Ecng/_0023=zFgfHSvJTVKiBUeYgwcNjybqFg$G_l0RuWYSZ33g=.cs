@@ -408,10 +408,10 @@ public static class \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u0
     };
   }
 
-  public static IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzcxxcgCCxILAWoUgLzQ\u003D\u003D(
-    this IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param0)
+  public static IEnumerable<SeriesInfo> \u0023\u003DzcxxcgCCxILAWoUgLzQ\u003D\u003D(
+    this IEnumerable<SeriesInfo> _param0)
   {
-    return (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D.\u0023\u003DzHEaN982cjGylL4EpsyeBIP4\u003D(-2)
+    return (IEnumerable<SeriesInfo>) new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D.\u0023\u003DzHEaN982cjGylL4EpsyeBIP4\u003D(-2)
     {
       \u0023\u003DzkJE8qXgCdeO6 = _param0
     };
@@ -645,21 +645,21 @@ label_8:
     IEnumerator,
     IEnumerable<
     #nullable disable
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>,
-    IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>
+    SeriesInfo>,
+    IEnumerator<SeriesInfo>
   {
     
     private int \u0023\u003Dz4fzyEZ1SsHYa;
     
-    private \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dzaev1bhaFFIDX;
+    private SeriesInfo \u0023\u003Dzaev1bhaFFIDX;
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
-    private IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dzw\u0024Dv7kw\u003D;
+    private IEnumerable<SeriesInfo> \u0023\u003Dzw\u0024Dv7kw\u003D;
     
-    public IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzkJE8qXgCdeO6;
+    public IEnumerable<SeriesInfo> \u0023\u003DzkJE8qXgCdeO6;
     
-    private IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzezsfKEm_Vb7b\u0024HR11w\u003D\u003D;
+    private IEnumerator<SeriesInfo> \u0023\u003DzezsfKEm_Vb7b\u0024HR11w\u003D\u003D;
 
     [DebuggerHidden]
     public \u0023\u003DzHEaN982cjGylL4EpsyeBIP4\u003D(int _param1)
@@ -708,7 +708,7 @@ label_8:
         zldchDrVsrVyHh6WyiGy1.\u0023\u003DzQ9xCEGz0Gl\u0024q(current.DataSeriesType);
         zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzn3o1RS9wuET8(current.IsHit);
         HitTestInfo zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
-        this.\u0023\u003Dzaev1bhaFFIDX = (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D(current.RenderableSeries, zldchDrVsrVyHh6WyiGy2)
+        this.\u0023\u003Dzaev1bhaFFIDX = (SeriesInfo) new \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D(current.RenderableSeries, zldchDrVsrVyHh6WyiGy2)
         {
           IsFirstSeries = true
         };
@@ -719,7 +719,7 @@ label_8:
     }
 
     [DebuggerHidden]
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>.\u0023\u003Dz4\u0024vcRAdnkf8XAMQ6U6I6aJAVdQshEFF3YrEuKf9hCSePAnpiCKyv8pQ\u003D()
+    SeriesInfo IEnumerator<SeriesInfo>.\u0023\u003Dz4\u0024vcRAdnkf8XAMQ6U6I6aJAVdQshEFF3YrEuKf9hCSePAnpiCKyv8pQ\u003D()
     {
       return this.\u0023\u003Dzaev1bhaFFIDX;
     }
@@ -740,7 +740,7 @@ label_8:
     #nullable enable
     IEnumerator<
     #nullable disable
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>.\u0023\u003DzdCr_FD\u0024knmYtmaB5oybNnJEENtOXJw7Q1xWzDzSUVGdOwwA2iYK9I4g\u003D()
+    SeriesInfo> IEnumerable<SeriesInfo>.\u0023\u003DzdCr_FD\u0024knmYtmaB5oybNnJEENtOXJw7Q1xWzDzSUVGdOwwA2iYK9I4g\u003D()
     {
       \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D.\u0023\u003DzHEaN982cjGylL4EpsyeBIP4\u003D n982cjGylL4EpsyeBiP4;
       if (this.\u0023\u003Dz4fzyEZ1SsHYa == -2 && this.\u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D == Environment.CurrentManagedThreadId)
@@ -751,7 +751,7 @@ label_8:
       else
         n982cjGylL4EpsyeBiP4 = new \u0023\u003DzFgfHSvJTVKiBUeYgwcNjybqFg\u0024G_l0RuWYSZ33g\u003D.\u0023\u003DzHEaN982cjGylL4EpsyeBIP4\u003D(0);
       n982cjGylL4EpsyeBiP4.\u0023\u003Dzw\u0024Dv7kw\u003D = this.\u0023\u003DzkJE8qXgCdeO6;
-      return (IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) n982cjGylL4EpsyeBiP4;
+      return (IEnumerator<SeriesInfo>) n982cjGylL4EpsyeBiP4;
     }
 
     [DebuggerHidden]

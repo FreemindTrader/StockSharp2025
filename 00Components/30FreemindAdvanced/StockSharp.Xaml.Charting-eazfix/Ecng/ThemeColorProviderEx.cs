@@ -10,62 +10,62 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u003D : 
+public sealed class ThemeColorProviderEx : 
   BindableObject ,
-  \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
+  IThemeProvider
 {
   
   private Brush \u0023\u003DzPsgXVEWl1rncLpvu7Q\u003D\u003D;
   
   private Brush \u0023\u003Dzfqi6oaajC7jiVKKPPQ\u003D\u003D;
   
-  private Brush \u0023\u003Dz9BmC\u0024cycDHeB;
+  private Brush _cursorLabelBackgroundBrush;
   
-  private Brush \u0023\u003DzxC5nS9J581oj;
+  private Brush _cursorLabelBorderBrush;
   
-  private Brush \u0023\u003Dz5sgPfzK3aVH_;
+  private Brush _cursorLabelForeground;
   
-  private Brush \u0023\u003Dz48euRRLHTj7a;
+  private Brush _cursorLineBrush;
   
-  private Brush \u0023\u003Dz8ilgDt0TpIbh;
+  private Brush _defaultColumnFillBrush;
   
-  private Color \u0023\u003DzOOlhMBhKvqD8;
+  private Color _defaultColumnOutlineColor;
   
-  private Color \u0023\u003DzuNfshm4Ywha\u0024;
+  private Color _defaultLineSeriesColor;
   
-  private Color \u0023\u003Dz5EqP4BQRxQUX1I_gtw\u003D\u003D;
+  private Color _defaultDownBandFillColor;
   
-  private Color \u0023\u003Dz0kxBKg3EDeEz;
+  private Color _defaultDownBandLineColor;
   
-  private Brush \u0023\u003DzdX\u00241d3EiaJKH;
+  private Brush _defaultCandleDownBodyBrush;
   
-  private Color \u0023\u003Dznweo2T2ZzFPXBN5lsg\u003D\u003D;
+  private Color _defaultCandleDownWickColor;
   
-  private Brush \u0023\u003DzMyVxOi7x6o09;
+  private Brush _gridBackgroundBrush;
   
-  private Brush \u0023\u003DzhTT6baIK7lij;
+  private Brush _gridBorderBrush;
   
   private Brush \u0023\u003Dz3Rm3iZjVScDe0eALvA\u003D\u003D;
   
-  private Brush \u0023\u003DzZJZPHWawkID4\u0024ZZd1g\u003D\u003D;
+  private Brush _majorGridLinesBrush;
   
-  private Brush \u0023\u003DzVYDDFaY6k793YEFQiA\u003D\u003D;
+  private Brush _minorGridLinesBrush;
   
-  private Brush \u0023\u003DzC66cbAEWDJV2wtnOPJ1tF9I\u003D;
+  private Brush _defaultMountainAreaBrush;
   
-  private Color \u0023\u003DzLl3aZG6ZrQvXIPvUXA\u003D\u003D;
+  private Color _defaultMountainLineColor;
   
-  private Brush \u0023\u003DznFyPUz2gWkZa;
+  private Brush _defaultColorMapBrush;
   
-  private Brush \u0023\u003Dz6g3okvU9KMPFVgqxYLlFCAU\u003D;
+  private Brush _overviewFillBrush;
   
-  private Brush \u0023\u003DzLKEgP\u0024CFhuSdhZmd912SHck\u003D;
+  private Brush _rolloverLabelBackgroundBrush;
   
-  private Brush \u0023\u003DzVqN9K2eSsGo6lWvYly8InA0\u003D;
+  private Brush _rolloverLabelBorderBrush;
   
-  private Brush \u0023\u003DzrfHFG4f78ShF4qxOXw\u003D\u003D;
+  private Brush _rubberBandFillBrush;
   
-  private Brush \u0023\u003Dzjbp2JwMF6bQB1AUz_A\u003D\u003D;
+  private Brush _rubberBandStrokeBrush;
   
   private Brush \u0023\u003DzP4awWuKKUxT2n4J18w\u003D\u003D;
   
@@ -73,23 +73,23 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
   
   private Brush \u0023\u003Dzk5ghe9hMNl\u0024p;
   
-  private Brush \u0023\u003Dz_sYLtJst6ogP;
+  private Brush _tickTextBrush;
   
-  private Color \u0023\u003DzknJvhg2v84xJFc5uxQ\u003D\u003D;
+  private Color _defaultUpBandFillColor;
   
-  private Color \u0023\u003Dzyr1NXRQGwB7J;
+  private Color _defaultUpBandLineColor;
   
-  private Brush \u0023\u003Dzg8VA2CqF2xNU;
+  private Brush _defaultCandleUpBodyBrush;
   
-  private Color \u0023\u003DzN9VNZaaNYNjp\u0024y39\u0024A\u003D\u003D;
+  private Color _defaultCandleUpWickColor;
   
   private Color \u0023\u003DzQwNDTBB02BQM;
   
-  private Brush \u0023\u003DzygT40Q_SEL3qoNYFEkdiGl4\u003D;
+  private Brush _rolloverLineStroke;
   
-  private Brush \u0023\u003DzZgNYnbZVMSj8;
+  private Brush _scrollbarFillBrush;
   
-  private Color \u0023\u003DzIofb0iw4SlBVjCJ8eVV0YUNsdp2B;
+  private Color _boxVolumeTimeframe2Color;
   
   private Color \u0023\u003DzcIz1D66ueGH4ksNMfPW2YZTA7NHC;
   
@@ -109,22 +109,22 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
   
   private Color \u0023\u003DzCQBrhh\u0024vUP6E80YOsyu6M38\u003D;
 
-  public void \u0023\u003DzeHF6BUxLFClh(
-    \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D _param1)
+  public void ApplyTheme(
+    IThemeProvider _param1)
   {
-    \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D.\u0023\u003DzBZeItLeUMY2I<\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D>(_param1, (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D) this);
+    InterfaceHelpers2025.CopyInterfaceProperties<IThemeProvider>(_param1, (IThemeProvider) this);
   }
 
-  public void \u0023\u003DzeHF6BUxLFClh(ResourceDictionary _param1)
+  public void ApplyTheme(ResourceDictionary _param1)
   {
     foreach (DictionaryEntry dictionaryEntry in _param1)
     {
       if (dictionaryEntry.Value is DependencyObject dependencyObject && !dependencyObject.IsSealed)
-        \u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.SetFreeze(dependencyObject, true);
+        FreezeHelper2025.SetFreeze(dependencyObject, true);
     }
     this.GridBorderBrush = (Brush) _param1[(object) "GridBorderBrush"];
     this.GridBackgroundBrush = (Brush) _param1[(object) "GridBackgroundBrush"];
-    this.UltrachartBackground = (Brush) _param1[(object) "UltrachartBackground"];
+    this.SciChartBackground = (Brush) _param1[(object) "SciChartBackground"];
     this.TickTextBrush = (Brush) _param1[(object) "TickTextBrush"];
     this.MajorGridLinesBrush = (Brush) _param1[(object) "MajorGridLineBrush"];
     this.MinorGridLinesBrush = (Brush) _param1[(object) "MinorGridLineBrush"];
@@ -173,29 +173,29 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
 
   public Brush GridBorderBrush
   {
-    get => this.\u0023\u003DzhTT6baIK7lij;
+    get => this._gridBorderBrush;
     set
     {
-      if (this.\u0023\u003DzhTT6baIK7lij == value)
+      if (this._gridBorderBrush == value)
         return;
-      this.\u0023\u003DzhTT6baIK7lij = value;
+      this._gridBorderBrush = value;
       this.OnPropertyChanged(nameof (GridBorderBrush));
     }
   }
 
   public Brush GridBackgroundBrush
   {
-    get => this.\u0023\u003DzMyVxOi7x6o09;
+    get => this._gridBackgroundBrush;
     set
     {
-      if (this.\u0023\u003DzMyVxOi7x6o09 == value)
+      if (this._gridBackgroundBrush == value)
         return;
-      this.\u0023\u003DzMyVxOi7x6o09 = value;
+      this._gridBackgroundBrush = value;
       this.OnPropertyChanged(nameof (GridBackgroundBrush));
     }
   }
 
-  public Brush UltrachartBackground
+  public Brush SciChartBackground
   {
     get => this.\u0023\u003DzP4awWuKKUxT2n4J18w\u003D\u003D;
     set
@@ -203,342 +203,342 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
       if (this.\u0023\u003DzP4awWuKKUxT2n4J18w\u003D\u003D == value)
         return;
       this.\u0023\u003DzP4awWuKKUxT2n4J18w\u003D\u003D = value;
-      this.OnPropertyChanged(nameof (UltrachartBackground));
+      this.OnPropertyChanged(nameof (SciChartBackground));
     }
   }
 
   public Brush TickTextBrush
   {
-    get => this.\u0023\u003Dz_sYLtJst6ogP;
+    get => this._tickTextBrush;
     set
     {
-      if (this.\u0023\u003Dz_sYLtJst6ogP == value)
+      if (this._tickTextBrush == value)
         return;
-      this.\u0023\u003Dz_sYLtJst6ogP = value;
+      this._tickTextBrush = value;
       this.OnPropertyChanged(nameof (TickTextBrush));
     }
   }
 
   public Brush MajorGridLinesBrush
   {
-    get => this.\u0023\u003DzZJZPHWawkID4\u0024ZZd1g\u003D\u003D;
+    get => this._majorGridLinesBrush;
     set
     {
-      if (this.\u0023\u003DzZJZPHWawkID4\u0024ZZd1g\u003D\u003D == value)
+      if (this._majorGridLinesBrush == value)
         return;
-      this.\u0023\u003DzZJZPHWawkID4\u0024ZZd1g\u003D\u003D = value;
+      this._majorGridLinesBrush = value;
       this.OnPropertyChanged(nameof (MajorGridLinesBrush));
     }
   }
 
   public Brush MinorGridLinesBrush
   {
-    get => this.\u0023\u003DzVYDDFaY6k793YEFQiA\u003D\u003D;
+    get => this._minorGridLinesBrush;
     set
     {
-      if (this.\u0023\u003DzVYDDFaY6k793YEFQiA\u003D\u003D == value)
+      if (this._minorGridLinesBrush == value)
         return;
-      this.\u0023\u003DzVYDDFaY6k793YEFQiA\u003D\u003D = value;
+      this._minorGridLinesBrush = value;
       this.OnPropertyChanged(nameof (MinorGridLinesBrush));
     }
   }
 
   public Brush RolloverLineStroke
   {
-    get => this.\u0023\u003DzygT40Q_SEL3qoNYFEkdiGl4\u003D;
+    get => this._rolloverLineStroke;
     set
     {
-      if (this.\u0023\u003DzygT40Q_SEL3qoNYFEkdiGl4\u003D == value)
+      if (this._rolloverLineStroke == value)
         return;
-      this.\u0023\u003DzygT40Q_SEL3qoNYFEkdiGl4\u003D = value;
+      this._rolloverLineStroke = value;
       this.OnPropertyChanged(nameof (RolloverLineStroke));
     }
   }
 
   public Brush RolloverLabelBorderBrush
   {
-    get => this.\u0023\u003DzVqN9K2eSsGo6lWvYly8InA0\u003D;
+    get => this._rolloverLabelBorderBrush;
     set
     {
-      if (this.\u0023\u003DzVqN9K2eSsGo6lWvYly8InA0\u003D == value)
+      if (this._rolloverLabelBorderBrush == value)
         return;
-      this.\u0023\u003DzVqN9K2eSsGo6lWvYly8InA0\u003D = value;
+      this._rolloverLabelBorderBrush = value;
       this.OnPropertyChanged(nameof (RolloverLabelBorderBrush));
     }
   }
 
   public Brush RolloverLabelBackgroundBrush
   {
-    get => this.\u0023\u003DzLKEgP\u0024CFhuSdhZmd912SHck\u003D;
+    get => this._rolloverLabelBackgroundBrush;
     set
     {
-      if (this.\u0023\u003DzLKEgP\u0024CFhuSdhZmd912SHck\u003D == value)
+      if (this._rolloverLabelBackgroundBrush == value)
         return;
-      this.\u0023\u003DzLKEgP\u0024CFhuSdhZmd912SHck\u003D = value;
+      this._rolloverLabelBackgroundBrush = value;
       this.OnPropertyChanged(nameof (RolloverLabelBackgroundBrush));
     }
   }
 
   public Color DefaultCandleUpWickColor
   {
-    get => this.\u0023\u003DzN9VNZaaNYNjp\u0024y39\u0024A\u003D\u003D;
+    get => this._defaultCandleUpWickColor;
     set
     {
-      if (!(this.\u0023\u003DzN9VNZaaNYNjp\u0024y39\u0024A\u003D\u003D != value))
+      if (!(this._defaultCandleUpWickColor != value))
         return;
-      this.\u0023\u003DzN9VNZaaNYNjp\u0024y39\u0024A\u003D\u003D = value;
+      this._defaultCandleUpWickColor = value;
       this.OnPropertyChanged(nameof (DefaultCandleUpWickColor));
     }
   }
 
   public Color DefaultCandleDownWickColor
   {
-    get => this.\u0023\u003Dznweo2T2ZzFPXBN5lsg\u003D\u003D;
+    get => this._defaultCandleDownWickColor;
     set
     {
-      if (!(this.\u0023\u003Dznweo2T2ZzFPXBN5lsg\u003D\u003D != value))
+      if (!(this._defaultCandleDownWickColor != value))
         return;
-      this.\u0023\u003Dznweo2T2ZzFPXBN5lsg\u003D\u003D = value;
+      this._defaultCandleDownWickColor = value;
       this.OnPropertyChanged(nameof (DefaultCandleDownWickColor));
     }
   }
 
   public Brush DefaultCandleUpBodyBrush
   {
-    get => this.\u0023\u003Dzg8VA2CqF2xNU;
+    get => this._defaultCandleUpBodyBrush;
     set
     {
-      if (this.\u0023\u003Dzg8VA2CqF2xNU == value)
+      if (this._defaultCandleUpBodyBrush == value)
         return;
-      this.\u0023\u003Dzg8VA2CqF2xNU = value;
+      this._defaultCandleUpBodyBrush = value;
       this.OnPropertyChanged(nameof (DefaultCandleUpBodyBrush));
     }
   }
 
   public Brush DefaultCandleDownBodyBrush
   {
-    get => this.\u0023\u003DzdX\u00241d3EiaJKH;
+    get => this._defaultCandleDownBodyBrush;
     set
     {
-      if (this.\u0023\u003DzdX\u00241d3EiaJKH == value)
+      if (this._defaultCandleDownBodyBrush == value)
         return;
-      this.\u0023\u003DzdX\u00241d3EiaJKH = value;
+      this._defaultCandleDownBodyBrush = value;
       this.OnPropertyChanged(nameof (DefaultCandleDownBodyBrush));
     }
   }
 
   public Color DefaultColumnOutlineColor
   {
-    get => this.\u0023\u003DzOOlhMBhKvqD8;
+    get => this._defaultColumnOutlineColor;
     set
     {
-      if (!(this.\u0023\u003DzOOlhMBhKvqD8 != value))
+      if (!(this._defaultColumnOutlineColor != value))
         return;
-      this.\u0023\u003DzOOlhMBhKvqD8 = value;
+      this._defaultColumnOutlineColor = value;
       this.OnPropertyChanged(nameof (DefaultColumnOutlineColor));
     }
   }
 
   public Brush DefaultColumnFillBrush
   {
-    get => this.\u0023\u003Dz8ilgDt0TpIbh;
+    get => this._defaultColumnFillBrush;
     set
     {
-      if (this.\u0023\u003Dz8ilgDt0TpIbh == value)
+      if (this._defaultColumnFillBrush == value)
         return;
-      this.\u0023\u003Dz8ilgDt0TpIbh = value;
+      this._defaultColumnFillBrush = value;
       this.OnPropertyChanged(nameof (DefaultColumnFillBrush));
     }
   }
 
   public Color DefaultLineSeriesColor
   {
-    get => this.\u0023\u003DzuNfshm4Ywha\u0024;
+    get => this._defaultLineSeriesColor;
     set
     {
-      if (!(this.\u0023\u003DzuNfshm4Ywha\u0024 != value))
+      if (!(this._defaultLineSeriesColor != value))
         return;
-      this.\u0023\u003DzuNfshm4Ywha\u0024 = value;
+      this._defaultLineSeriesColor = value;
       this.OnPropertyChanged(nameof (DefaultLineSeriesColor));
     }
   }
 
   public Color DefaultMountainLineColor
   {
-    get => this.\u0023\u003DzLl3aZG6ZrQvXIPvUXA\u003D\u003D;
+    get => this._defaultMountainLineColor;
     set
     {
-      if (!(this.\u0023\u003DzLl3aZG6ZrQvXIPvUXA\u003D\u003D != value))
+      if (!(this._defaultMountainLineColor != value))
         return;
-      this.\u0023\u003DzLl3aZG6ZrQvXIPvUXA\u003D\u003D = value;
+      this._defaultMountainLineColor = value;
       this.OnPropertyChanged(nameof (DefaultMountainLineColor));
     }
   }
 
   public Brush DefaultMountainAreaBrush
   {
-    get => this.\u0023\u003DzC66cbAEWDJV2wtnOPJ1tF9I\u003D;
+    get => this._defaultMountainAreaBrush;
     set
     {
-      if (this.\u0023\u003DzC66cbAEWDJV2wtnOPJ1tF9I\u003D == value)
+      if (this._defaultMountainAreaBrush == value)
         return;
-      this.\u0023\u003DzC66cbAEWDJV2wtnOPJ1tF9I\u003D = value;
+      this._defaultMountainAreaBrush = value;
       this.OnPropertyChanged(nameof (DefaultMountainAreaBrush));
     }
   }
 
   public Brush DefaultColorMapBrush
   {
-    get => this.\u0023\u003DznFyPUz2gWkZa;
+    get => this._defaultColorMapBrush;
     set
     {
-      if (this.\u0023\u003DznFyPUz2gWkZa == value)
+      if (this._defaultColorMapBrush == value)
         return;
-      this.\u0023\u003DznFyPUz2gWkZa = value;
+      this._defaultColorMapBrush = value;
       this.OnPropertyChanged(nameof (DefaultColorMapBrush));
     }
   }
 
   public Color DefaultDownBandFillColor
   {
-    get => this.\u0023\u003Dz5EqP4BQRxQUX1I_gtw\u003D\u003D;
+    get => this._defaultDownBandFillColor;
     set
     {
-      if (!(this.\u0023\u003Dz5EqP4BQRxQUX1I_gtw\u003D\u003D != value))
+      if (!(this._defaultDownBandFillColor != value))
         return;
-      this.\u0023\u003Dz5EqP4BQRxQUX1I_gtw\u003D\u003D = value;
+      this._defaultDownBandFillColor = value;
       this.OnPropertyChanged(nameof (DefaultDownBandFillColor));
     }
   }
 
   public Color DefaultUpBandFillColor
   {
-    get => this.\u0023\u003DzknJvhg2v84xJFc5uxQ\u003D\u003D;
+    get => this._defaultUpBandFillColor;
     set
     {
-      if (!(this.\u0023\u003DzknJvhg2v84xJFc5uxQ\u003D\u003D != value))
+      if (!(this._defaultUpBandFillColor != value))
         return;
-      this.\u0023\u003DzknJvhg2v84xJFc5uxQ\u003D\u003D = value;
+      this._defaultUpBandFillColor = value;
       this.OnPropertyChanged(nameof (DefaultUpBandFillColor));
     }
   }
 
   public Color DefaultUpBandLineColor
   {
-    get => this.\u0023\u003Dzyr1NXRQGwB7J;
+    get => this._defaultUpBandLineColor;
     set
     {
-      if (!(this.\u0023\u003Dzyr1NXRQGwB7J != value))
+      if (!(this._defaultUpBandLineColor != value))
         return;
-      this.\u0023\u003Dzyr1NXRQGwB7J = value;
+      this._defaultUpBandLineColor = value;
       this.OnPropertyChanged(nameof (DefaultUpBandLineColor));
     }
   }
 
   public Color DefaultDownBandLineColor
   {
-    get => this.\u0023\u003Dz0kxBKg3EDeEz;
+    get => this._defaultDownBandLineColor;
     set
     {
-      if (!(this.\u0023\u003Dz0kxBKg3EDeEz != value))
+      if (!(this._defaultDownBandLineColor != value))
         return;
-      this.\u0023\u003Dz0kxBKg3EDeEz = value;
+      this._defaultDownBandLineColor = value;
       this.OnPropertyChanged(nameof (DefaultDownBandLineColor));
     }
   }
 
   public Brush CursorLabelForeground
   {
-    get => this.\u0023\u003Dz5sgPfzK3aVH_;
+    get => this._cursorLabelForeground;
     set
     {
-      if (this.\u0023\u003Dz5sgPfzK3aVH_ == value)
+      if (this._cursorLabelForeground == value)
         return;
-      this.\u0023\u003Dz5sgPfzK3aVH_ = value;
+      this._cursorLabelForeground = value;
       this.OnPropertyChanged(nameof (CursorLabelForeground));
     }
   }
 
   public Brush CursorLabelBackgroundBrush
   {
-    get => this.\u0023\u003Dz9BmC\u0024cycDHeB;
+    get => this._cursorLabelBackgroundBrush;
     set
     {
-      if (this.\u0023\u003Dz9BmC\u0024cycDHeB == value)
+      if (this._cursorLabelBackgroundBrush == value)
         return;
-      this.\u0023\u003Dz9BmC\u0024cycDHeB = value;
+      this._cursorLabelBackgroundBrush = value;
       this.OnPropertyChanged(nameof (CursorLabelBackgroundBrush));
     }
   }
 
   public Brush CursorLabelBorderBrush
   {
-    get => this.\u0023\u003DzxC5nS9J581oj;
+    get => this._cursorLabelBorderBrush;
     set
     {
-      if (this.\u0023\u003DzxC5nS9J581oj == value)
+      if (this._cursorLabelBorderBrush == value)
         return;
-      this.\u0023\u003DzxC5nS9J581oj = value;
+      this._cursorLabelBorderBrush = value;
       this.OnPropertyChanged(nameof (CursorLabelBorderBrush));
     }
   }
 
   public Brush RubberBandFillBrush
   {
-    get => this.\u0023\u003DzrfHFG4f78ShF4qxOXw\u003D\u003D;
+    get => this._rubberBandFillBrush;
     set
     {
-      if (this.\u0023\u003DzrfHFG4f78ShF4qxOXw\u003D\u003D == value)
+      if (this._rubberBandFillBrush == value)
         return;
-      this.\u0023\u003DzrfHFG4f78ShF4qxOXw\u003D\u003D = value;
+      this._rubberBandFillBrush = value;
       this.OnPropertyChanged(nameof (RubberBandFillBrush));
     }
   }
 
   public Brush RubberBandStrokeBrush
   {
-    get => this.\u0023\u003Dzjbp2JwMF6bQB1AUz_A\u003D\u003D;
+    get => this._rubberBandStrokeBrush;
     set
     {
-      if (this.\u0023\u003Dzjbp2JwMF6bQB1AUz_A\u003D\u003D == value)
+      if (this._rubberBandStrokeBrush == value)
         return;
-      this.\u0023\u003Dzjbp2JwMF6bQB1AUz_A\u003D\u003D = value;
+      this._rubberBandStrokeBrush = value;
       this.OnPropertyChanged(nameof (RubberBandStrokeBrush));
     }
   }
 
   public Brush CursorLineBrush
   {
-    get => this.\u0023\u003Dz48euRRLHTj7a;
+    get => this._cursorLineBrush;
     set
     {
-      if (this.\u0023\u003Dz48euRRLHTj7a == value)
+      if (this._cursorLineBrush == value)
         return;
-      this.\u0023\u003Dz48euRRLHTj7a = value;
+      this._cursorLineBrush = value;
       this.OnPropertyChanged(nameof (CursorLineBrush));
     }
   }
 
   public Brush OverviewFillBrush
   {
-    get => this.\u0023\u003Dz6g3okvU9KMPFVgqxYLlFCAU\u003D;
+    get => this._overviewFillBrush;
     set
     {
-      if (this.\u0023\u003Dz6g3okvU9KMPFVgqxYLlFCAU\u003D == value)
+      if (this._overviewFillBrush == value)
         return;
-      this.\u0023\u003Dz6g3okvU9KMPFVgqxYLlFCAU\u003D = value;
+      this._overviewFillBrush = value;
       this.OnPropertyChanged(nameof (OverviewFillBrush));
     }
   }
 
   public Brush ScrollbarFillBrush
   {
-    get => this.\u0023\u003DzZgNYnbZVMSj8;
+    get => this._scrollbarFillBrush;
     set
     {
-      if (this.\u0023\u003DzZgNYnbZVMSj8 == value)
+      if (this._scrollbarFillBrush == value)
         return;
-      this.\u0023\u003DzZgNYnbZVMSj8 = value;
+      this._scrollbarFillBrush = value;
       this.OnPropertyChanged(nameof (ScrollbarFillBrush));
     }
   }
@@ -617,10 +617,10 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
 
   public Color BoxVolumeTimeframe2Color
   {
-    get => this.\u0023\u003DzIofb0iw4SlBVjCJ8eVV0YUNsdp2B;
+    get => this._boxVolumeTimeframe2Color;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzIofb0iw4SlBVjCJ8eVV0YUNsdp2B, value, nameof (BoxVolumeTimeframe2Color));
+      this.OnSetPropertyChanged<Color>(ref this._boxVolumeTimeframe2Color, value, nameof (BoxVolumeTimeframe2Color));
     }
   }
 
@@ -629,7 +629,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003DzcIz1D66ueGH4ksNMfPW2YZTA7NHC;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzcIz1D66ueGH4ksNMfPW2YZTA7NHC, value, nameof (BoxVolumeTimeframe2FrameColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzcIz1D66ueGH4ksNMfPW2YZTA7NHC, value, nameof (BoxVolumeTimeframe2FrameColor));
     }
   }
 
@@ -638,7 +638,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003DzlzAfzI2VYa0KbIVncvBFXBt36bnV;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzlzAfzI2VYa0KbIVncvBFXBt36bnV, value, nameof (BoxVolumeTimeframe3Color));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzlzAfzI2VYa0KbIVncvBFXBt36bnV, value, nameof (BoxVolumeTimeframe3Color));
     }
   }
 
@@ -647,7 +647,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003Dz8cVhrEgqpp0yBk9Chw\u003D\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003Dz8cVhrEgqpp0yBk9Chw\u003D\u003D, value, nameof (BoxVolumeCellFontColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003Dz8cVhrEgqpp0yBk9Chw\u003D\u003D, value, nameof (BoxVolumeCellFontColor));
     }
   }
 
@@ -656,7 +656,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003DzK\u0024_HFKxIyVRF7UOjjQ\u003D\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzK\u0024_HFKxIyVRF7UOjjQ\u003D\u003D, value, nameof (BoxVolumeHighVolColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzK\u0024_HFKxIyVRF7UOjjQ\u003D\u003D, value, nameof (BoxVolumeHighVolColor));
     }
   }
 
@@ -665,7 +665,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003Dz8irkkLlHyMoYrRC8ONqJmOU\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003Dz8irkkLlHyMoYrRC8ONqJmOU\u003D, value, nameof (ClusterProfileSeparatorLineColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003Dz8irkkLlHyMoYrRC8ONqJmOU\u003D, value, nameof (ClusterProfileSeparatorLineColor));
     }
   }
 
@@ -674,7 +674,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003DzKreKVOTT14wmqVT4SJblWBI\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzKreKVOTT14wmqVT4SJblWBI\u003D, value, nameof (ClusterProfileLineColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzKreKVOTT14wmqVT4SJblWBI\u003D, value, nameof (ClusterProfileLineColor));
     }
   }
 
@@ -683,7 +683,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003Dzi7gMwBaEi25hMUFE1Zcyejk\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003Dzi7gMwBaEi25hMUFE1Zcyejk\u003D, value, nameof (ClusterProfileTextColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003Dzi7gMwBaEi25hMUFE1Zcyejk\u003D, value, nameof (ClusterProfileTextColor));
     }
   }
 
@@ -692,7 +692,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003DzGUo7xQ0pG5bHr76JuUCiQKQ\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzGUo7xQ0pG5bHr76JuUCiQKQ\u003D, value, nameof (ClusterProfileClusterColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzGUo7xQ0pG5bHr76JuUCiQKQ\u003D, value, nameof (ClusterProfileClusterColor));
     }
   }
 
@@ -701,7 +701,7 @@ public sealed class \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u0
     get => this.\u0023\u003DzCQBrhh\u0024vUP6E80YOsyu6M38\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzCQBrhh\u0024vUP6E80YOsyu6M38\u003D, value, nameof (ClusterProfileClusterMaxColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzCQBrhh\u0024vUP6E80YOsyu6M38\u003D, value, nameof (ClusterProfileClusterMaxColor));
     }
   }
 }

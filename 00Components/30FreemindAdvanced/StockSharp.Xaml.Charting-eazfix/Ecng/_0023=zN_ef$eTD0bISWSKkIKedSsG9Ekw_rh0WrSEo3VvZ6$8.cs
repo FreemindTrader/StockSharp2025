@@ -182,7 +182,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     });
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D = new IRenderableSeries[count];
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz4nxjMSnapDjJ = new IPointSeries[count];
-    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dzoc6wScE\u003D = new \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D[count];
+    zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dzoc6wScE\u003D = new IDataSeries[count];
     zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn.\u0023\u003Dz8O95DKv93zY9 = new IndexRange [count];
     IPointResamplerFactory toOujo13K1Ho2jpA = zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.Services().GetService<IPointResamplerFactory>();
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzVDzEWto\u003D((object) toOujo13K1Ho2jpA, "resamplerFactory");
@@ -190,7 +190,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     for (int index = 0; index < count; ++index)
     {
       IRenderableSeries s1JolYrWoYpqmQ6ug = list[index];
-      \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ns01UjmP40FpxAl2jmQ;
+      IDataSeries ns01UjmP40FpxAl2jmQ;
       IndexRange  g8Oq2rGx6KyfAreq;
       IPointSeries ftrixUnpTllY1PkTyq;
       \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\u00248Y.\u0023\u003Dz2iW_UgNEfXLUkWrnJw\u003D\u003D(zPKCmcad6Nxc5A8A1.\u0023\u003Dzyyh4GZw\u003D.get_XAxes(), s1JolYrWoYpqmQ6ug, zPKCmcad6Nxc5A8A1.\u0023\u003Dz7Pgaal_fKVBn, toOujo13K1Ho2jpA, out ns01UjmP40FpxAl2jmQ, out g8Oq2rGx6KyfAreq, out ftrixUnpTllY1PkTyq);
@@ -215,7 +215,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     IRenderableSeries _param1,
     \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D _param2,
     IPointResamplerFactory _param3,
-    out \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param4,
+    out IDataSeries _param4,
     out IndexRange  _param5,
     out IPointSeries _param6)
   {
@@ -305,7 +305,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     IRenderableSeries s1JolYrWoYpqmQ6ug = _param0.get_RenderableSeries().FirstOrDefault<IRenderableSeries>(new Func<IRenderableSeries, bool>(xe6cQmBj9OjyffE7I.\u0023\u003DzEQtawKU0gsYICcBClTLrWSc\u003D)) ?? _param0.get_RenderableSeries().FirstOrDefault<IRenderableSeries>(new Func<IRenderableSeries, bool>(xe6cQmBj9OjyffE7I.\u0023\u003Dz\u0024MTmBniphw3al5MgNQIrqkg\u003D));
     if (((IEnumerable<IPointSeries>) _param1.\u0023\u003Dz4nxjMSnapDjJ).\u0023\u003DzCCMM80zDpO6N<IPointSeries>() || s1JolYrWoYpqmQ6ug == null)
       return (IPointSeries) null;
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D[] zoc6wScE = _param1.\u0023\u003Dzoc6wScE\u003D;
+    IDataSeries[] zoc6wScE = _param1.\u0023\u003Dzoc6wScE\u003D;
     for (int index = 0; index < zoc6wScE.Length; ++index)
     {
       if (_param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D[index].IsVisible && zoc6wScE[index] == s1JolYrWoYpqmQ6ug.get_DataSeries())
@@ -391,7 +391,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     {
       if (!this.\u0023\u003Dzm6bkhTMv4TGS(_param1))
         return false;
-      \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = _param1.get_DataSeries();
+      IDataSeries dataSeries = _param1.get_DataSeries();
       return dataSeries != null && dataSeries.get_HasValues() && !dataSeries.get_IsSecondary();
     }
 
@@ -400,7 +400,7 @@ public sealed class \u0023\u003DzN_ef\u0024eTD0bISWSKkIKedSsG9Ekw_rh0WrSEo3VvZ6\
     {
       if (!this.\u0023\u003Dzm6bkhTMv4TGS(_param1))
         return false;
-      \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = _param1.get_DataSeries();
+      IDataSeries dataSeries = _param1.get_DataSeries();
       return dataSeries != null && dataSeries.get_HasValues();
     }
   }

@@ -697,7 +697,7 @@ namespace StockSharp.Xaml.Charting
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
-            *  Step 7----------> 10 CandleStickUI get the Candle from the data and start Drawing from there.
+            *  Step 7----------> 10 ChartCandleElementViewModel get the Candle from the data and start Drawing from there.
             *                           
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */

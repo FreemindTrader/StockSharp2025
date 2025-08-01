@@ -606,37 +606,37 @@
 //            }
 
 
-//            public double OpenPrice()
+//            public double OpenPrice
 //            {
 //                return _openPrice;
 //            }
 
 
-//            public double HighPrice()
+//            public double HighPrice
 //            {
 //                return _highPrice;
 //            }
 
 
-//            public double LowPrice()
+//            public double LowPrice
 //            {
 //                return _lowPrice;
 //            }
 
 
-//            public double ClosePrice()
+//            public double ClosePrice
 //            {
 //                return _closePrice;
 //            }
 
 
-//            public CandlePriceLevel[ ] CandlePriceLevel()
+//            public CandlePriceLevel[ ] CandlePriceLevel
 //            {
 //                return _candlePriceLevel;
 //            }
 
 
-//            public double? PriceStep()
+//            public double? PriceStep
 //            {
 //                return _priceStep;
 //            }

@@ -8,13 +8,13 @@ using System;
 using System.Diagnostics;
 
 #nullable disable
-public class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D : 
+public class OhlcSeriesInfo : 
   \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D
 {
   
   private double \u0023\u003DzJirJ5UAoQttm;
 
-  public \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D(
+  public OhlcSeriesInfo(
     IRenderableSeries _param1,
     HitTestInfo _param2)
     : base(_param1, _param2)
@@ -30,7 +30,7 @@ public class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D :
     get => this.\u0023\u003DzJirJ5UAoQttm;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzJirJ5UAoQttm, value, nameof (OpenValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzJirJ5UAoQttm, value, nameof (OpenValue)))
         return;
       this.OnPropertyChanged("FormattedOpenValue");
     }
@@ -39,9 +39,9 @@ public class \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D :
   public string FormattedOpenValue => this.\u0023\u003DzwMhD0eRlLP6L((IComparable) this.OpenValue);
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
-    this.OpenValue = ((\u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D) _param1).OpenValue;
+    this.OpenValue = ((OhlcSeriesInfo) _param1).OpenValue;
   }
 }

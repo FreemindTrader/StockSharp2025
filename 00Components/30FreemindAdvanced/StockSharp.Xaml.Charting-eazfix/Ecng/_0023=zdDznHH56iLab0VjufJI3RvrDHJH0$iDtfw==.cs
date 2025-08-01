@@ -18,7 +18,7 @@ public struct \u0023\u003DzdDznHH56iLab0VjufJI3RvrDHJH0\u0024iDtfw\u003D\u003D
   
   public IPointSeries[] \u0023\u003Dz4nxjMSnapDjJ;
   
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D[] \u0023\u003Dzoc6wScE\u003D;
+  public IDataSeries[] \u0023\u003Dzoc6wScE\u003D;
   
   public IndexRange [] \u0023\u003Dz8O95DKv93zY9;
   

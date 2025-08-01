@@ -166,9 +166,9 @@ public sealed class FastBubbleRenderableSeries :
     for (int index = 0; index < num1; ++index)
     {
       \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6> iwzGyvO4YaqDkpiI = b9G5KlgWkLJr7a0x[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6>;
-      double num3 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+      double num3 = iwzGyvO4YaqDkpiI.X;
       rcCjaxEzD51YrPc6 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-      double d = rcCjaxEzD51YrPc6.\u0023\u003Dzu7q98_E\u003D();
+      double d = rcCjaxEzD51YrPc6.Y;
       rcCjaxEzD51YrPc6 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double num4 = rcCjaxEzD51YrPc6.\u0023\u003DzM49\u0024G3E\u003D();
       if (!double.IsNaN(d))
@@ -211,7 +211,7 @@ public sealed class FastBubbleRenderableSeries :
       Rect _param4)
     {
       if (this._variableSome3535.PaletteProvider != null)
-        this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = this._variableSome3535.PaletteProvider.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2, _param3);
+        this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D = this._variableSome3535.PaletteProvider.GetColor02((IRenderableSeries) this._variableSome3535, _param1, _param2, _param3);
       if (this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.HasValue)
       {
         using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = this.\u0023\u003DzC8v0b7k\u003D.\u0023\u003DzL3In9ls\u003D(this.\u0023\u003DzwV3z9AqDNSkfc9UcQQ\u003D\u003D.Value, this._variableSome3535.AntiAliasing, (float) this._variableSome3535.StrokeThickness, this._variableSome3535.Opacity, (double[]) null, PenLineCap.Round))

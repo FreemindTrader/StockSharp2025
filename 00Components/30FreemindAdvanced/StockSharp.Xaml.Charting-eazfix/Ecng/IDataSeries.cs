@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 
 #nullable disable
-public interface \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D : 
+public interface IDataSeries : 
   ISuspendable
 {
   event EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X> DataSeriesChanged;

@@ -1131,13 +1131,13 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
         return _param1;
     }
 
-    //DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
+    //DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
     //  IDrawingSurfaceVM _param1)
     public DrawableChartComponentBaseViewModel CreateViewModel(IDrawingSurfaceVM viewModel)
     {
         throw new NotImplementedException();
 
-        //return this._baseViewModel = (DrawableChartElementBaseViewModel)new ChartCandleElement(this);
+        //return this._baseViewModel = (DrawableChartComponentBaseViewModel)new ChartCandleElement(this);
     }
 
     bool IDrawableChartElement.StartDrawing(
@@ -1890,7 +1890,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 //        {
 //            /* -------------------------------------------------------------------------------------------------------------------------------------------
 //            * 
-//            *  Step 7----------> 10 CandleStickUI get the Candle from the data and start Drawing from there.
+//            *  Step 7----------> 10 ChartCandleElementViewModel get the Candle from the data and start Drawing from there.
 //            *                           
 //            * ------------------------------------------------------------------------------------------------------------------------------------------- 
 //            */

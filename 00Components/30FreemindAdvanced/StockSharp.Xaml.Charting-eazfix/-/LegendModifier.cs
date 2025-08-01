@@ -195,15 +195,15 @@ public sealed class LegendModifier :
     if (!this.IsEnabled || !this.IsAttached || this.ParentSurface == null || this.ParentSurface.get_RenderableSeries() == null)
       return;
     LegendModifier.\u0023\u003DzSomy1CqId_K1JNYi\u0024vmePXs\u003D cqIdK1JnYiVmePxs = new LegendModifier.\u0023\u003DzSomy1CqId_K1JNYi\u0024vmePXs\u003D();
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> source = this.\u0023\u003DzZZbJdAS6fDJ\u0024(this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzaBvGZQmHUOsn)));
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> seriesInfo = this.SeriesData.SeriesInfo;
-    cqIdK1JnYiVmePxs.\u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D = source.Select<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries>(LegendModifier.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D))).ToArray<IRenderableSeries>();
-    seriesInfo.\u0023\u003DzmFyFyI4\u003D<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Predicate<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(cqIdK1JnYiVmePxs.\u0023\u003DzO1RhVl4gz8WF6_dF6w\u003D\u003D));
-    foreach (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg1 in (Collection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) source)
+    ObservableCollection<SeriesInfo> source = this.\u0023\u003DzZZbJdAS6fDJ\u0024(this.ParentSurface.get_RenderableSeries().Where<IRenderableSeries>(new Func<IRenderableSeries, bool>(this.\u0023\u003DzaBvGZQmHUOsn)));
+    ObservableCollection<SeriesInfo> seriesInfo = this.SeriesData.SeriesInfo;
+    cqIdK1JnYiVmePxs.\u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D = source.Select<SeriesInfo, IRenderableSeries>(LegendModifier.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D = new Func<SeriesInfo, IRenderableSeries>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D))).ToArray<IRenderableSeries>();
+    seriesInfo.\u0023\u003DzmFyFyI4\u003D<SeriesInfo>(new Predicate<SeriesInfo>(cqIdK1JnYiVmePxs.\u0023\u003DzO1RhVl4gz8WF6_dF6w\u003D\u003D));
+    foreach (SeriesInfo vdj8C0KctI6r27Gg1 in (Collection<SeriesInfo>) source)
     {
       LegendModifier.\u0023\u003DzwvYXkKjOuvyd5aJBEw4pWME\u003D ouvyd5aJbEw4pWme = new LegendModifier.\u0023\u003DzwvYXkKjOuvyd5aJBEw4pWME\u003D();
       ouvyd5aJbEw4pWme.\u0023\u003DzpZB0nPaJCOgn = vdj8C0KctI6r27Gg1;
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg2 = seriesInfo.FirstOrDefault<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, bool>(ouvyd5aJbEw4pWme.\u0023\u003Dz5ZRAyNj\u0024d5\u0024CpBRWyQ\u003D\u003D));
+      SeriesInfo vdj8C0KctI6r27Gg2 = seriesInfo.FirstOrDefault<SeriesInfo>(new Func<SeriesInfo, bool>(ouvyd5aJbEw4pWme.\u0023\u003Dz5ZRAyNj\u0024d5\u0024CpBRWyQ\u003D\u003D));
       if (vdj8C0KctI6r27Gg2 != null)
         LegendModifier.UpdateSeries(vdj8C0KctI6r27Gg2, ouvyd5aJbEw4pWme.\u0023\u003DzpZB0nPaJCOgn);
       else
@@ -225,15 +225,15 @@ public sealed class LegendModifier :
     return !_param1.get_IsSelected() && this.GetLegendDataFor == \u0023\u003DzKeWTzo3ARlgJ3_OnyMXBxOGwev9Q6t\u00245QdLx8qQ\u003D.UnselectedSeries;
   }
 
-  protected virtual ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzZZbJdAS6fDJ\u0024(
+  protected virtual ObservableCollection<SeriesInfo> \u0023\u003DzZZbJdAS6fDJ\u0024(
     IEnumerable<IRenderableSeries> _param1)
   {
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> observableCollection = new ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>();
+    ObservableCollection<SeriesInfo> observableCollection = new ObservableCollection<SeriesInfo>();
     if (_param1 != null)
     {
       foreach (IRenderableSeries s1JolYrWoYpqmQ6ug in _param1)
       {
-        \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg = s1JolYrWoYpqmQ6ug.\u0023\u003DzZZbJdAS6fDJ\u0024(s1JolYrWoYpqmQ6ug.\u0023\u003DzjuB\u0024Pa8\u003D(new Point(this.ModifierSurface.ActualWidth, 0.0), false));
+        SeriesInfo vdj8C0KctI6r27Gg = s1JolYrWoYpqmQ6ug.\u0023\u003DzZZbJdAS6fDJ\u0024(s1JolYrWoYpqmQ6ug.\u0023\u003DzjuB\u0024Pa8\u003D(new Point(this.ModifierSurface.ActualWidth, 0.0), false));
         observableCollection.Add(vdj8C0KctI6r27Gg);
       }
     }
@@ -241,8 +241,8 @@ public sealed class LegendModifier :
   }
 
   private static void UpdateSeries(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param0,
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param0,
+    SeriesInfo _param1)
   {
     _param0.DataSeriesIndex = _param1.DataSeriesIndex;
     _param0.DataSeriesType = _param1.DataSeriesType;
@@ -284,10 +284,10 @@ public sealed class LegendModifier :
   private new sealed class SomeClass34343383
   {
     public static readonly LegendModifier.SomeClass34343383 SomeMethond0343 = new LegendModifier.SomeClass34343383();
-    public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, IRenderableSeries> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
+    public static Func<SeriesInfo, IRenderableSeries> \u0023\u003Dz9HSFgt5cVDGouicyKg\u003D\u003D;
 
     public IRenderableSeries \u0023\u003Dz\u0024gAhhp6z9Gkiqek7qvjGZrk\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       return _param1.RenderableSeries;
     }
@@ -305,7 +305,7 @@ public sealed class LegendModifier :
     public IRenderableSeries[] \u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D;
 
     public bool \u0023\u003DzO1RhVl4gz8WF6_dF6w\u003D\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       return !((IEnumerable<IRenderableSeries>) this.\u0023\u003DzcntTewCERpVdST0tmR5oDSM\u003D).Contains<IRenderableSeries>(_param1.RenderableSeries);
     }
@@ -313,10 +313,10 @@ public sealed class LegendModifier :
 
   private sealed class \u0023\u003DzwvYXkKjOuvyd5aJBEw4pWME\u003D
   {
-    public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzpZB0nPaJCOgn;
+    public SeriesInfo \u0023\u003DzpZB0nPaJCOgn;
 
     public bool \u0023\u003Dz5ZRAyNj\u0024d5\u0024CpBRWyQ\u003D\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       return _param1.RenderableSeries.Equals((object) this.\u0023\u003DzpZB0nPaJCOgn.RenderableSeries);
     }

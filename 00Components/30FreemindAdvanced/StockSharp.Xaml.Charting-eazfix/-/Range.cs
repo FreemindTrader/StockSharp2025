@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using Ecng.Common;
 using SciChart.Data.Numerics.GenericMath;
+using MathHelper = SciChart.Data.Numerics.GenericMath.MathHelper;
 
 namespace SciChart.Data.Model;
 

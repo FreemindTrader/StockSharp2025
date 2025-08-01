@@ -117,7 +117,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
 
         throw new NotImplementedException();
         
-        //this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( DrawableChartElementBaseViewModel ) new ChartBandElementVM<DateTime>( this );
+        //this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( DrawableChartComponentBaseViewModel ) new ChartBandElementVM<DateTime>( this );
         //return _baseViewModel;
     }
 

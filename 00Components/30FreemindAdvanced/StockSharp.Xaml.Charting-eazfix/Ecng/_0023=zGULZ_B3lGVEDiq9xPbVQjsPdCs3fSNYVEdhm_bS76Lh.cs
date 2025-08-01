@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 #nullable disable
 public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc : 
-  \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D
+  OhlcSeriesInfo
 {
   
   private CandlePriceLevel \u0023\u003DzsQrVoaE\u003D;
@@ -27,12 +27,12 @@ public sealed class \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc :
     get => this.\u0023\u003DzsQrVoaE\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<CandlePriceLevel>(ref this.\u0023\u003DzsQrVoaE\u003D, value, nameof (Level));
+      this.OnSetPropertyChanged<CandlePriceLevel>(ref this.\u0023\u003DzsQrVoaE\u003D, value, nameof (Level));
     }
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     this.Level = ((\u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc) _param1).Level;

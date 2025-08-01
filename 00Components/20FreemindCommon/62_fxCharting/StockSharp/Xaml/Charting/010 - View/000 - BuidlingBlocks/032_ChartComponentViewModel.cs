@@ -46,7 +46,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     private readonly bool _isCandleElement;
 
-    private ChartCandleElement _candleStickUI;
+    private ChartCandleElement _ChartCandleElementViewModel;
 
     private bool _isDisposed;
 
@@ -88,8 +88,8 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     public ChartCandleElement Candles
     {
-        get => _candleStickUI;
-        private set => _candleStickUI = value;
+        get => _ChartCandleElementViewModel;
+        private set => _ChartCandleElementViewModel = value;
     }
 
     public IEnumerable<DrawableChartComponentBaseViewModel> Elements
@@ -119,7 +119,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     /// <summary>
     /// In the Initialization of the ChartComponet, we need to initialize the child elements of the ChartComponent.
     /// 
-    /// eg. The CandlestickUI contains High, low, open, close and each of them need to be initialized. 
+    /// eg. The ChartCandleElementViewModel contains High, low, open, close and each of them need to be initialized. 
     /// 
     /// </summary>
     /// <param name="children"></param>
@@ -255,13 +255,13 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 //public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 //{
 //    private readonly ObservableCollection< ChartElementViewModel > _childViewModels = new ObservableCollection< ChartElementViewModel >( );
-//    private readonly DrawableChartElementBaseViewModel[ ] _componentsCache;
+//    private readonly DrawableChartComponentBaseViewModel[ ] _componentsCache;
 //    private double _minFieldWidth;
 //    private readonly IDrawingSurfaceVM _scichartSurfaceVM;
 //    private readonly IChartComponent _iRootElement;
 //    private bool _isDisposed;
 
-//    public ChartComponentViewModel( IDrawingSurfaceVM pane, IChartComponent elementXY, IEnumerable< DrawableChartElementBaseViewModel > childElements )
+//    public ChartComponentViewModel( IDrawingSurfaceVM pane, IChartComponent elementXY, IEnumerable< DrawableChartComponentBaseViewModel > childElements )
 //    {
 //        if( pane == null )
 //        {
@@ -288,7 +288,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 //            MapPropertyChangeNotification( _componentsCache[ 0 ].Element, nameof( Color ), nameof( Color ) );
 //        }
 
-//        foreach( DrawableChartElementBaseViewModel childElement in _componentsCache )
+//        foreach( DrawableChartComponentBaseViewModel childElement in _componentsCache )
 //        {
 //            childElement.Init( this );
 //        }
@@ -310,7 +310,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 //        }
 //    }
 
-//    public IEnumerable< DrawableChartElementBaseViewModel > Elements
+//    public IEnumerable< DrawableChartComponentBaseViewModel > Elements
 //    {
 //        get
 //        {
@@ -393,7 +393,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 //    {
 //        ChartComponent.Reset( );
 
-//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
+//        foreach( DrawableChartComponentBaseViewModel child in _componentsCache )
 //        {
 //            child.Update( );
 //        }
@@ -401,7 +401,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
 //    public void UpdateChildElementYAxisMarker( )
 //    {
-//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
+//        foreach( DrawableChartComponentBaseViewModel child in _componentsCache )
 //        {
 //            child.UpdateYAxisMarker( );
 //        }
@@ -409,7 +409,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
 //    public void ChildElementPeriodicalAction( )
 //    {
-//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
+//        foreach( DrawableChartComponentBaseViewModel child in _componentsCache )
 //        {
 //            child.PerformPeriodicalAction( );
 //        }
@@ -417,7 +417,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
 //    public void ChildElementUpdateAndClear( )
 //    {
-//        foreach( DrawableChartElementBaseViewModel child in _componentsCache )
+//        foreach( DrawableChartComponentBaseViewModel child in _componentsCache )
 //        {
 //            child.GuiUpdateAndClear( );
 //        }

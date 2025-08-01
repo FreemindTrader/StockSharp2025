@@ -37,7 +37,7 @@ public class OptionVolatilitySmileChart :
 {
   public static readonly DependencyProperty SmileStepProperty = DependencyProperty.Register(nameof (SmileStep), typeof (double), typeof (OptionVolatilitySmileChart), new PropertyMetadata((object) 10.0, new PropertyChangedCallback(OptionVolatilitySmileChart.\u0023\u003DzcLFqfxuYYRmEBVt_YQ\u003D\u003D)));
   
-  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM _chartSeriesViewModel;
   
   private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
   
@@ -52,10 +52,10 @@ public class OptionVolatilitySmileChart :
   public OptionVolatilitySmileChart()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
-    this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
-    IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>();
-    IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();
+    this._chartSeriesViewModel = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this._chartSeriesViewModel.ShowLegend = true;
+    IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this._chartSeriesViewModel.Area.XAxises).First<IChartAxis>();
+    IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this._chartSeriesViewModel.Area.YAxises).First<IChartAxis>();
     chartAxis1.AutoRange = true;
     chartAxis2.AutoRange = true;
     chartAxis2.TextFormatting = "0.##";
@@ -74,8 +74,8 @@ public class OptionVolatilitySmileChart :
     dgE2H48XyyA87SEjd.AxisId = "Y";
     v7UvhxrxhaatqEjdArray[3] = (ChartModifierBase) dgE2H48XyyA87SEjd;
     this.\u0023\u003DzUyqHQCymOwtN = v7UvhxrxhaatqEjdArray;
-    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers, (IEnumerable<IChartModifier>) this.\u0023\u003DzUyqHQCymOwtN);
-    ObservableCollection<IChartModifier> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
+    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) this._chartSeriesViewModel.ChartModifier.ChildModifiers, (IEnumerable<IChartModifier>) this.\u0023\u003DzUyqHQCymOwtN);
+    ObservableCollection<IChartModifier> childModifiers = this._chartSeriesViewModel.ChartModifier.ChildModifiers;
     RolloverModifier jhzfqwrsvK3MyA6SqEjd = new RolloverModifier();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
     jhzfqwrsvK3MyA6SqEjd.UseInterpolation = false;
@@ -88,8 +88,8 @@ public class OptionVolatilitySmileChart :
 
   public string ChartTheme
   {
-    get => this.\u0023\u003DzKj7nvWQ\u003D.SelectedTheme;
-    set => this.\u0023\u003DzKj7nvWQ\u003D.SelectedTheme = value;
+    get => this._chartSeriesViewModel.SelectedTheme;
+    set => this._chartSeriesViewModel.SelectedTheme = value;
   }
 
   public double SmileStep

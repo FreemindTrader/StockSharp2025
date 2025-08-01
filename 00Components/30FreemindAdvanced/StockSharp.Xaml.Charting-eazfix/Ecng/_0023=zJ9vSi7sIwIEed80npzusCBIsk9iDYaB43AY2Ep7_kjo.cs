@@ -50,5 +50,5 @@ public struct \u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD :
   }
 
   [SpecialName]
-  public double \u0023\u003Dzu7q98_E\u003D() => this.\u0023\u003Dz1iB_fGLmDWyy();
+  public double Y => this.\u0023\u003Dz1iB_fGLmDWyy();
 }

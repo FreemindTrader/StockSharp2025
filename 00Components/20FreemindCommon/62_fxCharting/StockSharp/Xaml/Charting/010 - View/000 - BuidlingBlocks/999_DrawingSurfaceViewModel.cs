@@ -1355,10 +1355,10 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_;
     //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_;
     //    public static Func<IDrawableChartElement, bool> Func_IDrawableChartElement_bool_098;
-    //    public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
+    //    public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
     //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> _Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_;
     //    public static Func<IDrawableChartElement, bool> __Func_IDrawableChartElement__bool__903;
-    //    public static Func<DrawableChartElementBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
+    //    public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
     //    public static Action<IChartAxis> _Action_IChartAxis_0932;
     //    public static Action<IChartAxis> _Action_IChartAxis_0932323;
 
@@ -1416,7 +1416,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     //    }
 
     //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_4353(
-    //      DrawableChartElementBaseViewModel _param1 )
+    //      DrawableChartComponentBaseViewModel _param1 )
     //    {
     //        return _param1 != null;
     //    }
@@ -1434,7 +1434,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     //    }
 
     //    public bool public_bool_Method_5498751(
-    //      DrawableChartElementBaseViewModel _param1 )
+    //      DrawableChartComponentBaseViewModel _param1 )
     //    {
     //        return _param1 != null;
     //    }

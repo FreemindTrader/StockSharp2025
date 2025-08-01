@@ -173,10 +173,15 @@ public partial class ChartDrawData : IChartDrawData
         }
     }
 
+    
+
+    // (first, icandleMessage.DataType, icandleMessage.OpenPrice, icandleMessage.HighPrice, icandleMessage.LowPrice, icandleMessage.ClosePrice, icandleMessage.PriceLevels));
+        
+
     public struct sCandle : IDrawValue
     {
         private readonly DateTime _utcTime;
-        private readonly object _candleArg;
+        private readonly DataType _candleArg;
         private readonly double _openPrice;
         private readonly double _highPrice;
         private readonly double _lowPrice;
@@ -187,7 +192,7 @@ public partial class ChartDrawData : IChartDrawData
 
         public sCandle(
                           DateTimeOffset barTime,
-                          object arg,
+                          DataType arg,
                           Decimal open,
                           Decimal high,
                           Decimal low,
@@ -197,7 +202,7 @@ public partial class ChartDrawData : IChartDrawData
                      )
         {
             _utcTime = barTime.UtcDateTime;
-            _candleArg = arg;
+            _candleArg = arg ?? throw new ArgumentNullException("dataType");
             _openPrice = ( double ) open;
             _highPrice = ( double ) high;
             _lowPrice = ( double ) low;
@@ -207,22 +212,22 @@ public partial class ChartDrawData : IChartDrawData
             _advancedTAinfo = null;
         }
 
-        public sCandle( DateTimeOffset _param1, DataType _param2, Decimal _param3, Decimal _param4, Decimal _param5, Decimal _param6, IEnumerable<CandlePriceLevel> _param7 )
+        public sCandle( DateTimeOffset barTime, DataType arg, Decimal open, Decimal high, Decimal low, Decimal close, IEnumerable<CandlePriceLevel> priceLvls )
         {
-            _utcTime = _param1.UtcDateTime;
-            _candleArg = _param2 ?? throw new ArgumentNullException( "dataType" );
-            _openPrice = ( double ) _param3;
-            _highPrice = ( double ) _param4;
-            _lowPrice = ( double ) _param5;
-            _closePrice = ( double ) _param6;
-            _candlePriceLevel = _param7 != null ? _param7.ToArray<CandlePriceLevel>() : ( CandlePriceLevel[ ] ) null;
+            _utcTime = barTime.UtcDateTime;
+            _candleArg = arg ?? throw new ArgumentNullException( "dataType" );
+            _openPrice = ( double ) open;
+            _highPrice = ( double ) high;
+            _lowPrice = ( double ) low;
+            _closePrice = ( double ) close;
+            _candlePriceLevel = priceLvls != null ? priceLvls.ToArray<CandlePriceLevel>() : ( CandlePriceLevel[ ] ) null;
         }
 
         //_lastBarTime, bar.Candle.Arg, bar.Open, bar.High, bar.Low, bar.Close, bar.Candle.PriceLevels, ( double )bar.Candle.Security.PriceStep, ( IPointMetadata )bar
         public sCandle( ref SBar bar )
         {
             _utcTime = bar.BarTime;
-            _candleArg = bar.SymbolEx.Period;
+            _candleArg = StockSharp.Messages.Extensions.TimeFrame( bar.SymbolEx.Period );
             _openPrice = bar.Open;
             _highPrice = bar.High;
             _lowPrice = bar.Low;
@@ -235,7 +240,7 @@ public partial class ChartDrawData : IChartDrawData
         public sCandle( DateTimeOffset utcTime, object candleArg, double openPrice, double highPrice, double lowPrice, double closePrice, IEnumerable<CandlePriceLevel> priceLvls, double? priceStep, IPointMetadata advancedTAInfo )
         {
             _utcTime = utcTime.UtcDateTime;
-            _candleArg = candleArg;
+            _candleArg = ( DataType ) candleArg;
             _openPrice = openPrice;
             _highPrice = highPrice;
             _lowPrice = lowPrice;
@@ -246,9 +251,12 @@ public partial class ChartDrawData : IChartDrawData
         }
 
 
-        public DateTime UtcTime()
+        public DateTime Time
         {
-            return _utcTime;
+            get
+            {
+                return _utcTime;
+            }
         }
 
         public IPointMetadata AdvancedTAInfo()
@@ -256,48 +264,23 @@ public partial class ChartDrawData : IChartDrawData
             return _advancedTAinfo;
         }
 
-        public object CandleArg()
-        {
-            return _candleArg;
-        }
+        public DataType CandleArg => this._candleArg;
 
 
-        public double OpenPrice()
-        {
-            return _openPrice;
-        }
+        public double OpenPrice => this._openPrice;
+
+        public double HighPrice => this._highPrice;
+        
+
+        public double LowPrice => this._lowPrice;
+        
+
+        public double ClosePrice => this._closePrice;        
 
 
-        public double HighPrice()
-        {
-            return _highPrice;
-        }
+        public CandlePriceLevel[ ] CandlePriceLevel => this._candlePriceLevel;
+        
 
-
-        public double LowPrice()
-        {
-            return _lowPrice;
-        }
-
-
-        public double ClosePrice()
-        {
-            return _closePrice;
-        }
-
-
-        public CandlePriceLevel[ ] CandlePriceLevel()
-        {
-            return _candlePriceLevel;
-        }
-
-
-        public double? PriceStep()
-        {
-            return _priceStep;
-        }
-    }
-
-
-    
+        public double? PriceStep => this._priceStep;        
+    }    
 }

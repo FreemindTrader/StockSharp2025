@@ -12,7 +12,7 @@ public interface \u0023\u003DzJZzdBuNdGPIV6c3AUcyRfvQwvbu0Gd4Imzwk5GIfgC73<TX, T
   IDataSeries<TX, TY>,
   ISuspendable,
   \u0023\u003DzExPUKZPbT0fb9dlf_qOoazVlQnP90XoMutgGcLyCRUcP,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
+  IDataSeries
   where TX : IComparable
   where TY : IComparable
 {

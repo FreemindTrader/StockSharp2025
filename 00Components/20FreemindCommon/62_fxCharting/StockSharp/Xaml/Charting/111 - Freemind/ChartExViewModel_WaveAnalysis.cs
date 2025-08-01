@@ -42,12 +42,12 @@ namespace StockSharp.Xaml.Charting
     {
         public void ShowMoreWaves()
         {
-            _candleStickUI.ShowMoreWaves( );
+            _ChartCandleElementViewModel.ShowMoreWaves( );
         }
 
         public void ShowLessWaves( )
         {
-            _candleStickUI.ShowLessWaves( );
+            _ChartCandleElementViewModel.ShowLessWaves( );
         }
     }
 }

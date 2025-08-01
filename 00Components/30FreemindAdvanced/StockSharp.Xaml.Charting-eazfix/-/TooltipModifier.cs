@@ -18,7 +18,7 @@ public sealed class TooltipModifier :
   
   public static readonly DependencyProperty \u0023\u003DzNRygy3vTBpTh = DependencyProperty.RegisterAttached("IncludeSeries", typeof (bool), typeof (TooltipModifier), new PropertyMetadata((object) true));
   
-  public static readonly DependencyProperty \u0023\u003DzqLvPVa7rf46kZxQtAw\u003D\u003D = DependencyProperty.Register(nameof (TooltipLabelDataContextSelector), typeof (Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object>), typeof (TooltipModifier), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DzqLvPVa7rf46kZxQtAw\u003D\u003D = DependencyProperty.Register(nameof (TooltipLabelDataContextSelector), typeof (Func<SeriesInfo, object>), typeof (TooltipModifier), new PropertyMetadata((PropertyChangedCallback) null));
   
   private TemplatableControl \u0023\u003DzKBqDaxX8NlWc;
 
@@ -37,11 +37,11 @@ public sealed class TooltipModifier :
     _param0.SetValue(TooltipModifier.\u0023\u003DzNRygy3vTBpTh, (object) _param1);
   }
 
-  public Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object> TooltipLabelDataContextSelector
+  public Func<SeriesInfo, object> TooltipLabelDataContextSelector
   {
     get
     {
-      return (Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, object>) this.GetValue(TooltipModifier.\u0023\u003DzqLvPVa7rf46kZxQtAw\u003D\u003D);
+      return (Func<SeriesInfo, object>) this.GetValue(TooltipModifier.\u0023\u003DzqLvPVa7rf46kZxQtAw\u003D\u003D);
     }
     set
     {
@@ -85,7 +85,7 @@ public sealed class TooltipModifier :
   {
     _param2 = new Point();
     object obj = (object) null;
-    foreach (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg in this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1))
+    foreach (SeriesInfo vdj8C0KctI6r27Gg in this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1))
     {
       if (vdj8C0KctI6r27Gg.IsHit && vdj8C0KctI6r27Gg.RenderableSeries.\u0023\u003DzVxrZQ3k9ZBGJ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 2))
       {

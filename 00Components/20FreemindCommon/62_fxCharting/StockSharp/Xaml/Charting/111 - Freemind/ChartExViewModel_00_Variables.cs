@@ -47,7 +47,7 @@ namespace StockSharp.Xaml.Charting
 
         private CandleSeries                                             _candleSeries;
         
-        private ChartCandleElementEx _candleStickUI;
+        private ChartCandleElementEx _ChartCandleElementViewModel;
         
         private ScichartSurfaceMVVM _drawSurface;
 

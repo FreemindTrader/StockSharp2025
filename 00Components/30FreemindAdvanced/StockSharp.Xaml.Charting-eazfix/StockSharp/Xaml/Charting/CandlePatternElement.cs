@@ -34,7 +34,7 @@ public class CandlePatternElement :
   
   private Color _upColor;
   
-  private DrawableChartElementBaseViewModel _baseViewModel;
+  private DrawableChartComponentBaseViewModel _baseViewModel;
 
   [Display(ResourceType = typeof (LocalizedStrings), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30)]
   public Color DownColor
@@ -58,10 +58,10 @@ public class CandlePatternElement :
     }
   }
 
-  DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
+  DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this._baseViewModel = (DrawableChartElementBaseViewModel) new \u0023\u003DzGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg\u003D\u003D(this);
+    return this._baseViewModel = (DrawableChartComponentBaseViewModel) new CandlePatternElementViewModel(this);
   }
 
   bool IDrawableChartElement.StartDrawing(

@@ -493,7 +493,7 @@ namespace StockSharp.Xaml.Charting
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
-            *  Step 7----------> 11 CandleStickUI OnDraw Ultimately call the UpdateSeries to append the data to the OHLC series.
+            *  Step 7----------> 11 ChartCandleElementViewModel OnDraw Ultimately call the UpdateSeries to append the data to the OHLC series.
             *                           
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */
@@ -504,7 +504,7 @@ namespace StockSharp.Xaml.Charting
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
-            *  Step 7----------> 11 CandleStickUI OnDraw Ultimately call the UpdateSeries to append the data to the OHLC series.
+            *  Step 7----------> 11 ChartCandleElementViewModel OnDraw Ultimately call the UpdateSeries to append the data to the OHLC series.
             *                           
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */

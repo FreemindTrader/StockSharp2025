@@ -52,7 +52,7 @@ public sealed class FastXORenderableSeries :
     int num2 = this.\u0023\u003Dz6BuO4fnhj6SX(xkzemsMs5tGkouk5w1, ftrixUnpTllY1PkTyq, this.DataPointWidth);
     double num3 = Math.Abs(xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(xoBoxSize) - xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(0.0));
     bool flag2 = (double) num2 < 3.0 || num3 < 3.0;
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
+    IXxxPaletteProvider paletteProvider = this.PaletteProvider;
     \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
     IBrush2D xrgcdFbSdWgN9GcT8_1 = _param1.\u0023\u003Dze8WyDhI\u003D(this.UpWickColor, this.Opacity, new bool?());
     IBrush2D xrgcdFbSdWgN9GcT8_2 = _param1.\u0023\u003Dze8WyDhI\u003D(this.DownWickColor, this.Opacity, new bool?());
@@ -68,7 +68,7 @@ public sealed class FastXORenderableSeries :
       r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
       double num6 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzGze4a8XU7KvB();
       bool flag3 = close1 >= num6;
-      int num7 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D()).\u0023\u003DzYNd6r7dW43yr();
+      int num7 = _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(iwzGyvO4YaqDkpiI.X).\u0023\u003DzYNd6r7dW43yr();
       int num8 = ((double) num7 - (double) num2 * 0.5).\u0023\u003DzYNd6r7dW43yr();
       int num9 = ((double) num7 + (double) num2 * 0.5).\u0023\u003DzYNd6r7dW43yr();
       int val2_1 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num4).\u0023\u003DzYNd6r7dW43yr();
@@ -77,8 +77,8 @@ public sealed class FastXORenderableSeries :
       IBrush2D xrgcdFbSdWgN9GcT8_3 = flag3 ? xrgcdFbSdWgN9GcT8_1 : xrgcdFbSdWgN9GcT8_2;
       if (paletteProvider != null)
       {
-        \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D htg5ScQrmCkwmAaNyPa = paletteProvider;
-        double num10 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+        IXxxPaletteProvider htg5ScQrmCkwmAaNyPa = paletteProvider;
+        double num10 = iwzGyvO4YaqDkpiI.X;
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double num11 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzGze4a8XU7KvB();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
@@ -87,7 +87,7 @@ public sealed class FastXORenderableSeries :
         double num13 = r84WmWxFxQ0dZvA0kR.\u0023\u003DzchuwVU\u00245sIH8();
         r84WmWxFxQ0dZvA0kR = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
         double close2 = r84WmWxFxQ0dZvA0kR.Close;
-        Color? nullable = htg5ScQrmCkwmAaNyPa.\u0023\u003DzLCyKrYI\u003D((IRenderableSeries) this, num10, num11, num12, num13, close2);
+        Color? nullable = htg5ScQrmCkwmAaNyPa.GetColor02((IRenderableSeries) this, num10, num11, num12, num13, close2);
         if (nullable.HasValue)
         {
           rhwYsZxA33iRu6Id7J = _param3.\u0023\u003Dzc8S9rSE\u003D(nullable.Value, new float?());

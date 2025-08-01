@@ -17,7 +17,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
   IDataSeries<TX, TY>,
   ISuspendable,
   \u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
+  IDataSeries,
   \u0023\u003Dzboj3ckhISv7k6koCkTeIfz13hju1HWdmJxf054ica0kRcYMVoV1Kpw0\u003D
   where TX : IComparable
   where TY : IComparable
@@ -42,7 +42,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
     this._yMapping = yMapping;
   }
 
-  event EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X> \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EDataSeriesChanged
+  event EventHandler<\u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X> IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EDataSeriesChanged
   {
     add
     {
@@ -58,7 +58,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
 
   public bool IsEvenlySpaced => true;
 
-  ISciChartSurface \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EParentSurface
+  ISciChartSurface IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EParentSurface
   {
     get => this._parentSurface;
     set => this._parentSurface = value;
@@ -66,7 +66,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
 
   public string SeriesName { get; set; }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXRange
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXRange
   {
     get
     {
@@ -74,47 +74,47 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
     }
   }
 
-  IComparable \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYMin
+  IComparable IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYMin
   {
     get => (IComparable) this._yMapping(0);
   }
 
-  IComparable \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYMax
+  IComparable IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYMax
   {
     get => (IComparable) this._yMapping(this.ArrayHeight - 1);
   }
 
-  IComparable \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMin
+  IComparable IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMin
   {
     get => (IComparable) this._xMapping(0);
   }
 
-  IComparable \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMax
+  IComparable IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMax
   {
     get => (IComparable) this._xMapping(this.ArrayWidth - 1);
   }
 
-  bool \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsFifo
+  bool IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsFifo
   {
     get => false;
   }
 
-  bool \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EHasValues
+  bool IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EHasValues
   {
     get => this.ArrayHeight != 0 && this.ArrayWidth != 0;
   }
 
-  bool \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsSecondary
+  bool IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsSecondary
   {
     get => false;
   }
 
-  int \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002ECount
+  int IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002ECount
   {
     get => this.ArrayWidth;
   }
 
-  bool \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsSorted
+  bool IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsSorted
   {
     get => true;
   }
@@ -137,7 +137,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
     get => this.ArrayHeight;
   }
 
-  IList \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXValues
+  IList IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXValues
   {
     get
     {
@@ -145,7 +145,7 @@ public sealed class Heatmap2DArrayDataSeries<TX, TY, TZ> :
     }
   }
 
-  IList \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYValues
+  IList IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYValues
   {
     get
     {
@@ -276,12 +276,12 @@ label_9:
   }
 
   [Obsolete("IsAttached is obsolete because there is no DataSeriesSet now")]
-  bool \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsAttached
+  bool IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsAttached
   {
     get => throw new NotImplementedException();
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYRange
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYRange
   {
     get
     {
@@ -289,12 +289,12 @@ label_9:
     }
   }
 
-  DataSeriesType \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EDataSeriesType
+  DataSeriesType IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EDataSeriesType
   {
     get => (DataSeriesType) 7;
   }
 
-  int? \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFifoCapacity
+  int? IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFifoCapacity
   {
     get => throw new NotImplementedException();
     set => throw new NotImplementedException();
@@ -355,7 +355,7 @@ label_9:
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EClear()
+  void IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EClear()
   {
     throw new NotImplementedException();
   }
@@ -379,7 +379,7 @@ label_9:
     throw new NotImplementedException();
   }
 
-  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+  IPointSeries IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
     ResamplingMode resamplingMode,
     IndexRange  pointRange,
@@ -389,21 +389,21 @@ label_9:
     throw new NotImplementedException();
   }
 
-  int \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindIndex(
+  int IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindIndex(
     IComparable x,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D searchMode)
   {
     throw new NotImplementedException();
   }
 
-  void \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EInvalidateParentSurface(
+  void IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EInvalidateParentSurface(
     RangeMode rangeMode)
   {
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ToStackedDataSeriesComponent(
-    IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> previousDataSeriesInSameGroup)
+  public IDataSeries ToStackedDataSeriesComponent(
+    IEnumerable<IDataSeries> previousDataSeriesInSameGroup)
   {
     throw new NotImplementedException();
   }
@@ -452,13 +452,13 @@ label_9:
     throw new NotImplementedException();
   }
 
-  IndexRange  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetIndicesRange(
+  IndexRange  IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetIndicesRange(
     IRange visibleRange)
   {
     return new IndexRange (0, this.ArrayWidth - 1);
   }
 
-  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+  IPointSeries IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     ResamplingMode resamplingMode,
     IndexRange  pointRange,
     int viewportWidth,
@@ -471,7 +471,7 @@ label_9:
     return (IPointSeries) new \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0nFFXWH2DvMJoLMw\u003D\u003D<TX, TY>((\u0023\u003DzKasBY8yFp0kHGchcdspopBzm5WEkx4_svXlI48ABMxC7sN4E32vyGbw\u003D) this, this._xMapping, this._yMapping);
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IndexRange  xIndexRange)
   {
     return this.GetYRange();
@@ -482,27 +482,27 @@ label_9:
     return (IRange) new DoubleRange(this._yMapping(0).ToDouble(), this._yMapping(this.ArrayHeight).ToDouble());
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IndexRange  xIndexRange,
     bool getPositiveRange)
   {
     return this.GetYRange();
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IRange xRange,
     bool getPositiveRange)
   {
     return this.GetYRange();
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IRange xRange)
   {
     return this.GetYRange();
   }
 
-  HitTestInfo \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
+  HitTestInfo IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
     int index)
   {
     return this.GetHitTestInfo(new int?(index), new int?(index));

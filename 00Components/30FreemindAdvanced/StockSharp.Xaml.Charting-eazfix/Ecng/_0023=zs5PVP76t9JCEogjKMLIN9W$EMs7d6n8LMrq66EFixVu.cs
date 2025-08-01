@@ -65,7 +65,7 @@ public struct \u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy :
 
   [CompilerGenerated]
   [SpecialName]
-  public readonly double \u0023\u003Dzu7q98_E\u003D()
+  public readonly double Y
   {
     return this.\u0023\u003DzXD61jixfGgmLDHbt\u0024g\u003D\u003D;
   }

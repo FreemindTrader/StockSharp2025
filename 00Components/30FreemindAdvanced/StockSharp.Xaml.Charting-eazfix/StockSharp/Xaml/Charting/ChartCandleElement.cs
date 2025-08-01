@@ -697,7 +697,7 @@ namespace StockSharp.Xaml.Charting
         {
             /* -------------------------------------------------------------------------------------------------------------------------------------------
             * 
-            *  Step 7----------> 10 CandleStickUI get the Candle from the data and start Drawing from there.
+            *  Step 7----------> 10 ChartCandleElementViewModel get the Candle from the data and start Drawing from there.
             *                           
             * ------------------------------------------------------------------------------------------------------------------------------------------- 
             */
@@ -847,7 +847,7 @@ public class ChartCandleElement :
 
     private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _drawingColor;
 
-    private DrawableChartElementBaseViewModel _baseViewModel;
+    private DrawableChartComponentBaseViewModel _baseViewModel;
 
     public ChartCandleElement()
     {
@@ -1868,10 +1868,10 @@ public class ChartCandleElement :
         return _param1;
     }
 
-    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
       ScichartSurfaceMVVM _param1)
     {
-        return this._baseViewModel = (DrawableChartElementBaseViewModel)new CandlestickUI(this);
+        return this._baseViewModel = (DrawableChartComponentBaseViewModel)new ChartCandleElementViewModel(this);
     }
 
     bool IDrawableChartElement.StartDrawing(

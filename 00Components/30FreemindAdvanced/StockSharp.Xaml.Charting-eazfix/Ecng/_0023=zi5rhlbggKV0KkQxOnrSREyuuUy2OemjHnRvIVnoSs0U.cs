@@ -14,17 +14,17 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D : 
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
+  IPoint
 {
   private readonly AbstractList<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> \u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D = new AbstractList<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(1);
   private double \u0023\u003DzTLYhkIK\u0024cpPpvOmoiA\u003D\u003D = double.NaN;
   private double \u0023\u003DzC8VtIhwQeL9NZ9wdrA\u003D\u003D = double.NaN;
-  private readonly DateTime \u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+  private readonly DateTime _dsTimeframe;
 
   public \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D(
     DateTime _param1)
   {
-    this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D = _param1;
+    this._dsTimeframe = _param1;
   }
 
   public bool \u0023\u003DzP41gPT1crtmIqAWIKA\u003D\u003D()
@@ -37,9 +37,9 @@ public sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic
     return (IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) this.\u0023\u003DzpM2i_gRuePvm8kUTJXT7RYg\u003D;
   }
 
-  public DateTime \u0023\u003Dzg86amuQ\u003D()
+  public DateTime Time
   {
-    return this.\u0023\u003DzOAeg4d9aAVB\u0024\u0024e1gKg\u003D\u003D;
+    return this._dsTimeframe;
   }
 
   public double \u0023\u003Dz_0RMJpfkCRvPs4ToyQ\u003D\u003D()
@@ -55,10 +55,10 @@ public sealed class \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => (double) this.\u0023\u003Dzg86amuQ\u003D().Ticks;
+  public double X => (double) this.Time.Ticks;
 
   [SpecialName]
-  public double \u0023\u003Dzu7q98_E\u003D()
+  public double Y
   {
     return this.\u0023\u003DzP41gPT1crtmIqAWIKA\u003D\u003D() ? double.NaN : (this.\u0023\u003DzC8VtIhwQeL9NZ9wdrA\u003D\u003D + this.\u0023\u003DzTLYhkIK\u0024cpPpvOmoiA\u003D\u003D) / 2.0;
   }

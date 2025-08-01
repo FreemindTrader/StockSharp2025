@@ -47,7 +47,7 @@ public class OptionPositionChart :
   
   private static readonly Func<BlackScholes, Decimal, DateTimeOffset, Decimal?> \u0023\u003DzjXbVlj0Id0BN = new Func<BlackScholes, Decimal, DateTimeOffset, Decimal?>(OptionPositionChart.SomeClass34343383.SomeMethond0343.\u0023\u003Dzu30ElT9OOiFW9OsYoR6JiRo\u003D);
   
-  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM _chartSeriesViewModel;
   
   private readonly Dictionary<BlackScholes, (IChartLineElement, IChartLineElement)> \u0023\u003DzOK03jF5_2xLYbkS0rg\u003D\u003D;
   
@@ -78,14 +78,14 @@ public class OptionPositionChart :
     base.\u002Ector();
     dop2SzA2WchXh2wc._variableSome3535 = this;
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
-    this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
-    IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>();
-    IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>();
+    this._chartSeriesViewModel = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this._chartSeriesViewModel.ShowLegend = true;
+    IChartAxis chartAxis1 = ((IEnumerable<IChartAxis>) this._chartSeriesViewModel.Area.XAxises).First<IChartAxis>();
+    IChartAxis chartAxis2 = ((IEnumerable<IChartAxis>) this._chartSeriesViewModel.Area.YAxises).First<IChartAxis>();
     chartAxis1.AutoRange = false;
     chartAxis2.AutoRange = true;
     chartAxis2.TextFormatting = "0.##";
-    ObservableCollection<IChartModifier> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
+    ObservableCollection<IChartModifier> childModifiers = this._chartSeriesViewModel.ChartModifier.ChildModifiers;
     IChartModifier[] chhAr3Kksm46Uy2ZyArray = new IChartModifier[5];
     fxZoomPanModifier ypbydebG6VffgcpzeEjd = new fxZoomPanModifier();
     ypbydebG6VffgcpzeEjd.XyDirection = XyDirection.XDirection;
@@ -118,8 +118,8 @@ public class OptionPositionChart :
 
   public string ChartTheme
   {
-    get => this.\u0023\u003DzKj7nvWQ\u003D.SelectedTheme;
-    set => this.\u0023\u003DzKj7nvWQ\u003D.SelectedTheme = value;
+    get => this._chartSeriesViewModel.SelectedTheme;
+    set => this._chartSeriesViewModel.SelectedTheme = value;
   }
 
   public BasketBlackScholes Model

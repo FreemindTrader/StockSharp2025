@@ -32,7 +32,7 @@ public sealed class UltrachartOverview :
   
   public static readonly DependencyProperty \u0023\u003DzXc9apgJiH9mm = DependencyProperty.Register(nameof (AreaBrush), typeof (Brush), typeof (UltrachartOverview), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D), typeof (UltrachartOverview), new PropertyMetadata((PropertyChangedCallback) null));
+  public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (IDataSeries), typeof (UltrachartOverview), new PropertyMetadata((PropertyChangedCallback) null));
   
   public static readonly DependencyProperty \u0023\u003DzBk\u00244thlqlXdL = DependencyProperty.Register(nameof (ParentSurface), typeof (ISciChartSurface), typeof (UltrachartOverview), new PropertyMetadata((object) null, new PropertyChangedCallback(UltrachartOverview.\u0023\u003DzRx5RhuORvh6CP5D2Lg\u003D\u003D)));
   
@@ -123,11 +123,11 @@ public sealed class UltrachartOverview :
     }
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries
+  public IDataSeries DataSeries
   {
     get
     {
-      return (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.GetValue(UltrachartOverview.\u0023\u003DzGTMdFbtr59Hr);
+      return (IDataSeries) this.GetValue(UltrachartOverview.\u0023\u003DzGTMdFbtr59Hr);
     }
     set
     {
@@ -239,7 +239,7 @@ public sealed class UltrachartOverview :
 
   private bool \u0023\u003DzZips37gKJQPGLQcrTw\u003D\u003D(
     ISciChartSurface _param1,
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param2)
+    IDataSeries _param2)
   {
     return _param1 != null && !_param1.get_RenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>() && _param1.get_RenderableSeries().Any<IRenderableSeries>(new Func<IRenderableSeries, bool>(new UltrachartOverview.\u0023\u003Dzzjz1tgS0aO8fKdbpAk8DUVE\u003D()
     {
@@ -348,7 +348,7 @@ public sealed class UltrachartOverview :
   }
 
   private void \u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
+    IDataSeries _param1)
   {
     this.SetCurrentValue(UltrachartOverview.\u0023\u003DzGTMdFbtr59Hr, (object) _param1);
   }
@@ -459,7 +459,7 @@ public sealed class UltrachartOverview :
 
   private sealed class \u0023\u003Dzzjz1tgS0aO8fKdbpAk8DUVE\u003D
   {
-    public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzV4I\u00248D0bjQIn;
+    public IDataSeries \u0023\u003DzV4I\u00248D0bjQIn;
 
     public bool \u0023\u003DzPainzusVDvxJHbnmyWpu6OsDqQPW(
       IRenderableSeries _param1)

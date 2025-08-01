@@ -71,10 +71,10 @@ public sealed class FastBoxPlotRenderableSeries :
     return zldchDrVsrVyHh6WyiGy2;
   }
 
-  public override \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+  public override SeriesInfo \u0023\u003DzZZbJdAS6fDJ\u0024(
     HitTestInfo _param1)
   {
-    return (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) new \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D((IRenderableSeries) this, _param1);
+    return (SeriesInfo) new \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D((IRenderableSeries) this, _param1);
   }
 
   protected override double \u0023\u003DzcaynwI5AMDdY(
@@ -122,13 +122,13 @@ public sealed class FastBoxPlotRenderableSeries :
           for (int index = 0; index < num2; ++index)
           {
             \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy> iwzGyvO4YaqDkpiI = rl6ViWfvaAkhbRvgtX[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy>;
-            double num3 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+            double num3 = iwzGyvO4YaqDkpiI.X;
             \u0023\u003Dzs5PVP76t9JCEogjKMLIN9W\u0024EMs7d6n8LMrq66EFixVuy ems7d6n8Lmrq66EfixVuy = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
             double d1 = ems7d6n8Lmrq66EfixVuy.\u0023\u003DzKrTvxa8MJ66h();
             ems7d6n8Lmrq66EfixVuy = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
             double d2 = ems7d6n8Lmrq66EfixVuy.\u0023\u003Dzfb6u1svFQnJip22g8mPdcNo\u003D();
             ems7d6n8Lmrq66EfixVuy = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
-            double d3 = ems7d6n8Lmrq66EfixVuy.\u0023\u003Dzu7q98_E\u003D();
+            double d3 = ems7d6n8Lmrq66EfixVuy.Y;
             ems7d6n8Lmrq66EfixVuy = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
             double d4 = ems7d6n8Lmrq66EfixVuy.\u0023\u003DzXV41m4nLk9xqErg0fYHc8lw\u003D();
             ems7d6n8Lmrq66EfixVuy = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();

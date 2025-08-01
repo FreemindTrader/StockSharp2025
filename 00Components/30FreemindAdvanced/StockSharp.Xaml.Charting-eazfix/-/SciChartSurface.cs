@@ -128,7 +128,7 @@ public class SciChartSurface :
   
   private readonly object myLock = new object();
   
-  private readonly HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzL79ssDGYe7GX = new HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>();
+  private readonly HashSet<IDataSeries> \u0023\u003DzL79ssDGYe7GX = new HashSet<IDataSeries>();
   
   private SciChartSurface.\u0023\u003Dzym7l7vrt6xywpseFzgnpRX8\u003D \u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
   
@@ -910,11 +910,11 @@ public class SciChartSurface :
   }
 
   public void \u0023\u003DzbsWonVbyfEPS(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
+    IDataSeries _param1)
   {
     if (_param1 == null)
       return;
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ns01UjmP40FpxAl2jmQ = _param1;
+    IDataSeries ns01UjmP40FpxAl2jmQ = _param1;
     if (ns01UjmP40FpxAl2jmQ.get_ParentSurface() == null)
       ns01UjmP40FpxAl2jmQ.set_ParentSurface((ISciChartSurface) this);
     if (this.\u0023\u003DzNIujeQAKJfHjmKL2ONO8jgpF_OJU())
@@ -926,7 +926,7 @@ public class SciChartSurface :
   }
 
   public void \u0023\u003Dzf72QDPKj6m\u0024z(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
+    IDataSeries _param1)
   {
     if (_param1 == null)
       return;
@@ -940,12 +940,12 @@ public class SciChartSurface :
     object _param1,
     \u0023\u003Dz5hVyTN88kBn45NAfOxK7MD4fbuZgSG4uWo9Ll25GzP7X _param2)
   {
-    this.\u0023\u003Dzx87Ma1DdPIPxJ8sodA\u003D\u003D(_param1 as \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D);
+    this.\u0023\u003Dzx87Ma1DdPIPxJ8sodA\u003D\u003D(_param1 as IDataSeries);
     this.\u0023\u003Dz\u0024YPacLjgy1DJ(_param1, (EventArgs) _param2);
   }
 
   private void \u0023\u003Dzx87Ma1DdPIPxJ8sodA\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
+    IDataSeries _param1)
   {
     if (_param1 == null)
       return;
@@ -1202,11 +1202,11 @@ public class SciChartSurface :
     SciChartSurface.\u0023\u003DzmHUZq1a0vCkinf2sWxYoWqM\u003D zq1a0vCkinf2sWxYoWqM = new SciChartSurface.\u0023\u003DzmHUZq1a0vCkinf2sWxYoWqM\u003D();
     zq1a0vCkinf2sWxYoWqM.\u0023\u003DzMM5Kl1w\u003D = _param2;
     zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D = _param1;
-    IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> source = this.\u0023\u003DzlwAvJczjNvUE(zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.Id);
+    IEnumerable<IDataSeries> source = this.\u0023\u003DzlwAvJczjNvUE(zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.Id);
     IRange abyLt9clZggmJsWhw1 = zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.\u0023\u003DzFwoMKP9juTnt();
-    if (!source.Any<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>())
+    if (!source.Any<IDataSeries>())
       return zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange != null && !zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange.IsDefined ? abyLt9clZggmJsWhw1 : zq1a0vCkinf2sWxYoWqM.\u0023\u003DzS7JsfCE\u003D.VisibleRange;
-    IRange[] array = source.Select<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(new Func<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D, IRange>(zq1a0vCkinf2sWxYoWqM.\u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz)).Where<IRange>(SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D = new Func<IRange, bool>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D))).ToArray<IRange>();
+    IRange[] array = source.Select<IDataSeries, IRange>(new Func<IDataSeries, IRange>(zq1a0vCkinf2sWxYoWqM.\u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz)).Where<IRange>(SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D ?? (SciChartSurface.SomeClass34343383.\u0023\u003Dzoz5TxoGG1694NBizKw\u003D\u003D = new Func<IRange, bool>(SciChartSurface.SomeClass34343383.SomeMethond0343.\u0023\u003DzoZM1fSvQVSQ7YXyQfMSGaGZWjDLCOmVAEA\u003D\u003D))).ToArray<IRange>();
     IRange abyLt9clZggmJsWhw2 = TemplateTypeHelper.GetFirstElement<IRange>(array);
     if (abyLt9clZggmJsWhw2 != null)
     {
@@ -1629,16 +1629,16 @@ public class SciChartSurface :
     elwvdvgwnmJ5AjuaEjd.InvalidateElement();
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzlwAvJczjNvUE(
+  public IDataSeries \u0023\u003DzlwAvJczjNvUE(
     IRenderableSeries _param1)
   {
     throw new NotImplementedException("GetDataSeriesFor is obsolete. Please call RenderableSeries.DataSeries to get the DataSeries");
   }
 
-  public IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzlwAvJczjNvUE(
+  public IEnumerable<IDataSeries> \u0023\u003DzlwAvJczjNvUE(
     string _param1)
   {
-    return (IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>) new SciChartSurface.\u0023\u003Dz_Echccw8OyZAdo96L0cd918\u003D(-2)
+    return (IEnumerable<IDataSeries>) new SciChartSurface.\u0023\u003Dz_Echccw8OyZAdo96L0cd918\u003D(-2)
     {
       _variableSome3535 = this,
       \u0023\u003Dz62suKlK33zDjzYMs3Q\u003D\u003D = _param1
@@ -1824,7 +1824,7 @@ public class SciChartSurface :
     return this.\u0023\u003DzAv5_jWmna8cmcLsfgD0Ew8k\u003D;
   }
 
-  public HashSet<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> \u0023\u003DzMdHN\u0024fr78SvYPfTQ5A\u003D\u003D()
+  public HashSet<IDataSeries> \u0023\u003DzMdHN\u0024fr78SvYPfTQ5A\u003D\u003D()
   {
     return this.\u0023\u003DzL79ssDGYe7GX;
   }
@@ -1941,13 +1941,13 @@ public class SciChartSurface :
     IDisposable,
     IEnumerable,
     IEnumerator,
-    IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>,
-    IEnumerator<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>
+    IEnumerable<IDataSeries>,
+    IEnumerator<IDataSeries>
   {
     
     private int \u0023\u003Dz4fzyEZ1SsHYa;
     
-    private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003Dzaev1bhaFFIDX;
+    private IDataSeries \u0023\u003Dzaev1bhaFFIDX;
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
@@ -2013,7 +2013,7 @@ public class SciChartSurface :
           IRenderableSeries current = this.\u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D.Current;
           if (!(current.get_YAxisId() != this.\u0023\u003Dzb0xKp\u0024w\u003D) && current.IsVisible)
           {
-            \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = current.get_DataSeries();
+            IDataSeries dataSeries = current.get_DataSeries();
             if (dataSeries != null)
             {
               this.\u0023\u003Dzaev1bhaFFIDX = dataSeries;
@@ -2041,7 +2041,7 @@ public class SciChartSurface :
     }
 
     [DebuggerHidden]
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D IEnumerator<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>.\u0023\u003DzEEqjFyKghwogrkqtjZQX\u00240Nsr40kBtDKNIeV66\u0024ZNExZqEP8hUuVzLwO8H\u0024RcOjQiA\u003D\u003D()
+    IDataSeries IEnumerator<IDataSeries>.\u0023\u003DzEEqjFyKghwogrkqtjZQX\u00240Nsr40kBtDKNIeV66\u0024ZNExZqEP8hUuVzLwO8H\u0024RcOjQiA\u003D\u003D()
     {
       return this.\u0023\u003Dzaev1bhaFFIDX;
     }
@@ -2062,7 +2062,7 @@ public class SciChartSurface :
     #nullable enable
     IEnumerator<
     #nullable disable
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D> IEnumerable<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>.\u0023\u003Dz_KshCohrxuVJkfLqw0AvWWrTaY6cXjYVhgO4bRzo1ywFV3nVDl2NucbzPyYsesEV0w\u003D\u003D()
+    IDataSeries> IEnumerable<IDataSeries>.\u0023\u003Dz_KshCohrxuVJkfLqw0AvWWrTaY6cXjYVhgO4bRzo1ywFV3nVDl2NucbzPyYsesEV0w\u003D\u003D()
     {
       SciChartSurface.\u0023\u003Dz_Echccw8OyZAdo96L0cd918\u003D echccw8OyZado96L0cd918;
       if (this.\u0023\u003Dz4fzyEZ1SsHYa == -2 && this.\u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D == Environment.CurrentManagedThreadId)
@@ -2076,7 +2076,7 @@ public class SciChartSurface :
         echccw8OyZado96L0cd918._variableSome3535 = this._variableSome3535;
       }
       echccw8OyZado96L0cd918.\u0023\u003Dzb0xKp\u0024w\u003D = this.\u0023\u003Dz62suKlK33zDjzYMs3Q\u003D\u003D;
-      return (IEnumerator<\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D>) echccw8OyZado96L0cd918;
+      return (IEnumerator<IDataSeries>) echccw8OyZado96L0cd918;
     }
 
     [DebuggerHidden]
@@ -2113,7 +2113,7 @@ public class SciChartSurface :
     public IAxis \u0023\u003DzS7JsfCE\u003D;
 
     public IRange \u0023\u003Dzv6ZL84K3ljUM9AvngG5_IKXd32Mz(
-      \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
+      IDataSeries _param1)
     {
       return _param1.\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(this.\u0023\u003DzMM5Kl1w\u003D, this.\u0023\u003DzS7JsfCE\u003D.get_IsLogarithmicAxis());
     }

@@ -51,7 +51,7 @@ public sealed class XyScatterRenderableSeries :
     \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT hw1ki13vvK4WxOgoljkHyInT = this.\u0023\u003Dz_Y6pODRV4VXF();
     if (hw1ki13vvK4WxOgoljkHyInT == null)
       return;
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
+    IXxxPaletteProvider paletteProvider = this.PaletteProvider;
     zPKCmcad6Nxc5A8A.\u0023\u003DzhFYkfW57ne2I = this.SeriesColor;
     \u0023\u003DzpKvy0OA0_My0Sg27HiUJaX\u0024AyxSGkqEcPv0Ah3hMaVEX sgkqEcPv0Ah3hMaVex = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzmuYww2BKaMZ86Wjblw\u003D\u003D(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D(), hw1ki13vvK4WxOgoljkHyInT);
     if (paletteProvider != null)
@@ -90,7 +90,7 @@ public sealed class XyScatterRenderableSeries :
       double _param1,
       double _param2)
     {
-      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzhFYkfW57ne2I);
+      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.GetColor01((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzhFYkfW57ne2I);
     }
   }
 }

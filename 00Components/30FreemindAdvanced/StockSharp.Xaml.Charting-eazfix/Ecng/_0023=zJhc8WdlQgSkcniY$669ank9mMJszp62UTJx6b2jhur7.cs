@@ -113,10 +113,10 @@ public sealed class \u0023\u003DzJhc8WdlQgSkcniY\u0024669ank9mMJszp62UTJx6b2jhur
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
     bool flag = !this.ParentSurface.get_SelectedRenderableSeries().\u0023\u003DzCCMM80zDpO6N<IRenderableSeries>();
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D[] array = this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1).ToArray<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>();
-    if (TemplateTypeHelper.IsNotEmpty<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(array))
+    SeriesInfo[] array = this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1).ToArray<SeriesInfo>();
+    if (TemplateTypeHelper.IsNotEmpty<SeriesInfo>(array))
     {
-      IRenderableSeries renderableSeries = ((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) array).First<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>().RenderableSeries;
+      IRenderableSeries renderableSeries = ((IEnumerable<SeriesInfo>) array).First<SeriesInfo>().RenderableSeries;
       if (this.\u0023\u003Dz5h4MErOTnNi_)
         this.\u0023\u003Dz\u0024AkGiLXUHbZU(renderableSeries);
       else

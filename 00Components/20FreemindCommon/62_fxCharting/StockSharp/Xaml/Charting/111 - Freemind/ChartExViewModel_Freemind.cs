@@ -52,7 +52,7 @@ namespace StockSharp.Xaml.Charting
 
         public void CenterViewOnTime(  DateTime selectedBarTime )
         {
-            _candleStickUI.CenterViewOnTime( selectedBarTime );           
+            _ChartCandleElementViewModel.CenterViewOnTime( selectedBarTime );           
         }
 
         public PooledList<double> GetSelectedLinesForSoundAlert()
@@ -220,7 +220,7 @@ namespace StockSharp.Xaml.Charting
 
         public void ShowDivergence( bool show )
         {
-            _candleStickUI.ShowDivergence = show;
+            _ChartCandleElementViewModel.ShowDivergence = show;
         }
 
         public void ShowSmallTradingEvent( bool show )
@@ -265,7 +265,7 @@ namespace StockSharp.Xaml.Charting
 
         public void FifoCapacity( int fifoSize )
         {
-            _candleStickUI.FifoCapacity = fifoSize;
+            _ChartCandleElementViewModel.FifoCapacity = fifoSize;
         }
 
         public void WaveScenarioNo( int waveScenarioNo )
@@ -273,53 +273,53 @@ namespace StockSharp.Xaml.Charting
             throw new NotImplementedException();
 
             //_drawSurface.WaveScenarioNo = waveScenarioNo;
-            //_candleStickUI.WaveScenarioNo = waveScenarioNo;
+            //_ChartCandleElementViewModel.WaveScenarioNo = waveScenarioNo;
         }
 
         public void ShowGannPriceTime( bool show )
         {
-            _candleStickUI.ShowPriceTimeSignal = show;
+            _ChartCandleElementViewModel.ShowPriceTimeSignal = show;
         }
 
         public void ShowElliottWave( bool show )
         {
-            _candleStickUI.ShowElliottWave = show;
+            _ChartCandleElementViewModel.ShowElliottWave = show;
         }
 
         public void IsSimulation(bool show)
         {
-            _candleStickUI.IsSimulation = show;
+            _ChartCandleElementViewModel.IsSimulation = show;
         }
 
         public void ShowMonoWave( bool show )
         {
-            _candleStickUI.ShowMonoWave = show;
+            _ChartCandleElementViewModel.ShowMonoWave = show;
         }
 
         public void ShowHewDetection( bool show )
         {
-            _candleStickUI.ShowHewDetection = show;
+            _ChartCandleElementViewModel.ShowHewDetection = show;
         }
 
 
         public void ShowWaveImportance( int impt )
         {
-            _candleStickUI.WaveImportance = impt;
+            _ChartCandleElementViewModel.WaveImportance = impt;
         }
 
         public void ShowWaveCycle( ElliottWaveCycle cycle )
         {
-            _candleStickUI.WaveCycle = cycle;
+            _ChartCandleElementViewModel.WaveCycle = cycle;
         }
 
         public void ShowCandlePattern( bool show )
         {
-            _candleStickUI.ShowCandlePattern = show;
+            _ChartCandleElementViewModel.ShowCandlePattern = show;
         }
 
         public void ShowFreemindIndicators( bool show )
         {
-            _candleStickUI.ShowIndicatorResult = show;
+            _ChartCandleElementViewModel.ShowIndicatorResult = show;
         }
 
         public void YAxisAutoRange( bool onOff )
@@ -329,19 +329,19 @@ namespace StockSharp.Xaml.Charting
 
         public void ShowTradingTime( bool show )
         {
-            _candleStickUI.ShowTradingTime = show;
+            _ChartCandleElementViewModel.ShowTradingTime = show;
         }
 
         public long SelectedCandleBarTime
         {
             get
             {
-                return _candleStickUI.SelectedCandleBarTime;
+                return _ChartCandleElementViewModel.SelectedCandleBarTime;
             }
 
             set
             {
-                _candleStickUI.SelectedCandleBarTime = value;
+                _ChartCandleElementViewModel.SelectedCandleBarTime = value;
             }
         }
 
@@ -367,18 +367,18 @@ namespace StockSharp.Xaml.Charting
 
         public void LockFibLevelsObject( )
         {
-            _candleStickUI.LockFibLevelsObject( );
+            _ChartCandleElementViewModel.LockFibLevelsObject( );
         }
         
 
         public void DeleteAllLockFibLevels( )
         {
-            _candleStickUI.DeleteAllLockFibLevels( );
+            _ChartCandleElementViewModel.DeleteAllLockFibLevels( );
         }
 
         public void RemoveAllEWaves()
         {
-            _candleStickUI.RemoveAllEWaves();
+            _ChartCandleElementViewModel.RemoveAllEWaves();
         }
 
         #endregion

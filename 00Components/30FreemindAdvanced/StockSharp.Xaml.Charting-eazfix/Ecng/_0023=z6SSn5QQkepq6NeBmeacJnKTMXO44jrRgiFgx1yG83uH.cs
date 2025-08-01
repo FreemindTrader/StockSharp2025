@@ -101,22 +101,22 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgD
       IBrush2D xrgcdFbSdWgN9GcT8_1 = _param1.\u0023\u003Dze8WyDhI\u003D(_param2.FillBrush, _param2.Opacity, _param2.FillBrushMappingMode);
       \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J1 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(_param2.SeriesColor);
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, mz4rNexJsSmCjpOm);
-      \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
+      \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343333 zeaY3Uu1m4CyxerxRw = new \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgDZuwIzh90\u003D.SomeClass34343333();
       for (zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D = 0; zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D < mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D(); zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D++)
       {
-        \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D);
+        IPoint kld48pAvUlrTzJ1tmfY = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D);
         int num4;
-        int num5 = this.\u0023\u003DzhwvgGUGVRU_I((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), out num4);
-        double num6 = this.\u0023\u003Dz8iBvfApYdA9X7WlJolT1JzM\u003D(mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D()), num4, num5, num3, num2);
+        int num5 = this.\u0023\u003DzhwvgGUGVRU_I((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, kld48pAvUlrTzJ1tmfY.X, out num4);
+        double num6 = this.\u0023\u003Dz8iBvfApYdA9X7WlJolT1JzM\u003D(mz4rNexJsSmCjpOm.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.X), num4, num5, num3, num2);
         Tuple<double, double> tuple = this.\u0023\u003DzeKx7SKdwYOP2((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, zeaY3Uu1m4CyxerxRw.\u0023\u003DzoKRocJE\u003D, true);
         double num7 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(tuple.Item1);
         double num8 = mz4rNexJsSmCjpOm.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(tuple.Item2);
         Point point1 = \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD39it_JzJq2Auui18\u003D.\u0023\u003Dzop6vn0GowyiR(new Point(num6 - num3 / 2.0, num7), flag2);
         Point point2 = \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD39it_JzJq2Auui18\u003D.\u0023\u003Dzop6vn0GowyiR(new Point(num6 + num3 / 2.0, num8), flag2);
-        \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = _param2.PaletteProvider;
+        IXxxPaletteProvider paletteProvider = _param2.PaletteProvider;
         if (paletteProvider != null)
         {
-          Color? nullable = paletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) _param2, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+          Color? nullable = paletteProvider.GetColor01((IRenderableSeries) _param2, kld48pAvUlrTzJ1tmfY.X, kld48pAvUlrTzJ1tmfY.Y);
           if (nullable.HasValue)
           {
             using (\u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J2 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(nullable.Value))
@@ -130,7 +130,7 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgD
           this.\u0023\u003DzpsfFDig\u003D(iluL6N4L8CsqVgQq, point1, point2, rhwYsZxA33iRu6Id7J1, xrgcdFbSdWgN9GcT8_1, num1);
         if (num3 > 0.0 && _param2.ShowLabel)
         {
-          double num9 = kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D();
+          double num9 = kld48pAvUlrTzJ1tmfY.Y;
           if (flag1)
           {
             IRange abyLt9clZggmJsWhw = this.\u0023\u003Dz7rfbi2bO7HOZ((\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D) _param2, new Func<\u0023\u003DzJLUdDOVbHWuhCASQiXx2GJkyMd4jQIWNjWnikm93dwBZyHAJzXm4T0VosPhel85wyPWiDYo\u003D, double>(zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1BpDS766bygi71RsZA\u003D\u003D));
@@ -316,7 +316,7 @@ public sealed class \u0023\u003Dz6SSn5QQkepq6NeBmeacJnKTMXO44jrRgiFgx1yG83uHFlgD
     }
   }
 
-  private sealed class \u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D
+  private sealed class SomeClass34343333
   {
     public int \u0023\u003DzoKRocJE\u003D;
 

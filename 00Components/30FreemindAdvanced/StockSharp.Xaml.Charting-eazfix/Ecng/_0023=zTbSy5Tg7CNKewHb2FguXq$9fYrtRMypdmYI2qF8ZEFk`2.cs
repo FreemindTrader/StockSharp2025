@@ -10,7 +10,7 @@ using System.Collections.Generic;
 #nullable disable
 public interface IDataSeries<TX, TY> : 
   ISuspendable,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
+  IDataSeries
   where TX : IComparable
   where TY : IComparable
 {

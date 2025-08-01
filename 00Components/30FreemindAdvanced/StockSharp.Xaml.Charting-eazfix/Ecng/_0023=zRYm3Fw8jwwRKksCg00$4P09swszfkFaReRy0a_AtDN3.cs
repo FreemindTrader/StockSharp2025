@@ -37,14 +37,14 @@ public sealed class \u0023\u003DzRYm3Fw8jwwRKksCg00\u00244P09swszfkFaReRy0a_AtDN
   public void Add(
     \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D _param1)
   {
-    this.\u0023\u003DzCsKlB_w\u003D.Add(_param1.\u0023\u003Dz2_4KSTY\u003D());
-    this.\u0023\u003Dz91pRWIg\u003D.Add(_param1.\u0023\u003Dzu7q98_E\u003D());
+    this.\u0023\u003DzCsKlB_w\u003D.Add(_param1.X);
+    this.\u0023\u003Dz91pRWIg\u003D.Add(_param1.Y);
   }
 
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D IPointSeries.\u0023\u003Dz8b2iwQyC3tYOGumtm_saeHtTFihiVzY0ArTbEKjwr0rzxRNC0w\u003D\u003D(
+  IPoint IPointSeries.\u0023\u003Dz8b2iwQyC3tYOGumtm_saeHtTFihiVzY0ArTbEKjwr0rzxRNC0w\u003D\u003D(
     int _param1)
   {
-    return (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(this.\u0023\u003DzUbOHA7PCx5fd[_param1], this.\u0023\u003DznFjp6Fk71mmr[_param1]);
+    return (IPoint) new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(this.\u0023\u003DzUbOHA7PCx5fd[_param1], this.\u0023\u003DznFjp6Fk71mmr[_param1]);
   }
 
   [SpecialName]

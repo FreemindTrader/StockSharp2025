@@ -12,7 +12,7 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<TX, TY> : 
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D,
+  IPoint,
   \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZnF8py_1UHtuLwP\u0024jqT0El1T
   where TX : IComparable
   where TY : IComparable
@@ -37,13 +37,13 @@ public sealed class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u00
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D()
+  public double X
   {
     return this.\u0023\u003Dzkv0SgdOPhi_0(this._xAxisCount).ToDouble();
   }
 
   [SpecialName]
-  public double \u0023\u003Dzu7q98_E\u003D()
+  public double Y
   {
     return this.\u0023\u003DzyoB24lWE6a_0(this.\u0023\u003DzqvN2BUtRI\u0024I\u0024).ToDouble();
   }

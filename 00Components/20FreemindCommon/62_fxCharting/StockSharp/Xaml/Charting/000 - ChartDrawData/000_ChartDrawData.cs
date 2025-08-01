@@ -118,18 +118,18 @@ public partial class ChartDrawData : IChartDrawData
 
     //    public DataType CandleDataType() => _candleArg;
 
-    //    public double OpenPrice() => _openPrice;
+    //    public double OpenPrice => _openPrice;
 
-    //    public double HighPrice() => _highPrice;
+    //    public double HighPrice => _highPrice;
 
-    //    public double LowPrice()
+    //    public double LowPrice
     //    {
     //        return _lowPrice;
     //    }
 
     //    public double Close => _closePrice;
 
-    //    public CandlePriceLevel[ ] CandlePriceLevel()
+    //    public CandlePriceLevel[ ] CandlePriceLevel
     //    {
     //        return _candlePriceLevel;
     //    }
@@ -149,9 +149,12 @@ public partial class ChartDrawData : IChartDrawData
             _candleColor = _param2;
         }
 
-        public DateTime UtcTime()
+        public DateTime Time
         {
-            return _utcTime;
+            get
+            {
+                return _utcTime;
+            }            
         }
 
         public System.Windows.Media.Color? Color => _candleColor;
@@ -214,7 +217,7 @@ public partial class ChartDrawData : IChartDrawData
             return _orderStates;
         }
 
-        public Decimal PriceStep()
+        public Decimal PriceStep
         {
             return _priceStep;
         }
@@ -292,9 +295,12 @@ public partial class ChartDrawData : IChartDrawData
             _isOrderFilled = _param8;
         }
 
-        public DateTime UtcTime()
+        public DateTime Time
         {
-            return _utcTime;
+            get
+            {
+                return _utcTime;
+            }
         }
 
         /// <summary>
@@ -330,7 +336,7 @@ public partial class ChartDrawData : IChartDrawData
 
         public override string ToString()
         {
-            return $"{"TransactionData"}: id={GetTransactionString()}, time={UtcTime()} {OrderSides()} {Volume}@{Volume}";
+            return $"{"TransactionData"}: id={GetTransactionString()}, time={UtcTime} {OrderSides()} {Volume}@{Volume}";
         }
     }
 

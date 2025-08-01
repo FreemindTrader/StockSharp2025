@@ -13,7 +13,7 @@ using System.Diagnostics;
 public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgHna : 
   IDisposable,
   IEnumerator,
-  IEnumerator<\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D>,
+  IEnumerator<IPoint>,
   IEnumerator<\u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D>
 {
   
@@ -25,7 +25,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
   
   private bool \u0023\u003Dz5GSATUT75KjL;
   
-  private \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D \u0023\u003DzCUQ2vA0\u003D;
+  private IPoint \u0023\u003DzCUQ2vA0\u003D;
   
   private \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D \u0023\u003DzJe3j2ifNwqKL;
 
@@ -39,12 +39,12 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
 
   public bool \u0023\u003Dz9hmykWfoVpXr() => this.\u0023\u003DzKx97DYo\u003D < 0;
 
-  public \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D Current
+  public IPoint Current
   {
     get
     {
       if (!this.\u0023\u003Dz5GSATUT75KjL)
-        this.\u0023\u003DzCUQ2vA0\u003D = (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) this.\u0023\u003DzJe3j2ifNwqKL;
+        this.\u0023\u003DzCUQ2vA0\u003D = (IPoint) this.\u0023\u003DzJe3j2ifNwqKL;
       return this.\u0023\u003DzCUQ2vA0\u003D;
     }
   }
@@ -66,7 +66,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
     if (++this.\u0023\u003DzKx97DYo\u003D >= this.\u0023\u003DztUQ677I\u003D)
       return false;
     this.\u0023\u003DzCUQ2vA0\u003D = this.\u0023\u003Dz6leEYQVpwDm8.\u0023\u003Dz\u0024CeUvME\u003D(this.\u0023\u003DzKx97DYo\u003D);
-    this.\u0023\u003DzJe3j2ifNwqKL = new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(this.\u0023\u003DzCUQ2vA0\u003D.\u0023\u003Dz2_4KSTY\u003D(), this.\u0023\u003DzCUQ2vA0\u003D.\u0023\u003Dzu7q98_E\u003D());
+    this.\u0023\u003DzJe3j2ifNwqKL = new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D(this.\u0023\u003DzCUQ2vA0\u003D.X, this.\u0023\u003DzCUQ2vA0\u003D.Y);
     this.\u0023\u003Dz5GSATUT75KjL = true;
     return true;
   }
@@ -74,7 +74,7 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlAeCwpSJWgRV4sBbHcbkgH
   public virtual void Reset()
   {
     this.\u0023\u003DzKx97DYo\u003D = -1;
-    this.\u0023\u003DzCUQ2vA0\u003D = (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) null;
+    this.\u0023\u003DzCUQ2vA0\u003D = (IPoint) null;
     this.\u0023\u003DzJe3j2ifNwqKL = new \u0023\u003DzPauio66DvxKtWOFEEHOV9eqtPYsuAYR8YjvqTxI\u003D();
   }
 

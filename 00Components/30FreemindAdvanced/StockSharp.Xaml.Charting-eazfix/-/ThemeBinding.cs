@@ -65,8 +65,8 @@ public sealed class ThemeBinding :
     if (service.TargetObject is Setter)
       return (object) new Binding()
       {
-        Path = new PropertyPath((object) ThemeManager.\u0023\u003DzOJJsEsQ\u003D),
-        ConverterParameter = (object) typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetGetMethod(),
+        Path = new PropertyPath((object) ThemeManager.ThemeProperty),
+        ConverterParameter = (object) typeof (IThemeProvider).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetGetMethod(),
         Converter = ThemeBinding.\u0023\u003DzMeh\u0024Scs\u003D,
         Mode = BindingMode.OneWay,
         RelativeSource = ThemeBinding.\u0023\u003DzCtHv3OM\u003D
@@ -79,14 +79,14 @@ public sealed class ThemeBinding :
   private object \u0023\u003DzA13mM7FCopU4(DependencyObject _param1)
   {
     string theme = ThemeManager.GetTheme(_param1);
-    return typeof (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetValue((object) ThemeManager.\u0023\u003DzrILtKW7bADnV(theme), ThemeBinding.\u0023\u003Dz6VPkvJI\u003D);
+    return typeof (IThemeProvider).GetProperty(this.\u0023\u003DzM_1QeNM\u003D()).GetValue((object) ThemeManager.GetThemeProvider(theme), ThemeBinding.\u0023\u003Dz6VPkvJI\u003D);
   }
 
   public sealed class \u0023\u003Dza2zbQRRjMsrw : IValueConverter
   {
     public object Convert(object _param1, Type _param2, object _param3, CultureInfo _param4)
     {
-      return (_param3 as MethodInfo).Invoke((object) ThemeManager.\u0023\u003DzrILtKW7bADnV(_param1 as string), ThemeBinding.\u0023\u003Dz6VPkvJI\u003D);
+      return (_param3 as MethodInfo).Invoke((object) ThemeManager.GetThemeProvider(_param1 as string), ThemeBinding.\u0023\u003Dz6VPkvJI\u003D);
     }
 
     public object ConvertBack(object _param1, Type _param2, object _param3, CultureInfo _param4)

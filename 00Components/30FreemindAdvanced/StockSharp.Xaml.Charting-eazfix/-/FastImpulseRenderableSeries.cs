@@ -97,7 +97,7 @@ public sealed class FastImpulseRenderableSeries :
     bool flag = _param2.\u0023\u003DzDoU1CJhSUWFV();
     IPointSeries ftrixUnpTllY1PkTyq = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     int num1 = ftrixUnpTllY1PkTyq.\u0023\u003DzlpVGw6E\u003D();
-    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D paletteProvider = this.PaletteProvider;
+    IXxxPaletteProvider paletteProvider = this.PaletteProvider;
     using (\u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D vQiJuKqUi9jtIaha = new \u0023\u003DzYmjweh1bAvPkbiZkK_vQiJuKQUi9jtIAHA\u003D\u003D(_param1, this.AntiAliasing, (float) this.StrokeThickness, this.Opacity))
     {
       this.\u0023\u003Dzr7mBO7bq\u0024j8u = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(this.SeriesColor);
@@ -105,16 +105,16 @@ public sealed class FastImpulseRenderableSeries :
       \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A56IluL6N4L8CSqVgQQ iluL6N4L8CsqVgQq = \u0023\u003DzFgfHSvJTVKiBUeYgwcNjyROb9BW0uTL6\u0024tj_pT60sHZCBBCp5MfS643cl2Oc.\u0023\u003DzYtr1U3NGZ0n8(_param1, this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D());
       for (int index = 0; index < num1; ++index)
       {
-        \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index);
-        if (!double.IsNaN(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D()))
+        IPoint kld48pAvUlrTzJ1tmfY = ftrixUnpTllY1PkTyq.\u0023\u003Dz\u0024CeUvME\u003D(index);
+        if (!double.IsNaN(kld48pAvUlrTzJ1tmfY.Y))
         {
-          float num3 = (float) _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D());
-          float num4 = (float) _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+          float num3 = (float) _param2.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.X);
+          float num4 = (float) _param2.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().\u0023\u003DzhL6gsJw\u003D(kld48pAvUlrTzJ1tmfY.Y);
           Point point1 = this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num3, (double) num4), flag);
           Point point2 = this.\u0023\u003Dzop6vn0GowyiR(new Point((double) num3, (double) num2), flag);
           if (paletteProvider != null)
           {
-            Color? nullable = paletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D(), kld48pAvUlrTzJ1tmfY.\u0023\u003Dzu7q98_E\u003D());
+            Color? nullable = paletteProvider.GetColor01((IRenderableSeries) this, kld48pAvUlrTzJ1tmfY.X, kld48pAvUlrTzJ1tmfY.Y);
             if (nullable.HasValue)
             {
               \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(nullable.Value);

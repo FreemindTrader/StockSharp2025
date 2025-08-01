@@ -3,7 +3,7 @@
   <SolidColorBrush x:Key="TickTextBrush" Color="#333333"/>
   <SolidColorBrush x:Key="MajorGridLineBrush" Color="#77333333"/>
   <SolidColorBrush x:Key="MinorGridLineBrush" Color="Transparent"/>
-  <SolidColorBrush x:Key="UltrachartBackground" Color="#F9F9F9"/>
+  <SolidColorBrush x:Key="SciChartBackground" Color="#F9F9F9"/>
   <SolidColorBrush x:Key="GridBorderBrush" Color="#99333333"/>
   <SolidColorBrush x:Key="GridBackgroundBrush" Color="Transparent"/>
   <SolidColorBrush x:Key="RolloverLineBrush" Color="#33333333"/>

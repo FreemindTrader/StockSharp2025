@@ -16,7 +16,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 
 #nullable disable
-public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D : 
+public abstract class TimeframeSegmentRenderableSeries : 
   BaseRenderableSeries
 {
   
@@ -24,17 +24,17 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   
   private Dictionary<double, Tuple<double, CandlePriceLevel>> \u0023\u003Dzwzwqm6ek0X1oFaJOBAtZrz4\u003D = new Dictionary<double, Tuple<double, CandlePriceLevel>>();
   
-  public static readonly DependencyProperty \u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D = DependencyProperty.Register(nameof (PriceStep), typeof (Decimal?), typeof (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D), new PropertyMetadata((object) 0.000001M, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D = DependencyProperty.Register(nameof (PriceStep), typeof (Decimal?), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) 0.000001M, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D = DependencyProperty.Register(nameof (LocalHorizontalVolumes), typeof (bool), typeof (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D = DependencyProperty.Register(nameof (LocalHorizontalVolumes), typeof (bool), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D = DependencyProperty.Register(nameof (ShowHorizontalVolumes), typeof (bool), typeof (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D = DependencyProperty.Register(nameof (ShowHorizontalVolumes), typeof (bool), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D = DependencyProperty.Register(nameof (HorizontalVolumeWidthFraction), typeof (double), typeof (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D), new PropertyMetadata((object) 0.15, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9), new CoerceValueCallback(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzHJJ8vuq4bO\u0024yTwjWdw\u003D\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D = DependencyProperty.Register(nameof (HorizontalVolumeWidthFraction), typeof (double), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) 0.15, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9), new CoerceValueCallback(TimeframeSegmentRenderableSeries.\u0023\u003DzHJJ8vuq4bO\u0024yTwjWdw\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzkZL83tvq\u0024ktX = DependencyProperty.Register(nameof (VolumeBarsBrush), typeof (Brush), typeof (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D), new PropertyMetadata((object) \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzqh5vkWSCXpeDFfTKRw\u003D\u003D, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzkZL83tvq\u0024ktX = DependencyProperty.Register(nameof (VolumeBarsBrush), typeof (Brush), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) TimeframeSegmentRenderableSeries.\u0023\u003Dzqh5vkWSCXpeDFfTKRw\u003D\u003D, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D = DependencyProperty.Register(nameof (VolBarsFontColor), typeof (Color), typeof (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D = DependencyProperty.Register(nameof (VolBarsFontColor), typeof (Color), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   public static readonly DependencyProperty \u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D = DependencyProperty.Register("DrawSeparateVolumes", typeof (bool), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
@@ -46,17 +46,17 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   
   public static readonly DependencyProperty \u0023\u003DzMymlj1BxH8MY = DependencyProperty.Register("DownColor", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  protected \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D \u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D;
+  protected TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D \u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D;
 
   public bool LocalHorizontalVolumes
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D);
+      return (bool) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object) value);
     }
   }
 
@@ -64,11 +64,11 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   {
     get
     {
-      return (bool) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D);
+      return (bool) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object) value);
     }
   }
 
@@ -76,11 +76,11 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   {
     get
     {
-      return (double) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D);
+      return (double) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object) value);
     }
   }
 
@@ -88,11 +88,11 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   {
     get
     {
-      return (Brush) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzkZL83tvq\u0024ktX);
+      return (Brush) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzkZL83tvq\u0024ktX);
     }
     set
     {
-      this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzkZL83tvq\u0024ktX, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzkZL83tvq\u0024ktX, (object) value);
     }
   }
 
@@ -100,79 +100,79 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   {
     get
     {
-      return (Color) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D);
+      return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D, (object) value);
     }
   }
 
   public bool \u0023\u003DzRNPBYH\u0024r1v_XVePnsQd4gRM\u003D()
   {
-    return (bool) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D);
+    return (bool) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D);
   }
 
   public void \u0023\u003Dz2Hom_KjPHnB5jKfkq1g_w6U\u003D(bool _param1)
   {
-    this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object) _param1);
   }
 
   public Color \u0023\u003DzdOa9LxKWm9_R()
   {
-    return (Color) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzsiwadMWumB4q);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzsiwadMWumB4q);
   }
 
   public void \u0023\u003DzCAEo7KpUPRGr(Color _param1)
   {
-    this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzsiwadMWumB4q, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzsiwadMWumB4q, (object) _param1);
   }
 
   public Color \u0023\u003DzMGEDv1J2E_VL()
   {
-    return (Color) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzyQkELvBo\u002432H);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzyQkELvBo\u002432H);
   }
 
   public void \u0023\u003DzKNu_W\u0024G42yk5(Color _param1)
   {
-    this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzyQkELvBo\u002432H, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzyQkELvBo\u002432H, (object) _param1);
   }
 
   public Color \u0023\u003Dzc3UwYbhl1TD\u0024()
   {
-    return (Color) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzd0DbwufxB45U);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzd0DbwufxB45U);
   }
 
   public void \u0023\u003DzLzufL4HhRdm8(Color _param1)
   {
-    this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dzd0DbwufxB45U, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzd0DbwufxB45U, (object) _param1);
   }
 
   public Color \u0023\u003DzMrEHemSZ_hHJ()
   {
-    return (Color) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzMymlj1BxH8MY);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzMymlj1BxH8MY);
   }
 
   public void \u0023\u003Dz2DFaO_kh9og7(Color _param1)
   {
-    this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzMymlj1BxH8MY, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzMymlj1BxH8MY, (object) _param1);
   }
 
   public Decimal? PriceStep
   {
     get
     {
-      return (Decimal?) this.GetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D);
+      return (Decimal?) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D);
     }
     set
     {
-      this.SetValue(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object) value);
     }
   }
 
   protected TimeSpan? \u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D()
   {
-    return ((\u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D) this.DataSeries)?.get_Timeframe();
+    return ((ITimeframe) this.DataSeries)?.get_Timeframe();
   }
 
   protected override HitTestInfo \u0023\u003Dz__R3\u0024ryThR5H(
@@ -202,7 +202,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     base.OnPropertyChanged(_param1);
     if (_param1.Property != Control.FontFamilyProperty && _param1.Property != Control.FontSizeProperty && _param1.Property != Control.FontWeightProperty)
       return;
-    this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D = (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D) null;
+    this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D = (TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D) null;
     this.\u0023\u003Dzmf\u0024vfR3OJQU9();
   }
 
@@ -221,7 +221,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
       string str = this.FontFamily != null ? this.FontFamily.Source : "Tahoma";
       float num = ((float) this.FontSize).Round(0.5f);
       FontWeight fontWeight = this.FontWeight;
-      this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D(_param1, str, num, fontWeight);
+      this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D(_param1, str, num, fontWeight);
     }
     this.\u0023\u003DzKsKC4kB3l9RI(_param1, _param2);
     if (this.ShowHorizontalVolumes)
@@ -275,20 +275,20 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     TimeSpan _param3)
   {
     _param0.Clear();
-    Tuple<DateTime, DateTime, long> timeframePeriod = TimeframeSegmentDataSeries.GetTimeframePeriod(_param1[_param2].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dzg86amuQ\u003D(), _param3);
+    Tuple<DateTime, DateTime, long> timeframePeriod = TimeframeSegmentDataSeries.GetTimeframePeriod(_param1[_param2].\u0023\u003Dz0IPdd6wsmxZJ().Time, _param3);
     do
     {
       _param0.Add(_param1[_param2]);
     }
-    while (_param2 < _param1.Length - 1 && !(_param1[++_param2].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dzg86amuQ\u003D() >= timeframePeriod.Item2));
+    while (_param2 < _param1.Length - 1 && !(_param1[++_param2].\u0023\u003Dz0IPdd6wsmxZJ().Time >= timeframePeriod.Item2));
   }
 
   private void \u0023\u003Dzn9I1y8FguWK2lTmZLQ\u003D\u003D(
     IRenderContext2D _param1,
     IRenderPassData _param2)
   {
-    \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzHcysU8drb9mTwzt9H\u0024clWJY\u003D u8drb9mTwzt9HClWjy = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzHcysU8drb9mTwzt9H\u0024clWJY\u003D();
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = this.DataSeries;
+    TimeframeSegmentRenderableSeries.\u0023\u003DzHcysU8drb9mTwzt9H\u0024clWJY\u003D u8drb9mTwzt9HClWjy = new TimeframeSegmentRenderableSeries.\u0023\u003DzHcysU8drb9mTwzt9H\u0024clWJY\u003D();
+    IDataSeries dataSeries = this.DataSeries;
     u8drb9mTwzt9HClWjy.\u0023\u003DzPBKNgzqH_\u0024\u0024_ = dataSeries as TimeframeSegmentDataSeries;
     if (u8drb9mTwzt9HClWjy.\u0023\u003DzPBKNgzqH_\u0024\u0024_ == null)
       return;
@@ -299,12 +299,12 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     ICoordinateCalculator<<double> xkzemsMs5tGkouk5w = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     double width = _param1.\u0023\u003Dz8DEW4l1E337F().Width;
     double height = _param1.\u0023\u003Dz8DEW4l1E337F().Height;
-    double num2 = Math.Abs(xkzemsMs5tGkouk5w.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D()) - xkzemsMs5tGkouk5w.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D() + u8drb9mTwzt9HClWjy.\u0023\u003DzgSMmZSBP2RDX));
+    double num2 = Math.Abs(xkzemsMs5tGkouk5w.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice) - xkzemsMs5tGkouk5w.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice + u8drb9mTwzt9HClWjy.\u0023\u003DzgSMmZSBP2RDX));
     double num3 = num2 / 2.0;
     u8drb9mTwzt9HClWjy.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D = xkzemsMs5tGkouk5w.GetDataValue(-num2);
     u8drb9mTwzt9HClWjy.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D = xkzemsMs5tGkouk5w.GetDataValue(height + num2);
     IEnumerable<double> source = num1 != 0 ? anaOdfaeo1Ed4fSw.\u0023\u003DzQJbf5e\u0024oTzuvDw2moQ\u003D\u003D().Where<double>(new Func<double, bool>(u8drb9mTwzt9HClWjy.\u0023\u003DzaRGXRoZmlum1ArFUPdKhN1HIdaER)) : (IEnumerable<double>) TimeframeSegmentDataSeries.GeneratePrices(u8drb9mTwzt9HClWjy.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D, u8drb9mTwzt9HClWjy.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D, u8drb9mTwzt9HClWjy.\u0023\u003DzgSMmZSBP2RDX);
-    KeyValuePair<double, CandlePriceLevel>[] array = (num1 != 0 ? (IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source.ToDictionary<double, double, CandlePriceLevel>(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.\u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.\u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D = new Func<double, double>(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzKBZNHp1oDCmRkKG885kIhLueFZ1lDhX69w\u003D\u003D)), new Func<double, CandlePriceLevel>(anaOdfaeo1Ed4fSw.\u0023\u003DzydYW1JHaibII1h_UgQ\u003D\u003D)) : (IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source.ToDictionary<double, double, CandlePriceLevel>(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.\u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.\u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D = new Func<double, double>(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzetzA7_VqP5PPGCJmkZk73EvpkDxRjOED9w\u003D\u003D)), new Func<double, CandlePriceLevel>(u8drb9mTwzt9HClWjy.\u0023\u003DzAo1\u0024ndOCIEmE3q7iVa0gqqG3ZEgh))).Where<KeyValuePair<double, CandlePriceLevel>>(new Func<KeyValuePair<double, CandlePriceLevel>, bool>(u8drb9mTwzt9HClWjy.\u0023\u003DzTxCbbIqjlYqMrkZh9\u00249pC9BqtVdY)).ToArray<KeyValuePair<double, CandlePriceLevel>>();
+    KeyValuePair<double, CandlePriceLevel>[] array = (num1 != 0 ? (IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source.ToDictionary<double, double, CandlePriceLevel>(TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D ?? (TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D = new Func<double, double>(TimeframeSegmentRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzKBZNHp1oDCmRkKG885kIhLueFZ1lDhX69w\u003D\u003D)), new Func<double, CandlePriceLevel>(anaOdfaeo1Ed4fSw.\u0023\u003DzydYW1JHaibII1h_UgQ\u003D\u003D)) : (IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source.ToDictionary<double, double, CandlePriceLevel>(TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D ?? (TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D = new Func<double, double>(TimeframeSegmentRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzetzA7_VqP5PPGCJmkZk73EvpkDxRjOED9w\u003D\u003D)), new Func<double, CandlePriceLevel>(u8drb9mTwzt9HClWjy.\u0023\u003DzAo1\u0024ndOCIEmE3q7iVa0gqqG3ZEgh))).Where<KeyValuePair<double, CandlePriceLevel>>(new Func<KeyValuePair<double, CandlePriceLevel>, bool>(u8drb9mTwzt9HClWjy.\u0023\u003DzTxCbbIqjlYqMrkZh9\u00249pC9BqtVdY)).ToArray<KeyValuePair<double, CandlePriceLevel>>();
     Brush volumeBarsBrush = this.VolumeBarsBrush;
     Color volBarsFontColor = this.VolBarsFontColor;
     LinearGradientBrush linearGradientBrush = volumeBarsBrush as LinearGradientBrush;
@@ -317,7 +317,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
       IBrush2D xrgcdFbSdWgN9GcT8_1 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(volumeBarsBrush);
       IBrush2D xrgcdFbSdWgN9GcT8_2 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(this.\u0023\u003DzdOa9LxKWm9_R());
       IBrush2D xrgcdFbSdWgN9GcT8_3 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(this.\u0023\u003DzMGEDv1J2E_VL());
-      double num4 = (double) ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) array).Max<KeyValuePair<double, CandlePriceLevel>>(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.\u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D ?? (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.\u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D = new Func<KeyValuePair<double, CandlePriceLevel>, Decimal>(\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzysAJjFChL7t5jDsdHzdXQkULmvNn67k19w\u003D\u003D)));
+      double num4 = (double) ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) array).Max<KeyValuePair<double, CandlePriceLevel>>(TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D ?? (TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D = new Func<KeyValuePair<double, CandlePriceLevel>, Decimal>(TimeframeSegmentRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzysAJjFChL7t5jDsdHzdXQkULmvNn67k19w\u003D\u003D)));
       double volumeWidthFraction = this.HorizontalVolumeWidthFraction;
       double num5 = width * volumeWidthFraction;
       foreach ((double key, CandlePriceLevel candlePriceLevel) in array)
@@ -391,22 +391,22 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     }
     if (index < 0 || index >= dataSeries.Count)
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj segment = dataSeries.Segments[index];
+    TimeframeDataSegment segment = dataSeries.Segments[index];
     CandlePriceLevel candlePriceLevel = segment.\u0023\u003DzHH6Br74\u003D(num2, num1);
     if (((CandlePriceLevel) ref candlePriceLevel).TotalVolume == 0M)
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     HitTestInfo zldchDrVsrVyHh6WyiGy1 = new HitTestInfo();
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzOCYm7g4gfYSc(dataSeries.SeriesName);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzQ9xCEGz0Gl\u0024q(dataSeries.DataSeriesType);
-    zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz2Iv\u0024sxQuGDBR((IComparable) segment.\u0023\u003Dzg86amuQ\u003D());
+    zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz2Iv\u0024sxQuGDBR((IComparable) segment.Time);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzBswzhzuQHrrX((IComparable) key);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzV4wgjRUOXtRf(index);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzwhsEO3Tu4\u0024U9(candlePriceLevel);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzn3o1RS9wuET8(true);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzo2ftAfxjqC04(new Point(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D((double) index), xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(key)));
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz5MmJ0gJc_yvJ((IComparable) segment.\u0023\u003DzJCVDIhjSn3vnyz7CPg\u003D\u003D());
-    zldchDrVsrVyHh6WyiGy1.\u0023\u003DzA4iUVKOE1DJm((IComparable) segment.\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D());
-    zldchDrVsrVyHh6WyiGy1.\u0023\u003DzAvOnsWR70_Q9((IComparable) segment.\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D());
+    zldchDrVsrVyHh6WyiGy1.\u0023\u003DzA4iUVKOE1DJm((IComparable) segment.MaxPrice);
+    zldchDrVsrVyHh6WyiGy1.\u0023\u003DzAvOnsWR70_Q9((IComparable) segment.MinPrice);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz566Xwh\u0024CapeW((IComparable) segment.\u0023\u003DznrHfMbDuUs5Ac94Iyw\u003D\u003D());
     HitTestInfo zldchDrVsrVyHh6WyiGy2 = zldchDrVsrVyHh6WyiGy1;
     return this.\u0023\u003Dz1SLEyANHenbwANn\u0024\u0024w\u003D\u003D(_param1, zldchDrVsrVyHh6WyiGy2, _param2);
@@ -422,12 +422,12 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
 
   protected sealed class \u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D
   {
-    private readonly \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[] \u0023\u003DzEDGaOlhSE7XW;
-    private readonly \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D \u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D;
-    private readonly \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D \u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D;
+    private readonly TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[] \u0023\u003DzEDGaOlhSE7XW;
+    private readonly TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D \u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D;
+    private readonly TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D \u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D;
     private readonly string \u0023\u003DztSljFjtK7JnB;
-    private readonly Dictionary<Tuple<int, int>, \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzBMY\u00244COSpP9\u0024 = new Dictionary<Tuple<int, int>, \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>();
-    private readonly Dictionary<float, \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D = new Dictionary<float, \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>();
+    private readonly Dictionary<Tuple<int, int>, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzBMY\u00244COSpP9\u0024 = new Dictionary<Tuple<int, int>, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>();
+    private readonly Dictionary<float, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D = new Dictionary<float, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>();
     private readonly Stopwatch \u0023\u003DzcUm4iRE\u003D = new Stopwatch();
 
     public \u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D(
@@ -439,21 +439,21 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
       this.\u0023\u003DzcUm4iRE\u003D.Restart();
       this.\u0023\u003DztSljFjtK7JnB = _param2;
       _param3 = Math.Min(32f, _param3).Round(0.5f);
-      this.\u0023\u003DzEDGaOlhSE7XW = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[1 + (int) Math.Round(((double) _param3 - 7.0) / 0.5)];
+      this.\u0023\u003DzEDGaOlhSE7XW = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[1 + (int) Math.Round(((double) _param3 - 7.0) / 0.5)];
       for (float num = 7f; (double) num <= (double) _param3; num += 0.5f)
       {
         FontWeight fontWeight = (double) num <= 8.5 ? FontWeights.ExtraLight : ((double) num <= 10.0 ? FontWeights.Light : _param4);
         Size size = _param1.\u0023\u003DzM2zC99cVJOSN(num, this.\u0023\u003DztSljFjtK7JnB, fontWeight);
-        this.\u0023\u003DzEDGaOlhSE7XW[(int) Math.Round(((double) num - 7.0) / 0.5)] = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D(num, fontWeight, size);
+        this.\u0023\u003DzEDGaOlhSE7XW[(int) Math.Round(((double) num - 7.0) / 0.5)] = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D(num, fontWeight, size);
       }
       this.\u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D = this.\u0023\u003DzEDGaOlhSE7XW[0];
-      \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[] zEdGaOlhSe7Xw = this.\u0023\u003DzEDGaOlhSE7XW;
+      TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[] zEdGaOlhSe7Xw = this.\u0023\u003DzEDGaOlhSE7XW;
       this.\u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D = zEdGaOlhSe7Xw[zEdGaOlhSe7Xw.Length - 1];
       double d1;
       double d2 = d1 = double.MaxValue;
       double a1;
       double a2 = a1 = double.MinValue;
-      foreach (\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y in this.\u0023\u003DzEDGaOlhSE7XW)
+      foreach (TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y in this.\u0023\u003DzEDGaOlhSE7XW)
       {
         Size size = zvzdRt5Y.\u0023\u003Dz8OGuO4J3wG6m();
         double width = size.Width;
@@ -475,16 +475,16 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
       int num3 = (int) Math.Floor(d1);
       int num4 = (int) Math.Ceiling(a1);
       int[] array = Enumerable.Range(0, this.\u0023\u003DzEDGaOlhSE7XW.Length).Reverse<int>().ToArray<int>();
-      \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D qws5VcJaSLcUcBty = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D();
+      TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D qws5VcJaSLcUcBty = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D();
       for (qws5VcJaSLcUcBty.\u0023\u003Dze2ZNMQU\u003D = num1; qws5VcJaSLcUcBty.\u0023\u003Dze2ZNMQU\u003D <= num2; ++qws5VcJaSLcUcBty.\u0023\u003Dze2ZNMQU\u003D)
       {
-        \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D eiGfnlxs70MiqCaxA = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D();
+        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D eiGfnlxs70MiqCaxA = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D();
         eiGfnlxs70MiqCaxA.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D = qws5VcJaSLcUcBty;
         for (eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D = num3; eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D <= num4; ++eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D)
         {
           Tuple<int, int> key = Tuple.Create<int, int>(eiGfnlxs70MiqCaxA.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dze2ZNMQU\u003D, eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D);
           if (!this.\u0023\u003DzBMY\u00244COSpP9\u0024.ContainsKey(key))
-            this.\u0023\u003DzBMY\u00244COSpP9\u0024[key] = ((IEnumerable<int>) array).Select<int, \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(new Func<int, \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(this.OnLineOnePropertyChanged)).First<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(new Func<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D, bool>(eiGfnlxs70MiqCaxA.OnChartAreaElementsRemovingAt));
+            this.\u0023\u003DzBMY\u00244COSpP9\u0024[key] = ((IEnumerable<int>) array).Select<int, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(new Func<int, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(this.OnLineOnePropertyChanged)).First<TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(new Func<TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D, bool>(eiGfnlxs70MiqCaxA.OnChartAreaElementsRemovingAt));
         }
       }
       this.\u0023\u003DzcUm4iRE\u003D.Stop();
@@ -550,7 +550,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
             size = this.\u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D.\u0023\u003Dz8OGuO4J3wG6m();
             double height6 = size.Height;
             int num5 = (int) Math.Floor(Math.Min(height5, height6));
-            \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja = this.\u0023\u003DzBMY\u00244COSpP9\u0024[Tuple.Create<int, int>(num4, num5)];
+            TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja = this.\u0023\u003DzBMY\u00244COSpP9\u0024[Tuple.Create<int, int>(num4, num5)];
             if ((double) _param3 == 0.0 || (double) tmaYvnm94O29pOcja.FontSize >= (double) _param3)
               return (tmaYvnm94O29pOcja.FontSize, tmaYvnm94O29pOcja.\u0023\u003DzmTA5w5GPXfNk(), true);
             if (!this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D.TryGetValue(_param3, out tmaYvnm94O29pOcja))
@@ -560,7 +560,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
         }
         if ((double) _param3 == 0.0)
           return ();
-        \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja1;
+        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja1;
         if (!this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D.TryGetValue(_param3, out tmaYvnm94O29pOcja1))
           tmaYvnm94O29pOcja1 = this.\u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D;
         return (tmaYvnm94O29pOcja1.FontSize, tmaYvnm94O29pOcja1.\u0023\u003DzmTA5w5GPXfNk(), false);
@@ -575,7 +575,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
           (object) _param3,
           (object) ex
         });
-        \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y = this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D[Math.Max(_param3, 7f)];
+        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y = this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D[Math.Max(_param3, 7f)];
         return (zvzdRt5Y.FontSize, zvzdRt5Y.\u0023\u003DzmTA5w5GPXfNk(), false);
       }
     }
@@ -586,7 +586,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
       return (double) tuple.Item1 != 0.0 || tuple.Item2 != new FontWeight() || tuple.Item3;
     }
 
-    private \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D OnLineOnePropertyChanged(
+    private TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D OnLineOnePropertyChanged(
       int _param1)
     {
       return this.\u0023\u003DzEDGaOlhSE7XW[_param1];
@@ -595,10 +595,10 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
     private sealed class \u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D
     {
       public int \u0023\u003DzZFj5Dy0\u003D;
-      public \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+      public TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
       public bool OnChartAreaElementsRemovingAt(
-        \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D _param1)
+        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D _param1)
       {
         return _param1.\u0023\u003Dz8OGuO4J3wG6m().Width <= (double) this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dze2ZNMQU\u003D && _param1.\u0023\u003Dz8OGuO4J3wG6m().Height <= (double) this.\u0023\u003DzZFj5Dy0\u003D;
       }
@@ -629,7 +629,7 @@ public abstract class \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2w
   [Serializable]
   private new sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.SomeClass34343383();
+    public static readonly TimeframeSegmentRenderableSeries.SomeClass34343383 SomeMethond0343 = new TimeframeSegmentRenderableSeries.SomeClass34343383();
     public static Func<double, double> \u0023\u003DzFJ\u0024eLsYNB1rWEF3RtQ\u003D\u003D;
     public static Func<double, double> \u0023\u003DzQqTi4Ck_kgzYUKbIuw\u003D\u003D;
     public static Func<KeyValuePair<double, CandlePriceLevel>, Decimal> \u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D;

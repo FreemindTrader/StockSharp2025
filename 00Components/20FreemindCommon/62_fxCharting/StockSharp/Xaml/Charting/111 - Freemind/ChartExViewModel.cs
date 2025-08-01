@@ -127,7 +127,7 @@ namespace StockSharp.Xaml.Charting
             {
                 if ( !indicatorPicker.AutoSelectCandles )
                 {
-                    var selectedElement = CustomShowWindowService.ShowCandlestickUIPicker( array, chartUi );
+                    var selectedElement = CustomShowWindowService.ShowChartCandleElementViewModelPicker( array, chartUi );
 
                     chartUi = selectedElement;
                 }
@@ -245,7 +245,7 @@ namespace StockSharp.Xaml.Charting
 
         public void CheckAndShowFibonacci( )
         {
-            _candleStickUI.CheckAndShowFibonacci( );
+            _ChartCandleElementViewModel.CheckAndShowFibonacci( );
         }
 
         
@@ -1058,7 +1058,7 @@ namespace StockSharp.Xaml.Charting
 
         IndicatorPickerWindow ShowIndicatorWindow( bool autoSelectCandles, IList< IndicatorType > indicatorTypes );
 
-        ChartCandleElementEx ShowCandlestickUIPicker( ChartCandleElementEx[ ] array, ChartCandleElementEx ChartCandleElementEx );
+        ChartCandleElementEx ShowChartCandleElementViewModelPicker( ChartCandleElementEx[ ] array, ChartCandleElementEx ChartCandleElementEx );
 
         Security ShowSecurityPickerWindow( MultiSelectMode SelectionMode );
     }
@@ -1098,11 +1098,11 @@ namespace StockSharp.Xaml.Charting
             return w;
         }
 
-        public ChartCandleElementEx ShowCandlestickUIPicker( ChartCandleElementEx[ ] array, ChartCandleElementEx ChartCandleElementEx )
+        public ChartCandleElementEx ShowChartCandleElementViewModelPicker( ChartCandleElementEx[ ] array, ChartCandleElementEx ChartCandleElementEx )
         {
             throw new NotImplementedException();
 
-            //CandlestickUIPicker w = new CandlestickUIPicker( )
+            //ChartCandleElementViewModelPicker w = new ChartCandleElementViewModelPicker( )
             //{
             //    Elements = array,
             //    SelectedElement = ChartCandleElementEx

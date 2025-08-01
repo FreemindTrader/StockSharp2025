@@ -89,7 +89,7 @@
 //            }
 
 
-//            public Decimal PriceStep()
+//            public Decimal PriceStep
 //            {
 //                return _priceStep;
 //            }

@@ -151,7 +151,7 @@ public sealed class SeriesInfoTemplateSelector :
     {
       case \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D _:
         return this.BoxPlotSeriesTemplate;
-      case \u0023\u003Dz3HkNAtjftY7KLZeVO1e0c8c41pWQbDKntdB13Yg\u003D _:
+      case OhlcSeriesInfo _:
         return this.OhlcSeriesTemplate;
       case \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D _:
         return this.HlcSeriesTemplate;

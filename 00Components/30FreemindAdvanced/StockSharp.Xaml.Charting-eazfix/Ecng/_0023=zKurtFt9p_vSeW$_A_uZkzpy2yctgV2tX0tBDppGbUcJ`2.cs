@@ -8,7 +8,7 @@ using System;
 
 #nullable disable
 public sealed class \u0023\u003DzKurtFt9p_vSeW\u0024_A_uZkzpy2yctgV2tX0tBDppGbUcJFQBZOSkO2kc0\u003D<TX, TY> : 
-  \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, TY>
+  XyDataSeries<TX, TY>
   where TX : IComparable
   where TY : IComparable
 {

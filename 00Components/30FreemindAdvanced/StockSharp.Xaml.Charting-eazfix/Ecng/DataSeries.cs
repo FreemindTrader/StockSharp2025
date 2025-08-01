@@ -18,7 +18,7 @@ public abstract class DataSeries<TX, TY> :
   BindableObject ,
   IDataSeries<TX, TY>,
   ISuspendable,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
+  IDataSeries
   where TX : IComparable
   where TY : IComparable
 {
@@ -195,12 +195,12 @@ public abstract class DataSeries<TX, TY> :
     get => (IList<TY>) this.\u0023\u003DzoEP49rI\u003D;
   }
 
-  IList \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.\u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhJJohvL59CNzH6MmQ7z89X5qTi4r9w\u003D\u003D()
+  IList IDataSeries.\u0023\u003DzYvV7blprrv\u0024kuBcS9cPJhJJohvL59CNzH6MmQ7z89X5qTi4r9w\u003D\u003D()
   {
     return (IList) this.\u0023\u003DzmIwKipw\u003D;
   }
 
-  IList \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDJOVfkyz3mjQ4rJi2BB2r9T\u0024Ws8RkQ\u003D\u003D()
+  IList IDataSeries.\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDJOVfkyz3mjQ4rJi2BB2r9T\u0024Ws8RkQ\u003D\u003D()
   {
     return (IList) this.\u0023\u003DzoEP49rI\u003D;
   }

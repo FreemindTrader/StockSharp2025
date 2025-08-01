@@ -15,5 +15,5 @@ public interface \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<T> :
 
   T \u0023\u003DzKrTvxa8MJ66h();
 
-  T \u0023\u003Dzu7q98_E\u003D();
+  T Y;
 }

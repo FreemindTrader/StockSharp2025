@@ -17,8 +17,7 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Charting;
 
-public sealed class ClusterProfileRenderableSeries : 
-  \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D
+public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableSeries
 {
   
   public static readonly DependencyProperty \u0023\u003Dz3vhKFHvmUfSR = DependencyProperty.Register(nameof (SeparatorLineColor), typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Color.FromArgb((byte) 50, byte.MaxValue, byte.MaxValue, byte.MaxValue), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
@@ -119,7 +118,7 @@ public sealed class ClusterProfileRenderableSeries :
     this.\u0023\u003Dz1ShH2k5rZ_Qh = zNgOs9Qu1W4t1;
     ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t3 = zNgOs9Qu1W4t2;
     zNgOs9Qu1W4t3.\u0023\u003DzfuDyOX2LBzuJ = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D(1.0) - zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D(0.0));
-    zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D()) - zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D() + num1));
+    zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice) - zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice + num1));
     zNgOs9Qu1W4t3.\u0023\u003DzMA0J5dNH7C28 = zNgOs9Qu1W4t3.\u0023\u003DzfuDyOX2LBzuJ / 2.0;
     zNgOs9Qu1W4t3.\u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D = zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D / 2.0;
     vm6DexIkyzzokCaW.\u0023\u003DzoVxmkd0\u003D = this.ClusterColor;
@@ -138,13 +137,13 @@ public sealed class ClusterProfileRenderableSeries :
     object[] objArray = new object[5]
     {
       (object) source.Length,
-      (object) source[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D(),
+      (object) source[0].\u0023\u003Dz0IPdd6wsmxZJ().Count,
       null,
       null,
       null
     };
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB[] j9sJkRf4wMmhD3hBArray = source;
-    objArray[2] = (object) j9sJkRf4wMmhD3hBArray[j9sJkRf4wMmhD3hBArray.Length - 1].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D();
+    objArray[2] = (object) j9sJkRf4wMmhD3hBArray[j9sJkRf4wMmhD3hBArray.Length - 1].\u0023\u003Dz0IPdd6wsmxZJ().Count;
     objArray[3] = (object) vm6DexIkyzzokCaW.\u0023\u003DzEB3J6TW\u0024NW8A.Min;
     objArray[4] = (object) vm6DexIkyzzokCaW.\u0023\u003DzEB3J6TW\u0024NW8A.Max;
     ao0kEjY6wcnQ6fBfXg.\u0023\u003Dz3jAE7bQ\u003D("ClusterProfile: started render {0} segments. Indexes: {1}-{2}, VisibleRange: {3}-{4}", objArray);
@@ -164,14 +163,14 @@ public sealed class ClusterProfileRenderableSeries :
       {
         ClusterProfileRenderableSeries.\u0023\u003DzNWRG_3QX2TpIkVlC1gGPnPM\u003D qx2TpIkVlC1gGpnPm = new ClusterProfileRenderableSeries.\u0023\u003DzNWRG_3QX2TpIkVlC1gGPnPM\u003D();
         qx2TpIkVlC1gGpnPm.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D = vm6DexIkyzzokCaW;
-        \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj ltdBuqAinydlZs6uj = j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ();
-        double num5 = zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz2_4KSTY\u003D());
+        TimeframeDataSegment ltdBuqAinydlZs6uj = j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ();
+        double num5 = zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.X);
         double zfuDyOx2LbzuJ = zNgOs9Qu1W4t3.\u0023\u003DzfuDyOX2LBzuJ;
         double num6 = num5;
-        if (j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D() <= num3 && ltdBuqAinydlZs6uj.\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D() >= num2)
+        if (j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().MinPrice <= num3 && ltdBuqAinydlZs6uj.MaxPrice >= num2)
         {
-          double num7 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(ltdBuqAinydlZs6uj.\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D()) - zNgOs9Qu1W4t3.\u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D;
-          double num8 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(ltdBuqAinydlZs6uj.\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D()) + zNgOs9Qu1W4t3.\u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D;
+          double num7 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(ltdBuqAinydlZs6uj.MaxPrice) - zNgOs9Qu1W4t3.\u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D;
+          double num8 = zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(ltdBuqAinydlZs6uj.MinPrice) + zNgOs9Qu1W4t3.\u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D;
           (qx2TpIkVlC1gGpnPm.\u0023\u003DzVx\u0024XeSiQ8z2B, qx2TpIkVlC1gGpnPm.\u0023\u003DztZE33alm_OfT) = ltdBuqAinydlZs6uj.\u0023\u003Dzb5KHU\u00247RutjHsWssog\u003D\u003D(num1);
           _param1.\u0023\u003Dzk8_eoWQ\u003D(rhwYsZxA33iRu6Id7J1, new Point(num6, num7 + 1.0), new Point(num6, num8));
           if (flag)
@@ -192,7 +191,7 @@ public sealed class ClusterProfileRenderableSeries :
   }
 
   private void \u0023\u003DzI2RPSVn5Y6gq(
-    \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj _param1,
+    TimeframeDataSegment _param1,
     ClusterProfileRenderableSeries.\u0023\u003DzZk\u00246lEW\u0024ffR3 _param2,
     ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t _param3,
     double _param4,
@@ -269,8 +268,8 @@ public sealed class ClusterProfileRenderableSeries :
         double? nullable = _param1.\u0023\u003DzJCVDIhjSn3vnyz7CPg\u003D\u003D();
         double num11 = _param1.\u0023\u003DznrHfMbDuUs5Ac94Iyw\u003D\u003D();
         \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = nullable.GetValueOrDefault() <= num11 & nullable.HasValue ? _param9 : _param10;
-        double num12 = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D());
-        double num13 = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D());
+        double num12 = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.MinPrice);
+        double num13 = vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(_param1.MaxPrice);
         vqd1Qhu2nAw1nzwT0.\u0023\u003Dz7pohrFs\u003D.\u0023\u003Dzo\u0024RDoi4\u003D.\u0023\u003Dzk8_eoWQ\u003D(rhwYsZxA33iRu6Id7J, new Point(_param4, num12), new Point(_param4, num13));
         _param4 += (double) _param8;
       }
@@ -416,7 +415,7 @@ public sealed class ClusterProfileRenderableSeries :
     public bool \u0023\u003DzkaVrqD4ggnSfmpwokg\u003D\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
-      return _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() >= this.\u0023\u003DzEB3J6TW\u0024NW8A.Min && _param1.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D() <= this.\u0023\u003DzEB3J6TW\u0024NW8A.Max;
+      return _param1.\u0023\u003Dz0IPdd6wsmxZJ().Count >= this.\u0023\u003DzEB3J6TW\u0024NW8A.Min && _param1.\u0023\u003Dz0IPdd6wsmxZJ().Count <= this.\u0023\u003DzEB3J6TW\u0024NW8A.Max;
     }
   }
 
@@ -429,7 +428,7 @@ public sealed class ClusterProfileRenderableSeries :
     public void \u0023\u003DzKQDGlIy9KhTj9Lexow\u003D\u003D(
       ClusterProfileRenderableSeries.\u0023\u003DzZk\u00246lEW\u0024ffR3 _param1)
     {
-      KeyValuePair<double, CandlePriceLevel> keyValuePair = this.\u0023\u003DzVx\u0024XeSiQ8z2B[_param1.\u0023\u003DzCMB4T5w\u003D()];
+      KeyValuePair<double, CandlePriceLevel> keyValuePair = this.\u0023\u003DzVx\u0024XeSiQ8z2B[_param1.Count];
       _param1.\u0023\u003DzbAXAYTekRt44(keyValuePair.Key);
       _param1.Value = keyValuePair.Value;
       ClusterProfileRenderableSeries.\u0023\u003DzZk\u00246lEW\u0024ffR3 zZk6lEwFfR3 = _param1;
@@ -474,7 +473,7 @@ public sealed class ClusterProfileRenderableSeries :
     private readonly double \u0023\u003Dz_Fbd0JvmfxR0BaQ2VA\u003D\u003D = _param2;
     private \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003Dz4jeZsNFPe6\u0024QBz4C5w\u003D\u003D;
 
-    public int \u0023\u003DzCMB4T5w\u003D() => this.\u0023\u003DzKx97DYo\u003D;
+    public int Count => this.\u0023\u003DzKx97DYo\u003D;
 
     public void Reset() => this.\u0023\u003DzKx97DYo\u003D = -1;
 

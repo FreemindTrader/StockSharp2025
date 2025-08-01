@@ -89,13 +89,13 @@ public class TickLabelAxisCanvas :
     this.\u0023\u003DzYkVi0tC6ZJOZw\u00246TxQ\u003D\u003D.Clear();
     bool flag1 = false;
     bool labelCullingEnabled = this.IsLabelCullingEnabled;
-    foreach (IGrouping<int, DefaultTickLabel> source in (IEnumerable<IGrouping<int, DefaultTickLabel>>) this.Children.OfType<DefaultTickLabel>().GroupBy<DefaultTickLabel, int>(TickLabelAxisCanvas.SomeClass34343383.\u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D ?? (TickLabelAxisCanvas.SomeClass34343383.\u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D = new Func<DefaultTickLabel, int>(TickLabelAxisCanvas.SomeClass34343383.SomeMethond0343.\u0023\u003DzBxO6u\u0024HlVKKWbdOt3RMd_j8\u003D))).OrderByDescending<IGrouping<int, DefaultTickLabel>, int>(TickLabelAxisCanvas.SomeClass34343383.\u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D ?? (TickLabelAxisCanvas.SomeClass34343383.\u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D = new Func<IGrouping<int, DefaultTickLabel>, int>(TickLabelAxisCanvas.SomeClass34343383.SomeMethond0343.\u0023\u003Dzug\u0024q6sWpYdaQHtVbrSZZtJw\u003D))))
+    foreach (IGrouping<int, DefaultTickLabel> source in (IEnumerable<IGrouping<int, DefaultTickLabel>>) this.Children.OfType<DefaultTickLabel>().GroupBy<DefaultTickLabel, int>(TickLabelAxisCanvas.SomeClass34343383.\u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D ?? (TickLabelAxisCanvas.SomeClass34343383.\u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D = new Func<DefaultTickLabel, int>(TickLabelAxisCanvas.SomeClass34343383.SomeMethond0343.\u0023\u003DzBxO6u\u0024HlVKKWbdOt3RMd_j8\u003D))).OrderByDescending<IGrouping<int, DefaultTickLabel>, int>(TickLabelAxisCanvas.SomeClass34343383._memeber01 ?? (TickLabelAxisCanvas.SomeClass34343383._memeber01 = new Func<IGrouping<int, DefaultTickLabel>, int>(TickLabelAxisCanvas.SomeClass34343383.SomeMethond0343.\u0023\u003Dzug\u0024q6sWpYdaQHtVbrSZZtJw\u003D))))
     {
       if (!flag1)
       {
         foreach (DefaultTickLabel y9QajdhH6H6U9EEjd in (IEnumerable<DefaultTickLabel>) source)
         {
-          TickLabelAxisCanvas.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new TickLabelAxisCanvas.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
+          TickLabelAxisCanvas.SomeClass34343333 zeaY3Uu1m4CyxerxRw = new TickLabelAxisCanvas.SomeClass34343333();
           zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1Nrh7CPGtaPVGj6s\u0024g\u003D\u003D = this.\u0023\u003Dzzigj\u0024danccVcsgdXBQ\u003D\u003D(_param1, (UIElement) y9QajdhH6H6U9EEjd);
           y9QajdhH6H6U9EEjd.\u0023\u003DzT3xod7VLFT46Za\u0024kcJyM7Jw\u003D(zeaY3Uu1m4CyxerxRw.\u0023\u003Dz1Nrh7CPGtaPVGj6s\u0024g\u003D\u003D);
           if (labelCullingEnabled)
@@ -142,7 +142,7 @@ public class TickLabelAxisCanvas :
   {
     public static readonly TickLabelAxisCanvas.SomeClass34343383 SomeMethond0343 = new TickLabelAxisCanvas.SomeClass34343383();
     public static Func<DefaultTickLabel, int> \u0023\u003DzADw0BKPL7SQ6VX_CXg\u003D\u003D;
-    public static Func<IGrouping<int, DefaultTickLabel>, int> \u0023\u003DzDGaDWsF\u00243rnprEPEXA\u003D\u003D;
+    public static Func<IGrouping<int, DefaultTickLabel>, int> _memeber01;
 
     public int \u0023\u003DzBxO6u\u0024HlVKKWbdOt3RMd_j8\u003D(
       DefaultTickLabel _param1)
@@ -157,7 +157,7 @@ public class TickLabelAxisCanvas :
     }
   }
 
-  private sealed class \u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D
+  private sealed class SomeClass34343333
   {
     public Rect \u0023\u003Dz1Nrh7CPGtaPVGj6s\u0024g\u003D\u003D;
 

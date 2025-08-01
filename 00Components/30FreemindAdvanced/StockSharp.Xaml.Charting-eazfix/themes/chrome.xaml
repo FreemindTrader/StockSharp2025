@@ -3,7 +3,7 @@
   <SolidColorBrush x:Key="TickTextBrush" Color="#333333"/>
   <SolidColorBrush x:Key="MajorGridLineBrush" Color="#55333333"/>
   <SolidColorBrush x:Key="MinorGridLineBrush" Color="#22333333"/>
-  <LinearGradientBrush x:Key="UltrachartBackground" StartPoint="0,0" EndPoint="0,1">
+  <LinearGradientBrush x:Key="SciChartBackground" StartPoint="0,0" EndPoint="0,1">
     <GradientStop Offset="0.5" Color="#FFF"/>
     <GradientStop Offset="1" Color="#77C0D4EE"/>
   </LinearGradientBrush>

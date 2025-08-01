@@ -33,7 +33,7 @@ public abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzxWzRxjX3V8Eh = DependencyProperty.Register("DataSeriesIndex", typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) -1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD)));
+  public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (IDataSeries), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD)));
   
   public static readonly DependencyProperty IsVisibleProperty = DependencyProperty.Register(nameof (IsVisible), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzNhd_wqx65hB\u0024)));
   
@@ -57,7 +57,7 @@ public abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
-  public static readonly DependencyProperty \u0023\u003Dz2NzoEVHQO1PF = DependencyProperty.Register(nameof (PaletteProvider), typeof (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz2NzoEVHQO1PF = DependencyProperty.Register(nameof (PaletteProvider), typeof (IXxxPaletteProvider), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
   public static readonly DependencyProperty \u0023\u003DzyfKHGV64pf8n = DependencyProperty.Register(nameof (ZeroLineY), typeof (double), typeof (BaseRenderableSeries), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
   
@@ -71,7 +71,7 @@ public abstract class BaseRenderableSeries :
   
   private Size \u0023\u003Dz3L36rdwwPqC0 = Size.Empty;
   
-  private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzXfO9DgaVRj7B;
+  private IDataSeries \u0023\u003DzXfO9DgaVRj7B;
   
   private bool \u0023\u003DzcqLltIfVVWk84rM\u0024DsHo97I\u003D;
   
@@ -181,11 +181,11 @@ public abstract class BaseRenderableSeries :
     this.\u0023\u003DzA2CWfbM2026Lwfy5zat1jBh7qfwb5Ci\u0024\u0024A\u003D\u003D = _param1;
   }
 
-  public \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D PaletteProvider
+  public IXxxPaletteProvider PaletteProvider
   {
     get
     {
-      return (\u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D) this.GetValue(BaseRenderableSeries.\u0023\u003Dz2NzoEVHQO1PF);
+      return (IXxxPaletteProvider) this.GetValue(BaseRenderableSeries.\u0023\u003Dz2NzoEVHQO1PF);
     }
     set
     {
@@ -334,11 +334,11 @@ public abstract class BaseRenderableSeries :
     }
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries
+  public IDataSeries DataSeries
   {
     get
     {
-      return (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.GetValue(BaseRenderableSeries.\u0023\u003DzGTMdFbtr59Hr);
+      return (IDataSeries) this.GetValue(BaseRenderableSeries.\u0023\u003DzGTMdFbtr59Hr);
     }
     set
     {
@@ -508,7 +508,7 @@ public abstract class BaseRenderableSeries :
       throw new ArgumentException("WidthFraction should be between 0.0 and 1.0 inclusive", "widthFraction");
     double num = _param1.\u0023\u003Dz23Oi_5A6gjXaau8ZzBLLsFfzG2_K() ? this.\u0023\u003Dz3L36rdwwPqC0.Width : this.\u0023\u003Dz3L36rdwwPqC0.Height;
     if (_param3 > 1.0)
-      num = Math.Abs(_param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(_param2.\u0023\u003DzlpVGw6E\u003D() - 1).\u0023\u003Dz2_4KSTY\u003D()) - _param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(0).\u0023\u003Dz2_4KSTY\u003D())) / (_param3 - 1.0);
+      num = Math.Abs(_param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(_param2.\u0023\u003DzlpVGw6E\u003D() - 1).X) - _param1.\u0023\u003DzhL6gsJw\u003D(_param2.\u0023\u003Dz\u0024CeUvME\u003D(0).X)) / (_param3 - 1.0);
     return (int) (num * _param4);
   }
 
@@ -584,7 +584,7 @@ public abstract class BaseRenderableSeries :
     double num1 = Math.Abs(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().GetDataValue(point.X + 1.0) - this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D().GetDataValue(point.X));
     double num2 = Math.Abs(this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().GetDataValue(point.Y + 1.0) - this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D().GetDataValue(point.Y));
     double num3 = _param4 ? num1 / num2 : 0.0;
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D dataSeries = this.DataSeries;
+    IDataSeries dataSeries = this.DataSeries;
     if (dataSeries.get_Count() < 2)
       _param3 = (\u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D) 1;
     int index;
@@ -850,13 +850,13 @@ public abstract class BaseRenderableSeries :
     return _param0 >= _param1 && _param0 <= _param2;
   }
 
-  public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+  public SeriesInfo \u0023\u003DzZZbJdAS6fDJ\u0024(
     Point _param1)
   {
     return this.\u0023\u003DzZZbJdAS6fDJ\u0024(this.\u0023\u003DzjuB\u0024Pa8\u003D(_param1));
   }
 
-  public virtual \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+  public virtual SeriesInfo \u0023\u003DzZZbJdAS6fDJ\u0024(
     HitTestInfo _param1)
   {
     return \u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D.\u0023\u003DzZZbJdAS6fDJ\u0024(this, _param1);
@@ -953,8 +953,8 @@ public abstract class BaseRenderableSeries :
   }
 
   protected virtual void \u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1,
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param2)
+    IDataSeries _param1,
+    IDataSeries _param2)
   {
     ISciChartSurface ii8u0KoV3jCaMdYpfetQ = this.\u0023\u003DzoXzc48\u0024TAMxP();
     if (ii8u0KoV3jCaMdYpfetQ != null)
@@ -1173,7 +1173,7 @@ public abstract class BaseRenderableSeries :
       DependencyObject _param1,
       DependencyPropertyChangedEventArgs _param2)
     {
-      ((BaseRenderableSeries) _param1).\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) _param2.OldValue, (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) _param2.NewValue);
+      ((BaseRenderableSeries) _param1).\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D((IDataSeries) _param2.OldValue, (IDataSeries) _param2.NewValue);
     }
   }
 }

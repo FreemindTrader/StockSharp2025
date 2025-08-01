@@ -187,6 +187,9 @@
 	  <Reference Include="SciChart.Charting">
 	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Charting.dll</HintPath>
 	  </Reference>
+	  <Reference Include="SciChart.Core">
+	    <HintPath>..\..\..\..\..\..\..\Program Files (x86)\SciChart\SciChart SDK\Lib\netcoreapp3.1\SciChart.Core.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />

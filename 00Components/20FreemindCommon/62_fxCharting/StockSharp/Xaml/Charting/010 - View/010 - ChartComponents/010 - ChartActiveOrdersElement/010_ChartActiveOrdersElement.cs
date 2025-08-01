@@ -245,9 +245,9 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
 
     public IChartArea PersistentChartArea => throw new NotImplementedException();
 
-    //DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
+    //DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
     //{
-    //    return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new ChartActiveOrdersElementVM( this );
+    //    return this._baseViewModel = ( DrawableChartComponentBaseViewModel ) new ChartActiveOrdersElementVM( this );
     //}
 
     DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )

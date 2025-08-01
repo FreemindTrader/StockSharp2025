@@ -31,7 +31,7 @@ namespace StockSharp.Xaml.Charting;
 public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, IThemeableChart
 {
   
-  private readonly ScichartSurfaceMVVM \u0023\u003DzKj7nvWQ\u003D;
+  private readonly ScichartSurfaceMVVM _chartSeriesViewModel;
   
   private readonly ChartModifierBase[] \u0023\u003DzUyqHQCymOwtN;
   
@@ -46,11 +46,11 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   public EquityCurveChart()
   {
     this.InitializeComponent();
-    this.\u0023\u003DzKj7nvWQ\u003D = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
+    this._chartSeriesViewModel = (ScichartSurfaceMVVM) this.\u0023\u003DzO72kpz0\u003D.DataContext;
     this.\u0023\u003DzO72kpz0\u003D.\u0023\u003DzigsRD8\u0024hw_SZ().XAxisType = ChartAxisType.CategoryDateTime;
-    this.\u0023\u003DzKj7nvWQ\u003D.ShowLegend = true;
-    ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.XAxises).First<IChartAxis>().AutoRange = true;
-    ((IEnumerable<IChartAxis>) this.\u0023\u003DzKj7nvWQ\u003D.Area.YAxises).First<IChartAxis>().AutoRange = true;
+    this._chartSeriesViewModel.ShowLegend = true;
+    ((IEnumerable<IChartAxis>) this._chartSeriesViewModel.Area.XAxises).First<IChartAxis>().AutoRange = true;
+    ((IEnumerable<IChartAxis>) this._chartSeriesViewModel.Area.YAxises).First<IChartAxis>().AutoRange = true;
     ChartModifierBase[] v7UvhxrxhaatqEjdArray = new ChartModifierBase[4];
     fxZoomPanModifier ypbydebG6VffgcpzeEjd = new fxZoomPanModifier();
     ypbydebG6VffgcpzeEjd.XyDirection = XyDirection.XDirection;
@@ -66,8 +66,8 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     dgE2H48XyyA87SEjd.AxisId = "Y";
     v7UvhxrxhaatqEjdArray[3] = (ChartModifierBase) dgE2H48XyyA87SEjd;
     this.\u0023\u003DzUyqHQCymOwtN = v7UvhxrxhaatqEjdArray;
-    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers, (IEnumerable<IChartModifier>) this.\u0023\u003DzUyqHQCymOwtN);
-    ObservableCollection<IChartModifier> childModifiers = this.\u0023\u003DzKj7nvWQ\u003D.ChartModifier.ChildModifiers;
+    CollectionHelper.AddRange<IChartModifier>((ICollection<IChartModifier>) this._chartSeriesViewModel.ChartModifier.ChildModifiers, (IEnumerable<IChartModifier>) this.\u0023\u003DzUyqHQCymOwtN);
+    ObservableCollection<IChartModifier> childModifiers = this._chartSeriesViewModel.ChartModifier.ChildModifiers;
     RolloverModifier jhzfqwrsvK3MyA6SqEjd = new RolloverModifier();
     jhzfqwrsvK3MyA6SqEjd.ShowAxisLabels = false;
     jhzfqwrsvK3MyA6SqEjd.UseInterpolation = false;
@@ -81,8 +81,8 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   public string ChartTheme
   {
-    get => this.\u0023\u003DzKj7nvWQ\u003D.SelectedTheme;
-    set => this.\u0023\u003DzKj7nvWQ\u003D.SelectedTheme = value;
+    get => this._chartSeriesViewModel.SelectedTheme;
+    set => this._chartSeriesViewModel.SelectedTheme = value;
   }
 
   public bool NoGapMode
@@ -106,7 +106,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     get
     {
       List<IChartBandElement> chartBandElementList = new List<IChartBandElement>();
-      chartBandElementList.AddRange(((IEnumerable) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Cast<IChartBandElement>());
+      chartBandElementList.AddRange(((IEnumerable) this._chartSeriesViewModel.Area.Elements).Cast<IChartBandElement>());
       return (IEnumerable<IChartBandElement>) new List<IChartBandElement>(chartBandElementList);
     }
   }
@@ -149,7 +149,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
     }
     if (id != new Guid())
       curve.Id = id;
-    ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Add((IChartElement) curve);
+    ((ICollection<IChartElement>) this._chartSeriesViewModel.Area.Elements).Add((IChartElement) curve);
     return (IChartBandElement) curve;
   }
 
@@ -157,18 +157,18 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   {
     if (elem == null)
       throw new ArgumentNullException(nameof (elem));
-    ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Remove((IChartElement) elem);
+    ((ICollection<IChartElement>) this._chartSeriesViewModel.Area.Elements).Remove((IChartElement) elem);
   }
 
   public void Clear()
   {
-    ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Clear();
+    ((ICollection<IChartElement>) this._chartSeriesViewModel.Area.Elements).Clear();
   }
 
   public void Reset()
   {
-    ScichartSurfaceMVVM zKj7nvWq = this.\u0023\u003DzKj7nvWQ\u003D;
-    INotifyList<IChartElement> elements = this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements;
+    ScichartSurfaceMVVM zKj7nvWq = this._chartSeriesViewModel;
+    INotifyList<IChartElement> elements = this._chartSeriesViewModel.Area.Elements;
     int index = 0;
     IChartElement[] chartElementArray = new IChartElement[((ICollection<IChartElement>) elements).Count];
     foreach (IChartElement chartElement in (IEnumerable<IChartElement>) elements)
@@ -181,12 +181,12 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
 
   public void Reset(IEnumerable<ICollection<LineData<DateTime>>> items)
   {
-    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.pubStatic_Action_ChartAxis_ ?? (EquityCurveChart.SomeClass34343383.pubStatic_Action_ChartAxis_ = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.ResetY1Annotation))));
+    this._chartSeriesViewModel.Reset((IEnumerable<IChartElement>) items.Cast<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq>().Select<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.pubStatic_Action_ChartAxis_ ?? (EquityCurveChart.SomeClass34343383.pubStatic_Action_ChartAxis_ = new Func<EquityCurveChart.\u0023\u003DztNaqcZK2DJoq, IChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.ResetY1Annotation))));
   }
 
   public void Reset(IEnumerable<IChartBandElement> elements)
   {
-    this.\u0023\u003DzKj7nvWQ\u003D.Reset((IEnumerable<IChartElement>) elements);
+    this._chartSeriesViewModel.Reset((IEnumerable<IChartElement>) elements);
   }
 
   private void \u0023\u003DzG8IJ51fy4J4_607kP0quVX8\u003D(bool _param1)
@@ -202,7 +202,7 @@ public class EquityCurveChart : UserControl, IPersistable, IComponentConnector, 
   {
     this.Clear();
     foreach (IChartElement chartElement in ((IEnumerable<SettingsStorage>) storage.GetValue<SettingsStorage[]>("elements", (SettingsStorage[]) null)).Select<SettingsStorage, ChartBandElement>(EquityCurveChart.SomeClass34343383.m_public_static_Func_ChartComponentViewModel_bool_ ?? (EquityCurveChart.SomeClass34343383.m_public_static_Func_ChartComponentViewModel_bool_ = new Func<SettingsStorage, ChartBandElement>(EquityCurveChart.SomeClass34343383.SomeMethond0343.\u0023\u003DzROcaIyQWPap\u0024vfll6Q\u003D\u003D))))
-      ((ICollection<IChartElement>) this.\u0023\u003DzKj7nvWQ\u003D.Area.Elements).Add(chartElement);
+      ((ICollection<IChartElement>) this._chartSeriesViewModel.Area.Elements).Add(chartElement);
   }
 
   public void Save(SettingsStorage storage)

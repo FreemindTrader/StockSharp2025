@@ -129,7 +129,7 @@ public class NumericAxis :
       IPointSeries ftrixUnpTllY1PkTyq = _param1.\u0023\u003Dz4nxjMSnapDjJ[index];
       if (uhIm4pSg8PxqhyA71 != null && ftrixUnpTllY1PkTyq != null && !(uhIm4pSg8PxqhyA71.get_YAxisId() != this.Id))
       {
-        \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D ns01UjmP40FpxAl2jmQ = _param1.\u0023\u003Dzoc6wScE\u003D[index];
+        IDataSeries ns01UjmP40FpxAl2jmQ = _param1.\u0023\u003Dzoc6wScE\u003D[index];
         IndexRange  g8Oq2rGx6KyfAreq = _param1.\u0023\u003Dz8O95DKv93zY9[index];
         DoubleRange klqcJ87Zm8UwE3WEjd1 = ns01UjmP40FpxAl2jmQ.get_DataSeriesType() != (DataSeriesType) 1 || g8Oq2rGx6KyfAreq.Diff.CompareTo(1000) >= 0 ? ftrixUnpTllY1PkTyq.\u0023\u003DzxNQHuqrEvxH2() : ns01UjmP40FpxAl2jmQ.GetWindowedYRange(new IndexRange (g8Oq2rGx6KyfAreq.Min, g8Oq2rGx6KyfAreq.Max)).AsDoubleRange();
         string key = string.Empty;
@@ -211,7 +211,7 @@ public class NumericAxis :
     IPointSeries _param2 = null)
   {
     this.\u0023\u003DzvScByjqid0AM = base.GetAxisParams();
-    \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D rfw9WrzF8qIcTicp0wQ = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D.OfType<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D>().FirstOrDefault<\u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D>();
+    TimeframeSegmentRenderableSeries rfw9WrzF8qIcTicp0wQ = _param1.\u0023\u003DzRS6ptUHIm4pSg8PXQHYA71s\u003D.OfType<TimeframeSegmentRenderableSeries>().FirstOrDefault<TimeframeSegmentRenderableSeries>();
     if (_param2 != null && rfw9WrzF8qIcTicp0wQ != null)
     {
       IRange<double> visibleRange = (IRange<double>) this.VisibleRange;

@@ -10,7 +10,7 @@ using System.ComponentModel;
 public interface IRenderableSeries : 
   INotifyPropertyChanged
 {
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries { get; set; }
+  IDataSeries DataSeries { get; set; }
 
   IRenderableSeries RenderSeries { get; set; }
 }

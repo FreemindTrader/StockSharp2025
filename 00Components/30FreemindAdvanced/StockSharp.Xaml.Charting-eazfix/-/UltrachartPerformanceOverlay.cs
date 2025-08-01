@@ -24,9 +24,9 @@ public sealed class UltrachartPerformanceOverlay :
   
   public static readonly DependencyProperty \u0023\u003DzKn3156UzRCt\u0024AII4BUa9Wfw\u003D = DependencyProperty.Register(nameof (UltrachartFps), typeof (double), typeof (UltrachartPerformanceOverlay), new PropertyMetadata((object) 0.0));
   
-  public static readonly DependencyProperty \u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D = DependencyProperty.Register(nameof (WpfFpsSeries), typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (UltrachartPerformanceOverlay), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D = DependencyProperty.Register(nameof (WpfFpsSeries), typeof (XyDataSeries<double, double>), typeof (UltrachartPerformanceOverlay), new PropertyMetadata((object) null));
   
-  public static readonly DependencyProperty \u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt = DependencyProperty.Register(nameof (UltrachartFpsSeries), typeof (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>), typeof (UltrachartPerformanceOverlay), new PropertyMetadata((object) null));
+  public static readonly DependencyProperty \u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt = DependencyProperty.Register(nameof (UltrachartFpsSeries), typeof (XyDataSeries<double, double>), typeof (UltrachartPerformanceOverlay), new PropertyMetadata((object) null));
   
   public static readonly DependencyProperty \u0023\u003Dzrh_06bSTsdjtRRWPZW671SE\u003D = DependencyProperty.Register(nameof (SmoothingWindowSize), typeof (int), typeof (UltrachartPerformanceOverlay), new PropertyMetadata((object) 20));
   
@@ -81,11 +81,11 @@ public sealed class UltrachartPerformanceOverlay :
     }
   }
 
-  public \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double> UltrachartFpsSeries
+  public XyDataSeries<double, double> UltrachartFpsSeries
   {
     get
     {
-      return (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>) this.GetValue(UltrachartPerformanceOverlay.\u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt);
+      return (XyDataSeries<double, double>) this.GetValue(UltrachartPerformanceOverlay.\u0023\u003Dzj5GKwE9GOTZLXrb8\u0024MTNNy3saxHt);
     }
     set
     {
@@ -93,11 +93,11 @@ public sealed class UltrachartPerformanceOverlay :
     }
   }
 
-  public \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double> WpfFpsSeries
+  public XyDataSeries<double, double> WpfFpsSeries
   {
     get
     {
-      return (\u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>) this.GetValue(UltrachartPerformanceOverlay.\u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D);
+      return (XyDataSeries<double, double>) this.GetValue(UltrachartPerformanceOverlay.\u0023\u003DzlxwHaE7e3X98kFSxiA\u003D\u003D);
     }
     set
     {
@@ -176,10 +176,10 @@ public sealed class UltrachartPerformanceOverlay :
     this.\u0023\u003DzWewHyEvM_sOk = Stopwatch.StartNew();
     this.\u0023\u003Dz7DSowRM8YI8lUCePfEYzKln_4DSk = 0.0;
     this.\u0023\u003DzCc9QDFMMWYXAfyk0nA\u003D\u003D = 0.0;
-    \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double> m70jMp5uwjMxR4ajr1 = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>();
+    XyDataSeries<double, double> m70jMp5uwjMxR4ajr1 = new XyDataSeries<double, double>();
     m70jMp5uwjMxR4ajr1.FifoCapacity = new int?(this.SmoothingWindowSize);
     this.UltrachartFpsSeries = m70jMp5uwjMxR4ajr1;
-    \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double> m70jMp5uwjMxR4ajr2 = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<double, double>();
+    XyDataSeries<double, double> m70jMp5uwjMxR4ajr2 = new XyDataSeries<double, double>();
     m70jMp5uwjMxR4ajr2.FifoCapacity = new int?(this.SmoothingWindowSize);
     this.WpfFpsSeries = m70jMp5uwjMxR4ajr2;
     this.TotalPointCount = 0;

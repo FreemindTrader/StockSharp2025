@@ -63,11 +63,11 @@ public partial class ChartCandleElementPicker : ThemedWindow
 
 //namespace StockSharp.Xaml.Charting
 //{
-//    public partial class CandlestickUIPicker : ThemedWindow
+//    public partial class ChartCandleElementViewModelPicker : ThemedWindow
 //    {
 
 
-//        public CandlestickUIPicker( )
+//        public ChartCandleElementViewModelPicker( )
 //        {
 //            InitializeComponent( );
 //        }

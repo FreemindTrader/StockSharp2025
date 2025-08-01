@@ -40,9 +40,9 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
   
   private readonly object \u0023\u003DzTHDpVqL3PQeslcVw73Y\u0024d38\u003D;
   
-  private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzZLrNEf3FM2NGYcsrMw\u003D\u003D;
+  private IDataSeries \u0023\u003DzZLrNEf3FM2NGYcsrMw\u003D\u003D;
   
-  private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzQsY1\u0024NybEpjavuW8NInEKEc\u003D;
+  private IDataSeries \u0023\u003DzQsY1\u0024NybEpjavuW8NInEKEc\u003D;
   
   private IAxis \u0023\u003DzSzpQmjX3i_6OFgfsBw\u003D\u003D;
   
@@ -66,7 +66,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
   
   private IRenderPassData \u0023\u003Dzq_BOEKz6TP1hJ5Vkn77QRCE\u003D;
   
-  private \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D \u0023\u003Dz4LlMqXRKgSCCgq5b0w\u003D\u003D;
+  private IXxxPaletteProvider \u0023\u003Dz4LlMqXRKgSCCgq5b0w\u003D\u003D;
   
   private int \u0023\u003DzPLg_3LuBugD5T43IfVvWRrI\u003D;
   
@@ -171,19 +171,19 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     return this.\u0023\u003DzTHDpVqL3PQeslcVw73Y\u0024d38\u003D;
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries
+  public IDataSeries DataSeries
   {
     get => this.\u0023\u003DzZLrNEf3FM2NGYcsrMw\u003D\u003D;
     set => this.\u0023\u003DzZLrNEf3FM2NGYcsrMw\u003D\u003D = value;
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzrxNpasLpWieV8A5\u0024og\u003D\u003D()
+  public IDataSeries \u0023\u003DzrxNpasLpWieV8A5\u0024og\u003D\u003D()
   {
     return this.\u0023\u003DzQsY1\u0024NybEpjavuW8NInEKEc\u003D;
   }
 
   public void \u0023\u003DzbqehJBG79B7DqvkFGg\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1)
+    IDataSeries _param1)
   {
     this.\u0023\u003DzQsY1\u0024NybEpjavuW8NInEKEc\u003D = _param1;
   }
@@ -274,7 +274,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     this.\u0023\u003Dzq_BOEKz6TP1hJ5Vkn77QRCE\u003D = _param1;
   }
 
-  public \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D PaletteProvider
+  public IXxxPaletteProvider PaletteProvider
   {
     get => this.\u0023\u003Dz4LlMqXRKgSCCgq5b0w\u003D\u003D;
     set => this.\u0023\u003Dz4LlMqXRKgSCCgq5b0w\u003D\u003D = value;
@@ -328,7 +328,7 @@ public sealed class \u0023\u003Dzq8s_Zceh9qBcjYPACJ3nRLB6yOkZThylfw\u003D\u003D 
     throw new NotImplementedException();
   }
 
-  public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+  public SeriesInfo \u0023\u003DzZZbJdAS6fDJ\u0024(
     HitTestInfo _param1)
   {
     throw new NotImplementedException();

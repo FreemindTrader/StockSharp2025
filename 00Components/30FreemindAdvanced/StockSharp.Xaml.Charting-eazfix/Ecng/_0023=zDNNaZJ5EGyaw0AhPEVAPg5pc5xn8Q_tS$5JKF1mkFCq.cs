@@ -84,7 +84,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
   public static IEnumerable<DependencyObject> \u0023\u003Dzy8j99dqTJ3Nk(
     this DependencyObject _param0)
   {
-    \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D zeaY3Uu1m4CyxerxRw = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.\u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D();
+    \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.SomeClass34343333 zeaY3Uu1m4CyxerxRw = new \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFCq0.SomeClass34343333();
     zeaY3Uu1m4CyxerxRw._someChartElement0343123 = _param0;
     return zeaY3Uu1m4CyxerxRw._someChartElement0343123.\u0023\u003Dz42LXJzRXhLdXlR4ewQ\u003D\u003D().Where<DependencyObject>(new Func<DependencyObject, bool>(zeaY3Uu1m4CyxerxRw.\u0023\u003Dz\u00243a\u0024WNY1DIzVGhsFKA\u003D\u003D));
   }
@@ -127,7 +127,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
   private sealed class \u0023\u003Dz\u0024BXIxgXe6cQmBJ9OJYFFE7I\u003D
   {
     public ItemsControl \u0023\u003Dzki8twMk\u003D;
-    public Func<int, DependencyObject> \u0023\u003Dzon\u0024_RZacJIPJ;
+    public Func<int, DependencyObject> _memeber02;
 
     public DependencyObject \u0023\u003DzGIoUCXflrj8FI3FtdA\u003D\u003D(int _param1)
     {
@@ -442,7 +442,7 @@ public static class \u0023\u003DzDNNaZJ5EGyaw0AhPEVAPg5pc5xn8Q_tS\u00245JKF1mkFC
         this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003Dzki8twMk\u003D = this.\u0023\u003DzuYRe9bI\u003D as ItemsControl;
         if (this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003Dzki8twMk\u003D != null)
         {
-          this.\u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D = Enumerable.Range(0, this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003Dzki8twMk\u003D.Items.Count).Select<int, DependencyObject>(this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003Dzon\u0024_RZacJIPJ ?? (this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<int, DependencyObject>(this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003DzGIoUCXflrj8FI3FtdA\u003D\u003D))).OfType<FrameworkElement>().GetEnumerator();
+          this.\u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D = Enumerable.Range(0, this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003Dzki8twMk\u003D.Items.Count).Select<int, DependencyObject>(this.\u0023\u003DzOJxP0TlBhTNH._memeber02 ?? (this.\u0023\u003DzOJxP0TlBhTNH._memeber02 = new Func<int, DependencyObject>(this.\u0023\u003DzOJxP0TlBhTNH.\u0023\u003DzGIoUCXflrj8FI3FtdA\u003D\u003D))).OfType<FrameworkElement>().GetEnumerator();
           this.\u0023\u003Dz4fzyEZ1SsHYa = -3;
         }
         else
@@ -640,7 +640,7 @@ label_22:
     }
   }
 
-  private sealed class \u0023\u003Dzea\u0024y3Uu1m4CYxerxRw\u003D\u003D
+  private sealed class SomeClass34343333
   {
     public 
     #nullable disable

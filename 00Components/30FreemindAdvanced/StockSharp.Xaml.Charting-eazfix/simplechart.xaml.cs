@@ -70,7 +70,7 @@ public sealed class SimpleChart :
     this.PropertyChangedEvent += _param1;
   }
 
-  void INotifyPropertyChanged.\u0023\u003DzrlR5kckLtgr8uURxQFpsiL65kjNN(
+  void INotifyPropertyChanged.PropertyChanged(
     PropertyChangedEventHandler _param1)
   {
     this.PropertyChangedEvent -= _param1;

@@ -213,9 +213,9 @@ namespace StockSharp.Xaml.Charting
         */
         private void OnAddCandlesArea( ChartArea candleArea )
         {
-            _candleStickUI = new ChartCandleElementEx();
+            _ChartCandleElementViewModel = new ChartCandleElementEx();
 
-            _candleStickUI.ShowAxisMarker = false;
+            _ChartCandleElementViewModel.ShowAxisMarker = false;
 
             if ( _candleSeries == null )
             {
@@ -231,7 +231,7 @@ namespace StockSharp.Xaml.Charting
 
             //_candleSeries.Security = null;
 
-            AddElement( candleArea, _candleStickUI, selectedSeries );
+            AddElement( candleArea, _ChartCandleElementViewModel, selectedSeries );
             selectedSeries.PropertyChanged += new PropertyChangedEventHandler( OnCandleSeriesPropertyChanged );
         }
 
@@ -292,7 +292,7 @@ namespace StockSharp.Xaml.Charting
             {
                 if ( !indicatorPicker.AutoSelectCandles )
                 {
-                    var selectedElement = CustomShowWindowService.ShowCandlestickUIPicker( array, chartUi );
+                    var selectedElement = CustomShowWindowService.ShowChartCandleElementViewModelPicker( array, chartUi );
 
                     chartUi = selectedElement;
                 }

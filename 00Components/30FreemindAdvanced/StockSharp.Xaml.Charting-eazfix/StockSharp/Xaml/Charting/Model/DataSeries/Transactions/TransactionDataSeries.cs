@@ -19,17 +19,17 @@ public class TransactionDataSeries :
   BindableObject ,
   IDataSeries<DateTime, double>,
   ISuspendable,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D
+  IDataSeries
 {
   private string _seriesName;
-  private readonly \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> _candlesSeries;
+  private readonly OhlcDataSeries<DateTime, double> _candlesSeries;
   private readonly AbstractList<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D> _data = new AbstractList<\u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D>();
   private readonly TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D _yValues;
   private List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> _transactionBuffer = new List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>();
   private bool _flushingBufferedTransactions;
 
   public TransactionDataSeries(
-    \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<DateTime, double> candles)
+    OhlcDataSeries<DateTime, double> candles)
   {
     this._candlesSeries = candles ?? throw new ArgumentNullException(nameof (candles));
     this._yValues = new TransactionDataSeries.\u0023\u003DzV\u0024R8yw8\u003D(this);
@@ -77,12 +77,12 @@ public class TransactionDataSeries :
 
   public IComparable YMax => this.YRange.Max;
 
-  IComparable \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMin
+  IComparable IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMin
   {
     get => this.XRange.Min;
   }
 
-  IComparable \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMax
+  IComparable IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXMax
   {
     get => this.XRange.Max;
   }
@@ -107,7 +107,7 @@ public class TransactionDataSeries :
 
   private IList<DateTime> XValues => this._dates;
 
-  IList \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXValues
+  IList IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EXValues
   {
     get => (IList) this.XValues;
   }
@@ -117,7 +117,7 @@ public class TransactionDataSeries :
     get => this.XValues;
   }
 
-  IList \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYValues
+  IList IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EYValues
   {
     get => (IList) this._yValues;
   }
@@ -186,25 +186,25 @@ public class TransactionDataSeries :
     return this._candlesSeries.GetIndicesRange(visibleRange);
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IRange xRange)
   {
     IndexRange  indicesRange = this.GetIndicesRange(xRange);
     return !indicesRange.IsDefined ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indicesRange);
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IndexRange  indexRange,
     bool getPositiveRange)
   {
     return !indexRange.IsDefined ? (IRange) new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indexRange);
   }
 
-  IRange \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
+  IRange IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EGetWindowedYRange(
     IRange xRange,
     bool getPositiveRange)
   {
-    return ((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this).\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(xRange);
+    return ((IDataSeries) this).\u0023\u003DzIvBsiY\u0024C5tRlcFKGo7\u002430Ac\u003D(xRange);
   }
 
   public IRange XRange
@@ -267,13 +267,13 @@ public class TransactionDataSeries :
           List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D> zU3TaXfsList = new List<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>();
           foreach (ChartDrawData.\u0023\u003DzU3TaXFs\u003D zU3TaXfs in this._transactionBuffer)
           {
-            int index = this.XValues.\u0023\u003Dzk3Bi7DnEdNPh<DateTime>(zU3TaXfs.\u0023\u003Dzg86amuQ\u003D(), (IComparer<DateTime>) null);
+            int index = this.XValues.\u0023\u003Dzk3Bi7DnEdNPh<DateTime>(zU3TaXfs.Time, (IComparer<DateTime>) null);
             if (index < 0)
               index = ~index - 1;
             if (index >= 0)
             {
               DateTime date = this._dates[index];
-              if (zU3TaXfs.\u0023\u003Dzg86amuQ\u003D() >= date + valueOrDefault)
+              if (zU3TaXfs.Time >= date + valueOrDefault)
               {
                 zU3TaXfsList.Add(zU3TaXfs);
               }
@@ -383,12 +383,12 @@ public class TransactionDataSeries :
   }
 
   [Obsolete("IsAttached is obsolete because there is no DataSeriesSet now")]
-  bool \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsAttached
+  bool IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EIsAttached
   {
     get => throw new NotImplementedException();
   }
 
-  int? \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFifoCapacity
+  int? IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFifoCapacity
   {
     get => throw new NotImplementedException();
     set => throw new NotImplementedException();
@@ -418,14 +418,14 @@ public class TransactionDataSeries :
     throw new NotImplementedException();
   }
 
-  int \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindIndex(
+  int IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindIndex(
     IComparable x,
     \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSVworRoy7o1mkb\u0024GDjE\u003D searchMode)
   {
     throw new NotImplementedException();
   }
 
-  int \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindClosestPoint(
+  int IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindClosestPoint(
     IComparable x,
     IComparable y,
     double xyScaleRatio,
@@ -434,7 +434,7 @@ public class TransactionDataSeries :
     throw new NotImplementedException();
   }
 
-  int \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindClosestLine(
+  int IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EFindClosestLine(
     IComparable x,
     IComparable y,
     double xyScaleRatio,
@@ -448,7 +448,7 @@ public class TransactionDataSeries :
   {
   }
 
-  IPointSeries \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
+  IPointSeries IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToPointSeries(
     IList column,
     ResamplingMode resamplingMode,
     IndexRange  pointRange,
@@ -458,7 +458,7 @@ public class TransactionDataSeries :
     throw new NotImplementedException();
   }
 
-  HitTestInfo \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
+  HitTestInfo IDataSeries.StockSharp\u002EXaml\u002ECharting\u002EModel\u002EDataSeries\u002EIDataSeries\u002EToHitTestInfo(
     int index)
   {
     return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
@@ -543,7 +543,7 @@ public class TransactionDataSeries :
       int count = this._parentElement._data.Count;
       for (int index = 0; index < count; ++index)
       {
-        if (this._parentElement._data[index].\u0023\u003Dzu7q98_E\u003D().DoubleEquals(_param1))
+        if (this._parentElement._data[index].Y.DoubleEquals(_param1))
           return index;
       }
       return -1;
@@ -551,7 +551,7 @@ public class TransactionDataSeries :
 
     public double this[int _param1]
     {
-      get => this._parentElement._data[_param1].\u0023\u003Dzu7q98_E\u003D();
+      get => this._parentElement._data[_param1].Y;
       set => throw new NotImplementedException();
     }
 
@@ -622,13 +622,13 @@ public class TransactionDataSeries :
       public double \u0023\u003Dz_cR1AGMqLDwfRLrn\u0024w\u003D\u003D(
         \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1)
       {
-        return _param1.\u0023\u003Dzu7q98_E\u003D();
+        return _param1.Y;
       }
 
       public double \u0023\u003Dzt14kkhn5JWbwz4bEVw\u003D\u003D(
         \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D _param1)
       {
-        return _param1.\u0023\u003Dzu7q98_E\u003D();
+        return _param1.Y;
       }
     }
   }

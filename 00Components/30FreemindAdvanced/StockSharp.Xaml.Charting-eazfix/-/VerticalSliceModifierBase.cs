@@ -131,7 +131,7 @@ public abstract class VerticalSliceModifierBase :
       this.\u0023\u003DzpPviEVAcoiYQ();
     this.\u0023\u003DzCTuuQt0\u003D(false);
     ObservableCollection<IRenderableSeries> renderableSeries = this.ParentSurface.get_RenderableSeries();
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> source = new ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>();
+    ObservableCollection<SeriesInfo> source = new ObservableCollection<SeriesInfo>();
     if (renderableSeries != null)
     {
       VerticalSliceModifierBase.\u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D uuovZyvmyeAqC2gog8 = new VerticalSliceModifierBase.\u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D();
@@ -139,7 +139,7 @@ public abstract class VerticalSliceModifierBase :
       uuovZyvmyeAqC2gog8.\u0023\u003Dz4bf8Oyc\u003D = this.XAxis;
       if (uuovZyvmyeAqC2gog8.\u0023\u003Dz4bf8Oyc\u003D != null)
       {
-        foreach (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg in (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) source.OrderBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, double>(uuovZyvmyeAqC2gog8.\u0023\u003Dzon\u0024_RZacJIPJ ?? (uuovZyvmyeAqC2gog8.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, double>(uuovZyvmyeAqC2gog8.\u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D))))
+        foreach (SeriesInfo vdj8C0KctI6r27Gg in (IEnumerable<SeriesInfo>) source.OrderBy<SeriesInfo, double>(uuovZyvmyeAqC2gog8._memeber02 ?? (uuovZyvmyeAqC2gog8._memeber02 = new Func<SeriesInfo, double>(uuovZyvmyeAqC2gog8.\u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D))))
         {
           FrameworkElement frameworkElement = this.\u0023\u003DzoHJDgDlSejs6FIKEDvqYw6U\u003D(vdj8C0KctI6r27Gg);
           if (this.\u0023\u003Dz\u00242kgBXq\u00240zMRcZoHT\u0024crAZw\u003D(frameworkElement, vdj8C0KctI6r27Gg))
@@ -151,17 +151,17 @@ public abstract class VerticalSliceModifierBase :
       }
       this.\u0023\u003Dz0by717G8vA4kLgq5Pw\u003D\u003D(_param1);
     }
-    this.SeriesData.UpdateSeries((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) source);
+    this.SeriesData.UpdateSeries((IEnumerable<SeriesInfo>) source);
   }
 
   protected virtual void \u0023\u003Dz_HFvQ2jjCDBP(
-    IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1,
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param2)
+    IEnumerable<SeriesInfo> _param1,
+    ObservableCollection<SeriesInfo> _param2)
   {
-    _param1.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(((Collection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param2).Add));
+    _param1.\u0023\u003Dz30RSSSygABj_<SeriesInfo>(new Action<SeriesInfo>(((Collection<SeriesInfo>) _param2).Add));
   }
 
-  protected override IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
+  protected override IEnumerable<SeriesInfo> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
     return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new VerticalSliceModifierBase.SomeClass7654()
@@ -172,11 +172,11 @@ public abstract class VerticalSliceModifierBase :
   }
 
   protected abstract FrameworkElement \u0023\u003DzoHJDgDlSejs6FIKEDvqYw6U\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1);
+    SeriesInfo _param1);
 
   private bool \u0023\u003Dz\u00242kgBXq\u00240zMRcZoHT\u0024crAZw\u003D(
     FrameworkElement _param1,
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param2)
+    SeriesInfo _param2)
   {
     bool flag = _param1 != null;
     if (flag)
@@ -227,7 +227,7 @@ public abstract class VerticalSliceModifierBase :
 
   private void \u0023\u003DzFVmSB_1\u0024FHARkzhGiA\u003D\u003D(
     FrameworkElement _param1,
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param2)
+    SeriesInfo _param2)
   {
     if (!(_param1.GetValue(VerticalSliceModifierBase.\u0023\u003Dzj5rVXg3E650t0FU9dw\u003D\u003D) is FrameworkElement frameworkElement))
     {
@@ -490,10 +490,10 @@ public abstract class VerticalSliceModifierBase :
   private sealed class \u0023\u003DzE1LcgUuovZyvmyeAqC2gog8\u003D
   {
     public IAxis \u0023\u003Dz4bf8Oyc\u003D;
-    public Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, double> \u0023\u003Dzon\u0024_RZacJIPJ;
+    public Func<SeriesInfo, double> _memeber02;
 
     public double \u0023\u003Dz7Vd1ie04V9seGu9XAXPfhNY\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       return !this.\u0023\u003Dz4bf8Oyc\u003D.IsHorizontalAxis ? _param1.XyCoordinate.X : _param1.XyCoordinate.Y;
     }

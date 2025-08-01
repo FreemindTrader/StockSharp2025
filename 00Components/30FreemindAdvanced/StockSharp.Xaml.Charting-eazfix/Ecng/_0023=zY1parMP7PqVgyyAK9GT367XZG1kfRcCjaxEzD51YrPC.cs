@@ -34,7 +34,7 @@ public struct \u0023\u003DzY1parMP7PqVgyyAK9GT367XZG1kfRcCjaxEzD51YrPC6 :
   }
 
   [SpecialName]
-  public double \u0023\u003Dzu7q98_E\u003D() => this.\u0023\u003Dz0HHYg1s\u003D;
+  public double Y => this.\u0023\u003Dz0HHYg1s\u003D;
 
   public double \u0023\u003DzM49\u0024G3E\u003D() => this.\u0023\u003DzN7MEa5Q\u003D;
 

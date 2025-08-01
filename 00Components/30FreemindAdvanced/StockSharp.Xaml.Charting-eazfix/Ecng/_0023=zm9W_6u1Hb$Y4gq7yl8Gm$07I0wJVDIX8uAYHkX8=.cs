@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 #nullable disable
 public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAYHkX8\u003D : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
+  SeriesInfo
 {
   
   private IComparable \u0023\u003DzL8mySXs\u003D;
@@ -29,12 +29,12 @@ public sealed class \u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAYHk
     get => this.\u0023\u003DzL8mySXs\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzL8mySXs\u003D, value, nameof (AccumulatedValue));
+      this.OnSetPropertyChanged<IComparable>(ref this.\u0023\u003DzL8mySXs\u003D, value, nameof (AccumulatedValue));
     }
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     this.AccumulatedValue = ((\u0023\u003Dzm9W_6u1Hb\u0024Y4gq7yl8Gm\u002407I0wJVDIX8uAYHkX8\u003D) _param1).AccumulatedValue;

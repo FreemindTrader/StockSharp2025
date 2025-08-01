@@ -59,17 +59,17 @@ public sealed class VerticalSliceModifier :
     }
   }
 
-  protected override IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
+  protected override IEnumerable<SeriesInfo> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
-    return (IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) new VerticalSliceModifier.\u0023\u003DzZWngLGgklhPywGpG5ND4_Zk\u003D(-2)
+    return (IEnumerable<SeriesInfo>) new VerticalSliceModifier.\u0023\u003DzZWngLGgklhPywGpG5ND4_Zk\u003D(-2)
     {
       _variableSome3535 = this
     };
   }
 
   protected override FrameworkElement \u0023\u003DzoHJDgDlSejs6FIKEDvqYw6U\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     VerticalSliceModifier.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D k0hz6MwLrPm7JfgVw01g = new VerticalSliceModifier.\u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D()
     {
@@ -90,7 +90,7 @@ public sealed class VerticalSliceModifier :
   protected override void \u0023\u003DzpWd3bhexNgJne_G3pk5QQoE\u003D(FrameworkElement _param1)
   {
     base.\u0023\u003DzpWd3bhexNgJne_G3pk5QQoE\u003D(_param1);
-    if (!(_param1.DataContext is \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D dataContext))
+    if (!(_param1.DataContext is SeriesInfo dataContext))
       return;
     this.\u0023\u003DzIG74tcJ5rDynZ21mNm2Rm5I\u003D[(BaseRenderableSeries) dataContext.RenderableSeries].\u0023\u003DzhggR\u00247o\u003D((TemplatableControl) _param1);
   }
@@ -102,10 +102,10 @@ public sealed class VerticalSliceModifier :
   protected override bool \u0023\u003Dzt9d2ExuvJfVV(Point _param1) => true;
 
   protected override void \u0023\u003Dz_HFvQ2jjCDBP(
-    IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1,
-    ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param2)
+    IEnumerable<SeriesInfo> _param1,
+    ObservableCollection<SeriesInfo> _param2)
   {
-    _param1.\u0023\u003Dz30RSSSygABj_<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(new VerticalSliceModifier.SomeInternalSealedClass98364()
+    _param1.\u0023\u003Dz30RSSSygABj_<SeriesInfo>(new Action<SeriesInfo>(new VerticalSliceModifier.SomeInternalSealedClass98364()
     {
       \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D = _param2
     }.\u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D));
@@ -254,7 +254,7 @@ public sealed class VerticalSliceModifier :
   }
 
   [DebuggerHidden]
-  private IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzhtAjDMSkTbY7(
+  private IEnumerable<SeriesInfo> \u0023\u003DzhtAjDMSkTbY7(
     Point _param1)
   {
     return base.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1);
@@ -275,7 +275,7 @@ public sealed class VerticalSliceModifier :
   private sealed class \u0023\u003DzHF4K0hz6MwLRPm7JFGVw01g\u003D
   {
     public BaseRenderableSeries _IRenderableSeries334;
-    public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzxhPyxntvLsMx;
+    public SeriesInfo \u0023\u003DzxhPyxntvLsMx;
 
     public TemplatableControl \u0023\u003DzfwAthCM9gFRqdQgGSqHIvpSD28CW()
     {
@@ -295,10 +295,10 @@ public sealed class VerticalSliceModifier :
 
   private sealed class SomeInternalSealedClass98364
   {
-    public ObservableCollection<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
+    public ObservableCollection<SeriesInfo> \u0023\u003Dz1H5OM_lRQN1_Ej_iLQ\u003D\u003D;
 
     public void \u0023\u003Dzk4y25HcID\u0024p8FcTs_CL_Zpw\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       if (!_param1.RenderableSeries.\u0023\u003DzVxrZQ3k9ZBGJ((\u0023\u003Dz\u0024rSV2280vAtTYxM9FrXMy7z1KtGY\u0024N_H_U3tz7I\u003D) 3))
         return;
@@ -310,13 +310,13 @@ public sealed class VerticalSliceModifier :
     IDisposable,
     IEnumerable,
     IEnumerator,
-    IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>,
-    IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>
+    IEnumerable<SeriesInfo>,
+    IEnumerator<SeriesInfo>
   {
     
     private int \u0023\u003Dz4fzyEZ1SsHYa;
     
-    private \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dzaev1bhaFFIDX;
+    private SeriesInfo \u0023\u003Dzaev1bhaFFIDX;
     
     private int \u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D;
     
@@ -324,7 +324,7 @@ public sealed class VerticalSliceModifier :
     
     private IEnumerator<VerticalLineAnnotation> \u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D;
     
-    private IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D;
+    private IEnumerator<SeriesInfo> \u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D;
 
     [DebuggerHidden]
     public \u0023\u003DzZWngLGgklhPywGpG5ND4_Zk\u003D(int _param1)
@@ -390,7 +390,7 @@ label_7:
           return true;
         }
         this.\u0023\u003DzhVCln\u0024A7RxgYzcG71w\u003D\u003D();
-        this.\u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D = (IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) null;
+        this.\u0023\u003Dzc3rfTwtoPKq7U6lxKg\u003D\u003D = (IEnumerator<SeriesInfo>) null;
 label_9:
         while (this.\u0023\u003DzOh2sOcw05f8kGtMekg\u003D\u003D.MoveNext())
         {
@@ -430,7 +430,7 @@ label_9:
     }
 
     [DebuggerHidden]
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>.\u0023\u003Dz4\u0024vcRAdnkf8XAMQ6U6I6aJAVdQshEFF3YrEuKf9hCSePAnpiCKyv8pQ\u003D()
+    SeriesInfo IEnumerator<SeriesInfo>.\u0023\u003Dz4\u0024vcRAdnkf8XAMQ6U6I6aJAVdQshEFF3YrEuKf9hCSePAnpiCKyv8pQ\u003D()
     {
       return this.\u0023\u003Dzaev1bhaFFIDX;
     }
@@ -451,7 +451,7 @@ label_9:
     #nullable enable
     IEnumerator<
     #nullable disable
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>.\u0023\u003DzdCr_FD\u0024knmYtmaB5oybNnJEENtOXJw7Q1xWzDzSUVGdOwwA2iYK9I4g\u003D()
+    SeriesInfo> IEnumerable<SeriesInfo>.\u0023\u003DzdCr_FD\u0024knmYtmaB5oybNnJEENtOXJw7Q1xWzDzSUVGdOwwA2iYK9I4g\u003D()
     {
       VerticalSliceModifier.\u0023\u003DzZWngLGgklhPywGpG5ND4_Zk\u003D lggklhPywGpG5Nd4Zk;
       if (this.\u0023\u003Dz4fzyEZ1SsHYa == -2 && this.\u0023\u003DzFd7NMxipJEwB36N0OA\u003D\u003D == Environment.CurrentManagedThreadId)
@@ -464,7 +464,7 @@ label_9:
         lggklhPywGpG5Nd4Zk = new VerticalSliceModifier.\u0023\u003DzZWngLGgklhPywGpG5ND4_Zk\u003D(0);
         lggklhPywGpG5Nd4Zk._variableSome3535 = this._variableSome3535;
       }
-      return (IEnumerator<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) lggklhPywGpG5Nd4Zk;
+      return (IEnumerator<SeriesInfo>) lggklhPywGpG5Nd4Zk;
     }
 
     [DebuggerHidden]

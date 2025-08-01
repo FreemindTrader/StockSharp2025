@@ -1,9 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: -.ThemeManager
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
+﻿using SciChart.Core.Framework;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -16,12 +11,12 @@ namespace StockSharp.Charting;
 
 public static class ThemeManager
 {
-  public static readonly DependencyProperty \u0023\u003DzOJJsEsQ\u003D = DependencyProperty.RegisterAttached("Theme", typeof (string), typeof (ThemeManager), (PropertyMetadata) new FrameworkPropertyMetadata((object) string.Empty, FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(ThemeManager.\u0023\u003Dzb3YxwRaSuvYM)));
-  private static EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> \u0023\u003Dz8Fi7DbieAZ0u;
-  private static readonly IDictionary<string, ResourceDictionary> \u0023\u003DzMBUtRf9zXbZf = (IDictionary<string, ResourceDictionary>) new Dictionary<string, ResourceDictionary>();
-  private static \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D \u0023\u003DzObiFrX5IN\u0024C0;
-  private static readonly Dictionary<string, \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D> \u0023\u003Dz782V6KE\u00242buI = new Dictionary<string, \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D>();
-  public static IList<string> \u0023\u003DzPNNG5dU2KvYM = (IList<string>) new List<string>(7)
+    public static readonly DependencyProperty ThemeProperty = DependencyProperty.RegisterAttached("Theme", typeof(string), typeof(ThemeManager), (PropertyMetadata)new FrameworkPropertyMetadata((object)string.Empty, FrameworkPropertyMetadataOptions.Inherits, new PropertyChangedCallback(ThemeManager.OnThemeChanged)));
+    public static EventHandler<ThemeAppliedEventArgs> ThemeApplied;
+    private static readonly IDictionary<string, ResourceDictionary> _themes = (IDictionary<string, ResourceDictionary>)new Dictionary<string, ResourceDictionary>();
+    private static IThemeProvider _themeColorProvider;
+    private static readonly Dictionary<string, IThemeProvider> ThemeProviders = new Dictionary<string, IThemeProvider>();
+    public static IList<string> _allThemes = (IList<string>)new List<string>()
   {
     "BlackSteel",
     "BrightSpark",
@@ -32,149 +27,123 @@ public static class ThemeManager
     "Oscilloscope"
   };
 
-  static ThemeManager()
-  {
-    ThemeManager.\u0023\u003DzwI1vePI9DZf8().\u0023\u003DzeHF6BUxLFClh(ThemeManager.\u0023\u003DzB0x3mHFPBNZB("ExpressionDark"));
-  }
-
-  public static string GetTheme(DependencyObject _param0)
-  {
-    return (string) _param0.GetValue(ThemeManager.\u0023\u003DzOJJsEsQ\u003D);
-  }
-
-  public static void SetTheme(DependencyObject _param0, string _param1)
-  {
-    _param0.SetValue(ThemeManager.\u0023\u003DzOJJsEsQ\u003D, (object) _param1);
-  }
-
-  public static void \u0023\u003DzBkgEo7IVSEjs(
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> _param0)
-  {
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> eventHandler1 = ThemeManager.\u0023\u003Dz8Fi7DbieAZ0u;
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> comparand;
-    do
+    static ThemeManager()
     {
-      comparand = eventHandler1;
-      EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> eventHandler2 = comparand + _param0;
-      eventHandler1 = Interlocked.CompareExchange<EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D>>(ref ThemeManager.\u0023\u003Dz8Fi7DbieAZ0u, eventHandler2, comparand);
+        ThemeManager.ThemeProvider().ApplyTheme(ThemeManager.GetThemeResourceDictionary("ExpressionDark"));
     }
-    while (eventHandler1 != comparand);
-  }
 
-  public static void \u0023\u003DzmW2TnDsqzeZU(
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> _param0)
-  {
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> eventHandler1 = ThemeManager.\u0023\u003Dz8Fi7DbieAZ0u;
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> comparand;
-    do
+    public static string GetTheme(DependencyObject _param0)
     {
-      comparand = eventHandler1;
-      EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> eventHandler2 = comparand - _param0;
-      eventHandler1 = Interlocked.CompareExchange<EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D>>(ref ThemeManager.\u0023\u003Dz8Fi7DbieAZ0u, eventHandler2, comparand);
+        return (string)_param0.GetValue(ThemeManager.ThemeProperty);
     }
-    while (eventHandler1 != comparand);
-  }
 
-  public static IList<string> \u0023\u003DzBG3JZN5PsfMx()
-  {
-    return ThemeManager.\u0023\u003DzPNNG5dU2KvYM;
-  }
-
-  public static \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D \u0023\u003DzwI1vePI9DZf8()
-  {
-    return ThemeManager.\u0023\u003DzObiFrX5IN\u0024C0 ?? (ThemeManager.\u0023\u003DzObiFrX5IN\u0024C0 = (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D) new \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u003D());
-  }
-
-  public static void \u0023\u003DzgrgNv7k\u003D(string _param0, ResourceDictionary _param1)
-  {
-    if (ThemeManager.\u0023\u003DzMBUtRf9zXbZf.ContainsKey(_param0))
-      return;
-    ThemeManager.\u0023\u003DzMBUtRf9zXbZf.Add(_param0, _param1);
-    \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D gmt9VmM5IkNVtVwybkk = (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D) new \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u003D();
-    gmt9VmM5IkNVtVwybkk.\u0023\u003DzeHF6BUxLFClh(_param1);
-    ThemeManager.\u0023\u003Dz782V6KE\u00242buI.Add(_param0, gmt9VmM5IkNVtVwybkk);
-    ThemeManager.\u0023\u003DzPNNG5dU2KvYM.Add(_param0);
-  }
-
-  public static void \u0023\u003DzRzbRF1o\u003D(string _param0)
-  {
-    if (ThemeManager.\u0023\u003DzMBUtRf9zXbZf.ContainsKey(_param0) || !ThemeManager.\u0023\u003Dz782V6KE\u00242buI.ContainsKey(_param0))
-      return;
-    ThemeManager.\u0023\u003DzMBUtRf9zXbZf.Remove(_param0);
-    ThemeManager.\u0023\u003Dz782V6KE\u00242buI.Remove(_param0);
-    ThemeManager.\u0023\u003DzPNNG5dU2KvYM.Remove(_param0);
-  }
-
-  public static \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D \u0023\u003DzrILtKW7bADnV(
-    string _param0)
-  {
-    _param0 = string.IsNullOrEmpty(_param0) ? "ExpressionDark" : _param0;
-    \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D gmt9VmM5IkNVtVwybkk;
-    if (!ThemeManager.\u0023\u003Dz782V6KE\u00242buI.TryGetValue(_param0, out gmt9VmM5IkNVtVwybkk))
+    public static void SetTheme(DependencyObject _param0, string _param1)
     {
-      gmt9VmM5IkNVtVwybkk = (\u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D) new \u0023\u003DzduViKcXTrKCfnYwdbArizvSbWeE5LHaB3CyMd\u0024w\u003D();
-      gmt9VmM5IkNVtVwybkk.\u0023\u003DzeHF6BUxLFClh(ThemeManager.\u0023\u003DzB0x3mHFPBNZB(_param0));
-      ThemeManager.\u0023\u003Dz782V6KE\u00242buI.Add(_param0, gmt9VmM5IkNVtVwybkk);
+        _param0.SetValue(ThemeManager.ThemeProperty, (object)_param1);
     }
-    return gmt9VmM5IkNVtVwybkk;
-  }
 
-  private static ResourceDictionary \u0023\u003DzB0x3mHFPBNZB(string _param0)
-  {
-    if (_param0 == null)
-      return (ResourceDictionary) null;
-    if (ThemeManager.\u0023\u003DzMBUtRf9zXbZf.ContainsKey(_param0))
-      return ThemeManager.\u0023\u003DzMBUtRf9zXbZf[_param0];
-    ResourceDictionary resourceDictionary = new ResourceDictionary()
+    
+
+    public static IList<string> AllThemes()
     {
-      Source = ThemeManager.\u0023\u003DzDT70eQaaSY2I(_param0)
-    };
-    ThemeManager.\u0023\u003DzMBUtRf9zXbZf.Add(_param0, resourceDictionary);
-    return resourceDictionary;
-  }
-
-  private static Uri \u0023\u003DzDT70eQaaSY2I(string _param0)
-  {
-    return _param0.ToUpper(CultureInfo.InvariantCulture).Contains(";COMPONENT/") ? new Uri(_param0, UriKind.Relative) : new Uri($"/{typeof (SciChartSurface).Assembly.\u0023\u003DzFARAiudukAjJ()};component/Themes/{_param0}.xaml", UriKind.Relative);
-  }
-
-  private static void \u0023\u003DzeHF6BUxLFClh(this FrameworkElement _param0, string _param1)
-  {
-    if (string.IsNullOrEmpty(_param1))
-      return;
-    ResourceDictionary resourceDictionary = ThemeManager.\u0023\u003DzB0x3mHFPBNZB(_param1);
-    ThemeManager.\u0023\u003DzwI1vePI9DZf8().\u0023\u003DzeHF6BUxLFClh(resourceDictionary);
-    ThemeManager.\u0023\u003DzfZvoKk3Lyd9U(new \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D(_param0, _param1));
-  }
-
-  private static void \u0023\u003DzfZvoKk3Lyd9U(
-    \u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D _param0)
-  {
-    EventHandler<\u0023\u003DzzKBN5TXUMNIGpWrDrUMXSZpwXjaXIqrTNeD8QxE\u003D> z8Fi7DbieAz0u = ThemeManager.\u0023\u003Dz8Fi7DbieAZ0u;
-    if (z8Fi7DbieAz0u == null)
-      return;
-    z8Fi7DbieAz0u((object) null, _param0);
-  }
-
-  private static void \u0023\u003Dzb3YxwRaSuvYM(
-    DependencyObject _param0,
-    DependencyPropertyChangedEventArgs _param1)
-  {
-    string str = _param1.NewValue as string;
-    string oldValue = _param1.OldValue as string;
-    FrameworkElement frameworkElement = _param0 as FrameworkElement;
-    if (string.IsNullOrEmpty(str) || frameworkElement == null)
-      return;
-    if (str.ToUpper(CultureInfo.InvariantCulture) == "RANDOM")
-    {
-      Random random = new Random();
-      str = ThemeManager.\u0023\u003DzBG3JZN5PsfMx().ElementAt<string>(random.Next(ThemeManager.\u0023\u003DzBG3JZN5PsfMx().Count<string>()));
+        return ThemeManager._allThemes;
     }
-    if (!(oldValue != str & DependencyPropertyHelper.GetValueSource((DependencyObject) frameworkElement, ThemeManager.\u0023\u003DzOJJsEsQ\u003D).BaseValueSource != BaseValueSource.Inherited))
-      return;
-    frameworkElement.\u0023\u003DzeHF6BUxLFClh(str);
-    if (!(frameworkElement is IInvalidatableElement ks0apzs3KdsLxgXg))
-      return;
-    ks0apzs3KdsLxgXg.InvalidateElement();
-  }
+
+    public static IThemeProvider ThemeProvider()
+    {
+        return ThemeManager._themeColorProvider ?? ( ThemeManager._themeColorProvider = (IThemeProvider)new ThemeColorProvider() );
+    }
+
+    public static void AddTheme(string _param0, ResourceDictionary _param1)
+    {
+        if ( ThemeManager._themes.ContainsKey(_param0) )
+            return;
+        ThemeManager._themes.Add(_param0, _param1);
+        IThemeProvider gmt9VmM5IkNVtVwybkk = (IThemeProvider)new ThemeColorProvider();
+        gmt9VmM5IkNVtVwybkk.ApplyTheme(_param1);
+        ThemeManager.ThemeProviders.Add(_param0, gmt9VmM5IkNVtVwybkk);
+        ThemeManager._allThemes.Add(_param0);
+    }
+
+    public static void RemoveTheme(string _param0)
+    {
+        if ( ThemeManager._themes.ContainsKey(_param0) || !ThemeManager.ThemeProviders.ContainsKey(_param0) )
+            return;
+        ThemeManager._themes.Remove(_param0);
+        ThemeManager.ThemeProviders.Remove(_param0);
+        ThemeManager._allThemes.Remove(_param0);
+    }
+
+    public static IThemeProvider GetThemeProvider(
+      string _param0)
+    {
+        _param0 = string.IsNullOrEmpty(_param0) ? "ExpressionDark" : _param0;
+        IThemeProvider gmt9VmM5IkNVtVwybkk;
+        if ( !ThemeManager.ThemeProviders.TryGetValue(_param0, out gmt9VmM5IkNVtVwybkk) )
+        {
+            gmt9VmM5IkNVtVwybkk = (IThemeProvider)new ThemeColorProvider();
+            gmt9VmM5IkNVtVwybkk.ApplyTheme(ThemeManager.GetThemeResourceDictionary(_param0));
+            ThemeManager.ThemeProviders.Add(_param0, gmt9VmM5IkNVtVwybkk);
+        }
+        return gmt9VmM5IkNVtVwybkk;
+    }
+
+    private static ResourceDictionary GetThemeResourceDictionary(string theme)
+    {
+        if ( theme == null )
+            return (ResourceDictionary)null;
+        if ( ThemeManager._themes.ContainsKey(theme) )
+            return ThemeManager._themes[theme];
+        ResourceDictionary resourceDictionary = new ResourceDictionary()
+        {
+            Source = ThemeManager.GetThemeUri(theme)
+        };
+        ThemeManager._themes.Add(theme, resourceDictionary);
+        return resourceDictionary;
+    }
+
+    private static Uri GetThemeUri(string _param0)
+    {
+        return _param0.ToUpper(CultureInfo.InvariantCulture).Contains(";COMPONENT/") ? new Uri(_param0, UriKind.Relative) : new Uri($"/{typeof(SciChartSurface).Assembly.\u0023\u003DzFARAiudukAjJ()};component/Themes/{_param0}.xaml", UriKind.Relative);
+    }
+
+    private static void ApplyTheme(this FrameworkElement _param0, string _param1)
+    {
+        if ( string.IsNullOrEmpty(_param1) )
+            return;
+        ResourceDictionary resourceDictionary = ThemeManager.GetThemeResourceDictionary(_param1);
+        ThemeManager.ThemeProvider().ApplyTheme(resourceDictionary);
+        ThemeManager.OnThemeApplied(new ThemeAppliedEventArgs(_param0, _param1));
+    }
+
+    private static void OnThemeApplied(
+      ThemeAppliedEventArgs _param0)
+    {
+        EventHandler<ThemeAppliedEventArgs> z8Fi7DbieAz0u = ThemeManager.ThemeApplied;
+        if ( z8Fi7DbieAz0u == null )
+            return;
+        z8Fi7DbieAz0u((object)null, _param0);
+    }
+
+    private static void OnThemeChanged(
+      DependencyObject _param0,
+      DependencyPropertyChangedEventArgs _param1)
+    {
+        string str = _param1.NewValue as string;
+        string oldValue = _param1.OldValue as string;
+        FrameworkElement frameworkElement = _param0 as FrameworkElement;
+        if ( string.IsNullOrEmpty(str) || frameworkElement == null )
+            return;
+        if ( str.ToUpper(CultureInfo.InvariantCulture) == "RANDOM" )
+        {
+            Random random = new Random();
+            str = ThemeManager.AllThemes().ElementAt<string>(random.Next(ThemeManager.AllThemes().Count<string>()));
+        }
+        if ( !( oldValue != str & DependencyPropertyHelper.GetValueSource((DependencyObject)frameworkElement, ThemeManager.ThemeProperty).BaseValueSource != BaseValueSource.Inherited ) )
+            return;
+        frameworkElement.ApplyTheme(str);
+        if ( !( frameworkElement is IInvalidatableElement ks0apzs3KdsLxgXg ) )
+            return;
+        ks0apzs3KdsLxgXg.InvalidateElement();
+    }
 }

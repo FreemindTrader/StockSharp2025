@@ -37,7 +37,7 @@ namespace fx.Xaml.Charting
         private Brush _rolloverLabelBorderBrush;
         private Brush _rubberBandFill;
         private Brush _rubberBandStroke;
-        private Brush _ultraChartBackground;
+        private Brush _SciChartBackground;
         private Brush _textAnnotationBackground;
         private Brush _textAnnotationForeground;
         private Brush _tickTextBrush;
@@ -76,7 +76,7 @@ namespace fx.Xaml.Charting
 
             GridBorderBrush = ( Brush ) dictionary[ ( object ) "GridBorderBrush" ];
             GridBackgroundBrush = ( Brush ) dictionary[ ( object ) "GridBackgroundBrush" ];
-            UltrachartBackground = ( Brush ) dictionary[ ( object ) "UltrachartBackground" ];
+            SciChartBackground = ( Brush ) dictionary[ ( object ) "SciChartBackground" ];
             TickTextBrush = ( Brush ) dictionary[ ( object ) "TickTextBrush" ];
             MajorGridLinesBrush = ( Brush ) dictionary[ ( object ) "MajorGridLineBrush" ];
             MinorGridLinesBrush = ( Brush ) dictionary[ ( object ) "MinorGridLineBrush" ];
@@ -158,21 +158,21 @@ namespace fx.Xaml.Charting
             }
         }
 
-        public Brush UltrachartBackground
+        public Brush SciChartBackground
         {
             get
             {
-                return _ultraChartBackground;
+                return _SciChartBackground;
             }
             set
             {
-                if ( _ultraChartBackground == value )
+                if ( _SciChartBackground == value )
                 {
                     return;
                 }
 
-                _ultraChartBackground = value;
-                OnPropertyChanged( nameof( UltrachartBackground ) );
+                _SciChartBackground = value;
+                OnPropertyChanged( nameof( SciChartBackground ) );
             }
         }
 

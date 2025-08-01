@@ -78,7 +78,7 @@ public struct \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR :
   public double \u0023\u003DzKrTvxa8MJ66h() => this.\u0023\u003DzchuwVU\u00245sIH8();
 
   [SpecialName]
-  public double \u0023\u003Dzu7q98_E\u003D() => this.Close;
+  public double Y => this.Close;
 
   public int CompareTo(object _param1)
   {

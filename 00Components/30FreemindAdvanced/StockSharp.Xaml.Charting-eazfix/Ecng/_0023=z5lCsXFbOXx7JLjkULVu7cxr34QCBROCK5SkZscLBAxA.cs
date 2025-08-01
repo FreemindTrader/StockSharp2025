@@ -8,9 +8,9 @@ using System.Windows.Media;
 
 #nullable disable
 public abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA8Xo9zyrg5yvc\u003D : 
-  \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D
+  IXxxPaletteProvider
 {
-  public virtual Color? \u0023\u003DzP50Orng\u003D(
+  public virtual Color? GetColor01(
     IRenderableSeries _param1,
     double _param2,
     double _param3)
@@ -18,7 +18,7 @@ public abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA8X
     return new Color?();
   }
 
-  public virtual Color? \u0023\u003DzLCyKrYI\u003D(
+  public virtual Color? GetColor02(
     IRenderableSeries _param1,
     double _param2,
     double _param3,
@@ -29,7 +29,7 @@ public abstract class \u0023\u003Dz5lCsXFbOXx7JLjkULVu7cxr34QCBROCK5SkZscLBAxA8X
     return new Color?();
   }
 
-  public virtual Color? \u0023\u003DzLCyKrYI\u003D(
+  public virtual Color? GetColor02(
     IRenderableSeries _param1,
     double _param2,
     double _param3,

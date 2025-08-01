@@ -46,12 +46,12 @@
 
 //  object \u0023\u003DzQavr9eonlwL7DeqLQA\u003D\u003D();
 
-//  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries { get; set; }
+//  IDataSeries DataSeries { get; set; }
 
-//  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D get_DataSeries();
+//  IDataSeries get_DataSeries();
 
 //  void set_DataSeries(
-//    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1);
+//    IDataSeries _param1);
 
 //  IAxis XAxis { get; set; }
 
@@ -92,12 +92,12 @@
 //  void \u0023\u003DzHZiyrsua6EwHR04JCw\u003D\u003D(
 //    IRenderPassData _param1);
 
-//  \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D get_PaletteProvider();
+//  IXxxPaletteProvider get_PaletteProvider();
 
-//  \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D PaletteProvider { get; set; }
+//  IXxxPaletteProvider PaletteProvider { get; set; }
 
 //  void set_PaletteProvider(
-//    \u0023\u003Dz8HlC6EDl\u0024btRSPRwAzbJh1gj3_fBHIvbLIG5Htg5ScQRmCkwmAANyPA\u003D _param1);
+//    IXxxPaletteProvider _param1);
 
 //  bool \u0023\u003DztPaciKMZWysZOtqEskMFjk8\u003D();
 
@@ -114,7 +114,7 @@
 //    Point _param1,
 //    bool _param2);
 
-//  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003DzZZbJdAS6fDJ\u0024(
+//  SeriesInfo \u0023\u003DzZZbJdAS6fDJ\u0024(
 //    HitTestInfo _param1);
 
 //  IRange \u0023\u003Dzq3MgExWxza1L();

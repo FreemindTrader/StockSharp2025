@@ -433,7 +433,7 @@ public struct Vector2 :
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La k0tx8mf6Q5GfeLxZsn6La3;
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La.\u0023\u003DzQw38IaY\u003D(ref _param1, ref k0tx8mf6Q5GfeLxZsn6La1, out k0tx8mf6Q5GfeLxZsn6La3);
     \u0023\u003DzdkTsoRIhz16dAJ0Ha_QZUgldoNrrtrtOs3rdVdF4M4ErNJSUhvL_ZNRK0tx8mf6Q5GfeLXZsn6La.\u0023\u003DzQw38IaY\u003D(ref k0tx8mf6Q5GfeLxZsn6La3, ref k0tx8mf6Q5GfeLxZsn6La2, out k0tx8mf6Q5GfeLxZsn6La1);
-    _param2 = new Vector2(k0tx8mf6Q5GfeLxZsn6La1.\u0023\u003Dz2_4KSTY\u003D(), k0tx8mf6Q5GfeLxZsn6La1.\u0023\u003Dzu7q98_E\u003D());
+    _param2 = new Vector2(k0tx8mf6Q5GfeLxZsn6La1.X, k0tx8mf6Q5GfeLxZsn6La1.Y);
   }
 
   public static Vector2 \u0023\u003DzXTXKynGX9VVf(

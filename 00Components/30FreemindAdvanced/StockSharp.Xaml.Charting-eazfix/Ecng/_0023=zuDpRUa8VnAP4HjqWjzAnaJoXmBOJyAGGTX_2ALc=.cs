@@ -269,7 +269,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
       '7',
       '8',
       '9'
-    }).Select<char, ISprite2D>(yeuvfbi2ga1Q3dva4g.\u0023\u003Dzon\u0024_RZacJIPJ ?? (yeuvfbi2ga1Q3dva4g.\u0023\u003Dzon\u0024_RZacJIPJ = new Func<char, ISprite2D>(yeuvfbi2ga1Q3dva4g.\u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D))))
+    }).Select<char, ISprite2D>(yeuvfbi2ga1Q3dva4g._memeber02 ?? (yeuvfbi2ga1Q3dva4g._memeber02 = new Func<char, ISprite2D>(yeuvfbi2ga1Q3dva4g.\u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D))))
     {
       if ((double) squxH0BdrCzw3R4A1g.Width > num1)
         num1 = (double) squxH0BdrCzw3R4A1g.Width;
@@ -585,7 +585,7 @@ public abstract class \u0023\u003DzuDpRUa8VnAP4HjqWjzAnaJoXmBOJyAGGTX_2ALc\u003D
     public string \u0023\u003Dzz3d39DAyibKX;
     public float \u0023\u003DzyvmR52E\u003D;
     public FontWeight \u0023\u003Dz_xu4jb2w_ISy;
-    public Func<char, ISprite2D> \u0023\u003Dzon\u0024_RZacJIPJ;
+    public Func<char, ISprite2D> _memeber02;
 
     public ISprite2D \u0023\u003DzFd_eHDbriD9KB6iy6g\u003D\u003D(
       char _param1)

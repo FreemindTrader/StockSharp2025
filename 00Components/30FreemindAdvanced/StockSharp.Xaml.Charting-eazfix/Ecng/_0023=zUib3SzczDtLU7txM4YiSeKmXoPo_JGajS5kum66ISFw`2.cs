@@ -11,14 +11,14 @@ using System.Diagnostics;
 using System.Linq;
 
 #nullable disable
-public sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY> : 
+public sealed class OhlcDataSeries<TX, TY> : 
   DataSeries<TX, TY>,
   IDataSeries<TX, TY>,
   IOhlcDataSeries,
   \u0023\u003DzDH5EtXmKZCpH30z_eydhO42Ygtxj0A9MtVBlpvd5g5Ii2CglZA\u003D\u003D<TX, TY>,
   ISuspendable,
-  \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D,
-  \u0023\u003DztorG3HTUDpMsfjPqFEEe9HUBXNG1JlzD7u56rrBDlcZ3bDSt5iNajas\u003D
+  IDataSeries,
+  ITimeframe
   where TX : IComparable
   where TY : IComparable
 {
@@ -35,7 +35,7 @@ public sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEP
   
   private TimeSpan? \u0023\u003DzM5bivBrwoPG_dwiiOcdDrOjpvebr;
 
-  public \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D()
+  public OhlcDataSeries()
   {
     this.\u0023\u003DzHO8H7X_wl7Th = this.\u0023\u003DzoEP49rI\u003D;
     this.\u0023\u003Dz3laIKDGah\u0024Kh = new \u0023\u003DzAF1f\u0024KZyh1dFR1SFJ2ERzkLzDVwJLWo3TUsTtU\u0024Aaq7iLz8eHA\u003D\u003D<(TX, TY, TY, TY, TY)>(new Action<IList<(TX, TY, TY, TY, TY)>>(this.\u0023\u003DzGXoUV7Q\u0024_bM\u0024));
@@ -153,7 +153,7 @@ public sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEP
     lock (this.SyncRoot)
     {
       this.\u0023\u003Dz3laIKDGah\u0024Kh.\u0023\u003DzY9qzIPY\u003D();
-      \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY> s5kum66IsFwjrEpTng = new \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>();
+      OhlcDataSeries<TX, TY> s5kum66IsFwjrEpTng = new OhlcDataSeries<TX, TY>();
       s5kum66IsFwjrEpTng.FifoCapacity = this.FifoCapacity;
       s5kum66IsFwjrEpTng.AcceptsUnsortedData = this.AcceptsUnsortedData;
       s5kum66IsFwjrEpTng.\u0023\u003Dznc8esWY\u003D((IEnumerable<TX>) this.XValues, (IEnumerable<TY>) this.OpenValues, (IEnumerable<TY>) this.HighValues, (IEnumerable<TY>) this.LowValues, (IEnumerable<TY>) this.CloseValues);
@@ -397,13 +397,13 @@ public sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEP
   {
     lock (this.SyncRoot)
     {
-      IEnumerable<TX> zulcL8Ras = _param1.Select<(TX, TY, TY, TY, TY), TX>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003DzPdPSPWl213y\u00246nt9EQ\u003D\u003D ?? (\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003DzPdPSPWl213y\u00246nt9EQ\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TX>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003DzmIPZEwgchz\u0024sCHTuGwrsJTY\u003D)));
+      IEnumerable<TX> zulcL8Ras = _param1.Select<(TX, TY, TY, TY, TY), TX>(OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003DzPdPSPWl213y\u00246nt9EQ\u003D\u003D ?? (OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003DzPdPSPWl213y\u00246nt9EQ\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TX>(OhlcDataSeries<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003DzmIPZEwgchz\u0024sCHTuGwrsJTY\u003D)));
       int count = ((\u0023\u003DzJhc8WdlQgSkcniY\u0024669ans2mQMwz_VJH0HVFEk8\u003D) this.\u0023\u003DzmIwKipw\u003D).get_Count();
       this.\u0023\u003DzmIwKipw\u003D.\u0023\u003Dz6_E5\u0024pE\u003D(zulcL8Ras);
-      this.\u0023\u003DzjCADV9yqxvmI.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003Dz3i1lPFWkqPq\u0024Bv_MiA\u003D\u003D ?? (\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003Dz3i1lPFWkqPq\u0024Bv_MiA\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003DzzYZOLRwyB3XEoUeK\u0024G2I14A\u003D))));
-      this.\u0023\u003DzyaS0FCQuIbTz.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003DzytA694d12YK1M5HxGg\u003D\u003D ?? (\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003DzytA694d12YK1M5HxGg\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz3WdUimM4quneZzxXPVH0AMs\u003D))));
-      this.\u0023\u003Dz_YpB1WqdIoXd.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003DzZ56xLcbG8XBu52\u0024XtQ\u003D\u003D ?? (\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003DzZ56xLcbG8XBu52\u0024XtQ\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dzv7wB\u0024Xs8LHaA0XIEpOZO7Mk\u003D))));
-      this.\u0023\u003DzHO8H7X_wl7Th.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003Dz\u0024i0ZdiXPWL4LNqdRiw\u003D\u003D ?? (\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.\u0023\u003Dz\u0024i0ZdiXPWL4LNqdRiw\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(\u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003DzX54OEBE42FtywkH4BPLC8ew\u003D))));
+      this.\u0023\u003DzjCADV9yqxvmI.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003Dz3i1lPFWkqPq\u0024Bv_MiA\u003D\u003D ?? (OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003Dz3i1lPFWkqPq\u0024Bv_MiA\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003DzzYZOLRwyB3XEoUeK\u0024G2I14A\u003D))));
+      this.\u0023\u003DzyaS0FCQuIbTz.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003DzytA694d12YK1M5HxGg\u003D\u003D ?? (OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003DzytA694d12YK1M5HxGg\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz3WdUimM4quneZzxXPVH0AMs\u003D))));
+      this.\u0023\u003Dz_YpB1WqdIoXd.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003DzZ56xLcbG8XBu52\u0024XtQ\u003D\u003D ?? (OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003DzZ56xLcbG8XBu52\u0024XtQ\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003Dzv7wB\u0024Xs8LHaA0XIEpOZO7Mk\u003D))));
+      this.\u0023\u003DzHO8H7X_wl7Th.\u0023\u003Dz6_E5\u0024pE\u003D(_param1.Select<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003Dz\u0024i0ZdiXPWL4LNqdRiw\u003D\u003D ?? (OhlcDataSeries<TX, TY>.SomeClass34343383.\u0023\u003Dz\u0024i0ZdiXPWL4LNqdRiw\u003D\u003D = new Func<(TX, TY, TY, TY, TY), TY>(OhlcDataSeries<TX, TY>.SomeClass34343383.SomeMethond0343.\u0023\u003DzX54OEBE42FtywkH4BPLC8ew\u003D))));
       this.DataDistributionCalculator.\u0023\u003DzeU6gWqHRfREz(this.\u0023\u003DzmIwKipw\u003D, count, zulcL8Ras, this.AcceptsUnsortedData);
     }
   }
@@ -411,7 +411,7 @@ public sealed class \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEP
   [Serializable]
   private sealed class SomeClass34343383
   {
-    public static readonly \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DzUib3SzczDtLU7txM4YiSeKmXoPo_JGajS5kum66ISFwjrEPTng\u003D\u003D<TX, TY>.SomeClass34343383();
+    public static readonly OhlcDataSeries<TX, TY>.SomeClass34343383 SomeMethond0343 = new OhlcDataSeries<TX, TY>.SomeClass34343383();
     public static Func<(TX, TY, TY, TY, TY), TX> \u0023\u003DzPdPSPWl213y\u00246nt9EQ\u003D\u003D;
     public static Func<(TX, TY, TY, TY, TY), TY> \u0023\u003Dz3i1lPFWkqPq\u0024Bv_MiA\u003D\u003D;
     public static Func<(TX, TY, TY, TY, TY), TY> \u0023\u003DzytA694d12YK1M5HxGg\u003D\u003D;

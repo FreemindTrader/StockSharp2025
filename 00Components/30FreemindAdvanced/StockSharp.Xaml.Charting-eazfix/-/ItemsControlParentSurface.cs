@@ -55,7 +55,7 @@ public sealed class ItemsControlParentSurface
     SciChartSurface visualChild = abYiNis93iXoWaCiAList[0].PaneElement.FindVisualChild<SciChartSurface>();
     _param0.ParentSurface = (ISciChartSurface) visualChild;
     // ISSUE: explicit non-virtual call
-    _param0.DataSeries = visualChild != null ? __nonvirtual (visualChild.RenderableSeries).FirstOrDefault<IRenderableSeries>()?.get_DataSeries() : (\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) null;
+    _param0.DataSeries = visualChild != null ? __nonvirtual (visualChild.RenderableSeries).FirstOrDefault<IRenderableSeries>()?.get_DataSeries() : (IDataSeries) null;
   }
 
   private sealed class \u0023\u003Dz6U5SVX_6MHYdSkOPOA\u003D\u003D

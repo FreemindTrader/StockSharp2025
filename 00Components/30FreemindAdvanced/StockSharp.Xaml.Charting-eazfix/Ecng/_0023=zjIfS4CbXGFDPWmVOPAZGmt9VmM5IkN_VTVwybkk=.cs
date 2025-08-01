@@ -8,7 +8,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-public interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
+public interface IThemeProvider
 {
   Brush GridBorderBrush { get; set; }
 
@@ -22,11 +22,11 @@ public interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
 
   void set_GridBackgroundBrush(Brush _param1);
 
-  Brush UltrachartBackground { get; set; }
+  Brush SciChartBackground { get; set; }
 
-  Brush get_UltrachartBackground();
+  Brush get_SciChartBackground();
 
-  void set_UltrachartBackground(Brush _param1);
+  void set_SciChartBackground(Brush _param1);
 
   Brush get_TickTextBrush();
 
@@ -292,8 +292,8 @@ public interface \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D
 
   void set_ClusterProfileClusterMaxColor(Color _param1);
 
-  void \u0023\u003DzeHF6BUxLFClh(
-    \u0023\u003DzjIfS4CbXGFDPWmVOPAZGmt9VmM5IkN_VTVwybkk\u003D _param1);
+  void ApplyTheme(
+    IThemeProvider _param1);
 
-  void \u0023\u003DzeHF6BUxLFClh(ResourceDictionary _param1);
+  void ApplyTheme(ResourceDictionary _param1);
 }

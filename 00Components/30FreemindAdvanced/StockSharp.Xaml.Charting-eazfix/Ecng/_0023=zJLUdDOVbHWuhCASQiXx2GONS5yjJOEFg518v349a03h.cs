@@ -31,11 +31,11 @@ public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5 :
   }
 
   [IndexerName("#=zMRIb09I=")]
-  public override \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1]
+  public override IPoint this[int _param1]
   {
     get
     {
-      return (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>(this.\u0023\u003Dz_\u0024BXHQKXpGkf().\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dz2_4KSTY\u003D(), new \u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt(this.\u0023\u003Dz_\u0024BXHQKXpGkf().\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D(), this.\u0023\u003Dz63SQYF34lutc.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D(), this.\u0023\u003DzkctAaveAJY_W.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D()));
+      return (IPoint) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>(this.\u0023\u003Dz_\u0024BXHQKXpGkf().\u0023\u003Dz\u0024CeUvME\u003D(_param1).X, new \u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt(this.\u0023\u003Dz_\u0024BXHQKXpGkf().\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y, this.\u0023\u003Dz63SQYF34lutc.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y, this.\u0023\u003DzkctAaveAJY_W.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y));
     }
   }
 
@@ -46,8 +46,8 @@ public sealed class \u0023\u003DzJLUdDOVbHWuhCASQiXx2GONS5yjJOEFg518v349a03h5 :
     double num3 = double.MinValue;
     for (int index = 0; index < num1; ++index)
     {
-      double d1 = this.\u0023\u003Dz63SQYF34lutc.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
-      double d2 = this.\u0023\u003DzkctAaveAJY_W.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
+      double d1 = this.\u0023\u003Dz63SQYF34lutc.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
+      double d2 = this.\u0023\u003DzkctAaveAJY_W.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
       if (!double.IsNaN(d1) && !double.IsNaN(d2))
       {
         num2 = num2 < d2 ? num2 : d2;

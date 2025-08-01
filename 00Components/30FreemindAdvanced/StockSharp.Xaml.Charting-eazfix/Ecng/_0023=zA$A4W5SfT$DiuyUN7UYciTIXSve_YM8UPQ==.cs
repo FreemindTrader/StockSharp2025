@@ -5,9 +5,9 @@
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
 #nullable disable
-public sealed class \u0023\u003DzA\u0024A4W5SfT\u0024DiuyUN7UYciTIXSve_YM8UPQ\u003D\u003D(
+public sealed class XySeriesInfo(
   IRenderableSeries _param1,
   HitTestInfo _param2) : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D(_param1, _param2)
+  SeriesInfo(_param1, _param2)
 {
 }

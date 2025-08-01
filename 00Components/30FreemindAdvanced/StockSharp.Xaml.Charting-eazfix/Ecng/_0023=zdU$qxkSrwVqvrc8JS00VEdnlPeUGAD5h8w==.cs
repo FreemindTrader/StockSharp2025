@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 #nullable disable
 public class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
+  SeriesInfo
 {
   
   private double \u0023\u003DzLVApXYh3wio9;
@@ -33,7 +33,7 @@ public class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D :
     get => this.\u0023\u003DzLVApXYh3wio9;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzLVApXYh3wio9, value, nameof (HighValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzLVApXYh3wio9, value, nameof (HighValue)))
         return;
       this.OnPropertyChanged("FormattedHighValue");
     }
@@ -46,7 +46,7 @@ public class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D :
     get => this.\u0023\u003DzgW0Bx\u0024nmVR1e;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzgW0Bx\u0024nmVR1e, value, nameof (LowValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzgW0Bx\u0024nmVR1e, value, nameof (LowValue)))
         return;
       this.OnPropertyChanged("FormattedLowValue");
     }
@@ -59,7 +59,7 @@ public class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D :
     get => this.\u0023\u003DzGnjjvSC2pUUy;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzGnjjvSC2pUUy, value, nameof (CloseValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzGnjjvSC2pUUy, value, nameof (CloseValue)))
         return;
       this.OnPropertyChanged("FormattedCloseValue");
     }
@@ -71,7 +71,7 @@ public class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D :
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D js00VednlPeUgaD5h8w = (\u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEdnlPeUGAD5h8w\u003D\u003D) _param1;

@@ -153,7 +153,7 @@ public sealed class FastLineRenderableSeries :
       double _param1,
       double _param2)
     {
-      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.\u0023\u003DzP50Orng\u003D((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
+      return this.\u0023\u003Dz\u0024sDnaZw\u003D.\u0023\u003Dzc8S9rSE\u003D(this._variableSome3535.PaletteProvider.GetColor01((IRenderableSeries) this._variableSome3535, _param1, _param2) ?? this.\u0023\u003DzxS8dq0E\u003D);
     }
   }
 }

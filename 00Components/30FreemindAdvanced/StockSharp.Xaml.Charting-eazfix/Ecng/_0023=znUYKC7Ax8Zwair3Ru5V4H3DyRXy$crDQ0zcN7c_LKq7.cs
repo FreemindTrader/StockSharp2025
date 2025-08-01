@@ -8,7 +8,7 @@ using System.Diagnostics;
 
 #nullable disable
 public sealed class \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_LKq7HenVQrw\u003D\u003D : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
+  SeriesInfo
 {
   
   private double \u0023\u003DzpVRHOdY\u003D;
@@ -26,12 +26,12 @@ public sealed class \u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_LKq
     get => this.\u0023\u003DzpVRHOdY\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzpVRHOdY\u003D, value, nameof (Percentage));
+      this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzpVRHOdY\u003D, value, nameof (Percentage));
     }
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     this.Percentage = ((\u0023\u003DznUYKC7Ax8Zwair3Ru5V4H3DyRXy\u0024crDQ0zcN7c_LKq7HenVQrw\u003D\u003D) _param1).Percentage;

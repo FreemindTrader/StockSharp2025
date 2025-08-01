@@ -52,7 +52,7 @@ public class ChartActiveOrdersElement :
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
     private bool _isAnimationEnabled;
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
-    private DrawableChartElementBaseViewModel _baseViewModel;
+    private DrawableChartComponentBaseViewModel _baseViewModel;
 
     public ChartActiveOrdersElement()
     {
@@ -233,9 +233,9 @@ public class ChartActiveOrdersElement :
 
     
 
-    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
     {
-        return this._baseViewModel = ( DrawableChartElementBaseViewModel ) new ChartActiveOrdersElementVM( this );
+        return this._baseViewModel = ( DrawableChartComponentBaseViewModel ) new ChartActiveOrdersElementVM( this );
     }
 
     bool IDrawableChartElement.StartDrawing(

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 #nullable disable
 public interface \u0023\u003Dza5uC6EI3X0HH3HGpwdgoZnF8py_1UHtuLwP\u0024jqT0El1T : 
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
+  IPoint
 {
   double \u0023\u003Dz4UDE5UByX\u00245LtE1gJA\u003D\u003D();
 

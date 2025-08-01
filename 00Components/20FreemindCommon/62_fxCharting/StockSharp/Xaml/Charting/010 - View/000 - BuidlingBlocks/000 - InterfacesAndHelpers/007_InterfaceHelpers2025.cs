@@ -8,11 +8,11 @@ using System;
 using System.Reflection;
 
 #nullable disable
-public static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D
+public static class InterfaceHelpers2025
 {
-  public static void \u0023\u003DzBZeItLeUMY2I<T>(T _param0, T _param1)
+  public static void CopyInterfaceProperties<T>(T _param0, T _param1)
   {
-    \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D.\u0023\u003Dzu\u0024i\u0024b\u0024xmE81L<T>();
+    InterfaceHelpers2025.CheckInterfaceProperties<T>();
     foreach (PropertyInfo property in typeof (T).GetProperties())
     {
       if (property.CanRead && property.CanWrite)
@@ -20,7 +20,7 @@ public static class \u0023\u003DzN0ICfvrLGc6u90AzzFcyQnKZ_q4KO7CPmFGx6ZQ\u003D
     }
   }
 
-  private static void \u0023\u003Dzu\u0024i\u0024b\u0024xmE81L<T>()
+  private static void CheckInterfaceProperties<T>()
   {
     if (!typeof (T).IsInterface)
       throw new Exception($"Unable to copy interface properties as typeparam {typeof (T)} is not an interface");

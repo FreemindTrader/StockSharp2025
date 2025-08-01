@@ -144,7 +144,7 @@ public class CursorModifier :
     }
     if (this.ShowTooltip)
     {
-      if (this.SeriesData.SeriesInfo.\u0023\u003DzCCMM80zDpO6N<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>() || !this.\u0023\u003Dz1lxFA46cCdxI())
+      if (this.SeriesData.SeriesInfo.\u0023\u003DzCCMM80zDpO6N<SeriesInfo>() || !this.\u0023\u003Dz1lxFA46cCdxI())
         this.\u0023\u003Dz0M6Lr1INFIAM();
       else if (this.ShowTooltipOn == ShowTooltipOptions.MouseHover)
       {
@@ -161,7 +161,7 @@ public class CursorModifier :
 
   private void \u0023\u003DzcWFGFMbg0iEM(Point _param1)
   {
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D vdj8C0KctI6r27Gg = this.SeriesData.SeriesInfo != null ? this.SeriesData.SeriesInfo.FirstOrDefault<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>() : (\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D) null;
+    SeriesInfo vdj8C0KctI6r27Gg = this.SeriesData.SeriesInfo != null ? this.SeriesData.SeriesInfo.FirstOrDefault<SeriesInfo>() : (SeriesInfo) null;
     Point point = vdj8C0KctI6r27Gg != null ? vdj8C0KctI6r27Gg.XyCoordinate : _param1;
     if (this.\u0023\u003Dzt9d2ExuvJfVV(point))
       this.\u0023\u003DzC4voZ0Pb0Ark(point);
@@ -181,7 +181,7 @@ public class CursorModifier :
     this.SeriesData.UpdateSeries(this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1));
   }
 
-  protected override IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003DzzhlDItrRFv\u0024\u0024(
+  protected override IEnumerable<SeriesInfo> \u0023\u003DzzhlDItrRFv\u0024\u0024(
     Point _param1)
   {
     return this.\u0023\u003DzzhlDItrRFv\u0024\u0024(new Func<IRenderableSeries, HitTestInfo>(new CursorModifier.\u0023\u003DzIkfJv_ww2IEiAf0VERJZev4\u003D()

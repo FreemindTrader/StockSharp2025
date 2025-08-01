@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 #nullable disable
 public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
+  SeriesInfo
 {
   
   private double \u0023\u003DzhqaqE72KwYhN;
@@ -39,7 +39,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
     get => this.\u0023\u003DzhqaqE72KwYhN;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzhqaqE72KwYhN, value, nameof (MinimumValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzhqaqE72KwYhN, value, nameof (MinimumValue)))
         return;
       this.OnPropertyChanged("FormattedMinimumValue");
     }
@@ -55,7 +55,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
     get => this.\u0023\u003DzBzxDw0vK0H2y;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzBzxDw0vK0H2y, value, nameof (MaximumValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzBzxDw0vK0H2y, value, nameof (MaximumValue)))
         return;
       this.OnPropertyChanged("FormattedMaximumValue");
     }
@@ -71,7 +71,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
     get => this.\u0023\u003Dzyn6MOqk7gf4U1Xps1g\u003D\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003Dzyn6MOqk7gf4U1Xps1g\u003D\u003D, value, nameof (MedianValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003Dzyn6MOqk7gf4U1Xps1g\u003D\u003D, value, nameof (MedianValue)))
         return;
       this.OnPropertyChanged("FormattedMedianValue");
     }
@@ -87,7 +87,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
     get => this.\u0023\u003DzWnRrpa5ameJV0z9YzfgOUTE\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzWnRrpa5ameJV0z9YzfgOUTE\u003D, value, nameof (LowerQuartileValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzWnRrpa5ameJV0z9YzfgOUTE\u003D, value, nameof (LowerQuartileValue)))
         return;
       this.OnPropertyChanged("FormattedLowerQuartileValue");
     }
@@ -103,7 +103,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
     get => this.\u0023\u003Dzx0rsvwquW0jl8rk1q4d2AbI\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003Dzx0rsvwquW0jl8rk1q4d2AbI\u003D, value, nameof (UpperQuartileValue)))
+      if (!this.OnSetPropertyChanged<double>(ref this.\u0023\u003Dzx0rsvwquW0jl8rk1q4d2AbI\u003D, value, nameof (UpperQuartileValue)))
         return;
       this.OnPropertyChanged("FormattedUpperQuartileValue");
     }
@@ -115,7 +115,7 @@ public sealed class \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     \u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D lk6SEkyAtkpA9sN3N0 = (\u0023\u003Dz3RRntx4pzkd854dIVpLK6S_EKy\u0024AtkpA9s\u0024N3N0\u003D) _param1;

@@ -14,23 +14,23 @@ using Ecng.Xaml.Converters;
 
 namespace StockSharp.Xaml.Charting;
 #nullable disable
-public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
+public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
 {
 	
 	private readonly Dictionary<IRenderableSeries, AxisMarkerAnnotation> _renderseries2AxisMarker = new Dictionary<IRenderableSeries, AxisMarkerAnnotation>();
 	
-	private ChartComponentViewModel _parentChartViewModel;
+	private ChartComponentViewModel _chartComponentViewModel;
 
 	protected ChartComponentViewModel ChartViewModel
 	{
 		get
 		{
-			return _parentChartViewModel;
+			return _chartComponentViewModel;
 		}
 
 		set
 		{
-			_parentChartViewModel = value;
+			_chartComponentViewModel = value;
 		}
 	}
 
@@ -44,7 +44,7 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 		get => this.ChartViewModel.ChartComponent;
 	}
 
-	public IDrawingSurfaceVM ScichartSurfaceMVVM
+	public IDrawingSurfaceVM DrawingSurface
 	{
 		get
 		{
@@ -129,7 +129,7 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 			keyValuePair.Value.IsHidden = true;
 			BindingOperations.ClearAllBindings( ( DependencyObject ) keyValuePair.Value );
 		}
-		this.ScichartSurfaceMVVM.RemoveAnnotation(this.RootElem, ( object ) null);
+		this.DrawingSurface.RemoveAnnotation(this.RootElem, ( object ) null);
 		this._renderseries2AxisMarker.Clear();
 	}
 
@@ -144,7 +144,7 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 		markerAnnotation1.Foreground = ( Brush ) Brushes.White;
 		AxisMarkerAnnotation markerAnnotation2 = markerAnnotation1;
 		this._renderseries2AxisMarker[ _param1 ] = markerAnnotation2;
-		this.ScichartSurfaceMVVM.AddAxisMakerAnnotation(this.RootElem, (IAnnotation) markerAnnotation2, ( object ) markerAnnotation2);
+		this.DrawingSurface.AddAxisMakerAnnotation(this.RootElem, (IAnnotation) markerAnnotation2, ( object ) markerAnnotation2);
 		markerAnnotation2.SetBindings( AnnotationBase.XAxisIdProperty, ( object ) _param2, "XAxisId" );
 		markerAnnotation2.SetBindings( AnnotationBase.YAxisIdProperty, ( object ) _param2, "YAxisId" );
 		AxisMarkerAnnotation markerAnnotation3 = markerAnnotation2;
@@ -172,12 +172,12 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 
 	protected void \u0023\u003DzY_lPK_VP\u0024B7_( Action _param1, bool _param2 )
 	{
-		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) DrawableChartElementBaseViewModel.GetDispatcher() ).GuiAsync ), _param1, _param2);
+		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) DrawableChartComponentBaseViewModel.GetDispatcher() ).GuiAsync ), _param1, _param2);
 	}
 
 	protected void PerformUiAction( Action _param1, bool _param2 )
 	{
-		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) DrawableChartElementBaseViewModel.GetDispatcher() ).GuiSync ), _param1, _param2);
+		this.\u0023\u003DztwYEX\u0024c\u003D(new Action<Action>( ( ( XamlHelper ) DrawableChartComponentBaseViewModel.GetDispatcher() ).GuiSync ), _param1, _param2);
 	}
 
 	private void \u0023\u003DztwYEX\u0024c\u003D(
@@ -185,11 +185,11 @@ public abstract class DrawableChartElementBaseViewModel : ChartBaseViewModel
 		Action _param2,
 		bool _param3)
   {
-    DrawableChartElementBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D yeuvfbi2ga1Q3dva4g = new DrawableChartElementBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D();
+    DrawableChartComponentBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D yeuvfbi2ga1Q3dva4g = new DrawableChartComponentBaseViewModel.\u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D();
 yeuvfbi2ga1Q3dva4g._variableSome3535 = this;
 yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D = _param2;
 Action action = _param3 ? new Action(yeuvfbi2ga1Q3dva4g.\u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D) : yeuvfbi2ga1Q3dva4g.\u0023\u003Dz07PQx44\u003D;
-if (DrawableChartElementBaseViewModel.IsUiThread() )
+if (DrawableChartComponentBaseViewModel.IsUiThread() )
 	action();
 else
 	_param1( action );
@@ -197,7 +197,7 @@ else
 
 private void ResetY1Annotation()
 {
-	CollectionHelper.ForEach<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( ( IEnumerable<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> ) this._renderseries2AxisMarker, DrawableChartElementBaseViewModel.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? ( DrawableChartElementBaseViewModel.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( DrawableChartElementBaseViewModel.SomeClass34343383.SomeMethond0343.\u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D) ));
+	CollectionHelper.ForEach<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( ( IEnumerable<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> ) this._renderseries2AxisMarker, DrawableChartComponentBaseViewModel.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D ?? ( DrawableChartComponentBaseViewModel.SomeClass34343383.\u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D = new Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>>( DrawableChartComponentBaseViewModel.SomeClass34343383.SomeMethond0343.\u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D) ));
 }
 
 private void UpdateAndClear()
@@ -210,7 +210,7 @@ private void UpdateAndClear()
 private new sealed class SomeClass34343383
   {
 
-	public static readonly DrawableChartElementBaseViewModel.SomeClass34343383 SomeMethond0343 = new DrawableChartElementBaseViewModel.SomeClass34343383();
+	public static readonly DrawableChartComponentBaseViewModel.SomeClass34343383 SomeMethond0343 = new DrawableChartComponentBaseViewModel.SomeClass34343383();
 public static Action<KeyValuePair<IRenderableSeries, AxisMarkerAnnotation>> \u0023\u003DzyKR7f5A3QPvTwxZODA\u003D\u003D;
 
 public void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
@@ -223,7 +223,7 @@ public void \u0023\u003DzrUT4mYySZlfIfzql4Q\u003D\u003D(
   private sealed class \u0023\u003DzlcqYEuvfbi2ga1Q3dva__4g\u003D
   {
 
-	public DrawableChartElementBaseViewModel _variableSome3535;
+	public DrawableChartComponentBaseViewModel _variableSome3535;
 public Action \u0023\u003Dz07PQx44\u003D;
 
 public void \u0023\u003Dz60l\u0024Ihha9C_kL2icwg\u003D\u003D()

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 
 #nullable disable
 public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<TY> : 
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D
+  IPoint
   where TY : \u0023\u003DzNCoz_cr7eiA6K6bzw3PTSesUJ7CmHq1ptV2iVGi9XvX4<double>
 {
   private double \u0023\u003DzMANe_Ig\u003D;
@@ -23,12 +23,12 @@ public sealed class \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKp
   }
 
   [SpecialName]
-  public double \u0023\u003Dz2_4KSTY\u003D() => this.\u0023\u003DzMANe_Ig\u003D;
+  public double X => this.\u0023\u003DzMANe_Ig\u003D;
 
   [SpecialName]
-  public double \u0023\u003Dzu7q98_E\u003D()
+  public double Y
   {
-    return this.\u0023\u003Dz0HHYg1s\u003D.\u0023\u003Dzu7q98_E\u003D();
+    return this.\u0023\u003Dz0HHYg1s\u003D.Y;
   }
 
   public TY \u0023\u003DzPqsSI6C5MOOb() => this.\u0023\u003Dz0HHYg1s\u003D;

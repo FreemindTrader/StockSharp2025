@@ -13,7 +13,7 @@ using System.Diagnostics;
 namespace StockSharp.Charting;
 
 public sealed class TransactionSeriesRolloverLabel : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
+  SeriesInfo
 {
   
   private ChartDrawData.\u0023\u003DzU3TaXFs\u003D \u0023\u003DzSgRFDbs\u003D;
@@ -50,7 +50,7 @@ public sealed class TransactionSeriesRolloverLabel :
     get => this.\u0023\u003DzSgRFDbs\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(ref this.\u0023\u003DzSgRFDbs\u003D, value, nameof (Transaction));
+      this.OnSetPropertyChanged<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>(ref this.\u0023\u003DzSgRFDbs\u003D, value, nameof (Transaction));
     }
   }
 
@@ -58,14 +58,14 @@ public sealed class TransactionSeriesRolloverLabel :
   {
     this.\u0023\u003DzJz0NEpw\u003D = this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003DzHE7yEzyy7k7_() ? LocalizedStrings.Order : LocalizedStrings.Trade;
     this.dpoChangedEventArgs = $"{(this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003DzUYTxG_Bgl8ih() == null ? LocalizedStrings.Buy2 : LocalizedStrings.Sell2)} {this.\u0023\u003DzSgRFDbs\u003D.Volume}@{this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003DzbH5YDNBwpnry()}";
-    this.\u0023\u003DzHhOSPlQ\u003D = $"{LocalizedStrings.Time}: {this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzg86amuQ\u003D():d MMM yyyy}, {this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzg86amuQ\u003D():T}";
+    this.\u0023\u003DzHhOSPlQ\u003D = $"{LocalizedStrings.Time}: {this.\u0023\u003DzSgRFDbs\u003D.Time:d MMM yyyy}, {this.\u0023\u003DzSgRFDbs\u003D.Time:T}";
     if (this.\u0023\u003DzSgRFDbs\u003D.IsError)
       this.\u0023\u003Dzi\u0024Pgiec\u003D = $"{LocalizedStrings.Error}: {this.\u0023\u003DzSgRFDbs\u003D.\u0023\u003Dzj4eGSep8GqT3()}";
     return this;
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     this.Transaction = ((TransactionSeriesRolloverLabel) _param1).Transaction;

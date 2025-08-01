@@ -287,7 +287,7 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
       \u0023\u003Dzi5rhlbggKV0KkQxOnrSREyuuUy2OemjHnRvIVnoSs0UO7ic5Jw\u003D\u003D rvIvnoSs0Uo7ic5Jw = local.\u0023\u003Dz2TNMZ47XeEe8();
       if ((rvIvnoSs0Uo7ic5Jw != null ? (rvIvnoSs0Uo7ic5Jw.\u0023\u003DzP41gPT1crtmIqAWIKA\u003D\u003D() ? 1 : 0) : 1) == 0)
       {
-        double num2 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(local.\u0023\u003Dz2_4KSTY\u003D());
+        double num2 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(local.X);
         foreach (ChartDrawData.\u0023\u003DzU3TaXFs\u003D zU3TaXfs in local.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003DzH969P7bf3uKN())
         {
           dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd jachadU4L5YhB24CaqEjd;
@@ -337,7 +337,7 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
     double num2 = xkzemsMs5tGkouk5w2.GetDataValue(_param1.Y);
     if (num1 < 0 || num1 >= dataSeries.Count || e5TcobCgwh7srNhlw.\u0023\u003DzlpVGw6E\u003D() <= 0)
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
-    int index = num1 - (int) e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI()[0].\u0023\u003Dz2_4KSTY\u003D();
+    int index = num1 - (int) e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI()[0].X;
     if (index < 0 || index >= e5TcobCgwh7srNhlw.\u0023\u003DzlpVGw6E\u003D())
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     ref \u0023\u003Dzio\u0024B9RjpWPC7_mh7fpi_3mT6zCFc5JN2Y0_xZklPX9Z\u0024IbrBkg\u003D\u003D local = ref e5TcobCgwh7srNhlw.\u0023\u003Dz9I1m\u0024aaHezaI()[index];
@@ -347,9 +347,9 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
     HitTestInfo zldchDrVsrVyHh6WyiGy1 = new HitTestInfo();
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzOCYm7g4gfYSc(dataSeries.SeriesName);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzQ9xCEGz0Gl\u0024q(dataSeries.DataSeriesType);
-    zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz2Iv\u0024sxQuGDBR((IComparable) local.\u0023\u003Dz2TNMZ47XeEe8().\u0023\u003Dzg86amuQ\u003D());
+    zldchDrVsrVyHh6WyiGy1.\u0023\u003Dz2Iv\u0024sxQuGDBR((IComparable) local.\u0023\u003Dz2TNMZ47XeEe8().Time);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003DzBswzhzuQHrrX((IComparable) num2);
-    zldchDrVsrVyHh6WyiGy1.\u0023\u003DzV4wgjRUOXtRf((int) local.\u0023\u003Dz2_4KSTY\u003D());
+    zldchDrVsrVyHh6WyiGy1.\u0023\u003DzV4wgjRUOXtRf((int) local.X);
     zldchDrVsrVyHh6WyiGy1.Transaction = zU3TaXfs;
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzn3o1RS9wuET8(true);
     zldchDrVsrVyHh6WyiGy1.\u0023\u003Dzo2ftAfxjqC04(new Point(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D((double) index), xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(zU3TaXfs.\u0023\u003DzbH5YDNBwpnry())));

@@ -52,11 +52,11 @@ public sealed class \u0023\u003Dz4simfJ\u0024MaSW7GKJ8rfRfj96\u0024WwidGdMbGmKL5
   }
 
   [IndexerName("#=zMRIb09I=")]
-  public override \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1]
+  public override IPoint this[int _param1]
   {
     get
     {
-      return (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>(this.\u0023\u003DzkPguCId2b_sS ? (double) (_param1 + this.\u0023\u003DzF2N4B\u0024xc3Qb_) : (this.\u0023\u003Dz3s80TGV4qJM\u0024 != null ? this.\u0023\u003Dz3s80TGV4qJM\u0024[_param1] : this.\u0023\u003DzW77Dep4P9OIy.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dz2_4KSTY\u003D()), new \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR(this.\u0023\u003DzNvQFkZEola4J != null ? this.\u0023\u003DzNvQFkZEola4J[_param1] : this.\u0023\u003Dz7BsRZH9kuhhP.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D(), this.\u0023\u003DzUthk5uNyqnhf != null ? this.\u0023\u003DzUthk5uNyqnhf[_param1] : this.\u0023\u003Dzk_huoe6rk3zN.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D(), this.\u0023\u003DzMS_svQnpwW9f != null ? this.\u0023\u003DzMS_svQnpwW9f[_param1] : this.\u0023\u003DzqlhvGlzoYyj_.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D(), this.\u0023\u003Dz3AOsMlt98XlA != null ? this.\u0023\u003Dz3AOsMlt98XlA[_param1] : this.\u0023\u003DzW77Dep4P9OIy.\u0023\u003Dz\u0024CeUvME\u003D(_param1).\u0023\u003Dzu7q98_E\u003D()));
+      return (IPoint) new \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR>(this.\u0023\u003DzkPguCId2b_sS ? (double) (_param1 + this.\u0023\u003DzF2N4B\u0024xc3Qb_) : (this.\u0023\u003Dz3s80TGV4qJM\u0024 != null ? this.\u0023\u003Dz3s80TGV4qJM\u0024[_param1] : this.\u0023\u003DzW77Dep4P9OIy.\u0023\u003Dz\u0024CeUvME\u003D(_param1).X), new \u0023\u003DzUjQaO0YddGfcKRjWqdpaAJY6yR84WM_wxFXQ0dZvA0kR(this.\u0023\u003DzNvQFkZEola4J != null ? this.\u0023\u003DzNvQFkZEola4J[_param1] : this.\u0023\u003Dz7BsRZH9kuhhP.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y, this.\u0023\u003DzUthk5uNyqnhf != null ? this.\u0023\u003DzUthk5uNyqnhf[_param1] : this.\u0023\u003Dzk_huoe6rk3zN.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y, this.\u0023\u003DzMS_svQnpwW9f != null ? this.\u0023\u003DzMS_svQnpwW9f[_param1] : this.\u0023\u003DzqlhvGlzoYyj_.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y, this.\u0023\u003Dz3AOsMlt98XlA != null ? this.\u0023\u003Dz3AOsMlt98XlA[_param1] : this.\u0023\u003DzW77Dep4P9OIy.\u0023\u003Dz\u0024CeUvME\u003D(_param1).Y));
     }
   }
 
@@ -67,8 +67,8 @@ public sealed class \u0023\u003Dz4simfJ\u0024MaSW7GKJ8rfRfj96\u0024WwidGdMbGmKL5
     double num3 = double.MinValue;
     for (int index = 0; index < num1; ++index)
     {
-      double d1 = this.\u0023\u003DzUthk5uNyqnhf != null ? this.\u0023\u003DzUthk5uNyqnhf[index] : this.\u0023\u003Dzk_huoe6rk3zN.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
-      double d2 = this.\u0023\u003DzMS_svQnpwW9f != null ? this.\u0023\u003DzMS_svQnpwW9f[index] : this.\u0023\u003DzqlhvGlzoYyj_.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
+      double d1 = this.\u0023\u003DzUthk5uNyqnhf != null ? this.\u0023\u003DzUthk5uNyqnhf[index] : this.\u0023\u003Dzk_huoe6rk3zN.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
+      double d2 = this.\u0023\u003DzMS_svQnpwW9f != null ? this.\u0023\u003DzMS_svQnpwW9f[index] : this.\u0023\u003DzqlhvGlzoYyj_.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
       if (!double.IsNaN(d1) && !double.IsNaN(d2))
       {
         num2 = num2 < d2 ? num2 : d2;

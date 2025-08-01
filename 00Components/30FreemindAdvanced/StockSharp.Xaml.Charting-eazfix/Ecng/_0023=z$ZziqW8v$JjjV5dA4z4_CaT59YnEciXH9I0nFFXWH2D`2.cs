@@ -30,11 +30,11 @@ public sealed class \u0023\u003Dz\u0024ZziqW8v\u0024JjjV5dA4z4_CaT59YnEciXH9I0nF
   }
 
   [IndexerName("#=zMRIb09I=")]
-  public override \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1]
+  public override IPoint this[int _param1]
   {
     get
     {
-      return (\u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D) new \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<TX, TY>(this.\u0023\u003DzXfO9DgaVRj7B, this.\u0023\u003Dzkv0SgdOPhi_0, this.\u0023\u003DzyoB24lWE6a_0, _param1);
+      return (IPoint) new \u0023\u003DzN0ICfvrLGc6u90AzzFcyQrSUX0fLOsOZdqgBUYOpk6V\u0024<TX, TY>(this.\u0023\u003DzXfO9DgaVRj7B, this.\u0023\u003Dzkv0SgdOPhi_0, this.\u0023\u003DzyoB24lWE6a_0, _param1);
     }
   }
 

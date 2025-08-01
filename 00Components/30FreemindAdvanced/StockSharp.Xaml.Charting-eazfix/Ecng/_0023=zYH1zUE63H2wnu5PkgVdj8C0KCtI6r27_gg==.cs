@@ -10,7 +10,7 @@ using System.Windows;
 using System.Windows.Media;
 
 #nullable disable
-public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D : 
+public class SeriesInfo : 
   BindableObject ,
   ICloneable
 {
@@ -35,7 +35,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
   
   private int \u0023\u003DzSBc7fTob32WZ;
 
-  public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D(
+  public SeriesInfo(
     IRenderableSeries _param1)
   {
     this.\u0023\u003DzFHC8wYzVYCMq = _param1;
@@ -43,7 +43,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     this.SeriesColor = _param1.SeriesColor;
   }
 
-  public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D(
+  public SeriesInfo(
     IRenderableSeries _param1,
     HitTestInfo _param2)
     : this(_param1)
@@ -74,7 +74,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003Dz6UP\u0024hXi0MzTB;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<DataSeriesType>(ref this.\u0023\u003Dz6UP\u0024hXi0MzTB, value, nameof (DataSeriesType));
+      this.OnSetPropertyChanged<DataSeriesType>(ref this.\u0023\u003Dz6UP\u0024hXi0MzTB, value, nameof (DataSeriesType));
     }
   }
 
@@ -83,7 +83,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Color>(ref this.\u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D, value, nameof (SeriesColor));
+      this.OnSetPropertyChanged<Color>(ref this.\u0023\u003DzE9MbflVLnagM3\u00244L1w\u003D\u003D, value, nameof (SeriesColor));
     }
   }
 
@@ -92,7 +92,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<string>(ref this.\u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D, value, nameof (SeriesName));
+      this.OnSetPropertyChanged<string>(ref this.\u0023\u003DzQEj6PheC_Wki9bX7qw\u003D\u003D, value, nameof (SeriesName));
     }
   }
 
@@ -101,7 +101,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzZn1qtjmkP\u0024rj;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<double>(ref this.\u0023\u003DzZn1qtjmkP\u0024rj, value, nameof (Value));
+      this.OnSetPropertyChanged<double>(ref this.\u0023\u003DzZn1qtjmkP\u0024rj, value, nameof (Value));
     }
   }
 
@@ -110,7 +110,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzP6QCNf4\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzP6QCNf4\u003D, value, nameof (YValue)))
+      if (!this.OnSetPropertyChanged<IComparable>(ref this.\u0023\u003DzP6QCNf4\u003D, value, nameof (YValue)))
         return;
       this.OnPropertyChanged("FormattedYValue");
     }
@@ -123,7 +123,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzkCGMM78\u003D;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003DzkCGMM78\u003D, value, nameof (XValue)))
+      if (!this.OnSetPropertyChanged<IComparable>(ref this.\u0023\u003DzkCGMM78\u003D, value, nameof (XValue)))
         return;
       this.OnPropertyChanged("FormattedXValue");
     }
@@ -136,7 +136,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003Dzv3mQzJ3Hs5AL;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Point>(ref this.\u0023\u003Dzv3mQzJ3Hs5AL, value, nameof (XyCoordinate));
+      this.OnSetPropertyChanged<Point>(ref this.\u0023\u003Dzv3mQzJ3Hs5AL, value, nameof (XyCoordinate));
     }
   }
 
@@ -145,7 +145,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzJvPSB6b\u0024M1Z4;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<bool>(ref this.\u0023\u003DzJvPSB6b\u0024M1Z4, value, nameof (IsHit));
+      this.OnSetPropertyChanged<bool>(ref this.\u0023\u003DzJvPSB6b\u0024M1Z4, value, nameof (IsHit));
     }
   }
 
@@ -154,7 +154,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
     get => this.\u0023\u003DzSBc7fTob32WZ;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<int>(ref this.\u0023\u003DzSBc7fTob32WZ, value, nameof (DataSeriesIndex));
+      this.OnSetPropertyChanged<int>(ref this.\u0023\u003DzSBc7fTob32WZ, value, nameof (DataSeriesIndex));
     }
   }
 
@@ -176,7 +176,7 @@ public class \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D :
   public virtual object Clone() => this.MemberwiseClone();
 
   public virtual void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     if (_param1.RenderableSeries != this.\u0023\u003DzFHC8wYzVYCMq)
       throw new InvalidOperationException("invalid series");

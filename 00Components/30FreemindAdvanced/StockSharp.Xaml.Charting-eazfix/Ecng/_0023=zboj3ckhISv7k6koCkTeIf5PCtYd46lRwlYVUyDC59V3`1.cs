@@ -31,47 +31,47 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
   
   private readonly bool \u0023\u003DzyDntgFbUTuaIjjSSeA\u003D\u003D = (object) _param1 is ChartOrderElement;
   
-  private CandlestickUI \u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D;
+  private ChartCandleElementViewModel _candlestickUI;
   
-  private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzKj7nvWQ\u003D;
+  private ChartSeriesViewModel _chartSeriesViewModel;
   
   private ChartElementViewModel \u0023\u003DzZYTLjjg\u003D;
 
   private TransactionDataSeries \u0023\u003DzcSPUTHNE35Wc()
   {
-    return this.\u0023\u003DzKj7nvWQ\u003D?.DataSeries as TransactionDataSeries;
+    return this._chartSeriesViewModel?.DataSeries as TransactionDataSeries;
   }
 
   protected override void Init()
   {
     base.Init();
-    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChartElementViewModel(string.Empty, (INotifyPropertyChanged) this.ChartComponentView, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
+    this.ChartViewModel.AddChild(this.\u0023\u003DzZYTLjjg\u003D = new ChartElementViewModel(string.Empty, (INotifyPropertyChanged) this.ChartComponentView, new Func<SeriesInfo, Color>(this.\u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D), new Func<SeriesInfo, string>(\u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.\u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D), new string[2]
     {
       "BuyColor",
       "SellColor"
     }));
-    this.\u0023\u003Dzk_r\u0024wtNtUKwJ(false);
+    this.GuiInitSeries(false);
   }
 
-  private void \u0023\u003Dzk_r\u0024wtNtUKwJ(bool _param1)
+  private void GuiInitSeries(bool _param1)
   {
     \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.PrivateSealedClass0830 z9r5QdtX0xdsJ15Nf5Q = new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>.PrivateSealedClass0830();
     z9r5QdtX0xdsJ15Nf5Q._variableSome3535 = this;
     z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D = _param1;
-    if (!DrawableChartElementBaseViewModel.IsUiThread())
+    if (!DrawableChartComponentBaseViewModel.IsUiThread())
     {
       this.PerformUiAction(new Action(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D), true);
     }
     else
     {
-      CandlestickUI candles = this.ScichartSurfaceMVVM.CandlesCompositeElement?.Candles;
-      if (this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D != candles)
+      ChartCandleElementViewModel candles = this.ScichartSurfaceMVVM.CandlesCompositeElement?.Candles;
+      if (this._candlestickUI != candles)
       {
         this.\u0023\u003DzcSPUTHNE35Wc()?.Clear();
-        this.\u0023\u003Dz_JPQrgU\u003D();
-        this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D = candles;
+        this.RemoveChartSeries();
+        this._candlestickUI = candles;
       }
-      if (this.\u0023\u003DzKj7nvWQ\u003D != null)
+      if (this._chartSeriesViewModel != null)
         return;
       this.\u0023\u003DzB1NfMuK_wtfq(z9r5QdtX0xdsJ15Nf5Q.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D);
     }
@@ -100,7 +100,7 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
     return vmZznA5Vnnsp4Nd0g;
   }
 
-  protected override void Clear() => this.\u0023\u003Dz_JPQrgU\u003D();
+  protected override void Clear() => this.RemoveChartSeries();
 
   protected override void UpdateUi()
   {
@@ -113,7 +113,7 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
     if (!this.\u0023\u003DzyDntgFbUTuaIjjSSeA\u003D\u003D)
       return;
     ChartOrderDisplayFilter filter = ((IChartOrderElement) (object) this.ChartComponentView).Filter;
-    if (!(this.\u0023\u003DzKj7nvWQ\u003D?.RenderSeries is \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D renderSeries))
+    if (!(this._chartSeriesViewModel?.RenderSeries is \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D renderSeries))
       return;
     renderSeries.ShowError = filter != ChartOrderDisplayFilter.NoErrorsOnly;
     renderSeries.ShowBuy = filter != ChartOrderDisplayFilter.ErrorsOnly;
@@ -132,28 +132,28 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
 
   private void \u0023\u003DzB1NfMuK_wtfq(bool _param1)
   {
-    if (this.\u0023\u003DzKj7nvWQ\u003D != null)
+    if (this._chartSeriesViewModel != null)
       throw new InvalidOperationException("vm is not null");
-    if (this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D == null)
+    if (this._candlestickUI == null)
     {
       if (_param1)
         throw new InvalidOperationException("unable to draw transactions on a chart without candles");
     }
     else
     {
-      this.\u0023\u003DzKj7nvWQ\u003D = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) new TransactionDataSeries(this.\u0023\u003DzA4B\u0024PS40sQTxmCO6Ew\u003D\u003D.OhlcSeries), (IRenderableSeries) this.CreateRenderableSeries());
-      this.ScichartSurfaceMVVM.AddSeriesViewModelsToRoot(this.RootElem, (IRenderableSeries) this.\u0023\u003DzKj7nvWQ\u003D);
+      this._chartSeriesViewModel = new ChartSeriesViewModel((IDataSeries) new TransactionDataSeries(this._candlestickUI.OhlcSeries), (IRenderableSeries) this.CreateRenderableSeries());
+      this.ScichartSurfaceMVVM.AddSeriesViewModelsToRoot(this.RootElem, (IRenderableSeries) this._chartSeriesViewModel);
       this.\u0023\u003Dzip81Rn8\u003D();
     }
   }
 
-  private void \u0023\u003Dz_JPQrgU\u003D()
+  private void RemoveChartSeries()
   {
-    if (this.\u0023\u003DzKj7nvWQ\u003D == null)
+    if (this._chartSeriesViewModel == null)
       return;
-    BindingOperations.ClearAllBindings((DependencyObject) this.\u0023\u003DzKj7nvWQ\u003D.RenderSeries);
+    BindingOperations.ClearAllBindings((DependencyObject) this._chartSeriesViewModel.RenderSeries);
     this.ScichartSurfaceMVVM.RemoveChartComponent(this.RootElem);
-    this.\u0023\u003DzKj7nvWQ\u003D = (\u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D) null;
+    this._chartSeriesViewModel = (ChartSeriesViewModel) null;
   }
 
   public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
@@ -166,14 +166,14 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
   {
     if (_param1 == null || CollectionHelper.IsEmpty<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>((IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) _param1))
       return false;
-    this.\u0023\u003Dzk_r\u0024wtNtUKwJ(true);
+    this.GuiInitSeries(true);
     foreach (ChartDrawData.\u0023\u003DzU3TaXFs\u003D trans in (IEnumerable<ChartDrawData.\u0023\u003DzU3TaXFs\u003D>) _param1)
       this.\u0023\u003DzcSPUTHNE35Wc().AddOrUpdateTransaction(trans);
     return true;
   }
 
   private Color \u0023\u003Dq0cVEuBKxrRtQRcGiBDVaAJSkLIlbwCQLRb9RfpzQ\u0024mo\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     if (!(_param1 is dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd uwxhcH9YwmL4RsubcEjd))
       return Colors.Transparent;
@@ -181,14 +181,14 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
   }
 
   public static string \u0023\u003DqiBgHXqStJWoTIfDs2MRnGdrXTbDw1HFbm_Laa2\u0024v1lw\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param0)
+    SeriesInfo _param0)
   {
     return _param0 is dje_zDDJ3D37GQNGTHWK82PDGKZ3UWXHCH9YWML4RSUBC_ejd uwxhcH9YwmL4RsubcEjd ? uwxhcH9YwmL4RsubcEjd.Action : string.Empty;
   }
 
   private void \u0023\u003DztNCzdO3g0AGeNaIYwDSKLi0\u003D()
   {
-    this.\u0023\u003Dz_JPQrgU\u003D();
+    this.RemoveChartSeries();
     this.\u0023\u003DzB1NfMuK_wtfq(false);
   }
 
@@ -199,7 +199,7 @@ public sealed class \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_
 
     public void \u0023\u003DzRiz68osX2d1uaMGusg\u003D\u003D()
     {
-      this._variableSome3535.\u0023\u003Dzk_r\u0024wtNtUKwJ(this.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D);
+      this._variableSome3535.GuiInitSeries(this.\u0023\u003DzMpYhyRe\u00247X_0KjiOU\u0024lgSUE\u003D);
     }
   }
 

@@ -126,24 +126,24 @@ public sealed class StackedMountainRenderableSeries :
     int index2 = num4 - 1;
     for (int index3 = 0; index3 < num1; ++index3)
     {
-      \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(index3);
+      IPoint kld48pAvUlrTzJ1tmfY = mz4rNexJsSmCjpOm.\u0023\u003DzSKfyjpipx8dI().\u0023\u003Dz\u0024CeUvME\u003D(index3);
       Tuple<double, double> tuple = this.\u0023\u003Dz9NrWMa9\u00243uT8().\u0023\u003DzeKx7SKdwYOP2((\u0023\u003DzbZGwufOdFTewaG24h4AgEnzuMpofQ03Hc8jI6jE7b1HUFPrXQWmwDjkmjGOLarsxpjJdER0Gb4PvgE1uuw\u003D\u003D) this, index3, true);
       if (this.IsDigitalLine && index3 != 0)
       {
-        p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+        p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.X;
         p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzPqsSI6C5MOOb()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index1 - 1];
         ++index1;
       }
-      p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+      p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzwQnyySN6xaVC()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index1] = kld48pAvUlrTzJ1tmfY.X;
       p09swszfkFaReRy0aAtDn3C2.\u0023\u003DzPqsSI6C5MOOb()[index1] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index1] = tuple.Item1;
       ++index1;
       if (_param1 && index3 != 0)
       {
-        p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+        p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.X;
         p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2] = p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2 + 1];
         --index2;
       }
-      p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.\u0023\u003Dz2_4KSTY\u003D();
+      p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzwQnyySN6xaVC()[index2] = kld48pAvUlrTzJ1tmfY.X;
       p09swszfkFaReRy0aAtDn3C1.\u0023\u003DzPqsSI6C5MOOb()[index2] = tuple.Item2;
       --index2;
     }

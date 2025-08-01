@@ -2993,7 +2993,7 @@ public partial class Chart : UserControl,
 //            {
 //                if ( !indicatorPicker.AutoSelectCandles )
 //                {
-//                    CandlestickUIPicker wnd2 = new CandlestickUIPicker( )
+//                    ChartCandleElementViewModelPicker wnd2 = new ChartCandleElementViewModelPicker( )
 //                    {
 //                        Elements = array,
 //                        SelectedElement = ChartCandleElement

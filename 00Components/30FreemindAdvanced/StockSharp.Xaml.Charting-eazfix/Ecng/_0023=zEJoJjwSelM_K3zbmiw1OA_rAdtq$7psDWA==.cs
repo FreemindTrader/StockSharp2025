@@ -10,7 +10,7 @@ using System.Windows;
 
 #nullable disable
 public sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D : 
-  \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D
+  SeriesInfo
 {
   
   private IComparable \u0023\u003Dz3Y\u0024NY_pvq2mj;
@@ -47,7 +47,7 @@ public sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u
     get => this.\u0023\u003Dz3Y\u0024NY_pvq2mj;
     set
     {
-      if (!this.\u0023\u003DzwGPLgl8\u003D<IComparable>(ref this.\u0023\u003Dz3Y\u0024NY_pvq2mj, value, nameof (Y1Value)))
+      if (!this.OnSetPropertyChanged<IComparable>(ref this.\u0023\u003Dz3Y\u0024NY_pvq2mj, value, nameof (Y1Value)))
         return;
       this.OnPropertyChanged("FormattedY1Value");
     }
@@ -60,12 +60,12 @@ public sealed class \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u
     get => this.\u0023\u003Dz1CwHCPFpNKq7;
     set
     {
-      this.\u0023\u003DzwGPLgl8\u003D<Point>(ref this.\u0023\u003Dz1CwHCPFpNKq7, value, nameof (Xy1Coordinate));
+      this.OnSetPropertyChanged<Point>(ref this.\u0023\u003Dz1CwHCPFpNKq7, value, nameof (Xy1Coordinate));
     }
   }
 
   public override void \u0023\u003DzCadMMgc\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     base.\u0023\u003DzCadMMgc\u003D(_param1);
     \u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D k3zbmiw1OaRAdtq7psDwa = (\u0023\u003DzEJoJjwSelM_K3zbmiw1OA_rAdtq\u00247psDWA\u003D\u003D) _param1;

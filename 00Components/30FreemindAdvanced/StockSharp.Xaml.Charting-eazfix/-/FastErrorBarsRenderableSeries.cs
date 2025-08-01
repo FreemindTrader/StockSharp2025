@@ -58,7 +58,7 @@ public sealed class FastErrorBarsRenderableSeries :
       for (int index = 0; index < num1; ++index)
       {
         \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt> iwzGyvO4YaqDkpiI = joeFg518v349a03h5[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzUib3SzczDtLU7txM4YiSeKmW3DwiRbwEiC7JBb4bkPqt>;
-        double num3 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+        double num3 = iwzGyvO4YaqDkpiI.X;
         double d1 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003Dz\u0024ktIt4bbVFKI();
         double d2 = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb().\u0023\u003Dzasn0Azw0UwTS();
         if (!double.IsNaN(d1) && !double.IsNaN(d2))

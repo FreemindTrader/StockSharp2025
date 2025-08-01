@@ -17,9 +17,9 @@ public interface IPointSeries
   int \u0023\u003DzlpVGw6E\u003D();
 
   [IndexerName("#=zMRIb09I=")]
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D this[int _param1] { get; }
+  IPoint this[int _param1] { get; }
 
-  \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D \u0023\u003Dz\u0024CeUvME\u003D(
+  IPoint \u0023\u003Dz\u0024CeUvME\u003D(
     int _param1);
 
   DoubleRange \u0023\u003DzxNQHuqrEvxH2();

@@ -30,15 +30,15 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
   
   private readonly \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<TX, double> \u0023\u003DzDh1lJfFlHUWk;
   
-  private readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, double> \u0023\u003Dzva\u002460XCiLL2n;
+  private readonly XyDataSeries<TX, double> \u0023\u003Dzva\u002460XCiLL2n;
   
-  private readonly \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, double> \u0023\u003DzRSDkBpQ1QWG0;
+  private readonly XyDataSeries<TX, double> \u0023\u003DzRSDkBpQ1QWG0;
   
-  private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzYirGqB2gXz09;
+  private ChartSeriesViewModel \u0023\u003DzYirGqB2gXz09;
   
-  private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzIHjxTqC159pe;
+  private ChartSeriesViewModel \u0023\u003DzIHjxTqC159pe;
   
-  private \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D \u0023\u003DzRm0WUjzJSu8n;
+  private ChartSeriesViewModel \u0023\u003DzRm0WUjzJSu8n;
   
   private ChartElementViewModel \u0023\u003Dzh0ozsIDILK5b;
   
@@ -54,8 +54,8 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
     if (type != typeof (DateTime) && type != typeof (double))
       throw new NotSupportedException($"X type {type.Name} is not supported");
     this.\u0023\u003DzDh1lJfFlHUWk = new \u0023\u003DzpKvy0OA0_My0Sg27HiUJaXC_MvbCQSSYY52HUUP8Kgkq<TX, double>();
-    this.\u0023\u003Dzva\u002460XCiLL2n = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, double>();
-    this.\u0023\u003DzRSDkBpQ1QWG0 = new \u0023\u003DzdPAQRlt3VWWvvKbSPLZ0IV6_IiM70jMp5uwjMXR4ajr_<TX, double>();
+    this.\u0023\u003Dzva\u002460XCiLL2n = new XyDataSeries<TX, double>();
+    this.\u0023\u003DzRSDkBpQ1QWG0 = new XyDataSeries<TX, double>();
   }
 
   protected override void Init()
@@ -75,13 +75,13 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
       "Color",
       "AdditionalColor"
     };
-    this.ChartViewModel.AddChild(this.\u0023\u003Dzh0ozsIDILK5b = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView.Line1, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dzgl15kO2PtK5giK8GzTIwj08\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D)), strArray));
-    this.ChartViewModel.AddChild(this.\u0023\u003DzXNWLRaQhQW_0 = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView.Line2, new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, Color>(this.\u0023\u003Dz7GRJChTRxjdOfay3RCW2oqs\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.SomeMethond0343.\u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003Dzh0ozsIDILK5b = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView.Line1, new Func<SeriesInfo, Color>(this.\u0023\u003Dzgl15kO2PtK5giK8GzTIwj08\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D = new Func<SeriesInfo, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.SomeMethond0343.\u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D)), strArray));
+    this.ChartViewModel.AddChild(this.\u0023\u003DzXNWLRaQhQW_0 = new ChartElementViewModel((INotifyPropertyChanged) this.ChartComponentView.Line2, new Func<SeriesInfo, Color>(this.\u0023\u003Dz7GRJChTRxjdOfay3RCW2oqs\u003D), \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D ?? (\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.\u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D = new Func<SeriesInfo, string>(\u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383.SomeMethond0343.\u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D)), strArray));
     this.AddPropertyEvents((IChartComponent) this.ChartComponentView.Line1);
     this.AddPropertyEvents((IChartComponent) this.ChartComponentView.Line2);
-    this.\u0023\u003DzYirGqB2gXz09 = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003Dzva\u002460XCiLL2n, (IRenderableSeries) null);
-    this.\u0023\u003DzIHjxTqC159pe = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzRSDkBpQ1QWG0, (IRenderableSeries) null);
-    this.\u0023\u003DzRm0WUjzJSu8n = new \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D((\u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D) this.\u0023\u003DzDh1lJfFlHUWk, (IRenderableSeries) null);
+    this.\u0023\u003DzYirGqB2gXz09 = new ChartSeriesViewModel((IDataSeries) this.\u0023\u003Dzva\u002460XCiLL2n, (IRenderableSeries) null);
+    this.\u0023\u003DzIHjxTqC159pe = new ChartSeriesViewModel((IDataSeries) this.\u0023\u003DzRSDkBpQ1QWG0, (IRenderableSeries) null);
+    this.\u0023\u003DzRm0WUjzJSu8n = new ChartSeriesViewModel((IDataSeries) this.\u0023\u003DzDh1lJfFlHUWk, (IRenderableSeries) null);
     this.\u0023\u003DzcIqdE4oVd9lsrOCnFSgflME\u003D();
     this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzYirGqB2gXz09, this.ChartComponentView.Line1, this.\u0023\u003Dzh0ozsIDILK5b);
     this.\u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(this.\u0023\u003DzIHjxTqC159pe, this.ChartComponentView.Line2, this.\u0023\u003DzXNWLRaQhQW_0);
@@ -112,13 +112,13 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
   }
 
   private void \u0023\u003DzD3DulDZVZwBVkucTxfPDSEA\u003D(
-    \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D _param1,
+    ChartSeriesViewModel _param1,
     ChartLineElement _param2,
     ChartElementViewModel _param3)
   {
     if (!(_param1.RenderSeries is FastLineRenderableSeries mq47Z7V297V2U22Ejd))
     {
-      \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D js00Vef8BmoZoBlhDa = _param1;
+      ChartSeriesViewModel js00Vef8BmoZoBlhDa = _param1;
       ChartElementViewModel[] h0icPdKkp5z7HsjcOyArray = new ChartElementViewModel[1]
       {
         _param3
@@ -198,7 +198,7 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
     double[] array3 = new double[count];
     foreach (ChartDrawData.sxTuple<TX1> z6MdlWkBsH4 in (IEnumerable<ChartDrawData.sxTuple<TX1>>) _param1)
     {
-      TX zulcL8Ra = (TX) (ValueType) z6MdlWkBsH4.\u0023\u003Dz2_4KSTY\u003D();
+      TX zulcL8Ra = (TX) (ValueType) z6MdlWkBsH4.X;
       switch (zulcL8Ra.CompareTo((object) comparable))
       {
         case -1:
@@ -251,13 +251,13 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
   }
 
   private Color \u0023\u003Dzgl15kO2PtK5giK8GzTIwj08\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     return ChartElementViewModel.GetHigherAlphaColor(this.ChartComponentView.Line1.Color, this.ChartComponentView.Line1.AdditionalColor);
   }
 
   private Color \u0023\u003Dz7GRJChTRxjdOfay3RCW2oqs\u003D(
-    \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    SeriesInfo _param1)
   {
     return ChartElementViewModel.GetHigherAlphaColor(this.ChartComponentView.Line2.Color, this.ChartComponentView.Line2.AdditionalColor);
   }
@@ -266,17 +266,17 @@ public sealed class \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2
   private new sealed class SomeClass34343383
   {
     public static readonly \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383 SomeMethond0343 = new \u0023\u003DztorG3HTUDpMsfjPqFEEe9I55QlyU1R34a\u0024\u0024M2u5Uiq7Pu7_oc1A1JQ8nQQRm<TX>.SomeClass34343383();
-    public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D;
-    public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, string> \u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D;
+    public static Func<SeriesInfo, string> \u0023\u003DzQKnO3tXJvatO0gqnsg\u003D\u003D;
+    public static Func<SeriesInfo, string> \u0023\u003DzuwIb9LpQWiX75WO6PQ\u003D\u003D;
 
     public string \u0023\u003Dz_kGaLH\u0024IiOuHLLvhkS2WN_s\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       return _param1.FormattedYValue;
     }
 
     public string \u0023\u003DzMUMqMtnuX9rATNeQa7kIAUA\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       return _param1.FormattedYValue;
     }

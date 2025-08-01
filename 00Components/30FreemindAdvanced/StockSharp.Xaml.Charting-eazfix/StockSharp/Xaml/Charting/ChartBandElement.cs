@@ -40,7 +40,7 @@ public sealed class ChartBandElement : ChartComponent<ChartBandElement>,
 
     private readonly ChartLineElement _lineTwo;
 
-    private DrawableChartElementBaseViewModel _baseViewModel;
+    private DrawableChartComponentBaseViewModel _baseViewModel;
 
     /// <summary>Create instance.</summary>
     public ChartBandElement()
@@ -109,10 +109,10 @@ public sealed class ChartBandElement : ChartComponent<ChartBandElement>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
+    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
       ScichartSurfaceMVVM _param1 )
     {
-        this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( DrawableChartElementBaseViewModel ) new ChartBandElementVM<DateTime>( this );
+        this._baseViewModel = _baseViewModel.Area.XAxisType == ChartAxisType.Numeric ? new ChartBandElementVM<double>( this ) : ( DrawableChartComponentBaseViewModel ) new ChartBandElementVM<DateTime>( this );
         return _baseViewModel;
     }
 

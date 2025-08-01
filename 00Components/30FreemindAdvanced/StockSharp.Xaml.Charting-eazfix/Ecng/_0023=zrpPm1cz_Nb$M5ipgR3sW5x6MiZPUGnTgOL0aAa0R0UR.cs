@@ -42,7 +42,7 @@ public sealed class LegendModifier :
   protected override void \u0023\u003Dz_wtru8oSZoY9(Point _param1)
   {
     this.SeriesData.UpdateSeries(this.\u0023\u003DzzhlDItrRFv\u0024\u0024(_param1));
-    CollectionHelper.ForEach<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(this.SeriesData.SeriesInfo.GroupBy<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, DrawableChartElementBaseViewModel>(LegendModifier.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, DrawableChartElementBaseViewModel>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(LegendModifier.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), LegendModifier.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
+    CollectionHelper.ForEach<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>>(this.SeriesData.SeriesInfo.GroupBy<SeriesInfo, DrawableChartComponentBaseViewModel>(LegendModifier.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D = new Func<SeriesInfo, DrawableChartComponentBaseViewModel>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D))).Where<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>>(LegendModifier.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D = new Func<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>, bool>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D))), LegendModifier.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D = new Action<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D)));
   }
 
   protected override void \u0023\u003Dz1z_ZexRGbAiN91rPDA\u003D\u003D(Point _param1)
@@ -66,7 +66,7 @@ public sealed class LegendModifier :
 
   private sealed class SomeWheireosoe
   {
-    public \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D \u0023\u003Dz\u00246gChyc\u003D;
+    public SeriesInfo \u0023\u003Dz\u00246gChyc\u003D;
 
     public void \u0023\u003Dzrmvrnfo5nmhUy3uWog0cspw\u003D(
       ChartElementViewModel _param1)
@@ -79,35 +79,35 @@ public sealed class LegendModifier :
   private new sealed class SomeClass34343383
   {
     public static readonly LegendModifier.SomeClass34343383 SomeMethond0343 = new LegendModifier.SomeClass34343383();
-    public static Func<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D, DrawableChartElementBaseViewModel> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
-    public static Func<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
-    public static Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
-    public static Action<IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>> \u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D;
+    public static Func<SeriesInfo, DrawableChartComponentBaseViewModel> \u0023\u003DzKkIXz5CmqQ1_DowyDQ\u003D\u003D;
+    public static Func<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>, bool> \u0023\u003DzPgm0u7xHO4Weuga3SQ\u003D\u003D;
+    public static Action<SeriesInfo> \u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D;
+    public static Action<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>> \u0023\u003Dzr3tKWd1XimhmhizQXg\u003D\u003D;
 
-    public DrawableChartElementBaseViewModel \u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+    public DrawableChartComponentBaseViewModel \u0023\u003DzP2KQy6cvHJetC3NEOoABaIg\u003D(
+      SeriesInfo _param1)
     {
-      return !(((FrameworkElement) _param1.RenderableSeries).Tag is Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[]> tag) ? (DrawableChartElementBaseViewModel) null : tag.Item1;
+      return !(((FrameworkElement) _param1.RenderableSeries).Tag is Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[]> tag) ? (DrawableChartComponentBaseViewModel) null : tag.Item1;
     }
 
     public bool \u0023\u003DzCyJGy_nYUkMGqDtkSnLYZgM\u003D(
-      IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
+      IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo> _param1)
     {
       return _param1.Key != null;
     }
 
     public void \u0023\u003DzxL3Llt6OGrVxJQubHdBdcdo\u003D(
-      IGrouping<DrawableChartElementBaseViewModel, \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D> _param1)
+      IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo> _param1)
     {
-      CollectionHelper.ForEach<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>((IEnumerable<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>) _param1, LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<\u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
+      CollectionHelper.ForEach<SeriesInfo>((IEnumerable<SeriesInfo>) _param1, LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D ?? (LegendModifier.SomeClass34343383.\u0023\u003Dz08eHob2PYGlidFcWEw\u003D\u003D = new Action<SeriesInfo>(LegendModifier.SomeClass34343383.SomeMethond0343.\u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D)));
     }
 
     public void \u0023\u003DzSo1idhEGGfqUtId8KFuThME\u003D(
-      \u0023\u003DzYH1zUE63H2wnu5PkgVdj8C0KCtI6r27_gg\u003D\u003D _param1)
+      SeriesInfo _param1)
     {
       LegendModifier.SomeWheireosoe vbxLeArTkallkIdHg = new LegendModifier.SomeWheireosoe();
       vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D = _param1;
-      if (!(((FrameworkElement) vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D.RenderableSeries).Tag is Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[]> tag))
+      if (!(((FrameworkElement) vbxLeArTkallkIdHg.\u0023\u003Dz\u00246gChyc\u003D.RenderableSeries).Tag is Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[]> tag))
         return;
       CollectionHelper.ForEach<ChartElementViewModel>((IEnumerable<ChartElementViewModel>) tag.Item2, new Action<ChartElementViewModel>(vbxLeArTkallkIdHg.\u0023\u003Dzrmvrnfo5nmhUy3uWog0cspw\u003D));
     }

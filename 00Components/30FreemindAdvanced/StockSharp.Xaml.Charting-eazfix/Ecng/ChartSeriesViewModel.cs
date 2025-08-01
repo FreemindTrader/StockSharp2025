@@ -8,25 +8,25 @@ using System.ComponentModel;
 using System.Diagnostics;
 
 #nullable disable
-public sealed class \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D : 
+public sealed class ChartSeriesViewModel : 
   BindableObject ,
   INotifyPropertyChanged,
   IRenderableSeries
 {
   
-  private \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D \u0023\u003DzXfO9DgaVRj7B;
+  private IDataSeries \u0023\u003DzXfO9DgaVRj7B;
   
   private IRenderableSeries \u0023\u003Dzaoo30gtEU_6B;
 
-  public \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VEf8BMO_ZOBlhDA\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1,
+  public ChartSeriesViewModel(
+    IDataSeries _param1,
     IRenderableSeries _param2)
   {
     this.\u0023\u003DzXfO9DgaVRj7B = _param1;
     this.\u0023\u003Dzaoo30gtEU_6B = _param2;
   }
 
-  public \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D DataSeries
+  public IDataSeries DataSeries
   {
     get => this.\u0023\u003DzXfO9DgaVRj7B;
     set

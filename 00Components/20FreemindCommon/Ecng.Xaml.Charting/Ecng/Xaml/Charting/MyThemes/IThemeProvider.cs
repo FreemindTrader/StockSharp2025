@@ -21,7 +21,7 @@ namespace fx.Xaml.Charting
             get; set;
         }
 
-        Brush UltrachartBackground
+        Brush SciChartBackground
         {
             get; set;
         }

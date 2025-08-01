@@ -17,7 +17,7 @@ using System.Windows.Media;
 namespace StockSharp.Charting;
 
 public sealed class BoxVolumeRenderableSeries : 
-  \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D
+  TimeframeSegmentRenderableSeries
 {
   
   public static readonly DependencyProperty \u0023\u003DzY\u0024hEpvHX6SG5MENm\u0024w\u003D\u003D = DependencyProperty.Register(nameof (Timeframe2), typeof (TimeSpan?), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) TimeSpan.FromMinutes(5.0), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9), new CoerceValueCallback(BoxVolumeRenderableSeries.\u0023\u003DzbNu7yh8kw5s3YRvNpAP5CbU\u003D)));
@@ -258,13 +258,13 @@ label_11:
     \u0023\u003DzSnHC0BRBQCx0F\u0024gJzRjVTI2frk8jMoa7AO0kEjY6wcnQ6fBfXg\u003D\u003D.\u0023\u003DzFvAsfEI\u003D().\u0023\u003Dz3jAE7bQ\u003D("BoxVolume: started render {0} segments. Indexes: {1}-{2}, VisibleRange: {3}-{4}", new object[5]
     {
       (object) j9sJkRf4wMmhD3hBArray.Length,
-      (object) j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D(),
-      (object) j9sJkRf4wMmhD3hBArray[j9sJkRf4wMmhD3hBArray.Length - 1].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzCMB4T5w\u003D(),
+      (object) j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().Count,
+      (object) j9sJkRf4wMmhD3hBArray[j9sJkRf4wMmhD3hBArray.Length - 1].\u0023\u003Dz0IPdd6wsmxZJ().Count,
       (object) visibleRange.Min,
       (object) visibleRange.Max
     });
     double val1_1 = Math.Abs(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(1.0) - xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(0.0));
-    double num2 = Math.Abs(xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D()) - xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D() + num1));
+    double num2 = Math.Abs(xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice) - xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hBArray[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice + num1));
     double num3 = num2 / 2.0;
     double num4 = val1_1 / 2.0;
     kvt89B1lUeA7EdfukJs.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D = xkzemsMs5tGkouk5w2.GetDataValue(-num2);
@@ -295,18 +295,18 @@ label_11:
         int num5;
         for (int index = 0; index < length; index = num5 + 1)
         {
-          \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz9oVGnVjC1spU(source1, j9sJkRf4wMmhD3hBArray, index, nullable9.Value);
+          TimeframeSegmentRenderableSeries.\u0023\u003Dz9oVGnVjC1spU(source1, j9sJkRf4wMmhD3hBArray, index, nullable9.Value);
           num5 = index + (source1.Count - 1);
-          (double num6, double num7) = \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003Dz\u0024zWmmGTAbDON(source1.Select<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D ?? (BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D))));
-          double num8 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(source1[0].\u0023\u003Dz2_4KSTY\u003D()) - num4;
+          (double num6, double num7) = TimeframeDataSegment.\u0023\u003Dz\u0024zWmmGTAbDON(source1.Select<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, TimeframeDataSegment>(BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D ?? (BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, TimeframeDataSegment>(BoxVolumeRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D))));
+          double num8 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(source1[0].X) - num4;
           ICoordinateCalculator<<double> xkzemsMs5tGkouk5w3 = xkzemsMs5tGkouk5w1;
           List<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB> j9sJkRf4wMmhD3hBList = source1;
-          double num9 = j9sJkRf4wMmhD3hBList[j9sJkRf4wMmhD3hBList.Count - 1].\u0023\u003Dz2_4KSTY\u003D();
+          double num9 = j9sJkRf4wMmhD3hBList[j9sJkRf4wMmhD3hBList.Count - 1].X;
           double num10 = xkzemsMs5tGkouk5w3.\u0023\u003DzhL6gsJw\u003D(num9) + num4;
           double num11 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num7) - num3;
           double num12 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num6) + num3;
           int num13 = 1 + (int) Math.Round((num7 - num6) / num1);
-          \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzIhSOYOaWRQ6n(_param1, iluL6N4L8CsqVgQq, new Point(num8, num11), new Point(num10, num12), source1.Count, num13, rhwYsZxA33iRu6Id7J1, rhwYsZxA33iRu6Id7J1, xrgcdFbSdWgN9GcT8_2);
+          TimeframeSegmentRenderableSeries.\u0023\u003DzIhSOYOaWRQ6n(_param1, iluL6N4L8CsqVgQq, new Point(num8, num11), new Point(num10, num12), source1.Count, num13, rhwYsZxA33iRu6Id7J1, rhwYsZxA33iRu6Id7J1, xrgcdFbSdWgN9GcT8_2);
         }
       }
       if (nullable3.HasValue)
@@ -315,18 +315,18 @@ label_11:
         int num14;
         for (int index = 0; index < length; index = num14 + 1)
         {
-          \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003Dz9oVGnVjC1spU(source1, j9sJkRf4wMmhD3hBArray, index, nullable10.Value);
+          TimeframeSegmentRenderableSeries.\u0023\u003Dz9oVGnVjC1spU(source1, j9sJkRf4wMmhD3hBArray, index, nullable10.Value);
           num14 = index + (source1.Count - 1);
-          (double num15, double num16) = \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj.\u0023\u003Dz\u0024zWmmGTAbDON(source1.Select<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D ?? (BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj>(BoxVolumeRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D))));
-          double num17 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(source1[0].\u0023\u003Dz2_4KSTY\u003D()) - num4;
+          (double num15, double num16) = TimeframeDataSegment.\u0023\u003Dz\u0024zWmmGTAbDON(source1.Select<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, TimeframeDataSegment>(BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D ?? (BoxVolumeRenderableSeries.SomeClass34343383.\u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D = new Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, TimeframeDataSegment>(BoxVolumeRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D))));
+          double num17 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(source1[0].X) - num4;
           ICoordinateCalculator<<double> xkzemsMs5tGkouk5w4 = xkzemsMs5tGkouk5w1;
           List<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB> j9sJkRf4wMmhD3hBList = source1;
-          double num18 = j9sJkRf4wMmhD3hBList[j9sJkRf4wMmhD3hBList.Count - 1].\u0023\u003Dz2_4KSTY\u003D();
+          double num18 = j9sJkRf4wMmhD3hBList[j9sJkRf4wMmhD3hBList.Count - 1].X;
           double num19 = xkzemsMs5tGkouk5w4.\u0023\u003DzhL6gsJw\u003D(num18) + num4;
           double num20 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num16) - num3;
           double num21 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num15) + num3;
           int num22 = 1 + (int) Math.Round((num16 - num15) / num1);
-          \u0023\u003DzfuNSIBalvsZFtWGR3evczvDB6ICgOj5bitY1F73ysBc2wk6CsoQCv63dERVcBTRfw9WRz_f8qIcTicp0wQ\u003D\u003D.\u0023\u003DzIhSOYOaWRQ6n(_param1, iluL6N4L8CsqVgQq, new Point(num17, num20), new Point(num19, num21), source1.Count, num22, rhwYsZxA33iRu6Id7J3, rhwYsZxA33iRu6Id7J2, xrgcdFbSdWgN9GcT8_1);
+          TimeframeSegmentRenderableSeries.\u0023\u003DzIhSOYOaWRQ6n(_param1, iluL6N4L8CsqVgQq, new Point(num17, num20), new Point(num19, num21), source1.Count, num22, rhwYsZxA33iRu6Id7J3, rhwYsZxA33iRu6Id7J2, xrgcdFbSdWgN9GcT8_1);
         }
       }
       Size size = new Size(val1_1, num2);
@@ -340,7 +340,7 @@ label_11:
         for (int index = 0; index < length; ++index)
         {
           \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB j9sJkRf4wMmhD3hB = j9sJkRf4wMmhD3hBArray[index];
-          double num23 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz2_4KSTY\u003D()) - num4;
+          double num23 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.X) - num4;
           (KeyValuePair<double, CandlePriceLevel>[] source2, Decimal num24) = j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dzb5KHU\u00247RutjHsWssog\u003D\u003D(num1);
           bool flag1 = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dzyv\u0024EfaBUnbgQ(size, num24.GetDecimalLength());
           double? nullable11 = new double?();
@@ -397,11 +397,11 @@ label_11:
         for (int index = 0; index < length; ++index)
         {
           \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB j9sJkRf4wMmhD3hB = j9sJkRf4wMmhD3hBArray[index];
-          double num29 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz2_4KSTY\u003D()) - num4;
-          if (j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D() <= kvt89B1lUeA7EdfukJs.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D && j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D() >= kvt89B1lUeA7EdfukJs.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D)
+          double num29 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.X) - num4;
+          if (j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().MinPrice <= kvt89B1lUeA7EdfukJs.\u0023\u003DzESuEXae5FE6XM9PRpg\u003D\u003D && j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().MaxPrice >= kvt89B1lUeA7EdfukJs.\u0023\u003DzgP_jWrrjwvBX7hnEEQ\u003D\u003D)
           {
-            double num30 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003DzkEdydKqKob5B7GqY\u0024w\u003D\u003D());
-            double num31 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dz\u00247vYCeZPjqodBoaskg\u003D\u003D());
+            double num30 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().MinPrice);
+            double num31 = xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().MaxPrice);
             Rect rect = new Rect(num29, num31, Math.Max(val1_1, 1.0), Math.Max(Math.Abs(num31 - num30), 1.0));
             _param1.\u0023\u003DzVRUUvzhAr5SR(xrgcdFbSdWgN9GcT8_3, rect.TopLeft, rect.BottomRight, 0.0);
           }
@@ -414,16 +414,16 @@ label_11:
   private new sealed class SomeClass34343383
   {
     public static readonly BoxVolumeRenderableSeries.SomeClass34343383 SomeMethond0343 = new BoxVolumeRenderableSeries.SomeClass34343383();
-    public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> \u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D;
-    public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj> \u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D;
+    public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, TimeframeDataSegment> \u0023\u003DzmsyM35DYmF_LBTPpdw\u003D\u003D;
+    public static Func<\u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB, TimeframeDataSegment> \u0023\u003Dzkt5Z2jROBjPMkf1ugQ\u003D\u003D;
 
-    public \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D(
+    public TimeframeDataSegment \u0023\u003DzAX4p\u0024u4IoeCbuab4z\u0024EgZIE\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz0IPdd6wsmxZJ();
     }
 
-    public \u0023\u003Dz6SSn5QQkepq6NeBmeacJnNsdAHCdcYM4YGDu_\u0024RkzGkLTdBuqAINYDLZs6uj \u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D(
+    public TimeframeDataSegment \u0023\u003Dz9pKdOVCrootEnagP5\u0024\u0024duuk\u003D(
       \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB _param1)
     {
       return _param1.\u0023\u003Dz0IPdd6wsmxZJ();

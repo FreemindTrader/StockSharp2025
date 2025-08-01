@@ -539,10 +539,10 @@ public sealed class UltrachartScrollbar : Control
     switch (_param2.PropertyName)
     {
       case "Min":
-        comparable1 = (IComparable) ((\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D) _param2).\u0023\u003DzPo6XanrX3cHa();
+        comparable1 = (IComparable) ((PropertyChangedEventArgsEx) _param2).GetObjectOne();
         break;
       case "Max":
-        comparable2 = (IComparable) ((\u0023\u003DzMv9TAT1PEEnC0UeBhCNwDCPI15WlokXZO9yDJcU\u003D) _param2).\u0023\u003DzPo6XanrX3cHa();
+        comparable2 = (IComparable) ((PropertyChangedEventArgsEx) _param2).GetObjectOne();
         break;
     }
     if (this.SelectedRange.Equals((object) \u0023\u003DzS_cHGzr_lHDzMznjWZ1hrDlB0n65RlWCGw\u003D\u003D.\u0023\u003Dzo7udA0u6sNJJ(this.SelectedRange, comparable1, comparable2)))

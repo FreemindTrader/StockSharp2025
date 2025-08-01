@@ -49,7 +49,7 @@ public abstract class ChartTransactionElement<T> :
   
   private double \u0023\u003Dzv0dodASrSZi6;
   
-  private DrawableChartElementBaseViewModel _baseViewModel;
+  private DrawableChartComponentBaseViewModel _baseViewModel;
 
   protected ChartTransactionElement()
   {
@@ -231,10 +231,10 @@ public abstract class ChartTransactionElement<T> :
     set => this.SellStrokeColor = value.ToWpf();
   }
 
-  DrawableChartElementBaseViewModel IDrawableChartElement.CreateViewModel(
+  DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
     ScichartSurfaceMVVM _param1)
   {
-    return this._baseViewModel = (DrawableChartElementBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
+    return this._baseViewModel = (DrawableChartComponentBaseViewModel) new \u0023\u003Dzboj3ckhISv7k6koCkTeIf5PCtYd46lRwlYVUyDC59V3Pkk_zmE1no4ED3cPT<T>((T) this);
   }
 
   bool IDrawableChartElement.StartDrawing(

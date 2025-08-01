@@ -7,11 +7,11 @@
 using System.Windows;
 
 #nullable disable
-public sealed class \u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y
+public sealed class FreezeHelper2025
 {
-  public static readonly DependencyProperty \u0023\u003DzQUfZszk\u003D = DependencyProperty.RegisterAttached("Freeze", typeof (bool), typeof (\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y), new PropertyMetadata((object) false, new PropertyChangedCallback(\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.\u0023\u003Dzsw9pqJ9tAkiO)));
+  public static readonly DependencyProperty FreezeProperty = DependencyProperty.RegisterAttached("Freeze", typeof (bool), typeof (FreezeHelper2025), new PropertyMetadata((object) false, new PropertyChangedCallback(FreezeHelper2025.OnFreezePropertyChanged)));
 
-  private static void \u0023\u003Dzsw9pqJ9tAkiO(
+  private static void OnFreezePropertyChanged(
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
@@ -22,11 +22,11 @@ public sealed class \u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u002
 
   public static void SetFreeze(DependencyObject _param0, bool _param1)
   {
-    _param0.SetValue(\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.\u0023\u003DzQUfZszk\u003D, (object) _param1);
+    _param0.SetValue(FreezeHelper2025.FreezeProperty, (object) _param1);
   }
 
   public static bool GetFreeze(DependencyObject _param0)
   {
-    return (bool) _param0.GetValue(\u0023\u003DzuxHg1RShgoNoz91lIJvsfCSfGXx6BdQJUHr6CAYZ3b\u0024y.\u0023\u003DzQUfZszk\u003D);
+    return (bool) _param0.GetValue(FreezeHelper2025.FreezeProperty);
   }
 }

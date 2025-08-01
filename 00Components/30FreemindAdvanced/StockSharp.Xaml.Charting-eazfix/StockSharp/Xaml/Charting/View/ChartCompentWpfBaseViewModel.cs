@@ -22,7 +22,7 @@ using System.Windows.Data;
 
 namespace StockSharp.Xaml.Charting;
 
-public abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartElementBaseViewModel where T : ChartPart<T>, IDrawableChartElement
+public abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartComponentBaseViewModel where T : ChartPart<T>, IDrawableChartElement
 {
 
     private readonly HashSet<IChartComponent> _componentUIMap = new HashSet<IChartComponent>();
@@ -134,7 +134,7 @@ public abstract class ChartCompentWpfBaseViewModel<T> : DrawableChartElementBase
             instance.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
             instance.SetBindings( BaseRenderableSeries.AntiAliasingProperty, ChartComponentView, "AntiAliasing" );
         }
-        instance.Tag = childViewModel == null || childViewModel.Length == 0 ? ( Tuple<DrawableChartElementBaseViewModel, ChartElementViewModel[ ]> ) null : Tuple.Create<DrawableChartElementBaseViewModel, ChartElementViewModel[ ]>( ( DrawableChartElementBaseViewModel ) this, childViewModel );
+        instance.Tag = childViewModel == null || childViewModel.Length == 0 ? ( Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[ ]> ) null : Tuple.Create<DrawableChartComponentBaseViewModel, ChartElementViewModel[ ]>( ( DrawableChartComponentBaseViewModel ) this, childViewModel );
         ChartViewModel.ClearChildViewModels();
         return instance;
     }

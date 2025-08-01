@@ -255,7 +255,7 @@ public sealed class FastBandRenderableSeries :
         for (int index = 0; index < num1; ++index)
         {
           \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD> iwzGyvO4YaqDkpiI = bxVnSKseFk9GdLpI[index] as \u0023\u003DzzSC94lsu\u00242WfTPlDSLyhlFgNgyQmIWzGYVO4YAqDKpiI<\u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD>;
-          double num3 = iwzGyvO4YaqDkpiI.\u0023\u003Dz2_4KSTY\u003D();
+          double num3 = iwzGyvO4YaqDkpiI.X;
           \u0023\u003DzJ9vSi7sIwIEed80npzusCBIsk9iDYaB43AY2Ep7_kjoD dyaB43Ay2Ep7KjoD = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
           double num4 = dyaB43Ay2Ep7KjoD.\u0023\u003Dz1iB_fGLmDWyy();
           dyaB43Ay2Ep7KjoD = iwzGyvO4YaqDkpiI.\u0023\u003DzPqsSI6C5MOOb();
@@ -291,12 +291,12 @@ public sealed class FastBandRenderableSeries :
     int num3 = FastBandRenderableSeries.\u0023\u003DzaQ9tpxhMknmu(_param3, _param5, num2, num1);
     for (int index = num3 + 1; index < num1; ++index)
     {
-      double num4 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index - 1).\u0023\u003Dz2_4KSTY\u003D();
-      double num5 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index - 1).\u0023\u003Dzu7q98_E\u003D();
-      double num6 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(index - 1).\u0023\u003Dzu7q98_E\u003D();
-      double num7 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dz2_4KSTY\u003D();
-      double num8 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
-      double num9 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(index).\u0023\u003Dzu7q98_E\u003D();
+      double num4 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index - 1).X;
+      double num5 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index - 1).Y;
+      double num6 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(index - 1).Y;
+      double num7 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index).X;
+      double num8 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
+      double num9 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(index).Y;
       if ((num8.IsNaN() ? 1 : (num9.IsNaN() ? 1 : 0)) != 0)
       {
         this.\u0023\u003DzVyzQAuU\u003D(num3, index, _param3, _param2, pointList);
@@ -342,13 +342,13 @@ public sealed class FastBandRenderableSeries :
     }
     if (num1 > 0)
     {
-      \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY1 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(num1 - 1);
-      \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D kld48pAvUlrTzJ1tmfY2 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(num1 - 1);
-      if (!kld48pAvUlrTzJ1tmfY1.\u0023\u003Dzu7q98_E\u003D().IsNaN() && !kld48pAvUlrTzJ1tmfY2.\u0023\u003Dzu7q98_E\u003D().IsNaN())
+      IPoint kld48pAvUlrTzJ1tmfY1 = _param3.\u0023\u003Dz\u0024CeUvME\u003D(num1 - 1);
+      IPoint kld48pAvUlrTzJ1tmfY2 = _param5.\u0023\u003Dz\u0024CeUvME\u003D(num1 - 1);
+      if (!kld48pAvUlrTzJ1tmfY1.Y.IsNaN() && !kld48pAvUlrTzJ1tmfY2.Y.IsNaN())
       {
         this.\u0023\u003DzVyzQAuU\u003D(num3, num1, _param3, _param2, pointList);
         this.\u0023\u003Dz3fxFWrVp1Ljj(num3, num1, _param5, _param2, pointList);
-        IBrush2D xrgcdFbSdWgN9GcT8 = kld48pAvUlrTzJ1tmfY1.\u0023\u003Dzu7q98_E\u003D() > kld48pAvUlrTzJ1tmfY2.\u0023\u003Dzu7q98_E\u003D() ? _param4 : _param6;
+        IBrush2D xrgcdFbSdWgN9GcT8 = kld48pAvUlrTzJ1tmfY1.Y > kld48pAvUlrTzJ1tmfY2.Y ? _param4 : _param6;
         z71mAcyQList.Add(new FastBandRenderableSeries.\u0023\u003Dz71mAcyQ\u003D(pointList.ToArray(), xrgcdFbSdWgN9GcT8));
       }
     }
@@ -379,7 +379,7 @@ public sealed class FastBandRenderableSeries :
   }
 
   private void \u0023\u003DzpcjqGH38NbsS(
-    \u0023\u003DzVsUQ9A_2kGjOa2mh\u00241UNKld48pAvULrTzJ1tmfY\u003D _param1,
+    IPoint _param1,
     List<Point> _param2,
     bool _param3,
     IRenderPassData _param4)
@@ -387,9 +387,9 @@ public sealed class FastBandRenderableSeries :
     ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = _param4.\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = _param4.\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
     bool flag1 = _param4.\u0023\u003DzDoU1CJhSUWFV();
-    double num1 = _param1.\u0023\u003Dzu7q98_E\u003D();
+    double num1 = _param1.Y;
     float num2 = (float) xkzemsMs5tGkouk5w2.\u0023\u003DzhL6gsJw\u003D(num1);
-    double num3 = _param1.\u0023\u003Dz2_4KSTY\u003D();
+    double num3 = _param1.X;
     Point point1 = this.\u0023\u003Dzop6vn0GowyiR(new Point(xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(num3), (double) num2), flag1);
     if (this.IsDigitalLine && _param2.Count > 0)
     {
@@ -406,14 +406,14 @@ public sealed class FastBandRenderableSeries :
     int _param2,
     int _param3)
   {
-    while (_param2 < _param3 && (double.IsNaN(_param0.\u0023\u003Dz\u0024CeUvME\u003D(_param2).\u0023\u003Dzu7q98_E\u003D()) || double.IsNaN(_param1.\u0023\u003Dz\u0024CeUvME\u003D(_param2).\u0023\u003Dzu7q98_E\u003D())))
+    while (_param2 < _param3 && (double.IsNaN(_param0.\u0023\u003Dz\u0024CeUvME\u003D(_param2).Y) || double.IsNaN(_param1.\u0023\u003Dz\u0024CeUvME\u003D(_param2).Y)))
       ++_param2;
     return _param2;
   }
 
   protected override void \u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param1,
-    \u0023\u003DzbKeMmKPk2OqoW3MAcU5vNS01UJmP40FPxAl2jmQ\u003D _param2)
+    IDataSeries _param1,
+    IDataSeries _param2)
   {
     switch (_param2)
     {
