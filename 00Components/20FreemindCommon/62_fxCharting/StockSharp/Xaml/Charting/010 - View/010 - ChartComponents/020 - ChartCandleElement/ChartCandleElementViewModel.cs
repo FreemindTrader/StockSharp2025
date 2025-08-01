@@ -911,7 +911,7 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
     DateTime xvalue = OhlcSeries.XValues[index];
     foreach (CandlePatternElementViewModel rri1f09FsCgNu6tg in (BaseCollection<CandlePatternElementViewModel, List<CandlePatternElementViewModel>>) _chartPatternList)
     {
-      Color? nullable = rri1f09FsCgNu6tg.\u0023\u003Dzj4w_lAs\u003D(xvalue, _param6 > _param3);
+      Color? nullable = rri1f09FsCgNu6tg.GetCandleColor(xvalue, _param6 > _param3);
       if (nullable.HasValue)
         return nullable;
     }
