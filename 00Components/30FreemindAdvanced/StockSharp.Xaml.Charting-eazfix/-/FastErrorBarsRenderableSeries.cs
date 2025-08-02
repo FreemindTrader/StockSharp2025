@@ -18,7 +18,7 @@ public sealed class FastErrorBarsRenderableSeries :
   
   private int \u0023\u003Dz3XkQnBHZj9ZA;
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastErrorBarsRenderableSeries), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastErrorBarsRenderableSeries), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
 
   public FastErrorBarsRenderableSeries()
   {

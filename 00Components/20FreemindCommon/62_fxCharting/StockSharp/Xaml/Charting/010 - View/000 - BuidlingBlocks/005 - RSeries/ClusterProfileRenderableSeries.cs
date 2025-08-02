@@ -6,7 +6,6 @@
 
 using SciChart.Charting.Visuals.RenderableSeries;
 using StockSharp.Messages;
-using StockSharp.Xaml.Charting.Model.DataSeries.SegmentDataSeries;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -20,106 +19,106 @@ namespace StockSharp.Xaml.Charting;
 
 public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableSeries
 {
-  
-  public static readonly DependencyProperty SeparatorLineColorProperty = DependencyProperty.Register(nameof (SeparatorLineColor), typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Color.FromArgb((byte) 50, byte.MaxValue, byte.MaxValue, byte.MaxValue), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
-  
-  public static readonly DependencyProperty LineColorProperty = DependencyProperty.Register(nameof (LineColor), typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.DarkGray, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
-  
-  public static readonly DependencyProperty TextColorProperty = DependencyProperty.Register(nameof (TextColor), typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 90, (byte) 90, (byte) 90), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
-  
-  public static readonly DependencyProperty ClusterColorProperty = DependencyProperty.Register(nameof (ClusterColor), typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
-  
-  public static readonly DependencyProperty ClusterMaxColorProperty = DependencyProperty.Register(nameof (ClusterMaxColor), typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.LimeGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
-  
-  private ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t \u0023\u003Dz1ShH2k5rZ_Qh;
+
+    public static readonly DependencyProperty SeparatorLineColorProperty = DependencyProperty.Register(nameof(SeparatorLineColor), typeof(Color), typeof(ClusterProfileRenderableSeries), new PropertyMetadata((object)Color.FromArgb((byte)50, byte.MaxValue, byte.MaxValue, byte.MaxValue), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
+
+    public static readonly DependencyProperty LineColorProperty = DependencyProperty.Register(nameof(LineColor), typeof(Color), typeof(ClusterProfileRenderableSeries), new PropertyMetadata((object)Colors.DarkGray, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
+
+    public static readonly DependencyProperty TextColorProperty = DependencyProperty.Register(nameof(TextColor), typeof(Color), typeof(ClusterProfileRenderableSeries), new PropertyMetadata((object)Color.FromRgb((byte)90, (byte)90, (byte)90), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
+
+    public static readonly DependencyProperty ClusterColorProperty = DependencyProperty.Register(nameof(ClusterColor), typeof(Color), typeof(ClusterProfileRenderableSeries), new PropertyMetadata((object)Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
+
+    public static readonly DependencyProperty ClusterMaxColorProperty = DependencyProperty.Register(nameof(ClusterMaxColor), typeof(Color), typeof(ClusterProfileRenderableSeries), new PropertyMetadata((object)Colors.LimeGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
+
+    private ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t \u0023\u003Dz1ShH2k5rZ_Qh;
 
   public ClusterProfileRenderableSeries()
-  {
-    this.DefaultStyleKey = (object) typeof (ClusterProfileRenderableSeries);
-  }
+    {
+        this.DefaultStyleKey = (object)typeof(ClusterProfileRenderableSeries);
+    }
 
-  public Color SeparatorLineColor
-  {
-    get
+    public Color SeparatorLineColor
     {
-      return (Color) this.GetValue(ClusterProfileRenderableSeries.SeparatorLineColorProperty);
+        get
+        {
+            return (Color)this.GetValue(ClusterProfileRenderableSeries.SeparatorLineColorProperty);
+        }
+        set
+        {
+            this.SetValue(ClusterProfileRenderableSeries.SeparatorLineColorProperty, (object)value);
+        }
     }
-    set
-    {
-      this.SetValue(ClusterProfileRenderableSeries.SeparatorLineColorProperty, (object) value);
-    }
-  }
 
-  public Color LineColor
-  {
-    get
+    public Color LineColor
     {
-      return (Color) this.GetValue(ClusterProfileRenderableSeries.LineColorProperty);
+        get
+        {
+            return (Color)this.GetValue(ClusterProfileRenderableSeries.LineColorProperty);
+        }
+        set
+        {
+            this.SetValue(ClusterProfileRenderableSeries.LineColorProperty, (object)value);
+        }
     }
-    set
-    {
-      this.SetValue(ClusterProfileRenderableSeries.LineColorProperty, (object) value);
-    }
-  }
 
-  public Color TextColor
-  {
-    get
+    public Color TextColor
     {
-      return (Color) this.GetValue(ClusterProfileRenderableSeries.TextColorProperty);
+        get
+        {
+            return (Color)this.GetValue(ClusterProfileRenderableSeries.TextColorProperty);
+        }
+        set
+        {
+            this.SetValue(ClusterProfileRenderableSeries.TextColorProperty, (object)value);
+        }
     }
-    set
-    {
-      this.SetValue(ClusterProfileRenderableSeries.TextColorProperty, (object) value);
-    }
-  }
 
-  public Color ClusterColor
-  {
-    get
+    public Color ClusterColor
     {
-      return (Color) this.GetValue(ClusterProfileRenderableSeries.ClusterColorProperty);
+        get
+        {
+            return (Color)this.GetValue(ClusterProfileRenderableSeries.ClusterColorProperty);
+        }
+        set
+        {
+            this.SetValue(ClusterProfileRenderableSeries.ClusterColorProperty, (object)value);
+        }
     }
-    set
-    {
-      this.SetValue(ClusterProfileRenderableSeries.ClusterColorProperty, (object) value);
-    }
-  }
 
-  public Color ClusterMaxColor
-  {
-    get
+    public Color ClusterMaxColor
     {
-      return (Color) this.GetValue(ClusterProfileRenderableSeries.ClusterMaxColorProperty);
+        get
+        {
+            return (Color)this.GetValue(ClusterProfileRenderableSeries.ClusterMaxColorProperty);
+        }
+        set
+        {
+            this.SetValue(ClusterProfileRenderableSeries.ClusterMaxColorProperty, (object)value);
+        }
     }
-    set
-    {
-      this.SetValue(ClusterProfileRenderableSeries.ClusterMaxColorProperty, (object) value);
-    }
-  }
 
-  protected override void \u0023\u003DzKsKC4kB3l9RI(
-    IRenderContext2D _param1,
-    IRenderPassData _param2)
-  {
-    ClusterProfileRenderableSeries.Struct1 vm6DexIkyzzokCaW = new ClusterProfileRenderableSeries.Struct1();
-    if (!(this.DataSeries is TimeframeSegmentDataSeries))
-      return;
+    protected override void \u0023\u003DzKsKC4kB3l9RI(
+      IRenderContext2D _param1,
+      IRenderPassData _param2)
+    {
+        ClusterProfileRenderableSeries.Struct1 vm6DexIkyzzokCaW = new ClusterProfileRenderableSeries.Struct1();
+        if ( !( this.DataSeries is TimeframeSegmentDataSeries ) )
+            return;
     \u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D anaOdfaeo1Ed4fSw = (\u0023\u003Dz2J8xPQFzEv6\u0024SGdBVtIkvMU02SB0BVAuIu3Yy0oUK9bg_GMIO2ANAOdfaeo1Ed4fSw\u003D\u003D) this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI();
     \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB[] source = anaOdfaeo1Ed4fSw.\u0023\u003Dz_xjf3ZVIHzP_();
-    double num1 = anaOdfaeo1Ed4fSw.\u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D();
-    ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t1 = new ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t();
-    zNgOs9Qu1W4t1.\u0023\u003DzCwhW74E\u003D = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
-    zNgOs9Qu1W4t1.\u0023\u003Dzcd8FewQ\u003D = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
-    zNgOs9Qu1W4t1.\u0023\u003DzvTWpIBJwyiW8 = _param1.\u0023\u003Dz8DEW4l1E337F().Height;
-    zNgOs9Qu1W4t1.\u0023\u003Dzv5V3epBeFArY = _param1.\u0023\u003Dz8DEW4l1E337F().Width;
-    zNgOs9Qu1W4t1.\u0023\u003Dzo\u0024RDoi4\u003D = _param1;
-    zNgOs9Qu1W4t1.\u0023\u003DzICsqKMvNb6xH = this.TextColor;
-    ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t2 = zNgOs9Qu1W4t1;
-    this.\u0023\u003Dz1ShH2k5rZ_Qh = zNgOs9Qu1W4t1;
-    ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t3 = zNgOs9Qu1W4t2;
-    zNgOs9Qu1W4t3.\u0023\u003DzfuDyOX2LBzuJ = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D(1.0) - zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D(0.0));
-    zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice) - zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice + num1));
+        double num1 = anaOdfaeo1Ed4fSw.\u0023\u003DzTmtGqP_rl3YU6gjEDQ\u003D\u003D();
+        ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t1 = new ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t();
+        zNgOs9Qu1W4t1.\u0023\u003DzCwhW74E\u003D = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
+        zNgOs9Qu1W4t1.\u0023\u003Dzcd8FewQ\u003D = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
+        zNgOs9Qu1W4t1.\u0023\u003DzvTWpIBJwyiW8 = _param1.\u0023\u003Dz8DEW4l1E337F().Height;
+        zNgOs9Qu1W4t1.\u0023\u003Dzv5V3epBeFArY = _param1.\u0023\u003Dz8DEW4l1E337F().Width;
+        zNgOs9Qu1W4t1.\u0023\u003Dzo\u0024RDoi4\u003D = _param1;
+        zNgOs9Qu1W4t1.\u0023\u003DzICsqKMvNb6xH = this.TextColor;
+        ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t2 = zNgOs9Qu1W4t1;
+        this.\u0023\u003Dz1ShH2k5rZ_Qh = zNgOs9Qu1W4t1;
+        ClusterProfileRenderableSeries.\u0023\u003DzNgOs\u00249Qu1W4t zNgOs9Qu1W4t3 = zNgOs9Qu1W4t2;
+        zNgOs9Qu1W4t3.\u0023\u003DzfuDyOX2LBzuJ = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D( 1.0 ) - zNgOs9Qu1W4t3.\u0023\u003DzCwhW74E\u003D.\u0023\u003DzhL6gsJw\u003D( 0.0 ));
+        zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D = Math.Abs(zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D( source[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice) - zNgOs9Qu1W4t3.\u0023\u003Dzcd8FewQ\u003D.\u0023\u003DzhL6gsJw\u003D(source[0].\u0023\u003Dz0IPdd6wsmxZJ().MinPrice + num1));
     zNgOs9Qu1W4t3.\u0023\u003DzMA0J5dNH7C28 = zNgOs9Qu1W4t3.\u0023\u003DzfuDyOX2LBzuJ / 2.0;
     zNgOs9Qu1W4t3.\u0023\u003DzrMwTP3B_pVQXintTrQ\u003D\u003D = zNgOs9Qu1W4t3.\u0023\u003Dzjn3THFzIvZVlaGcYZg\u003D\u003D / 2.0;
     vm6DexIkyzzokCaW.\u0023\u003DzoVxmkd0\u003D = this.ClusterColor;

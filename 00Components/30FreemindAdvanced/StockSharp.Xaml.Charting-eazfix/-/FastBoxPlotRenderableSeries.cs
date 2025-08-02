@@ -16,9 +16,9 @@ public sealed class FastBoxPlotRenderableSeries :
   BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastBoxPlotRenderableSeries), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastBoxPlotRenderableSeries), new PropertyMetadata((object) 0.2, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzoiPF1o\u0024bG_HJ = DependencyProperty.Register(nameof (BodyBrush), typeof (Brush), typeof (FastBoxPlotRenderableSeries), new PropertyMetadata((object) new SolidColorBrush(Color.FromArgb((byte) 0, (byte) 0, (byte) 0, (byte) 0)), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzoiPF1o\u0024bG_HJ = DependencyProperty.Register(nameof (BodyBrush), typeof (Brush), typeof (FastBoxPlotRenderableSeries), new PropertyMetadata((object) new SolidColorBrush(Color.FromArgb((byte) 0, (byte) 0, (byte) 0, (byte) 0)), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   private int \u0023\u003DzmZ8\u0024YArgrhlI;
 

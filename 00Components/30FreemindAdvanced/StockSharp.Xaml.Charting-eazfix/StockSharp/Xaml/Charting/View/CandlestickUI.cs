@@ -272,7 +272,7 @@ label_4:
         });
         target.SetBindings(FastOhlcRenderableSeries.\u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D, (object) this.ChartComponentView, "UpBorderColor");
         target.SetBindings(FastOhlcRenderableSeries.\u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D, (object) this.ChartComponentView, "DownBorderColor");
-        target.SetBindings(FastOhlcRenderableSeries.\u0023\u003DzVvc2lVdKTrj8, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
+        target.SetBindings(FastOhlcRenderableSeries.\u0023\u003DzVvc2lVdKTrj8, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new StrokeThickToPointWidthConverter());
         BindingOperations.ClearBinding((DependencyObject) target, BaseRenderableSeries.StrokeThicknessProperty);
         target.PaletteProvider = (IXxxPaletteProvider) this;
         break;
@@ -307,11 +307,11 @@ label_4:
         {
           this._volumeViewModel
         });
-        target.SetBindings(ClusterProfileRenderableSeries.\u0023\u003Dz3vhKFHvmUfSR, (object) this._candleHelper, "ClusterSeparatorLineColor");
-        target.SetBindings(ClusterProfileRenderableSeries.\u0023\u003DzTpSTo8U\u003D, (object) this._candleHelper, "ClusterLineColor");
-        target.SetBindings(ClusterProfileRenderableSeries.\u0023\u003DzFLdFQ9M\u003D, (object) this._candleHelper, "ClusterTextColor");
-        target.SetBindings(ClusterProfileRenderableSeries.\u0023\u003DzpELAaZtMaBgQ, (object) this._candleHelper, "ClusterColor");
-        target.SetBindings(ClusterProfileRenderableSeries.\u0023\u003DzcL2qfCOpQZK5, (object) this._candleHelper, "ClusterMaxColor");
+        target.SetBindings(ClusterProfileRenderableSeries.SeparatorLineColorProperty, (object) this._candleHelper, "ClusterSeparatorLineColor");
+        target.SetBindings(ClusterProfileRenderableSeries.LineColorProperty, (object) this._candleHelper, "ClusterLineColor");
+        target.SetBindings(ClusterProfileRenderableSeries.TextColorProperty, (object) this._candleHelper, "ClusterTextColor");
+        target.SetBindings(ClusterProfileRenderableSeries.ClusterColorProperty, (object) this._candleHelper, "ClusterColor");
+        target.SetBindings(ClusterProfileRenderableSeries.ClusterMaxColorProperty, (object) this._candleHelper, "ClusterMaxColor");
         break;
       case ChartCandleDrawStyles.Area:
         target = (BaseRenderableSeries) this.CreateRenderableSeries<FastMountainRenderableSeries>(new ChartElementViewModel[1]
@@ -353,17 +353,17 @@ label_4:
       target.SetBindings(Control.FontFamilyProperty, (object) this.ChartComponentView, "FontFamily", converter: (IValueConverter) new FontFamilyValueConverter());
       target.SetBindings(Control.FontSizeProperty, (object) this.ChartComponentView, "FontSize", converter: (IValueConverter) new TypeCastConverter());
       target.SetBindings(Control.FontWeightProperty, (object) this.ChartComponentView, "FontWeight");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object) this.ChartComponentView, "PriceStep");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object) this.ChartComponentView, "ShowHorizontalVolumes");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object) this.ChartComponentView, "LocalHorizontalVolumes");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object) this.ChartComponentView, "HorizontalVolumeWidthFraction");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzkZL83tvq\u0024ktX, (object) this._candleHelper, "HorizontalVolumeColor", BindingMode.OneWay, (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D, (object) this._candleHelper, "HorizontalVolumeFontColor");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object) this.ChartComponentView, "DrawSeparateVolumes");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzsiwadMWumB4q, (object) this._candleHelper, "BuyColor");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzyQkELvBo\u002432H, (object) this._candleHelper, "SellColor");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003Dzd0DbwufxB45U, (object) this._candleHelper, "UpColor");
-      target.SetBindings(TimeframeSegmentRenderableSeries.\u0023\u003DzMymlj1BxH8MY, (object) this._candleHelper, "DownColor");
+      target.SetBindings(TimeframeSegmentRenderableSeries.PriceStepProperty, (object) this.ChartComponentView, "PriceStep");
+      target.SetBindings(TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty, (object) this.ChartComponentView, "ShowHorizontalVolumes");
+      target.SetBindings(TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty, (object) this.ChartComponentView, "LocalHorizontalVolumes");
+      target.SetBindings(TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, (object) this.ChartComponentView, "HorizontalVolumeWidthFraction");
+      target.SetBindings(TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty, (object) this._candleHelper, "HorizontalVolumeColor", BindingMode.OneWay, (IValueConverter) new Ecng.Xaml.Converters.ColorToBrushConverter());
+      target.SetBindings(TimeframeSegmentRenderableSeries.VolBarsFontColorProperty, (object) this._candleHelper, "HorizontalVolumeFontColor");
+      target.SetBindings(TimeframeSegmentRenderableSeries.DrawSeparateVolumesProperty, (object) this.ChartComponentView, "DrawSeparateVolumes");
+      target.SetBindings(TimeframeSegmentRenderableSeries.BuyColorProperty, (object) this._candleHelper, "BuyColor");
+      target.SetBindings(TimeframeSegmentRenderableSeries.SellColorProperty, (object) this._candleHelper, "SellColor");
+      target.SetBindings(TimeframeSegmentRenderableSeries.UpColorProperty, (object) this._candleHelper, "UpColor");
+      target.SetBindings(TimeframeSegmentRenderableSeries.DownColorProperty, (object) this._candleHelper, "DownColor");
     }
     return target;
   }

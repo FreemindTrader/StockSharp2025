@@ -16,25 +16,24 @@ using System.Windows.Media;
 #nullable disable
 namespace StockSharp.Charting;
 
-public sealed class BoxVolumeRenderableSeries : 
-  TimeframeSegmentRenderableSeries
+public sealed class BoxVolumeRenderableSeries :  TimeframeSegmentRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzY\u0024hEpvHX6SG5MENm\u0024w\u003D\u003D = DependencyProperty.Register(nameof (Timeframe2), typeof (TimeSpan?), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) TimeSpan.FromMinutes(5.0), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9), new CoerceValueCallback(BoxVolumeRenderableSeries.\u0023\u003DzbNu7yh8kw5s3YRvNpAP5CbU\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzY\u0024hEpvHX6SG5MENm\u0024w\u003D\u003D = DependencyProperty.Register(nameof (Timeframe2), typeof (TimeSpan?), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) TimeSpan.FromMinutes(5.0), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface), new CoerceValueCallback(BoxVolumeRenderableSeries.\u0023\u003DzbNu7yh8kw5s3YRvNpAP5CbU\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzsXfDaxv8JwjzCERgkg\u003D\u003D = DependencyProperty.Register(nameof (Timeframe3), typeof (TimeSpan?), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) TimeSpan.FromMinutes(15.0), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9), new CoerceValueCallback(BoxVolumeRenderableSeries.\u0023\u003DzbNu7yh8kw5s3YRvNpAP5CbU\u003D)));
+  public static readonly DependencyProperty \u0023\u003DzsXfDaxv8JwjzCERgkg\u003D\u003D = DependencyProperty.Register(nameof (Timeframe3), typeof (TimeSpan?), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) TimeSpan.FromMinutes(15.0), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface), new CoerceValueCallback(BoxVolumeRenderableSeries.\u0023\u003DzbNu7yh8kw5s3YRvNpAP5CbU\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003Dz1cQ4wVMzHjSWdOxgiAXT\u0024gw\u003D = DependencyProperty.Register(nameof (Timeframe2Color), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 36, (byte) 36, (byte) 36), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz1cQ4wVMzHjSWdOxgiAXT\u0024gw\u003D = DependencyProperty.Register(nameof (Timeframe2Color), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 36, (byte) 36, (byte) 36), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzFin1pB0TmtTClsb5xicohbw\u003D = DependencyProperty.Register(nameof (Timeframe2FrameColor), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb(byte.MaxValue, (byte) 102, (byte) 0), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzFin1pB0TmtTClsb5xicohbw\u003D = DependencyProperty.Register(nameof (Timeframe2FrameColor), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb(byte.MaxValue, (byte) 102, (byte) 0), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dzu_UBGSutECvla_Z4FBIjQVw\u003D = DependencyProperty.Register(nameof (Timeframe3Color), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 0, (byte) 55, (byte) 24), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dzu_UBGSutECvla_Z4FBIjQVw\u003D = DependencyProperty.Register(nameof (Timeframe3Color), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 0, (byte) 55, (byte) 24), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzJmV2YqfjqzBN = DependencyProperty.Register(nameof (CellFontColor), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 90, (byte) 90, (byte) 90), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzJmV2YqfjqzBN = DependencyProperty.Register(nameof (CellFontColor), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Color.FromRgb((byte) 90, (byte) 90, (byte) 90), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dz\u0024pEkT\u0024GyBsLd = DependencyProperty.Register(nameof (HighVolColor), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Colors.LawnGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz\u0024pEkT\u0024GyBsLd = DependencyProperty.Register(nameof (HighVolColor), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Colors.LawnGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzeOkHtL891mol_E40\u0024w\u003D\u003D = DependencyProperty.Register(nameof (HighVolBackground), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Colors.LightBlue, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzeOkHtL891mol_E40\u0024w\u003D\u003D = DependencyProperty.Register(nameof (HighVolBackground), typeof (Color), typeof (BoxVolumeRenderableSeries), new PropertyMetadata((object) Colors.LightBlue, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
 
   public BoxVolumeRenderableSeries()
   {
@@ -152,26 +151,26 @@ public sealed class BoxVolumeRenderableSeries :
     TimeSpan? nullable1 = (TimeSpan?) _param1;
     if (!nullable1.HasValue)
       return _param1;
-    if (!glA76LmrlQ4YzEjd.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D().HasValue)
+    if (!glA76LmrlQ4YzEjd.Timeframe.HasValue)
       return (object) null;
     TimeSpan timeSpan1 = nullable1.Value;
-    TimeSpan? nullable2 = glA76LmrlQ4YzEjd.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D();
+    TimeSpan? nullable2 = glA76LmrlQ4YzEjd.Timeframe;
     TimeSpan timeSpan2 = nullable2.Value;
     if (!(timeSpan1 < timeSpan2))
     {
       long ticks1 = nullable1.Value.Ticks;
-      nullable2 = glA76LmrlQ4YzEjd.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D();
+      nullable2 = glA76LmrlQ4YzEjd.Timeframe;
       long ticks2 = nullable2.Value.Ticks;
       if (ticks1 % ticks2 == 0L)
         return _param1;
     }
-    return (object) glA76LmrlQ4YzEjd.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D();
+    return (object) glA76LmrlQ4YzEjd.Timeframe;
   }
 
   public override IndexRange  \u0023\u003DzVAnbwOJn98Ya(
     IndexRange  _param1)
   {
-    TimeSpan? nullable = this.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D();
+    TimeSpan? nullable = this.Timeframe;
     if (!nullable.HasValue)
       return _param1;
     TimeSpan? timeframe2 = this.Timeframe2;
@@ -215,7 +214,7 @@ public sealed class BoxVolumeRenderableSeries :
       return;
     ICoordinateCalculator<<double> xkzemsMs5tGkouk5w1 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzALAI0HJjgPAt2SK7K6oMPzM\u003D();
     ICoordinateCalculator<<double> xkzemsMs5tGkouk5w2 = this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzYYiX3TcVi5rbqTSkh06tXQM\u003D();
-    TimeSpan? nullable1 = this.\u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D();
+    TimeSpan? nullable1 = this.Timeframe;
     TimeSpan? nullable2 = nullable1;
     TimeSpan zero1 = TimeSpan.Zero;
     TimeSpan? nullable3 = (nullable2.HasValue ? (nullable2.GetValueOrDefault() > zero1 ? 1 : 0) : 0) != 0 ? this.Timeframe2 : new TimeSpan?();
@@ -333,8 +332,8 @@ label_11:
       IBrush2D xrgcdFbSdWgN9GcT8_3 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(cellFontColor);
       vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(highVolColor);
       IBrush2D xrgcdFbSdWgN9GcT8_4 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(highVolBackground);
-      \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J4 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(this.\u0023\u003Dzc3UwYbhl1TD\u0024(), new float?((float) (this.StrokeThickness + 2)));
-      \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J5 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(this.\u0023\u003DzMrEHemSZ_hHJ(), new float?((float) (this.StrokeThickness + 2)));
+      \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J4 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(this.UpColor, new float?((float) (this.StrokeThickness + 2)));
+      \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J5 = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(this.DownColor, new float?((float) (this.StrokeThickness + 2)));
       if (val1_1 >= 2.0 && num2 >= 2.0)
       {
         for (int index = 0; index < length; ++index)
@@ -342,7 +341,7 @@ label_11:
           \u0023\u003DzUTCl8jvgS_4weG5YU7g\u00240QmcKiogQM05LteyR4wgh0miJ9sJkRF4wMmhD3hB j9sJkRf4wMmhD3hB = j9sJkRf4wMmhD3hBArray[index];
           double num23 = xkzemsMs5tGkouk5w1.\u0023\u003DzhL6gsJw\u003D(j9sJkRf4wMmhD3hB.X) - num4;
           (KeyValuePair<double, CandlePriceLevel>[] source2, Decimal num24) = j9sJkRf4wMmhD3hB.\u0023\u003Dz0IPdd6wsmxZJ().\u0023\u003Dzb5KHU\u00247RutjHsWssog\u003D\u003D(num1);
-          bool flag1 = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003Dzyv\u0024EfaBUnbgQ(size, num24.GetDecimalLength());
+          bool flag1 = this._fontCalculator.\u0023\u003Dzyv\u0024EfaBUnbgQ(size, num24.GetDecimalLength());
           double? nullable11 = new double?();
           double num25 = 0.0;
           foreach ((double key, CandlePriceLevel candlePriceLevel1) in ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) source2).Where<KeyValuePair<double, CandlePriceLevel>>(kvt89B1lUeA7EdfukJs.Func_ChartActiveOrdersElementVM_0938 ?? (kvt89B1lUeA7EdfukJs.Func_ChartActiveOrdersElementVM_0938 = new Func<KeyValuePair<double, CandlePriceLevel>, bool>(kvt89B1lUeA7EdfukJs.\u0023\u003DzpVAgEOwSabx5AMO9Ew\u003D\u003D))))
@@ -368,13 +367,13 @@ label_11:
                 if (flag2)
                   _param1.\u0023\u003DzVRUUvzhAr5SR(xrgcdFbSdWgN9GcT8_4, rect2.TopLeft, rect2.BottomRight, 0.0);
                 string str = totalVolume.ToString();
-                (float, FontWeight, bool) tuple = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzwjCzmT8\u003D(size, totalVolume.GetDecimalLength(), 0.0f);
+                (float, FontWeight, bool) tuple = this._fontCalculator.\u0023\u003DzwjCzmT8\u003D(size, totalVolume.GetDecimalLength(), 0.0f);
                 float num28 = tuple.Item1;
                 FontWeight fontWeight = tuple.Item2;
                 if (tuple.Item3)
                 {
                   Color color2 = flag2 ? highVolColor : cellFontColor;
-                  _param1.\u0023\u003DzI6mwN\u0024I\u003D(str, rect1, AlignmentX.Center, AlignmentY.Center, color2, num28, this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzfFpWmUYdz7xm(), fontWeight);
+                  _param1.\u0023\u003DzI6mwN\u0024I\u003D(str, rect1, AlignmentX.Center, AlignmentY.Center, color2, num28, this._fontCalculator.\u0023\u003DzfFpWmUYdz7xm(), fontWeight);
                 }
               }
               else

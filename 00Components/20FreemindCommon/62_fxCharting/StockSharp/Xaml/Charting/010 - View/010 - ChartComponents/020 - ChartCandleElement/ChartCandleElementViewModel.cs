@@ -569,34 +569,39 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
         switch ( ChartComponentView.DrawStyle )
         {
             case ChartCandleDrawStyles.CandleStick:
-                target = (BaseRenderableSeries)CreateRenderableSeries<FastCandlestickRenderableSeries>(new ChartElementViewModel[4]
                 {
-                      _openViewModel,
-                      _highViewModel,
-                      _lowViewModel,
-                      _closeViewModel
-                });
+                    target = (BaseRenderableSeries)CreateRenderableSeries<FastCandlestickRenderableSeries>(new ChartElementViewModel[4]
+                             {
+                                      _openViewModel,
+                                      _highViewModel,
+                                      _lowViewModel,
+                                      _closeViewModel
+                             });
 
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.FillUpProperty, (object)ChartComponentView, "UpFillColor", converter: (IValueConverter)new Ecng.Xaml.Converters.ColorToBrushConverter());
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.FillDownProperty, (object)ChartComponentView, "DownFillColor", converter: (IValueConverter)new Ecng.Xaml.Converters.ColorToBrushConverter());
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.StrokeUpProperty, (object)ChartComponentView, "UpBorderColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.StrokeDownProperty, (object)ChartComponentView, "DownBorderColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, BaseRenderableSeries.StrokeThicknessProperty, (object)ChartComponentView, "StrokeThickness");
-                target.PaletteProvider = this;
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.FillUpProperty, (object)ChartComponentView, "UpFillColor", converter: (IValueConverter)new Ecng.Xaml.Converters.ColorToBrushConverter());
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.FillDownProperty, (object)ChartComponentView, "DownFillColor", converter: (IValueConverter)new Ecng.Xaml.Converters.ColorToBrushConverter());
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.StrokeUpProperty, (object)ChartComponentView, "UpBorderColor");
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastCandlestickRenderableSeries.StrokeDownProperty, (object)ChartComponentView, "DownBorderColor");
+                    Ecng.Xaml.XamlHelper.SetBindings(target, BaseRenderableSeries.StrokeThicknessProperty, (object)ChartComponentView, "StrokeThickness");
+                    target.PaletteProvider = this;
+                }             
                 break;
+
             case ChartCandleDrawStyles.Ohlc:
-                target = (BaseRenderableSeries)CreateRenderableSeries<FastOhlcRenderableSeries>(new ChartElementViewModel[4]
                 {
-                      _openViewModel,
-                      _highViewModel,
-                      _lowViewModel,
-                      _closeViewModel
-                });
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastOhlcRenderableSeries.StrokeUpProperty, (object)ChartComponentView, "UpBorderColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastOhlcRenderableSeries.StrokeDownProperty, (object)ChartComponentView, "DownBorderColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, FastOhlcRenderableSeries.DataPointWidthProperty, (object)ChartComponentView, "StrokeThickness", converter: (IValueConverter)new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
-                BindingOperations.ClearBinding((DependencyObject)target, BaseRenderableSeries.StrokeThicknessProperty);
-                target.PaletteProvider = this;
+                    target = (BaseRenderableSeries)CreateRenderableSeries<FastOhlcRenderableSeries>(new ChartElementViewModel[4]
+                            {
+                                  _openViewModel,
+                                  _highViewModel,
+                                  _lowViewModel,
+                                  _closeViewModel
+                            });
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastOhlcRenderableSeries.StrokeUpProperty, (object)ChartComponentView, "UpBorderColor");
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastOhlcRenderableSeries.StrokeDownProperty, (object)ChartComponentView, "DownBorderColor");
+                    Ecng.Xaml.XamlHelper.SetBindings(target, FastOhlcRenderableSeries.DataPointWidthProperty, (object)ChartComponentView, "StrokeThickness", converter: (IValueConverter)new StrokeThickToPointWidthConverter());
+                    BindingOperations.ClearBinding((DependencyObject)target, BaseRenderableSeries.StrokeThicknessProperty);
+                    target.PaletteProvider = this;
+                }                
                 break;
             case ChartCandleDrawStyles.LineOpen:
             case ChartCandleDrawStyles.LineHigh:
@@ -631,11 +636,11 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
                 {
                     _volumeViewModel
                 });
-                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.\u0023\u003Dz3vhKFHvmUfSR, (object)_candleHelper, "ClusterSeparatorLineColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.\u0023\u003DzTpSTo8U\u003D, (object)_candleHelper, "ClusterLineColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.\u0023\u003DzFLdFQ9M\u003D, (object)_candleHelper, "ClusterTextColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.\u0023\u003DzpELAaZtMaBgQ, (object)_candleHelper, "ClusterColor");
-                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.\u0023\u003DzcL2qfCOpQZK5, (object)_candleHelper, "ClusterMaxColor");
+                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.SeparatorLineColorProperty, (object)_candleHelper, "ClusterSeparatorLineColor");
+                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.LineColorProperty, (object)_candleHelper, "ClusterLineColor");
+                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.TextColorProperty, (object)_candleHelper, "ClusterTextColor");
+                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.ClusterColorProperty, (object)_candleHelper, "ClusterColor");
+                Ecng.Xaml.XamlHelper.SetBindings(target, ClusterProfileRenderableSeries.ClusterMaxColorProperty, (object)_candleHelper, "ClusterMaxColor");
                 break;
             case ChartCandleDrawStyles.Area:
                 target = (BaseRenderableSeries)CreateRenderableSeries<FastMountainRenderableSeries>(new ChartElementViewModel[1]
@@ -677,17 +682,17 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
             Ecng.Xaml.XamlHelper.SetBindings(target, Control.FontFamilyProperty, (object)ChartComponentView, "FontFamily", converter: (IValueConverter)new FontFamilyValueConverter());
             Ecng.Xaml.XamlHelper.SetBindings(target, Control.FontSizeProperty, (object)ChartComponentView, "FontSize", converter: (IValueConverter)new TypeCastConverter());
             Ecng.Xaml.XamlHelper.SetBindings(target, Control.FontWeightProperty, (object)ChartComponentView, "FontWeight");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object)ChartComponentView, "PriceStep");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object)ChartComponentView, "ShowHorizontalVolumes");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object)ChartComponentView, "LocalHorizontalVolumes");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object)ChartComponentView, "HorizontalVolumeWidthFraction");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzkZL83tvq\u0024ktX, (object)_candleHelper, "HorizontalVolumeColor", BindingMode.OneWay, (IValueConverter)new Ecng.Xaml.Converters.ColorToBrushConverter());
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D, (object)_candleHelper, "HorizontalVolumeFontColor");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object)ChartComponentView, "DrawSeparateVolumes");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzsiwadMWumB4q, (object)_candleHelper, "BuyColor");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzyQkELvBo\u002432H, (object)_candleHelper, "SellColor");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003Dzd0DbwufxB45U, (object)_candleHelper, "UpColor");
-            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.\u0023\u003DzMymlj1BxH8MY, (object)_candleHelper, "DownColor");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.PriceStepProperty, (object)ChartComponentView, "PriceStep");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty, (object)ChartComponentView, "ShowHorizontalVolumes");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty, (object)ChartComponentView, "LocalHorizontalVolumes");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, (object)ChartComponentView, "HorizontalVolumeWidthFraction");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty, (object)_candleHelper, "HorizontalVolumeColor", BindingMode.OneWay, (IValueConverter)new Ecng.Xaml.Converters.ColorToBrushConverter());
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.VolBarsFontColorProperty, (object)_candleHelper, "HorizontalVolumeFontColor");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.DrawSeparateVolumesProperty, (object)ChartComponentView, "DrawSeparateVolumes");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.BuyColorProperty, (object)_candleHelper, "BuyColor");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.SellColorProperty, (object)_candleHelper, "SellColor");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.UpColorProperty, (object)_candleHelper, "UpColor");
+            Ecng.Xaml.XamlHelper.SetBindings(target, TimeframeSegmentRenderableSeries.DownColorProperty, (object)_candleHelper, "DownColor");
         }
         return target;
     }

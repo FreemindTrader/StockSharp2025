@@ -58,11 +58,11 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
   
   public static readonly DependencyProperty \u0023\u003DzS_RbfR1zd8IE = DependencyProperty.Register(nameof (ErrorFill), typeof (Color), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.\u0023\u003Dz5VPchSaAyqKI, new PropertyChangedCallback(\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D.SomeClass34343383.SomeMethond0343.\u0023\u003DzAlixuKzZZLKUKWSV0URsXGlstR6X)));
   
-  public static readonly DependencyProperty \u0023\u003DzGzgkxANVj0h\u0024 = DependencyProperty.Register(nameof (ShowBuy), typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzGzgkxANVj0h\u0024 = DependencyProperty.Register(nameof (ShowBuy), typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzfU9B0J_UC7Cc = DependencyProperty.Register(nameof (ShowSell), typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzfU9B0J_UC7Cc = DependencyProperty.Register(nameof (ShowSell), typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dzhmdt0NOfj9lR = DependencyProperty.Register(nameof (ShowError), typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dzhmdt0NOfj9lR = DependencyProperty.Register(nameof (ShowError), typeof (bool), typeof (\u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
 
   private static \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0BjVmZZNA5VNnsp4ND0g\u003D\u003D \u0023\u003DzodKLGEc\u003D(
     DependencyObject _param0)
@@ -403,7 +403,7 @@ public sealed class \u0023\u003DzwiFpns0jAJgM6CtgGDKjwZ2s36fn39ERfeUyF1co1A4XoH0
     }
     if (!_param4)
       return;
-    this.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    this.OnInvalidateParentSurface();
   }
 
   private dje_zHZW5BTFRPEEDCATJMVGS2NLX8H8GU358AGNTU5D746JACHADU4L5YHB24CAQ_ejd \u0023\u003DqmW97wFRP\u0024NC7bEYn4s1sqlndHWKQUeMK36Pmc91eE2oz9uestCTPPtVTO5iXFh6A(

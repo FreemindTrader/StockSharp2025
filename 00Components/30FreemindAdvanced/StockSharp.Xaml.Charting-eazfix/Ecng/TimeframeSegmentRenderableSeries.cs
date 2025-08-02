@@ -4,7 +4,8 @@
 // MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
 // Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
 
-using \u002D;
+
+using SciChart.Charting.Visuals.RenderableSeries;
 using StockSharp.Messages;
 using StockSharp.Xaml.Charting.Model.DataSeries.SegmentDataSeries;
 using System;
@@ -20,43 +21,43 @@ public abstract class TimeframeSegmentRenderableSeries :
   BaseRenderableSeries
 {
   
-  private static readonly Brush \u0023\u003Dzqh5vkWSCXpeDFfTKRw\u003D\u003D = (Brush) new LinearGradientBrush(Color.FromRgb((byte) 0, (byte) 128 /*0x80*/, (byte) 0), Color.FromRgb((byte) 0, (byte) 15, (byte) 0), 90.0);
+  private static readonly Brush _defaultVerticalVolumeBrush = (Brush) new LinearGradientBrush(Color.FromRgb((byte) 0, (byte) 128 /*0x80*/, (byte) 0), Color.FromRgb((byte) 0, (byte) 15, (byte) 0), 90.0);
   
-  private Dictionary<double, Tuple<double, CandlePriceLevel>> \u0023\u003Dzwzwqm6ek0X1oFaJOBAtZrz4\u003D = new Dictionary<double, Tuple<double, CandlePriceLevel>>();
+  private Dictionary<double, Tuple<double, CandlePriceLevel>> _candlePriceLevelMap = new Dictionary<double, Tuple<double, CandlePriceLevel>>();
   
-  public static readonly DependencyProperty \u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D = DependencyProperty.Register(nameof (PriceStep), typeof (Decimal?), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) 0.000001M, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty PriceStepProperty = DependencyProperty.Register(nameof (PriceStep), typeof (Decimal?), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) 0.000001M, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D = DependencyProperty.Register(nameof (LocalHorizontalVolumes), typeof (bool), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty LocalHorizontalVolumesProperty = DependencyProperty.Register(nameof (LocalHorizontalVolumes), typeof (bool), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D = DependencyProperty.Register(nameof (ShowHorizontalVolumes), typeof (bool), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty ShowHorizontalVolumesProperty = DependencyProperty.Register(nameof (ShowHorizontalVolumes), typeof (bool), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D = DependencyProperty.Register(nameof (HorizontalVolumeWidthFraction), typeof (double), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) 0.15, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9), new CoerceValueCallback(TimeframeSegmentRenderableSeries.\u0023\u003DzHJJ8vuq4bO\u0024yTwjWdw\u003D\u003D)));
+  public static readonly DependencyProperty HorizontalVolumeWidthFractionProperty = DependencyProperty.Register(nameof (HorizontalVolumeWidthFraction), typeof (double), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) 0.15, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface), new CoerceValueCallback(TimeframeSegmentRenderableSeries.\u0023\u003DzHJJ8vuq4bO\u0024yTwjWdw\u003D\u003D)));
   
-  public static readonly DependencyProperty \u0023\u003DzkZL83tvq\u0024ktX = DependencyProperty.Register(nameof (VolumeBarsBrush), typeof (Brush), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) TimeframeSegmentRenderableSeries.\u0023\u003Dzqh5vkWSCXpeDFfTKRw\u003D\u003D, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty VolumeBarsBrushProperty = DependencyProperty.Register(nameof (VolumeBarsBrush), typeof (Brush), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) TimeframeSegmentRenderableSeries._defaultVerticalVolumeBrush, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D = DependencyProperty.Register(nameof (VolBarsFontColor), typeof (Color), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty VolBarsFontColorProperty = DependencyProperty.Register(nameof (VolBarsFontColor), typeof (Color), typeof (TimeframeSegmentRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D = DependencyProperty.Register("DrawSeparateVolumes", typeof (bool), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty DrawSeparateVolumesProperty = DependencyProperty.Register("DrawSeparateVolumes", typeof (bool), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzsiwadMWumB4q = DependencyProperty.Register("BuyColor", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.Green, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty BuyColorProperty = DependencyProperty.Register("BuyColor", typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.Green, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzyQkELvBo\u002432H = DependencyProperty.Register("SellColor", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.Red, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty SellColorProperty = DependencyProperty.Register("SellColor", typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.Red, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dzd0DbwufxB45U = DependencyProperty.Register("UpColor", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty UpColorProperty = DependencyProperty.Register("UpColor", typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzMymlj1BxH8MY = DependencyProperty.Register("DownColor", typeof (Color), typeof (dje_zMFW7VEH9YQSML9Y7R42FYSK685GBSP6YDHCWWGNXQE6V7BBN8HWC7XLY67P47NZHA3X42ZPH5UUQPRZRVLJWD_ejd), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty DownColorProperty = DependencyProperty.Register("DownColor", typeof (Color), typeof (ClusterProfileRenderableSeries), new PropertyMetadata((object) Colors.DarkGreen, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  protected TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D \u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D;
+  protected TimeframeSegmentRenderableSeries.FontCalculator _fontCalculator;
 
   public bool LocalHorizontalVolumes
   {
     get
     {
-      return (bool) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D);
+      return (bool) this.GetValue(TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty);
     }
     set
     {
-      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzi0KcPWeppPsdH7enWLwUIiA\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty, (object) value);
     }
   }
 
@@ -64,11 +65,11 @@ public abstract class TimeframeSegmentRenderableSeries :
   {
     get
     {
-      return (bool) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D);
+      return (bool) this.GetValue(TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty);
     }
     set
     {
-      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzQertKBH63fdmC8AJyRsykJc\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty, (object) value);
     }
   }
 
@@ -76,11 +77,11 @@ public abstract class TimeframeSegmentRenderableSeries :
   {
     get
     {
-      return (double) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D);
+      return (double) this.GetValue(TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty);
     }
     set
     {
-      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzItT23YVSDC4D2EO\u0024iA\u003D\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, (object) value);
     }
   }
 
@@ -88,11 +89,11 @@ public abstract class TimeframeSegmentRenderableSeries :
   {
     get
     {
-      return (Brush) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzkZL83tvq\u0024ktX);
+      return (Brush) this.GetValue(TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty);
     }
     set
     {
-      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzkZL83tvq\u0024ktX, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty, (object) value);
     }
   }
 
@@ -100,77 +101,77 @@ public abstract class TimeframeSegmentRenderableSeries :
   {
     get
     {
-      return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D);
+      return (Color) this.GetValue(TimeframeSegmentRenderableSeries.VolBarsFontColorProperty);
     }
     set
     {
-      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzagbwXpWOZg7bLqSU7A\u003D\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.VolBarsFontColorProperty, (object) value);
     }
   }
 
-  public bool \u0023\u003DzRNPBYH\u0024r1v_XVePnsQd4gRM\u003D()
+  public bool DrawSeparateVolumes
   {
-    return (bool) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D);
+    return (bool) this.GetValue(TimeframeSegmentRenderableSeries.DrawSeparateVolumesProperty);
   }
 
-  public void \u0023\u003Dz2Hom_KjPHnB5jKfkq1g_w6U\u003D(bool _param1)
+  public void DrawSeparateVolumesbool _param1)
   {
-    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dz6m31HqKWmW3sf6kpzl00drQ\u003D, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.DrawSeparateVolumesProperty, (object) _param1);
   }
 
-  public Color \u0023\u003DzdOa9LxKWm9_R()
+  public Color BuyColor
   {
-    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzsiwadMWumB4q);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.BuyColorProperty);
   }
 
-  public void \u0023\u003DzCAEo7KpUPRGr(Color _param1)
+  public void BuyColor(Color _param1)
   {
-    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzsiwadMWumB4q, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.BuyColorProperty, (object) _param1);
   }
 
-  public Color \u0023\u003DzMGEDv1J2E_VL()
+  public Color SellColor
   {
-    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzyQkELvBo\u002432H);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.SellColorProperty);
   }
 
-  public void \u0023\u003DzKNu_W\u0024G42yk5(Color _param1)
+  public void SellColor(Color _param1)
   {
-    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzyQkELvBo\u002432H, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.SellColorProperty, (object) _param1);
   }
 
-  public Color \u0023\u003Dzc3UwYbhl1TD\u0024()
+  public Color UpColor
   {
-    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzd0DbwufxB45U);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.UpColorProperty);
   }
 
-  public void \u0023\u003DzLzufL4HhRdm8(Color _param1)
+  public void UpColor(Color _param1)
   {
-    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003Dzd0DbwufxB45U, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.UpColorProperty, (object) _param1);
   }
 
-  public Color \u0023\u003DzMrEHemSZ_hHJ()
+  public Color DownColor
   {
-    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzMymlj1BxH8MY);
+    return (Color) this.GetValue(TimeframeSegmentRenderableSeries.DownColorProperty);
   }
 
-  public void \u0023\u003Dz2DFaO_kh9og7(Color _param1)
+  public void DownColor(Color _param1)
   {
-    this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzMymlj1BxH8MY, (object) _param1);
+    this.SetValue(TimeframeSegmentRenderableSeries.DownColorProperty, (object) _param1);
   }
 
   public Decimal? PriceStep
   {
     get
     {
-      return (Decimal?) this.GetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D);
+      return (Decimal?) this.GetValue(TimeframeSegmentRenderableSeries.PriceStepProperty);
     }
     set
     {
-      this.SetValue(TimeframeSegmentRenderableSeries.\u0023\u003DzclgWzqVX9aMz0ymbjg\u003D\u003D, (object) value);
+      this.SetValue(TimeframeSegmentRenderableSeries.PriceStepProperty, (object) value);
     }
   }
 
-  protected TimeSpan? \u0023\u003DzbEc2QrSSD6cXzW5oVw\u003D\u003D()
+  protected TimeSpan? Timeframe
   {
     return ((ITimeframe) this.DataSeries)?.get_Timeframe();
   }
@@ -202,8 +203,8 @@ public abstract class TimeframeSegmentRenderableSeries :
     base.OnPropertyChanged(_param1);
     if (_param1.Property != Control.FontFamilyProperty && _param1.Property != Control.FontSizeProperty && _param1.Property != Control.FontWeightProperty)
       return;
-    this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D = (TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D) null;
-    this.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    this._fontCalculator = (TimeframeSegmentRenderableSeries.FontCalculator) null;
+    this.OnInvalidateParentSurface();
   }
 
   protected override void \u0023\u003Dz_mrkCOu7iZTY(
@@ -216,18 +217,18 @@ public abstract class TimeframeSegmentRenderableSeries :
       throw new NotSupportedException("flipped axes not supported");
     if (this.\u0023\u003Dzvbgbx_fEYDj8gNf2vA\u003D\u003D().\u0023\u003DzSKfyjpipx8dI().\u0023\u003DzlpVGw6E\u003D() < 1 || !(this.DataSeries is TimeframeSegmentDataSeries))
       return;
-    if (this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D == null)
+    if (this._fontCalculator == null)
     {
       string str = this.FontFamily != null ? this.FontFamily.Source : "Tahoma";
       float num = ((float) this.FontSize).Round(0.5f);
       FontWeight fontWeight = this.FontWeight;
-      this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D(_param1, str, num, fontWeight);
+      this._fontCalculator = new TimeframeSegmentRenderableSeries.FontCalculator(_param1, str, num, fontWeight);
     }
     this.\u0023\u003DzKsKC4kB3l9RI(_param1, _param2);
     if (this.ShowHorizontalVolumes)
       this.\u0023\u003Dzn9I1y8FguWK2lTmZLQ\u003D\u003D(_param1, _param2);
     else
-      this.\u0023\u003Dzwzwqm6ek0X1oFaJOBAtZrz4\u003D = new Dictionary<double, Tuple<double, CandlePriceLevel>>();
+      this._candlePriceLevelMap = new Dictionary<double, Tuple<double, CandlePriceLevel>>();
   }
 
   protected static void \u0023\u003DzIhSOYOaWRQ6n(
@@ -315,8 +316,8 @@ public abstract class TimeframeSegmentRenderableSeries :
     {
       \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J rhwYsZxA33iRu6Id7J = vQiJuKqUi9jtIaha.\u0023\u003Dzc8S9rSE\u003D(linearGradientBrush != null ? linearGradientBrush.GradientStops[0].Color : volBarsFontColor);
       IBrush2D xrgcdFbSdWgN9GcT8_1 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(volumeBarsBrush);
-      IBrush2D xrgcdFbSdWgN9GcT8_2 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(this.\u0023\u003DzdOa9LxKWm9_R());
-      IBrush2D xrgcdFbSdWgN9GcT8_3 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(this.\u0023\u003DzMGEDv1J2E_VL());
+      IBrush2D xrgcdFbSdWgN9GcT8_2 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(this.BuyColor);
+      IBrush2D xrgcdFbSdWgN9GcT8_3 = vQiJuKqUi9jtIaha.\u0023\u003DzNryPIU0\u003D(this.SellColor);
       double num4 = (double) ((IEnumerable<KeyValuePair<double, CandlePriceLevel>>) array).Max<KeyValuePair<double, CandlePriceLevel>>(TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D ?? (TimeframeSegmentRenderableSeries.SomeClass34343383.\u0023\u003DzZEdrJU5AGATCLr5zPg\u003D\u003D = new Func<KeyValuePair<double, CandlePriceLevel>, Decimal>(TimeframeSegmentRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzysAJjFChL7t5jDsdHzdXQkULmvNn67k19w\u003D\u003D)));
       double volumeWidthFraction = this.HorizontalVolumeWidthFraction;
       double num5 = width * volumeWidthFraction;
@@ -332,7 +333,7 @@ public abstract class TimeframeSegmentRenderableSeries :
         if (num2 > 1.5)
         {
           _param1.\u0023\u003Dzk8_eoWQ\u003D(rhwYsZxA33iRu6Id7J, point1, new Point(num8, num6));
-          if (this.\u0023\u003DzRNPBYH\u0024r1v_XVePnsQd4gRM\u003D() && (((CandlePriceLevel) ref candlePriceLevel).BuyVolume > 0M || ((CandlePriceLevel) ref candlePriceLevel).SellVolume > 0M))
+          if (this.DrawSeparateVolumes && (((CandlePriceLevel) ref candlePriceLevel).BuyVolume > 0M || ((CandlePriceLevel) ref candlePriceLevel).SellVolume > 0M))
           {
             double num10 = num8 * (double) (((CandlePriceLevel) ref candlePriceLevel).BuyVolume / totalVolume);
             if (((CandlePriceLevel) ref candlePriceLevel).BuyVolume > 0M)
@@ -349,13 +350,13 @@ public abstract class TimeframeSegmentRenderableSeries :
         string str = totalVolume.ToString();
         int num11 = 2;
         Rect rect = new Rect(new Point((double) num11, num6), new Point(num5 + (double) num11, num7));
-        (float, FontWeight, bool) tuple = this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzwjCzmT8\u003D(rect.Size, totalVolume.GetDecimalLength(), 9f);
+        (float, FontWeight, bool) tuple = this._fontCalculator.\u0023\u003DzwjCzmT8\u003D(rect.Size, totalVolume.GetDecimalLength(), 9f);
         float num12 = tuple.Item1;
         FontWeight fontWeight = tuple.Item2;
         if (tuple.Item3)
-          _param1.\u0023\u003DzI6mwN\u0024I\u003D(str, rect, AlignmentX.Left, AlignmentY.Center, volBarsFontColor, num12, this.\u0023\u003DzYzTHvXwQXYl6LsCc8L5dk8U\u003D.\u0023\u003DzfFpWmUYdz7xm(), fontWeight);
+          _param1.\u0023\u003DzI6mwN\u0024I\u003D(str, rect, AlignmentX.Left, AlignmentY.Center, volBarsFontColor, num12, this._fontCalculator.\u0023\u003DzfFpWmUYdz7xm(), fontWeight);
       }
-      this.\u0023\u003Dzwzwqm6ek0X1oFaJOBAtZrz4\u003D = dictionary;
+      this._candlePriceLevelMap = dictionary;
     }
   }
 
@@ -378,7 +379,7 @@ public abstract class TimeframeSegmentRenderableSeries :
     if (num3 < 1.0 || num4 < 1.0)
       return HitTestInfo.\u0023\u003Dzz_6Dy9M\u003D;
     Tuple<double, CandlePriceLevel> tuple;
-    if (this.ShowHorizontalVolumes && this.\u0023\u003Dzwzwqm6ek0X1oFaJOBAtZrz4\u003D.TryGetValue(key, out tuple) && _param1.X <= tuple.Item1)
+    if (this.ShowHorizontalVolumes && this._candlePriceLevelMap.TryGetValue(key, out tuple) && _param1.X <= tuple.Item1)
     {
       HitTestInfo zldchDrVsrVyHh6WyiGy = new HitTestInfo();
       zldchDrVsrVyHh6WyiGy.\u0023\u003DzOCYm7g4gfYSc(dataSeries.SeriesName);
@@ -420,17 +421,17 @@ public abstract class TimeframeSegmentRenderableSeries :
     return _param2;
   }
 
-  protected sealed class \u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D
+  protected sealed class FontCalculator
   {
-    private readonly TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[] \u0023\u003DzEDGaOlhSE7XW;
-    private readonly TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D \u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D;
-    private readonly TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D \u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D;
+    private readonly TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D[] \u0023\u003DzEDGaOlhSE7XW;
+    private readonly TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D \u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D;
+    private readonly TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D \u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D;
     private readonly string \u0023\u003DztSljFjtK7JnB;
-    private readonly Dictionary<Tuple<int, int>, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzBMY\u00244COSpP9\u0024 = new Dictionary<Tuple<int, int>, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>();
-    private readonly Dictionary<float, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D = new Dictionary<float, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>();
+    private readonly Dictionary<Tuple<int, int>, TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzBMY\u00244COSpP9\u0024 = new Dictionary<Tuple<int, int>, TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D>();
+    private readonly Dictionary<float, TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D> \u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D = new Dictionary<float, TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D>();
     private readonly Stopwatch \u0023\u003DzcUm4iRE\u003D = new Stopwatch();
 
-    public \u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D(
+    public FontCalculator(
       IRenderContext2D _param1,
       string _param2,
       float _param3,
@@ -439,21 +440,21 @@ public abstract class TimeframeSegmentRenderableSeries :
       this.\u0023\u003DzcUm4iRE\u003D.Restart();
       this.\u0023\u003DztSljFjtK7JnB = _param2;
       _param3 = Math.Min(32f, _param3).Round(0.5f);
-      this.\u0023\u003DzEDGaOlhSE7XW = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[1 + (int) Math.Round(((double) _param3 - 7.0) / 0.5)];
+      this.\u0023\u003DzEDGaOlhSE7XW = new TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D[1 + (int) Math.Round(((double) _param3 - 7.0) / 0.5)];
       for (float num = 7f; (double) num <= (double) _param3; num += 0.5f)
       {
         FontWeight fontWeight = (double) num <= 8.5 ? FontWeights.ExtraLight : ((double) num <= 10.0 ? FontWeights.Light : _param4);
         Size size = _param1.\u0023\u003DzM2zC99cVJOSN(num, this.\u0023\u003DztSljFjtK7JnB, fontWeight);
-        this.\u0023\u003DzEDGaOlhSE7XW[(int) Math.Round(((double) num - 7.0) / 0.5)] = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D(num, fontWeight, size);
+        this.\u0023\u003DzEDGaOlhSE7XW[(int) Math.Round(((double) num - 7.0) / 0.5)] = new TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D(num, fontWeight, size);
       }
       this.\u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D = this.\u0023\u003DzEDGaOlhSE7XW[0];
-      TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D[] zEdGaOlhSe7Xw = this.\u0023\u003DzEDGaOlhSE7XW;
+      TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D[] zEdGaOlhSe7Xw = this.\u0023\u003DzEDGaOlhSE7XW;
       this.\u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D = zEdGaOlhSe7Xw[zEdGaOlhSe7Xw.Length - 1];
       double d1;
       double d2 = d1 = double.MaxValue;
       double a1;
       double a2 = a1 = double.MinValue;
-      foreach (TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y in this.\u0023\u003DzEDGaOlhSE7XW)
+      foreach (TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y in this.\u0023\u003DzEDGaOlhSE7XW)
       {
         Size size = zvzdRt5Y.\u0023\u003Dz8OGuO4J3wG6m();
         double width = size.Width;
@@ -475,16 +476,16 @@ public abstract class TimeframeSegmentRenderableSeries :
       int num3 = (int) Math.Floor(d1);
       int num4 = (int) Math.Ceiling(a1);
       int[] array = Enumerable.Range(0, this.\u0023\u003DzEDGaOlhSE7XW.Length).Reverse<int>().ToArray<int>();
-      TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D qws5VcJaSLcUcBty = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D();
+      TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D qws5VcJaSLcUcBty = new TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D();
       for (qws5VcJaSLcUcBty.\u0023\u003Dze2ZNMQU\u003D = num1; qws5VcJaSLcUcBty.\u0023\u003Dze2ZNMQU\u003D <= num2; ++qws5VcJaSLcUcBty.\u0023\u003Dze2ZNMQU\u003D)
       {
-        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D eiGfnlxs70MiqCaxA = new TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D();
+        TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D eiGfnlxs70MiqCaxA = new TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D();
         eiGfnlxs70MiqCaxA.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D = qws5VcJaSLcUcBty;
         for (eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D = num3; eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D <= num4; ++eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D)
         {
           Tuple<int, int> key = Tuple.Create<int, int>(eiGfnlxs70MiqCaxA.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dze2ZNMQU\u003D, eiGfnlxs70MiqCaxA.\u0023\u003DzZFj5Dy0\u003D);
           if (!this.\u0023\u003DzBMY\u00244COSpP9\u0024.ContainsKey(key))
-            this.\u0023\u003DzBMY\u00244COSpP9\u0024[key] = ((IEnumerable<int>) array).Select<int, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(new Func<int, TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(this.OnLineOnePropertyChanged)).First<TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D>(new Func<TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D, bool>(eiGfnlxs70MiqCaxA.OnChartAreaElementsRemovingAt));
+            this.\u0023\u003DzBMY\u00244COSpP9\u0024[key] = ((IEnumerable<int>) array).Select<int, TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D>(new Func<int, TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D>(this.OnLineOnePropertyChanged)).First<TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D>(new Func<TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D, bool>(eiGfnlxs70MiqCaxA.OnChartAreaElementsRemovingAt));
         }
       }
       this.\u0023\u003DzcUm4iRE\u003D.Stop();
@@ -550,7 +551,7 @@ public abstract class TimeframeSegmentRenderableSeries :
             size = this.\u0023\u003Dzrvi_agq_n0FwCIAA7Q\u003D\u003D.\u0023\u003Dz8OGuO4J3wG6m();
             double height6 = size.Height;
             int num5 = (int) Math.Floor(Math.Min(height5, height6));
-            TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja = this.\u0023\u003DzBMY\u00244COSpP9\u0024[Tuple.Create<int, int>(num4, num5)];
+            TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja = this.\u0023\u003DzBMY\u00244COSpP9\u0024[Tuple.Create<int, int>(num4, num5)];
             if ((double) _param3 == 0.0 || (double) tmaYvnm94O29pOcja.FontSize >= (double) _param3)
               return (tmaYvnm94O29pOcja.FontSize, tmaYvnm94O29pOcja.\u0023\u003DzmTA5w5GPXfNk(), true);
             if (!this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D.TryGetValue(_param3, out tmaYvnm94O29pOcja))
@@ -560,7 +561,7 @@ public abstract class TimeframeSegmentRenderableSeries :
         }
         if ((double) _param3 == 0.0)
           return ();
-        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja1;
+        TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D tmaYvnm94O29pOcja1;
         if (!this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D.TryGetValue(_param3, out tmaYvnm94O29pOcja1))
           tmaYvnm94O29pOcja1 = this.\u0023\u003DzxTmaYVnm94O29pOCJA\u003D\u003D;
         return (tmaYvnm94O29pOcja1.FontSize, tmaYvnm94O29pOcja1.\u0023\u003DzmTA5w5GPXfNk(), false);
@@ -575,7 +576,7 @@ public abstract class TimeframeSegmentRenderableSeries :
           (object) _param3,
           (object) ex
         });
-        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y = this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D[Math.Max(_param3, 7f)];
+        TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D zvzdRt5Y = this.\u0023\u003DzmwcQnxGZTX62VDWjDA\u003D\u003D[Math.Max(_param3, 7f)];
         return (zvzdRt5Y.FontSize, zvzdRt5Y.\u0023\u003DzmTA5w5GPXfNk(), false);
       }
     }
@@ -586,7 +587,7 @@ public abstract class TimeframeSegmentRenderableSeries :
       return (double) tuple.Item1 != 0.0 || tuple.Item2 != new FontWeight() || tuple.Item3;
     }
 
-    private TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D OnLineOnePropertyChanged(
+    private TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D OnLineOnePropertyChanged(
       int _param1)
     {
       return this.\u0023\u003DzEDGaOlhSE7XW[_param1];
@@ -595,10 +596,10 @@ public abstract class TimeframeSegmentRenderableSeries :
     private sealed class \u0023\u003DzAsDBfEiGfnlxs7_0MiqCAxA\u003D
     {
       public int \u0023\u003DzZFj5Dy0\u003D;
-      public TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
+      public TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzVH9kNoQws5VCJa_sLcUcBTY\u003D \u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D;
 
       public bool OnChartAreaElementsRemovingAt(
-        TimeframeSegmentRenderableSeries.\u0023\u003Dz\u0024AaE22ukwso1AHLPUy8DdSc\u003D.\u0023\u003DzvzdRt5Y\u003D _param1)
+        TimeframeSegmentRenderableSeries.FontCalculator.\u0023\u003DzvzdRt5Y\u003D _param1)
       {
         return _param1.\u0023\u003Dz8OGuO4J3wG6m().Width <= (double) this.\u0023\u003Dq2iriNTb7rAhPHinDq54UgqLb2kUlUKGXkBNeEWzP3h0\u003D.\u0023\u003Dze2ZNMQU\u003D && _param1.\u0023\u003Dz8OGuO4J3wG6m().Height <= (double) this.\u0023\u003DzZFj5Dy0\u003D;
       }

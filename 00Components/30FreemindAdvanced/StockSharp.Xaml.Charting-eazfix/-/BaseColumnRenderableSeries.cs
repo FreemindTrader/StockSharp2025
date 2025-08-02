@@ -410,6 +410,6 @@ public abstract class BaseColumnRenderableSeries :
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
-    BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9(_param0, _param1);
+    BaseRenderableSeries.OnInvalidateParentSurface(_param0, _param1);
   }
 }

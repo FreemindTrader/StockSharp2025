@@ -205,7 +205,7 @@ public abstract class \u0023\u003Dz6\u0024kyD91Y546oWffDBUVKqAfDPGUkdbttZg\u003D
     }
   }
 
-  protected void \u0023\u003Dzmf\u0024vfR3OJQU9(DependencyPropertyChangedEventArgs _param1)
+  protected void OnInvalidateParentSurface(DependencyPropertyChangedEventArgs _param1)
   {
     if (!this.\u0023\u003DzWNQ9StWEg__B())
       return;

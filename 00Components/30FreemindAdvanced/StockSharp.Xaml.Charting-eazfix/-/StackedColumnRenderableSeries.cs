@@ -28,11 +28,11 @@ public sealed class StackedColumnRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003Dzj\u0024ZDuobq5\u0024GmruUxggpnzio\u003D = DependencyProperty.Register(nameof (IsOneHundredPercent), typeof (bool), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) false));
   
-  public static readonly DependencyProperty \u0023\u003DzYrTUOus\u003D = DependencyProperty.Register(nameof (Spacing), typeof (double), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) 0.1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzYrTUOus\u003D = DependencyProperty.Register(nameof (Spacing), typeof (double), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) 0.1, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzDmC1x3LgSH85 = DependencyProperty.Register(nameof (SpacingMode), typeof (\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV066G8ZjcZkoR4\u003D), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) \u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV066G8ZjcZkoR4\u003D.Relative, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzDmC1x3LgSH85 = DependencyProperty.Register(nameof (SpacingMode), typeof (\u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV066G8ZjcZkoR4\u003D), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) \u0023\u003DzUJpBz2W8IzAtBIqVtQXHBxp6vbyZAM3jtrSiCk74BV066G8ZjcZkoR4\u003D.Relative, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dzj9GlhPUqVKhn = DependencyProperty.Register(nameof (ShowLabel), typeof (bool), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dzj9GlhPUqVKhn = DependencyProperty.Register(nameof (ShowLabel), typeof (bool), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   public static readonly DependencyProperty \u0023\u003DzE0CH9XMtyZ7l = DependencyProperty.Register(nameof (LabelColor), typeof (Color), typeof (StackedColumnRenderableSeries), new PropertyMetadata((object) Colors.White));
   

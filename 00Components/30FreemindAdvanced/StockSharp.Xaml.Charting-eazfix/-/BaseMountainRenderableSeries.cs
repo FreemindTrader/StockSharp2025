@@ -15,9 +15,9 @@ public abstract class BaseMountainRenderableSeries :
   BaseRenderableSeries
 {
     [DebuggerBrowsable( DebuggerBrowsableState.Never )]
-    public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (BaseMountainRenderableSeries), new PropertyMetadata( (object) false, new PropertyChangedCallback( BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+    public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (BaseMountainRenderableSeries), new PropertyMetadata( (object) false, new PropertyChangedCallback( BaseRenderableSeries.OnInvalidateParentSurface)));
   [DebuggerBrowsable( DebuggerBrowsableState.Never )]
-    public static readonly DependencyProperty \u0023\u003DzXc9apgJiH9mm = DependencyProperty.Register(nameof (AreaBrush), typeof (Brush), typeof (BaseMountainRenderableSeries), new PropertyMetadata( (object) null, new PropertyChangedCallback( BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+    public static readonly DependencyProperty \u0023\u003DzXc9apgJiH9mm = DependencyProperty.Register(nameof (AreaBrush), typeof (Brush), typeof (BaseMountainRenderableSeries), new PropertyMetadata( (object) null, new PropertyChangedCallback( BaseRenderableSeries.OnInvalidateParentSurface)));
   [DebuggerBrowsable( DebuggerBrowsableState.Never )]
     private Color \u0023\u003Dz7whQ6lqoKrkWxT8_LQ\u003D\u003D;
 

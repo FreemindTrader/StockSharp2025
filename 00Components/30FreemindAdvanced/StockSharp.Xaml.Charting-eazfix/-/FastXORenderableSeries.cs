@@ -16,7 +16,7 @@ public sealed class FastXORenderableSeries :
   FastOhlcRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003DzIrmMBlMvjNiI = DependencyProperty.Register(nameof (XOBoxSize), typeof (double), typeof (FastXORenderableSeries), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzIrmMBlMvjNiI = DependencyProperty.Register(nameof (XOBoxSize), typeof (double), typeof (FastXORenderableSeries), new PropertyMetadata((object) 1.0, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
 
   public FastXORenderableSeries()
   {

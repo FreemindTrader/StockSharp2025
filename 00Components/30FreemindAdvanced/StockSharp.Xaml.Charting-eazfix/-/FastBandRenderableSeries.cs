@@ -19,17 +19,17 @@ public sealed class FastBandRenderableSeries :
   BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (FastBandRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (FastBandRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzV4cOZ_3w4VF7 = DependencyProperty.Register(nameof (Series1Color), typeof (Color), typeof (FastBandRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzV4cOZ_3w4VF7 = DependencyProperty.Register(nameof (Series1Color), typeof (Color), typeof (FastBandRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzqXdfa4iudfGA = DependencyProperty.Register(nameof (BandUpColor), typeof (Color), typeof (FastBandRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzqXdfa4iudfGA = DependencyProperty.Register(nameof (BandUpColor), typeof (Color), typeof (FastBandRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzJJDbrFb7cXV\u0024 = DependencyProperty.Register(nameof (BandDownColor), typeof (Color), typeof (FastBandRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzJJDbrFb7cXV\u0024 = DependencyProperty.Register(nameof (BandDownColor), typeof (Color), typeof (FastBandRenderableSeries), new PropertyMetadata((object) new Color(), new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dz6dTf9uHwK3CQ2m0now\u003D\u003D = DependencyProperty.Register(nameof (Series0StrokeDashArray), typeof (double[]), typeof (FastBandRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz6dTf9uHwK3CQ2m0now\u003D\u003D = DependencyProperty.Register(nameof (Series0StrokeDashArray), typeof (double[]), typeof (FastBandRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzFtj5s4w63Vxye7u2Bw\u003D\u003D = DependencyProperty.Register(nameof (Series1StrokeDashArray), typeof (double[]), typeof (FastBandRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzFtj5s4w63Vxye7u2Bw\u003D\u003D = DependencyProperty.Register(nameof (Series1StrokeDashArray), typeof (double[]), typeof (FastBandRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   private FrameworkElement \u0023\u003DzYbhxxX0hEwb\u0024mbXc7A6rNBo\u003D;
 

@@ -195,7 +195,7 @@ public sealed class FastBubbleRenderableSeries :
   {
     FastBubbleRenderableSeries b5lfOfnUo8w7EyJw = (FastBubbleRenderableSeries) _param0;
     b5lfOfnUo8w7EyJw.\u0023\u003DzjADvNnzgrrZX = (\u0023\u003Dzh5FljKv\u0024Q_lDTADyTGyZRTX9mDWGkJVnFV25iog\u003D<ISprite2D>) null;
-    b5lfOfnUo8w7EyJw.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    b5lfOfnUo8w7EyJw.OnInvalidateParentSurface();
   }
 
   private sealed class SomeClass7654

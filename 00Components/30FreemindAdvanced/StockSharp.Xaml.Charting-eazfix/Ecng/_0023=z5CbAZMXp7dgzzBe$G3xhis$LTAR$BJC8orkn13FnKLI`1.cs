@@ -156,7 +156,7 @@ public sealed class \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhis\u0024LTAR\u0024BJC8
         d5Uc36Ku2HzS32Ejd.UseUniformWidth = true;
         d5Uc36Ku2HzS32Ejd.SetBindings(BaseRenderableSeries.\u0023\u003DzIcVMwZBBZ1n3, (object) this.ChartComponentView, "Color", converter: (IValueConverter) new \u0023\u003DzY\u0024Fbb9SLuCh5D6t_XKcJqKuhsUbi2xjkbRlj6EVaEl1lCbDsuw\u003D\u003D(), parameter: (object) 51);
         d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzwCSejucukq6W, (object) this.ChartComponentView, "Color", converter: (IValueConverter) new ColorToBrushConverter());
-        d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new \u0023\u003Dz5CbAZMXp7dgzzBe\u0024G3xhiiYRKe0897RDjLr\u0024L9wcxjXImUKaPnpxZj0\u003D());
+        d5Uc36Ku2HzS32Ejd.SetBindings(dje_zHYRPNQHHBLUELC2PHC86VUXPKVH2ZMKXPKFTYYKX6SKX4JY2EDLNT4C8JKXXPNRQ42CXGSK8E94CEP2_ejd.\u0023\u003DzVvc2lVdKTrj8, (object) this.ChartComponentView, "StrokeThickness", converter: (IValueConverter) new StrokeThickToPointWidthConverter());
         break;
       case DrawStyles.Area:
         FastMountainRenderableSeries curmvvpxnR5WlzaEjd;

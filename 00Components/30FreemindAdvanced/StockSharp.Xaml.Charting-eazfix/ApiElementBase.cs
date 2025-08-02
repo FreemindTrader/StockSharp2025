@@ -114,7 +114,7 @@ public abstract class ApiElementBase : ContentControl, INotifyPropertyChanged
         return this.ParentSurface == null || this.ParentSurface.get_XAxes() == null ? ( IAxis ) null : this.ParentSurface.get_XAxes().\u0023\u003Dz\u0024YoxjvGBoa2C( _param1, false );
     }
 
-    protected virtual void \u0023\u003Dzmf\u0024vfR3OJQU9()
+    protected virtual void OnInvalidateParentSurface()
     {
         if ( this.Services == null )
             return;

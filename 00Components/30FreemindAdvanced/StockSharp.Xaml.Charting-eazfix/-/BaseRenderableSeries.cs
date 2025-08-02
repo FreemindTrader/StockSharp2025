@@ -31,7 +31,7 @@ public abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzHttRjYlEOUXJ = DependencyProperty.Register(nameof (IsSelected), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata(new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzBSmu2cMVk0Wk)));
   
-  public static readonly DependencyProperty \u0023\u003DzxWzRxjX3V8Eh = DependencyProperty.Register("DataSeriesIndex", typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) -1, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzxWzRxjX3V8Eh = DependencyProperty.Register("DataSeriesIndex", typeof (int), typeof (BaseRenderableSeries), new PropertyMetadata((object) -1, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   public static readonly DependencyProperty \u0023\u003DzGTMdFbtr59Hr = DependencyProperty.Register(nameof (DataSeries), typeof (IDataSeries), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.SomeClass34343383.SomeMethond0343.\u0023\u003DzM7Y4F17SPdO43L2F59a\u0024muWj0PcD)));
   
@@ -43,7 +43,7 @@ public abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003DzZgWT7YttYHbwyP3zHCVW0zI\u003D = DependencyProperty.Register(nameof (ResamplingMode), typeof (ResamplingMode), typeof (BaseRenderableSeries), new PropertyMetadata((object) ResamplingMode.Auto, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dz865pKWj8QZ5WemB7jgEn5T0\u003D)));
   
-  public static readonly DependencyProperty AntiAliasingProperty = DependencyProperty.Register(nameof (AntiAliasing), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty AntiAliasingProperty = DependencyProperty.Register(nameof (AntiAliasing), typeof (bool), typeof (BaseRenderableSeries), new PropertyMetadata((object) true, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   public static readonly DependencyProperty \u0023\u003DzNGe3htdX6rpV = DependencyProperty.Register(nameof (PointMarkerTemplate), typeof (ControlTemplate), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003DzakQhJ14btXMjqycMlg\u003D\u003D)));
   
@@ -53,15 +53,15 @@ public abstract class BaseRenderableSeries :
   
   public static readonly DependencyProperty \u0023\u003Dzcmph5bg8kibh = DependencyProperty.Register(nameof (LegendMarkerTemplate), typeof (DataTemplate), typeof (BaseRenderableSeries), new PropertyMetadata((PropertyChangedCallback) null));
   
-  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty YAxisIdProperty = DependencyProperty.Register(nameof (YAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty XAxisIdProperty = DependencyProperty.Register(nameof (XAxisId), typeof (string), typeof (BaseRenderableSeries), new PropertyMetadata((object) "DefaultAxisId", new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003Dz2NzoEVHQO1PF = DependencyProperty.Register(nameof (PaletteProvider), typeof (IXxxPaletteProvider), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz2NzoEVHQO1PF = DependencyProperty.Register(nameof (PaletteProvider), typeof (IXxxPaletteProvider), typeof (BaseRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzyfKHGV64pf8n = DependencyProperty.Register(nameof (ZeroLineY), typeof (double), typeof (BaseRenderableSeries), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzyfKHGV64pf8n = DependencyProperty.Register(nameof (ZeroLineY), typeof (double), typeof (BaseRenderableSeries), new PropertyMetadata((object) 0.0, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzFGPPff\u0024vovp27QyBcA\u003D\u003D = DependencyProperty.Register(nameof (DrawNaNAs), typeof (\u0023\u003DzV9O5tWduWosGLvu_87Zf5KIXjvA0HjqD6negDKigZjec_mB\u0024hq2WcZE\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) \u0023\u003DzV9O5tWduWosGLvu_87Zf5KIXjvA0HjqD6negDKigZjec_mB\u0024hq2WcZE\u003D.Gaps, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzFGPPff\u0024vovp27QyBcA\u003D\u003D = DependencyProperty.Register(nameof (DrawNaNAs), typeof (\u0023\u003DzV9O5tWduWosGLvu_87Zf5KIXjvA0HjqD6negDKigZjec_mB\u0024hq2WcZE\u003D), typeof (BaseRenderableSeries), new PropertyMetadata((object) \u0023\u003DzV9O5tWduWosGLvu_87Zf5KIXjvA0HjqD6negDKigZjec_mB\u0024hq2WcZE\u003D.Gaps, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   private EventHandler \u0023\u003DzDpzMqzE\u003D;
   
@@ -432,7 +432,7 @@ public abstract class BaseRenderableSeries :
     return this.PointMarker ?? this.\u0023\u003DzSUYbHOVc96jukZ8sQA\u003D\u003D;
   }
 
-  public virtual void \u0023\u003Dzmf\u0024vfR3OJQU9()
+  public virtual void OnInvalidateParentSurface()
   {
     if (this.Services() == null)
       return;
@@ -910,7 +910,7 @@ public abstract class BaseRenderableSeries :
 
   protected virtual void \u0023\u003DznYxDSPc3ewIVoqnDfn0cVVg\u003D()
   {
-    this.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    this.OnInvalidateParentSurface();
   }
 
   protected virtual void \u0023\u003Dz_YOJQqiJZV14ntmBJA\u003D\u003D()
@@ -943,13 +943,13 @@ public abstract class BaseRenderableSeries :
     return \u0023\u003DzS5mFHV\u0024eXnkCjzbt0Dx26h0hvlV4LfsI5sS6QMD39it_JzJq2Auui18\u003D.\u0023\u003Dzop6vn0GowyiR(_param1, _param2);
   }
 
-  protected static void \u0023\u003Dzmf\u0024vfR3OJQU9(
+  protected static void OnInvalidateParentSurface(
     DependencyObject _param0,
     DependencyPropertyChangedEventArgs _param1)
   {
     if (!(_param0 is BaseRenderableSeries ls4St64EqzfbaEjd))
       return;
-    ls4St64EqzfbaEjd.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    ls4St64EqzfbaEjd.OnInvalidateParentSurface();
   }
 
   protected virtual void \u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D(
@@ -965,7 +965,7 @@ public abstract class BaseRenderableSeries :
     this.\u0023\u003DzXfO9DgaVRj7B = _param2;
     if (this.IsVisible)
       this.\u0023\u003DzAVP20qah0DlKrctPXw\u003D\u003D();
-    this.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    this.OnInvalidateParentSurface();
   }
 
   protected public ISciChartSurface \u0023\u003DzoXzc48\u0024TAMxP()
@@ -997,7 +997,7 @@ public abstract class BaseRenderableSeries :
     DependencyPropertyChangedEventArgs _param1)
   {
     \u0023\u003DzITX8mZ2jbGEtwuB21HaSb94StZu7BSE7Sw\u003D\u003D.\u0023\u003DzlTskcr4\u003D((IComparable) (int) _param1.NewValue, "StrokeThickness").\u0023\u003DzIR3Z_Ken7pfcXCwNTw\u003D\u003D((IComparable) 0);
-    BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9(_param0, _param1);
+    BaseRenderableSeries.OnInvalidateParentSurface(_param0, _param1);
   }
 
   private static void \u0023\u003DzCBwgUnYQspPj(
@@ -1007,7 +1007,7 @@ public abstract class BaseRenderableSeries :
     if (!(_param0 is BaseRenderableSeries ls4St64EqzfbaEjd))
       return;
     ls4St64EqzfbaEjd.\u0023\u003Dzd3otebQ_ivQa();
-    ls4St64EqzfbaEjd.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    ls4St64EqzfbaEjd.OnInvalidateParentSurface();
   }
 
   private static void \u0023\u003DzBLNrrTpkTSKCvEflkQ\u003D\u003D(
@@ -1039,7 +1039,7 @@ public abstract class BaseRenderableSeries :
     bool newValue = (bool) _param1.NewValue;
     if (ls4St64EqzfbaEjd == null || (bool) _param1.OldValue == newValue)
       return;
-    BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9(_param0, _param1);
+    BaseRenderableSeries.OnInvalidateParentSurface(_param0, _param1);
   }
 
   private static void \u0023\u003DzxKKlOa0jEDmy(
@@ -1047,7 +1047,7 @@ public abstract class BaseRenderableSeries :
   {
     _param0.\u0023\u003Dzjqa\u00243wA\u003D(_param0.IsSelected ? _param0.SelectedSeriesStyle : (Style) _param0.GetValue(\u0023\u003Dzgg5QOmcWitJriAsXqwM_mmKL7LRAQHeU0CkDEWjOUd11EjbkZ3YobQ0\u003D.\u0023\u003Dz7aV0h3kX1zh\u0024));
     _param0.\u0023\u003Dzd3otebQ_ivQa();
-    _param0.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    _param0.OnInvalidateParentSurface();
   }
 
   private static void \u0023\u003Dz865pKWj8QZ5WemB7jgEn5T0\u003D(
@@ -1066,7 +1066,7 @@ public abstract class BaseRenderableSeries :
     if (!(_param0 is BaseRenderableSeries ls4St64EqzfbaEjd))
       return;
     ls4St64EqzfbaEjd.\u0023\u003Dz2KqJz\u00247bE2vLRKrYBA\u003D\u003D();
-    ls4St64EqzfbaEjd.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    ls4St64EqzfbaEjd.OnInvalidateParentSurface();
   }
 
   private static void \u0023\u003DzakQhJ14btXMjqycMlg\u003D\u003D(
@@ -1075,7 +1075,7 @@ public abstract class BaseRenderableSeries :
   {
     BaseRenderableSeries ls4St64EqzfbaEjd = (BaseRenderableSeries) _param0;
     ls4St64EqzfbaEjd.\u0023\u003DzSUYbHOVc96jukZ8sQA\u003D\u003D = ls4St64EqzfbaEjd.\u0023\u003DztCDogY9Bv4Ig((ControlTemplate) _param1.NewValue, (object) ls4St64EqzfbaEjd);
-    ls4St64EqzfbaEjd.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    ls4St64EqzfbaEjd.OnInvalidateParentSurface();
   }
 
   private \u0023\u003DzTirsw8K0cFwomstKh6_6HW1ki13vvK4WxOGoljkHYInT \u0023\u003DztCDogY9Bv4Ig(
@@ -1110,7 +1110,7 @@ public abstract class BaseRenderableSeries :
         parent.Content = (object) null;
       ls4St64EqzfbaEjd.Content = (object) newValue;
     }
-    ls4St64EqzfbaEjd.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    ls4St64EqzfbaEjd.OnInvalidateParentSurface();
   }
 
   public double \u0023\u003Dz7qQnbobKkea3() => 7.07;

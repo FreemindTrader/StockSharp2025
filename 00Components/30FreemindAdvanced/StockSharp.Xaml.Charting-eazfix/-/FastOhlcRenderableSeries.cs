@@ -18,11 +18,11 @@ public class FastOhlcRenderableSeries :
   
   private int \u0023\u003DzBz9v6qHDJbMP;
   
-  public static readonly DependencyProperty \u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D = DependencyProperty.Register(nameof (UpWickColor), typeof (Color), typeof (FastOhlcRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzofZZEllOaqFCpmhtlA\u003D\u003D = DependencyProperty.Register(nameof (UpWickColor), typeof (Color), typeof (FastOhlcRenderableSeries), new PropertyMetadata((object) Colors.White, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D = DependencyProperty.Register(nameof (DownWickColor), typeof (Color), typeof (FastOhlcRenderableSeries), new PropertyMetadata((object) Colors.SteelBlue, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzGlIIfIPiLV_pixpxdA\u003D\u003D = DependencyProperty.Register(nameof (DownWickColor), typeof (Color), typeof (FastOhlcRenderableSeries), new PropertyMetadata((object) Colors.SteelBlue, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastOhlcRenderableSeries), new PropertyMetadata((object) 0.8, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzVvc2lVdKTrj8 = DependencyProperty.Register(nameof (DataPointWidth), typeof (double), typeof (FastOhlcRenderableSeries), new PropertyMetadata((object) 0.8, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
   protected \u0023\u003DzoiCXU3qThVGehVE_V2hzF44e\u0024nRHwYsZxA33iRU6ID7J \u0023\u003DzCuIJmYsDJgLxaAWxjg\u003D\u003D;
   

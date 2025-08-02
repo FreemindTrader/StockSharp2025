@@ -189,7 +189,7 @@ public abstract class BasePointMarker :
   {
     if (!(this.DataContext is BaseRenderableSeries dataContext))
       return;
-    dataContext.\u0023\u003Dzmf\u0024vfR3OJQU9();
+    dataContext.OnInvalidateParentSurface();
   }
 
   private void \u0023\u003DzHns9YfFfnZla(

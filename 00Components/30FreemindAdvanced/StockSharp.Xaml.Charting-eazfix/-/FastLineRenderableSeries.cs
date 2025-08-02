@@ -18,11 +18,11 @@ public sealed class FastLineRenderableSeries :
   BaseRenderableSeries
 {
   
-  public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (FastLineRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003Dz777sMZMTOybHlBhdug\u003D\u003D = DependencyProperty.Register(nameof (IsDigitalLine), typeof (bool), typeof (FastLineRenderableSeries), new PropertyMetadata((object) false, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzTLzzX5iDcGuj = DependencyProperty.Register(nameof (StrokeDashArray), typeof (double[]), typeof (FastLineRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzTLzzX5iDcGuj = DependencyProperty.Register(nameof (StrokeDashArray), typeof (double[]), typeof (FastLineRenderableSeries), new PropertyMetadata((object) null, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
   
-  public static readonly DependencyProperty \u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D = DependencyProperty.Register(nameof (OhlcDrawMode), typeof (\u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym), typeof (FastLineRenderableSeries), new PropertyMetadata((object) \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym.Close, new PropertyChangedCallback(BaseRenderableSeries.\u0023\u003Dzmf\u0024vfR3OJQU9)));
+  public static readonly DependencyProperty \u0023\u003DzGQjlrvOq17qko2MPPw\u003D\u003D = DependencyProperty.Register(nameof (OhlcDrawMode), typeof (\u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym), typeof (FastLineRenderableSeries), new PropertyMetadata((object) \u0023\u003DzdU\u0024qxkSrwVqvrc8JS00VET677_jS5lgxbrMDtSh7WF5TJSM8_PDGQYU_nqym.Close, new PropertyChangedCallback(BaseRenderableSeries.OnInvalidateParentSurface)));
 
   public FastLineRenderableSeries()
   {
