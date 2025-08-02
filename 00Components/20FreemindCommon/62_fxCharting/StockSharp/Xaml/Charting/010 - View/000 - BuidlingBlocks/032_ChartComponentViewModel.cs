@@ -46,7 +46,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     private readonly bool _isCandleElement;
 
-    private ChartCandleElement _ChartCandleElementViewModel;
+    private ChartCandleElementViewModel _ChartCandleElementViewModel;
 
     private bool _isDisposed;
 
@@ -86,7 +86,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     public bool IsCandleElement => _isCandleElement;
 
-    public ChartCandleElement Candles
+    public ChartCandleElementViewModel CandlesViewModel
     {
         get => _ChartCandleElementViewModel;
         private set => _ChartCandleElementViewModel = value;
@@ -132,9 +132,9 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
         _chartElementsView.AddRange( childElements );
 
-        if ( IsCandleElement && Candles == null )
+        if ( IsCandleElement && CandlesViewModel == null )
         {
-            Candles = childElements.OfType<ChartCandleElement>().First<ChartCandleElement>();
+            CandlesViewModel = childElements.OfType<ChartCandleElementViewModel>().First<ChartCandleElementViewModel>();
         }
 
         if ( _chartElementsView.Count == 1 )

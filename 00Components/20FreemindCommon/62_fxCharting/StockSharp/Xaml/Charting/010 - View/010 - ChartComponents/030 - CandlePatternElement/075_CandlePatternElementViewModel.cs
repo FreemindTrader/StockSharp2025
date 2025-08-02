@@ -11,12 +11,43 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows.Media;
 
-#nullable disable
-public sealed class CandlePatternElementViewModel(
-  CandlePatternElement _param1) :
-  ChartCompentWpfBaseViewModel<CandlePatternElement>(_param1)
+/// <summary>
+/// Pattern (from English: pattern — model, sample) — in technical analysis, refers to stable recurring combinations of price data, volume, or indicators. 
+/// Pattern analysis is based on one of the axioms of technical analysis: "history repeats itself" — it is believed that recurring data combinations lead to similar results.
+/// 
+/// Patterns are also called "templates" or "figures" of technical analysis.
+/// Patterns are conventionally divided into:
+///		Indeterminate(can lead to both continuation and change of the current trend).
+///		Continuation patterns of the current trend.
+///		Patterns of existing trend reversal.
+///		
+/// When editing a pattern, each line represents a separate candle. The topmost line is the current candle, accordingly, 
+/// the second line is one candle back, the third and subsequent lines are minus 2 and more candles.
+/// 
+/// The editor uses the following parameters:
+///		O - opening price,
+///		H - high,
+///		L - low,
+///		C - closing price,
+///		V - volume,
+///		OI - open interest,
+///		B - candle body,
+///		LEN - length of the candle (from high to low),
+///		BS - lower shadow of the candle,
+///		TS - upper shadow of the candle.
+///		With parameters, it is possible to use the following indices (references) to the desired values. For example, for the closing price:
+///		
+///		C: closing price of the current candle,
+///		C1: closing price of the 1st candle after the current one,
+///		C2: closing price of the 2nd candle after the current one,
+///		pC: closing price of the previous candle,
+///		pC1: closing price of the candle before the previous one, All references must be within the range of the current pattern. For example, the range of the 3 Black Crows pattern consists of the current and two previous candles, so referring to the third previous candle is not allowed.
+/// </summary>
+/// <param name="pattern"></param>
+public sealed class CandlePatternElementViewModel( CandlePatternElement pattern) : ChartCompentWpfBaseViewModel<CandlePatternElement>(pattern)
 {
 
 	private readonly HashSet<DateTime> _dateTimeHashSet = new HashSet<DateTime>();
@@ -28,120 +59,105 @@ public sealed class CandlePatternElementViewModel(
 	protected override void Init()
 	{
 		base.Init();
-		this.InternalInit(false);
+		InternalInit(false);
 	}
 
-	private void InternalInit(bool _param1)
+
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <param name="shouldThrow"></param>
+	/// <exception cref="InvalidOperationException"></exception>
+	private void InternalInit(bool shouldThrow)
 	{
-		ChartCandleElementViewModel candles = this.DrawingSurface.CandlesCompositeElement?.Candles;
-		if ( candles == null & _param1 )
+		ChartCandleElementViewModel candlesVM = DrawingSurface.CandlesCompositeElement?.CandlesViewModel;
+		if ( candlesVM == null & shouldThrow )
 			throw new InvalidOperationException("unable to draw candle patterns on a chart without candles");
-		if ( this._candlestickUI == candles )
+
+		if ( _candlestickUI == candlesVM )
 			return;
-		this._candlestickUI?.RemovePattern(this);
-		this._candlestickUI = candles;
-		this._candlestickUI?.AddPattern(this);
+		_candlestickUI?.RemovePattern(this);
+		_candlestickUI = candlesVM;
+		_candlestickUI?.AddPattern(this);
 	}
 
 	protected override void Clear()
 	{
-		this._candlestickUI?.RemovePattern(this);
-		this.DrawingSurface.Refresh();
+		_candlestickUI?.RemovePattern(this);
+		DrawingSurface.Refresh();
 	}
 
 	protected override void UpdateUi()
 	{
-		lock ( this._dateTimeHashSet )
-			this._dateTimeHashSet.Clear();
-		this.DrawingSurface.Refresh();
+		lock ( _dateTimeHashSet )
+			_dateTimeHashSet.Clear();
+
+		DrawingSurface.Refresh();
 	}
 
-	protected override void RootElementPropertyChanged(
-	  IChartComponent _param1,
-	  string _param2)
+	protected override void RootElementPropertyChanged( IChartComponent com, string propName)
 	{
-		base.RootElementPropertyChanged(_param1, _param2);
-		if ( !( _param2 == "UpColor" ) && !( _param2 == "DownColor" ) && !( _param2 == "IsVisible" ) )
+		base.RootElementPropertyChanged(com, propName);
+
+		if ( !( propName == "UpColor" ) && !( propName == "DownColor" ) && !( propName == "IsVisible" ) )
 			return;
-		this.DrawingSurface.Refresh();
+		
+		DrawingSurface.Refresh();
 	}
 
-	public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
-	{
-		CandlePatternElementViewModel.SomeClass34343333 zeaY3Uu1m4CyxerxRw = new CandlePatternElementViewModel.SomeClass34343333();
-		zeaY3Uu1m4CyxerxRw._variableSome3535 = this;
-		if ( _param1 == null || CollectionHelper.IsEmpty<ChartDrawData.IDrawValue>((IEnumerable<ChartDrawData.IDrawValue>)_param1) )
+	public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> data)
+	{		
+		if ( data == null || CollectionHelper.IsEmpty( data ) )
 			return false;
-		this.InternalInit(true);
-		zeaY3Uu1m4CyxerxRw._memeber01 = false;
-		lock ( this._dateTimeHashSet )
+		InternalInit(true);		
+
+        var shouldUpdate = false;
+
+		lock ( _dateTimeHashSet )
 		{
-			foreach ( ChartDrawData.IndicatorData indicatorData in (IEnumerable<ChartDrawData.IDrawValue>)_param1 )
+			foreach ( ChartDrawData.IndicatorData indicatorData in data )
 			{
-				CandlePatternIndicatorValue patternIndicatorValue = (CandlePatternIndicatorValue)indicatorData.Value;
-				if ( patternIndicatorValue.Value )
+				CandlePatternIndicatorValue pattern = (CandlePatternIndicatorValue)indicatorData.Value;
+				if ( pattern.Value )
 				{
-					if ( patternIndicatorValue.IsFinal )
+					if ( pattern.IsFinal )
 					{
-						CollectionHelper.ForEach<DateTimeOffset>((IEnumerable<DateTimeOffset>)patternIndicatorValue.CandleOpenTimes, zeaY3Uu1m4CyxerxRw._memeber02 ?? ( zeaY3Uu1m4CyxerxRw._memeber02 = new Action<DateTimeOffset>(zeaY3Uu1m4CyxerxRw.Method00222) ));
+						CollectionHelper.ForEach( pattern.CandleOpenTimes,  p => shouldUpdate = shouldUpdate | this._dateTimeHashSet.Add(p.UtcDateTime) );
 					}
 					else
 					{
-						List<DateTime> dateTimeList = new List<DateTime>();
-						dateTimeList.AddRange(( (IEnumerable<DateTimeOffset>)patternIndicatorValue.CandleOpenTimes ).Select<DateTimeOffset, DateTime>(CandlePatternElementViewModel.SomeClass34343383._memeber01 ?? ( CandlePatternElementViewModel.SomeClass34343383._memeber01 = new Func<DateTimeOffset, DateTime>(CandlePatternElementViewModel.SomeClass34343383.SomeMethond0343.Method00221) )));
-						this._dateTimeArray = dateTimeList.ToArray();
-						zeaY3Uu1m4CyxerxRw._memeber01 = true;
+						var dateTimeList = new List<DateTime>();
+						dateTimeList.AddRange(pattern.CandleOpenTimes.Select( p => p.UtcDateTime ));
+						_dateTimeArray = dateTimeList.ToArray();
+                        shouldUpdate = true;
 					}
 				}
-				else if ( this._dateTimeArray.Length != 0 )
+				else if ( _dateTimeArray.Length != 0 )
 				{
-					zeaY3Uu1m4CyxerxRw._memeber01 = true;
-					this._dateTimeArray = Array.Empty<DateTime>();
+                    shouldUpdate = true;
+					_dateTimeArray = Array.Empty<DateTime>();
 				}
 			}
 		}
-		if ( zeaY3Uu1m4CyxerxRw._memeber01 )
-			this.DrawingSurface.Refresh();
-		return zeaY3Uu1m4CyxerxRw._memeber01;
+		if ( shouldUpdate )
+			DrawingSurface.Refresh();
+
+		return shouldUpdate;
 	}
 
 	public Color? GetCandleColor(DateTime barTime, bool isUp)
 	{
-		if ( !this.RootElem.IsVisible || !this.ChartComponentView.IsVisible )
+		if ( !RootElem.IsVisible || !ChartComponentView.IsVisible )
 			return new Color?();
 		
-		lock ( this._dateTimeHashSet )
+		lock ( _dateTimeHashSet )
 		{
-			if ( !this._dateTimeHashSet.Contains(barTime) )
+			if ( !_dateTimeHashSet.Contains(barTime) )
 			{
-				if ( !( (IEnumerable<DateTime>)this._dateTimeArray ).Contains<DateTime>(barTime) )
+				if ( !( (IEnumerable<DateTime>)_dateTimeArray ).Contains<DateTime>(barTime) )
 					return new Color?();
 			}
 		}
-		return new Color?(isUp ? this.ChartComponentView.UpColor : this.ChartComponentView.DownColor);
-	}
-
-	[Serializable]
-	private new sealed class SomeClass34343383
-	{
-		public static readonly CandlePatternElementViewModel.SomeClass34343383 SomeMethond0343 = new CandlePatternElementViewModel.SomeClass34343383();
-		public static Func<DateTimeOffset, DateTime> _memeber01;
-
-		public DateTime Method00221(DateTimeOffset _param1)
-		{
-			return _param1.UtcDateTime;
-		}
-	}
-
-	private sealed class SomeClass34343333
-	{
-		public bool _memeber01;
-		public CandlePatternElementViewModel _variableSome3535;
-		public Action<DateTimeOffset> _memeber02;
-
-		public void Method00222(DateTimeOffset _param1)
-		{
-			this._memeber01 |= this._variableSome3535._dateTimeHashSet.Add(_param1.UtcDateTime);
-		}
+		return new Color?(isUp ? ChartComponentView.UpColor : ChartComponentView.DownColor);
 	}
 }
