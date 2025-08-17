@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\fx.packages.props" />
+    <PropertyGroup>
+        <RootNamespace>fx.Strategies</RootNamespace>
+        <AssemblyName>fx.Strategies</AssemblyName>
+        <PackageId>fx.Strategies</PackageId>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <ProjectGuid>{52FA664A-44D1-41EB-A145-B20330DD049F}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFrameworks>net6.0-windows7</TargetFrameworks>
+        <LangVersion>12.0</LangVersion>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.306</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\54_fxAlgorithm\54_fxAlgorithm.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    </ItemGroup>
+</Project>
+

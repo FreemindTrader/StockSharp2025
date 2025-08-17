@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\common_target_net.props" />
+    <Import Project="..\..\..\fx.packages.props" />
+    <PropertyGroup>
+        <RootNamespace>StockSharp.AlgoEx</RootNamespace>
+        <AssemblyName>StockSharp.AlgoEx</AssemblyName>
+        <PackageId>fx.AlgoEx</PackageId>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <ProjectGuid>{B631A32D-1843-4D9D-8B45-597D982C10C7}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.306</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="T:\tonyfreemind\source\repos\20FreemindCommon\IsExternalInit.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="morelinq" Version="4.4.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+      <ProjectReference Include="..\..\..\Localization\Localization.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+    </ItemGroup>  
+</Project>

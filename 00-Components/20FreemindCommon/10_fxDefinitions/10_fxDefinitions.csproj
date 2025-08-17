@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="..\..\..\fx.packages.props" />
+    <PropertyGroup>
+        <RootNamespace>fx.Definitions</RootNamespace>
+        <AssemblyName>fx.Definitions</AssemblyName>
+        <PackageId>fx.Definitions</PackageId>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <ProjectGuid>{63356FB4-1909-43EE-96CA-EAA32817EDAA}</ProjectGuid>
+        <Platforms>AnyCPU;x64</Platforms>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>12.0</LangVersion>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <Version>5.0.306</Version>
+        <Authors>TonyFreemind</Authors>
+        <Company>FreemindFx</Company><BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath><DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="fx.Collections" Version="5.0.306" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+    <ProjectReference Include="..\..\..\BusinessEntities\BusinessEntities.csproj" />
+    <ProjectReference Include="..\..\..\Configuration\Configuration.csproj" />
+    <ProjectReference Include="..\..\..\Localization\Localization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+  </ItemGroup>
+  
+</Project>
