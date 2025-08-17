@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\common_target_netwindows.props" />
+	<Import Project="..\..\..\fx.packages.props" />
+	<PropertyGroup>
+		<RootNamespace>StockSharp.Studio.IPC</RootNamespace>
+		<AssemblyName>StockSharp.Studio.IPC</AssemblyName>
+		<PackageId>StockSharp.Studio.IPC</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{F4720B2A-5A9E-41D1-B28A-A47972B21CB0}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<LangVersion>12.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+		<TargetFrameworks>net6.0-windows7.0</TargetFrameworks>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\StockSharp.Web.DomainModel\01_StockSharp.Web.DomainModel.csproj" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+	</ItemGroup>
+</Project>
+
+

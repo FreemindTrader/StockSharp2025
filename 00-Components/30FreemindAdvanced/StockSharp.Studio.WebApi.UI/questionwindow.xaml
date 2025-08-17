@@ -1,0 +1,98 @@
+<dx:ThemedWindow
+    x:Class="StockSharp.Studio.Controls.QuestionWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:local="clr-namespace:StockSharp.Studio.Controls"
+    xmlns:sx="http://schemas.stocksharp.com/xaml"
+    xmlns:xaml="clr-namespace:Ecng.Xaml;assembly=StockSharp.Xaml"
+    Width="650"
+    Height="500"
+    ShowInTaskbar="False"
+    Title="{sx:Localization ContactUs}"
+    WindowStartupLocation="CenterOwner">
+    
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" MinHeight="80" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            Content="{sx:Localization DoYouHaveQuestionsOrSuggestions}" />
+        <TextBlock Grid.Row="1">
+            <Run Text="{sx:Localization Header}" />
+            :
+        </TextBlock>
+        <TextBox x:Name="TitleCtrl" Grid.Row="2" />
+        <Grid Margin="0,3,0,0" Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Column="0"
+                Margin="0,0,15,0"
+                VerticalAlignment="Center"
+                TextWrapping="Wrap">
+                 />
+            </TextBlock>
+            <TextBlock
+                Grid.Column="1"
+                VerticalAlignment="Center"
+                Foreground="DimGray">
+                <Run Text="{sx:Localization LeftToEnter}" />
+                :
+            </TextBlock>
+            <TextBlock
+                x:Name="LeftToEnter"
+                Grid.Column="2"
+                Width="40"
+                Margin="5,0,0,0"
+                VerticalAlignment="Center"
+                Foreground="DimGray" />
+        </Grid>
+        <TextBox
+            x:Name="TextCtrl"
+            Grid.Row="6"
+            AcceptsReturn="True"
+            AcceptsTab="True"
+            SpellCheck.IsEnabled="True"
+            TextChanged="TextCtrl_OnTextChanged"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Auto" />
+        <TextBlock Grid.Row="7">
+            <Run Text="{sx:Localization Link}" />
+            :
+        </TextBlock>
+        <TextBox x:Name="LinkTxt" Grid.Row="8" />
+        <Grid Row="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="80" />
+            </Grid.ColumnDefinitions>
+            <dx:SimpleButton
+                Grid.Column="1"
+                
+                Content="{sx:Localization OK}" />
+            <dx:SimpleButton
+                Grid.Column="3"
+                Content="{sx:Localization Cancel}"
+                IsCancel="True"
+                xaml:XamlHelper.DialogResult="False" />
+        </Grid>
+    </Grid>
+</dx:ThemedWindow>

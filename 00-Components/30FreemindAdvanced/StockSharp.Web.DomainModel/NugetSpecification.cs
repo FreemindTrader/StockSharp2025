@@ -1,0 +1,33 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: StockSharp.Web.DomainModel.NugetSpecification
+// Assembly: StockSharp.Web.DomainModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: A12D0EDB-6AAE-47CD-AD7D-1699114722F7
+// Assembly location: C:\Users\tonyfreemind\AppData\Local\StockSharp\products\apps_terminal\StockSharp.Web.DomainModel.dll
+
+using Ecng.Serialization;
+
+#nullable disable
+namespace StockSharp.Web.DomainModel;
+
+public class NugetSpecification : BaseEntity
+{
+    public byte[] Nuspec { get; set; }
+
+    public string TargetFrameworks { get; set; }
+
+    public FileBody FileBody { get; set; }
+
+    public override void Load(SettingsStorage storage)
+    {
+        base.Load(storage);
+        this.Nuspec = storage.GetValue<byte[]>("Nuspec", (byte[])null);
+        this.TargetFrameworks = storage.GetValue<string>("TargetFrameworks", (string)null);
+        this.FileBody = storage.GetValue<FileBody>("FileBody", (FileBody)null);
+    }
+
+    public override void Save(SettingsStorage storage)
+    {
+        base.Save(storage);
+        storage.Set<byte[]>("Nuspec", this.Nuspec).Set<string>("TargetFrameworks", this.TargetFrameworks).Set<FileBody>("FileBody", this.FileBody);
+    }
+}

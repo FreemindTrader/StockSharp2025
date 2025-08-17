@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\fx.packages.props" />
+	<PropertyGroup>
+		<RootNamespace>StockSharp.Studio.Core</RootNamespace>
+		<AssemblyName>StockSharp.Studio.Core</AssemblyName>
+		<PackageId>StockSharp.Studio.Core</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{2EA4A450-21D4-48C0-A384-18F19F5A1346}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<TargetFrameworks>net6.0-windows7.0</TargetFrameworks>
+		<LangVersion>12.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<NoWarn>1701;1702;CS3003;CS0612</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Ecng.Data" Version="1.0.*" />
+		<PackageReference Include="Ecng.IO" Version="1.0.*" />
+		<PackageReference Include="Ecng.Linq" Version="1.0.*" />
+		<PackageReference Include="Ecng.Net.Clients" Version="1.0.*" />
+		<PackageReference Include="stocksharp.messages" Version="5.0.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\StockSharp.Web.DomainModel\01_StockSharp.Web.DomainModel.csproj" />
+		<ProjectReference Include="..\StockSharp.Web.Api.Interfaces\02_StockSharp.Web.Api.Interfaces.csproj" />
+		<ProjectReference Include="..\StockSharp.Studio.WebApi\05_StockSharp.Studio.WebApi.csproj" />
+		<ProjectReference Include="..\..\..\Alerts.Interfaces\Alerts.Interfaces.csproj" />
+		<ProjectReference Include="..\..\..\Algo\Algo.csproj" />
+		<ProjectReference Include="..\..\..\BusinessEntities\BusinessEntities.csproj" />
+		<ProjectReference Include="..\..\..\Charting.Interfaces\Charting.Interfaces.csproj" />
+		<ProjectReference Include="..\..\..\Configuration\Configuration.csproj" />
+		<ProjectReference Include="..\..\..\Localization\Localization.csproj" />						
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+	</ItemGroup>
+</Project>
+
+
