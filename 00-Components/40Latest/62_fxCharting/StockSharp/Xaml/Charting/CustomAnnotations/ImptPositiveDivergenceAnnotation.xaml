@@ -1,0 +1,125 @@
+﻿<ss:UltraChartCustomAnnotation
+    x:Class="StockSharp.Xaml.Charting.CustomAnnotations.ImportantPositiveDivergenceAnnotation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+    xmlns:ss="clr-namespace:StockSharp.Xaml.Charting"
+    Margin="0,0,0,0"
+    HorizontalAnchorPoint="Center"
+    VerticalAnchorPoint="Bottom"
+    X1="{Binding X1}"
+    X2="{Binding X2}">
+
+    <Canvas
+        Name="Container"
+        Canvas.Left="0"
+        Canvas.Top="0"
+        Width="{Binding Element.XAxis.DataPointWidth}"
+        Height="{Binding Element.XAxis.DataPointWidth}">
+        <Canvas.RenderTransform>
+            <TranslateTransform X="0" Y="0" />
+        </Canvas.RenderTransform>
+        <Canvas Name="ImportantPositiveDivergence">
+            <Viewbox Width="{Binding Width, ElementName=Container}" Height="{Binding Height, ElementName=Container}">
+                <Grid>
+                    <Path
+                        x:Name="path2"
+                        Data="M0 240.941c0 133.12 107.821 240.941 240.941 240.941V0C107.821 0 0 107.821 0 240.941z"
+                        Fill="#44C4A1" />
+                    <Path
+                        x:Name="path3"
+                        Data="M240.941 0v481.882c133.12 0 240.941-107.821 240.941-240.941S374.061 0 240.941 0z"
+                        Fill="#3EA69B" />
+                    <Polygon
+                        Name="polygon6"
+                        Fill="#FF31978C"
+                        FillRule="NonZero"
+                        Points="386.108,204.198 286.72,204.198 286.72,104.207 195.162,104.207 195.162,204.198   95.774,204.198 95.774,295.755 195.162,295.755 195.162,395.144 286.72,395.144 286.72,295.755 386.108,295.755 " />
+                    <Polygon
+                        Name="polygon8"
+                        Fill="#FFFFFFFF"
+                        FillRule="NonZero"
+                        Points="386.108,186.127 286.72,186.127 286.72,86.739 195.162,86.739 195.162,186.127   95.774,186.127 95.774,277.685 195.162,277.685 195.162,377.675 286.72,377.675 286.72,277.685 386.108,277.685 " />
+                </Grid>
+            </Viewbox>
+        </Canvas>
+    </Canvas>
+
+    <!--  Creating the tooltip. In the TradeOverlayExampleViewModel we set a Trade object as datacontext of this annotation  -->
+
+    <ToolTipService.ToolTip>
+        <ToolTip Foreground="#222">
+            <Grid Margin="6" DataContext="{Binding TradeData}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="Side: " />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Text="Quantity: " />
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Text="Instrument: " />
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Text="DealPrice: " />
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Text="TradeDate: " />
+                <TextBlock
+                    Grid.Row="5"
+                    Grid.Column="0"
+                    Text="Total: " />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Foreground="#FF00B400"
+                    Text="{Binding BuySell}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="{Binding Quantity}" />
+                <TextBlock
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Text="{Binding Instrument}" />
+                <TextBlock
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Foreground="#FF00B400"
+                    Text="{Binding DealPrice, StringFormat=$\{0:0.000\}}" />
+                <TextBlock
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    Text="{Binding TradeDate}" />
+                <TextBlock
+                    Grid.Row="5"
+                    Grid.Column="1"
+                    Foreground="#FF00B400"
+                    Text="{Binding TotalPrice, StringFormat=$\{0:0.000\}}" />
+            </Grid>
+        </ToolTip>
+    </ToolTipService.ToolTip>
+
+</ss:UltraChartCustomAnnotation>
+
+
+
+

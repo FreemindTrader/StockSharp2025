@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="..\..\..\fx.Packages.props" />
+	<PropertyGroup>
+		<RootNamespace>Ecng.Drawing</RootNamespace>
+		<AssemblyName>Ecng.Drawing</AssemblyName>
+		<PackageId>Ecng.Drawing</PackageId>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ProjectGuid>{A4B36E8C-86DE-4A45-940D-C4904DD77CBF}</ProjectGuid>
+		<Platforms>AnyCPU;x64</Platforms>
+		<LangVersion>12.0</LangVersion>
+		<TargetFrameworks>net6.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>5.0.306</Version>
+		<Authors>TonyFreemind</Authors>
+		<Company>FreemindFx</Company>
+		<BaseOutputPath>C:\00-FreemindEXE</BaseOutputPath>
+		<DebugType>portable</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Ecng.Common" Version="1.0.188" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="8.0.0" />
+	</ItemGroup>
+</Project>
+
+

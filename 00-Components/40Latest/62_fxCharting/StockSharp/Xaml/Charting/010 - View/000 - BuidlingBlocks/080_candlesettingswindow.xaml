@@ -1,0 +1,32 @@
+<dx:ThemedWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="StockSharp.Xaml.Charting.CandleSettingsWindow"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:l1lil="clr-namespace:StockSharp.Xaml.Charting"
+    xmlns:loc="clr-namespace:StockSharp.Xaml;assembly=StockSharp.Xaml"
+    xmlns:sx="http://schemas.stocksharp.com/xaml"
+    Width="400"
+    Height="400"
+    ShowInTaskbar="False"
+    Title="{loc:Localization CandleSettings}">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <sx:PropertyGridEx
+            x:Name="SubscriptionCtrl"
+            Grid.Row="0"
+            Grid.Column="0" />
+        <dx:SimpleButton
+            x:Name="OkBtn"
+            Grid.Row="2"
+            Grid.Column="0"
+            Width="100"
+            Content="{loc:Localization OK}"
+            IsDefault="True"
+            IsEnabled="False" />
+    </Grid>
+</dx:ThemedWindow>

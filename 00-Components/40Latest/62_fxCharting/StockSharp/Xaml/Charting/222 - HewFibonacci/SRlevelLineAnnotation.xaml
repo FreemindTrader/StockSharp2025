@@ -1,0 +1,14 @@
+﻿<local:SRlevelLineAnnotationBase
+    x:Class="StockSharp.Xaml.Charting.HewFibonacci.SRlevelLineAnnotation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StockSharp.Xaml.Charting.HewFibonacci"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    HorizontalAlignment="Center"
+    Foreground="White"
+    IsEnabled="false"
+    LineLevel="{Binding LineLevel}"
+    Stroke="{Binding Stroke}"
+    StrokeDashArray="2,4"
+    StrokeThickness="1" />

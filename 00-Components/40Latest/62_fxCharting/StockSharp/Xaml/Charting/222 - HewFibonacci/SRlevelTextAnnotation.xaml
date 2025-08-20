@@ -1,0 +1,35 @@
+﻿<s:TextAnnotation
+    x:Class="StockSharp.Xaml.Charting.HewFibonacci.SRlevelTextAnnotation"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:hewfibonacci="clr-namespace:StockSharp.Xaml.Charting.HewFibonacci"
+    xmlns:s="http://schemas.abtsoftware.co.uk/scichart"
+    Padding="-3,-4,-3,-3"
+    HorizontalAlignment="Center"
+    Foreground="White"
+    IsEnabled="false">
+    <Control.Template>
+        <ControlTemplate TargetType="{x:Type hewfibonacci:SRlevelTextAnnotation}">
+            <TextBlock
+                x:Name="PART_InputTextBlockArea"
+                Margin="{TemplateBinding Control.Padding}"
+                VerticalAlignment="{TemplateBinding FrameworkElement.VerticalAlignment}"
+                Background="Transparent"
+                FontFamily="{TemplateBinding Control.FontFamily}"
+                FontSize="{TemplateBinding Control.FontSize}"
+                FontWeight="{TemplateBinding Control.FontWeight}"
+                Foreground="{TemplateBinding Control.Foreground}"
+                Text="{Binding Text, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                TextAlignment="{TemplateBinding s:TextAnnotation.TextAlignment}"
+                TextWrapping="Wrap">
+                <FrameworkElement.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="TextBlock.Background" Value="{s:ThemeBinding DefaultTextAnnotationBackground}" />
+                        <Setter Property="TextBlock.Foreground" Value="{s:ThemeBinding DefaultTextAnnotationForeground}" />
+                        <Setter Property="TextBlock.Padding" Value="2" />
+                    </Style>
+                </FrameworkElement.Style>
+            </TextBlock>
+        </ControlTemplate>
+    </Control.Template>
+</s:TextAnnotation>
