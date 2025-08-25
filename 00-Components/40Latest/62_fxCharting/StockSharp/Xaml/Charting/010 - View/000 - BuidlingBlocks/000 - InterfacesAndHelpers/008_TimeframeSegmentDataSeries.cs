@@ -613,7 +613,7 @@ label_8:
             g8Oq2rGx6KyfAreq.Min = 0;
         if ( g8Oq2rGx6KyfAreq.Max >= this._segments.Count )
             g8Oq2rGx6KyfAreq.Max = this._segments.Count - 1;
-        (double, double) tuple = TimeframeDataSegment.GetRange(
+        (double, double) tuple = TimeframeDataSegment.MinMax(
             this._segments
                 .Skip<TimeframeDataSegment>(g8Oq2rGx6KyfAreq.Min)
                 .Take<TimeframeDataSegment>(g8Oq2rGx6KyfAreq.Max - g8Oq2rGx6KyfAreq.Min + 1));

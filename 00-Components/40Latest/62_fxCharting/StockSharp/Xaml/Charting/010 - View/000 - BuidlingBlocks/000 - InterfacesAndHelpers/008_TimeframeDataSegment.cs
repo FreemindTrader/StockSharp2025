@@ -246,7 +246,7 @@ public sealed class TimeframeDataSegment(DateTime datetime, int count) : IPoint
         }
     }
 
-    public static (double, double) GetRange(IEnumerable<TimeframeDataSegment> segments)
+    public static (double, double) MinMax(IEnumerable<TimeframeDataSegment> segments)
     {
         double minPrice = double.MaxValue;
         double maxPrice = double.MinValue;

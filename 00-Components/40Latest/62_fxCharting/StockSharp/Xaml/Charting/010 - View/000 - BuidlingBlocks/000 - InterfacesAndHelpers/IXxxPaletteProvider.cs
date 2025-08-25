@@ -5,9 +5,16 @@ namespace StockSharp.Xaml.Charting;
 #nullable disable
 public interface IXxxPaletteProvider
 {
-    Color? GetColor01(IRenderableSeries _param1, double _param2, double _param3);
+    Color? GetColor(IRenderableSeries rSeries, double _param2, double _param3);
 
-    Color? GetColor02(IRenderableSeries _param1, double _param2, double _param3, double _param4, double _param5, double _param6);
+    Color? GetColor(
+        IRenderableSeries rSeries,
+        double candleIndex,
+        double openPrice,
+        double highPrice,
+        double lowPrice,
+        double closePrice);
+    
 
-    Color? GetColor02(IRenderableSeries _param1, double _param2, double _param3, double _param4);
+    Color? GetColor(IRenderableSeries rSeries, double _param2, double _param3, double _param4);
 }

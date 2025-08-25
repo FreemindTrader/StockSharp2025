@@ -56,8 +56,8 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
         {
             PenManager penManager = new PenManager(renderContext, AntiAliasing, (float)StrokeThickness, Opacity, StrokeDashArray);
             try
-            {
-                Func<double, double, IPen2D> func = ( (x, y) => penManager.GetPen(PaletteProvider.GetColor((IRenderableSeries)this, x, y) ?? lineColor) );
+            {                
+                Func<double, double, IPen2D> func = ( (x, y) => penManager.GetPen(lineColor) );
                 FastLinesHelper.IterateLines(linesPathFactory, (Func<double, double, IPathColor>)func, pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator, IsDigitalLine, DrawNaNAs == LineDrawMode.ClosedLines);
             }
             finally
@@ -112,9 +112,7 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
             return hitTestInfo;
         }
     }
-
-    
-    }
+}
 
 
 
@@ -228,4 +226,4 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
     //        CurrentRenderPassData.XCoordinateCalculator,
     //        CurrentRenderPassData.YCoordinateCalculator);
     //}
-}
+//}

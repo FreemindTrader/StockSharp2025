@@ -6,7 +6,7 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting;
 
-internal interface IPenManager : IDisposable
+public interface IPenManager : IDisposable
 {
     IPen2D GetPen(Color _param1, float? _param2);
 }
