@@ -264,7 +264,7 @@ public partial class ChartDrawData : IChartDrawData
             return _advancedTAinfo;
         }
 
-        public DataType CandleArg => _candleArg;
+        public DataType DataType => _candleArg;
 
 
         public double OpenPrice => _openPrice;

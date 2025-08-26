@@ -1184,7 +1184,7 @@ public partial class Chart : UserControl,
         if ( !IsInteracted )
             return;
 
-        foreach ( IChartElement element in GetElements() )
+        foreach ( IChartElement element in IChartExtensions.GetElements((IChart)this) )
         {
             InvokeUnscribeElement(element);
             ProcessSubscription(element);
@@ -1259,7 +1259,7 @@ public partial class Chart : UserControl,
             var myList = new List<IChartElement>();
             myList.Add(element);
 
-            myCandles.AddRange(GetElements().Where( e => TryGetSubscription(e) == mySubscription ).Concat<IChartElement>( myList ).Distinct<IChartElement>());
+            myCandles.AddRange(IChartExtensions.GetElements((IChart)this).Where( e => TryGetSubscription(e) == mySubscription ).Concat<IChartElement>( myList ).Distinct<IChartElement>());
             elements = myCandles.ToArray();
         }
         else

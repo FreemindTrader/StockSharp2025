@@ -191,7 +191,7 @@ namespace StockSharp.Xaml.Charting
                         stroke = strokePaletteProvider.OverrideStrokeColor( this, index, realBar );
                     }
 
-                    pointPen = stroke.HasValue ? penManager.GetPen( new Color?( stroke.Value ) ) : pointPen;
+                    pointPen = stroke.HasValue ? penManager.GetPen(stroke.Value) : pointPen;
                 }
             }
 
@@ -253,7 +253,7 @@ namespace StockSharp.Xaml.Charting
                         stroke = strokePaletteProvider.OverrideStrokeColor( this, index, realBar );
                     }
 
-                    pointPen = stroke.HasValue ? penManager.GetPen( new Color?( stroke.Value ) ) : pointPen;
+                    pointPen = stroke.HasValue ? penManager.GetPen(stroke.Value) : pointPen;
                 }
             }
 
@@ -5041,7 +5041,7 @@ namespace StockSharp.Xaml.Charting
 
                     if ( stroke.HasValue )
                     {
-                        output.Pen = penManager.GetPen( new Color?( stroke.Value ) );
+                        output.Pen = penManager.GetPen(stroke.Value);
                     }
                 }
 

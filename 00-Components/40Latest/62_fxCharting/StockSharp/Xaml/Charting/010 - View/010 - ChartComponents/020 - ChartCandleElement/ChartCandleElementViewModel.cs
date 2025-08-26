@@ -857,7 +857,7 @@ label_4:
 
         foreach ( var bar in candles )
         {
-            object tf = bar.CandleArg.Arg;
+            object tf = bar.DataType.Arg;
             if ( tf is TimeSpan timeSpan )
                 OhlcSeries.Timeframe = new TimeSpan?(timeSpan);
             SetPnfBoxSize(tf);

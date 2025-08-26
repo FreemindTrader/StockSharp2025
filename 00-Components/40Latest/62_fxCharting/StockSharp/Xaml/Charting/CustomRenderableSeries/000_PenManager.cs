@@ -8,7 +8,7 @@ namespace StockSharp.Xaml.Charting;
 
 public interface IPenManager : IDisposable
 {
-    IPen2D GetPen(Color _param1, float? _param2);
+    IPen2D GetPen(Color _param1, float? _param2 = null);
 }
 
 

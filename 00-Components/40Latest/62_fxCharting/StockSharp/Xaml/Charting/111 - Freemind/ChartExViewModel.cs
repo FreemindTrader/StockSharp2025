@@ -712,7 +712,7 @@ namespace StockSharp.Xaml.Charting
 
             public void Save( SettingsStorage settings )
             {
-                settings.SetValue( "Areas", Select( a =>
+                settings.SetValue( "Areas", this.Select( a =>
                 {
                     var s = a.Save( );
                     s.SetValue( "Height", a.ViewModel.Height );

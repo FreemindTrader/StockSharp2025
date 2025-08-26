@@ -28,7 +28,7 @@ namespace StockSharp.Xaml.Charting.Xaml
 
         public DependencyObjectEx( DependencyObject d, DependencyProperty p, Action<DependencyPropertyChangedEventArgs> myEvent )
         {
-            SetBindings( FreemindProperties, d, new PropertyPath( p ), BindingMode.OneWay, null, null );
+            this.SetBindings( FreemindProperties, d, new PropertyPath( p ), BindingMode.OneWay, null, null );
             myEventArgs = myEvent;
         }
 

@@ -68,7 +68,7 @@ namespace StockSharp.Xaml.Charting
         public NullBar( ChartDrawData.sCandle bar )
         {
             BarTime = bar.Time;
-            Period  = ( TimeSpan ) bar.CandleArg;
+            Period  = ( TimeSpan ) bar.DataType.Arg;
             Open    = bar.OpenPrice;
             High    = bar.HighPrice;
             Low     = bar.LowPrice;
@@ -711,11 +711,11 @@ namespace StockSharp.Xaml.Charting
 
             foreach ( var bar in candles )
             {
-                SetPnfBoxSize( bar.CandleArg( ) );
+                SetPnfBoxSize( bar.DataType );
 
-                SetupTimeAndPriceStep( bar.CandleArg( ), bar.PriceStep( ) );
+                SetupTimeAndPriceStep( bar.DataType, bar.PriceStep );
 
-                switch ( bar.UtcTime( ).CompareTo( lastBarTime ) )
+                switch ( bar.Time.CompareTo( lastBarTime ) )
                 {
                     case -1:
                     {
@@ -724,14 +724,14 @@ namespace StockSharp.Xaml.Charting
 
                     case 0:
                     {
-                        _ohlcDataSeries.Update( bar.UtcTime( ), bar.OpenPrice( ), bar.HighPrice( ), bar.LowPrice( ), bar.ClosePrice( ) );
-                        _xyDataSeries.Update( bar.UtcTime( ), bar.ClosePrice( ) );
+                        _ohlcDataSeries.Update( bar.Time, bar.OpenPrice, bar.HighPrice, bar.LowPrice, bar.ClosePrice );
+                        _xyDataSeries.Update( bar.Time, bar.ClosePrice );
 
                         //if ( bar.PriceLevels( ) != null /* && _timeframeSegmentDataSeries != null */ )
                         //{
                         //    foreach ( ChartDrawData.sCandle.sPriceVolume priceVol in bar.PriceLevels( ) )
                         //    {
-                        //        _timeframeSegmentDataSeries.Update( bar.UtcTime( ), priceVol.Price( ), priceVol.Volume( ) );
+                        //        _timeframeSegmentDataSeries.Update( bar.Time, priceVol.Price( ), priceVol.Volume( ) );
                         //    }
                         //}
                         --count;
@@ -741,11 +741,11 @@ namespace StockSharp.Xaml.Charting
                     default:
                     {
                         ++index;
-                        timeArray[ index ] = bar.UtcTime( );
-                        openArray[ index ] = bar.OpenPrice( );
-                        highArray[ index ] = bar.HighPrice( );
-                        lowArray[ index ] = bar.LowPrice( );
-                        closeArray[ index ] = bar.ClosePrice( );
+                        timeArray[ index ] = bar.Time;
+                        openArray[ index ] = bar.OpenPrice;
+                        highArray[ index ] = bar.HighPrice;
+                        lowArray[ index ] = bar.LowPrice;
+                        closeArray[ index ] = bar.ClosePrice;
                         advancedTAInfo[ index ] = bar.AdvancedTAInfo( ) ?? new DefaultSelectableMetadata( ) { IsSelected = false };
 
 
@@ -754,14 +754,14 @@ namespace StockSharp.Xaml.Charting
                         //{
                         //    foreach ( ChartDrawData.sCandle.sPriceVolume priceVol in bar.PriceLevels( ) )
                         //    {
-                        //        // _timeframeSegmentDataSeries.Append( bar.UtcTime( ), priceVol.Price( ), priceVol.Volume( ) );
+                        //        // _timeframeSegmentDataSeries.Append( bar.Time, priceVol.Price( ), priceVol.Volume( ) );
                         //    }
                         //    break;
                         //}
                     }
                     break;
                 }
-                lastBarTime = bar.UtcTime( );
+                lastBarTime = bar.Time;
             }
 
             

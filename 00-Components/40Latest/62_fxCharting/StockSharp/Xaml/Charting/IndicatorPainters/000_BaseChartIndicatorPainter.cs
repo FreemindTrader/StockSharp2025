@@ -94,13 +94,26 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
         return OnDraw( ( TIndicator ) indicatorDatas[ 0 ].Value.Indicator, drawData._indicatorDrawDataList );
     }
 
+    public virtual void Reset()
+    {
+    }
+
+    public void OnAttached(IChartIndicatorElement element)
+    {
+        Element = element;
+
+        foreach ( IChartElement innerElement in InnerElements )
+        {
+            AddChildElement(innerElement);
+        }
+    }
 
 
     public static void RecursivelyAddIndicatorData( IIndicator i, DateTime t, IIndicatorValue v, ref BaseChartIndicatorPainter<TIndicator>.SIndicatorDrawData s )
     {
         CollectionHelper.SafeAdd( s._indicatorDrawDataList, i, p => new List<ChartDrawData.IndicatorData>() ).Add( new ChartDrawData.IndicatorData( t, v ) );
 
-        if ( !( v is ComplexIndicatorValue complexIndicatorValue ) )
+        if ( !( v is IComplexIndicatorValue complexIndicatorValue ) )
             return;
 
         foreach ( var innerValue in complexIndicatorValue.InnerValues )
@@ -109,19 +122,9 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
         }
     }
 
-    public virtual void Reset()
-    {
-    }
+    
 
-    public void OnAttached( IChartIndicatorElement element )
-    {
-        Element = element;
-
-        foreach ( IChartElement innerElement in InnerElements )
-        {
-            AddChildElement( innerElement );
-        }
-    }
+    
 
     public void OnDetached()
     {

@@ -302,7 +302,7 @@ namespace StockSharp.Xaml.Charting.HewFibonacci
                             return new DoubleCollection( ) { 2, 6 };
                         }
 
-                        case SR2ndType.Y:
+                        case SR2ndType.Mean:
                         {
                             return new DoubleCollection( ) { 3, 6 };
                         }
@@ -349,7 +349,7 @@ namespace StockSharp.Xaml.Charting.HewFibonacci
                             return SupportLineColor;
                         }
                         
-                        case SR2ndType.Y:
+                        case SR2ndType.Mean:
                         {
                             return MeanLineColor;
                         }                        
@@ -396,7 +396,7 @@ namespace StockSharp.Xaml.Charting.HewFibonacci
                             return 0.7;
                         }
 
-                        case SR2ndType.Y:
+                        case SR2ndType.Mean:
                         {
                             return 1;
                         }
