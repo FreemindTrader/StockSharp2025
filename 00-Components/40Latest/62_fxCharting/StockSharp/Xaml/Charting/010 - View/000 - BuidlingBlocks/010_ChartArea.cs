@@ -259,7 +259,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 axis.Id = $"{axisId}({Guid.NewGuid()})";
             }
 
-            if ( Any(a => a.Id == axis.Id) )
+            if ( this.Any(a => a.Id == axis.Id) )
             {
                 throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.AxisAlreadyAdded, axis.Id));
             }
@@ -343,7 +343,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             if ( _chartArea.Chart != null )
                 throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
 
-            IChartAxis[] axises = ToArray<IChartAxis>();
+            IChartAxis[] axises = this.ToArray<IChartAxis>();
 
             if ( base.OnClearing() )
             {
@@ -373,7 +373,8 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
             }
 
-            var result = !Any(i => i.Id == elem.Id) ? elem as IChartComponent : throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
+            var result = ! this.Any(i => i.Id == elem.Id) ? elem as IChartComponent : throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
+            
             if ( result != null )
             {
                 IChartAxis chartAxis = _area.YAxises.FirstOrDefault(i => i.Id == result.YAxisId);

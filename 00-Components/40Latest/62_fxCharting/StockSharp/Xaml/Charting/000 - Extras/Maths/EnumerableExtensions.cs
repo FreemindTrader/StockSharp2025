@@ -45,119 +45,119 @@ public static class EnumerableExtensions
         double max;
         ArrayOperations.MinMax<double>(
             list is FifoSeriesColumn<double>
-                ? (IEnumerable<double>) ((FifoSeriesColumn<double>) list).ToUnorderedUncheckedList()
-                : (IEnumerable<double>) list.ToUncheckedList<double>(),
+                ? (IEnumerable<double>)( (FifoSeriesColumn<double>)list ).ToUnorderedUncheckedList()
+                : (IEnumerable<double>)list.ToUncheckedList<double>(),
             out min,
             out max);
         return new DoubleRange(min, max);
     }
 
-    internal static double[ ] ToDoubleArray<T>(this IList<T> list)
+    internal static double[] ToDoubleArray<T>(this IList<T> list)
     {
-        return list.ToUncheckedList<T>() as double[ ];
+        return list.ToUncheckedList<T>() as double[];
     }
 
     internal static UncheckedList<T> ToUncheckedList<T>(this IList<T> list, IndexRange indexRange, bool allowCopy)
     {
         int count = indexRange.Max - indexRange.Min + 1;
         UncheckedList<T> uncheckedList = list as UncheckedList<T>;
-        if(uncheckedList != null)
+        if ( uncheckedList != null )
         {
             return new UncheckedList<T>(uncheckedList.Array, indexRange.Min + uncheckedList.BaseIndex, count);
         }
 
         BaseSeriesColumn<T> baseSeriesColumn = list as BaseSeriesColumn<T>;
-        if(baseSeriesColumn != null)
+        if ( baseSeriesColumn != null )
         {
             return baseSeriesColumn.ToUncheckedList(indexRange.Min, count);
         }
 
         T[] array = list as T[];
-        if(array != null)
+        if ( array != null )
         {
             return new UncheckedList<T>(array, indexRange.Min, count);
         }
 
-        if(list is List<T>)
+        if ( list is List<T> )
         {
             return new UncheckedList<T>(
-                (T[ ]) typeof(List<T>).GetField("_items", BindingFlags.Instance | BindingFlags.NonPublic)
-                    .GetValue((object) list),
+                (T[])typeof(List<T>).GetField("_items", BindingFlags.Instance | BindingFlags.NonPublic)
+                    .GetValue((object)list),
                 indexRange.Min,
                 count);
         }
 
-        if(allowCopy)
+        if ( allowCopy )
         {
             return new UncheckedList<T>(list.ToArray<T>(), indexRange.Min, count);
         }
 
-        return (UncheckedList<T>) null;
+        return (UncheckedList<T>)null;
     }
 
     internal static UncheckedList<T> ToUncheckedList<T>(this IList<T> list, bool allowCopy)
     {
         UncheckedList<T> uncheckedList = list as UncheckedList<T>;
-        if(uncheckedList != null)
+        if ( uncheckedList != null )
         {
             return uncheckedList;
         }
 
         BaseSeriesColumn<T> baseSeriesColumn = list as BaseSeriesColumn<T>;
-        if(baseSeriesColumn != null)
+        if ( baseSeriesColumn != null )
         {
             return baseSeriesColumn.ToUncheckedList(0, baseSeriesColumn.Count);
         }
 
         T[] array = list as T[];
-        if(array != null)
+        if ( array != null )
         {
             return new UncheckedList<T>(array);
         }
 
-        if(list is List<T>)
+        if ( list is List<T> )
         {
             return new UncheckedList<T>(
-                (T[ ]) typeof(List<T>).GetField("_items", BindingFlags.Instance | BindingFlags.NonPublic)
-                    .GetValue((object) list));
+                (T[])typeof(List<T>).GetField("_items", BindingFlags.Instance | BindingFlags.NonPublic)
+                    .GetValue((object)list));
         }
 
-        if(allowCopy)
+        if ( allowCopy )
         {
             return new UncheckedList<T>(list.ToArray<T>());
         }
 
-        return (UncheckedList<T>) null;
+        return (UncheckedList<T>)null;
     }
 
-    internal static T[ ] ToUncheckedList<T>(this IList<T> list)
+    internal static T[] ToUncheckedList<T>(this IList<T> list)
     {
         SeriesColumn<T> seriesColumn = list as SeriesColumn<T>;
-        if(seriesColumn != null)
+        if ( seriesColumn != null )
         {
             return seriesColumn.UncheckedArray();
         }
 
         T[] objArray = list as T[];
-        if(objArray != null)
+        if ( objArray != null )
         {
             return objArray;
         }
 
         UltraList<T> ultraList = list as UltraList<T>;
-        if(ultraList != null)
+        if ( ultraList != null )
         {
             return ultraList.ItemsArray;
         }
 
-        if(list is List<T>)
+        if ( list is List<T> )
         {
-            return (T[ ]) typeof(List<T>).GetField("_items", BindingFlags.Instance | BindingFlags.NonPublic)
-                .GetValue((object) list);
+            return (T[])typeof(List<T>).GetField("_items", BindingFlags.Instance | BindingFlags.NonPublic)
+                .GetValue((object)list);
         }
 
         FifoSeriesColumn<T> fifoSeriesColumn = list as FifoSeriesColumn<T>;
-        if(fifoSeriesColumn != null)
+        if ( fifoSeriesColumn != null )
         {
             return fifoSeriesColumn.ToArray();
         }
@@ -207,7 +207,7 @@ public static class EnumerableExtensions
             return;
         }
 
-        Guard.NotNull((object) operation, nameof(operation));
+        
         foreach(T obj in enumerable)
         {
             operation(obj);
@@ -421,7 +421,7 @@ public static class EnumerableExtensions
 
     private static int GetNearestMiddleIndex(IList list, int lower, int upper, IComparable value)
     {
-        if(lower > upper)
+        if ( lower > upper )
         {
             int num = upper;
             upper = lower;
@@ -429,10 +429,10 @@ public static class EnumerableExtensions
         }
         upper = NumberUtil.Constrain(upper, 0, list.Count - 1);
         lower = NumberUtil.Constrain(lower, 0, list.Count - 1);
-        double num1 = ((IComparable) list[lower]).ToDouble();
-        double num2 = ((IComparable) list[upper]).ToDouble();
+        double num1 = ( (IComparable)list[lower] ).ToDouble();
+        double num2 = ( (IComparable)list[upper] ).ToDouble();
         double num3 = value.ToDouble();
-        if(num3 - num1 < num2 - num3)
+        if ( num3 - num1 < num2 - num3 )
         {
             return lower;
         }

@@ -198,7 +198,7 @@ internal static class SettingsStorageHelper
 
         public ProxyDependencyPropertyClass( DependencyObject dpo, DependencyProperty prop, Action<DependencyPropertyChangedEventArgs> e )
         {
-            SetBindings( ProxyDependencyPropertyClass.ProxyProperty, dpo, new PropertyPath( prop ), BindingMode.OneWay );
+            Ecng.Xaml.XamlHelper.SetBindings(dpo, ProxyDependencyPropertyClass.ProxyProperty, new PropertyPath( prop ), "Proxy", BindingMode.OneWay );
             dpoChangedEventArgs = e;
         }
 

@@ -51,7 +51,7 @@
 
 //                if ( myOrder == null )
 //                {
-//                    myOrder = new Order()
+//                    myOrder = new Order
 //                    {
 //                        State = StockSharp.Messages.OrderStates.Failed,
 //                        Volume = balance,
@@ -71,19 +71,19 @@
 //            }
 
 
-//            public Order Order()
+//            public Order Order
 //            {
 //                return _order;
 //            }
 
 
-//            public Decimal Balance()
+//            public Decimal Balance
 //            {
 //                return _balance;
 //            }
 
 
-//            public OrderStates OrderStates()
+//            public OrderStates OrderStates
 //            {
 //                return _orderStates;
 //            }
@@ -95,19 +95,19 @@
 //            }
 
 
-//            public bool AutoRemoveFromChart()
+//            public bool AutoRemove
 //            {
 //                return _autoRemove;
 //            }
 
 
-//            public bool IsFrozen()
+//            public bool IsFrozen
 //            {
 //                return _isFrozen;
 //            }
 
 
-//            public bool IsHidden()
+//            public bool IsHidden
 //            {
 //                return _isHidden;
 //            }
@@ -121,7 +121,7 @@
 //            }
 
 
-//            public Decimal Price()
+//            public Decimal Price
 //            {
 //                return _price;
 //            }

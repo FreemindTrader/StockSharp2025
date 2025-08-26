@@ -1,5 +1,4 @@
-﻿// fx.Xaml.Charting.Numerics.GenericMath.ArrayOperations
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Ecng.Common;
 using SciChart.Data.Numerics.GenericMath;

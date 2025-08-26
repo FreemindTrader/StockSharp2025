@@ -67,12 +67,12 @@ namespace StockSharp.Xaml.Charting
 
         public NullBar( ChartDrawData.sCandle bar )
         {
-            BarTime = bar.UtcTime( );
-            Period = ( TimeSpan ) bar.CandleArg( );
-            Open = bar.OpenPrice( );
-            High = bar.HighPrice( );
-            Low = bar.LowPrice( );
-            Close = bar.ClosePrice( );
+            BarTime = bar.Time;
+            Period  = ( TimeSpan ) bar.CandleArg;
+            Open    = bar.OpenPrice;
+            High    = bar.HighPrice;
+            Low     = bar.LowPrice;
+            Close   = bar.ClosePrice;
         }
     }
 

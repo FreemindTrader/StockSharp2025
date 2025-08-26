@@ -185,7 +185,7 @@ public partial class ChartDrawData : IChartDrawData
         {
             Order order = _param1 != null || _param8 ? _param1 : throw new ArgumentException("order can be null only if isError is true");
             if ( order == null )
-                order = new Order()
+                order = new Order
                 {
                     State = ( OrderStates ) 3,
                     Volume = _param2,
@@ -202,41 +202,28 @@ public partial class ChartDrawData : IChartDrawData
             _price = _param9;
         }
 
-        public Order Order()
-        {
-            return _order;
-        }
+        public Order Order => _order;
+        
 
-        public Decimal Balance()
-        {
-            return _balance;
-        }
+        public Decimal Balance => _balance;
 
-        public OrderStates OrderStates()
-        {
-            return _orderStates;
-        }
 
-        public Decimal PriceStep
-        {
-            get
-            {
-                return _priceStep;
-            }            
-        }
+        public OrderStates OrderStates => _orderStates;
+        
 
-        public bool AutoRemoveFromChart()
-        {
-            return _autoRemove;
-        }
+        public Decimal PriceStep => _priceStep;
+        
 
-        public bool IsFrozen() => _isFrozen;
+        public bool AutoRemove => _autoRemove;
+        
 
-        public bool IsHidden() => _isHidden;
+        public bool IsFrozen => _isFrozen;
+
+        public bool IsHidden => _isHidden;
 
         public bool IsError => _hasError;
 
-        public Decimal Price() => _price;
+        public Decimal Price => _price;
     }
 
     public readonly struct IndicatorData : ChartDrawData.IDrawValue
@@ -324,7 +311,7 @@ public partial class ChartDrawData : IChartDrawData
 
         public Sides OrderSides() => _orderSide;
 
-        public double Price() => _price;
+        public double Price => _price;
 
         public long Volume => _volume;
 

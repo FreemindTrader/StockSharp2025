@@ -304,7 +304,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfBaseViewModel< Ch
             _lineSeries.Services?.GetService< ISciChartSurface >( )?.InvalidateElement( );
         }
 
-        if( drawValues == null || drawValues.IsEmpty( ) )
+        if( drawValues == null || Ecng.Collections.CollectionHelper.IsEmpty( drawValues ) )
         {
             return false;
         }

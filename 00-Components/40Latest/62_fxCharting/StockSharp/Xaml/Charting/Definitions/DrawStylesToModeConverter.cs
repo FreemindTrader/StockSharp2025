@@ -1,4 +1,5 @@
 ﻿using SciChart.Charting.Visuals.RenderableSeries;
+using StockSharp.Charting;
 using StockSharp.Xaml.Charting;
 using System;
 using System.Globalization;

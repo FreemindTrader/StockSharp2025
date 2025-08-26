@@ -121,7 +121,7 @@ internal sealed class ChartOrderModifier(ChartArea _param1) : ChartModifierBase
         e.Handled = true;
         Sides sides = e.MouseButtons == MouseButtons.Left ? Sides.Buy : Sides.Sell;
         double num = (double) YAxis.GetDataValue(e.MousePoint.Y);
-        Order order = new Order()
+        Order order = new Order
         {
             Side = sides,
             Price = Converter.To<Decimal>( num),

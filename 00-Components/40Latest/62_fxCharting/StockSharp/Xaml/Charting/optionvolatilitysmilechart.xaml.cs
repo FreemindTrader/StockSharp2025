@@ -342,7 +342,7 @@ namespace StockSharp.Xaml.Charting
                 }
 
                 double min = GetMinimum( );
-                _polyPoints = Fit.Polynomial( Select( l => l.X ).ToArray( ), Select( l => Decimal.ToDouble( l.Y ) ).ToArray( ), 2 );
+                _polyPoints = Fit.Polynomial( this.Select( l => l.X ).ToArray( ), this.Select( l => Decimal.ToDouble( l.Y ) ).ToArray( ), 2 );
 
                 if ( _polyPoints.Length != 3 )
                 {

@@ -322,26 +322,28 @@ public sealed class ChartViewModel : DependencyObject
 
     public ChartViewModel()
     {
-        ChartPaneViewModels = new ObservableCollection<ScichartSurfaceMVVM>();
-        MinimumRange = 50;
-        ShowOverview = false;
-        ShowLegend = true;
-        IndicatorTypes = new ObservableCollection<IndicatorType>();
-        AddAreaCommand = (ICommand)new DelegateCommand(new Action<object>(ExecuteAddAreaCommand), new Func<object, bool>(CanExecuteAddAreaCommand));
-        AddCandlesCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddCandlesCommand), new Func<ChartArea, bool>(CanExecuteAddAreaCommand));
-        AddIndicatorCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddIndicatorCommand), new Func<ChartArea, bool>(CanExecuteAddIndicatorCommand));
-        AddOrdersCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddOrdersCommand), new Func<ChartArea, bool>(CanExecuteAddOrdersCommand));
-        AddTradesCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddTradesCommand), new Func<ChartArea, bool>(CanExecuteAddTradesCommand));
-        UngroupCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteUngroupCommand), new Func<ChartArea, bool>(CanExecuteUngroupCommand));
-        ShowHiddenAxesCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteShowHiddenAxesCommand), new Func<ChartArea, bool>(CanExecuteShowHiddenAxes));
-        AddXAxisCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddXAxisCommand), new Func<ChartArea, bool>(CanExecuteAddXAxisCommand));
-        AddYAxisCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddYAxisCommand), new Func<ChartArea, bool>(CanExecuteAddYAxisCommand));
-        RemoveAxisCommand = (ICommand)new DelegateCommand<ChartAxis>(ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand = new Action<ChartAxis>(ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteRemoveAxisCommand2) ), new Func<ChartAxis, bool>(CanExecuteRemoveAxisCommand));
+        ChartPaneViewModels       = new ObservableCollection<ScichartSurfaceMVVM>();
+        MinimumRange              = 50;
+        ShowOverview              = false;
+        ShowLegend                = true;
+        IndicatorTypes            = new ObservableCollection<IndicatorType>();
+        AddAreaCommand            = (ICommand)new DelegateCommand(new Action<object>(ExecuteAddAreaCommand), new Func<object, bool>(CanExecuteAddAreaCommand));
+        AddCandlesCommand         = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddCandlesCommand), new Func<ChartArea, bool>(CanExecuteAddAreaCommand));
+        AddIndicatorCommand       = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddIndicatorCommand), new Func<ChartArea, bool>(CanExecuteAddIndicatorCommand));
+        AddOrdersCommand          = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddOrdersCommand), new Func<ChartArea, bool>(CanExecuteAddOrdersCommand));
+        AddTradesCommand          = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddTradesCommand), new Func<ChartArea, bool>(CanExecuteAddTradesCommand));
+        UngroupCommand            = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteUngroupCommand), new Func<ChartArea, bool>(CanExecuteUngroupCommand));
+        ShowHiddenAxesCommand     = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteShowHiddenAxesCommand), new Func<ChartArea, bool>(CanExecuteShowHiddenAxes));
+        AddXAxisCommand           = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddXAxisCommand), new Func<ChartArea, bool>(CanExecuteAddXAxisCommand));
+        AddYAxisCommand           = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddYAxisCommand), new Func<ChartArea, bool>(CanExecuteAddYAxisCommand));
+        RemoveAxisCommand         = (ICommand)new DelegateCommand<ChartAxis>(ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand = new Action<ChartAxis>(ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteRemoveAxisCommand2) ), new Func<ChartAxis, bool>(CanExecuteRemoveAxisCommand));
         InitRangeDepProperty();
-        _closePaneCommand = new DelegateCommand<IDrawingSurfaceVM>(ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand = new Action<IDrawingSurfaceVM>(ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteClosePaneCommand2) ), new Func<IDrawingSurfaceVM, bool>(CanExecuteClosePaneCommand));
+        _closePaneCommand         = new DelegateCommand<IDrawingSurfaceVM>(ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand = new Action<IDrawingSurfaceVM>(ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteClosePaneCommand2) ), new Func<IDrawingSurfaceVM, bool>(CanExecuteClosePaneCommand));
         CancelActiveOrdersCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteCancelActiveOrders), new Func<ChartArea, bool>(CanExecuteCancelActiveOrders));
-        if ( IsDesignMode() )
+        
+        if ( this.IsDesignMode() )
             return;
+
         ChangeApplicationTheme();
         DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler(OnApplicationThemeChanged);
     }

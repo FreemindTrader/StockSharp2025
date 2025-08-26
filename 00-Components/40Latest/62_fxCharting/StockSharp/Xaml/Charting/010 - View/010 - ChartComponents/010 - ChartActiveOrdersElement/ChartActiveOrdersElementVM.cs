@@ -226,11 +226,11 @@ namespace StockSharp.Xaml.Charting
             {
                 ChartActiveOrderInfo activeOrderInfo;
 
-                var myOrder = order.Order( );
+                var myOrder = order.Order;
 
                 if ( !_orderInfoAnnotation.TryGetValue( myOrder, out activeOrderInfo ) )
                 {
-                    if ( !IsValidOrder( myOrder, order.AutoRemoveFromChart( ), order.OrderStates( ), order.IsError ) )
+                    if ( !IsValidOrder( myOrder, order.AutoRemove, order.OrderStates, order.IsError ) )
                         return;
 
                     activeOrderInfo = SetupAnnotationBinding( order );
@@ -238,7 +238,7 @@ namespace StockSharp.Xaml.Charting
                     DrawingSurface.AddAxisMakerAnnotation( RootElem, activeOrderInfo.Annotation, myOrder );
                     OrderAnimation( activeOrderInfo, order, true );
                 }
-                else if ( IsValidOrder( myOrder, activeOrderInfo.AutoRemoveFromChart, order.OrderStates( ), order.IsError ) )
+                else if ( IsValidOrder( myOrder, activeOrderInfo.AutoRemoveFromChart, order.OrderStates, order.IsError ) )
                 {
                     OrderAnimation( activeOrderInfo, order, true );
                 }
@@ -254,7 +254,7 @@ namespace StockSharp.Xaml.Charting
         {
             ActiveOrderAnnotation annotation = orderInfo.Annotation;
             bool flag1 = true;
-            bool flag2 = orderInfo.Balance != order.Balance();
+            bool flag2 = orderInfo.Balance != order.Balance;
             PopulateAnnotationWithOrderInfo( orderInfo, order );
 
             if ( annotation.IsAnimationEnabled )
@@ -266,7 +266,7 @@ namespace StockSharp.Xaml.Charting
                     if ( !_param2 )
                         annotation.IsAnimationEnabled = false;
                 }
-                else if ( ( ( order.OrderStates( ) != OrderStates.Done ? 0 : ( order.Balance( ) == Decimal.Zero ? 1 : 0 ) ) | ( flag2 ? 1 : 0 ) ) != 0 )
+                else if ( ( ( order.OrderStates != OrderStates.Done ? 0 : ( order.Balance == Decimal.Zero ? 1 : 0 ) ) | ( flag2 ? 1 : 0 ) ) != 0 )
                 {
                     annotation.AnimateOrderFill( );
                     flag1 = false;
@@ -277,7 +277,7 @@ namespace StockSharp.Xaml.Charting
             if ( !( !_param2 & flag1 ) )
                 return;
 
-            RemoveActiveOrderInfo( order.Order( ) );
+            RemoveActiveOrderInfo( order.Order);
         }
 
         public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
@@ -308,63 +308,61 @@ namespace StockSharp.Xaml.Charting
 
 
 
-        private ChartActiveOrderInfo SetupAnnotationBinding(
-          ChartDrawData.sActiveOrder _param1 )
+        private ChartActiveOrderInfo SetupAnnotationBinding(ChartDrawData.sActiveOrder sActiveOrder)
         {
-            Order order                  = _param1.Order();
-            var activeOrder              = new ActiveOrderAnnotation();
-            activeOrder.CoordinateMode = SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeX;
-            activeOrder.DragDirections = XyDirection.YDirection;
-            activeOrder.ResizeDirections = XyDirection.XDirection;
-            activeOrder.OrderErrorText = LocalizedStrings.OrderError.ToUpperInvariant( );
-            activeOrder.OrderText = order.Direction == Sides.Sell ? "Sell" : "Buy";
-            activeOrder.X1 = 0.8;
-            ChartActiveOrderInfo orderInfo = new ChartActiveOrderInfo(activeOrder);
-            activeOrder.SetBindings( AnnotationBase.XAxisIdProperty, ChartComponentView, "XAxisId", BindingMode.TwoWay, null, null );
-            activeOrder.SetBindings( AnnotationBase.YAxisIdProperty, ChartComponentView, "YAxisId", BindingMode.TwoWay, null, null );
-            activeOrder.SetBindings( AnnotationBase.IsHiddenProperty, ChartComponentView, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
-            activeOrder.SetBindings( AnnotationBase.IsEditableProperty, orderInfo, "IsFrozen", BindingMode.OneWay, new InverseBooleanConverter( ), null );
+            Order order         = sActiveOrder.Order;
+            var ao              = new ActiveOrderAnnotation();
+            ao.CoordinateMode   = SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeX;
+            ao.DragDirections   = XyDirection.YDirection;
+            ao.ResizeDirections = XyDirection.XDirection;
+            ao.OrderErrorText   = LocalizedStrings.OrderError.ToUpperInvariant( );
+            ao.OrderText        = order.Side == Sides.Sell ? "Sell" : "Buy";
+            ao.X1               = 0.8;
+            var orderInfo       = new ChartActiveOrderInfo(ao);
+
+            ao.SetBindings( AnnotationBase.XAxisIdProperty, ChartComponentView, "XAxisId", BindingMode.TwoWay, null, null );
+            ao.SetBindings( AnnotationBase.YAxisIdProperty, ChartComponentView, "YAxisId", BindingMode.TwoWay, null, null );
+            ao.SetBindings( AnnotationBase.IsHiddenProperty, ChartComponentView, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter( ), null );
+            ao.SetBindings( AnnotationBase.IsEditableProperty, orderInfo, "IsFrozen", BindingMode.OneWay, new InverseBooleanConverter( ), null );
 
             var toBrushConverter       = new ColorToBrushConverter( );
 
 
-            activeOrder.SetBindings( Control.ForegroundProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.StrokeProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.CancelButtonFillProperty, ChartComponentView, "CancelButtonBackground", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.CancelButtonColorProperty, ChartComponentView, "CancelButtonColor", BindingMode.OneWay, toBrushConverter, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.IsAnimationEnabledProperty, ChartComponentView, "IsAnimationEnabled", BindingMode.OneWay, null, null );
-            activeOrder.SetBindings( ActiveOrderAnnotation.BlinkColorProperty, ChartComponentView, order.Direction == Sides.Sell ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay, null, null );
+            ao.SetBindings( Control.ForegroundProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
+            ao.SetBindings( ActiveOrderAnnotation.StrokeProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
+            ao.SetBindings( ActiveOrderAnnotation.CancelButtonFillProperty, ChartComponentView, "CancelButtonBackground", BindingMode.OneWay, toBrushConverter, null );
+            ao.SetBindings( ActiveOrderAnnotation.CancelButtonColorProperty, ChartComponentView, "CancelButtonColor", BindingMode.OneWay, toBrushConverter, null );
+            ao.SetBindings( ActiveOrderAnnotation.IsAnimationEnabledProperty, ChartComponentView, "IsAnimationEnabled", BindingMode.OneWay, null, null );
+            ao.SetBindings( ActiveOrderAnnotation.BlinkColorProperty, ChartComponentView, order.Direction == Sides.Sell ? "SellBlinkColor" : "BuyBlinkColor", BindingMode.OneWay, null, null );
 
-            MultiBinding multiBinding = new MultiBinding( ) { Converter = new OrderStatesToColorConverter( ), Mode = BindingMode.OneWay };
-            multiBinding.Bindings.Add( CreateBinding( orderInfo, "State" ) );
-            multiBinding.Bindings.Add( CreateBinding( orderInfo, "Direction" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "BuyPendingColor" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "BuyColor" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "SellPendingColor" ) );
-            multiBinding.Bindings.Add( CreateBinding( ChartComponentView, "SellColor" ) );
+            MultiBinding mb = new MultiBinding( ) { Converter = new OrderStatesToColorConverter( ), Mode = BindingMode.OneWay };
+            mb.Bindings.Add( CreateBinding( orderInfo, "State" ) );
+            mb.Bindings.Add( CreateBinding( orderInfo, "Direction" ) );
+            mb.Bindings.Add( CreateBinding( ChartComponentView, "BuyPendingColor" ) );
+            mb.Bindings.Add( CreateBinding( ChartComponentView, "BuyColor" ) );
+            mb.Bindings.Add( CreateBinding( ChartComponentView, "SellPendingColor" ) );
+            mb.Bindings.Add( CreateBinding( ChartComponentView, "SellColor" ) );
 
-            activeOrder.SetBinding( Control.BackgroundProperty, multiBinding );
-            PopulateAnnotationWithOrderInfo( orderInfo, _param1 );
-            activeOrder.CancelClick += new Action<ActiveOrderAnnotation>( OnCancelClicked );
-            activeOrder.DragEnded += OnDragEnded;
-            activeOrder.AnimationDone += OnAnimationDone;
+            ao.SetBinding( Control.BackgroundProperty, mb );
+            PopulateAnnotationWithOrderInfo( orderInfo, sActiveOrder );
+            ao.CancelClick += new Action<ActiveOrderAnnotation>( OnCancelClicked );
+            ao.DragEnded += OnDragEnded;
+            ao.AnimationDone += OnAnimationDone;
             return orderInfo;
         }
 
-        private static void PopulateAnnotationWithOrderInfo(
-          ChartActiveOrderInfo _param0,
-          ChartDrawData.sActiveOrder _param1 )
+        private static void PopulateAnnotationWithOrderInfo(ChartActiveOrderInfo aOrderInfo, ChartDrawData.sActiveOrder aOrder)
         {
-            ActiveOrderAnnotation annotation = _param0.Annotation;
-            Order order = _param1.Order();
-            _param0.Balance = _param1.Balance( );
-            _param0.State = _param1.OrderStates( );
-            _param0.PriceStep = _param1.PriceStep( );
-            _param0.IsFrozen = _param1.IsFrozen( );
-            _param0.AutoRemoveFromChart = _param1.AutoRemoveFromChart( );
-            annotation.Y1 = ( double ) _param1.Price( );
-            annotation.OrderSizeText = string.Format( "{0} {1}", order.Volume - _param1.Balance( ), order.Volume );
-            annotation.YDragStep = ( double ) _param1.PriceStep( );
+            var annotation                 = aOrderInfo.Annotation;
+            var order                      = aOrder.Order;
+            aOrderInfo.Balance             = aOrder.Balance;
+            aOrderInfo.State               = aOrder.OrderStates;
+            aOrderInfo.PriceStep           = aOrder.PriceStep;
+            aOrderInfo.IsFrozen            = aOrder.IsFrozen;
+            aOrderInfo.AutoRemoveFromChart = aOrder.AutoRemove;
+            annotation.Y1                  = ( double ) aOrder.Price;
+            annotation.OrderSizeText       = string.Format( "{0} {1}", order.Volume - aOrder.Balance, order.Volume );
+            annotation.YDragStep           = ( double ) aOrder.PriceStep;
         }
 
         private Order GetActiveOrderInfo( ActiveOrderAnnotation _param1, out ChartActiveOrderInfo _param2 )

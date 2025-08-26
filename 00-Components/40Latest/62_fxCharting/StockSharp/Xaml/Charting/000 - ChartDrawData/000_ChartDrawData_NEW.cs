@@ -201,25 +201,25 @@ public partial class ChartDrawData : IChartDrawData
                           Decimal? priceStep
                      )
         {
-            _utcTime = barTime.UtcDateTime;
-            _candleArg = arg ?? throw new ArgumentNullException("dataType");
-            _openPrice = ( double ) open;
-            _highPrice = ( double ) high;
-            _lowPrice = ( double ) low;
-            _closePrice = ( double ) close;
+            _utcTime          = barTime.UtcDateTime;
+            _candleArg        = arg ?? throw new ArgumentNullException("dataType");
+            _openPrice        = ( double ) open;
+            _highPrice        = ( double ) high;
+            _lowPrice         = ( double ) low;
+            _closePrice       = ( double ) close;
             _candlePriceLevel = priceLvls != null ? priceLvls.ToArray() : null;
-            _priceStep = priceStep.HasValue ? new double?( ( double ) priceStep.GetValueOrDefault() ) : new double?();
-            _advancedTAinfo = null;
+            _priceStep        = priceStep.HasValue ? new double?( ( double ) priceStep.GetValueOrDefault() ) : new double?();
+            _advancedTAinfo   = null;
         }
 
         public sCandle( DateTimeOffset barTime, DataType arg, Decimal open, Decimal high, Decimal low, Decimal close, IEnumerable<CandlePriceLevel> priceLvls )
         {
-            _utcTime = barTime.UtcDateTime;
-            _candleArg = arg ?? throw new ArgumentNullException( "dataType" );
-            _openPrice = ( double ) open;
-            _highPrice = ( double ) high;
-            _lowPrice = ( double ) low;
-            _closePrice = ( double ) close;
+            _utcTime          = barTime.UtcDateTime;
+            _candleArg        = arg ?? throw new ArgumentNullException( "dataType" );
+            _openPrice        = ( double ) open;
+            _highPrice        = ( double ) high;
+            _lowPrice         = ( double ) low;
+            _closePrice       = ( double ) close;
             _candlePriceLevel = priceLvls != null ? priceLvls.ToArray<CandlePriceLevel>() : ( CandlePriceLevel[ ] ) null;
         }
 
