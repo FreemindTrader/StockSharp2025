@@ -53,4 +53,22 @@ public enum ChartAnnotationTypes
 	/// </summary>
 	[Display(ResourceType = typeof(LocalizedStrings), Name = LocalizedStrings.RulerKey)]
 	RulerAnnotation,
+
+    #region Tony New Defines
+    /// <summary>
+    /// Harmonic Elliott Wave Annotation
+    /// </summary>
+    fxElliotWaveAnnotation,
+
+    /// <summary>
+    /// Harmonic Elliott Wave Retracement
+    /// </summary>
+    fxFibonacciRetracementAnnotation,
+
+    /// <summary>
+    /// Harmonic Elliott Wave Extension
+    /// </summary>
+    fxFibonacciExtensionAnnotation
+
+    #endregion
 }

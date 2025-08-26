@@ -1,4 +1,6 @@
-﻿using SciChart.Charting.Model.DataSeries;
+﻿using DevExpress.Xpf.Charts;
+using SciChart.Charting.Model.DataSeries;
+using SciChart.Charting.Visuals.PaletteProviders;
 using SciChart.Charting.Visuals.RenderableSeries;
 using SciChart.Data.Model;
 using SciChart.Drawing.Common;
@@ -7,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace StockSharp.Xaml.Charting
 {
@@ -28,12 +31,37 @@ namespace StockSharp.Xaml.Charting
         }
     }
 
+    public class MyPaletteProvider : MyPaletteProviderBase
+    {
+        
+    }
+
     public class MyFastCandlestickRenderableSeries : FastCandlestickRenderableSeries
     {
         protected IPen2D _upWickPen;
         protected IPen2D _downWickPen;
         protected IBrush2D _upBodyBrush;
         protected IBrush2D _downBodyBrush;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MyFastCandlestickRenderableSeries" /> class.
+        /// </summary>
+        public MyFastCandlestickRenderableSeries()
+        {
+            PaletteProvider = new MyPaletteProvider();
+        }
+
+        public ISSPaletteProvider XxxPaletteProvider
+        {
+            get
+            {
+                return (ISSPaletteProvider)GetValue(PaletteProviderProperty);
+            }
+            set
+            {
+                SetValue(PaletteProviderProperty, value);
+            }
+        }
 
         protected virtual void DrawReduced(IRenderContext2D renderContext, IRenderPassData renderPassData, IPenManager penManager)
         {
@@ -43,7 +71,18 @@ namespace StockSharp.Xaml.Charting
         {
         }
 
-        
+        public static Point TransformPoint(Point point, bool isVerticalChart)
+        {
+            if ( isVerticalChart )
+            {
+                double x = point.X;
+                point.X = point.Y;
+                point.Y = x;
+            }
+            return point;
+        }
+
+
 
         protected override void InternalDraw(IRenderContext2D rc, IRenderPassData renderPassData)
         {        

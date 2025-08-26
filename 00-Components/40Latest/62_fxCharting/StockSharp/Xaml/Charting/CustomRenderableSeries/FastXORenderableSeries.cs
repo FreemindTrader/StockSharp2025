@@ -13,7 +13,7 @@ using System.Windows;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class FastXORenderableSeries : FastCandlestickRenderableSeries
+    public class FastXORenderableSeries : MyFastCandlestickRenderableSeries
     {
         public static readonly DependencyProperty XOBoxSizeProperty = DependencyProperty.Register( nameof( XOBoxSize ), typeof( double ), typeof( FastXORenderableSeries ), new PropertyMetadata( 0.0, new PropertyChangedCallback( OnInvalidateParentSurface ) ) );
 
@@ -36,122 +36,102 @@ namespace StockSharp.Xaml.Charting
             SetCurrentValue( FastOhlcRenderableSeries.DataPointWidthProperty, 1.0 );
         }
 
-        //protected override void InternalDraw( IRenderContext2D renderContext, IRenderPassData renderPassData )
-        //{
-        //    AssertPointSeriesType< OhlcPointSeries >( "OhlcDataSeries" );
 
-        //    using( var penManager = new PenManager( renderContext, AntiAliasing, StrokeThickness, Opacity, null ) )
-        //    {
-        //        _upWickPen   = penManager.GetPen( StrokeUp );
-        //        _downWickPen = penManager.GetPen( StrokeDown );
-
-        //        renderContext.SetPrimitivesCachingEnabled( true );
-        //        //if( Class775.smethod_0( this.ResamplingMode, renderPassData.PointRange, ( int )renderContext.ViewportSize.Width ) )
-        //        //{
-        //        //    this.method_10( renderContext, renderPassData, ( Interface0 )drawCache );
-        //        //}
-        //        //else
-        //        //{
-        //        //    this.method_11( renderContext, renderPassData, ( Interface0 )drawCache );
-        //        //}
-        //        renderContext.SetPrimitivesCachingEnabled( false );
-        //    }
-        //}
-
-        
-
-        protected virtual void DrawVanilla(IRenderContext2D renderContext, IRenderPassData renderPassData, IPenManager penManager)
+        protected override void DrawVanilla(IRenderContext2D rc, IRenderPassData renderPassData, IPenManager penManager)
         {
             bool isVerticalChart = renderPassData.IsVerticalChart;
-            IPointSeries pointSeries = this.CurrentRenderPassData.PointSeries;
-            double xoBoxSize = this.XOBoxSize;
-            int count = pointSeries.Count;
-            if ( count == 1 || xoBoxSize <= 0.0 )
+
+            OhlcPointSeries ohlc = renderPassData.PointSeries as OhlcPointSeries;
+                                    
+            if ( ohlc.Count == 1 || XOBoxSize <= 0.0 )
             {
                 return;
             }
 
-            ICoordinateCalculator<double> xcoordinateCalculator = renderPassData.XCoordinateCalculator;
-            ICoordinateCalculator<double> ycoordinateCalculator = renderPassData.YCoordinateCalculator;
-            int datapointWidth = this.GetDatapointWidth(xcoordinateCalculator, pointSeries, this.DataPointWidth);
-            double num1 = Math.Abs(ycoordinateCalculator.GetCoordinate(xoBoxSize) - ycoordinateCalculator.GetCoordinate(0.0));
-            bool flag1 = (double)datapointWidth < 3.0 || num1 < 3.0;
-            IPaletteProvider paletteProvider1 = this.PaletteProvider;
-            ISeriesDrawingHelper seriesDrawingHelper = SeriesDrawingHelpersFactory.GetSeriesDrawingHelper(renderContext, this.CurrentRenderPassData);
-            IBrush2D brush1 = renderContext.CreateBrush(this.UpWickColor, this.Opacity, new bool?());
-            IBrush2D brush2 = renderContext.CreateBrush(this.DownWickColor, this.Opacity, new bool?());
-            for ( int index = 0; index < count; ++index )
+            var xCalc        = renderPassData.XCoordinateCalculator;
+            var yCalc        = renderPassData.YCoordinateCalculator;            
+
+            var boxWidth     = DataPointWidthProvider.GetDataPointWidth();
+
+            double boxHeight = Math.Abs(yCalc.GetCoordinate(XOBoxSize) - yCalc.GetCoordinate(0.0));
+
+            bool isSmall     = (double)boxWidth < 3.0 || boxHeight < 3.0;
+            
+            var drawHelper   = SeriesDrawingHelpersFactory.GetSeriesDrawingHelper(rc, this.CurrentRenderPassData);
+            var upBrush      = rc.CreateBrush(this.StrokeUp, this.Opacity, null);
+            var downBrush    = rc.CreateBrush(this.StrokeDown, this.Opacity, null);
+
+            for ( int index = 0; index < ohlc.Count; ++index )
             {
-                GenericPoint2D<OhlcSeriesPoint> ohlcPoint = (GenericPoint2D<OhlcSeriesPoint>)pointSeries[index];
-                OhlcSeriesPoint yvalues1 = ohlcPoint.YValues;
-                double dataValue1 = NumberUtil.RoundUp(yvalues1.High, xoBoxSize);
-                yvalues1 = ohlcPoint.YValues;
-                double dataValue2 = NumberUtil.RoundDown(yvalues1.Low, xoBoxSize);
-                yvalues1 = ohlcPoint.YValues;
-                double close1 = yvalues1.Close;
-                yvalues1 = ohlcPoint.YValues;
-                double open1 = yvalues1.Open;
-                bool flag2 = close1 >= open1;
-                int intValue1 = renderPassData.XCoordinateCalculator.GetCoordinate(ohlcPoint.X).ClipToIntValue();
-                int intValue2 = ( (double)intValue1 - (double)datapointWidth * 0.5 ).ClipToIntValue();
-                int intValue3 = ( (double)intValue1 + (double)datapointWidth * 0.5 ).ClipToIntValue();
-                int intValue4 = ycoordinateCalculator.GetCoordinate(dataValue1).ClipToIntValue();
-                int intValue5 = ycoordinateCalculator.GetCoordinate(dataValue2).ClipToIntValue();
-                IPen2D wickPen = flag2 ? this._upWickPen : this._downWickPen;
-                IBrush2D brush = flag2 ? brush1 : brush2;
-                paletteProvider1.Do<IPaletteProvider>((Action<IPaletteProvider>)( pp =>
+                var high     = ohlc.HighValues[index];
+                var low      = ohlc.LowValues[index];
+                var open     = ohlc.OpenValues[index];
+                var close    = ohlc.CloseValues[index];
+                var xValue   = ohlc.XValues[index];
+                var yValue   = ohlc.YValues[index];
+
+                var highXO   = NumberUtil.RoundUp(high, XOBoxSize);
+                var lowXO    = NumberUtil.RoundDown(low, XOBoxSize);
+                var isRising = close >= open;
+
+                int Xi       = xCalc.GetCoordinate(xValue).ClipToIntValue();
+                int minXi    = ( (double)Xi - (double)boxWidth * 0.5 ).ClipToIntValue();
+                int maxXi    = ( (double)Xi + (double)boxWidth * 0.5 ).ClipToIntValue();
+                int YHighXo  = yCalc.GetCoordinate(highXO).ClipToIntValue();
+                int YLowXo   = yCalc.GetCoordinate(lowXO).ClipToIntValue();
+                var wickPen  = isRising ? this._upWickPen : this._downWickPen;
+                var brush    = isRising ? upBrush : downBrush;
+
+                Maybe.Do<ISSPaletteProvider>(XxxPaletteProvider, (Action<ISSPaletteProvider>)( pp =>
                 {
-                    IPaletteProvider paletteProvider2 = pp;
-                    double x = ohlcPoint.X;
-                    OhlcSeriesPoint yvalues = ohlcPoint.YValues;
-                    double open = yvalues.Open;
-                    yvalues = ohlcPoint.YValues;
-                    double high = yvalues.High;
-                    yvalues = ohlcPoint.YValues;
-                    double low = yvalues.Low;
-                    yvalues = ohlcPoint.YValues;
-                    double close = yvalues.Close;
-                    Color? nullable = paletteProvider2.OverrideColor((IRenderableSeries)this, x, open, high, low, close);
-                    if ( !nullable.HasValue )
+                    
+                    var orColor = pp.OverrideColor((IRenderableSeries)this, xValue, open, high, low, close);
+                    if ( !orColor.HasValue )
                     {
                         return;
                     }
 
-                    wickPen = penManager.GetPen(nullable.Value);
-                    brush = renderContext.CreateBrush(nullable.Value, this.Opacity, new bool?());
+                    wickPen = penManager.GetPen( orColor.Value, null );
+                    brush = rc.CreateBrush(orColor.Value, this.Opacity, new bool?());
                 } ));
-                int num2 = Math.Max(intValue5, intValue4);
-                int num3 = Math.Min(intValue5, intValue4);
-                if ( flag1 )
+                int maxY = Math.Max(YLowXo, YHighXo);
+                int minY = Math.Min(YLowXo, YHighXo);
+
+                if ( isSmall )
                 {
-                    renderContext.FillRectangle(brush, this.TransformPoint(new Point((double)intValue2, (double)intValue5), isVerticalChart), this.TransformPoint(new Point((double)intValue3, (double)intValue4), isVerticalChart), 0.0);
+                    rc.FillRectangle(brush, TransformPoint(new Point((double)minXi, (double)YLowXo), isVerticalChart), TransformPoint(new Point((double)maxXi, (double)YHighXo), isVerticalChart), 0.0);
                 }
-                else if ( flag2 )
+                else if ( isRising )
                 {
-                    double y1 = (double)num2;
-                    while ( y1 > (double)num3 )
+                    double topY = (double)maxY;
+
+                    while ( topY > (double)minY )
                     {
-                        double y2 = Math.Max(y1 - num1, (double)num3);
-                        if ( y1 - y2 >= 3.0 )
+                        double bottomY = Math.Max(topY - boxHeight, (double)minY);
+                        
+                        if ( topY - bottomY >= 3.0 )
                         {
-                            seriesDrawingHelper.DrawLine(this.TransformPoint(new Point((double)intValue2, y1), isVerticalChart), this.TransformPoint(new Point((double)intValue3, y2), isVerticalChart), wickPen);
-                            seriesDrawingHelper.DrawLine(this.TransformPoint(new Point((double)intValue3, y1), isVerticalChart), this.TransformPoint(new Point((double)intValue2, y2), isVerticalChart), wickPen);
+                            drawHelper.DrawLine( TransformPoint(new Point((double)minXi, topY), isVerticalChart), TransformPoint(new Point((double)maxXi, bottomY), isVerticalChart), wickPen);
+                            drawHelper.DrawLine( TransformPoint(new Point((double)maxXi, topY), isVerticalChart), TransformPoint(new Point((double)minXi, bottomY), isVerticalChart), wickPen);
                         }
-                        y1 -= num1;
+                        
+                        topY -= boxHeight;
                     }
                 }
                 else
                 {
-                    double num4 = (double)num3;
-                    while ( num4 < (double)num2 )
+                    double bottomY = (double)minY;
+                    
+                    while ( bottomY < (double)maxY )
                     {
-                        double height = Math.Min(num4 + num1, (double)num2) - num4;
-                        if ( height >= 3.0 )
+                        double boxH = Math.Min(bottomY + boxHeight, (double)maxY) - bottomY;
+                        
+                        if ( boxH >= 3.0 )
                         {
-                            renderContext.DrawEllipse(wickPen, (IBrush2D)null, new Point((double)intValue1, num4 + height / 2.0), (double)datapointWidth, height);
+                            rc.DrawEllipse(wickPen, (IBrush2D)null, new Point((double)Xi, bottomY + boxH / 2.0), (double)boxWidth, boxH);
                         }
 
-                        num4 += num1;
+                        bottomY += boxHeight;
                     }
                 }
             }
