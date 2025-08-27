@@ -5,7 +5,6 @@ using Ecng.Xaml;
 using StockSharp.Charting;
 using SciChart.Charting.ChartModifiers;
 using MoreLinq;
-
 using StockSharp.Localization;
 using System;
 using System.Collections.Generic; 
@@ -17,7 +16,7 @@ using System.Windows.Input;
 using System.Windows.Markup;
 using System.Windows.Media;
 using Ecng.Drawing;
-using StockSharp.Charting;
+
 using SciChart.Charting;
 
 namespace StockSharp.Xaml.Charting

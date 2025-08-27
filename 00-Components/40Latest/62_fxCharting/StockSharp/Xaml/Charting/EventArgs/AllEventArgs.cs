@@ -1,9 +1,11 @@
 ﻿using StockSharp.Algo.Candles;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic; 
+using fx.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using StockSharp.BusinessEntities;
 
 namespace StockSharp.Xaml.Charting
 {
@@ -12,7 +14,7 @@ namespace StockSharp.Xaml.Charting
         bool _useFifo;
         int _fifoCapcity = -1;
 
-        CandleSeries _candleSerie;
+        Subscription _subscription;
         ChartArea _chartArea;
 
         public ChartArea ChartArea
@@ -21,10 +23,10 @@ namespace StockSharp.Xaml.Charting
             set => _chartArea = value;
         }
 
-        public CandleSeries CandleSerie
+        public Subscription CandleSubscription
         {
-            get => _candleSerie;
-            set => _candleSerie = value;
+            get => _subscription;
+            set => _subscription = value;
         }
 
         public int FifoCapcity
@@ -40,17 +42,17 @@ namespace StockSharp.Xaml.Charting
             set => _useFifo = value;
         }
 
-        public AddCandlesEventArgs( ChartArea area, CandleSeries series )
+        public AddCandlesEventArgs( ChartArea area, Subscription series )
         {
             ChartArea   = area;
-            CandleSerie = series;
+            CandleSubscription = series;
             UseFifo     = false;
         }
 
-        public AddCandlesEventArgs( ChartArea area, CandleSeries series, int fifoCapacity )
+        public AddCandlesEventArgs( ChartArea area, Subscription series, int fifoCapacity )
         {
             ChartArea   = area;
-            CandleSerie = series;
+            CandleSubscription = series;
             FifoCapcity = fifoCapacity;
             UseFifo     = true;
         }

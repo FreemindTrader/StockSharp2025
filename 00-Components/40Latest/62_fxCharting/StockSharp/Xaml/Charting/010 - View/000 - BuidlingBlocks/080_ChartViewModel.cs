@@ -32,7 +32,7 @@ public sealed class ChartViewModel : DependencyObject
     public event EventHandler<AddCandlesEventArgs>  CodingAddCandlesEvent;
 
     
-    public void ExecuteCodingAddCandles(ChartArea chartArea, CandleSeries series)
+    public void ExecuteCodingAddCandles(ChartArea chartArea, Subscription series)
     {
         CodingAddCandlesEvent?.Invoke(this, new AddCandlesEventArgs(chartArea, series));
     }
@@ -277,45 +277,43 @@ public sealed class ChartViewModel : DependencyObject
 
     private int _minimumRange;
 
-    public static readonly DependencyProperty ChartPaneViewModelProperty = DependencyProperty.Register(nameof(ChartPaneViewModels), typeof(ObservableCollection<ScichartSurfaceMVVM>), typeof(ChartViewModel));
-
-
+    public static readonly DependencyProperty ChartPaneViewModelProperty    = DependencyProperty.Register(nameof(ChartPaneViewModels), typeof(ObservableCollection<ScichartSurfaceMVVM>), typeof(ChartViewModel));
 
     public static readonly DependencyProperty ShowHiddenAxesCommandProperty = DependencyProperty.Register(nameof(ShowHiddenAxesCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddAreaCommandProperty = DependencyProperty.Register(nameof(AddAreaCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddAreaCommandProperty        = DependencyProperty.Register(nameof(AddAreaCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddCandlesCommandProperty = DependencyProperty.Register(nameof(AddCandlesCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddCandlesCommandProperty     = DependencyProperty.Register(nameof(AddCandlesCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddIndicatorCommandProperty = DependencyProperty.Register(nameof(AddIndicatorCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddIndicatorCommandProperty   = DependencyProperty.Register(nameof(AddIndicatorCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddOrdersCommandProperty = DependencyProperty.Register(nameof(AddOrdersCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddOrdersCommandProperty      = DependencyProperty.Register(nameof(AddOrdersCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddTradesCommandProperty = DependencyProperty.Register(nameof(AddTradesCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddTradesCommandProperty      = DependencyProperty.Register(nameof(AddTradesCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty UngroupCommandProperty = DependencyProperty.Register(nameof(UngroupCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty UngroupCommandProperty        = DependencyProperty.Register(nameof(UngroupCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddXAxisCommandProperty = DependencyProperty.Register(nameof(AddXAxisCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddXAxisCommandProperty       = DependencyProperty.Register(nameof(AddXAxisCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AddYAxisCommandProperty = DependencyProperty.Register(nameof(AddYAxisCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty AddYAxisCommandProperty       = DependencyProperty.Register(nameof(AddYAxisCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty RemoveAxisCommandProperty = DependencyProperty.Register(nameof(RemoveAxisCommand), typeof(ICommand), typeof(ChartViewModel));
+    public static readonly DependencyProperty RemoveAxisCommandProperty     = DependencyProperty.Register(nameof(RemoveAxisCommand), typeof(ICommand), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty IndicatorTypesProperty = DependencyProperty.Register(nameof(IndicatorTypes), typeof(ObservableCollection<IndicatorType>), typeof(ChartViewModel));
+    public static readonly DependencyProperty IndicatorTypesProperty        = DependencyProperty.Register(nameof(IndicatorTypes), typeof(ObservableCollection<IndicatorType>), typeof(ChartViewModel));
 
-    public static readonly DependencyProperty AllowAddAreaProperty = DependencyProperty.Register(nameof(AllowAddArea), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
+    public static readonly DependencyProperty AllowAddAreaProperty          = DependencyProperty.Register(nameof(AllowAddArea), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
 
-    public static readonly DependencyProperty AllowAddAxisProperty = DependencyProperty.Register(nameof(AllowAddAxis), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
+    public static readonly DependencyProperty AllowAddAxisProperty          = DependencyProperty.Register(nameof(AllowAddAxis), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
 
-    public static readonly DependencyProperty AllowAddCandlesProperty = DependencyProperty.Register(nameof(AllowAddCandles), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
+    public static readonly DependencyProperty AllowAddCandlesProperty       = DependencyProperty.Register(nameof(AllowAddCandles), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
 
-    public static readonly DependencyProperty AllowAddIndicatorsProperty = DependencyProperty.Register(nameof(AllowAddIndicators), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
+    public static readonly DependencyProperty AllowAddIndicatorsProperty    = DependencyProperty.Register(nameof(AllowAddIndicators), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
 
-    public static readonly DependencyProperty AllowAddOrdersProperty = DependencyProperty.Register(nameof(AllowAddOrders), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
+    public static readonly DependencyProperty AllowAddOrdersProperty        = DependencyProperty.Register(nameof(AllowAddOrders), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
 
-    public static readonly DependencyProperty AllowAddOwnTradesProperty = DependencyProperty.Register(nameof(AllowAddOwnTrades), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
+    public static readonly DependencyProperty AllowAddOwnTradesProperty     = DependencyProperty.Register(nameof(AllowAddOwnTrades), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
 
-    public static readonly DependencyProperty MinimumRangeProperty = DependencyProperty.Register(nameof(MinimumRange), typeof(int), typeof(ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
+    public static readonly DependencyProperty MinimumRangeProperty          = DependencyProperty.Register(nameof(MinimumRange), typeof(int), typeof(ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
 
 
     private readonly DelegateCommand<IDrawingSurfaceVM> _closePaneCommand;

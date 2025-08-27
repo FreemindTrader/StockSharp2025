@@ -33,18 +33,18 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
     public const Decimal MinPriceStep = 0.000001M;
     public static readonly TimeSpan MaxTimeframe = TimeSpan.FromDays(30.0);
     public static readonly IMath<DateTime> XMath = GenericMathFactory.GetMath<DateTime>();
-    private string _seriesName;
-    private readonly TimeframeDataSegment _volumeProfile = new TimeframeDataSegment(new DateTime(), 0);
-    private readonly UltraList<TimeframeDataSegment> _segments = new UltraList<TimeframeDataSegment>();
-    private readonly UltraList<DateTime> _segmentDates = new UltraList<DateTime>();
+    private string                                         _seriesName;
+    private readonly TimeframeDataSegment                  _volumeProfile = new TimeframeDataSegment(new DateTime(), 0);
+    private readonly UltraList<TimeframeDataSegment>       _segments      = new UltraList<TimeframeDataSegment>();
+    private readonly UltraList<DateTime>                   _segmentDates  = new UltraList<DateTime>();
     private readonly TimeframeSegmentDataSeries.YValueList _yValues;
-    private readonly ChartCandleElement _element;
-    private Tuple<DateTime, DateTime, long> _curPeriod;
+    private readonly ChartCandleElement                    _element;
+    private Tuple<DateTime, DateTime, long>                _curPeriod;
 
 
-    private sealed class YValueList(TimeframeSegmentDataSeries _param1) : IList, IEnumerable, ICollection, IList<double>, ICollection<double>, IEnumerable<double>
+    private sealed class YValueList(TimeframeSegmentDataSeries ts ) : IList, IEnumerable, ICollection, IList<double>, ICollection<double>, IEnumerable<double>
     {
-        private readonly TimeframeSegmentDataSeries _parentElement = _param1 ?? throw new ArgumentNullException("parent");
+        private readonly TimeframeSegmentDataSeries _parentElement = ts ?? throw new ArgumentNullException("parent");
 
         public int Count => this._parentElement._segments.Count;
 
@@ -98,9 +98,9 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
             return -1;
         }
 
-        public double this[int _param1]
+        public double this[int index]
         {
-            get => this._parentElement._segments[_param1].Y;
+            get => this._parentElement._segments[index].Y;
             set => throw new NotImplementedException();
         }
 
@@ -309,15 +309,18 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
     {
         if ( this.ParentSurface == null )
             return;
+
         switch ( rangeMode )
         {
-            case (RangeMode)0:
+            case RangeMode.None:
                 this.ParentSurface.InvalidateElement();
                 break;
-            case (RangeMode)1:
+
+            case RangeMode.ZoomToFit:
                 this.ParentSurface.ZoomExtents();
                 break;
-            case (RangeMode)2:
+
+            case RangeMode.ZoomToFitY:
                 this.ParentSurface.ZoomExtentsY();
                 break;
         }
@@ -340,17 +343,13 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
 
     IRange IDataSeries.GetWindowedYRange(IRange xRange)
     {
-        IndexRange g8Oq2rGx6KyfAreq = this.SearchDataIndexesOn(xRange, (SearchMode)2, (SearchMode)3);
-        return !g8Oq2rGx6KyfAreq.IsDefined
-            ? (IRange)new DoubleRange(double.MinValue, double.MaxValue)
-            : this.GetWindowedYRange(g8Oq2rGx6KyfAreq);
+        IndexRange range = this.SearchDataIndexesOn(xRange, (SearchMode)2, (SearchMode)3);
+        return !range.IsDefined ? (IRange)new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(range);
     }
 
     IRange IDataSeries.GetWindowedYRange(IndexRange indexRange, bool getPositiveRange)
     {
-        return !indexRange.IsDefined
-            ? (IRange)new DoubleRange(double.MinValue, double.MaxValue)
-            : this.GetWindowedYRange(indexRange);
+        return !indexRange.IsDefined ? (IRange)new DoubleRange(double.MinValue, double.MaxValue) : this.GetWindowedYRange(indexRange);
     }
 
     IRange IDataSeries.GetWindowedYRange(IRange xRange, bool getPositiveRange)
@@ -367,8 +366,7 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
                 return (IRange)new DoubleRange(double.MinValue, double.MaxValue);
             }
 
-            return (IRange)new DateRange(this._segmentDates[0], this._segmentDates[this._segmentDates.Count - 1]).AsDoubleRange(
-                );
+            return (IRange)new DateRange(this._segmentDates[0], this._segmentDates[this._segmentDates.Count - 1]).AsDoubleRange();
         }
     }
 
@@ -378,20 +376,24 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
         {
             if ( this._segments.Count == 0 )
                 return (IRange)new DoubleRange(double.MinValue, double.MaxValue);
-            double num1 = double.MaxValue;
-            double num2 = double.MinValue;
+            
+            double min = double.MaxValue;
+            double max = double.MinValue;
+
             using ( var myEnum = this._segments.GetEnumerator() )
             {
                 while ( myEnum.MoveNext() )
                 {
-                    TimeframeDataSegment current = myEnum.Current;
-                    if ( current.MinPrice < num1 )
-                        num1 = current.MinPrice;
-                    if ( current.MaxPrice > num2 )
-                        num2 = current.MaxPrice;
+                    var current = myEnum.Current;
+
+                    if ( current.MinPrice < min )
+                        min = current.MinPrice;
+
+                    if ( current.MaxPrice > max )
+                        max = current.MaxPrice;
                 }
             }
-            return (IRange)new DoubleRange(num1, num2);
+            return (IRange)new DoubleRange(min, max);
         }
     }
 
@@ -404,13 +406,12 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
         }
         IndexRange indexRange2 = new IndexRange(-1, -1);
         DoubleRange doubleRange = range as DoubleRange;
-        DateRange dateRange = ( doubleRange == null )
-            ? ( range as DateRange )
-            : new DateRange(new DateTime((long)doubleRange.Min), new DateTime((long)doubleRange.Max));
+        DateRange dateRange = ( doubleRange == null ) ? ( range as DateRange ) : new DateRange(new DateTime((long)doubleRange.Min), new DateTime((long)doubleRange.Max));
+        
         if ( dateRange == null )
         {
-            SciChartDebugLogger.Instance
-                .WriteLine("ERROR: SearchDataIndexesOn: unable to convert range type={0}", range.GetType().Name);
+            SciChartDebugLogger.Instance.WriteLine("ERROR: SearchDataIndexesOn: unable to convert range type={0}", range.GetType().Name);
+
             return NormalizeIndexRange(indexRange2);
         }
         DateTime[] list = _segmentDates.ToArray();
@@ -422,6 +423,7 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
     private IndexRange NormalizeIndexRange(IndexRange indexRange)
     {
         int count = this._segmentDates.Count;
+        
         if ( indexRange.IsDefined )
         {
             if ( indexRange.Min > count - 1 || indexRange.Max < 0 )
@@ -434,16 +436,14 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
                 indexRange.Max = Math.Max(Math.Min(indexRange.Max, count - 1), indexRange.Min);
             }
         }
+
         if ( indexRange.Min.CompareTo(indexRange.Max) > 0 )
         {
             indexRange.Min = 0;
         }
 
-        SciChartDebugLogger.Instance
-            .WriteLine(
-                "GetIndicesRange(timeframesegment): Min={0}, Max={1}",
-                (object)indexRange.Min,
-                (object)indexRange.Max);
+        SciChartDebugLogger.Instance.WriteLine( "GetIndicesRange(timeframesegment): Min={0}, Max={1}", indexRange.Min, indexRange.Max);
+
         return indexRange;
     }
 

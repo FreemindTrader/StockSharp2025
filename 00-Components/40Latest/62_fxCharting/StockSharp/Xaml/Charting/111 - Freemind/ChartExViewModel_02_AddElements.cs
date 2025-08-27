@@ -103,14 +103,16 @@ namespace StockSharp.Xaml.Charting
             ( ( IChartComponent ) candleUI ).ResetUI();
             AddElement( ( ChartArea ) candleArea, candleUI, series );
 
-            foreach ( var indicatorPair in indicatorUiDict )
-            {
-                var area  = indicatorPair.Value.Item2;
-                var ui    = indicatorPair.Key;
-                var val   = indicatorPair.Value.Item1;
+            // Tony Fixme:
 
-                AddElement( ( ChartArea ) area, ui, series, val );
-            }
+            //foreach ( var indicatorPair in indicatorUiDict )
+            //{
+            //    var area  = indicatorPair.Value.Item2;
+            //    var ui    = indicatorPair.Key;
+            //    var val   = indicatorPair.Value.Item1;
+
+            //    AddElement( ( ChartArea ) area, ui, series, val );
+            //}
 
             RefreshView();
         }
@@ -316,15 +318,17 @@ namespace StockSharp.Xaml.Charting
 
                 indicatorUI.IndicatorPainter =  indicatorPainter;
 
-                var tonyCandleSeries         = GetSeries<CandleSeries>( chartUi );
+                // Tony Fixme:
 
-                AddElement( area, indicatorUI, tonyCandleSeries, indicatorPicker.Indicator );
+                //var tonyCandleSeries         = GetSeries<CandleSeries>( chartUi );
+
+                //AddElement( area, indicatorUI, tonyCandleSeries, indicatorPicker.Indicator );
             }
         }
 
 
 
-        public void AddElement( ChartArea area, ChartIndicatorElement indicatorUI, CandleSeries candleSeries, IIndicator indicator )
+        public void AddElement( ChartArea area, ChartIndicatorElement indicatorUI, Subscription candleSeries, IIndicator indicator )
         {
             if ( area == null )
             {

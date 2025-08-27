@@ -1,6 +1,4 @@
-﻿
-
-using Ecng.Common;
+﻿using Ecng.Common;
 using Ecng.ComponentModel;
 using StockSharp.Xaml.Charting.Ultrachart;
 using StockSharp.Xaml.Charting;
@@ -12,6 +10,115 @@ using System.Diagnostics;
 using System.Linq;
 using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 using DevExpress.Utils;
+
+internal sealed class ChartComponentChartSettings : ChartSettingsObjectBase<IChartComponent>
+{
+    //    private sealed class ProxyDescriptorEx( string name, object thisObject, IChartComponent component, Func<IChartComponent, PropertyDescriptor, bool> selector ) : ProxyDescriptor( name, thisObject, component, Enumerable.Cast<Attribute>( TypeDescriptor.GetAttributes( component, false ) ), selector )
+    private sealed class ProxyDescriptorEx(string name, object thisObject, IChartComponent component, Func<IChartComponent, PropertyDescriptor, bool> selector) : ProxyDescriptor(name, thisObject, component, Enumerable.Cast<Attribute>(TypeDescriptor.GetAttributes(component, false)), selector)
+    {
+        protected override ChartSettingsObjectBase<IChartComponent> CreateWrapper(IChartComponent com, Func<IChartComponent, PropertyDescriptor, bool> selector = null)
+        {
+            return (ChartSettingsObjectBase<IChartComponent>)new ChartComponentChartSettings(com, selector);
+        }
+    }
+    private readonly Func<IChartComponent, PropertyDescriptor, bool> _propertyDescSelector;
+
+    public ChartComponentChartSettings(IChartComponent com, Func<IChartComponent, PropertyDescriptor, bool> selector = null)
+      : base(com)
+    {
+        _propertyDescSelector = selector;
+        Orig.PropertyChanged += new PropertyChangedEventHandler(OnPropertyChanged);
+    }
+
+    public static PropertyDescriptor Create(string name, object thisobject, IChartComponent com, Func<IChartComponent, PropertyDescriptor, bool> selector)
+    {
+        return (PropertyDescriptor)new ChartComponentChartSettings.ProxyDescriptorEx(name, thisobject, com, selector);
+    }
+
+    protected override PropertyDescriptor[] OnGetProperties(IChartComponent _param1)
+    {
+        ChartComponentChartSettings.UniquePropertyNameHelper helper = new ChartComponentChartSettings.UniquePropertyNameHelper();
+        helper._settings = this;
+        helper._component = _param1;
+        helper._hashSet = new HashSet<string>();
+        if ( helper._component == null )
+            return (PropertyDescriptor[])null;
+        List<PropertyDescriptor> propertyDescriptorList = new List<PropertyDescriptor>();
+        propertyDescriptorList.AddRange(TypeDescriptor.GetProperties(helper._component, false).OfType<PropertyDescriptor>().Where<PropertyDescriptor>(new Func<PropertyDescriptor, bool>(helper.AddAdditionalName)).SelectMany<PropertyDescriptor, PropertyDescriptor>(new Func<PropertyDescriptor, IEnumerable<PropertyDescriptor>>(helper.SelectManyConditions)));
+        return propertyDescriptorList.ToArray();
+    }
+
+    private void OnPropertyChanged(object? _param1, PropertyChangedEventArgs _param2)
+    {
+        NotifyChanged(_param2.PropertyName);
+    }
+
+    private sealed class UniquePropertyNameHelper
+    {
+        public HashSet<string> _hashSet;
+        public ChartComponentChartSettings _settings;
+        public IChartComponent _component;
+
+        internal string CreateName(string newName)
+        {
+            string generatedString = newName;
+            int count = 0;
+
+            while ( !_hashSet.Add(generatedString) )
+            {
+                generatedString = newName + ( ++count ).ToString();
+            }
+
+
+            return generatedString;
+        }
+
+        internal bool AddAdditionalName(PropertyDescriptor pd)
+        {
+            if ( ( _settings._propertyDescSelector != null ? ( _settings._propertyDescSelector(_component, pd) ? 1 : 0 ) : 1 ) == 0 )
+                return false;
+
+            var com = _component;
+            return com == null || !com.HasExtraName(pd.Name);
+        }
+
+        internal IEnumerable<PropertyDescriptor> SelectManyConditions(PropertyDescriptor propDesc)
+        {
+            object obj = propDesc.GetValue((object)_component);
+
+            IEnumerable<PropertyDescriptor> pd = new List<PropertyDescriptor>();
+
+            var one = new List<PropertyDescriptor>();
+            one.Add(propDesc);
+
+            if ( !( obj is IChartComponent chartCom ) )
+            {
+                var painter = obj as StockSharp.Charting.IChartIndicatorPainter;
+
+                pd = painter != null ? TypeDescriptor.GetProperties(painter, false).OfType<PropertyDescriptor>().Where(p =>
+                {
+                    var attr = p.Attributes.OfType<BrowsableAttribute>().FirstOrDefault();
+                    return attr == null || attr.Browsable;
+                }).Select(pd =>
+                {
+                    return !TypeHelper.Is<StockSharp.Charting.IChartElement>(pd.PropertyType, true) ? pd : ChartComponentChartSettings.Create(CreateName(Extensions.GetDisplayName(pd, null)), painter, (IChartComponent)pd.GetValue(painter), _settings._propertyDescSelector);
+
+                }) : (IEnumerable<PropertyDescriptor>)one;
+            }
+            else
+            {
+                var pdl = new List<PropertyDescriptor>();
+                pdl.Add(Create(CreateName(_component?.GetName((StockSharp.Charting.IChartElement)chartCom) ?? Extensions.GetDisplayName(propDesc, (string)null)), (object)_component, chartCom, _settings._propertyDescSelector));
+
+                pd = (IEnumerable<PropertyDescriptor>)pdl;
+            }
+
+            return pd;
+        }
+    }
+}
+
+
 
 
 //internal sealed class ChartComponentChartSettings : ChartSettingsObjectBase<IChartComponent>
@@ -160,107 +267,4 @@ using DevExpress.Utils;
 
 //}
 
-
-internal sealed class ChartComponentChartSettings : ChartSettingsObjectBase<IChartComponent>
-{
-    //    private sealed class ProxyDescriptorEx( string name, object thisObject, IChartComponent component, Func<IChartComponent, PropertyDescriptor, bool> selector ) : ProxyDescriptor( name, thisObject, component, Enumerable.Cast<Attribute>( TypeDescriptor.GetAttributes( component, false ) ), selector )
-    private sealed class ProxyDescriptorEx( string name, object thisObject, IChartComponent component, Func<IChartComponent, PropertyDescriptor, bool> selector ) : ProxyDescriptor( name, thisObject, component, Enumerable.Cast<Attribute>( TypeDescriptor.GetAttributes( component, false ) ), selector )
-    {
-        protected override ChartSettingsObjectBase<IChartComponent> CreateWrapper( IChartComponent com, Func<IChartComponent, PropertyDescriptor, bool> selector = null )
-        {
-            return ( ChartSettingsObjectBase<IChartComponent> ) new ChartComponentChartSettings( com, selector );
-        }
-    }
-    private readonly Func<IChartComponent, PropertyDescriptor, bool> _propertyDescSelector;
-
-    public ChartComponentChartSettings( IChartComponent com, Func<IChartComponent, PropertyDescriptor, bool> selector = null )
-      : base( com )
-    {
-        _propertyDescSelector = selector;
-        Orig.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
-    }
-
-    public static PropertyDescriptor Create( string name, object thisobject, IChartComponent com, Func<IChartComponent, PropertyDescriptor, bool> selector )
-    {
-        return ( PropertyDescriptor ) new ChartComponentChartSettings.ProxyDescriptorEx( name, thisobject, com, selector );
-    }
-
-    protected override PropertyDescriptor[ ] OnGetProperties(
-      IChartComponent _param1 )
-    {
-        ChartComponentChartSettings.UniquePropertyNameHelper helper = new ChartComponentChartSettings.UniquePropertyNameHelper();
-        helper._settings = this;
-        helper._component = _param1;
-        helper._hashSet = new HashSet<string>();
-        if ( helper._component == null )
-            return ( PropertyDescriptor[ ] ) null;
-        List<PropertyDescriptor> propertyDescriptorList = new List<PropertyDescriptor>();
-        propertyDescriptorList.AddRange( TypeDescriptor.GetProperties( helper._component, false ).OfType<PropertyDescriptor>().Where<PropertyDescriptor>( new Func<PropertyDescriptor, bool>( helper.AddAdditionalName ) ).SelectMany<PropertyDescriptor, PropertyDescriptor>( new Func<PropertyDescriptor, IEnumerable<PropertyDescriptor>>( helper.SelectManyConditions ) ) );
-        return propertyDescriptorList.ToArray();
-    }
-
-    private void OnPropertyChanged( object? _param1, PropertyChangedEventArgs _param2 )
-    {
-        NotifyChanged( _param2.PropertyName );
-    }
-
-    private sealed class UniquePropertyNameHelper
-    {
-        public HashSet<string> _hashSet;
-        public ChartComponentChartSettings _settings;
-        public IChartComponent _component;
-
-        internal string CreateName( string _param1 )
-        {
-            string str = _param1;
-            int num = 0;
-            while ( !_hashSet.Add( str ) )
-                str = _param1 + ( ++num ).ToString();
-            return str;
-        }
-
-        internal bool AddAdditionalName( PropertyDescriptor _param1 )
-        {
-            Func<IChartComponent, PropertyDescriptor, bool> sel = _settings._propertyDescSelector;
-            if ( ( sel != null ? ( sel( _component, _param1 ) ? 1 : 0 ) : 1 ) == 0 )
-                return false;
-            IChartComponent zLiCojrU = _component;
-            return zLiCojrU == null || !zLiCojrU.HasExtraName( _param1.Name );
-        }
-
-        internal IEnumerable<PropertyDescriptor> SelectManyConditions( PropertyDescriptor propDesc )
-        {
-            object obj = propDesc.GetValue((object) _component);
-            
-            IEnumerable<PropertyDescriptor>  pd = new List<PropertyDescriptor>();
-
-            var one = new List<PropertyDescriptor>();
-            one.Add(propDesc);
-
-            if ( !( obj is IChartComponent chartCom ) )
-            {
-                var painter = obj as StockSharp.Charting.IChartIndicatorPainter;
-
-                pd = painter != null ? TypeDescriptor.GetProperties( painter, false ).OfType<PropertyDescriptor>().Where( p =>
-                {
-                    var attr = p.Attributes.OfType<BrowsableAttribute>().FirstOrDefault();
-                    return attr == null || attr.Browsable;
-                } ).Select<PropertyDescriptor, PropertyDescriptor>( pd =>
-                {
-                    return !TypeHelper.Is<StockSharp.Charting.IChartElement>( pd.PropertyType, true ) ? pd : ChartComponentChartSettings.Create( CreateName( Extensions.GetDisplayName( pd, null ) ), painter, ( IChartComponent ) pd.GetValue( painter ), _settings._propertyDescSelector );
-
-                } ) : ( IEnumerable<PropertyDescriptor> ) one;
-            }
-            else
-            {
-                var pdl = new List<PropertyDescriptor>();
-                pdl.Add( Create( CreateName( _component?.GetName( ( StockSharp.Charting.IChartElement ) chartCom ) ?? Extensions.GetDisplayName( propDesc, ( string ) null ) ), ( object ) _component, chartCom, _settings._propertyDescSelector ) );
-
-                pd = ( IEnumerable<PropertyDescriptor> ) pdl;
-            }
-
-            return pd;
-        }
-    }
-}
 

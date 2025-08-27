@@ -88,12 +88,12 @@ namespace StockSharp.Xaml.Charting
             AddArea(_mainChartArea);
         }
 
-        public void Step05_ExecuteAddCandlesProgramatically(ChartArea chartArea, CandleSeries series)
+        public void Step05_ExecuteAddCandlesProgramatically(ChartArea chartArea, Subscription series)
         {
             CodingAddCandlesEvent?.Invoke(this, new AddCandlesEventArgs(chartArea, series));
         }
 
-        public void Step05_ExecuteAddCandlesProgramatically(ChartArea chartArea, CandleSeries series, int fifoCapcity)
+        public void Step05_ExecuteAddCandlesProgramatically(ChartArea chartArea, Subscription series, int fifoCapcity)
         {
             CodingAddCandlesEvent?.Invoke(this, new AddCandlesEventArgs(chartArea, series, fifoCapcity));
         }
@@ -112,13 +112,15 @@ namespace StockSharp.Xaml.Charting
 
             _ChartCandleElementViewModel.ShowAxisMarker = false;
 
-            _candleSeries = e.CandleSerie.Clone();
+            _subscription = e.CandleSubscription.Clone();
             _period = (TimeSpan)_candleSeries.Arg;
             _candleSeries.Security = null;
 
-            AddElement(e.ChartArea, _ChartCandleElementViewModel, e.CandleSerie);
+            // Tony Fixme:
 
-            e.CandleSerie.PropertyChanged += new PropertyChangedEventHandler(OnCandleSeriesPropertyChanged);
+            //AddElement(e.ChartArea, _ChartCandleElementViewModel, e.CandleSubscription);
+
+            //e.CandleSubscription.PropertyChanged += new PropertyChangedEventHandler(OnCandleSeriesPropertyChanged);
         }
 
     }

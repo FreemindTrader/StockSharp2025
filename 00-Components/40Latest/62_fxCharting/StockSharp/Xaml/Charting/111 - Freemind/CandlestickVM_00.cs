@@ -31,7 +31,7 @@ using fx.Bars;
 using fx.Algorithm;
 using fx.Indicators;
 using fx.Base;
-using StockSharp.Charting;
+
 
 #pragma warning disable 067
 

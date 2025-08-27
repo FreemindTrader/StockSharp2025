@@ -57,9 +57,9 @@ namespace StockSharp.Xaml.Charting
 
         void AddElement( ChartArea area, TradesUI element, Security security );
 
-        void AddElement( ChartArea area, ChartCandleElement element, CandleSeries candleSeries );
+        void AddElement( ChartArea area, ChartCandleElement element, Subscription candleSeries );
 
-        void AddElement( ChartArea area, ChartIndicatorElement element, CandleSeries candleSeries, IIndicator indicator );
+        void AddElement( ChartArea area, ChartIndicatorElement element, Subscription candleSeries, IIndicator indicator );
 
         void RemoveElement( ChartArea area, IChartElement element );
 

@@ -167,11 +167,11 @@ namespace StockSharp.Xaml.Charting
 
                 indicatorUI.IndicatorPainter = indicatorPainter;
 
-                
 
-                AddElement( e.ChartArea, indicatorUI, tonyCandleSeries, indicatorPicker.Indicator );
+                // Tony Fixme:
+                //AddElement( e.ChartArea, indicatorUI, tonyCandleSeries, indicatorPicker.Indicator );
             }
-            
+
         }
 
         public void Refresh()
@@ -430,12 +430,12 @@ namespace StockSharp.Xaml.Charting
             private set;
         }
 
-        private void ExecuteAddProgramCandlesCommand( Tuple<ChartArea, CandleSeries> tuple )
+        private void ExecuteAddProgramCandlesCommand( Tuple<ChartArea, Subscription> tuple )
         {
             CodingAddCandlesEvent?.Invoke( this, new AddCandlesEventArgs( tuple.Item1, tuple.Item2 ) );
         }
 
-        public bool CanExecuteAddProgramCandlesCommand( Tuple<ChartArea, CandleSeries> tuple )
+        public bool CanExecuteAddProgramCandlesCommand( Tuple<ChartArea, Subscription> tuple )
         {
             return IsProgrammable;
         }
@@ -1005,8 +1005,9 @@ namespace StockSharp.Xaml.Charting
             AnnotationSelected?.Invoke( annotation, aData );
         }
 
-        public void AddElement(ChartArea area, ChartCandleElement element, CandleSeries candleSeries)
+        public void AddElement(ChartArea area, ChartCandleElement element, Subscription candleSeries)
         {
+            // Tony: Fixme
             throw new NotImplementedException();
         }
         #endregion

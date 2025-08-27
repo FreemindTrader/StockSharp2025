@@ -46,6 +46,8 @@ namespace StockSharp.Xaml.Charting
         private readonly CachedSynchronizedList<IChartElement>         _uiList       = new CachedSynchronizedList<IChartElement>( );
 
         private CandleSeries                                             _candleSeries;
+
+        private Subscription _subscription;
         
         private ChartCandleElementEx _ChartCandleElementViewModel;
         

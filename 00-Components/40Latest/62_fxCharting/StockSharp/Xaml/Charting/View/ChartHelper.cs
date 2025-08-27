@@ -22,7 +22,6 @@ using Ecng.Collections;
 using StockSharp.Xaml;
 using Ecng.Configuration;
 using Ecng.Logging;
-using StockSharp.Charting;
 using StockSharp.BusinessEntities;
 
 namespace StockSharp.Xaml.Charting;
