@@ -70,7 +70,7 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
             ++index;
         }
 
-        _allPrices = (IEnumerable<double>)new UltraList<double>(newPriceArray);
+        _allPrices = (IEnumerable<double>)new SciList<double>(newPriceArray);
     }
 
    

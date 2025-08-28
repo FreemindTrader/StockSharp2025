@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SciChart.Data.Model;
 
 namespace StockSharp.Xaml.Charting;
-internal class FifoBuffer<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
+internal class FifoBuffer<T> : ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
 {
     private int _startIndex = -1;
     private T[] _innerList;
@@ -30,6 +31,111 @@ internal class FifoBuffer<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumera
         internal set
         {
             this._usedSize = value;
+        }
+    }
+
+    /// <summary>
+    /// Gets the minimum and maximum in the list
+    /// </summary>
+    /// <param name="min"></param>
+    /// <param name="max"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    public void GetMinMax( out T min, out T max )
+    {
+        min = GetMinimum();
+        max = GetMaximum();
+    }
+
+    /// <summary>
+    /// Returns a <see cref="List{T}"/> that contains the elements of the <see cref="SciList{T}"/>.
+    /// </summary>
+    /// <returns></returns>
+    public IList AsList()
+    {
+        return new List<T>( _innerList );
+    }
+
+    /// <summary>
+    /// Gets a value indicating whether this list has NaN values in specified range
+    /// </summary>
+    /// <param name="startIndex"></param>
+    /// <param name="count"></param>
+    /// <returns></returns>
+    /// <exception cref="NotImplementedException"></exception>
+    public bool ContainsNaN( int startIndex, int count )
+    {
+        return _innerList.Any( item => IsNaN( item as dynamic ) );
+    }
+
+    private static bool IsNaN( dynamic value )
+    {
+        if ( value is float f ) return float.IsNaN( f );
+        if ( value is double d ) return double.IsNaN( d );
+        return false;
+    }
+
+    public bool IsSortedAscending( int startIndex, int count )
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool IsEvenlySpaced( int startIndex, int count, double epsilon, out double spacing )
+    {
+        spacing = 0.0;
+
+        if ( _innerList == null )
+        {
+            throw new ArgumentNullException( nameof( _innerList ) );
+        }
+        if ( startIndex < 0 || startIndex >= _innerList.Length )
+        {
+            throw new ArgumentOutOfRangeException( nameof( startIndex ), "StartIndex is out of the bounds of the list." );
+        }
+        if ( count < 0 )
+        {
+            throw new ArgumentOutOfRangeException( nameof( count ), "Count cannot be negative." );
+        }
+        if ( startIndex + count > _innerList.Length )
+        {
+            throw new ArgumentOutOfRangeException( nameof( count ), "The range defined by startIndex and count exceeds the list's bounds." );
+        }
+
+        // Lists with 0, 1, or 2 elements in the range are considered evenly spaced.
+        if ( count <= 2 )
+        {
+            spacing = count <= 1 ? 0.0 : Convert.ToDouble( _innerList[startIndex + 1] ) - Convert.ToDouble( _innerList[startIndex] );
+            return true;
+        }
+
+        // Calculate the common difference from the first two elements using Convert.ToDouble.
+        double first = Convert.ToDouble(_innerList[startIndex]);
+        double second = Convert.ToDouble(_innerList[startIndex + 1]);
+        double calculatedSpacing = second - first;
+
+        spacing = calculatedSpacing;
+
+        // Iterate from the third element in the range.
+        for ( int i = startIndex + 2; i < startIndex + count; i++ )
+        {
+            double current = Convert.ToDouble(_innerList[i]);
+            double previous = Convert.ToDouble(_innerList[i - 1]);
+            double actualDifference = current - previous;
+
+            // Compare the actual difference with the initial spacing, considering epsilon.
+            if ( Math.Abs( actualDifference - calculatedSpacing ) > epsilon )
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool HasValues
+    {
+        get
+        {
+            return _innerList.Length > 0;
         }
     }
 

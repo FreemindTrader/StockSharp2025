@@ -35,8 +35,8 @@ public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTim
     public static readonly IMath<DateTime> XMath = GenericMathFactory.GetMath<DateTime>();
     private string                                         _seriesName;
     private readonly TimeframeDataSegment                  _volumeProfile = new TimeframeDataSegment(new DateTime(), 0);
-    private readonly UltraList<TimeframeDataSegment>       _segments      = new UltraList<TimeframeDataSegment>();
-    private readonly UltraList<DateTime>                   _segmentDates  = new UltraList<DateTime>();
+    private readonly SciList<TimeframeDataSegment>       _segments      = new SciList<TimeframeDataSegment>();
+    private readonly SciList<DateTime>                   _segmentDates  = new SciList<DateTime>();
     private readonly TimeframeSegmentDataSeries.YValueList _yValues;
     private readonly ChartCandleElement                    _element;
     private Tuple<DateTime, DateTime, long>                _curPeriod;

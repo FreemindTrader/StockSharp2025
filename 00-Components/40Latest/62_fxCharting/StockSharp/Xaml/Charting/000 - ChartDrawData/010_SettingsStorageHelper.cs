@@ -123,24 +123,26 @@ internal static class SettingsStorageHelper
     public static Brush GetBrush( this SettingsStorage store )
     {
         Type actualValue = store != null ? Converter.To<Type>( store.GetValue<string>("Type", (string) null)) : throw new ArgumentNullException("storage");
+
         if (  actualValue == null )
             return ( Brush ) null;
+
         if ( actualValue == typeof( SolidColorBrush ) )
         {
-            var solidColorBrush = new SolidColorBrush();
-            solidColorBrush.Color = store.GetValue<object>( "Color",  null ).ToColor();
+            var solidColorBrush     = new SolidColorBrush();
+            solidColorBrush.Color   = store.GetValue<object>( "Color",  null ).ToColor();
             solidColorBrush.Opacity = store.GetValue<double>( "Opacity", 0.0 );
             return ( Brush ) solidColorBrush;
         }
 
         if ( actualValue == typeof( LinearGradientBrush ) )
         {
-            var linear = new LinearGradientBrush();
+            var linear                    = new LinearGradientBrush();
             linear.ColorInterpolationMode = store.GetValue<ColorInterpolationMode>( "ColorInterpolationMode", linear.ColorInterpolationMode );
-            linear.Opacity = store.GetValue<double>( "Opacity", linear.Opacity );
-            linear.StartPoint = store.GetValue<Point>( "StartPoint", linear.StartPoint );
-            linear.EndPoint = store.GetValue<Point>( "EndPoint", linear.EndPoint );
-            linear.SpreadMethod = store.GetValue<GradientSpreadMethod>( "SpreadMethod", linear.SpreadMethod );
+            linear.Opacity                = store.GetValue<double>( "Opacity", linear.Opacity );
+            linear.StartPoint             = store.GetValue<Point>( "StartPoint", linear.StartPoint );
+            linear.EndPoint               = store.GetValue<Point>( "EndPoint", linear.EndPoint );
+            linear.SpreadMethod           = store.GetValue<GradientSpreadMethod>( "SpreadMethod", linear.SpreadMethod );
             linear.SaveSettings( store.GetValue<IEnumerable<SettingsStorage>>( "GradientStops", ( IEnumerable<SettingsStorage> ) null ) );
             return ( Brush ) linear;
         }
@@ -148,15 +150,15 @@ internal static class SettingsStorageHelper
         if ( !( actualValue == typeof( RadialGradientBrush ) ) )
             throw new ArgumentOutOfRangeException( "storage",  actualValue, LocalizedStrings.InvalidValue );
 
-        var radial = new RadialGradientBrush();
+        var radial                    = new RadialGradientBrush();
         radial.ColorInterpolationMode = store.GetValue<ColorInterpolationMode>( "ColorInterpolationMode", radial.ColorInterpolationMode );
-        radial.Opacity = store.GetValue<double>( "Opacity", radial.Opacity );
-        radial.Center = store.GetValue<Point>( "Center", radial.Center );
-        radial.GradientOrigin = store.GetValue<Point>( "GradientOrigin", radial.GradientOrigin );
-        radial.SpreadMethod = store.GetValue<GradientSpreadMethod>( "SpreadMethod", radial.SpreadMethod );
-        radial.RadiusX = store.GetValue<double>( "RadiusX", radial.RadiusX );
-        radial.RadiusY = store.GetValue<double>( "RadiusY", radial.RadiusY );
-        radial.MappingMode = store.GetValue<BrushMappingMode>( "MappingMode", radial.MappingMode );
+        radial.Opacity                = store.GetValue<double>( "Opacity", radial.Opacity );
+        radial.Center                 = store.GetValue<Point>( "Center", radial.Center );
+        radial.GradientOrigin         = store.GetValue<Point>( "GradientOrigin", radial.GradientOrigin );
+        radial.SpreadMethod           = store.GetValue<GradientSpreadMethod>( "SpreadMethod", radial.SpreadMethod );
+        radial.RadiusX                = store.GetValue<double>( "RadiusX", radial.RadiusX );
+        radial.RadiusY                = store.GetValue<double>( "RadiusY", radial.RadiusY );
+        radial.MappingMode            = store.GetValue<BrushMappingMode>( "MappingMode", radial.MappingMode );
         radial.SaveSettings( store.GetValue<IEnumerable<SettingsStorage>>( "GradientStops", ( IEnumerable<SettingsStorage> ) null ) );
         return ( Brush ) radial;
     }
@@ -171,8 +173,8 @@ internal static class SettingsStorageHelper
 
         foreach ( SettingsStorage settingsStorage in store )
         {
-            Color color = settingsStorage.GetValue<object>("Color",  null).ToColor();
-            double offset = settingsStorage.GetValue<double>("Offset", 0.0);
+            var color  = settingsStorage.GetValue<object>("Color",  null).ToColor();
+            var offset = settingsStorage.GetValue<double>("Offset", 0.0);
             myBrush.GradientStops.Add( new GradientStop( color, offset ) );
         }
     }
@@ -212,13 +214,16 @@ internal static class SettingsStorageHelper
 
         private static void DpoChangedEventArgsCallBack( DependencyObject dpo, DependencyPropertyChangedEventArgs e )
         {
-            ProxyDependencyPropertyClass zxYtXibpnAml0 = (ProxyDependencyPropertyClass) dpo;
-            if ( zxYtXibpnAml0._disposing )
+            ProxyDependencyPropertyClass proxyDpo = (ProxyDependencyPropertyClass) dpo;
+            
+            if ( proxyDpo._disposing )
                 return;
-            Action<DependencyPropertyChangedEventArgs> z7CxThCs = zxYtXibpnAml0.dpoChangedEventArgs;
-            if ( z7CxThCs == null )
+            
+            Action<DependencyPropertyChangedEventArgs> myEvent = proxyDpo.dpoChangedEventArgs;
+            
+            if ( myEvent == null )
                 return;
-            z7CxThCs( e );
+            myEvent( e );
         }
     }
 }

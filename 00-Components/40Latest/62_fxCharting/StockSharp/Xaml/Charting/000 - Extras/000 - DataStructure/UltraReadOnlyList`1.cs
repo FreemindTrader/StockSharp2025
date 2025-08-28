@@ -1,21 +1,23 @@
-﻿using System;
+﻿using SciChart.Data.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace StockSharp.Xaml.Charting;
 
-internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
+internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection 
 {
-    private readonly UltraList<T> _parent;
+    private readonly SciList<T> _parent;
 
-    public UltraReadOnlyList(UltraList<T> parent)
+    public UltraReadOnlyList(SciList<T> parent)
     {
         this._parent = parent;
     }
 
     public UltraReadOnlyList(T[ ] arr)
     {
-        this._parent = UltraList<T>.ForArray(arr);
+        this._parent = SciList<T>.ForArray(arr);
     }
 
     private void ThrowReadOnly()

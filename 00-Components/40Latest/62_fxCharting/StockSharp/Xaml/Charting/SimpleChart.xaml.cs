@@ -221,10 +221,7 @@ namespace StockSharp.Xaml.Charting
             throw new NotSupportedException( );
         }
 
-        void IChartEx.AddElement(
-          ChartArea area,
-          ChartCandleElement element,
-          Subscription candleSeries )
+        void IChartEx.AddElement(ChartArea area, ChartCandleElement element, Subscription candleSeries)
         {
             throw new NotSupportedException( );
         }

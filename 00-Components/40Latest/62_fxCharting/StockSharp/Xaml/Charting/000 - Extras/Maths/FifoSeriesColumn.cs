@@ -14,7 +14,7 @@ internal class FifoSeriesColumn<T> : BaseSeriesColumn<T>
     public FifoSeriesColumn(int size)
     {
         this._fifoSize = size;
-        this._innerList = (IUltraList<T>)new FifoBuffer<T>(size);
+        this._innerList = new FifoBuffer<T>(size);
         this._doubleBuffer = new T[size];
     }
 

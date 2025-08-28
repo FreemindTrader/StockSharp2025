@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SciChart.Data.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,9 +38,9 @@ public interface ISeriesColumn<T> : IList<T>, ICollection<T>, IEnumerable<T>, IE
 /// 
 /// </summary>
 /// <typeparam name="T"></typeparam>
-internal abstract class BaseSeriesColumn<T> : ISeriesColumn<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, ISeriesColumn
+internal abstract class BaseSeriesColumn<T> : ISeriesColumn<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection, ISeriesColumn 
 {
-    protected IUltraList<T> _innerList = (IUltraList<T>)new UltraList<T>(128);
+    protected ISciList<T> _innerList = (ISciList<T>)new SciList<T>(128);
 
     public virtual UncheckedList<T> ToUncheckedList(int baseIndex, int count)
     {

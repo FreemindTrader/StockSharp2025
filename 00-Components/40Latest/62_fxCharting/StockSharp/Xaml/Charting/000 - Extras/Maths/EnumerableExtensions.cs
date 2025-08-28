@@ -144,7 +144,7 @@ public static class EnumerableExtensions
             return objArray;
         }
 
-        UltraList<T> ultraList = list as UltraList<T>;
+        var ultraList = list as SciList<T>;
         if ( ultraList != null )
         {
             return ultraList.ItemsArray;

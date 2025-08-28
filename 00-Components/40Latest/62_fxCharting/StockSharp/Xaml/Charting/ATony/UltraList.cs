@@ -31,7 +31,7 @@
 //    {
 //    }
 
-//    internal class UltraList<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
+//    internal class SciList<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
 //    {
 //        private static readonly T[ ] _emptyArray = new T[ 0 ];
 //        private const int _defaultCapacity = 128;
@@ -40,12 +40,12 @@
 //        private object _syncRoot;
 //        private int _version;
 
-//        public UltraList( )
+//        public SciList( )
 //          : this( 128 )
 //        {
 //        }
 
-//        public UltraList( int capacity )
+//        public SciList( int capacity )
 //        {
 //            if ( capacity < 0 )
 //            {
@@ -55,12 +55,12 @@
 //            this._items = new T[ capacity ];
 //        }
 
-//        public static UltraList<T> ForArray( T[ ] arr )
+//        public static SciList<T> ForArray( T[ ] arr )
 //        {
-//            return new UltraList<T>( ) { _items = arr, _size = arr.Length };
+//            return new SciList<T>( ) { _items = arr, _size = arr.Length };
 //        }
 
-//        public UltraList( IEnumerable<T> collection )
+//        public SciList( IEnumerable<T> collection )
 //        {
 //            if ( collection == null )
 //            {
@@ -124,7 +124,7 @@
 //                }
 //                else
 //                {
-//                    this._items = UltraList<T>._emptyArray;
+//                    this._items = SciList<T>._emptyArray;
 //                }
 //            }
 //        }
@@ -206,7 +206,7 @@
 //        [SecuritySafeCritical]
 //        bool IList.Contains( object item )
 //        {
-//            if ( UltraList<T>.IsCompatibleObject( item ) )
+//            if ( SciList<T>.IsCompatibleObject( item ) )
 //            {
 //                return this.Contains( ( T )item );
 //            }
@@ -233,7 +233,7 @@
 
 //        int IList.IndexOf( object item )
 //        {
-//            if ( UltraList<T>.IsCompatibleObject( item ) )
+//            if ( SciList<T>.IsCompatibleObject( item ) )
 //            {
 //                return this.IndexOf( ( T )item );
 //            }
@@ -256,7 +256,7 @@
 //        [SecuritySafeCritical]
 //        void IList.Remove( object item )
 //        {
-//            if ( !UltraList<T>.IsCompatibleObject( item ) )
+//            if ( !SciList<T>.IsCompatibleObject( item ) )
 //            {
 //                return;
 //            }
@@ -359,12 +359,12 @@
 
 //        IEnumerator<T> IEnumerable<T>.GetEnumerator( )
 //        {
-//            return ( IEnumerator<T> )new UltraList<T>.Enumerator( this );
+//            return ( IEnumerator<T> )new SciList<T>.Enumerator( this );
 //        }
 
 //        IEnumerator IEnumerable.GetEnumerator( )
 //        {
-//            return ( IEnumerator )new UltraList<T>.Enumerator( this );
+//            return ( IEnumerator )new SciList<T>.Enumerator( this );
 //        }
 
 //        public int IndexOf( T item )
@@ -501,9 +501,9 @@
 //            this.Capacity = num;
 //        }
 
-//        public UltraList<T>.Enumerator GetEnumerator( )
+//        public SciList<T>.Enumerator GetEnumerator( )
 //        {
-//            return new UltraList<T>.Enumerator( this );
+//            return new SciList<T>.Enumerator( this );
 //        }
 
 //        public int IndexOf( T item, int index )
@@ -688,7 +688,7 @@
 
 //        internal static IList<T> Synchronized( PooledList<T> list )
 //        {
-//            return ( IList<T> )new UltraList<T>.SynchronizedList( list );
+//            return ( IList<T> )new SciList<T>.SynchronizedList( list );
 //        }
 
 //        public void SetCount( int setLength )
@@ -827,12 +827,12 @@
 
 //        public struct Enumerator : IEnumerator<T>, IDisposable, IEnumerator
 //        {
-//            private readonly UltraList<T> _list;
+//            private readonly SciList<T> _list;
 //            private readonly int _version;
 //            private T _current;
 //            private int _index;
 
-//            internal Enumerator( UltraList<T> list )
+//            internal Enumerator( SciList<T> list )
 //            {
 //                this._list = list;
 //                this._index = 0;
@@ -867,7 +867,7 @@
 
 //            public bool MoveNext( )
 //            {
-//                UltraList<T> list = this._list;
+//                SciList<T> list = this._list;
 //                if ( this._version != list._version || this._index >= list._size )
 //                {
 //                    return this.MoveNextRare( );
