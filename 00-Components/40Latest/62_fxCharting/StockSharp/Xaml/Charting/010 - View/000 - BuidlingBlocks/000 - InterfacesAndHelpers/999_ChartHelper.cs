@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: StockSharp.Xaml.Charting.ChartHelper
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using DevExpress.Xpf.Core;
+﻿using DevExpress.Xpf.Core;
 using Ecng.Common;
 using Ecng.Configuration;
 using Ecng.Logging;
@@ -103,20 +97,15 @@ public static class ChartHelper2025
     public static IIndicator TryGetIndicator( this IChartIndicatorElement indicator )
     {
         var myChart = ChartHelper2025.GetDrawingChart(indicator);
-        throw new NotImplementedException();
-
-        //BUG:
-
-        //return myChart?.GetIndicator( indicator );
+        
+        return myChart?.GetIndicatorElement( indicator );
     }
 
     public static Subscription TryGetSubscription( this IChartElement element )
     {
         var myChart = ChartHelper2025.GetDrawingChart(element);
-        
-        //BUG:
-        throw new NotImplementedException();
-        //return element.GetDrawingChart()?.TryGetSubscription( element );
+                
+        return myChart?.TryGetSubscription( element );
     }
 
     public static IIndicatorColorProvider TryColorProvider

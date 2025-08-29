@@ -87,13 +87,13 @@ public static class AxisBaseHelper2025
 
         public override void OnBeginAxisDraw()
         {
-            InitString();
+            SetupFormatting();
             if (  ParentAxis.TickProvider is CategoryDateTimeAxisTickProvider tickProvider )
                 tickProvider.SyncParentParams();
             base.OnBeginAxisDraw();
         }
 
-        private void InitString()
+        private void SetupFormatting()
         {
             _subDayTextFormatting = $"{{0:{_CategoryDateTimeAxis?.SubDayTextFormatting}}}";
             _textFormatting       = $"{{0:{_CategoryDateTimeAxis?.TextFormatting}}}";
@@ -127,7 +127,7 @@ public static class AxisBaseHelper2025
                 return base.FormatLabel( label );
 
             if ( _textFormatting == null || _subDayTextFormatting == null )
-                InitString();
+                SetupFormatting();
 
             return StringHelper.Put( ( ParentAxis?.TickProvider is CategoryDateTimeAxisTickProvider tickProvider ? ( tickProvider.DiffAtDate( label ) ? 1 : 0 ) : 0 ) != 0 ? _textFormatting : _subDayTextFormatting, GetDateTime( label ) );
         }
