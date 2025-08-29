@@ -6,18 +6,18 @@ using System.Numerics;
 
 namespace StockSharp.Xaml.Charting;
 
-internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection 
+internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection 
 {
     private readonly SciList<T> _parent;
 
-    public UltraReadOnlyList(SciList<T> parent)
+    public SciReadOnlyList(SciList<T> parent)
     {
-        this._parent = parent;
+        _parent = parent;
     }
 
-    public UltraReadOnlyList(T[ ] arr)
+    public SciReadOnlyList(T[ ] arr)
     {
-        this._parent = SciList<T>.ForArray(arr);
+        _parent = SciList<T>.ForArray(arr);
     }
 
     private void ThrowReadOnly()
@@ -29,7 +29,7 @@ internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<
     {
         get
         {
-            return this._parent.ItemsArray;
+            return _parent.ItemsArray;
         }
     }
 
@@ -37,11 +37,11 @@ internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<
     {
         get
         {
-            return this._parent.Capacity;
+            return _parent.Capacity;
         }
         set
         {
-            this.ThrowReadOnly();
+            ThrowReadOnly();
         }
     }
 
@@ -73,7 +73,7 @@ internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<
     {
         get
         {
-            return ((ICollection) this._parent).SyncRoot;
+            return ((ICollection) _parent).SyncRoot;
         }
     }
 
@@ -81,54 +81,54 @@ internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<
     {
         get
         {
-            return (object) this._parent[index];
+            return (object) _parent[index];
         }
         set
         {
-            this.ThrowReadOnly();
+            ThrowReadOnly();
         }
     }
 
     int IList.Add(object item)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
         return 0;
     }
 
     bool IList.Contains(object item)
     {
-        return ((IList) this._parent).Contains(item);
+        return ((IList) _parent).Contains(item);
     }
 
     void ICollection.CopyTo(Array array, int arrayIndex)
     {
-        ((ICollection) this._parent).CopyTo(array, arrayIndex);
+        ((ICollection) _parent).CopyTo(array, arrayIndex);
     }
 
     int IList.IndexOf(object item)
     {
-        return ((IList) this._parent).IndexOf(item);
+        return ((IList) _parent).IndexOf(item);
     }
 
     void IList.Insert(int index, object item)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     void IList.Remove(object item)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public int Count
     {
         get
         {
-            return this._parent.Count;
+            return _parent.Count;
         }
         internal set
         {
-            this.ThrowReadOnly();
+            ThrowReadOnly();
         }
     }
 
@@ -146,144 +146,144 @@ internal class UltraReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<
     {
         get
         {
-            return this._parent[index];
+            return _parent[index];
         }
         set
         {
-            this.ThrowReadOnly();
+            ThrowReadOnly();
         }
     }
 
     public void Add(T item)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public void Clear()
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public bool Contains(T item)
     {
-        return this._parent.Contains(item);
+        return _parent.Contains(item);
     }
 
     public void CopyTo(T[ ] array, int arrayIndex)
     {
-        this._parent.CopyTo(array, arrayIndex);
+        _parent.CopyTo(array, arrayIndex);
     }
 
     IEnumerator<T> IEnumerable<T>.GetEnumerator()
     {
-        return (IEnumerator<T>) this._parent.GetEnumerator();
+        return (IEnumerator<T>) _parent.GetEnumerator();
     }
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return (IEnumerator) this._parent.GetEnumerator();
+        return (IEnumerator) _parent.GetEnumerator();
     }
 
     public int IndexOf(T item)
     {
-        return this._parent.IndexOf(item);
+        return _parent.IndexOf(item);
     }
 
     public void Insert(int index, T item)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public bool Remove(T item)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
         return false;
     }
 
     public void RemoveAt(int index)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public T GetMaximum()
     {
-        return this._parent.GetMaximum();
+        return _parent.GetMaximum();
     }
 
     public T GetMinimum()
     {
-        return this._parent.GetMinimum();
+        return _parent.GetMinimum();
     }
 
     public void AddRange(IEnumerable<T> collection)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public void CopyTo(T[ ] array)
     {
-        this._parent.CopyTo(array);
+        _parent.CopyTo(array);
     }
 
     public void CopyTo(int index, T[ ] array, int arrayIndex, int count)
     {
-        this._parent.CopyTo(index, array, arrayIndex, count);
+        _parent.CopyTo(index, array, arrayIndex, count);
     }
 
     public bool EnsureMinSize(int minSize)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
         return false;
     }
 
     public int IndexOf(T item, int index)
     {
-        return this._parent.IndexOf(item, index);
+        return _parent.IndexOf(item, index);
     }
 
     public int IndexOf(T item, int index, int count)
     {
-        return this._parent.IndexOf(item, index, count);
+        return _parent.IndexOf(item, index, count);
     }
 
     public void InsertRange(int index, IEnumerable<T> collection)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public int LastIndexOf(T item)
     {
-        return this._parent.LastIndexOf(item);
+        return _parent.LastIndexOf(item);
     }
 
     public int LastIndexOf(T item, int index)
     {
-        return this._parent.LastIndexOf(item, index);
+        return _parent.LastIndexOf(item, index);
     }
 
     public int LastIndexOf(T item, int index, int count)
     {
-        return this._parent.LastIndexOf(item, index, count);
+        return _parent.LastIndexOf(item, index, count);
     }
 
     public void RemoveRange(int index, int count)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public T[ ] ToArray()
     {
-        return this._parent.ToArray();
+        return _parent.ToArray();
     }
 
     public void TrimExcess()
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public void SetCount(int setLength)
     {
-        this.ThrowReadOnly();
+        ThrowReadOnly();
     }
 
     public void GetMinMax(out T min, out T max)

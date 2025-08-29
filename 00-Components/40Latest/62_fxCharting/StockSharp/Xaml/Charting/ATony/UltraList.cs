@@ -455,7 +455,7 @@
 
 //        public IUltraReadOnlyList<T> AsReadOnly( )
 //        {
-//            return ( IUltraReadOnlyList<T> )new UltraReadOnlyList<T>( this );
+//            return ( IUltraReadOnlyList<T> )new SciReadOnlyList<T>( this );
 //        }
 
 //        public void CopyTo( T[ ] array )

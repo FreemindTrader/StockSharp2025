@@ -103,7 +103,7 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
 
     protected IUltraReadOnlyList<TimeframeSegmentWrapper> Method0098()
     {
-        return (IUltraReadOnlyList<TimeframeSegmentWrapper>)new UltraReadOnlyList<TimeframeSegmentWrapper>(_segments);
+        return (IUltraReadOnlyList<TimeframeSegmentWrapper>)new SciReadOnlyList<TimeframeSegmentWrapper>(_segments);
     }
 
 
