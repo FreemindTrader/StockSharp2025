@@ -404,9 +404,9 @@ public class SciList<T> : ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>,
         InsertRange( _size, collection );
     }
 
-    public IUltraReadOnlyList<T> AsReadOnly()
+    public IReadOnlySciList<T> AsReadOnly()
     {
-        return ( IUltraReadOnlyList<T> ) new SciReadOnlyList<T>( this );
+        return ( IReadOnlySciList<T> ) new ReadOnlySciList<T>( this );
     }
 
     public void CopyTo( T[ ] array )
@@ -608,12 +608,12 @@ public class SciList<T> : ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>,
     }
 
     /// <summary>
-    /// Returns a <see cref="List{T}"/> that contains the elements of the <see cref="SciList{T}"/>.
+    /// Returns a <see cref="IList{T}"/> that contains the elements of the <see cref="SciList{T}"/>.
     /// </summary>
     /// <returns></returns>
     public IList AsList()
     {
-        return new List<T>( _items );
+        return this;
     }
 
     /// <summary>

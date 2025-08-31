@@ -13,11 +13,19 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// For certain time period, we want to store the range of prices and the volume of trades at each price level.
 /// 
+/// TimeframeDataSegment indeed is kinda like a candle
+///     1)  Candle is a collection of price over time period ( eg. 5 minutes ), It will have a max price, a min price, an open price and a close price and also volume
+///         Candle is a collection of price information of the X-Axis
+///         
+///     2)  TimeframeDataSegment is a collection of price information <see cref="T:StockSharp.Messages.CandlePriceLevel"/> over a price range, It will have a max price, a min price, an open price and a close price and also volume
+///         TimeframeDataSegment is a collection of price information of the Y-Axis
+///         
 /// The more volume we have at a certain price level, the stronger the support or resistance that price range can be.
 /// </summary>
 /// <param name="datetime"></param>
 /// <param name="count"></param>
-public sealed class TimeframeDataSegment(DateTime datetime, int count) : IPoint
+
+public sealed class TimeframeDataSegment( DateTime datetime, int count ) : IPoint
 {
     public DateTime Time
     {
@@ -27,236 +35,235 @@ public sealed class TimeframeDataSegment(DateTime datetime, int count) : IPoint
         }
     }
 
-    public double MaxPrice
+    public double HighPrice
     {
         get
         {
-            return _maxPrice;
+            return _highPrice;
         }
 
         set
         {
-            _maxPrice = value;
+            _highPrice = value;
         }
     }
 
-    public double MinPrice
+    public double LowPrice
     {
         get
         {
-            return _minPrice;
+            return _lowPrice;
         }
 
         set
         {
-            _minPrice = value;
+            _lowPrice = value;
+        }
+    }
+
+    public double? OpenPrice
+    {
+        get
+        {
+            return _openPrice;
+        }
+
+        set
+        {
+            _openPrice = value;
+        }
+    }
+
+
+    public double ClosePrice
+    {
+        get
+        {
+            return _closePrice;
+        }
+
+        set
+        {
+            _closePrice = value;
         }
     }
 
     public int Count => _count;
 
     private readonly SyncObject _syncObject;
-    private readonly Dictionary<double, CandlePriceLevel> _price2CandlePriceLevel;
-    private readonly Dictionary<double, (KeyValuePair<double, CandlePriceLevel>[], SortedDictionary<double, CandlePriceLevel>, Decimal)> _complexCandlePriceLevel;
-    private readonly int _count = count;
+    private readonly Dictionary<double, CandlePriceLevel> _priceToCPL = new Dictionary<double, CandlePriceLevel>();
+    private readonly Dictionary<double, (KeyValuePair<double, CandlePriceLevel>[], SortedDictionary<double, CandlePriceLevel>, Decimal)> _priceStepToSortedPriceSegments = new Dictionary<double, (KeyValuePair<double, CandlePriceLevel>[], SortedDictionary<double, CandlePriceLevel>, decimal)>();
+
+    private readonly int _count            = count;
     private readonly DateTime _dsTimeframe = datetime;
 
-    private double _maxPrice = double.MinValue;
-    private double _minPrice = double.MaxValue;
-    private double _lastPrice;
-    private double? _firstPrice;
+    private double _highPrice              = double.MinValue;
+    private double _lowPrice               = double.MaxValue;
+    private double _closePrice;
+    private double? _openPrice;
 
 
+    public double X => ( double ) Time.Ticks;
 
-    
-
-
-    public double? FirstPrice
-    {
-        get
-        {
-            return _firstPrice;
-        }
-
-        set
-        {
-            _firstPrice = value;
-        }
-    }
-
-
-    public double LastPrice
-    {
-        get
-        {
-            return _lastPrice;
-        }
-        
-        set
-        {
-            _lastPrice = value;
-        }
-    }
-
-        
-    public double X => (double)Time.Ticks;
-    
     public double Y
     {
         get
         {
-            return _price2CandlePriceLevel.Count <= 0 ? double.NaN : ( MaxPrice + MinPrice ) / 2.0;
+            return _priceToCPL.Count <= 0 ? double.NaN : ( HighPrice + LowPrice ) / 2.0;
         }
 
     }
 
-    public void AddOrUpdatePriceLevel(double price, CandlePriceLevel priceLevel)
+    public void JoinCandlePriceLevel( double price, CandlePriceLevel cpl )
     {
         lock ( _syncObject )
         {
-            if ( priceLevel.TotalVolume == 0M )
+            if ( cpl.TotalVolume == 0M )
                 return;
-            CandlePriceLevel candlePriceLevel;
-            if ( _price2CandlePriceLevel.TryGetValue(price, out candlePriceLevel) )
+
+            if ( _priceToCPL.TryGetValue( price, out var _cpl ) )
             {
-                _price2CandlePriceLevel[price] = ( (CandlePriceLevel) candlePriceLevel ).Join(priceLevel);
+                _priceToCPL[price] = _cpl.Join( cpl );
             }
             else
             {
-                _price2CandlePriceLevel.Add(price, priceLevel);
-                UpdatePriceSegement(price);
+                _priceToCPL.Add( price, cpl );                
             }
+
+            UpdatePriceSegement( price );
             ClearPriceLevels();
         }
     }
 
-    public void SetPriceLevel(double price, CandlePriceLevel priceLvl)
+    public void SetCandlePriceLevel( double price, CandlePriceLevel cpl )
     {
         lock ( _syncObject )
         {
-            if ( priceLvl.TotalVolume == 0M )
-                return;
+            if ( cpl.TotalVolume == 0M )
+                return;            
 
-            CandlePriceLevel candlePriceLevel;
-            
-            if ( _price2CandlePriceLevel.TryGetValue(price, out candlePriceLevel) )
+            if ( _priceToCPL.TryGetValue( price, out var _cpl ) )
             {
-                if ( ( (CandlePriceLevel) candlePriceLevel ).TotalVolume == ( (CandlePriceLevel) priceLvl ).TotalVolume )
+                if ( _cpl.TotalVolume == cpl.TotalVolume )
                     return;
-                _price2CandlePriceLevel[price] = priceLvl;
+
+                _priceToCPL[price] = cpl;
             }
             else
-                _price2CandlePriceLevel.Add(price, priceLvl);
-            UpdatePriceSegement(price);
+                _priceToCPL.Add( price, cpl );
+
+            UpdatePriceSegement( price );
             ClearPriceLevels();
         }
     }
 
     private void ClearPriceLevels()
     {
-        _complexCandlePriceLevel.Clear();
+        _priceStepToSortedPriceSegments.Clear();
     }
 
-    private void UpdatePriceSegement(double price)
+    private void UpdatePriceSegement( double price )
     {
-        if ( price < MinPrice )
-            MinPrice = ( price );
-        if ( price > MaxPrice )
-            MaxPrice = ( price );
+        if ( price < LowPrice )
+            LowPrice = price;
 
-        double? first = FirstPrice;
-        first.GetValueOrDefault();
-        
-        if ( !first.HasValue )
-            FirstPrice = (new double?(price));
-        LastPrice = price;
+        if ( price > HighPrice )
+            HighPrice = price;
+
+        double? openPrice = OpenPrice;
+        openPrice.GetValueOrDefault();
+
+        if ( !openPrice.HasValue )
+            OpenPrice = price;
+
+        ClosePrice = price;
     }
 
-    private static double GetQuotient(double number, double divisible)
+    private static double GetLowerBound( double price, double priceStep )
     {
-        return Math.Floor(number / divisible) * divisible;
+        return Math.Floor( price / priceStep ) * priceStep;
     }
 
-    public CandlePriceLevel GetCandlePriceLevel(double price, double priceStep)
+    public CandlePriceLevel GetCPLFromPriceStep( double price, double priceStep )
     {
         if ( priceStep <= 0.0 )
-            throw new ArgumentOutOfRangeException("priceStep", (object)priceStep, LocalizedStrings.InvalidValue);
+            throw new ArgumentOutOfRangeException( "priceStep", ( object ) priceStep, LocalizedStrings.InvalidValue );
 
         lock ( _syncObject )
-        {                        
-            if ( _complexCandlePriceLevel.TryGetValue(priceStep, out var tuple) )
+        {
+            if ( _priceStepToSortedPriceSegments.TryGetValue( priceStep, out var tuple ) )
             {
-                return CollectionHelper.TryGetValue( tuple.Item2, GetQuotient(price, priceStep));
-            }
-                
-            var quotient = GetQuotient(price, priceStep);
-            var nextQuotient = quotient + priceStep;
-            CandlePriceLevel pl = new CandlePriceLevel();
-            pl.Price = (Decimal)price;
-            
-            
-            foreach ( var priceLvls in _price2CandlePriceLevel.Where( l => l.Key >= quotient && l.Key < nextQuotient ) )
-            {                
-                pl = ( priceLvls.Value ).Join(pl);
+                return CollectionHelper.TryGetValue( tuple.Item2, GetLowerBound( price, priceStep ) );
             }
 
-            return pl;
+            var psLowerBound = GetLowerBound(price, priceStep);
+            var psUpperBound = psLowerBound + priceStep;
+            var cpl          = new CandlePriceLevel();
+            cpl.Price        = ( Decimal ) price;
+
+
+            foreach ( var _cpl in _priceToCPL.Where( l => l.Key >= psLowerBound && l.Key < psUpperBound ) )
+            {
+                cpl = ( _cpl.Value ).Join( cpl );
+            }
+
+            return cpl;
         }
     }
 
-    public (KeyValuePair<double, CandlePriceLevel>[], Decimal) GetPriceLevelsAndVolume(double priceStep)
+    public (KeyValuePair<double, CandlePriceLevel>[ ], Decimal) GetCPLVFromPriceStep( double priceStep )
     {
         if ( priceStep <= 0.0 )
-            throw new ArgumentOutOfRangeException("priceStep", (object)priceStep, LocalizedStrings.InvalidValue);
-        
+            throw new ArgumentOutOfRangeException( "priceStep", ( object ) priceStep, LocalizedStrings.InvalidValue );
+
         lock ( _syncObject )
-        {            
-            if ( _complexCandlePriceLevel.TryGetValue(priceStep, out var tuple) )
+        {
+            if ( _priceStepToSortedPriceSegments.TryGetValue( priceStep, out var tuple ) )
                 return (tuple.Item1, tuple.Item3);
-            
-            Decimal myVolume = 0M;
 
-            var newPriceLevels = new SortedDictionary<double, CandlePriceLevel>();
-            
-            foreach ( (double myPrice, CandlePriceLevel level) in _price2CandlePriceLevel )
+            Decimal totalVolume = 0M;
+
+            var sortedPrice2CPLMap = new SortedDictionary<double, CandlePriceLevel>();
+
+            foreach ( (double myPrice, CandlePriceLevel _cpl) in _priceToCPL )
             {
-                
-                double myQuotient = GetQuotient(myPrice, priceStep);                
 
-                if ( newPriceLevels.TryGetValue(myQuotient, out var candleLevels) )
+                double psLowerBound = GetLowerBound(myPrice, priceStep);
+
+                if ( sortedPrice2CPLMap.TryGetValue( psLowerBound, out var cpl ) )
                 {
-                    newPriceLevels[myQuotient] = candleLevels.Join(level);
-                    myVolume = MathHelper.Max(myVolume, ( (CandlePriceLevel)candleLevels ).TotalVolume + ( (CandlePriceLevel)level ).TotalVolume);
+                    sortedPrice2CPLMap[psLowerBound] = cpl.Join( _cpl );
+                    totalVolume = MathHelper.Max( totalVolume,  cpl.TotalVolume +  _cpl.TotalVolume );
                 }
                 else
                 {
-                    newPriceLevels[myQuotient] = level;
-                    myVolume = MathHelper.Max(myVolume, ( (CandlePriceLevel) level ).TotalVolume);
+                    sortedPrice2CPLMap[psLowerBound] = _cpl;
+                    totalVolume = MathHelper.Max( totalVolume,  _cpl.TotalVolume );
                 }
             }
 
-            var priceLevelsArrary = newPriceLevels.ToArray<KeyValuePair<double, CandlePriceLevel>>();
+            var sortedPrice2CPLArray = sortedPrice2CPLMap.ToArray<KeyValuePair<double, CandlePriceLevel>>();
 
-            if ( _complexCandlePriceLevel.Count == 5 )
-                _complexCandlePriceLevel.Clear();
-            
-            _complexCandlePriceLevel[priceStep] = (priceLevelsArrary, newPriceLevels, myVolume);
-            
-            return (priceLevelsArrary, myVolume);
+            if ( _priceStepToSortedPriceSegments.Count == 5 )
+                _priceStepToSortedPriceSegments.Clear();
+
+            _priceStepToSortedPriceSegments[priceStep] = (sortedPrice2CPLArray, sortedPrice2CPLMap, totalVolume);
+
+            return (sortedPrice2CPLArray, totalVolume);
         }
     }
 
-    public static (double, double) MinMax(IEnumerable<TimeframeDataSegment> segments)
+    public static (double, double) MinMax( IEnumerable<TimeframeDataSegment> segments )
     {
         double minPrice = double.MaxValue;
         double maxPrice = double.MinValue;
         foreach ( TimeframeDataSegment segment in segments )
         {
-            if ( segment.MinPrice < minPrice )
-                minPrice = segment.MinPrice;
-            if ( segment.MaxPrice > maxPrice )
-                maxPrice = segment.MaxPrice;
+            if ( segment.LowPrice < minPrice )
+                minPrice = segment.LowPrice;
+            if ( segment.HighPrice > maxPrice )
+                maxPrice = segment.HighPrice;
         }
         return (minPrice, maxPrice);
-    }    
+    }
 }

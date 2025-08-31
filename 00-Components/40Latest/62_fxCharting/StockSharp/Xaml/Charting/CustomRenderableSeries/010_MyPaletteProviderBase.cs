@@ -43,7 +43,7 @@ namespace StockSharp.Xaml.Charting
     /// 
     /// Since this interface IXxxPaletteProvider is used in the old SciChart versions, I also implement IPaletteProvider interface for compatibility with the new SciChart versions
     /// </summary>
-    public class MyPaletteProviderBase : DependencyObject, IPaletteProvider, ISSPaletteProvider
+    public class MyPaletteProviderBase : DependencyObject, IPaletteProvider, IPaletteProviderSS
     {
         public static readonly DependencyProperty AreaSelectionProperty = DependencyProperty.Register("AreaSelection", typeof(AreaSelection), typeof(MyPaletteProviderBase), new PropertyMetadata(null));
         public virtual Color? GetColor(IRenderableSeries rSeries, double _param2, double _param3)

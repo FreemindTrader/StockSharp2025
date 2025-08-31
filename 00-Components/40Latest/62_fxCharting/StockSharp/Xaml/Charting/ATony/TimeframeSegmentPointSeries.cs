@@ -88,7 +88,7 @@
 //        //{
 //        //    get
 //        //    {
-//        //        return ( ISciReadOnlyList<TimeframeSegmentWrapper> )new SciReadOnlyList<TimeframeSegmentWrapper>( this._segments );
+//        //        return ( ISciReadOnlyList<TimeframeSegmentWrapper> )new ReadOnlySciList<TimeframeSegmentWrapper>( this._segments );
 //        //    }
 //        //}
 

@@ -7,16 +7,16 @@
 
 //namespace StockSharp.Xaml.Charting.ATony
 //{
-//    internal class SciReadOnlyList<T> : ISciReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
+//    internal class ReadOnlySciList<T> : ISciReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection
 //    {
 //        private readonly SciList<T> _parent;
 
-//        public SciReadOnlyList( SciList<T> parent )
+//        public ReadOnlySciList( SciList<T> parent )
 //        {
 //            _parent = parent;
 //        }
 
-//        public SciReadOnlyList( T[ ] arr )
+//        public ReadOnlySciList( T[ ] arr )
 //        {
 //            var myList = arr.ToList();
 //            _parent = new SciList( myList.To );

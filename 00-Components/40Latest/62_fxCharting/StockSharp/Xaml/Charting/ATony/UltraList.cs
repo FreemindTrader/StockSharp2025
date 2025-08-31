@@ -27,7 +27,7 @@
 //        void SetCount( int setLength );
 //    }
 
-//    public interface IUltraReadOnlyList<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
+//    public interface IReadOnlySciList<T> : IUltraList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable
 //    {
 //    }
 
@@ -453,9 +453,9 @@
 //            this.InsertRange( this._size, collection );
 //        }
 
-//        public IUltraReadOnlyList<T> AsReadOnly( )
+//        public IReadOnlySciList<T> AsReadOnly( )
 //        {
-//            return ( IUltraReadOnlyList<T> )new SciReadOnlyList<T>( this );
+//            return ( IReadOnlySciList<T> )new ReadOnlySciList<T>( this );
 //        }
 
 //        public void CopyTo( T[ ] array )

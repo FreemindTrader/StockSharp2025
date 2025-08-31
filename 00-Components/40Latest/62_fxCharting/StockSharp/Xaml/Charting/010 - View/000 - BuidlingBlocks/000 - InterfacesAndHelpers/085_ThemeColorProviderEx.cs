@@ -7,18 +7,24 @@ using System.Windows;
 using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting;
-#nullable disable
-public class ThemeColorProviderEx : ThemeColorProvider,
-                                    IThemeProviderEx
+
+
+/// <summary>
+/// SS extends the ThemeColorProvider with the following extra properties:
+/// 
+/// Any new properties added to this class was also added to the IThemeProviderEx interface
+/// 
+/// </summary>
+public class ThemeColorProviderEx : ThemeColorProvider, IThemeProviderEx
 {
-    protected bool OnSetPropertyChanged<T>(ref T objectOne, T objectTwo, string propertyName)
+    protected bool OnSetPropertyChanged<T>( ref T objectOne, T objectTwo, string propertyName )
     {
-        if ( EqualityComparer<T>.Default.Equals(objectOne, objectTwo) )
+        if ( EqualityComparer<T>.Default.Equals( objectOne, objectTwo ) )
             return false;
 
         objectOne = objectTwo;
 
-        OnPropertyChanged(propertyName);
+        OnPropertyChanged( propertyName );
 
         return true;
     }
@@ -34,19 +40,19 @@ public class ThemeColorProviderEx : ThemeColorProvider,
             if ( _scrollbarFillBrush == value )
                 return;
             _scrollbarFillBrush = value;
-            OnPropertyChanged(nameof(ScrollbarFillBrush));
+            OnPropertyChanged( nameof( ScrollbarFillBrush ) );
         }
     }
 
     /// <summary>
-    /// Color for the second timeframe in the box volume indicator.
+    /// Color for the second timeframe in the Point and Figure charts
     /// </summary>
     public Color BoxVolumeTimeframe2Color
     {
         get => _boxVolumeTimeframe2Color;
         set
         {
-            OnSetPropertyChanged<Color>(ref _boxVolumeTimeframe2Color, value, nameof(BoxVolumeTimeframe2Color));
+            OnSetPropertyChanged<Color>( ref _boxVolumeTimeframe2Color, value, nameof( BoxVolumeTimeframe2Color ) );
         }
     }
 
@@ -55,7 +61,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _boxVolumeTimeframe2FrameColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _boxVolumeTimeframe2FrameColor, value, nameof(BoxVolumeTimeframe2FrameColor));
+            OnSetPropertyChanged<Color>( ref _boxVolumeTimeframe2FrameColor, value, nameof( BoxVolumeTimeframe2FrameColor ) );
         }
     }
 
@@ -64,7 +70,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _boxVolumeTimeframe3Color;
         set
         {
-            OnSetPropertyChanged<Color>(ref _boxVolumeTimeframe3Color, value, nameof(BoxVolumeTimeframe3Color));
+            OnSetPropertyChanged<Color>( ref _boxVolumeTimeframe3Color, value, nameof( BoxVolumeTimeframe3Color ) );
         }
     }
 
@@ -73,7 +79,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _boxVolumeHighVolColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _boxVolumeHighVolColor, value, nameof(BoxVolumeHighVolColor));
+            OnSetPropertyChanged<Color>( ref _boxVolumeHighVolColor, value, nameof( BoxVolumeHighVolColor ) );
         }
     }
 
@@ -82,7 +88,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _clusterProfileLineColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _clusterProfileLineColor, value, nameof(ClusterProfileLineColor));
+            OnSetPropertyChanged<Color>( ref _clusterProfileLineColor, value, nameof( ClusterProfileLineColor ) );
         }
     }
 
@@ -91,7 +97,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _clusterProfileTextColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _clusterProfileTextColor, value, nameof(ClusterProfileTextColor));
+            OnSetPropertyChanged<Color>( ref _clusterProfileTextColor, value, nameof( ClusterProfileTextColor ) );
         }
     }
 
@@ -100,7 +106,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _clusterProfileClusterColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _clusterProfileClusterColor, value, nameof(ClusterProfileClusterColor));
+            OnSetPropertyChanged<Color>( ref _clusterProfileClusterColor, value, nameof( ClusterProfileClusterColor ) );
         }
     }
 
@@ -109,7 +115,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _clusterProfileClusterMaxColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _clusterProfileClusterMaxColor, value, nameof(ClusterProfileClusterMaxColor));
+            OnSetPropertyChanged<Color>( ref _clusterProfileClusterMaxColor, value, nameof( ClusterProfileClusterMaxColor ) );
         }
     }
 
@@ -118,7 +124,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _boxVolumeCellFontColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _boxVolumeCellFontColor, value, nameof(BoxVolumeCellFontColor));
+            OnSetPropertyChanged<Color>( ref _boxVolumeCellFontColor, value, nameof( BoxVolumeCellFontColor ) );
         }
     }
 
@@ -129,81 +135,11 @@ public class ThemeColorProviderEx : ThemeColorProvider,
         get => _clusterProfileSeparatorLineColor;
         set
         {
-            OnSetPropertyChanged<Color>(ref _clusterProfileSeparatorLineColor, value, nameof(ClusterProfileSeparatorLineColor));
+            OnSetPropertyChanged<Color>( ref _clusterProfileSeparatorLineColor, value, nameof( ClusterProfileSeparatorLineColor ) );
         }
     }
 
-    private Brush _defaultAxisMarkerAnnotationBackground;
-
-    private Brush _defaultAxisMarkerAnnotationForeground;
-
-    private Brush _cursorLabelBackgroundBrush;
-
-    private Brush _cursorLabelBorderBrush;
-
-    private Brush _cursorLabelForeground;
-
-    private Brush _cursorLineBrush;
-
-    private Brush _defaultColumnFillBrush;
-
-    private Color _defaultColumnOutlineColor;
-
-    private Color _defaultLineSeriesColor;
-
-    private Color _defaultDownBandFillColor;
-
-    private Color _defaultDownBandLineColor;
-
-    private Brush _defaultCandleDownBodyBrush;
-
-    private Color _defaultCandleDownWickColor;
-
-    private Brush _gridBackgroundBrush;
-
-    private Brush _gridBorderBrush;
-
-    private Brush _legendBackgroundBrush;
-
-    private Brush _majorGridLinesBrush;
-
-    private Brush _minorGridLinesBrush;
-
-    private Brush _defaultMountainAreaBrush;
-
-    private Color _defaultMountainLineColor;
-
-    private Brush _defaultColorMapBrush;
-
-    private Brush _overviewFillBrush;
-
-    private Brush _rolloverLabelBackgroundBrush;
-
-    private Brush _rolloverLabelBorderBrush;
-
-    private Brush _rubberBandFillBrush;
-
-    private Brush _rubberBandStrokeBrush;
-
-    private Brush _sciChartBackground;
-
-    private Brush _defaultTextAnnotationBackground;
-
-    private Brush _defaultTextAnnotationForeground;
-
-    private Brush _tickTextBrush;
-
-    private Color _defaultUpBandFillColor;
-
-    private Color _defaultUpBandLineColor;
-
-    private Brush _defaultCandleUpBodyBrush;
-
-    private Color _defaultCandleUpWickColor;
-
-    private Color _axisBandsFill;
-
-    private Brush _rolloverLineStroke;
+    
 
     private Brush _scrollbarFillBrush;
 
@@ -227,68 +163,68 @@ public class ThemeColorProviderEx : ThemeColorProvider,
 
     private Color _clusterProfileClusterMaxColor;
 
-    public new void ApplyTheme(IThemeProvider _param1)
+    public new void ApplyTheme( IThemeProvider provider )
     {
-        InterfaceHelpers2025.CopyInterfaceProperties<IThemeProvider>(_param1, (IThemeProvider)this);
+        InterfaceCopier2025.CopyInterfaceProperties<IThemeProvider>( provider, ( IThemeProvider ) this );
     }
 
-    public new void ApplyTheme(ResourceDictionary rc)
+    public new void ApplyTheme( ResourceDictionary rc )
     {
         foreach ( DictionaryEntry dictionaryEntry in rc )
         {
-            if ( dictionaryEntry.Value is DependencyObject dependencyObject && !dependencyObject.IsSealed )
+            if ( dictionaryEntry.Value is DependencyObject dpo && !dpo.IsSealed )
             {
-                FreezeHelper2025.SetFreeze(dependencyObject, true);
+                FreezeHelper2025.SetFreeze( dpo, true );
             }
 
         }
-        GridBorderBrush = (Brush)rc["GridBorderBrush"];
-        GridBackgroundBrush = (Brush)rc["GridBackgroundBrush"];
-        SciChartBackground = (Brush)rc["SciChartBackground"];
-        TickTextBrush = (Brush)rc["TickTextBrush"];
-        MajorGridLinesBrush = (Brush)rc["MajorGridLineBrush"];
-        MinorGridLinesBrush = (Brush)rc["MinorGridLineBrush"];
-        RolloverLineStroke = (Brush)rc["RolloverLineBrush"];
-        RolloverLabelBorderBrush = (Brush)rc["LabelBorderBrush"];
-        RolloverLabelBackgroundBrush = (Brush)rc["LabelBackgroundBrush"];
-        DefaultCandleUpWickColor = (Color)rc["UpWickColor"];
-        DefaultCandleDownWickColor = (Color)rc["DownWickColor"];
-        DefaultCandleUpBodyBrush = (Brush)rc["UpBodyBrush"];
-        DefaultCandleDownBodyBrush = (Brush)rc["DownBodyBrush"];
-        DefaultColumnOutlineColor = (Color)rc["ColumnLineColor"];
-        DefaultColumnFillBrush = (Brush)rc["ColumnFillBrush"];
-        DefaultLineSeriesColor = (Color)rc["LineSeriesColor"];
-        DefaultMountainAreaBrush = (Brush)rc["MountainAreaBrush"];
-        DefaultMountainLineColor = (Color)rc["MountainLineColor"];
-        DefaultColorMapBrush = (Brush)rc["DefaultColorMapBrush"];
-        DefaultDownBandFillColor = (Color)rc["DownBandSeriesLineColor"];
-        DefaultUpBandFillColor = (Color)rc["UpBandSeriesLineColor"];
-        DefaultUpBandLineColor = (Color)rc["UpBandSeriesFillColor"];
-        DefaultDownBandLineColor = (Color)rc["DownBandSeriesFillColor"];
-        RubberBandFillBrush = (Brush)rc["RubberBandFillBrush"];
-        RubberBandStrokeBrush = (Brush)rc["RubberBandStrokeBrush"];
-        CursorLabelForeground = (Brush)rc["LabelForegroundBrush"];
-        CursorLabelBackgroundBrush = (Brush)rc["LabelBackgroundBrush"];
-        CursorLabelBorderBrush = (Brush)rc["LabelBorderBrush"];
-        CursorLineBrush = (Brush)rc["CursorLineBrush"];
-        OverviewFillBrush = (Brush)rc["OverviewFillBrush"];
-        ScrollbarFillBrush = (Brush)rc["ScrollbarFillBrush"];
-        LegendBackgroundBrush = (Brush)rc["LegendBackgroundBrush"];
-        DefaultTextAnnotationBackground = (Brush)rc["TextAnnotationBackground"];
-        DefaultTextAnnotationForeground = (Brush)rc["TextAnnotationForeground"];
-        DefaultAxisMarkerAnnotationBackground = (Brush)rc["TextAnnotationBackground"];
-        DefaultAxisMarkerAnnotationForeground = (Brush)rc["TextAnnotationForeground"];
-        AxisBandsFill = (Color)rc["AxisBandsFill"];
-        BoxVolumeTimeframe2Color = (Color)rc["BoxVolumeTimeframe2Color"];
-        BoxVolumeTimeframe2FrameColor = (Color)rc["BoxVolumeTimeframe2FrameColor"];
-        BoxVolumeTimeframe3Color = (Color)rc["BoxVolumeTimeframe3Color"];
-        BoxVolumeCellFontColor = (Color)rc["BoxVolumeCellFontColor"];
-        BoxVolumeHighVolColor = (Color)rc["BoxVolumeHighVolColor"];
-        ClusterProfileSeparatorLineColor = (Color)rc["ClusterProfileSeparatorLineColor"];
-        ClusterProfileLineColor = (Color)rc["ClusterProfileLineColor"];
-        ClusterProfileTextColor = (Color)rc["ClusterProfileTextColor"];
-        ClusterProfileClusterColor = (Color)rc["ClusterProfileClusterColor"];
-        ClusterProfileClusterMaxColor = (Color)rc["ClusterProfileClusterMaxColor"];
+        GridBorderBrush                       = ( Brush ) rc["GridBorderBrush"];
+        GridBackgroundBrush                   = ( Brush ) rc["GridBackgroundBrush"];
+        SciChartBackground                    = ( Brush ) rc["SciChartBackground"];
+        TickTextBrush                         = ( Brush ) rc["TickTextBrush"];
+        MajorGridLinesBrush                   = ( Brush ) rc["MajorGridLineBrush"];
+        MinorGridLinesBrush                   = ( Brush ) rc["MinorGridLineBrush"];
+        RolloverLineStroke                    = ( Brush ) rc["RolloverLineBrush"];
+        RolloverLabelBorderBrush              = ( Brush ) rc["LabelBorderBrush"];
+        RolloverLabelBackgroundBrush          = ( Brush ) rc["LabelBackgroundBrush"];
+        DefaultCandleUpWickColor              = ( Color ) rc["UpWickColor"];
+        DefaultCandleDownWickColor            = ( Color ) rc["DownWickColor"];
+        DefaultCandleUpBodyBrush              = ( Brush ) rc["UpBodyBrush"];
+        DefaultCandleDownBodyBrush            = ( Brush ) rc["DownBodyBrush"];
+        DefaultColumnOutlineColor             = ( Color ) rc["ColumnLineColor"];
+        DefaultColumnFillBrush                = ( Brush ) rc["ColumnFillBrush"];
+        DefaultLineSeriesColor                = ( Color ) rc["LineSeriesColor"];
+        DefaultMountainAreaBrush              = ( Brush ) rc["MountainAreaBrush"];
+        DefaultMountainLineColor              = ( Color ) rc["MountainLineColor"];
+        DefaultColorMapBrush                  = ( Brush ) rc["DefaultColorMapBrush"];
+        DefaultDownBandFillColor              = ( Color ) rc["DownBandSeriesLineColor"];
+        DefaultUpBandFillColor                = ( Color ) rc["UpBandSeriesLineColor"];
+        DefaultUpBandLineColor                = ( Color ) rc["UpBandSeriesFillColor"];
+        DefaultDownBandLineColor              = ( Color ) rc["DownBandSeriesFillColor"];
+        RubberBandFillBrush                   = ( Brush ) rc["RubberBandFillBrush"];
+        RubberBandStrokeBrush                 = ( Brush ) rc["RubberBandStrokeBrush"];
+        CursorLabelForeground                 = ( Brush ) rc["LabelForegroundBrush"];
+        CursorLabelBackgroundBrush            = ( Brush ) rc["LabelBackgroundBrush"];
+        CursorLabelBorderBrush                = ( Brush ) rc["LabelBorderBrush"];
+        CursorLineBrush                       = ( Brush ) rc["CursorLineBrush"];
+        OverviewFillBrush                     = ( Brush ) rc["OverviewFillBrush"];
+        ScrollbarFillBrush                    = ( Brush ) rc["ScrollbarFillBrush"];
+        LegendBackgroundBrush                 = ( Brush ) rc["LegendBackgroundBrush"];
+        DefaultTextAnnotationBackground       = ( Brush ) rc["TextAnnotationBackground"];
+        DefaultTextAnnotationForeground       = ( Brush ) rc["TextAnnotationForeground"];
+        DefaultAxisMarkerAnnotationBackground = ( Brush ) rc["TextAnnotationBackground"];
+        DefaultAxisMarkerAnnotationForeground = ( Brush ) rc["TextAnnotationForeground"];
+        AxisBandsFill                         = ( Color ) rc["AxisBandsFill"];
+        BoxVolumeTimeframe2Color              = ( Color ) rc["BoxVolumeTimeframe2Color"];
+        BoxVolumeTimeframe2FrameColor         = ( Color ) rc["BoxVolumeTimeframe2FrameColor"];
+        BoxVolumeTimeframe3Color              = ( Color ) rc["BoxVolumeTimeframe3Color"];
+        BoxVolumeCellFontColor                = ( Color ) rc["BoxVolumeCellFontColor"];
+        BoxVolumeHighVolColor                 = ( Color ) rc["BoxVolumeHighVolColor"];
+        ClusterProfileSeparatorLineColor      = ( Color ) rc["ClusterProfileSeparatorLineColor"];
+        ClusterProfileLineColor               = ( Color ) rc["ClusterProfileLineColor"];
+        ClusterProfileTextColor               = ( Color ) rc["ClusterProfileTextColor"];
+        ClusterProfileClusterColor            = ( Color ) rc["ClusterProfileClusterColor"];
+        ClusterProfileClusterMaxColor         = ( Color ) rc["ClusterProfileClusterMaxColor"];
     }
 
     //public Brush GridBorderBrush
@@ -731,7 +667,7 @@ public class ThemeColorProviderEx : ThemeColorProvider,
 
 
 
-    
 
-    
+
+
 }

@@ -6,19 +6,22 @@ using System;
 
 namespace StockSharp.Xaml.Charting;
 
+/// <summary>
+/// A helper class to handle the drawing of points.
+/// </summary>
 internal static class FastPointsHelper
 {
-    internal static void IteratePoints(IPathContextFactory lineContextFactory, Func<double, double, IPathColor> createPenFunc, IPointSeries pointSeries, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
+    internal static void DrawPoints(IPathContextFactory lineContextFactory, Func<double, double, IPathColor> createPenFunc, IPointSeries pointSeries, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
     {
-        FastPointsHelper.IteratePoints(lineContextFactory, createPenFunc, pointSeries.XValues, pointSeries.YValues, pointSeries.Count, xCalc, yCalc);
+        DrawPoints(lineContextFactory, createPenFunc, pointSeries.XValues, pointSeries.YValues, pointSeries.Count, xCalc, yCalc);
     }
 
-    public static void IteratePoints(IPointMarkerPathContextFactory pathFactory, IPointSeries pointSeries, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
+    public static void DrawPoints(IPointMarkerPathContextFactory pathFactory, IPointSeries pointSeries, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
     {
-        FastPointsHelper.IteratePoints(pathFactory, (Func<double, double, IPathColor>)( (x, y) => (IPathColor)null ), pointSeries.XValues, pointSeries.YValues, pointSeries.Count, xCalc, yCalc);
+        DrawPoints(pathFactory, (Func<double, double, IPathColor>)( (x, y) => (IPathColor)null ), pointSeries.XValues, pointSeries.YValues, pointSeries.Count, xCalc, yCalc);
     }
 
-    private static void IteratePoints(IPathContextFactory pathContextFactory, Func<double, double, IPathColor> createPenFunc, Values<double> xValues, Values<double> yValues, int count, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
+    private static void DrawPoints(IPathContextFactory pathContextFactory, Func<double, double, IPathColor> createPenFunc, Values<double> xValues, Values<double> yValues, int count, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
     {
         var isVertical         = !xCalc.IsHorizontalAxisCalculator;
         var pathDrawingContext = (IPathDrawingContext) null;
@@ -66,7 +69,7 @@ internal static class FastPointsHelper
         pathDrawingContext?.End();
     }
 
-    private static void IteratePoints(IPointMarkerPathContextFactory pathContextFactory, Func<double, double, IPathColor> createPenFunc, Values<double> xValues, Values<double> yValues, int count, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
+    private static void DrawPoints(IPointMarkerPathContextFactory pathContextFactory, Func<double, double, IPathColor> createPenFunc, Values<double> xValues, Values<double> yValues, int count, ICoordinateCalculator<double> xCalc, ICoordinateCalculator<double> yCalc)
     {
         var isVertical         = !xCalc.IsHorizontalAxisCalculator;
         var pathDrawingContext = (IPointMarkerPathDrawingContext)null;

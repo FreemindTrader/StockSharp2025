@@ -7,73 +7,85 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace StockSharp.Xaml.Charting;
+
+/// <summary>
+/// 
+/// TimeframeSegmentPointSeries is like the line representation of the TimeframeSegment
+/// 
+/// TimeframeSegmentDataSeries is like the Candle of the TimeframeSegment
+/// 
+/// </summary>
 public sealed class TimeframeSegmentPointSeries : IPointSeries
 {
-    private readonly TimeframeSegmentWrapper[] _segments;
-    private readonly DoubleRange _yRange;
-    private Values<double> _xValues;
-    private Values<double> _yValues;
-    private readonly Dictionary<double, CandlePriceLevel> _doubleToCandlePriceLevel;
-    private readonly IEnumerable<double> _allPrices;
-    private readonly double _priceStep;
-    private readonly IndexRange _pointRange;
-    private readonly IndexRange _visibleRange;
+    private readonly Dictionary<double, CandlePriceLevel> _priceToCPL = new Dictionary<double, CandlePriceLevel>();
 
-    public TimeframeSegmentPointSeries(TimeframeDataSegment[] tfSegments, IndexRange pointRange, IRange visibleXRange, double priceStep)
-    {        
-        _priceStep = priceStep;
-        _pointRange = (IndexRange)pointRange.Clone();
-        
+    private readonly TimeframeIndexedSegment[] _segments;
+    private readonly DoubleRange               _yRange;
+    private Values<double>                     _xValues;
+    private Values<double>                     _yValues;    
+    private readonly IEnumerable<double>       _allPrices;
+    private readonly double                    _priceStep;
+    private readonly IndexRange                _pointRange;
+    private readonly IndexRange                _visibleRange;
+
+    public TimeframeSegmentPointSeries( TimeframeDataSegment[ ] tfSegments, IndexRange pointRange, IRange visibleXRange, double priceStep )
+    {
+        _priceStep    = priceStep;
+        _pointRange   = ( IndexRange ) pointRange.Clone();
+
         if ( !( visibleXRange is IndexRange visibleR ) )
+        {
             visibleR = pointRange;
-        
+        }
+            
         _visibleRange = visibleR;
-        _segments = new TimeframeSegmentWrapper[pointRange.Max - pointRange.Min + 1];
-        
-        for ( int min = pointRange.Min; min <= pointRange.Max; ++min )
-        {
-            var segment = tfSegments[min];
-            _segments[min - pointRange.Min] = new TimeframeSegmentWrapper(segment, (double)min);
-        }
-        double myMinValue = double.MaxValue;
-        double myMaxValue = double.MinValue;
+        _segments     = new TimeframeIndexedSegment[pointRange.Max - pointRange.Min + 1];
 
-        foreach ( TimeframeSegmentWrapper wrapper in _segments )
+        for ( int i = pointRange.Min; i <= pointRange.Max; ++i )
         {
-            if ( wrapper.Segment.MinPrice < myMinValue )
-                myMinValue = wrapper.Segment.MinPrice;
-
-            if ( wrapper.Segment.MaxPrice > myMaxValue )
-                myMaxValue = wrapper.Segment.MaxPrice;
+            var segment = tfSegments[i];
+            _segments[i - pointRange.Min] = new TimeframeIndexedSegment( segment, ( double ) i );
         }
 
-        _yRange = new DoubleRange(myMinValue, myMaxValue);
-        
-        var newPriceSet = new HashSet<double>();
+        double min = double.MaxValue;
+        double max = double.MinValue;
 
-        foreach ( (double key, CandlePriceLevel level) in Segments.Where(p => p.Segment.Count >= VisibleRange.Min && p.Segment.Count <= VisibleRange.Max).SelectMany(t => t.Segment.GetPriceLevelsAndVolume(priceStep).Item1) )
+        foreach ( TimeframeIndexedSegment tfs in _segments )
         {
-            newPriceSet.Add(key);
-            CandlePriceLevel candlePriceLevel2;
-            if ( _doubleToCandlePriceLevel.TryGetValue(key, out candlePriceLevel2) )
-                _doubleToCandlePriceLevel[key] = ( candlePriceLevel2 ).Join(level);
+            if ( tfs.Segment.LowPrice < min )
+                min = tfs.Segment.LowPrice;
+
+            if ( tfs.Segment.HighPrice > max )
+                max = tfs.Segment.HighPrice;
+        }
+
+        _yRange = new DoubleRange( min, max );
+
+        var allPrices = new HashSet<double>();
+
+        foreach ( (double price, CandlePriceLevel cpl) in Segments.Where( p => p.Segment.Count >= VisibleRange.Min && p.Segment.Count <= VisibleRange.Max ).SelectMany( t => t.Segment.GetCPLVFromPriceStep( priceStep ).Item1 ) )
+        {
+            allPrices.Add( price );
+            
+            if ( _priceToCPL.TryGetValue( price, out var _cpl ) )
+                _priceToCPL[price] = _cpl.Join( cpl );
             else
-                _doubleToCandlePriceLevel.Add(key, level);
+                _priceToCPL.Add( price, cpl );
         }
-        
+
         int index = 0;
-        double[] newPriceArray = new double[newPriceSet.Count];
-        
-        foreach ( double item in newPriceSet )
+        double[] allPricesArray = new double[allPrices.Count];
+
+        foreach ( double price in allPrices )
         {
-            newPriceArray[index] = item;
+            allPricesArray[index] = price;
             ++index;
         }
 
-        _allPrices = (IEnumerable<double>)new SciList<double>(newPriceArray);
+        _allPrices = ( IEnumerable<double> ) new SciList<double>( allPricesArray );
     }
 
-   
+
     /// <summary>
     /// Gets the Raw X-Values for the PointSeries.
     /// </summary>
@@ -83,7 +95,7 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
         {
             return _xValues ?? ( _xValues = new Values<double>( _segments.Select( p => p.X ).ToArray() ) );
         }
-        
+
     }
 
 
@@ -94,16 +106,19 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
     {
         get
         {
-            return _yValues ?? ( _yValues = new Values<double>(_segments.Select(p => p.Y).ToArray()) );
-        }        
+            return _yValues ?? ( _yValues = new Values<double>( _segments.Select( p => p.Y ).ToArray() ) );
+        }
     }
 
-    public TimeframeSegmentWrapper[] Segments => _segments;
+    public TimeframeIndexedSegment[ ] Segments => _segments;
 
 
-    protected IUltraReadOnlyList<TimeframeSegmentWrapper> Method0098()
+    public IReadOnlySciList<TimeframeIndexedSegment> ReadOnlySegments
     {
-        return (IUltraReadOnlyList<TimeframeSegmentWrapper>)new SciReadOnlyList<TimeframeSegmentWrapper>(_segments);
+        get
+        {
+            return ( IReadOnlySciList<TimeframeIndexedSegment> ) new ReadOnlySciList<TimeframeIndexedSegment>( _segments );
+        }        
     }
 
 
@@ -119,17 +134,17 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
 
         set
         {
-            throw new NotSupportedException("Count is read-only for TimeframeSegmentPointSeries.");
+            throw new NotSupportedException( "Count is read-only for TimeframeSegmentPointSeries." );
         }
     }
-    
+
 
     public IEnumerable<double> AllPrices
     {
         get
         {
             return _allPrices;
-        }        
+        }
     }
 
     //[IndexerName("#=zMRIb09I=")]
@@ -137,7 +152,7 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
     {
         get
         {
-            return (IPoint)_segments[index];
+            return ( IPoint ) _segments[index];
         }
     }
 
@@ -147,7 +162,7 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
         {
             return _priceStep;
         }
-        
+
     }
 
     public IndexRange DataRange => _pointRange;
@@ -176,29 +191,29 @@ public sealed class TimeframeSegmentPointSeries : IPointSeries
         return _yRange;
     }
 
-    public CandlePriceLevel GetCandlePriceLevelFromPrice(double _param1)
+    public CandlePriceLevel GetCandlePriceLevelFromPrice( double _param1 )
     {
         CandlePriceLevel candlePriceLevel;
-        _doubleToCandlePriceLevel.TryGetValue(_param1, out candlePriceLevel);
+        _priceToCPL.TryGetValue( _param1, out candlePriceLevel );
         return candlePriceLevel;
     }
-       
+
     public DoubleRange GetXRange()
     {
         throw new NotImplementedException();
     }
 
-    public void Clear(bool releaseMemory = false)
+    public void Clear( bool releaseMemory = false )
     {
         throw new NotImplementedException();
     }
 
-    public void ApplyYCalc(ICoordinateCalculator<double> yCalc)
+    public void ApplyYCalc( ICoordinateCalculator<double> yCalc )
     {
         throw new NotImplementedException();
     }
 
-    public void Concat(IPointSeries other, bool fifoMode, double minX)
+    public void Concat( IPointSeries other, bool fifoMode, double minX )
     {
         throw new NotImplementedException();
     }

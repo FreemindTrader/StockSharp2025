@@ -21,17 +21,17 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
     private new sealed class SomeSealClass3Dz7qOdp
     {
         public static readonly BoxVolumeRenderableSeries.SomeSealClass3Dz7qOdp _instance01 = new BoxVolumeRenderableSeries.SomeSealClass3Dz7qOdp();
-        public static Func<TimeframeSegmentWrapper, TimeframeDataSegment> _instance02;
-        public static Func<TimeframeSegmentWrapper, TimeframeDataSegment> _instance03;
+        public static Func<TimeframeIndexedSegment, TimeframeDataSegment> _instance02;
+        public static Func<TimeframeIndexedSegment, TimeframeDataSegment> _instance03;
 
         internal TimeframeDataSegment Method01(
-          TimeframeSegmentWrapper p)
+          TimeframeIndexedSegment p)
         {
             return p.Segment;
         }
 
         internal TimeframeDataSegment Method02(
-          TimeframeSegmentWrapper _param1)
+          TimeframeIndexedSegment _param1)
         {
             return _param1.Segment;
         }
@@ -260,7 +260,7 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
         SciChartDebugLogger.Instance.WriteLine("BoxVolume: started render {0} segments. Indexes: {1}-{2}, VisibleRange: {3}-{4}", (object)segments.Length, (object)segments[0].Segment.X, (object)segments[segments.Length - 1].Segment.X, (object)visibleRange.Min, (object)visibleRange.Max);
 
         var xUnit                      = Math.Abs(xCalc.GetCoordinate(1.0) - xCalc.GetCoordinate(0.0));
-        var yUnit                      = Math.Abs(yCalc.GetCoordinate(segments[0].Segment.MinPrice) - yCalc.GetCoordinate(segments[0].Segment.MinPrice + ps));
+        var yUnit                      = Math.Abs(yCalc.GetCoordinate(segments[0].Segment.LowPrice) - yCalc.GetCoordinate(segments[0].Segment.LowPrice + ps));
         var yHalfUnit                  = yUnit / 2.0;
         var xHalfUnit                  = xUnit / 2.0;
 
@@ -274,7 +274,7 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
         long? tfNoValueTicks           = tfNoValue?.Ticks;
 
         long NoValueTimeSpanTicksMin1  = ( timeSpanTicks.HasValue & tfTicks.HasValue ? new long?(timeSpanTicks.GetValueOrDefault() / tfTicks.GetValueOrDefault()) : new long?() ) ?? 1L;
-        var maxTimeSpanTicks           = new List<TimeframeSegmentWrapper>((int)Math.Max(HasValueTimeSpanTicksMin1, NoValueTimeSpanTicksMin1));
+        var maxTimeSpanTicks           = new List<TimeframeIndexedSegment>((int)Math.Max(HasValueTimeSpanTicksMin1, NoValueTimeSpanTicksMin1));
 
         if ( minDrawPrice > maxDrawPrice )
             throw new InvalidOperationException($"minDrawPrice({minDrawPrice}) > maxDrawPrice({maxDrawPrice})");
@@ -304,7 +304,7 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
                     var endY     = yCalc.GetCoordinate(minPrice) + yHalfUnit;
                     var yCount   = 1 + (int)Math.Round(( maxPrice - minPrice ) / ps);
 
-                    DrawGrid(rc, (ISeriesDrawingHelperEx)helper, new Point(startX, startY), new Point(endX, endY), maxTimeSpanTicks.Count, yCount, tf3Pen, tf3Pen, tf3Brush);
+                    DrawGrid(rc, (ISeriesDrawingHelperSS)helper, new Point(startX, startY), new Point(endX, endY), maxTimeSpanTicks.Count, yCount, tf3Pen, tf3Pen, tf3Brush);
                 }
             }
             if ( tfHasValue.HasValue )
@@ -316,7 +316,7 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
                     
                     tfsCount = index + ( maxTimeSpanTicks.Count - 1 );
                     
-                    (double minPrice, double maxPrice) = TimeframeDataSegment.MinMax(maxTimeSpanTicks.Select<TimeframeSegmentWrapper, TimeframeDataSegment>(p => p.Segment));
+                    (double minPrice, double maxPrice) = TimeframeDataSegment.MinMax(maxTimeSpanTicks.Select<TimeframeIndexedSegment, TimeframeDataSegment>(p => p.Segment));
 
                     var startX   = xCalc.GetCoordinate(maxTimeSpanTicks[0].X) - xHalfUnit;
                     var endXCoor = maxTimeSpanTicks[maxTimeSpanTicks.Count - 1].X;
@@ -325,7 +325,7 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
                     var endY     = yCalc.GetCoordinate(minPrice) + yHalfUnit;
                     var yCount   = 1 + (int)Math.Round(( maxPrice - minPrice ) / ps);
 
-                    DrawGrid(rc, (ISeriesDrawingHelperEx)helper, new Point(startX, startY), new Point(endX, endY), maxTimeSpanTicks.Count, yCount, tf3Pen, tf3Pen, tf3Brush);
+                    DrawGrid(rc, (ISeriesDrawingHelperSS)helper, new Point(startX, startY), new Point(endX, endY), maxTimeSpanTicks.Count, yCount, tf3Pen, tf3Pen, tf3Brush);
                 }
             }
 
@@ -344,7 +344,7 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
                 {
                     var indexSegment = segments[index];
                     var xCoorCenter = xCalc.GetCoordinate(indexSegment.X) - xHalfUnit;
-                    (KeyValuePair<double, CandlePriceLevel>[] priceLevels, Decimal myVolume) = indexSegment.Segment.GetPriceLevelsAndVolume(ps);
+                    (KeyValuePair<double, CandlePriceLevel>[] priceLevels, Decimal myVolume) = indexSegment.Segment.GetCPLVFromPriceStep(ps);
                     var hasValidFont     = this._fontCalculator.HasFont(size, myVolume.IncreaseEffectiveScale());
                     
                     foreach ( KeyValuePair<double, CandlePriceLevel> keyValuePair in priceLevels.Where(p => p.Key > minDrawPrice && p.Key< maxDrawPrice) )
@@ -394,11 +394,11 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
                         }
                     }
 
-                    if ( lastPrice.HasValue && indexSegment.Segment.FirstPrice.HasValue )
+                    if ( lastPrice.HasValue && indexSegment.Segment.OpenPrice.HasValue )
                     {
-                        double? firstPrice = indexSegment.Segment.FirstPrice;
+                        double? firstPrice = indexSegment.Segment.OpenPrice;
                         
-                        IPen2D drawPen = firstPrice.GetValueOrDefault() <= indexSegment.Segment.LastPrice & firstPrice.HasValue ? upColorPen : downColorPen;
+                        IPen2D drawPen = firstPrice.GetValueOrDefault() <= indexSegment.Segment.ClosePrice & firstPrice.HasValue ? upColorPen : downColorPen;
                         rc.DrawLine(drawPen, new Point(xCoorCenter, lastPrice.Value), new Point(xCoorCenter, lastYPriceCenter + yUnit));
                     }
                 }
@@ -410,13 +410,13 @@ public sealed class BoxVolumeRenderableSeries : TimeframeSegmentRenderableSeries
 
                 for ( int index = 0; index < length; ++index )
                 {
-                    TimeframeSegmentWrapper indexSegment = segments[index];
+                    TimeframeIndexedSegment indexSegment = segments[index];
                     double num29 = xCalc.GetCoordinate(indexSegment.X) - xHalfUnit;
 
-                    if ( indexSegment.Segment.MinPrice <= maxDrawPrice && indexSegment.Segment.MaxPrice >= minDrawPrice )
+                    if ( indexSegment.Segment.LowPrice <= maxDrawPrice && indexSegment.Segment.HighPrice >= minDrawPrice )
                     {
-                        double minPrice = xCalc.GetCoordinate(indexSegment.Segment.MinPrice);
-                        double maxPrice = yCalc.GetCoordinate(indexSegment.Segment.MaxPrice);
+                        double minPrice = xCalc.GetCoordinate(indexSegment.Segment.LowPrice);
+                        double maxPrice = yCalc.GetCoordinate(indexSegment.Segment.HighPrice);
                         Rect rect = new Rect(num29, maxPrice, Math.Max(xUnit, 1.0), Math.Max(Math.Abs(maxPrice - minPrice), 1.0));
                         rc.FillRectangle(fontColorBrush, rect.TopLeft, rect.BottomRight, 0.0);
                     }

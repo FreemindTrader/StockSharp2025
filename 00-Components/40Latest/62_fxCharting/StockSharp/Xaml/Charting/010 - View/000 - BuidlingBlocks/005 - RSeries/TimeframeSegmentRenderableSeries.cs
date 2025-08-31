@@ -25,7 +25,7 @@ using Size = System.Windows.Size;
 
 
 /// <summary>
-/// TimeframeSegmentRenderableSeries is used to volume profile data for a certain time period.
+/// TimeframeSegmentRenderableSeries is used for volume profile data for a certain time period.
 /// 
 /// I believe we can use this chart to know where there is resistance and support for a given price level.
 /// 
@@ -163,7 +163,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
 
             TimeframeDataSegment segment = dataSeries.Segments[index];
             
-            var candlePriceLevel = segment.GetCandlePriceLevel(yValue, priceStep);
+            var candlePriceLevel = segment.GetCPLFromPriceStep(yValue, priceStep);
 
             if ( candlePriceLevel.TotalVolume == 0M )
                 return HitTestInfo.Empty;
@@ -177,10 +177,10 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
             ht.Metadata        = new MyMetadata(candlePriceLevel);            
             ht.IsHit           = true;
             ht.HitTestPoint    = new Point(xCalc.GetCoordinate((double)index), yCalc.GetCoordinate(yRounded));
-            ht.OpenValue       = (IComparable) segment.FirstPrice;
-            ht.HighValue       = (IComparable) segment.MaxPrice;
-            ht.LowValue        = (IComparable) segment.MinPrice;
-            ht.CloseValue      = (IComparable) segment.LastPrice;
+            ht.OpenValue       = (IComparable) segment.OpenPrice;
+            ht.HighValue       = (IComparable) segment.HighPrice;
+            ht.LowValue        = (IComparable) segment.LowPrice;
+            ht.CloseValue      = (IComparable) segment.ClosePrice;
             
             return HitTestSeriesWithBody(mouseRawPoint, ht, hitTestRadiusInPixels);
         }
@@ -675,7 +675,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
     /// <param name="framePen"></param>
     /// <param name="gridPen"></param>
     /// <param name="fillBrush"></param>
-    protected static void DrawGrid(IRenderContext2D renderContext, ISeriesDrawingHelperEx drawingHelper, Point begin, Point end, int xCount, int yCount, IPen2D framePen, IPen2D gridPen, IBrush2D fillBrush)
+    protected static void DrawGrid(IRenderContext2D renderContext, ISeriesDrawingHelperSS drawingHelper, Point begin, Point end, int xCount, int yCount, IPen2D framePen, IPen2D gridPen, IBrush2D fillBrush)
     {
         if ( begin.X >= end.X || begin.Y >= end.Y )
             return;
@@ -709,7 +709,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
     }
 
     
-    protected static void FillPeriodSegments(List<TimeframeSegmentWrapper> wrapperList, TimeframeSegmentWrapper[] wriapper, int index, TimeSpan timeFrame)
+    protected static void FillPeriodSegments(List<TimeframeIndexedSegment> wrapperList, TimeframeIndexedSegment[] wriapper, int index, TimeSpan timeFrame)
     {
         wrapperList.Clear();
         Tuple<DateTime, DateTime, long> timeframePeriod = TimeframeSegmentDataSeries.GetTimeframePeriod(wriapper[index].Segment.Time, timeFrame);
@@ -739,7 +739,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
         var yCalc                = CurrentRenderPassData.YCoordinateCalculator;
         var width                = renderContext.ViewportSize.Width;
         var height               = renderContext.ViewportSize.Height;
-        var psDPI                = Math.Abs(yCalc.GetCoordinate(tfps.Segments[0].Segment.MinPrice) - yCalc.GetCoordinate(tfps.Segments[0].Segment.MinPrice + tfps.PriceStep));
+        var psDPI                = Math.Abs(yCalc.GetCoordinate(tfps.Segments[0].Segment.LowPrice) - yCalc.GetCoordinate(tfps.Segments[0].Segment.LowPrice + tfps.PriceStep));
         var psDPIHalf            = psDPI / 2.0;
 
         var maxDrawPrice         = yCalc.GetDataValue(-psDPI);

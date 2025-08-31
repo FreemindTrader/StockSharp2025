@@ -16,7 +16,9 @@ public interface IThemeProviderEx : IThemeProvider
     }
 
     /// <summary>
-    ///
+    /// 
+    /// The following are custom colors used in Point and Figure Charts
+    /// 
     /// </summary>
     Color BoxVolumeTimeframe2Color
     {
@@ -61,7 +63,9 @@ public interface IThemeProviderEx : IThemeProvider
     }
 
     /// <summary>
-    ///
+    /// 
+    /// The following are custom colors used in Cluster Profile Charts
+    /// 
     /// </summary>
     Color ClusterProfileLineColor
     {

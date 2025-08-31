@@ -341,9 +341,9 @@
 //    this.InsertRange(this._index, _param1);
 //}
 
-//public IUltraReadOnlyList<T> AsReadOnly()
+//public IReadOnlySciList<T> AsReadOnly()
 //{
-//    return (IUltraReadOnlyList<T>)new SciReadOnlyList<T>( this );
+//    return (IReadOnlySciList<T>)new ReadOnlySciList<T>( this );
 //}
 
 //public void Clone(T[] _param1)

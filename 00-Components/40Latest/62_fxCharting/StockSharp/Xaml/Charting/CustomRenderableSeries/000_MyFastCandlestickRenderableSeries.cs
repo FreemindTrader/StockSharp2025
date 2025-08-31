@@ -57,11 +57,11 @@ public class MyFastCandlestickRenderableSeries : FastCandlestickRenderableSeries
         PaletteProvider = new MyPaletteProvider();
     }
 
-    public ISSPaletteProvider XxxPaletteProvider
+    public IPaletteProviderSS XxxPaletteProvider
     {
         get
         {
-            return (ISSPaletteProvider)GetValue(PaletteProviderProperty);
+            return (IPaletteProviderSS)GetValue(PaletteProviderProperty);
         }
         set
         {

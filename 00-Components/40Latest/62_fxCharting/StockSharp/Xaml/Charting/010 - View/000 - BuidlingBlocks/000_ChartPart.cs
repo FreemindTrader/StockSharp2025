@@ -1,7 +1,8 @@
 ﻿using Ecng.Common;
 using Ecng.Serialization;
 using System;
-using System.Collections.Generic; using fx.Collections;
+using System.Collections.Generic;
+using fx.Collections;
 using System.ComponentModel;
 using StockSharp.Charting;
 
@@ -23,8 +24,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
 
     /// <summary>
     /// Unique ID.
-    /// </summary>
-    [Browsable( false )]
+    /// </summary>    
     public Guid Id
     {
         get

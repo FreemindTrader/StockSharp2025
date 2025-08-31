@@ -9,6 +9,16 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting;
 
+/// <summary>
+/// The base interface that describes the component of the chart. A ChartComponent is composed of different ChartElements
+/// 
+/// Like ChartBandElement is made up of two lines
+///     - ChartLineElement _lineOne
+///     - ChartLineElement _lineTwo
+///     
+/// The direct implementation of this interface is <see cref="StockSharp.Xaml.Charting.ChartComponentView<T>" />.
+/// 
+/// </summary>
 public interface IChartComponent : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable
 {
     IChartElement ParentElement

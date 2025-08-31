@@ -33,7 +33,7 @@
 //        private readonly TimeframeSegmentDataSeries.YValueList _yValues;
 //        private Tuple< DateTime, DateTime, int > _curPeriod;
 
-//        //private IUltraReadOnlyList< DateTime > SegmentDates
+//        //private IReadOnlySciList< DateTime > SegmentDates
 //        //{
 //        //    get
 //        //    {
@@ -174,7 +174,7 @@
 //            }
 //        }
 
-//        //protected IUltraReadOnlyList< TimeframeDataSegment > SegmentsReadOnly
+//        //protected IReadOnlySciList< TimeframeDataSegment > SegmentsReadOnly
 //        //{
 //        //    get
 //        //    {

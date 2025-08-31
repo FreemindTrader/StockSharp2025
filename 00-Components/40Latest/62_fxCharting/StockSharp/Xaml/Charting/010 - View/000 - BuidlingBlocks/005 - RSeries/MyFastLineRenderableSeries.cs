@@ -58,7 +58,7 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
             try
             {                
                 Func<double, double, IPen2D> func = ( (x, y) => penManager.GetPen(lineColor) );
-                FastLinesHelper.IterateLines(linesPathFactory, (Func<double, double, IPathColor>)func, pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator, IsDigitalLine, DrawNaNAs == LineDrawMode.ClosedLines);
+                FastLinesHelper.DrawLines(linesPathFactory, (Func<double, double, IPathColor>)func, pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator, IsDigitalLine, DrawNaNAs == LineDrawMode.ClosedLines);
             }
             finally
             {
@@ -69,12 +69,12 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
         else
         {
             using ( IPen2D pen = renderContext.CreatePen(lineColor, AntiAliasing, (float)StrokeThickness, Opacity, StrokeDashArray, PenLineCap.Round) )
-                FastLinesHelper.IterateLines(linesPathFactory, pen, pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator, IsDigitalLine, DrawNaNAs == LineDrawMode.ClosedLines);
+                FastLinesHelper.DrawLines(linesPathFactory, pen, pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator, IsDigitalLine, DrawNaNAs == LineDrawMode.ClosedLines);
         }
         var pointMarker = GetPointMarker();
         if ( pointMarker == null )
             return;
-        FastPointsHelper.IteratePoints(SeriesDrawingHelpersFactory.GetPointMarkerPathFactory(renderContext, CurrentRenderPassData, pointMarker), pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator);
+        FastPointsHelper.DrawPoints(SeriesDrawingHelpersFactory.GetPointMarkerPathFactory(renderContext, CurrentRenderPassData, pointMarker), pointSeries, CurrentRenderPassData.XCoordinateCalculator, CurrentRenderPassData.YCoordinateCalculator);
     }
 
     
@@ -183,7 +183,7 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
     //        {
     //            Func<double, double, IPen2D> func = (Func<double, double, IPen2D>) ((x, y) => penManager.GetPen(
     //                PaletteProvider.GetColor((IRenderableSeries) this, x, y) ?? lineColor));
-    //            FastLinesHelper.IterateLines(
+    //            FastLinesHelper.DrawLines(
     //                linesPathFactory,
     //                (Func<double, double, IPathColor>) func,
     //                pointSeries,
@@ -205,7 +205,7 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
     //            Opacity,
     //            StrokeDashArray,
     //            PenLineCap.Round))
-    //            FastLinesHelper.IterateLines(
+    //            FastLinesHelper.DrawLines(
     //                linesPathFactory,
     //                pen,
     //                pointSeries,
@@ -217,7 +217,7 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
     //    IPointMarker pointMarker = GetPointMarker();
     //    if(pointMarker == null)
     //        return;
-    //    FastPointsHelper.IteratePoints(
+    //    FastPointsHelper.DrawPoints(
     //        SeriesDrawingHelpersFactory.GetPointMarkerPathFactory(
     //            renderContext,
     //            CurrentRenderPassData,

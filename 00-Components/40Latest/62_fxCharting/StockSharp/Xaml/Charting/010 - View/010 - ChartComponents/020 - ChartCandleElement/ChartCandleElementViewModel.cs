@@ -37,7 +37,7 @@ using Color = System.Windows.Media.Color;
 
 namespace StockSharp.Xaml.Charting;
 
-public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : ChartCompentWpfBaseViewModel<ChartCandleElement>(candle), IPaletteProvider, ISSPaletteProvider
+public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : ChartCompentWpfBaseViewModel<ChartCandleElement>(candle), IPaletteProvider, IPaletteProviderSS
 {
     private sealed class TimeSpanConverter(TimeSpan? _param1) : IValueConverter
     {
@@ -913,17 +913,17 @@ label_4:
         return true;
     }
 
-    Color? ISSPaletteProvider.GetColor(IRenderableSeries rSeries, double _param2, double _param3)
+    Color? IPaletteProviderSS.GetColor(IRenderableSeries rSeries, double _param2, double _param3)
     {
         return new Color?();
     }
 
-    Color? ISSPaletteProvider.OverrideColor(IRenderableSeries rSeries, double _param2, double _param3, double _param4)
+    Color? IPaletteProviderSS.OverrideColor(IRenderableSeries rSeries, double _param2, double _param3, double _param4)
     {
         return new Color?();
     }
 
-    Color? ISSPaletteProvider.OverrideColor(IRenderableSeries rSeries, double candleIndex, double openPrice, double highPrice, double lowPrice, double closePrice)
+    Color? IPaletteProviderSS.OverrideColor(IRenderableSeries rSeries, double candleIndex, double openPrice, double highPrice, double lowPrice, double closePrice)
     {
         int index = (int)candleIndex;
         DateTime dataTime = OhlcSeries.XValues[index];

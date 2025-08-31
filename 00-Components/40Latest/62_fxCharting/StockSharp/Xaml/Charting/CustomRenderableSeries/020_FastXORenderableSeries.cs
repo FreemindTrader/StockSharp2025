@@ -90,8 +90,8 @@ public class FastXORenderableSeries : MyFastCandlestickRenderableSeries
             var wickPen  = isRising ? this._upWickPen : this._downWickPen;
             var brush    = isRising ? upBrush : downBrush;
 
-            Maybe.Do<ISSPaletteProvider>( XxxPaletteProvider,
-                                                                (Action<ISSPaletteProvider>)(pp =>
+            Maybe.Do<IPaletteProviderSS>( XxxPaletteProvider,
+                                                                (Action<IPaletteProviderSS>)(pp =>
                                                                 {
                                                                     var orColor = pp.OverrideColor((IRenderableSeries)this, xValue, open, high, low, close);
                                                                     if(!orColor.HasValue)

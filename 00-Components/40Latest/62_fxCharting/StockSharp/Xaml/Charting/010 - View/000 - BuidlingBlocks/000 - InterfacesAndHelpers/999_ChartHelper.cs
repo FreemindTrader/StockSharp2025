@@ -31,10 +31,11 @@ public static class ChartHelper2025
 
         if ( chart is Chart elem )
         {
-            MemoryStream file = new MemoryStream();
-            var image = Ecng.Xaml.XamlHelper.GetImage(elem);
+            var file      = new MemoryStream();
+            var image     = Ecng.Xaml.XamlHelper.GetImage(elem);
             Ecng.Xaml.XamlHelper.SaveImage( image, ( Stream ) file );
             file.Position = 0L;
+
             return ( Stream ) file;
         }
 
@@ -71,22 +72,7 @@ public static class ChartHelper2025
     public static IEnumerable<IndicatorType> GetIndicatorTypes()
     {
         return IChartExtensions.IndicatorProvider.All;
-    }
-
-    //public static void FillDefaultValues( this OptimizerChart3D chart )
-    //{
-    //    // TONYFIXME 01
-
-    //    throw new NotImplementedException();
-
-    //    //ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
-    //    //skXz9pb7XdulaJda._optimizerChart3d = chart;
-    //    //if ( skXz9pb7XdulaJda._optimizerChart3d == null )
-    //    //    throw new ArgumentNullException( nameof( chart ) );
-    //    //skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
-    //    //skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
-    //    //skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
-    //}
+    }    
 
     public static Chart GetDrawingChart( this IChartElement comp )
     {
@@ -113,17 +99,32 @@ public static class ChartHelper2025
         get => ConfigManager.TryGetService<IIndicatorColorProvider>();
     }
 
-    //public static IIndicatorColorProvider EnsureColorProvider()
-    //{
-    //    return ChartHelper.TryColorProvider ?? ( IIndicatorColorProvider ) ChartHelper._indicatorColorProviders.Value;
-    //}
+    public static IIndicatorColorProvider EnsureColorProvider()
+    {
+        return ChartHelper.TryColorProvider ?? ( IIndicatorColorProvider ) ChartHelper2025._indicatorColorProviders.Value;
+    }
 
-    //public static void DrawPnL(
-    //  this EquityCurveChart chart,
-    //  Strategy strategy,
-    //  IChartBandElement pnl,
-    //  IChartBandElement unrealized,
-    //  IChartBandElement commission )
+    
+
+    [Obsolete( "Use Subscription overload." )]
+    public static void AddElement( this IWpfChart chart, IChartArea area, IChartCandleElement element, CandleSeries series )
+    {
+        if ( chart == null )
+            throw new ArgumentNullException( nameof( chart ) );
+
+        chart.AddElement( area, element, new Subscription( series ) );
+    }
+
+    [Obsolete( "Use Subscription overload." )]
+    public static void AddElement( this IWpfChart chart, IChartArea area, IChartIndicatorElement element, CandleSeries series, IIndicator indicator )
+    {
+        if ( chart == null )
+            throw new ArgumentNullException( nameof( chart ) );
+
+        chart.AddElement( area, element, new Subscription( series ), indicator );
+    }
+
+    //public static void DrawPnL( this EquityCurveChart chart, Strategy strategy, IChartBandElement pnl, IChartBandElement unrealized, IChartBandElement commission )
     //{
     //    if ( chart == null )
     //        throw new ArgumentNullException( nameof( chart ) );
@@ -140,30 +141,20 @@ public static class ChartHelper2025
     //    chart.Draw( data );
     //}
 
-    [Obsolete( "Use Subscription overload." )]
-    public static void AddElement(
-      this IWpfChart chart,
-      IChartArea area,
-      IChartCandleElement element,
-      CandleSeries series )
-    {
-        if ( chart == null )
-            throw new ArgumentNullException( nameof( chart ) );
-        chart.AddElement( area, element, new Subscription( series ) );
-    }
+    //public static void FillDefaultValues( this OptimizerChart3D chart )
+    //{
+    //    // TONYFIXME 01
 
-    [Obsolete( "Use Subscription overload." )]
-    public static void AddElement(
-      this IWpfChart chart,
-      IChartArea area,
-      IChartIndicatorElement element,
-      CandleSeries series,
-      IIndicator indicator )
-    {
-        if ( chart == null )
-            throw new ArgumentNullException( nameof( chart ) );
-        chart.AddElement( area, element, new Subscription( series ), indicator );
-    }
+    //    throw new NotImplementedException();
+
+    //    //ChartHelper.SealClass034 skXz9pb7XdulaJda = new ChartHelper.SealClass034();
+    //    //skXz9pb7XdulaJda._optimizerChart3d = chart;
+    //    //if ( skXz9pb7XdulaJda._optimizerChart3d == null )
+    //    //    throw new ArgumentNullException( nameof( chart ) );
+    //    //skXz9pb7XdulaJda._optimizerChart3d.X = skXz9pb7XdulaJda._optimizerChart3d.XValues.FirstOrDefault<IChart3DParameter>();
+    //    //skXz9pb7XdulaJda._optimizerChart3d.Y = skXz9pb7XdulaJda._optimizerChart3d.YValues.Where<IChart3DParameter>( new Func<IChart3DParameter, bool>( skXz9pb7XdulaJda.\u0023\u003DzDD4NhX\u0024EQrjP\u0024EvGXA\u003D\u003D) ).FirstOrDefault<IChart3DParameter>() ?? skXz9pb7XdulaJda._optimizerChart3d.YValues.FirstOrDefault<IChart3DParameter>();
+    //    //skXz9pb7XdulaJda._optimizerChart3d.Z = skXz9pb7XdulaJda._optimizerChart3d.ZValues.FirstOrDefault<IStatisticParameter>();
+    //}
 
     //private sealed class SealClass034
     //{

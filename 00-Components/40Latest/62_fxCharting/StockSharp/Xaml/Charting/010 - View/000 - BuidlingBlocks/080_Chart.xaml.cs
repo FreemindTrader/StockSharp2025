@@ -1208,10 +1208,10 @@ public partial class Chart : UserControl,
         Subscription subscription = TryGetSubscription(element);
         if ( subscription == null )
             return;
-        InternalInvokeSubscriptionEvent(element, subscription);
+        RaiseChartElementSubscribedEvent(element, subscription);
     }
 
-    private void InternalInvokeSubscriptionEvent(IChartElement element, Subscription subscription)
+    private void RaiseChartElementSubscribedEvent(IChartElement element, Subscription subscription)
     {
         switch ( element )
         {
@@ -1483,7 +1483,7 @@ public partial class Chart : UserControl,
 
     private void InvokeSubscriptionEvent(IChartElement _param1)
     {
-        InternalInvokeSubscriptionEvent(_param1, TryGetSubscription(_param1));
+        RaiseChartElementSubscribedEvent(_param1, TryGetSubscription(_param1));
     }
 
     [Serializable]

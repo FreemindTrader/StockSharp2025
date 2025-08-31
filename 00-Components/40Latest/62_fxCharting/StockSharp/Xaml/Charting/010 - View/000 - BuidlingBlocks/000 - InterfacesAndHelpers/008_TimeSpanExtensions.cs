@@ -2,6 +2,9 @@
 
 namespace StockSharp.Xaml.Charting;
 
+/// <summary>
+/// Some Timespan extension methods.
+/// </summary>
 internal static class TimeSpanExtensions
 {
     internal const double DaysInYear = 365.2425;

@@ -6,18 +6,18 @@ using System.Numerics;
 
 namespace StockSharp.Xaml.Charting;
 
-internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection 
+internal class ReadOnlySciList<T> : IReadOnlySciList<T>, ISciList<T>, IList<T>, ICollection<T>, IEnumerable<T>, IEnumerable, IList, ICollection 
 {
-    private readonly SciList<T> _parent;
+    private readonly SciList<T> _innerList;
 
-    public SciReadOnlyList(SciList<T> parent)
+    public ReadOnlySciList(SciList<T> anotherList)
     {
-        _parent = parent;
+        _innerList = anotherList;
     }
 
-    public SciReadOnlyList(T[ ] arr)
+    public ReadOnlySciList(T[ ] arr)
     {
-        _parent = SciList<T>.ForArray(arr);
+        _innerList = SciList<T>.ForArray(arr);
     }
 
     private void ThrowReadOnly()
@@ -29,7 +29,7 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
     {
         get
         {
-            return _parent.ItemsArray;
+            return _innerList.ItemsArray;
         }
     }
 
@@ -37,7 +37,7 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
     {
         get
         {
-            return _parent.Capacity;
+            return _innerList.Capacity;
         }
         set
         {
@@ -73,7 +73,7 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
     {
         get
         {
-            return ((ICollection) _parent).SyncRoot;
+            return ((ICollection) _innerList).SyncRoot;
         }
     }
 
@@ -81,7 +81,7 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
     {
         get
         {
-            return (object) _parent[index];
+            return (object) _innerList[index];
         }
         set
         {
@@ -97,17 +97,17 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     bool IList.Contains(object item)
     {
-        return ((IList) _parent).Contains(item);
+        return ((IList) _innerList).Contains(item);
     }
 
     void ICollection.CopyTo(Array array, int arrayIndex)
     {
-        ((ICollection) _parent).CopyTo(array, arrayIndex);
+        ((ICollection) _innerList).CopyTo(array, arrayIndex);
     }
 
     int IList.IndexOf(object item)
     {
-        return ((IList) _parent).IndexOf(item);
+        return ((IList) _innerList).IndexOf(item);
     }
 
     void IList.Insert(int index, object item)
@@ -124,7 +124,7 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
     {
         get
         {
-            return _parent.Count;
+            return _innerList.Count;
         }
         internal set
         {
@@ -140,13 +140,13 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
         }
     }
 
-    public bool HasValues => throw new NotImplementedException();
+    public bool HasValues => _innerList.Count > 0;
 
     public T this[int index]
     {
         get
         {
-            return _parent[index];
+            return _innerList[index];
         }
         set
         {
@@ -166,27 +166,27 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public bool Contains(T item)
     {
-        return _parent.Contains(item);
+        return _innerList.Contains(item);
     }
 
     public void CopyTo(T[ ] array, int arrayIndex)
     {
-        _parent.CopyTo(array, arrayIndex);
+        _innerList.CopyTo(array, arrayIndex);
     }
 
     IEnumerator<T> IEnumerable<T>.GetEnumerator()
     {
-        return (IEnumerator<T>) _parent.GetEnumerator();
+        return (IEnumerator<T>) _innerList.GetEnumerator();
     }
 
     IEnumerator IEnumerable.GetEnumerator()
     {
-        return (IEnumerator) _parent.GetEnumerator();
+        return (IEnumerator) _innerList.GetEnumerator();
     }
 
     public int IndexOf(T item)
     {
-        return _parent.IndexOf(item);
+        return _innerList.IndexOf(item);
     }
 
     public void Insert(int index, T item)
@@ -207,12 +207,12 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public T GetMaximum()
     {
-        return _parent.GetMaximum();
+        return _innerList.GetMaximum();
     }
 
     public T GetMinimum()
     {
-        return _parent.GetMinimum();
+        return _innerList.GetMinimum();
     }
 
     public void AddRange(IEnumerable<T> collection)
@@ -222,12 +222,12 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public void CopyTo(T[ ] array)
     {
-        _parent.CopyTo(array);
+        _innerList.CopyTo(array);
     }
 
     public void CopyTo(int index, T[ ] array, int arrayIndex, int count)
     {
-        _parent.CopyTo(index, array, arrayIndex, count);
+        _innerList.CopyTo(index, array, arrayIndex, count);
     }
 
     public bool EnsureMinSize(int minSize)
@@ -238,12 +238,12 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public int IndexOf(T item, int index)
     {
-        return _parent.IndexOf(item, index);
+        return _innerList.IndexOf(item, index);
     }
 
     public int IndexOf(T item, int index, int count)
     {
-        return _parent.IndexOf(item, index, count);
+        return _innerList.IndexOf(item, index, count);
     }
 
     public void InsertRange(int index, IEnumerable<T> collection)
@@ -253,17 +253,17 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public int LastIndexOf(T item)
     {
-        return _parent.LastIndexOf(item);
+        return _innerList.LastIndexOf(item);
     }
 
     public int LastIndexOf(T item, int index)
     {
-        return _parent.LastIndexOf(item, index);
+        return _innerList.LastIndexOf(item, index);
     }
 
     public int LastIndexOf(T item, int index, int count)
     {
-        return _parent.LastIndexOf(item, index, count);
+        return _innerList.LastIndexOf(item, index, count);
     }
 
     public void RemoveRange(int index, int count)
@@ -273,7 +273,7 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public T[ ] ToArray()
     {
-        return _parent.ToArray();
+        return _innerList.ToArray();
     }
 
     public void TrimExcess()
@@ -288,12 +288,13 @@ internal class SciReadOnlyList<T> : IUltraReadOnlyList<T>, ISciList<T>, IList<T>
 
     public void GetMinMax(out T min, out T max)
     {
-        throw new NotImplementedException();
+        min = GetMinimum();
+        max = GetMaximum();
     }
 
     public IList AsList()
     {
-        throw new NotImplementedException();
+        return this;
     }
 
     public bool ContainsNaN(int startIndex, int count)

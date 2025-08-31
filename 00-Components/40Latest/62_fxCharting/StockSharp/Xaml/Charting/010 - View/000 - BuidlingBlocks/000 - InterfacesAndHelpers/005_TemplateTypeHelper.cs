@@ -1,28 +1,27 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: #=zsIIzg9COgILMyUKVNisy8sT1ePq3
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using System;
+﻿using System;
 using System.Runtime.InteropServices;
 
 namespace StockSharp.Xaml.Charting;
-#nullable disable
-[StructLayout(LayoutKind.Auto, CharSet = CharSet.Auto)]
+
+/// <summary>
+/// A helper class for template types.
+/// </summary>
+[StructLayout( LayoutKind.Auto, CharSet = CharSet.Auto )]
 public static class TemplateTypeHelper
 {
-    public static T GetFirstElement<T>(T[] _param0)
+    public static T GetFirstElement<T>( T[ ] ttype )
     {
-        if ( _param0 == null )
+        if ( ttype == null )
             throw new ArgumentNullException();
-        return _param0.Length != 0 ? _param0[0] : default(T);
+
+        return ttype.Length != 0 ? ttype[0] : default( T );
     }
 
-    public static bool IsNotEmpty<T>(T[] _param0)
+    public static bool IsNotEmpty<T>( T[ ] ttype )
     {
-        if ( _param0 == null )
+        if ( ttype == null )
             throw new ArgumentNullException();
-        return _param0.Length != 0;
+
+        return ttype.Length != 0;
     }
 }

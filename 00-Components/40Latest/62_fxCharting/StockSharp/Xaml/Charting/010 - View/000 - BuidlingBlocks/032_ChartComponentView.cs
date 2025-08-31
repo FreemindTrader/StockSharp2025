@@ -22,12 +22,12 @@ namespace StockSharp.Xaml.Charting;
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
 public abstract class ChartComponentView<T> : ChartPart<T>,
-                                          IChartElement,
-                                          IChartPart<IChartElement>,
-                                          INotifyPropertyChanged,
-                                          INotifyPropertyChanging,
-                                          IPersistable,
-                                          IChartComponent
+                                              IChartElement,
+                                              IChartPart<IChartElement>,
+                                              INotifyPropertyChanged,
+                                              INotifyPropertyChanging,
+                                              IPersistable,
+                                              IChartComponent
   where T : ChartComponentView<T>
 {
 

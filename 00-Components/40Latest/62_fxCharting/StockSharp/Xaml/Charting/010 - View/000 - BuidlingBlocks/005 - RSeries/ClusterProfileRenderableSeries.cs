@@ -93,7 +93,7 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
         public Color SellColor;
 
         public bool Method013(
-          TimeframeSegmentWrapper p)
+          TimeframeIndexedSegment p)
         {
             return p.Segment.Count >= this.VisibleRange.Min && p.Segment.Count <= this.VisibleRange.Max;
         }
@@ -318,7 +318,7 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
         this._lastContext         = rc;
 
         rc.SegmentWidth           = Math.Abs(rc.XCalc.GetCoordinate(1.0) - rc.XCalc.GetCoordinate(0.0));
-        rc.PriceLevelHeight       = Math.Abs(rc.YCalc.GetCoordinate(segments[0].Segment.MinPrice) - rc.YCalc.GetCoordinate(segments[0].Segment.MinPrice + priceStep));
+        rc.PriceLevelHeight       = Math.Abs(rc.YCalc.GetCoordinate(segments[0].Segment.LowPrice) - rc.YCalc.GetCoordinate(segments[0].Segment.LowPrice + priceStep));
         rc.HalfSegmentWidth       = rc.SegmentWidth / 2.0;
         rc.HalfPriceLevelHeight   = rc.PriceLevelHeight / 2.0;
         ci.ClusterColor           = this.ClusterColor;
@@ -353,16 +353,16 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
             var upPen          = ci.PenManager.GetPen(this.UpColor, new float?((float)newStroke));
             var downPen        = ci.PenManager.GetPen(this.DownColor, new float?((float)newStroke));
 
-            foreach ( TimeframeSegmentWrapper wrapper in selectedSegment )
+            foreach ( TimeframeIndexedSegment wrapper in selectedSegment )
             {
                 var tfds  = wrapper.Segment;
                 var xCoor = rc.XCalc.GetCoordinate(wrapper.X);                
                 
-                if ( wrapper.Segment.MinPrice <= maxDrawPrice && tfds.MaxPrice >= minDrawPrice )
+                if ( wrapper.Segment.LowPrice <= maxDrawPrice && tfds.HighPrice >= minDrawPrice )
                 {
-                    double maxPriceMinus = rc.YCalc.GetCoordinate(tfds.MaxPrice) - rc.HalfPriceLevelHeight;
-                    double minPricePlus = rc.YCalc.GetCoordinate(tfds.MinPrice) + rc.HalfPriceLevelHeight;
-                    ( var priceLevelsArrary, var volume ) = tfds.GetPriceLevelsAndVolume(priceStep);
+                    double maxPriceMinus = rc.YCalc.GetCoordinate(tfds.HighPrice) - rc.HalfPriceLevelHeight;
+                    double minPricePlus = rc.YCalc.GetCoordinate(tfds.LowPrice) + rc.HalfPriceLevelHeight;
+                    ( var priceLevelsArrary, var volume ) = tfds.GetCPLVFromPriceStep(priceStep);
 
                     renderContext.DrawLine(lineColorPen, new Point(xCoor, maxPriceMinus + 1.0), new Point(xCoor, minPricePlus));
                     
@@ -482,13 +482,13 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
             AlignmentX alignmentX = drawStartPoint == (DrawStartPoint)3 ? AlignmentX.Left : AlignmentX.Right;
             double barMaxValue = bar.MaxValue;
 
-            if ( tfds.FirstPrice.HasValue )
+            if ( tfds.OpenPrice.HasValue )
             {
-                var openPrice  = tfds.FirstPrice;
-                var closePrice = tfds.LastPrice;
+                var openPrice  = tfds.OpenPrice;
+                var closePrice = tfds.ClosePrice;
                 var drawingPen = openPrice.GetValueOrDefault() <= closePrice & openPrice.HasValue ? risingPen : fallingPen;
-                var minPriceY  = di._rcDetails.YCalc.GetCoordinate(tfds.MinPrice);
-                var maxPriceY  = di._rcDetails.YCalc.GetCoordinate(tfds.MaxPrice);
+                var minPriceY  = di._rcDetails.YCalc.GetCoordinate(tfds.LowPrice);
+                var maxPriceY  = di._rcDetails.YCalc.GetCoordinate(tfds.HighPrice);
 
                 di._rcDetails.RenderContext.DrawLine(drawingPen, new Point(baselineCoord, minPriceY), new Point(baselineCoord, maxPriceY));
 
