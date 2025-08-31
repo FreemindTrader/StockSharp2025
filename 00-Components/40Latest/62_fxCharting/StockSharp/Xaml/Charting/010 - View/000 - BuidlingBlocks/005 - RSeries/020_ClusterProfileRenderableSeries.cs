@@ -298,8 +298,7 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
     }
 
     protected override void OnDrawImpl(IRenderContext2D renderContext, IRenderPassData renderPassData)
-    {
-        ColorDetails ci = new ColorDetails();
+    {        
         if ( !( this.DataSeries is TimeframeSegmentDataSeries ) )
             return;
 
@@ -321,15 +320,15 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
         rc.PriceLevelHeight       = Math.Abs(rc.YCalc.GetCoordinate(segments[0].Segment.LowPrice) - rc.YCalc.GetCoordinate(segments[0].Segment.LowPrice + priceStep));
         rc.HalfSegmentWidth       = rc.SegmentWidth / 2.0;
         rc.HalfPriceLevelHeight   = rc.PriceLevelHeight / 2.0;
-        ci.ClusterColor           = this.ClusterColor;
-        ci.ClusterMaxColor        = this.ClusterMaxColor;
+        var ClusterColor           = this.ClusterColor;
+        var ClusterMaxColor        = this.ClusterMaxColor;
 
         Color textColor           = this.TextColor;
         double minDrawPrice       = rc.YCalc.GetDataValue(rc.ScreenHeight + rc.PriceLevelHeight);
         double maxDrawPrice       = rc.YCalc.GetDataValue(-rc.PriceLevelHeight);
-        ci.VisibleRange           = pointSeries.VisibleRange;
-        ci.BuyColor               = this.BuyColor;
-        ci.SellColor              = this.SellColor;
+        var VisibleRange           = pointSeries.VisibleRange;
+        var BuyColor               = this.BuyColor;
+        var SellColor              = this.SellColor;
 
         if ( segments.Length < 1 )
             return;
@@ -337,21 +336,21 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
         if ( minDrawPrice > maxDrawPrice )
             throw new InvalidOperationException($"minDrawPrice({minDrawPrice}) > maxDrawPrice({maxDrawPrice})");
                        
-        SciChartDebugLogger.Instance.WriteLine("ClusterProfile: started render {0} segments. Indexes: {1}-{2}, VisibleRange: {3}-{4}", segments.Length, segments[0].Segment.Count, segments[segments.Length - 1].Segment.Count, ci.VisibleRange.Min, ci.VisibleRange.Max);
+        SciChartDebugLogger.Instance.WriteLine("ClusterProfile: started render {0} segments. Indexes: {1}-{2}, VisibleRange: {3}-{4}", segments.Length, segments[0].Segment.Count, segments[segments.Length - 1].Segment.Count, VisibleRange.Min, VisibleRange.Max);
 
         var selectedSegment = segments.Where(p => p.Segment.Count >= pointSeries.VisibleRange.Min && p.Segment.Count <= pointSeries.VisibleRange.Max).ToArray();
 
         if ( !TemplateTypeHelper.IsNotEmpty(selectedSegment) )
             return;
 
-        ci.PenManager = new PenManager(renderContext, false, (float)this.StrokeThickness, this.Opacity);
+        var pm = new PenManager(renderContext, false, (float)this.StrokeThickness, this.Opacity);
         try
         {
-            var lineColorPen   = ci.PenManager.GetPen(this.LineColor);
-            rc.BarSeparatorPen = ci.PenManager.GetPen(this.SeparatorLineColor);            
+            var lineColorPen   = pm.GetPen(this.LineColor);
+            rc.BarSeparatorPen = pm.GetPen(this.SeparatorLineColor);            
             var newStroke      = this.StrokeThickness + 2;
-            var upPen          = ci.PenManager.GetPen(this.UpColor, new float?((float)newStroke));
-            var downPen        = ci.PenManager.GetPen(this.DownColor, new float?((float)newStroke));
+            var upPen          = pm.GetPen(this.UpColor, new float?((float)newStroke));
+            var downPen        = pm.GetPen(this.DownColor, new float?((float)newStroke));
 
             foreach ( TimeframeIndexedSegment wrapper in selectedSegment )
             {
@@ -375,10 +374,10 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
                             p.Value              = pLvl.Value;
                             
                             var lvlValue         = pLvl.Value;                            
-                            p.ClusterMaxColorPen = lvlValue.TotalVolume == volume ? ci.PenManager.GetPen(ci.ClusterMaxColor) : (IPen2D)null;
-                            p.ClusterColorBrush  = ci.PenManager.GetBrush(ci.ClusterColor);
-                            p.BuyColorBrush      = ci.PenManager.GetBrush(ci.BuyColor) ;
-                            p.SellColorBrush     = ci.PenManager.GetBrush(ci.SellColor) ;
+                            p.ClusterMaxColorPen = lvlValue.TotalVolume == volume ? pm.GetPen(ClusterMaxColor) : (IPen2D)null;
+                            p.ClusterColorBrush  = pm.GetBrush(ClusterColor);
+                            p.BuyColorBrush      = pm.GetBrush(BuyColor) ;
+                            p.SellColorBrush     = pm.GetBrush(SellColor) ;
                         });
 
                         bar.TextColor = textColor;                        
@@ -389,8 +388,8 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
         }
         finally
         {
-            if ( ci.PenManager != null )
-                ci.PenManager.Dispose();
+            if ( pm != null )
+                pm.Dispose();
         }
     }
     

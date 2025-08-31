@@ -82,7 +82,7 @@ public static class TimeSeriesHelper2025
             fontWeight = FontWeights.Regular;
         }
             
-        fontSize = fontSize.Round(0.5f);
+        fontSize   = fontSize.Round(0.5f);
         var myFont = Tuple.Create( fontFamily, fontSize, fontWeight );
 
         Size size;
@@ -125,11 +125,11 @@ public static class TimeSeriesHelper2025
     {
         CharSpriteKey key = new CharSpriteKey()
         {
-            Character = character,
-            ForeColor = color,
+            Character  = character,
+            ForeColor  = color,
             FontFamily = fontFamily,
             FontWeight = fontWeight,
-            FontSize = fontSize
+            FontSize   = fontSize
         };
 
         ISprite2D sprite;
@@ -144,18 +144,18 @@ public static class TimeSeriesHelper2025
             txt.FontWeight = fontWeight;
             txt.Margin     = new Thickness(0.0);
             sprite         = renderContext.CreateSprite((FrameworkElement)txt);
+
             _fontCache.Add(key, sprite);
         }
         return sprite;
     }
 
     private static FontFamily GetFontByName(string fontName)
-    {
-        FontFamily ff;
-        if ( _fonts.TryGetValue(fontName, out ff) )
+    {        
+        if ( _fonts.TryGetValue(fontName, out var ff) )
             return ff;
 
-        FontFamily fontFamily = new FontFamily(fontName);
+        var fontFamily = new FontFamily(fontName);
         _fonts.Add(fontName, fontFamily);
 
         return fontFamily;
