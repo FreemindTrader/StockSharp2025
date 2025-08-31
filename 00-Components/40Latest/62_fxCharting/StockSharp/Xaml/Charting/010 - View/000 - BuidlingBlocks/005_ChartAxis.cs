@@ -356,21 +356,21 @@ public class ChartAxis : NotifiableObject,
     /// <param name="storage">Settings storage.</param>
     public void Load( SettingsStorage storage )
     {
-        Id = storage.GetValue<string>( "Id", ( string ) null ) ?? storage.GetValue<string>( "Name", ( string ) null );
-        Title = storage.GetValue<string>( "Title", ( string ) null );
-        IsVisible = storage.GetValue<bool>( "IsVisible", IsVisible );
-        Group = storage.GetValue<string>( "Group", Group );
-        AutoRange = storage.GetValue<bool>( "AutoRange", AutoRange );
-        DrawMinorTicks = storage.GetValue<bool>( "DrawMinorTicks", DrawMinorTicks );
-        DrawMajorTicks = storage.GetValue<bool>( "DrawMajorTicks", DrawMajorTicks );
-        DrawMajorGridLines = storage.GetValue<bool>( "DrawMajorGridLines", DrawMajorGridLines );
-        DrawMinorGridLines = storage.GetValue<bool>( "DrawMinorGridLines", DrawMinorGridLines );
-        DrawLabels = storage.GetValue<bool>( "DrawLabels", DrawLabels );
-        TextFormatting = storage.GetValue<string>( "TextFormatting", TextFormatting );
+        Id                   = storage.GetValue<string>( "Id", ( string ) null ) ?? storage.GetValue<string>( "Name", ( string ) null );
+        Title                = storage.GetValue<string>( "Title", ( string ) null );
+        IsVisible            = storage.GetValue<bool>( "IsVisible", IsVisible );
+        Group                = storage.GetValue<string>( "Group", Group );
+        AutoRange            = storage.GetValue<bool>( "AutoRange", AutoRange );
+        DrawMinorTicks       = storage.GetValue<bool>( "DrawMinorTicks", DrawMinorTicks );
+        DrawMajorTicks       = storage.GetValue<bool>( "DrawMajorTicks", DrawMajorTicks );
+        DrawMajorGridLines   = storage.GetValue<bool>( "DrawMajorGridLines", DrawMajorGridLines );
+        DrawMinorGridLines   = storage.GetValue<bool>( "DrawMinorGridLines", DrawMinorGridLines );
+        DrawLabels           = storage.GetValue<bool>( "DrawLabels", DrawLabels );
+        TextFormatting       = storage.GetValue<string>( "TextFormatting", TextFormatting );
         CursorTextFormatting = storage.GetValue<string>( "CursorTextFormatting", CursorTextFormatting );
         SubDayTextFormatting = storage.GetValue<string>( "SubDayTextFormatting", SubDayTextFormatting );
-        SwitchAxisLocation = storage.GetValue<bool>( "SwitchAxisLocation", SwitchAxisLocation );
-        AxisType = storage.GetValue<ChartAxisType>( "AxisType", ChartAxisType.DateTime );
+        SwitchAxisLocation   = storage.GetValue<bool>( "SwitchAxisLocation", SwitchAxisLocation );
+        AxisType             = storage.GetValue<ChartAxisType>( "AxisType", ChartAxisType.DateTime );
 
         if ( Id == "Y" )
         {

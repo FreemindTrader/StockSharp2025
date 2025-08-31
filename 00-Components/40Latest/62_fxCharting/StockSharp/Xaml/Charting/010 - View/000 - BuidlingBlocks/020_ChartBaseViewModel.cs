@@ -62,49 +62,33 @@ public class ChartBaseViewModel : NotifiableObject
         if ( namesTo != null && namesTo.Length == 0 )
         {
             namesTo = new string[ 1 ] { nameFrom };
-        }
+        }        
 
-        string[] toArray = namesTo;
-
-        CollectionHelper.SyncDo(
-            _propertyChangedMap,
-            new Action<SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>>(
-                p =>
-                {
-                    CollectionHelper.AddRange(
-                        CollectionHelper.SafeAdd(
-                                    CollectionHelper.SafeAdd(
-                                        p,
-                                        source,
-                                        pd =>
-                                        {
-                                            pd.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
-                                            return new Dictionary<string, HashSet<string>>();
-                                        } ),
-
-                                    nameFrom,
-                                    p => new HashSet<string>() ),
-                        toArray );
-                } ) );
+        CollectionHelper.SyncDo( _propertyChangedMap,            
+                                                        p =>
+                                                        {
+                                                            CollectionHelper.AddRange( CollectionHelper.SafeAdd( CollectionHelper.SafeAdd( p, source, pd => {
+                                                                                                                                                                pd.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
+                                                                                                                                                                return new Dictionary<string, HashSet<string>>();
+                                                                                                                                                            } ),
+                                                                                                                                                            nameFrom,
+                                                                                                                                                            p => new HashSet<string>() ),
+                                                                                                                                                            namesTo );
+                                                        } );
     }
 
-    private void OnPropertyChanged( object _param1, PropertyChangedEventArgs _param2 )
+    private void OnPropertyChanged( object _param1, PropertyChangedEventArgs e )
     {
-        CollectionHelper.SyncDo(
-            _propertyChangedMap,
-            new Action<SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>>(
-                p =>
-                {
-                    Dictionary<string, HashSet<string>> dictionary;
-                    HashSet<string> stringSet;
-                    if ( !p.TryGetValue( ( INotifyPropertyChanged ) p, out dictionary ) ||
-                        !dictionary.TryGetValue( _param2.PropertyName, out stringSet ) )
-                        return;
+        CollectionHelper.SyncDo( _propertyChangedMap,            
+                                                        p =>
+                                                        {                                                                                                                        
+                                                            if ( !p.TryGetValue( ( INotifyPropertyChanged ) p, out var propertiesSet ) || !propertiesSet.TryGetValue( e.PropertyName, out var properties ) )
+                                                                return;
 
-                    foreach ( string str in stringSet )
-                    {
-                        NotifyChanged( str );
-                    }
-                } ) );
+                                                            foreach ( string property in properties )
+                                                            {
+                                                                NotifyChanged( property );
+                                                            }
+                                                        } );
     }
 }

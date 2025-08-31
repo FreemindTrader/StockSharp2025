@@ -18,7 +18,7 @@ public abstract class ChartPart<T> : Equatable<T>, INotifyPropertyChanging, INot
     private Guid _guid;
 
     /// <summary>
-    /// Initialize <see cref="T:StockSharp.Xaml.Charting.ChartPart`1"/>.
+    /// Initialize <see cref="T:StockSharp.Xaml.Charting.ChartPart"/>.
     /// </summary>
     protected ChartPart() => Id = Guid.NewGuid();
 

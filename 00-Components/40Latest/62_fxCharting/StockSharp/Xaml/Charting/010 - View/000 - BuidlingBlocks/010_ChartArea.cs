@@ -19,33 +19,35 @@ using System.Linq;
 using System.Threading;
 using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 
-#nullable enable
 namespace StockSharp.Xaml.Charting;
 
-/// <summary>Chart area.</summary>
-[Display(ResourceType = typeof(LocalizedStrings), Name = "ChartArea")]
+/// <summary>
+/// ChartArea 
+/// </summary>
+[Display( ResourceType = typeof( LocalizedStrings ), Name = "ChartArea" )]
 public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartPart<IChartArea>
 {
-    private ScichartSurfaceMVVM _chartSurfaceVM = null;
-    public INotifyList<IChartElement> Elements => _chartElementNotifyList;
+    private ScichartSurfaceMVVM                 _chartSurfaceVM = null;
 
-    private IChart _chart;
+    private IChart                              _chart;
 
-    private ChartAxisType _xAxisType = ChartAxisType.CategoryDateTime;
+    private ChartAxisType                       _xAxisType = ChartAxisType.CategoryDateTime;
 
-    private string _title;
+    private string                              _title;
 
-    private double _height;
+    private double                              _height;
 
     private readonly INotifyList<IChartElement> _chartElementNotifyList;
 
-    private readonly INotifyList<IChartAxis> _xAxisNotifyList;
+    private readonly INotifyList<IChartAxis>    _xAxisNotifyList;
 
-    private readonly INotifyList<IChartAxis> _yAxisNotifyList;
+    private readonly INotifyList<IChartAxis>    _yAxisNotifyList;
 
     public INotifyList<IChartAxis> XAxises => _xAxisNotifyList;
 
     public INotifyList<IChartAxis> YAxises => _yAxisNotifyList;
+
+    public INotifyList<IChartElement> Elements => _chartElementNotifyList;
 
     /// <summary>
     /// Tony Added:
@@ -85,18 +87,17 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
 
             ViewModel.InitPropertiesEventHandlers();
 
-            Elements.ForEach(x =>
+            Elements.ForEach( x =>
             {
                 if ( !( x is IChartComponent elem ) )
                     return;
+
                 elem.ResetUI();
-            });
+            } );
         }
     }
 
 
-
-    [Browsable(false)]
     public ChartAxisType XAxisType
     {
         get => _xAxisType;
@@ -113,28 +114,30 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 Chart.EnsureUIThread();
             }
 
-            if ( Elements.Cast<IChartComponent>().Any(i => !i.CheckAxesCompatible(new ChartAxisType?(value), new ChartAxisType?())) )
+            if ( Elements.Cast<IChartComponent>().Any( i => !i.CheckAxesCompatible( value, null ) ) )
             {
-                throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.ElementDontSupportAxisTypeParams, value));
+                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.ElementDontSupportAxisTypeParams, value ) );
             }
-            
 
-            if ( Chart != null && Chart.Areas.Any(a => a != this && a.XAxisType != value) )
+
+            if ( Chart != null && Chart.Areas.Any( a => a != this && a.XAxisType != value ) )
             {
-                throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+                throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
             }
 
             _xAxisType = value;
-            List<ChartAxis> chartAxisList = new List<ChartAxis>();
-            foreach ( IChartAxis xaxise in (IEnumerable<IChartAxis>)XAxises )
+            var chartAxisList = new List<ChartAxis>();
+
+            foreach ( IChartAxis xaxise in ( IEnumerable<IChartAxis> ) XAxises )
             {
                 ChartAxis chartAxis = new ChartAxis()
                 {
-                    Id = xaxise.Id,
+                    Id        = xaxise.Id,
                     AutoRange = xaxise.AutoRange,
-                    AxisType = _xAxisType
+                    AxisType  = _xAxisType
                 };
-                chartAxisList.Add(chartAxis);
+
+                chartAxisList.Add( chartAxis );
             }
 
             IChart oldChart = Chart;
@@ -148,11 +151,184 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 chartAxisArray[index] = chartAxis;
                 ++index;
             }
-            CollectionHelper.RemoveRange(XAxises, new List<IChartAxis>(chartAxisArray));
-            CollectionHelper.AddRange(XAxises, (IEnumerable<IChartAxis>)chartAxisList);
+
+            CollectionHelper.RemoveRange( XAxises, new List<IChartAxis>( chartAxisArray ) );
+            CollectionHelper.AddRange( XAxises, ( IEnumerable<IChartAxis> ) chartAxisList );
+            
             Chart = oldChart;
         }
     }
+    
+
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartArea" />.
+    /// </summary>
+    public ChartArea()
+    {
+        _chartElementNotifyList = ( INotifyList<IChartElement> ) new ChartArea.ChartElementNotifyList( this );
+        _xAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, true );
+        _yAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, false );
+        InitAxises();
+        _chartSurfaceVM         = new ScichartSurfaceMVVM( this );
+        Height                  = 100.0;
+
+        ViewModel.PropertyChanged += new PropertyChangedEventHandler( OnPaneGroupSuffixChanged );
+    }
+
+    public ChartArea( int count )
+    {
+        _indicatorCount         = count;
+        _chartElementNotifyList = new ChartElementNotifyList( this );
+        _xAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, true );
+        _yAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, false );        
+        Height                  = 200f;
+
+        InitAxises( count );
+    }
+
+
+
+    private void InitAxises()
+    {
+        if ( !XAxises.Any( a => a.Id == "X" ) )
+        {
+            XAxises.Add( new ChartAxis() { Id = "X", AutoRange = false, AxisType = ChartAxisType.CategoryDateTime } );
+        }
+
+        if ( !YAxises.Any( a => a.Id == "Y" ) )
+        {
+            YAxises.Add( new ChartAxis() { Id = "Y", AxisType = ChartAxisType.Numeric } );
+        }
+
+    }
+
+    /// <summary>
+    /// Tony Added:
+    /// </summary>
+    /// <param name="count"></param>
+    private void InitAxises( int count )
+    {
+        string newX = "X";
+
+        if ( XAxises.FirstOrDefault( x => x.Id == newX ) == null )
+        {
+            XAxises.Add( new ChartAxis() { Id = newX, AxisType = ChartAxisType.CategoryDateTime } );
+        }
+
+        string newY = "Y";
+
+        if ( YAxises.FirstOrDefault( y => y.Id == newY ) == null )
+        {
+            YAxises.Add( new ChartAxis() { Id = newY, AxisType = ChartAxisType.Numeric } );
+        }
+    }
+    
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Name", Description = "ChartAreaName", GroupName = "Common", Order = 0 )]
+    public string Title
+    {
+        get => _title;
+        set
+        {
+            _title = value;
+            RaisePropertyChanged( nameof( Title ) );
+        }
+    }
+
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "GroupId", Description = "ChartPaneGroupDescription", GroupName = "Common", Order = 1 )]
+    public string GroupId
+    {
+        get => ViewModel.PaneGroupSuffix;
+        set => ViewModel.PaneGroupSuffix = value;
+    }
+
+    
+    public double Height
+    {
+        get => _height;
+        set
+        {
+            if ( Math.Abs( _height - value ) < double.Epsilon )
+                return;
+            _height = value;
+            RaisePropertyChanged( nameof( Height ) );
+        }
+    }
+
+
+
+    public override void Load( SettingsStorage storage )
+    {
+        ( ( ICollection<IChartElement> ) Elements ).Clear();
+        base.Load( storage );
+
+        Title     = storage.GetValue<string>( "Title" );
+        Height    = storage.GetValue<double>( "Height", 0.0 );
+        XAxisType = storage.GetValue<ChartAxisType>( "XAxisType", XAxisType );
+        GroupId   = storage.GetValue<string>( "GroupId", GroupId );
+
+        ChartArea.LoadAxises( storage, "XAxises", ( ICollection<IChartAxis> ) XAxises );
+        ChartArea.LoadAxises( storage, "YAxises", ( ICollection<IChartAxis> ) YAxises );
+    }
+
+    public override void Save( SettingsStorage storage )
+    {
+        base.Save( storage );
+        storage.SetValue<string>( "Title", Title );
+        storage.SetValue<double>( "Height", Height );
+        storage.SetValue<ChartAxisType>( "XAxisType", XAxisType );
+        storage.SetValue<string>( "GroupId", GroupId );
+        storage.SetValue<SettingsStorage[ ]>( "XAxises", XAxises.Select( x => PersistableHelper.Save( x ) ).ToArray() );
+        storage.SetValue<SettingsStorage[ ]>( "YAxises", YAxises.Select( y => PersistableHelper.Save( y ) ).ToArray() );
+    }
+
+    private static void LoadAxises( SettingsStorage settings, string axisName, ICollection<IChartAxis> Axises )
+    {
+        IEnumerable<SettingsStorage> source = settings.GetValue<IEnumerable<SettingsStorage>>(axisName, null);
+        if ( source == null )
+            return;
+        Axises.Clear();
+        CollectionHelper.AddRange( Axises, source.Select( s => PersistableHelper.Load<ChartAxis>( s ) ) );
+    }
+
+    /// <summary>
+    /// Create a copy of <see cref="T:StockSharp.Xaml.Charting.ChartArea" />.
+    /// </summary>
+    /// <returns>Copy.</returns>
+    public override ChartArea Clone()
+    {
+        ChartArea chartArea = Clone(new ChartArea()
+        {
+            Title     = Title,
+            Height    = Height,
+            XAxisType = XAxisType
+        });
+        CollectionHelper.AddRange( chartArea.Elements, Elements.Select( e => PersistableHelper.Clone( e ) ) );
+
+        chartArea.XAxises.Clear();
+        CollectionHelper.AddRange( chartArea.XAxises, XAxises.Select( e => PersistableHelper.Clone( e ) ) );
+
+        chartArea.YAxises.Clear();
+        CollectionHelper.AddRange( chartArea.YAxises, YAxises.Select( e => PersistableHelper.Clone( e ) ) );
+
+        return chartArea;
+    }
+
+    public override string ToString() => Title;
+
+    public void Dispose()
+    {
+        ViewModel.Dispose();
+        GC.SuppressFinalize( false );
+    }
+
+    private void OnPaneGroupSuffixChanged( object? _param1, PropertyChangedEventArgs isX )
+    {
+        if ( isX.PropertyName != "PaneGroupSuffix" )
+            return;
+        RaisePropertyChanged( "GroupId" );
+    }
+
     internal class PropertiesNotifyList<T> : BaseList<T>, INotifyPropertyChanged, INotifyCollectionChanged
     {
         private int _index;
@@ -161,42 +337,42 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         public event PropertyChangedEventHandler? PropertyChanged;
         public event NotifyCollectionChangedEventHandler? CollectionChanged;
 
-        protected override bool OnRemove(T property)
+        protected override bool OnRemove( T property )
         {
-            _index = base.IndexOf(property);
-            return base.OnRemove(property);
+            _index = base.IndexOf( property );
+            return base.OnRemove( property );
         }
 
-        protected override void OnRemoved(T property)
+        protected override void OnRemoved( T property )
         {
             if ( _index >= 0 )
-                RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Remove, property, _index);
-            base.OnRemoved(property);
+                RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Remove, property, _index );
+            base.OnRemoved( property );
         }
 
-        protected override void OnInserted(int _param1, T property)
+        protected override void OnInserted( int _param1, T property )
         {
-            RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Add, property, _param1);
-            base.OnInserted(_param1, property);
+            RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Add, property, _param1 );
+            base.OnInserted( _param1, property );
         }
 
-        protected override void OnAdded(T property)
+        protected override void OnAdded( T property )
         {
-            RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Add, property, Count - 1);
-            base.OnAdded(property);
+            RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Add, property, Count - 1 );
+            base.OnAdded( property );
         }
 
-        protected override void OnRemoveAt(int index)
+        protected override void OnRemoveAt( int index )
         {
             _property = base[index];
-            base.OnRemoveAt(index);
+            base.OnRemoveAt( index );
         }
 
-        protected override void OnRemovedAt(int index)
+        protected override void OnRemovedAt( int index )
         {
             if ( _property != null )
-                RaiseCollectionChangedEvent(NotifyCollectionChangedAction.Remove, _property, index);
-            base.OnRemovedAt(index);
+                RaiseCollectionChangedEvent( NotifyCollectionChangedAction.Remove, _property, index );
+            base.OnRemovedAt( index );
         }
 
         protected override void OnCleared()
@@ -205,29 +381,29 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             base.OnCleared();
         }
 
-        private void RaiseCollectionChangedEvent(NotifyCollectionChangedAction action, T changedItem, int index)
+        private void RaiseCollectionChangedEvent( NotifyCollectionChangedAction action, T changedItem, int index )
         {
-            RaisePropertyChangedEvent("Count");
-            RaisePropertyChangedEvent("Item[]");
+            RaisePropertyChangedEvent( "Count" );
+            RaisePropertyChangedEvent( "Item[]" );
 
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(action, changedItem, index));
+            CollectionChanged?.Invoke( this, new NotifyCollectionChangedEventArgs( action, changedItem, index ) );
         }
 
         private void ResetCollectionChangedEvent()
         {
-            RaisePropertyChangedEvent("Count");
-            RaisePropertyChangedEvent("Item[]");
+            RaisePropertyChangedEvent( "Count" );
+            RaisePropertyChangedEvent( "Item[]" );
 
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            CollectionChanged?.Invoke( this, new NotifyCollectionChangedEventArgs( NotifyCollectionChangedAction.Reset ) );
         }
 
-        private void RaisePropertyChangedEvent(string _param1)
+        private void RaisePropertyChangedEvent( string _param1 )
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(_param1));
+            PropertyChanged?.Invoke( this, new PropertyChangedEventArgs( _param1 ) );
         }
     }
 
-    private sealed class AxisNotifyList(ChartArea area, bool isX) : ChartArea.PropertiesNotifyList<IChartAxis>
+    private sealed class AxisNotifyList( ChartArea area, bool isX ) : ChartArea.PropertiesNotifyList<IChartAxis>
     {
         private static int _xAxisCount;
         private static int _yAxisCount;
@@ -239,7 +415,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             return _isX;
         }
 
-        protected override bool OnAdding(IChartAxis axis)
+        protected override bool OnAdding( IChartAxis axis )
         {
             string axisId = GetIsX() ? "X" : "Y";
 
@@ -254,14 +430,14 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
                 yCount = ++_yAxisCount;
             }
 
-            if ( StringHelper.IsEmpty(axis.Id) )
+            if ( StringHelper.IsEmpty( axis.Id ) )
             {
                 axis.Id = $"{axisId}({Guid.NewGuid()})";
             }
 
-            if ( this.Any(a => a.Id == axis.Id) )
+            if ( this.Any( a => a.Id == axis.Id ) )
             {
-                throw new InvalidOperationException(StringHelper.Put(LocalizedStrings.AxisAlreadyAdded, axis.Id));
+                throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.AxisAlreadyAdded, axis.Id ) );
             }
 
 
@@ -269,49 +445,49 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             {
                 //axis.AxisType = _chartArea.XAxisType;
 
-                throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+                throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
             }
 
             foreach ( var elem in _chartArea.Elements.Cast<IChartComponent>() )
             {
-                if ( elem.TryGetXAxis() == null && this == _chartArea.XAxises && axis.Id == elem.XAxisId && !elem.CheckAxesCompatible(new ChartAxisType?(axis.AxisType), new ChartAxisType?()) )
+                if ( elem.TryGetXAxis() == null && this == _chartArea.XAxises && axis.Id == elem.XAxisId && !elem.CheckAxesCompatible( new ChartAxisType?( axis.AxisType ), new ChartAxisType?() ) )
                 {
-                    throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+                    throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
                 }
 
-                if ( elem.TryGetYAxis() == null && this == _chartArea.YAxises && axis.Id == elem.YAxisId && !elem.CheckAxesCompatible(new ChartAxisType?(), new ChartAxisType?(axis.AxisType)) )
+                if ( elem.TryGetYAxis() == null && this == _chartArea.YAxises && axis.Id == elem.YAxisId && !elem.CheckAxesCompatible( new ChartAxisType?(), new ChartAxisType?( axis.AxisType ) ) )
                 {
-                    throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+                    throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
                 }
             }
 
 
-            if ( GetIsX() && StringHelper.IsEmpty(axis.Group) )
+            if ( GetIsX() && StringHelper.IsEmpty( axis.Group ) )
             {
                 axis.Group = axis.AxisType.ToString() + axis.Id;
             }
 
 
-            if ( StringHelper.IsEmpty(axis.Title) )
+            if ( StringHelper.IsEmpty( axis.Title ) )
             {
                 axis.Title = axisId + yCount.ToString();
             }
 
-            ( (ChartAxis)axis ).ChartArea = (IChartArea)_chartArea;
+            ( ( ChartAxis ) axis ).ChartArea = ( IChartArea ) _chartArea;
 
-            return base.OnAdding(axis);
+            return base.OnAdding( axis );
         }
 
-        protected override bool OnRemoving(IChartAxis axis)
+        protected override bool OnRemoving( IChartAxis axis )
         {
             ChartAxis chartAxis = (ChartAxis)axis;
             bool hasAxis = Contains(chartAxis);
 
-            if ( hasAxis && _chartArea.Chart != null && CompareHelper.IsDefault<ChartAxis>(chartAxis) )
-                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+            if ( hasAxis && _chartArea.Chart != null && CompareHelper.IsDefault<ChartAxis>( chartAxis ) )
+                throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
 
 
-            if ( ( base.OnRemoving(chartAxis) &  hasAxis ) == false )
+            if ( ( base.OnRemoving( chartAxis ) & hasAxis ) == false )
                 return false;
 
             chartAxis.ChartArea = null;
@@ -319,16 +495,16 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             return true;
         }
 
-        protected override bool OnRemovingAt(int index)
+        protected override bool OnRemovingAt( int index )
         {
             var chartAxis = (ChartAxis)this[index];
 
-            if ( CompareHelper.IsDefault(chartAxis) && _chartArea.Chart != null )
+            if ( CompareHelper.IsDefault( chartAxis ) && _chartArea.Chart != null )
             {
-                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+                throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
             }
 
-            if ( base.OnRemovingAt(index) )
+            if ( base.OnRemovingAt( index ) )
             {
                 chartAxis.ChartArea = null;
 
@@ -341,7 +517,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         protected override bool OnClearing()
         {
             if ( _chartArea.Chart != null )
-                throw new InvalidOperationException(LocalizedStrings.ErrorRemovingDefaultAxis);
+                throw new InvalidOperationException( LocalizedStrings.ErrorRemovingDefaultAxis );
 
             IChartAxis[] axises = this.ToArray<IChartAxis>();
 
@@ -360,204 +536,30 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     }
 
 
-
-    internal sealed class ChartElementNotifyList(ChartArea area) : ChartArea.PropertiesNotifyList<IChartElement>
+    internal sealed class ChartElementNotifyList( ChartArea area ) : ChartArea.PropertiesNotifyList<IChartElement>
     {
-        
         private readonly ChartArea _area = area ?? throw new ArgumentNullException("area");
 
-        protected override bool OnAdding(IChartElement elem)
+        protected override bool OnAdding( IChartElement elem )
         {
             if ( elem.TryGetChart() != null )
             {
-                throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
+                throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
             }
 
             var result = ! this.Any(i => i.Id == elem.Id) ? elem as IChartComponent : throw new InvalidOperationException(LocalizedStrings.ElementAlreadyAttached);
-            
+
             if ( result != null )
             {
                 IChartAxis chartAxis = _area.YAxises.FirstOrDefault(i => i.Id == result.YAxisId);
 
-                if ( !result.CheckAxesCompatible(new ChartAxisType?(_area.XAxisType), chartAxis?.AxisType) )
-                    throw new InvalidOperationException(
-                        StringHelper.Put(
-                            LocalizedStrings.AxesTypesNotSupportedParams,
-                            result.GetType().Name,
-                            _area.XAxisType,
-                            chartAxis?.AxisType));
-
+                if ( !result.CheckAxesCompatible( new ChartAxisType?( _area.XAxisType ), chartAxis?.AxisType ) )
+                {
+                    throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.AxesTypesNotSupportedParams, result.GetType().Name, _area.XAxisType, chartAxis?.AxisType ) );
+                }                    
             }
-            return base.OnAdding(elem);
+            return base.OnAdding( elem );
         }
-
-
-    }
-
-
-    /// <summary>
-    /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartArea" />.
-    /// </summary>
-    public ChartArea()
-    {
-        _chartElementNotifyList = (INotifyList<IChartElement>)new ChartArea.ChartElementNotifyList(this);
-        _xAxisNotifyList = (INotifyList<IChartAxis>)new ChartArea.AxisNotifyList(this, true);
-        _yAxisNotifyList = (INotifyList<IChartAxis>)new ChartArea.AxisNotifyList(this, false);
-        InitAxises();
-        _chartSurfaceVM = new ScichartSurfaceMVVM(this);
-        Height = 100.0;
-        ViewModel.PropertyChanged += new PropertyChangedEventHandler(OnPaneGroupSuffixChanged);
-    }
-
-    public ChartArea(int count)
-    {
-        _indicatorCount = count;
-        _chartElementNotifyList = new ChartElementNotifyList(this);
-        _xAxisNotifyList = (INotifyList<IChartAxis>)new ChartArea.AxisNotifyList(this, true);
-        _yAxisNotifyList = (INotifyList<IChartAxis>)new ChartArea.AxisNotifyList(this, false);
-        InitAxises(count);
-        Height = 200f;
-    }
-
-
-
-    private void InitAxises()
-    {
-        if ( !XAxises.Any(a => a.Id == "X") )
-        {
-            XAxises.Add(new ChartAxis() { Id = "X", AutoRange = false, AxisType = ChartAxisType.CategoryDateTime });
-        }
-
-        if ( !YAxises.Any(a => a.Id == "Y") )
-        {
-            YAxises.Add(new ChartAxis() { Id = "Y", AxisType = ChartAxisType.Numeric });
-        }
-
-    }
-
-    /// <summary>
-    /// Tony Added:
-    /// </summary>
-    /// <param name="count"></param>
-    private void InitAxises(int count)
-    {
-        string newX = "X";
-
-        if ( XAxises.FirstOrDefault(x => x.Id == newX) == null )
-        {
-            XAxises.Add(new ChartAxis() { Id = newX, AxisType = ChartAxisType.CategoryDateTime });
-        }
-
-        string newY = "Y";
-
-        if ( YAxises.FirstOrDefault(y => y.Id == newY) == null )
-        {
-            YAxises.Add(new ChartAxis() { Id = newY, AxisType = ChartAxisType.Numeric });
-        }
-    }
-
-    [Browsable(false)]
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Name", Description = "ChartAreaName", GroupName = "Common", Order = 0)]
-    public string Title
-    {
-        get => _title;
-        set
-        {
-            _title = value;
-            RaisePropertyChanged(nameof(Title));
-        }
-    }
-
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "GroupId", Description = "ChartPaneGroupDescription", GroupName = "Common", Order = 1)]
-    public string GroupId
-    {
-        get => ViewModel.PaneGroupSuffix;
-        set => ViewModel.PaneGroupSuffix = value;
-    }
-
-    [Browsable(false)]
-    public double Height
-    {
-        get => _height;
-        set
-        {
-            if ( Math.Abs(_height - value) < double.Epsilon )
-                return;
-            _height = value;
-            RaisePropertyChanged(nameof(Height));
-        }
-    }
-
-
-
-    public override void Load(SettingsStorage storage)
-    {
-        ( (ICollection<IChartElement>)Elements ).Clear();
-        base.Load(storage);
-        Title = storage.GetValue<string>( "Title" );
-        Height = storage.GetValue<double>("Height", 0.0);
-        XAxisType = storage.GetValue<ChartAxisType>("XAxisType", XAxisType);
-        GroupId = storage.GetValue<string>("GroupId", GroupId);
-        ChartArea.LoadAxises(storage, "XAxises", (ICollection<IChartAxis>)XAxises);
-        ChartArea.LoadAxises(storage, "YAxises", (ICollection<IChartAxis>)YAxises);
-    }
-
-    public override void Save(SettingsStorage storage)
-    {
-        base.Save(storage);
-        storage.SetValue<string>("Title", Title);
-        storage.SetValue<double>("Height", Height);
-        storage.SetValue<ChartAxisType>("XAxisType", XAxisType);
-        storage.SetValue<string>("GroupId", GroupId);
-        storage.SetValue<SettingsStorage[]>("XAxises", XAxises.Select(x => PersistableHelper.Save(x)).ToArray());
-        storage.SetValue<SettingsStorage[]>("YAxises", YAxises.Select(y => PersistableHelper.Save(y)).ToArray());
-    }
-
-    private static void LoadAxises(SettingsStorage settings, string axisName, ICollection<IChartAxis> Axises)
-    {
-        IEnumerable<SettingsStorage> source = settings.GetValue<IEnumerable<SettingsStorage>>(axisName, null);
-        if ( source == null )
-            return;
-        Axises.Clear();
-        CollectionHelper.AddRange(Axises, source.Select(s => PersistableHelper.Load<ChartAxis>(s)));
-    }
-
-    /// <summary>
-    /// Create a copy of <see cref="T:StockSharp.Xaml.Charting.ChartArea" />.
-    /// </summary>
-    /// <returns>Copy.</returns>
-    public override ChartArea Clone()
-    {
-        ChartArea chartArea = Clone(new ChartArea()
-        {
-            Title = Title,
-            Height = Height,
-            XAxisType = XAxisType
-        });
-        CollectionHelper.AddRange(chartArea.Elements, Elements.Select(e => PersistableHelper.Clone(e)));
-
-        chartArea.XAxises.Clear();
-        CollectionHelper.AddRange(chartArea.XAxises, XAxises.Select(e => PersistableHelper.Clone(e)));
-
-        chartArea.YAxises.Clear();
-        CollectionHelper.AddRange(chartArea.YAxises, YAxises.Select(e => PersistableHelper.Clone(e)));
-
-        return chartArea;
-    }
-
-    public override string ToString() => Title;
-
-    public void Dispose()
-    {
-        ViewModel.Dispose();
-        GC.SuppressFinalize((object)false);
-    }
-
-    private void OnPaneGroupSuffixChanged(object? _param1, PropertyChangedEventArgs isX)
-    {
-        if ( !( isX.PropertyName == "PaneGroupSuffix" ) )
-            return;
-        RaisePropertyChanged("GroupId");
     }
 }
 

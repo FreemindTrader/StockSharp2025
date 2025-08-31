@@ -1,4 +1,8 @@
-﻿using DevExpress.Xpf.Charts.Native;
+﻿using DevExpress.Charts.Model;
+using DevExpress.Charts.Native;
+using DevExpress.Xpf.Charts.Native;
+using Ecng.ComponentModel;
+using Microsoft.VisualBasic;
 using SciChart.Charting.Common.Extensions;
 using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Charting.Visuals.RenderableSeries;
@@ -11,14 +15,34 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Reflection.PortableExecutable;
 using System.Runtime.InteropServices;
+using System.Security.Policy;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Media;
 using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 #nullable disable
 namespace StockSharp.Xaml.Charting;
 
+/// <summary>
+/// 
+/// What is a Cluster chart?
+/// Cluster chart is an advanced chart type that shows a comprehensive view of the candle chart. 
+/// It allows to look inside the price and see all market actions.Cluster chart combines several important characteristics like time, OHLC prices, trading volume, number of buy and sell trades.
+/// 
+/// Using this information, a trader can evaluate:
+///     - trading volume, which executed for each price
+///     - zones of maximum volume accumulation
+///     - zones of high trading interest (the maximum number of trades )
+///     - the number of buyers and sellers at each price level
+/// 
+/// <see href="https://help.quantower.com/quantower/analytics-panels/chart/volume-analysis-tools/cluster-chart"/>
+/// 
+/// </summary>
 public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableSeries
 {
     public class ClusterProfileHitTestProvider : DefaultHitTestProvider<ClusterProfileRenderableSeries>
@@ -26,24 +50,22 @@ public sealed class ClusterProfileRenderableSeries : TimeframeSegmentRenderableS
         public ClusterProfileHitTestProvider(ClusterProfileRenderableSeries renderSeries) : base(renderSeries)
         {
         }
-
-        protected override HitTestInfo HitTestSeriesWithBody(Point rawPoint, HitTestInfo nearestHitPoint, double hitTestRadius)
+        protected override HitTestInfo HitTestSeriesWithBody(Point rawPoint, HitTestInfo nearest, double hitTestRadius)
         {
-            RenderContextDetails lastContext = RenderableSeries._lastContext;
-            int dataSeriesIndex = nearestHitPoint.DataSeriesIndex;
+            var lastContext = RenderableSeries._lastContext;
+            int dsIndex     = nearest.DataSeriesIndex;
 
-            if ( !( RenderableSeries.DataSeries is TimeframeSegmentDataSeries dataSeries ) || dataSeries.Count < 1 || lastContext == null || dataSeriesIndex < 0 || dataSeriesIndex >= dataSeries.Count )
+            if ( !( RenderableSeries.DataSeries is TimeframeSegmentDataSeries tfds ) || tfds.Count < 1 || lastContext == null || dsIndex < 0 || dsIndex >= tfds.Count )
                 return HitTestInfo.Empty;
 
-            double coordinate = lastContext.XCalc.GetCoordinate((double)dataSeriesIndex);
-            double x = coordinate + lastContext.SegmentWidth;
+            var dsIndexBegin = lastContext.XCalc.GetCoordinate((double)dsIndex);
+            var dsIndexEnd   = dsIndexBegin + lastContext.SegmentWidth;
 
-            if ( rawPoint.X < coordinate || rawPoint.X > x )
+            if ( rawPoint.X < dsIndexBegin || rawPoint.X > dsIndexEnd )
                 return HitTestInfo.Empty;
 
-            nearestHitPoint.HitTestPoint=( new Point(x, nearestHitPoint.HitTestPoint.Y) );
-
-            return nearestHitPoint;
+            nearest.HitTestPoint= new Point(dsIndexEnd, nearest.HitTestPoint.Y);
+            return nearest;
         }
     }
 
