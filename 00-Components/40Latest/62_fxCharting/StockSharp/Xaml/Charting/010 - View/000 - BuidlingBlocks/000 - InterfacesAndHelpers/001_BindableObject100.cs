@@ -15,27 +15,35 @@ public class BindableObject100 : INotifyPropertyChanged
 
     private int _count;
 
-    private event PropertyChangedEventHandler CustomPropertyChanged;
-    
-    protected void OnPropertyChanged(string _param1)
+    private event PropertyChangedEventHandler NotifyPropertyChanged;
+
+    protected void NotifyChanged( string _param1 )
     {
-        RaisePropertyChangedEvent(new PropertyChangedEventArgs(_param1));
+        RaisePropertyChangedEvent( new PropertyChangedEventArgs( _param1 ) );
     }
 
-    protected void RaisePropertyChangedEvent<T>(Expression<Func<T>> lamdaExp)
+    protected void RaisePropertyChangedEvent<T>( Expression<Func<T>> lamdaExp )
     {
-        RaisePropertyChangedEvent( GetExpressionBody<T>(lamdaExp));
+        RaisePropertyChangedEvent( GetExpressionBody<T>( lamdaExp ) );
     }
 
-    protected virtual bool OnSetPropertyChanged<T>(ref T objectOne, T objectTwo, string propertyName)
+    /// <summary>
+    /// Set property value and raise events.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="field"></param>
+    /// <param name="value"></param>
+    /// <param name="propertyName"></param>
+    /// <returns></returns>
+    protected virtual bool SetField<T>( ref T field, T value, string propertyName )
     {
-        if ( EqualityComparer<T>.Default.Equals(objectOne, objectTwo) )
+        if ( EqualityComparer<T>.Default.Equals( field, value ) )
             return false;
 
-        objectOne = objectTwo;
-        
-        OnPropertyChanged(propertyName);
-        
+        field = value;
+
+        NotifyChanged( propertyName );
+
         return true;
     }
 
@@ -43,8 +51,8 @@ public class BindableObject100 : INotifyPropertyChanged
     {
         add
         {
-            CustomPropertyChanged += value;
-            
+            NotifyPropertyChanged += value;
+
             if ( Interlocked.Increment(ref _count) <= 100 )
                 return;
             _count = 0;
@@ -53,31 +61,31 @@ public class BindableObject100 : INotifyPropertyChanged
 
         remove
         {
-            CustomPropertyChanged -= value;            
+            NotifyPropertyChanged -= value;
         }
     }
-    
 
-    protected void OnPropertyChanged(string propertyName, object objectOne, object objectTwo)
+
+    protected void OnPropertyChanged( string propertyName, object objectOne, object objectTwo )
     {
-        RaisePropertyChangedEvent( new PropertyChangedEventArgsEx(propertyName, objectOne, objectTwo) );
+        RaisePropertyChangedEvent( new PropertyChangedEventArgsEx( propertyName, objectOne, objectTwo ) );
     }
 
 
 
-    protected void RaisePropertyChangedEvent(string property)
-    {        
-        CustomPropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+    protected void RaisePropertyChangedEvent( string property )
+    {
+        NotifyPropertyChanged?.Invoke( this, new PropertyChangedEventArgs( property ) );
     }
 
-    private void RaisePropertyChangedEvent(PropertyChangedEventArgs e )
-    {        
-        CustomPropertyChanged?.Invoke(this, e);
+    private void RaisePropertyChangedEvent( PropertyChangedEventArgs e )
+    {
+        NotifyPropertyChanged?.Invoke( this, e );
     }
 
-    public static string GetExpressionBody<T>(Expression<Func<T>> lambda)
+    public static string GetExpressionBody<T>( Expression<Func<T>> lambda )
     {
         var expression = (LambdaExpression)lambda;
-        return ( !( expression.Body is UnaryExpression ) ? (MemberExpression)expression.Body : (MemberExpression)( (UnaryExpression)expression.Body ).Operand ).Member.Name;
+        return ( !( expression.Body is UnaryExpression ) ? ( MemberExpression ) expression.Body : ( MemberExpression ) ( ( UnaryExpression ) expression.Body ).Operand ).Member.Name;
     }
 }

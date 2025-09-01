@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: #=z$rSV2280vAtTYxM9FrXMy0LqYv5ht_Gnk2YAlZXcwkZGziIlo367a8J0vVW6
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using DevExpress.Xpf.Core;
+﻿using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Editors.Helpers;
 using Ecng.Collections;
 using Ecng.Common;
@@ -27,31 +21,64 @@ using System.Windows.Input;
 
 public sealed class ChartViewModel : DependencyObject
 {
-    #region Tony Added
+    public static readonly DependencyProperty SelectedThemeProperty         = DependencyProperty.Register(nameof(SelectedTheme),         typeof(string), typeof(ChartViewModel));
 
-    public event EventHandler<AddCandlesEventArgs>  CodingAddCandlesEvent;
+    public static readonly DependencyProperty ShowOverviewProperty          = DependencyProperty.Register(nameof(ShowOverview),          typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)false));
 
-    
-    public void ExecuteCodingAddCandles(ChartArea chartArea, Subscription series)
-    {
-        CodingAddCandlesEvent?.Invoke(this, new AddCandlesEventArgs(chartArea, series));
-    }
+    public static readonly DependencyProperty ShowLegendProperty            = DependencyProperty.Register(nameof(ShowLegend),            typeof(bool), typeof(ChartViewModel));
 
-    public bool CanExecuteCodingAddCandles()
-    {
-        return true;
-    }
-    #endregion Tony Added
+    public static readonly DependencyProperty IsInteractedProperty          = DependencyProperty.Register(nameof(IsInteracted),          typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnIsInteractedCallback)));
 
+    public static readonly DependencyProperty ChartPaneViewModelProperty    = DependencyProperty.Register(nameof(ChartPaneViewModels),   typeof(ObservableCollection<ScichartSurfaceMVVM>), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty ShowHiddenAxesCommandProperty = DependencyProperty.Register(nameof(ShowHiddenAxesCommand), typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddAreaCommandProperty        = DependencyProperty.Register(nameof(AddAreaCommand),        typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddCandlesCommandProperty     = DependencyProperty.Register(nameof(AddCandlesCommand),     typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddIndicatorCommandProperty   = DependencyProperty.Register(nameof(AddIndicatorCommand),   typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddOrdersCommandProperty      = DependencyProperty.Register(nameof(AddOrdersCommand),      typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddTradesCommandProperty      = DependencyProperty.Register(nameof(AddTradesCommand),      typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty UngroupCommandProperty        = DependencyProperty.Register(nameof(UngroupCommand),        typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddXAxisCommandProperty       = DependencyProperty.Register(nameof(AddXAxisCommand),       typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AddYAxisCommandProperty       = DependencyProperty.Register(nameof(AddYAxisCommand),       typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty RemoveAxisCommandProperty     = DependencyProperty.Register(nameof(RemoveAxisCommand),     typeof(ICommand), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty IndicatorTypesProperty        = DependencyProperty.Register(nameof(IndicatorTypes),        typeof(ObservableCollection<IndicatorType>), typeof(ChartViewModel));
+
+    public static readonly DependencyProperty AllowAddAreaProperty          = DependencyProperty.Register(nameof(AllowAddArea),          typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnAllowAddXXXPropertyChanged), new CoerceValueCallback(OnAllowAddXPropertyCoreceValueChanged)));
+
+    public static readonly DependencyProperty AllowAddAxisProperty          = DependencyProperty.Register(nameof(AllowAddAxis),          typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnAllowAddXXXPropertyChanged), new CoerceValueCallback(OnAllowAddXPropertyCoreceValueChanged)));
+
+    public static readonly DependencyProperty AllowAddCandlesProperty       = DependencyProperty.Register(nameof(AllowAddCandles),       typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnAllowAddXXXPropertyChanged), new CoerceValueCallback(OnAllowAddXPropertyCoreceValueChanged)));
+
+    public static readonly DependencyProperty AllowAddIndicatorsProperty    = DependencyProperty.Register(nameof(AllowAddIndicators),    typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnAllowAddXXXPropertyChanged), new CoerceValueCallback(OnAllowAddXPropertyCoreceValueChanged)));
+
+    public static readonly DependencyProperty AllowAddOrdersProperty        = DependencyProperty.Register(nameof(AllowAddOrders),        typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnAllowAddXXXPropertyChanged), new CoerceValueCallback(OnAllowAddXPropertyCoreceValueChanged)));
+
+    public static readonly DependencyProperty AllowAddOwnTradesProperty     = DependencyProperty.Register(nameof(AllowAddOwnTrades),     typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(OnAllowAddXXXPropertyChanged), new CoerceValueCallback(OnAllowAddXPropertyCoreceValueChanged)));
+
+    public static readonly DependencyProperty MinimumRangeProperty          = DependencyProperty.Register(nameof(MinimumRange),          typeof(int), typeof(ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
+
+    /// <summary>
+    /// What theme is currently selected in the application. 
+    /// </summary>
     public string SelectedTheme
     {
         get
         {
-            return (string)GetValue(ChartViewModel.SelectedThemeProperty);
+            return ( string ) GetValue( SelectedThemeProperty );
         }
         set
         {
-            SetValue(ChartViewModel.SelectedThemeProperty, (object)value);
+            SetValue( SelectedThemeProperty, ( object ) value );
         }
     }
 
@@ -59,170 +86,218 @@ public sealed class ChartViewModel : DependencyObject
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.ShowOverviewProperty);
+            return ( bool ) GetValue( ShowOverviewProperty );
         }
         set
         {
-            SetValue(ChartViewModel.ShowOverviewProperty, (object)value);
+            SetValue( ShowOverviewProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Legend is the box on the side of the chart that shows 
+    ///     - What point series are selected on the chart
+    ///     - what indicators are on the chart and their current values.
+    /// </summary>
     public bool ShowLegend
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.ShowLegendProperty);
+            return ( bool ) GetValue( ShowLegendProperty );
         }
         set
         {
-            SetValue(ChartViewModel.ShowLegendProperty, (object)value);
+            SetValue( ShowLegendProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Allow users to add orders, indicators, annotations to the chart
+    /// </summary>
     public bool IsInteracted
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.IsInteractedProperty);
+            return ( bool ) GetValue( IsInteractedProperty );
         }
         set
         {
-            SetValue(ChartViewModel.IsInteractedProperty, (object)value);
+            SetValue( IsInteractedProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// A property to control if we can add more areas to the chart. Like if we can add more indicator panes to the chart.
+    /// </summary>
     public bool AllowAddArea
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.AllowAddAreaProperty);
+            return ( bool ) GetValue( AllowAddAreaProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AllowAddAreaProperty, (object)value);
+            SetValue( AllowAddAreaProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Scichart allow adding multiple y-axis to the chart. This property controls if we can add more y-axis to the chart.
+    /// </summary>
     public bool AllowAddAxis
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.AllowAddAxisProperty);
+            return ( bool ) GetValue( AllowAddAxisProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AllowAddAxisProperty, (object)value);
+            SetValue( AllowAddAxisProperty, ( object ) value );
         }
     }
 
+
+    /// <summary>
+    /// Allow users to add candles to the chart.
+    /// </summary>
     public bool AllowAddCandles
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.AllowAddCandlesProperty);
+            return ( bool ) GetValue( AllowAddCandlesProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AllowAddCandlesProperty, (object)value);
+            SetValue( AllowAddCandlesProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Allow users to add indicators to the chart.
+    /// </summary>
     public bool AllowAddIndicators
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.AllowAddIndicatorsProperty);
+            return ( bool ) GetValue( AllowAddIndicatorsProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AllowAddIndicatorsProperty, (object)value);
+            SetValue( AllowAddIndicatorsProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Allow users to add orders to the chart.
+    /// </summary>
     public bool AllowAddOrders
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.AllowAddOrdersProperty);
+            return ( bool ) GetValue( AllowAddOrdersProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AllowAddOrdersProperty, (object)value);
+            SetValue( AllowAddOrdersProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Allow users to add their own trades to the chart.
+    /// </summary>
     public bool AllowAddOwnTrades
     {
         get
         {
-            return (bool)GetValue(ChartViewModel.AllowAddOwnTradesProperty);
+            return ( bool ) GetValue( AllowAddOwnTradesProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AllowAddOwnTradesProperty, (object)value);
+            SetValue( AllowAddOwnTradesProperty, ( object ) value );
         }
     }
 
-    private static void OnAllowAddXPropertyChanged(DependencyObject _param0, DependencyPropertyChangedEventArgs _param1)
+    /// <summary>
+    /// Called when any of the AllowAddArea, AllowAddOwnTrades, AllowAddOrders, AllowAddIndicators ....... properties are changed.
+    /// </summary>
+    /// <param name="dpo"></param>
+    /// <param name="e"></param>
+    private static void OnAllowAddXXXPropertyChanged( DependencyObject dpo, DependencyPropertyChangedEventArgs e )
     {
-        ( (ChartViewModel)_param0 ).AllowAddXPropertyChanged();
+        ( ( ChartViewModel ) dpo ).AllowAddXXXPropertyChanged();
     }
 
-    private void AllowAddXPropertyChanged()
+    private void AllowAddXXXPropertyChanged()
     {
+        //
+        // Summary:
+        //     Forces the System.Windows.Input.CommandManager to raise the System.Windows.Input.CommandManager.RequerySuggested
+        //     event.
         CommandManager.InvalidateRequerySuggested();
         ClosePaneCommand.RaiseCanExecuteChanged();
-        Action izKc6jG0gptPuO01M = ChartViewModel.InteractedEvent;
-        if ( izKc6jG0gptPuO01M == null )
-            return;
-        izKc6jG0gptPuO01M();
+
+        InteractedEvent?.Invoke();
     }
 
+    /// <summary>
+    /// Add a new X axis to the chart area.
+    /// </summary>
     public ICommand AddXAxisCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddXAxisCommandProperty);
+            return ( ICommand ) GetValue( AddXAxisCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddXAxisCommandProperty, (object)value);
+            SetValue( AddXAxisCommandProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// Add a new Y axis to the chart area.
+    /// </summary>
     public ICommand AddYAxisCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddYAxisCommandProperty);
+            return ( ICommand ) GetValue( AddYAxisCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddYAxisCommandProperty, (object)value);
+            SetValue( AddYAxisCommandProperty, ( object ) value );
         }
     }
 
+
+    /// <summary>
+    /// Remove an axis from the chart area.
+    /// </summary>
     public ICommand RemoveAxisCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.RemoveAxisCommandProperty);
+            return ( ICommand ) GetValue( RemoveAxisCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.RemoveAxisCommandProperty, (object)value);
+            SetValue( RemoveAxisCommandProperty, ( object ) value );
         }
     }
 
+
+    /// <summary>
+    /// The list of available indicators types.
+    /// </summary>
     public ObservableCollection<IndicatorType> IndicatorTypes
     {
         get
         {
-            return (ObservableCollection<IndicatorType>)GetValue(ChartViewModel.IndicatorTypesProperty);
+            return ( ObservableCollection<IndicatorType> ) GetValue( IndicatorTypesProperty );
         }
         set
         {
-            SetValue(ChartViewModel.IndicatorTypesProperty, (object)value);
+            SetValue( IndicatorTypesProperty, ( object ) value );
         }
     }
 
@@ -251,123 +326,103 @@ public sealed class ChartViewModel : DependencyObject
 
     public Action<ChartArea> UngroupEvent;
 
-    public static readonly DependencyProperty SelectedThemeProperty = DependencyProperty.Register(nameof(SelectedTheme), typeof(string), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty ShowOverviewProperty = DependencyProperty.Register(nameof(ShowOverview), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)false));
-
-    public static readonly DependencyProperty ShowLegendProperty = DependencyProperty.Register(nameof(ShowLegend), typeof(bool), typeof(ChartViewModel));
-
     public static Action InteractedEvent;
 
-    public static readonly DependencyProperty IsInteractedProperty = DependencyProperty.Register(nameof(IsInteracted), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnIsInteractedCallback)));
-
-    private static void OnIsInteractedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+    
+    private static void OnIsInteractedCallback( DependencyObject d, DependencyPropertyChangedEventArgs e )
     {
         ChartViewModel vm = (ChartViewModel)d;
-        vm.CoerceValue(ChartViewModel.AllowAddAreaProperty);
-        vm.CoerceValue(ChartViewModel.AllowAddAxisProperty);
-        vm.CoerceValue(ChartViewModel.AllowAddCandlesProperty);
-        vm.CoerceValue(ChartViewModel.AllowAddIndicatorsProperty);
-        vm.CoerceValue(ChartViewModel.AllowAddOrdersProperty);
-        vm.CoerceValue(ChartViewModel.AllowAddOwnTradesProperty);
-        ( (ChartViewModel)d ).AllowAddXPropertyChanged();
+        vm.CoerceValue( AllowAddAreaProperty );
+        vm.CoerceValue( AllowAddAxisProperty );
+        vm.CoerceValue( AllowAddCandlesProperty );
+        vm.CoerceValue( AllowAddIndicatorsProperty );
+        vm.CoerceValue( AllowAddOrdersProperty );
+        vm.CoerceValue( AllowAddOwnTradesProperty );
+        ( ( ChartViewModel ) d ).AllowAddXXXPropertyChanged();
     }
 
     private readonly ICommand CancelActiveOrdersCommand;
 
     private int _minimumRange;
 
-    public static readonly DependencyProperty ChartPaneViewModelProperty    = DependencyProperty.Register(nameof(ChartPaneViewModels), typeof(ObservableCollection<ScichartSurfaceMVVM>), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty ShowHiddenAxesCommandProperty = DependencyProperty.Register(nameof(ShowHiddenAxesCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddAreaCommandProperty        = DependencyProperty.Register(nameof(AddAreaCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddCandlesCommandProperty     = DependencyProperty.Register(nameof(AddCandlesCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddIndicatorCommandProperty   = DependencyProperty.Register(nameof(AddIndicatorCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddOrdersCommandProperty      = DependencyProperty.Register(nameof(AddOrdersCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddTradesCommandProperty      = DependencyProperty.Register(nameof(AddTradesCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty UngroupCommandProperty        = DependencyProperty.Register(nameof(UngroupCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddXAxisCommandProperty       = DependencyProperty.Register(nameof(AddXAxisCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AddYAxisCommandProperty       = DependencyProperty.Register(nameof(AddYAxisCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty RemoveAxisCommandProperty     = DependencyProperty.Register(nameof(RemoveAxisCommand), typeof(ICommand), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty IndicatorTypesProperty        = DependencyProperty.Register(nameof(IndicatorTypes), typeof(ObservableCollection<IndicatorType>), typeof(ChartViewModel));
-
-    public static readonly DependencyProperty AllowAddAreaProperty          = DependencyProperty.Register(nameof(AllowAddArea), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
-
-    public static readonly DependencyProperty AllowAddAxisProperty          = DependencyProperty.Register(nameof(AllowAddAxis), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
-
-    public static readonly DependencyProperty AllowAddCandlesProperty       = DependencyProperty.Register(nameof(AllowAddCandles), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
-
-    public static readonly DependencyProperty AllowAddIndicatorsProperty    = DependencyProperty.Register(nameof(AllowAddIndicators), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
-
-    public static readonly DependencyProperty AllowAddOrdersProperty        = DependencyProperty.Register(nameof(AllowAddOrders), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
-
-    public static readonly DependencyProperty AllowAddOwnTradesProperty     = DependencyProperty.Register(nameof(AllowAddOwnTrades), typeof(bool), typeof(ChartViewModel), new PropertyMetadata((object)true, new PropertyChangedCallback(ChartViewModel.OnAllowAddXPropertyChanged), new CoerceValueCallback(ChartViewModel.OnAllowAddXPropertyCoreceValueChanged)));
-
-    public static readonly DependencyProperty MinimumRangeProperty          = DependencyProperty.Register(nameof(MinimumRange), typeof(int), typeof(ChartViewModel), new PropertyMetadata(new PropertyChangedCallback(ChartViewModel.SomeClass34343383.SomeMethond0343.OnMinimumRangeCallback)));
-
+    
 
     private readonly DelegateCommand<IDrawingSurfaceVM> _closePaneCommand;
 
     public ChartViewModel()
     {
-        ChartPaneViewModels       = new ObservableCollection<ScichartSurfaceMVVM>();
-        MinimumRange              = 50;
-        ShowOverview              = false;
-        ShowLegend                = true;
-        IndicatorTypes            = new ObservableCollection<IndicatorType>();
-        AddAreaCommand            = (ICommand)new DelegateCommand(new Action<object>(ExecuteAddAreaCommand), new Func<object, bool>(CanExecuteAddAreaCommand));
-        AddCandlesCommand         = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddCandlesCommand), new Func<ChartArea, bool>(CanExecuteAddAreaCommand));
-        AddIndicatorCommand       = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddIndicatorCommand), new Func<ChartArea, bool>(CanExecuteAddIndicatorCommand));
-        AddOrdersCommand          = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddOrdersCommand), new Func<ChartArea, bool>(CanExecuteAddOrdersCommand));
-        AddTradesCommand          = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddTradesCommand), new Func<ChartArea, bool>(CanExecuteAddTradesCommand));
-        UngroupCommand            = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteUngroupCommand), new Func<ChartArea, bool>(CanExecuteUngroupCommand));
-        ShowHiddenAxesCommand     = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteShowHiddenAxesCommand), new Func<ChartArea, bool>(CanExecuteShowHiddenAxes));
-        AddXAxisCommand           = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddXAxisCommand), new Func<ChartArea, bool>(CanExecuteAddXAxisCommand));
-        AddYAxisCommand           = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteAddYAxisCommand), new Func<ChartArea, bool>(CanExecuteAddYAxisCommand));
-        RemoveAxisCommand         = (ICommand)new DelegateCommand<ChartAxis>(ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteRemoveAxisCommand = new Action<ChartAxis>(ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteRemoveAxisCommand2) ), new Func<ChartAxis, bool>(CanExecuteRemoveAxisCommand));
+        ChartPaneViewModels   = new ObservableCollection<ScichartSurfaceMVVM>();
+        MinimumRange          = 50;
+        ShowOverview          = false;
+        ShowLegend            = true;
+        IndicatorTypes        = new ObservableCollection<IndicatorType>();
+        AddAreaCommand        = ( ICommand ) new DelegateCommand(            ExecuteAddAreaCommand,        CanExecuteAddAreaCommand );
+        AddCandlesCommand     = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteAddCandlesCommand,     CanExecuteAddAreaCommand );
+        AddIndicatorCommand   = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteAddIndicatorCommand,   CanExecuteAddIndicatorCommand );
+        AddOrdersCommand      = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteAddOrdersCommand,      CanExecuteAddOrdersCommand );
+        AddTradesCommand      = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteAddTradesCommand,      CanExecuteAddTradesCommand );
+        UngroupCommand        = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteUngroupCommand,        CanExecuteUngroupCommand );
+        ShowHiddenAxesCommand = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteShowHiddenAxesCommand, CanExecuteShowHiddenAxes );
+        AddXAxisCommand       = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteAddXAxisCommand,       CanExecuteAddXAxisCommand );
+        AddYAxisCommand       = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteAddYAxisCommand,       CanExecuteAddYAxisCommand );
+        RemoveAxisCommand     = ( ICommand ) new DelegateCommand<ChartAxis>( a =>
+                                                                                {
+
+                                                                                    IChartArea area = a.ChartArea;
+
+                                                                                    if ( area.XAxises.Contains( a ) )
+                                                                                    {
+                                                                                        area.XAxises.Remove( a );
+                                                                                    }
+
+                                                                                    if ( area.YAxises.Contains( a ) )
+                                                                                    {
+                                                                                        area.YAxises.Remove( a );
+                                                                                    }
+                                                                                }, CanExecuteRemoveAxisCommand );
+
         InitRangeDepProperty();
-        _closePaneCommand         = new DelegateCommand<IDrawingSurfaceVM>(ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand ?? ( ChartViewModel.SomeClass34343383.ExecuteClosePaneCommand = new Action<IDrawingSurfaceVM>(ChartViewModel.SomeClass34343383.SomeMethond0343.ExecuteClosePaneCommand2) ), new Func<IDrawingSurfaceVM, bool>(CanExecuteClosePaneCommand));
-        CancelActiveOrdersCommand = (ICommand)new DelegateCommand<ChartArea>(new Action<ChartArea>(ExecuteCancelActiveOrders), new Func<ChartArea, bool>(CanExecuteCancelActiveOrders));
-        
+        _closePaneCommand = new DelegateCommand<IDrawingSurfaceVM>( s =>
+                                                                                {
+
+                                                                                    var chart = ( (ScichartSurfaceMVVM)s ).Chart;
+                                                                                    var area = chart.Areas.FirstOrDefault( p => ( (ChartArea)p ).ViewModel == s );
+                                                                                    if ( area == null )
+                                                                                        return;
+                                                                                    chart.RemoveArea( area );
+                                                                                }, CanExecuteClosePaneCommand );
+
+        CancelActiveOrdersCommand = ( ICommand ) new DelegateCommand<ChartArea>( ExecuteCancelActiveOrders, CanExecuteCancelActiveOrders );
+
         if ( this.IsDesignMode() )
             return;
 
         ChangeApplicationTheme();
-        DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler(OnApplicationThemeChanged);
+
+        DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += new ThemeChangedRoutedEventHandler( OnApplicationThemeChanged );
     }
 
 
 
-    public void InternalExecuteCancelActiveOrders(Func<Order, bool> _param1)
-    {
-        ChartViewModel.SomeInternalSealedClassXQw ccsreH3nwJbFwtEpkxQw = new ChartViewModel.SomeInternalSealedClassXQw();
-        ccsreH3nwJbFwtEpkxQw._order_action = CancelActiveOrderEvent;
-        if ( _param1 == null )
-            _param1 = ChartViewModel.SomeClass34343383._fuction_order_bool_093 ?? ( ChartViewModel.SomeClass34343383._fuction_order_bool_093 = new Func<Order, bool>(ChartViewModel.SomeClass34343383.SomeMethond0343.CanCancelActiveOrders) );
-        CollectionHelper.ForEach<Order>((IEnumerable<Order>)CollectionHelper.ToSet<Order>(ChartPaneViewModels.SelectMany<ScichartSurfaceMVVM, Order>(ChartViewModel.SomeClass34343383._fuction_order_bool_333 ?? ( ChartViewModel.SomeClass34343383._fuction_order_bool_333 = new Func<ScichartSurfaceMVVM, IEnumerable<Order>>(ChartViewModel.SomeClass34343383.SomeMethond0343.selectActiverOrders) )).Where<Order>(_param1)), new Action<Order>(ccsreH3nwJbFwtEpkxQw.Method034));
-    }
+    public void InternalExecuteCancelActiveOrders( Func<Order, bool> myFunc )
+    {        
+        if ( myFunc == null )
+            myFunc = o => true;
+
+        CollectionHelper.ForEach( CollectionHelper.ToSet( ChartPaneViewModels.SelectMany( s => s.GetActiveOrders( o => o.State == OrderStates.Active || o.State == OrderStates.Pending ) ).Where( myFunc ) ), 
+            o => 
+            {
+                Action<Order> s = CancelActiveOrderEvent;
+                if ( s == null )
+                    return;
+                CancelActiveOrderEvent?.Invoke( o );
+            } 
+        );
+    }    
 
     private void ChangeApplicationTheme() => SelectedTheme = ChartHelper2025.CurrChartTheme();
 
-
-
-
-
-
-
-
-
-    private static object OnAllowAddXPropertyCoreceValueChanged(DependencyObject d, object e)
+    private static object OnAllowAddXPropertyCoreceValueChanged( DependencyObject d, object e )
     {
         bool coerceValue = (bool)e;
         var vm = ( (ChartViewModel)d );
@@ -382,7 +437,7 @@ public sealed class ChartViewModel : DependencyObject
         get => _minimumRange;
         set
         {
-            SetValue(ChartViewModel.MinimumRangeProperty, (object)value);
+            SetValue( MinimumRangeProperty, ( object ) value );
         }
     }
 
@@ -390,11 +445,11 @@ public sealed class ChartViewModel : DependencyObject
     {
         get
         {
-            return (ObservableCollection<ScichartSurfaceMVVM>)GetValue(ChartViewModel.ChartPaneViewModelProperty);
+            return ( ObservableCollection<ScichartSurfaceMVVM> ) GetValue( ChartPaneViewModelProperty );
         }
         set
         {
-            SetValue(ChartViewModel.ChartPaneViewModelProperty, (object)value);
+            SetValue( ChartPaneViewModelProperty, ( object ) value );
         }
     }
 
@@ -407,196 +462,231 @@ public sealed class ChartViewModel : DependencyObject
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.ShowHiddenAxesCommandProperty);
+            return ( ICommand ) GetValue( ShowHiddenAxesCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.ShowHiddenAxesCommandProperty, (object)value);
+            SetValue( ShowHiddenAxesCommandProperty, ( object ) value );
         }
     }
 
+
+    /// <summary>
+    /// AddAreaCommand is a DelegateCommand of the following functions
+    /// 
+    ///     1) ExecuteAddAreaCommand
+    ///     2) CanExecuteAddAreaCommand
+    ///     
+    /// </summary>
     public ICommand AddAreaCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddAreaCommandProperty);
+            return ( ICommand ) GetValue( AddAreaCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddAreaCommandProperty, (object)value);
+            SetValue( AddAreaCommandProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// AddCandlesCommand is a DelegateCommand of the following functions
+    /// 
+    ///     1) ExecuteAddCandlesCommand - This will invoke the AddCandlesEvent 
+    ///          
+    ///     2) CanExecuteAddCandlesCommand
+    ///     
+    /// </summary>
     public ICommand AddCandlesCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddCandlesCommandProperty);
+            return ( ICommand ) GetValue( AddCandlesCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddCandlesCommandProperty, (object)value);
+            SetValue( AddCandlesCommandProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// AddCandlesCommand is a DelegateCommand of the following functions
+    /// 
+    ///     1) ExecuteAddIndicatorCommand - This will invoke the AddIndicatorEvent 
+    ///     2) CanExecuteAddIndicatorCommand
+    ///     
+    /// </summary>
     public ICommand AddIndicatorCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddIndicatorCommandProperty);
+            return ( ICommand ) GetValue( AddIndicatorCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddIndicatorCommandProperty, (object)value);
+            SetValue( AddIndicatorCommandProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// AddCandlesCommand is a DelegateCommand of the following functions
+    /// 
+    ///     1) ExecuteAddOrdersCommand - This will invoke the AddOrdersEvent
+    ///     2) CanExecuteAddOrdersCommand
+    ///     
+    /// </summary>
     public ICommand AddOrdersCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddOrdersCommandProperty);
+            return ( ICommand ) GetValue( AddOrdersCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddOrdersCommandProperty, (object)value);
+            SetValue( AddOrdersCommandProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// AddCandlesCommand is a DelegateCommand of the following functions
+    /// 
+    ///     1) ExecuteAddTradesCommand - This will invoke the AddTradesEvent
+    ///     2) CanExecuteAddTradesCommand
+    ///     
+    /// </summary>
     public ICommand AddTradesCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.AddTradesCommandProperty);
+            return ( ICommand ) GetValue( AddTradesCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.AddTradesCommandProperty, (object)value);
+            SetValue( AddTradesCommandProperty, ( object ) value );
         }
     }
 
+    /// <summary>
+    /// AddCandlesCommand is a DelegateCommand of the following functions
+    /// 
+    ///     1) ExecuteUngroupCommand - This will invoke the UngroupEvent
+    ///     2) CanExecuteUngroupCommand
+    ///     
+    /// </summary>
     public ICommand UngroupCommand
     {
         get
         {
-            return (ICommand)GetValue(ChartViewModel.UngroupCommandProperty);
+            return ( ICommand ) GetValue( UngroupCommandProperty );
         }
         set
         {
-            SetValue(ChartViewModel.UngroupCommandProperty, (object)value);
+            SetValue( UngroupCommandProperty, ( object ) value );
         }
     }
 
-    public void InvokeRebuildCandlesEvent(IChartElement _param1, Subscription _param2)
-    {
-        Action<IChartElement, Subscription> myEvent = RebuildCandlesEvent;
-        if ( myEvent == null )
-            return;
-        myEvent(_param1, _param2);
+    public void InvokeRebuildCandlesEvent( IChartElement chartElement, Subscription subscription )
+    {        
+        RebuildCandlesEvent?.Invoke( chartElement, subscription );
     }
 
 
 
     public void InitRangeDepProperty()
     {
-        VisibleRangeDpo.InitRangeDepProperty((object)this);
+        VisibleRangeDpo.InitRangeDepProperty( ( object ) this );
     }
 
-    public void InvokeRemoveElementEvent(IChartElement _param1)
+    public void InvokeRemoveElementEvent( IChartElement chartElement )
+    {        
+        RemoveElementEvent?.Invoke( chartElement );
+    }
+
+    private ChartArea GetRealChartArea( ChartArea area )
+    {        
+        if ( area != null )
+            return area;
+
+        ObservableCollection<ScichartSurfaceMVVM> drawingSurfaceVM = ChartPaneViewModels;
+
+        if ( drawingSurfaceVM == null )
+            return null;
+        
+        return drawingSurfaceVM.FirstOrDefault<ScichartSurfaceMVVM>()?.Area;
+    }
+
+    private void ExecuteAddAreaCommand( object _param1 )
+    {        
+        AreaAddingEvent?.Invoke();
+    }
+
+    private bool CanExecuteAddAreaCommand( object _param1 ) => AllowAddArea;
+
+    private void ExecuteAddCandlesCommand( ChartArea _param1 )
     {
-        Action<IChartElement> zeBeQvx4 = RemoveElementEvent;
-        if ( zeBeQvx4 == null )
-            return;
-        zeBeQvx4(_param1);
+        AddCandlesEvent?.Invoke( GetRealChartArea( _param1 ) );
     }
 
-    private ChartArea GetRealChartArea(ChartArea _param1)
+    private bool CanExecuteAddAreaCommand( ChartArea _param1 )
     {
-        ChartArea chartArea = _param1;
-        if ( chartArea != null )
-            return chartArea;
-        ObservableCollection<ScichartSurfaceMVVM> chartPaneViewModels = ChartPaneViewModels;
-        if ( chartPaneViewModels == null )
-            return (ChartArea)null;
-        return chartPaneViewModels.FirstOrDefault<ScichartSurfaceMVVM>()?.Area;
+        return AllowAddCandles && GetRealChartArea( _param1 ) != null;
     }
 
-    private void ExecuteAddAreaCommand(object _param1)
+    private void ExecuteAddIndicatorCommand( ChartArea _param1 )
     {
-        Action zJ36T8eJdWvlL = AreaAddingEvent;
-        if ( zJ36T8eJdWvlL == null )
-            return;
-        zJ36T8eJdWvlL();
+        AddIndicatorEvent?.Invoke( GetRealChartArea( _param1 ) );
     }
 
-    private bool CanExecuteAddAreaCommand(object _param1) => AllowAddArea;
-
-    private void ExecuteAddCandlesCommand(ChartArea _param1)
+    private bool CanExecuteAddIndicatorCommand( ChartArea _param1 )
     {
-        AddCandlesEvent?.Invoke(GetRealChartArea(_param1));
+        return AllowAddIndicators && GetRealChartArea( _param1 ) != null;
     }
 
-    private bool CanExecuteAddAreaCommand(ChartArea _param1)
+    private void ExecuteAddOrdersCommand( ChartArea _param1 )
     {
-        return AllowAddCandles && GetRealChartArea(_param1) != null;
+        AddOrdersEvent?.Invoke( GetRealChartArea( _param1 ) );
     }
 
-    private void ExecuteAddIndicatorCommand(ChartArea _param1)
+    private bool CanExecuteAddOrdersCommand( ChartArea _param1 )
     {
-
-        AddIndicatorEvent?.Invoke(GetRealChartArea(_param1));
+        return AllowAddOrders && GetRealChartArea( _param1 ) != null;
     }
 
-    private bool CanExecuteAddIndicatorCommand(ChartArea _param1)
-    {
-        return AllowAddIndicators && GetRealChartArea(_param1) != null;
-    }
-
-    private void ExecuteAddOrdersCommand(ChartArea _param1)
-    {
-        AddOrdersEvent?.Invoke(GetRealChartArea(_param1));
-    }
-
-    private bool CanExecuteAddOrdersCommand(ChartArea _param1)
-    {
-        return AllowAddOrders && GetRealChartArea(_param1) != null;
-    }
-
-    private void ExecuteAddTradesCommand(ChartArea _param1)
+    private void ExecuteAddTradesCommand( ChartArea _param1 )
     {
 
-        AddTradesEvent?.Invoke(GetRealChartArea(_param1));
+        AddTradesEvent?.Invoke( GetRealChartArea( _param1 ) );
     }
 
-    private bool CanExecuteAddTradesCommand(ChartArea _param1)
+    private bool CanExecuteAddTradesCommand( ChartArea _param1 )
     {
-        return AllowAddOwnTrades && GetRealChartArea(_param1) != null;
+        return AllowAddOwnTrades && GetRealChartArea( _param1 ) != null;
     }
 
-    private void ExecuteUngroupCommand(ChartArea _param1)
+    private void ExecuteUngroupCommand( ChartArea _param1 )
     {
-
-        UngroupEvent?.Invoke(GetRealChartArea(_param1));
+        UngroupEvent?.Invoke( GetRealChartArea( _param1 ) );
     }
 
-    private bool CanExecuteUngroupCommand(ChartArea _param1)
+    private bool CanExecuteUngroupCommand( ChartArea _param1 )
     {
-        return GetRealChartArea(_param1) != null;
+        return GetRealChartArea( _param1 ) != null;
     }
 
-    private void ExecuteShowHiddenAxesCommand(ChartArea area)
+    private void ExecuteShowHiddenAxesCommand( ChartArea area )
     {
         if ( area != null )
         {
-            area.ViewModel.ShowHiddenAxesCommand.Execute(null);
+            area.ViewModel.ShowHiddenAxesCommand.Execute( null );
         }
         else
-            CollectionHelper.ForEach<ScichartSurfaceMVVM>((IEnumerable<ScichartSurfaceMVVM>)ChartPaneViewModels, p => p.Area.ViewModel.ShowHiddenAxesCommand.Execute(null));
+            CollectionHelper.ForEach<ScichartSurfaceMVVM>( ( IEnumerable<ScichartSurfaceMVVM> ) ChartPaneViewModels, p => p.Area.ViewModel.ShowHiddenAxesCommand.Execute( null ) );
     }
 
-    private bool CanExecuteShowHiddenAxes(ChartArea _param1) => IsInteracted;
+    private bool CanExecuteShowHiddenAxes( ChartArea _param1 ) => IsInteracted;
 
-    private void ExecuteAddXAxisCommand(ChartArea a)
+    private void ExecuteAddXAxisCommand( ChartArea a )
     {
         var area = GetRealChartArea(a);
         if ( area == null )
@@ -612,12 +702,12 @@ public sealed class ChartViewModel : DependencyObject
         );
     }
 
-    private bool CanExecuteAddXAxisCommand(ChartArea _param1)
+    private bool CanExecuteAddXAxisCommand( ChartArea _param1 )
     {
         return AllowAddAxis;
     }
 
-    private void ExecuteAddYAxisCommand(ChartArea a)
+    private void ExecuteAddYAxisCommand( ChartArea a )
     {
         ChartArea area = GetRealChartArea(a);
         if ( area == null )
@@ -632,35 +722,34 @@ public sealed class ChartViewModel : DependencyObject
         );
     }
 
-    private bool CanExecuteAddYAxisCommand(ChartArea _param1)
+    private bool CanExecuteAddYAxisCommand( ChartArea _param1 )
     {
-        return AllowAddAxis && GetRealChartArea(_param1) != null;
+        return AllowAddAxis && GetRealChartArea( _param1 ) != null;
     }
 
-    private bool CanExecuteRemoveAxisCommand(ChartAxis _param1)
+    private bool CanExecuteRemoveAxisCommand( ChartAxis _param1 )
     {
-        return IsInteracted && _param1?.ChartArea != null && !CompareHelper.IsDefault<ChartAxis>(_param1) && AllowAddAxis;
+        return IsInteracted && _param1?.ChartArea != null && !CompareHelper.IsDefault<ChartAxis>( _param1 ) && AllowAddAxis;
     }
 
-    private bool CanExecuteClosePaneCommand(
-      IDrawingSurfaceVM _param1)
+    private bool CanExecuteClosePaneCommand( IDrawingSurfaceVM _param1 )
     {
         return AllowAddArea;
     }
 
-    private void ExecuteCancelActiveOrders(ChartArea _param1)
+    private void ExecuteCancelActiveOrders( ChartArea _param1 )
     {
-        InternalExecuteCancelActiveOrders((Func<Order, bool>)null);
+        InternalExecuteCancelActiveOrders( ( Func<Order, bool> ) null );
     }
 
-    private bool CanExecuteCancelActiveOrders(ChartArea _param1)
+    private bool CanExecuteCancelActiveOrders( ChartArea _param1 )
     {
         return IsInteracted;
     }
 
     private void OnApplicationThemeChanged(
         DependencyObject _param1,
-        ThemeChangedRoutedEventArgs _param2)
+        ThemeChangedRoutedEventArgs _param2 )
     {
         ChangeApplicationTheme();
     }
@@ -668,7 +757,7 @@ public sealed class ChartViewModel : DependencyObject
     [Serializable]
     private sealed class SomeClass34343383
     {
-        public static readonly ChartViewModel.SomeClass34343383 SomeMethond0343 = new ChartViewModel.SomeClass34343383();
+        public static readonly SomeClass34343383 SomeMethond0343 = new SomeClass34343383();
         public static Action<ScichartSurfaceMVVM> _action_scichartsufaceMvvm_093;
         public static Action<ChartAxis> ExecuteRemoveAxisCommand;
         public static Action<IDrawingSurfaceVM> ExecuteClosePaneCommand;
@@ -681,72 +770,64 @@ public sealed class ChartViewModel : DependencyObject
         Order>> _fuction_order_bool_333;
 
         public void Method083(
-          ScichartSurfaceMVVM _param1)
+          ScichartSurfaceMVVM _param1 )
         {
-            _param1.Area.ViewModel.ShowHiddenAxesCommand.TryExecute((object)null);
+            _param1.Area.ViewModel.ShowHiddenAxesCommand.TryExecute( ( object ) null );
         }
 
-        public void ExecuteRemoveAxisCommand2(ChartAxis _param1)
+        public void ExecuteRemoveAxisCommand2( ChartAxis a )
         {
-            IChartArea chartArea = _param1.ChartArea;
-            if ( ( (ICollection<IChartAxis>)chartArea.XAxises ).Contains((IChartAxis)_param1) )
-                ( (ICollection<IChartAxis>)chartArea.XAxises ).Remove((IChartAxis)_param1);
-            if ( !( (ICollection<IChartAxis>)chartArea.YAxises ).Contains((IChartAxis)_param1) )
+            IChartArea chartArea = a.ChartArea;
+            if ( ( ( ICollection<IChartAxis> ) chartArea.XAxises ).Contains( ( IChartAxis ) a ) )
+                ( ( ICollection<IChartAxis> ) chartArea.XAxises ).Remove( ( IChartAxis ) a );
+            if ( !( ( ICollection<IChartAxis> ) chartArea.YAxises ).Contains( ( IChartAxis ) a ) )
                 return;
-            ( (ICollection<IChartAxis>)chartArea.YAxises ).Remove((IChartAxis)_param1);
+            ( ( ICollection<IChartAxis> ) chartArea.YAxises ).Remove( ( IChartAxis ) a );
         }
 
-        public void ExecuteClosePaneCommand2(
-          IDrawingSurfaceVM _param1)
+        public void ExecuteClosePaneCommand2( IDrawingSurfaceVM s )
         {
-            ChartViewModel.SomeInternalSealedClass4RRo lrrNtIjstOuVg4Rro = new ChartViewModel.SomeInternalSealedClass4RRo();
-            lrrNtIjstOuVg4Rro._IDrawingSurfaceVM = _param1;
-            IChart chart = ( (ScichartSurfaceMVVM)lrrNtIjstOuVg4Rro._IDrawingSurfaceVM ).Chart;
-            IChartArea area = chart.Areas.FirstOrDefault<IChartArea>(new Func<IChartArea, bool>(lrrNtIjstOuVg4Rro.Method01));
+            var chart = ( (ScichartSurfaceMVVM)s ).Chart;
+            var area = chart.Areas.FirstOrDefault( p => ( (ChartArea)p ).ViewModel == s );
             if ( area == null )
                 return;
-            chart.RemoveArea(area);
+            chart.RemoveArea( area );
         }
 
-        public bool CanCancelActiveOrders(Order o) => true;
+        public bool CanCancelActiveOrders( Order o ) => true;
 
-        public IEnumerable<Order> selectActiverOrders(
-          ScichartSurfaceMVVM _param1)
+        public IEnumerable<Order> selectActiverOrders( ScichartSurfaceMVVM s )
         {
-            return _param1.GetActiveOrders(o => o.State == OrderStates.Active || o.State == OrderStates.Pending);
+            return s.GetActiveOrders( o => o.State == OrderStates.Active || o.State == OrderStates.Pending );
         }
 
 
-        public void OnMinimumRangeCallback(
-          DependencyObject _param1,
-          DependencyPropertyChangedEventArgs _param2)
+        public void OnMinimumRangeCallback( DependencyObject _param1, DependencyPropertyChangedEventArgs _param2 )
         {
-            ( (ChartViewModel)_param1 )._minimumRange = (int)_param2.NewValue;
+            ( ( ChartViewModel ) _param1 )._minimumRange = ( int ) _param2.NewValue;
         }
     }
 
-    private sealed class SomeInternalSealedClass4RRo
+
+
+
+
+    #region Tony Added
+
+    public event EventHandler<AddCandlesEventArgs>  CodingAddCandlesEvent;
+
+
+    public void ExecuteCodingAddCandles( ChartArea chartArea, Subscription series )
     {
-        public IDrawingSurfaceVM _IDrawingSurfaceVM;
-
-        public bool Method01(IChartArea _param1)
-        {
-            return ( (ChartArea)_param1 ).ViewModel == _IDrawingSurfaceVM;
-        }
+        CodingAddCandlesEvent?.Invoke( this, new AddCandlesEventArgs( chartArea, series ) );
     }
 
-    private sealed class SomeInternalSealedClassXQw
+    public bool CanExecuteCodingAddCandles()
     {
-        public Action<Order> _order_action;
-
-        public void Method034(Order _param1)
-        {
-            Action<Order> zXcEqv64 = _order_action;
-            if ( zXcEqv64 == null )
-                return;
-            zXcEqv64(_param1);
-        }
+        return true;
     }
+    #endregion Tony Added
+
 }
 
 

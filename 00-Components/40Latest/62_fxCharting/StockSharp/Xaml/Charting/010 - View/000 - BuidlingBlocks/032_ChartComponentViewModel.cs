@@ -38,26 +38,25 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     private readonly ObservableCollection<ChartElementViewModel> _chartElementsViewModel = new ObservableCollection<ChartElementViewModel>();
 
     // This is the View of the Chart Component
-    private readonly List<DrawableChartComponentBaseViewModel> _chartElementsView = new List<DrawableChartComponentBaseViewModel>();
+    private readonly List<DrawableChartComponentBaseViewModel>   _chartElementsView = new List<DrawableChartComponentBaseViewModel>();
 
     private readonly ScichartSurfaceMVVM _drawingSurface;
 
-    private readonly IChartComponent _chartComponent;
+    private readonly IChartComponent     _chartUiComponent;
 
-    private readonly bool _isCandleElement;
+    private readonly bool                _isCandleElement;
 
-    private ChartCandleElementViewModel _ChartCandleElementViewModel;
+    private ChartCandleElementViewModel  _ChartCandleElementViewModel;
 
-    private bool _isDisposed;
+    private bool                         _isDisposed;
 
     public ChartComponentViewModel( ScichartSurfaceMVVM drawingSurface, IChartComponent component )
     {
-        _drawingSurface = drawingSurface ?? throw new ArgumentNullException( "pane" );
-        _chartComponent = component ?? throw new ArgumentNullException( "element" );
-        _isCandleElement = component is IChartCandleElement;
+        _drawingSurface   = drawingSurface ?? throw new ArgumentNullException( "pane" );
+        _chartUiComponent = component ?? throw new ArgumentNullException( "element" );
+        _isCandleElement  = component is IChartCandleElement;
 
-        
-        ChartViewModel.InteractedEvent += ( OnAllowToRemove );
+        ChartViewModel.InteractedEvent += OnAllowToRemove;
         RootChartComponent.PropertyChanged += OnPropertyChanged;
     }
 
@@ -70,16 +69,14 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            // BUG: 
-            throw new NotImplementedException();
-            // return Pane.AllowElementToBeRemoved(this);
+            return Pane.AllowElementToBeRemoved( this );
         }
     }
 
 
     public IChartComponent RootChartComponent
     {
-        get => _chartComponent;
+        get => _chartUiComponent;
     }
 
     public string Title => RootChartComponent.GetGeneratedTitle();
@@ -96,7 +93,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            return ( IEnumerable<DrawableChartComponentBaseViewModel> ) _chartElementsView;
+            return _chartElementsView;
         }
     }
 
@@ -104,7 +101,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            return ( IEnumerable<ChartElementViewModel> ) _chartElementsViewModel;
+            return _chartElementsViewModel;
         }
     }
 
@@ -112,7 +109,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            return _chartElementsView.Count == 1 ? _chartElementsView[ 0 ].Element.Color : Colors.Transparent;
+            return _chartElementsView.Count == 1 ? _chartElementsView[0].Element.Color : Colors.Transparent;
         }
     }
 
@@ -127,9 +124,12 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     public void InitializeChildElements( IEnumerable<DrawableChartComponentBaseViewModel> children )
     {
         var childElements = children.ToArray();
-        if ( childElements.IsEmpty() )
-            throw new ArgumentException( "zero child elements" );
 
+        if ( childElements.IsEmpty() )
+        {
+            throw new ArgumentException( "zero child elements" );
+        }
+            
         _chartElementsView.AddRange( childElements );
 
         if ( IsCandleElement && CandlesViewModel == null )
@@ -139,9 +139,8 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
         if ( _chartElementsView.Count == 1 )
         {
-            MapPropertyChangeNotification( _chartElementsView[ 0 ].Element, "Color", "Color" );
+            MapPropertyChangeNotification( _chartElementsView[0].Element, "Color", "Color" );
         }
-            
 
         childElements.ForEach<DrawableChartComponentBaseViewModel>( p => p.Init( this ) );
     }
@@ -155,9 +154,12 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         if ( childViewModel == null )
             throw new ArgumentNullException( "val" );
+
         if ( _chartElementsViewModel.Contains( childViewModel ) )
             throw new ArgumentException( "val" );
+
         childViewModel.ChartComponent = this;
+        
         _chartElementsViewModel.Add( childViewModel );
     }
 
@@ -169,9 +171,9 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
         }
     }
 
-    public bool Draw( ChartDrawData _param1 )
+    public bool Draw( ChartDrawData data )
     {
-        return RootChartComponent.Draw( _param1 );
+        return RootChartComponent.Draw( data );
     }
 
     public void Reset()
@@ -233,11 +235,11 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     private void OnPropertyChanged( object? _param1, PropertyChangedEventArgs _param2 )
     {
-        if ( _param2.PropertyName != "FullTitle" ) 
+        if ( _param2.PropertyName != "FullTitle" )
             return;
 
         NotifyChanged( "Title" );
-    }    
+    }
 }
 
 

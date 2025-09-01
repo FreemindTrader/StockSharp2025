@@ -47,25 +47,21 @@ IChartElement>
         return propertyDescriptorList.ToArray();
     }
 
-    private void OnPropertyChanged(
-#nullable enable
-      object? _param1,
-      PropertyChangedEventArgs _param2 )
+    private void OnPropertyChanged( object? _param1, PropertyChangedEventArgs _param2 )
     {
         NotifyChanged( _param2.PropertyName );
     }
 
-    internal static bool StaticBool01(
-#nullable disable
-        IChartComponent _param0,
-      PropertyDescriptor _param1 )
+    internal static bool StaticBool01( IChartComponent com, PropertyDescriptor pd )
     {
-        BrowsableAttribute browsableAttribute = _param1.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
-        if ( ( browsableAttribute != null ? ( browsableAttribute.Browsable ? 1 : 0 ) : 1 ) != 0 )
+        var isBrowsable = pd.Attributes.OfType<BrowsableAttribute>().FirstOrDefault<BrowsableAttribute>();
+        
+        if ( ( isBrowsable != null ? ( isBrowsable.Browsable ? 1 : 0 ) : 1 ) != 0 )
         {
-      Attribute0 myAttr = _param1.Attributes.OfType <Attribute0> ().FirstOrDefault <Attribute0> ();
+            Attribute0 myAttr = pd.Attributes.OfType <Attribute0> ().FirstOrDefault <Attribute0> ();
+            
             if ( ( myAttr != null ? ( !myAttr.GetAttributeValue() ? 1 : 0) : 1) != 0)
-        return _param0.ParentElement != null || !( _param1.Name == "IsVisible" );
+            return com.ParentElement != null || ( pd.Name != "IsVisible" );
         }
         return false;
     }

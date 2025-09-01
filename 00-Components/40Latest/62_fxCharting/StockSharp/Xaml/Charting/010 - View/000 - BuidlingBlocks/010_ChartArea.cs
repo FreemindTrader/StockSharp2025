@@ -166,9 +166,9 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     /// </summary>
     public ChartArea()
     {
-        _chartElementNotifyList = ( INotifyList<IChartElement> ) new ChartArea.ChartElementNotifyList( this );
-        _xAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, true );
-        _yAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, false );
+        _chartElementNotifyList = ( INotifyList<IChartElement> ) new ChartElementNotifyList( this );
+        _xAxisNotifyList        = ( INotifyList<IChartAxis> ) new AxisNotifyList( this, true );
+        _yAxisNotifyList        = ( INotifyList<IChartAxis> ) new AxisNotifyList( this, false );
         InitAxises();
         _chartSurfaceVM         = new ScichartSurfaceMVVM( this );
         Height                  = 100.0;
@@ -180,8 +180,8 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     {
         _indicatorCount         = count;
         _chartElementNotifyList = new ChartElementNotifyList( this );
-        _xAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, true );
-        _yAxisNotifyList        = ( INotifyList<IChartAxis> ) new ChartArea.AxisNotifyList( this, false );        
+        _xAxisNotifyList        = ( INotifyList<IChartAxis> ) new AxisNotifyList( this, true );
+        _yAxisNotifyList        = ( INotifyList<IChartAxis> ) new AxisNotifyList( this, false );        
         Height                  = 200f;
 
         InitAxises( count );
@@ -267,8 +267,8 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         XAxisType = storage.GetValue<ChartAxisType>( "XAxisType", XAxisType );
         GroupId   = storage.GetValue<string>( "GroupId", GroupId );
 
-        ChartArea.LoadAxises( storage, "XAxises", ( ICollection<IChartAxis> ) XAxises );
-        ChartArea.LoadAxises( storage, "YAxises", ( ICollection<IChartAxis> ) YAxises );
+        LoadAxises( storage, "XAxises", ( ICollection<IChartAxis> ) XAxises );
+        LoadAxises( storage, "YAxises", ( ICollection<IChartAxis> ) YAxises );
     }
 
     public override void Save( SettingsStorage storage )
@@ -303,13 +303,13 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
             Height    = Height,
             XAxisType = XAxisType
         });
-        CollectionHelper.AddRange( chartArea.Elements, Elements.Select( e => PersistableHelper.Clone( e ) ) );
+        CollectionHelper.AddRange( Elements, Elements.Select( e => PersistableHelper.Clone( e ) ) );
 
-        chartArea.XAxises.Clear();
-        CollectionHelper.AddRange( chartArea.XAxises, XAxises.Select( e => PersistableHelper.Clone( e ) ) );
+        XAxises.Clear();
+        CollectionHelper.AddRange( XAxises, XAxises.Select( e => PersistableHelper.Clone( e ) ) );
 
-        chartArea.YAxises.Clear();
-        CollectionHelper.AddRange( chartArea.YAxises, YAxises.Select( e => PersistableHelper.Clone( e ) ) );
+        YAxises.Clear();
+        CollectionHelper.AddRange( YAxises, YAxises.Select( e => PersistableHelper.Clone( e ) ) );
 
         return chartArea;
     }
@@ -403,7 +403,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
         }
     }
 
-    private sealed class AxisNotifyList( ChartArea area, bool isX ) : ChartArea.PropertiesNotifyList<IChartAxis>
+    private sealed class AxisNotifyList( ChartArea area, bool isX ) : PropertiesNotifyList<IChartAxis>
     {
         private static int _xAxisCount;
         private static int _yAxisCount;
@@ -536,7 +536,7 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
     }
 
 
-    internal sealed class ChartElementNotifyList( ChartArea area ) : ChartArea.PropertiesNotifyList<IChartElement>
+    internal sealed class ChartElementNotifyList( ChartArea area ) : PropertiesNotifyList<IChartElement>
     {
         private readonly ChartArea _area = area ?? throw new ArgumentNullException("area");
 
@@ -903,13 +903,13 @@ public class ChartArea : ChartPart<ChartArea>, IChartArea, IDisposable, INotifyP
 //    {
 //        ChartArea chartArea = Clone(new ChartArea() { Title = Title, Height = Height, XAxisType = XAxisType });
 
-//        chartArea.Elements.AddRange(Elements.Select(e => e.Clone()));
+//        Elements.AddRange(Elements.Select(e => e.Clone()));
 
-//        chartArea.XAxises.Clear();
-//        chartArea.XAxises.AddRange(XAxises.Select(x => x.Clone()));
+//        XAxises.Clear();
+//        XAxises.AddRange(XAxises.Select(x => x.Clone()));
 
-//        chartArea.YAxises.Clear();
-//        chartArea.YAxises.AddRange(YAxises.Select(y => y.Clone()));
+//        YAxises.Clear();
+//        YAxises.AddRange(YAxises.Select(y => y.Clone()));
 //        return chartArea;
 //    }
 

@@ -1,6 +1,5 @@
 ﻿using Ecng.Collections;
 using Ecng.Common;
-using Ecng.ComponentModel;
 using Ecng.Serialization;
 using Ecng.Xaml;
 using StockSharp.Charting;
@@ -9,68 +8,68 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using System.Reflection;
-using static DevExpress.XtraPrinting.Export.Pdf.PdfImageCache;
 
 #nullable enable
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>
-/// The base class that describes the chart element (indicator, candle, etc.).
+/// The base class that makes up the UI for any ChartComponents (indicator, candle, etc.).
 /// </summary>
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
-public abstract class ChartComponentView<T> : ChartPart<T>,
-                                              IChartElement,
-                                              IChartPart<IChartElement>,
-                                              INotifyPropertyChanged,
-                                              INotifyPropertyChanging,
-                                              IPersistable,
-                                              IChartComponent
-  where T : ChartComponentView<T>
+public abstract class ChartComponentView<T> :   ChartPart<T>,
+                                                IChartElement,
+                                                IChartPart<IChartElement>,
+                                                INotifyPropertyChanged,
+                                                INotifyPropertyChanging,
+                                                IPersistable,
+                                                IChartComponent
+                                                where T : ChartComponentView<T>
 {
+   
+    private readonly SynchronizedDictionary<Guid, string>   _idToName = new SynchronizedDictionary<Guid, string>();
 
-    private IChartComponent _parentElement;
+    private readonly SynchronizedSet<string>                _extraName = new SynchronizedSet<string>();
 
-    private readonly SynchronizedDictionary<Guid, string> _idToName = new SynchronizedDictionary<Guid, string>();
+    private readonly CachedSynchronizedSet<IChartElement>   _componentsCache = new CachedSynchronizedSet<IChartElement>();
 
-    private readonly SynchronizedSet<string> _extraName = new SynchronizedSet<string>();
+    private Func<IComparable, System.Windows.Media.Color?>? _mediaColor;
 
-    private readonly CachedSynchronizedSet<IChartElement> _componentsCache = new CachedSynchronizedSet<IChartElement>();
+    private Func<IComparable, System.Drawing.Color?>?       _drawingColor;
 
-    private IChartArea _chartArea;
+    private IChartComponent? _parentElement;
 
-    private StockSharp.Xaml.Charting.ChartArea _persistentChartArea;
+    private IChartArea?      _chartArea;
 
-    private string _fullTitle;
+    private ChartArea?       _persistentChartArea;
 
-    private bool _isVisible = true;
+    private string?          _fullTitle;
 
-    private bool _isLegend = true;
+    private bool             _isVisible = true;
 
-    private string _xAxisId = "X";
+    private bool             _isLegend  = true;
 
-    private string _yAxisId = "Y";
+    private string           _xAxisId   = "X";
 
-    private Func<IComparable, System.Windows.Media.Color?> _mediaColor;
+    private string           _yAxisId   = "Y";
 
-    private Func<IComparable, System.Drawing.Color?> _drawingColor;
+    
 
     private bool _dontDraw;
 
-    [Browsable( false )]
-    public IChartArea ChartArea
+    
+    public IChartArea? ChartArea
     {
         get => _chartArea;
         private set => _chartArea = value;
     }
 
-    public IChartArea PersistentChartArea => ( IChartArea ) _persistentChartArea;
+    public IChartArea? PersistentChartArea => ( IChartArea? ) _persistentChartArea;
 
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "Name", Description = "NameDot", GroupName = "Common", Order = 1000 )]
     [Attribute0( true )]
-    public string FullTitle
+    public string? FullTitle
     {
         get => _fullTitle;
         set
@@ -95,7 +94,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         }
     }
 
-    [Browsable( false )]
+    
     public bool IsLegend
     {
         get => _isLegend;
@@ -118,7 +117,8 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         {
             if ( _xAxisId == value )
                 return;
-            RaisePropertyValueChanging( nameof( XAxisId ), ( object ) value );
+
+            RaisePropertyValueChanging( nameof( XAxisId ),  value );
             _xAxisId = value;
             RaisePropertyChanged( nameof( XAxisId ) );
         }
@@ -134,14 +134,14 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         {
             if ( _yAxisId == value )
                 return;
-            RaisePropertyValueChanging( nameof( YAxisId ), ( object ) value );
+            RaisePropertyValueChanging( nameof( YAxisId ),  value );
             _yAxisId = value;
             RaisePropertyChanged( nameof( YAxisId ) );
         }
     }
 
     
-    public Func<IComparable, System.Windows.Media.Color?> WinColorer
+    public Func<IComparable, System.Windows.Media.Color?>? WinColorer
     {
         get
         {
@@ -150,23 +150,21 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         set => _mediaColor = value;
     }
 
-    public Func<IComparable, System.Drawing.Color?> Colorer
+    public Func<IComparable, System.Drawing.Color?>? Colorer
     {
         get => _drawingColor;
         set
         {            
             _drawingColor = value;
+
             if ( _drawingColor == null )
             {
                 WinColorer = null;
             }
-
             else
             {
                 WinColorer = new Func<IComparable, System.Windows.Media.Color?>( p =>
                 {
-
-
                     return !value( p ).HasValue ? new System.Windows.Media.Color?() : new System.Windows.Media.Color?( value( p ).GetValueOrDefault().ToWpf() );
 
                 } );
@@ -174,17 +172,27 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         }
     }
 
-    [Browsable( false )]
-    public IChartElement ParentElement => ( IChartElement ) _parentElement;
+    
+    public IChartElement? ParentElement => ( IChartElement? ) _parentElement;
 
-    void IChartComponent.SetParent( IChartElement _param1 )
+    void IChartComponent.SetParent( IChartElement newParent )
     {
-        _parentElement = _parentElement == null || _param1 == null ? ( IChartComponent ) _param1 : throw new ArgumentException( LocalizedStrings.ParentElementAlreadySet );
+        _parentElement = _parentElement == null || newParent == null ? ( IChartComponent? ) newParent : throw new ArgumentException( LocalizedStrings.ParentElementAlreadySet );
+        
         if ( _parentElement == null )
             return;
+        
         _parentElement.PropertyChanged += new PropertyChangedEventHandler( OnParentPropertyChanged );
     }
 
+
+    /// <summary>
+    /// The drawing priority of the chart element. The smaller the value, the higher the priority.
+    /// 
+    ///     - CandleElement has priority 0
+    ///     - CHartIndicatorElement has priority 1
+    ///     - ChartBandElement has priority int.MaxValue
+    /// </summary>
     int IChartComponent.Priority
     {
         get
@@ -205,7 +213,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         }
     }
 
-    [Browsable( false )]
+    
     public IEnumerable<IChartElement> ChildElements
     {
         get => ( IEnumerable<IChartElement> ) _componentsCache.Cache;
@@ -237,10 +245,16 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     protected internal void AddChildElement( IChartElement element, bool dontDraw = false )
     {
         if ( element == null )
+        {
             throw new ArgumentNullException( nameof( element ) );
-        if ( !( ( SynchronizedSet<IChartElement> ) _componentsCache ).TryAdd( element ) )
+        }
+            
+        if ( ! _componentsCache.TryAdd( element ) )
+        {
             throw new InvalidOperationException( "duplicate element" );
-        ( ( IChartComponent ) element ).SetParent( ( IChartElement ) this );
+        }
+            
+        ( ( IChartComponent ) element ).SetParent(this );
         ( ( IChartComponent ) element ).DontDraw = dontDraw;
     }
 
@@ -251,7 +265,7 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
             throw new ArgumentNullException( nameof( element ) );
         if ( !( ( BaseCollection<IChartElement, ISet<IChartElement>> ) _componentsCache ).Remove( element ) )
             return;
-        ( ( IChartComponent ) element ).SetParent( ( IChartElement ) null );
+        ( ( IChartComponent ) element ).SetParent( null );
     }
 
     /// <summary>Reset element.</summary>
@@ -265,9 +279,9 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     /// <see langword="true" /> if the data was successfully drawn, otherwise, returns <see langword="false" />.</returns>
     protected abstract bool OnDraw( ChartDrawData data );
 
-    bool IChartComponent.Draw( ChartDrawData _param1 )
+    bool IChartComponent.Draw( ChartDrawData data )
     {
-        return OnDraw( _param1 );
+        return OnDraw( data );
     }
 
     void IChartComponent.Reset()
@@ -282,13 +296,16 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         RaisePropertyChanged( "FullTitle" );
     }
 
-    void IChartComponent.AddAxisesAndEventHandler( StockSharp.Xaml.Charting.ChartArea _param1 )
+    void IChartComponent.AddAxisesAndEventHandler( ChartArea area )
     {
         if ( ChartArea != null )
             throw new InvalidOperationException( LocalizedStrings.ElementAlreadyAttached );
-        ChartArea = ( IChartArea ) ( _persistentChartArea = _param1 );
-        ( ( INotifyCollection<IChartAxis> ) _param1.XAxises ).Changed += new Action( OnXAxisChanged );
-        ( ( INotifyCollection<IChartAxis> ) _param1.YAxises ).Changed += new Action( OnYAxisChange );
+        
+        ChartArea = _persistentChartArea = area;
+
+        ChartArea.XAxises.Changed += OnXAxisChanged;
+        ChartArea.YAxises.Changed += OnYAxisChange;
+
         OnXAxisChanged();
         OnYAxisChange();
     }
@@ -297,9 +314,12 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
     {
         if ( ChartArea == null )
             return;
-        ( ( INotifyCollection<IChartAxis> ) ChartArea.XAxises ).Changed -= new Action( OnXAxisChanged );
-        ( ( INotifyCollection<IChartAxis> ) ChartArea.YAxises ).Changed -= new Action( OnYAxisChange );
-        ChartArea = ( IChartArea ) null;
+
+        ChartArea.XAxises.Changed -= OnXAxisChanged;
+        ChartArea.YAxises.Changed -= OnYAxisChange;
+        
+        ChartArea = null;
+
         OnXAxisChanged();
         OnYAxisChange();
     }
@@ -340,29 +360,30 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         ( ( BaseCollection<string, ISet<string>> ) _extraName ).Add( _param1 );
     }
 
-    string IChartComponent.GetGeneratedTitle()
+    string? IChartComponent.GetGeneratedTitle()
     {
 
-        string fullTitle = FullTitle;
-        if ( !StringHelper.IsEmptyOrWhiteSpace( fullTitle ) )
-            return fullTitle;
-        string generatedTitle = GetGeneratedTitle();
-        return !StringHelper.IsEmptyOrWhiteSpace( generatedTitle ) ? generatedTitle : Ecng.ComponentModel.Extensions.GetDisplayName( ( ICustomAttributeProvider ) ( ( object ) this ).GetType(), ( string ) null );
+        string? fullTitle = FullTitle;
+        if ( !StringHelper.IsEmptyOrWhiteSpace( FullTitle ) )
+            return FullTitle;
+        string? generatedTitle = GetGeneratedTitle();
+        return !StringHelper.IsEmptyOrWhiteSpace( generatedTitle ) ? generatedTitle : Ecng.ComponentModel.Extensions.GetDisplayName( ( ICustomAttributeProvider ) (  this ).GetType(), ( string ) null );
 
     }
 
     /// <summary>Get generated title.</summary>
     /// <returns>Auto generate chart element title.</returns>
-    protected virtual string GetGeneratedTitle() => ( string ) null;
+    protected virtual string? GetGeneratedTitle() => null;
 
     public override void Load( SettingsStorage storage )
     {
         base.Load( storage );
+
         IsVisible = storage.GetValue<bool>( "IsVisible", IsVisible );
         FullTitle = storage.GetValue<string>( "FullTitle", FullTitle );
-        IsLegend = storage.GetValue<bool>( "IsLegend", IsLegend );
-        XAxisId = storage.GetValue<string>( "XAxisId", XAxisId );
-        YAxisId = storage.GetValue<string>( "YAxisId", YAxisId );
+        IsLegend  = storage.GetValue<bool>( "IsLegend", IsLegend );
+        XAxisId   = storage.GetValue<string>( "XAxisId", XAxisId );
+        YAxisId   = storage.GetValue<string>( "YAxisId", YAxisId );
     }
 
     public override void Save( SettingsStorage storage )
@@ -375,44 +396,51 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         storage.SetValue<string>( "YAxisId", YAxisId );
     }
 
-    internal override T Clone( T _param1 )
+    internal override T Clone( T to )
     {
-        base.Clone( _param1 );
-        _param1.IsVisible = IsVisible;
-        _param1.FullTitle = FullTitle;
-        _param1.IsLegend = IsLegend;
-        _param1.XAxisId = XAxisId;
-        _param1.YAxisId = YAxisId;
-        IChartElement[] cache1 = _componentsCache.Cache;
-        IChartElement[] cache2 = _param1._componentsCache.Cache;
-        if ( cache1.Length != cache2.Length )
+        base.Clone( to );
+
+        to.IsVisible  = IsVisible;
+        to.FullTitle  = FullTitle;
+        to.IsLegend   = IsLegend;
+        to.XAxisId    = XAxisId;
+        to.YAxisId    = YAxisId;
+        var fromCache = _componentsCache.Cache;
+        var toCache   = to._componentsCache.Cache;
+        
+        if ( fromCache.Length != toCache.Length )
             throw new InvalidOperationException( "unexpected number of clones children" );
-        for ( int index = 0 ; index < cache1.Length ; ++index )
+
+        for ( int index = 0 ; index < fromCache.Length ; ++index )
         {
-            IChartElement chartElement1 = cache1[index];
-            IChartElement chartElement2 = cache2[index];
-            if ( chartElement1.GetType() != chartElement2.GetType() )
+            var fromElement = fromCache[index];
+            var toElement = toCache[index];
+            
+            if ( fromElement.GetType() != toElement.GetType() )
+            {
                 throw new InvalidOperationException( "unexpected child type" );
-            ( ( IChartComponent ) chartElement1 ).Clone( ( object ) chartElement2 );
+            }
+                
+            ( ( IChartComponent ) fromElement ).Clone(  toElement );
         }
-        _param1.DontDraw = ( ( IChartComponent ) this ).DontDraw;
-        return _param1;
+        to.DontDraw = ( ( IChartComponent ) this ).DontDraw;
+        return to;
     }
 
-    protected virtual T CreateClone() => ( T ) Activator.CreateInstance( ( ( object ) this ).GetType() );
+    protected virtual T CreateClone() => ( T ) Activator.CreateInstance( ( this ).GetType() );
 
     public override T Clone()
     {
-        ChartComponentView<T>.SomePrivateSealedClass034 uw9yL4K8Elv3B8f3hPm = new ChartComponentView<T>.SomePrivateSealedClass034();
-        uw9yL4K8Elv3B8f3hPm._SomeMethod034098 = CreateClone();
-        uw9yL4K8Elv3B8f3hPm._SomeMethod034098._extraName.AddRange( ( IEnumerable<string> ) _extraName );
-        CollectionHelper.ForEach<KeyValuePair<Guid, string>>( ( IEnumerable<KeyValuePair<Guid, string>> ) _idToName, new Action<KeyValuePair<Guid, string>>( uw9yL4K8Elv3B8f3hPm.SomeShitNow ) );
-        Clone( uw9yL4K8Elv3B8f3hPm._SomeMethod034098 );
-        return uw9yL4K8Elv3B8f3hPm._SomeMethod034098;
-    }
+        T myClone = CreateClone();
+        myClone._extraName.AddRange( ( IEnumerable<string> ) _extraName );
 
-    void IChartComponent.Clone(
-        object _param1 )
+        CollectionHelper.ForEach( _idToName, p => myClone._idToName[p.Key] = p.Value );
+        Clone( myClone );
+
+        return myClone;
+    }
+    
+    void IChartComponent.Clone( object _param1 )
     {
         Clone( ( T ) _param1 );
     }
@@ -424,38 +452,11 @@ public abstract class ChartComponentView<T> : ChartPart<T>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    private void OnParentPropertyChanged(
-#nullable enable
-      object? _param1,
-      PropertyChangedEventArgs _param2 )
+    private void OnParentPropertyChanged( object? _param1, PropertyChangedEventArgs _param2 )
     {
         RaisePropertyChanged( _param2.PropertyName );
     }
-
-    private sealed class SomePrivateSealedClass
-    {
-        public
-#nullable disable
-        Func<IComparable, System.Drawing.Color?> _IComparable;
-
-        internal System.Windows.Media.Color? SomeMethod034(
-          IComparable p )
-        {
-            System.Drawing.Color? nullable = _IComparable(p);
-            ref System.Drawing.Color? local = ref nullable;
-            return !local.HasValue ? new System.Windows.Media.Color?() : new System.Windows.Media.Color?( local.GetValueOrDefault().ToWpf() );
-        }
-    }
-
-    private sealed class SomePrivateSealedClass034
-    {
-        public T _SomeMethod034098;
-
-        internal void SomeShitNow( KeyValuePair<Guid, string> _param1 )
-        {
-            _SomeMethod034098._idToName[ _param1.Key ] = _param1.Value;
-        }
-    }
+    
 
     private int _fifoCapacity;
 

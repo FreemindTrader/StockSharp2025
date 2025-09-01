@@ -33,37 +33,37 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 public sealed class ChartElementViewModel : ChartBaseViewModel
 {
-    private readonly Func<SeriesInfo, Color> _colorFunction;
+    private readonly Func<SeriesInfo, Color>  _colorFunction;
     private readonly Func<SeriesInfo, string> _valueFunction;
-    private string _name;
-    private string _value;
-    private Color _color;
-    private SeriesInfo _seriesInfo;
-    private ChartComponentViewModel _chartComponent;
+    private string                            _name;
+    private string                            _value;
+    private Color                             _color;
+    private SeriesInfo                        _seriesInfo;
+    private ChartComponentViewModel           _chartComponent;
 
-    public ChartElementViewModel( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this(null, mypropertyOwner, getColorFunc, getValueFunc, string_2)
+    public ChartElementViewModel( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this( null, mypropertyOwner, getColorFunc, getValueFunc, string_2 )
     {
     }
 
     public ChartElementViewModel( string name, INotifyPropertyChanged propertyOwner, Func<SeriesInfo, Color> getColor, Func<SeriesInfo, string> getValue, params string[ ] upDownFillColorName ) : base()
     {
-        Name = name;
+        Name           = name;
         _colorFunction = getColor;
         _valueFunction = getValue;
 
-        if(upDownFillColorName != null && upDownFillColorName.Length == 0)
+        if ( upDownFillColorName != null && upDownFillColorName.Length == 0 )
         {
             return;
         }
 
-        propertyOwner.PropertyChanged += (s, e) =>
+        propertyOwner.PropertyChanged += ( s, e ) =>
         {
-            if(!(upDownFillColorName.Contains(e.PropertyName) || _seriesInfo == null))
+            if ( !( upDownFillColorName.Contains( e.PropertyName ) || _seriesInfo == null ) )
             {
                 return;
             }
 
-            Color = _colorFunction(_seriesInfo);
+            Color = _colorFunction( _seriesInfo );
         };
     }
 
@@ -98,7 +98,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
         }
         set
         {
-            SetField(ref _name, value, nameof(Name));
+            SetField( ref _name, value, nameof( Name ) );
         }
     }
 
@@ -116,7 +116,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
         }
         set
         {
-            SetField(ref _color, value, nameof(Color));
+            SetField( ref _color, value, nameof( Color ) );
         }
     }
 
@@ -135,23 +135,23 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
         }
         set
         {
-            SetField(ref _value, value, nameof(Value));
+            SetField( ref _value, value, nameof( Value ) );
         }
     }
 
-    public static Color GetHigherAlphaColor(Color color_1, Color color_2)
+    public static Color GetHigherAlphaColor( Color colorOne, Color colorTwo )
     {
-        if(color_1.A <= color_2.A)
+        if ( colorOne.A <= colorTwo.A )
         {
-            return color_2;
+            return colorTwo;
         }
-        return color_1;
+        return colorOne;
     }
 
-    public void UpdateSeries(SeriesInfo seriesInfo_1)
+    public void UpdateSeries( SeriesInfo seriesInfo_1 )
     {
         _seriesInfo = seriesInfo_1;
-        Color = _colorFunction(_seriesInfo);
-        Value = _valueFunction(_seriesInfo);
+        Color = _colorFunction( _seriesInfo );
+        Value = _valueFunction( _seriesInfo );
     }
 }

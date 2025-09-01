@@ -680,8 +680,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     /// <param name="anyChartUI"></param>
     /// <exception cref="ArgumentException"></exception>
     public void OnChartAreaElementsAdded( IChartElement anyChartUI )
-    {
-        var chart = Chart;
+    {        
         if ( Chart != null )
         {
             Chart.EnsureUIThread();

@@ -20,9 +20,8 @@ public class ChartBuilder : IChartBuilder
     }
 
     public IChartIndicatorElement CreateIndicatorElement()
-    {
-        throw new NotImplementedException();
-        //return ( IChartIndicatorElement ) new ChartIndicatorElement();
+    {        
+        return ( IChartIndicatorElement ) new ChartIndicatorElement();
     }
 
     public IChartActiveOrdersElement CreateActiveOrdersElement()
