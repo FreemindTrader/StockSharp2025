@@ -12,7 +12,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public abstract class TransactionUI< T > : ChartComponentView< T >, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public abstract class TransactionUI< T > : ChartComponentViewModel< T >, INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, ICloneable, INotifyPropertyChanging, IChartElement
         where T : TransactionUI< T >, new()
     {
         private string _title;
@@ -20,7 +20,7 @@ namespace StockSharp.Xaml.Charting
         private Color _buyStrokeColor;
         private Color _sellColor;
         private Color _sellStrokeColor;
-        private DrawableChartComponentBaseViewModel _viewModel;
+        private ChartElementUiDomain _viewModel;
 
         protected TransactionUI( )
         {
@@ -166,7 +166,7 @@ namespace StockSharp.Xaml.Charting
             return base.Clone( other );
         }
 
-        Color IDrawableChartElement.Color
+        Color IChartElementUiDomain.Color
         {
             get
             {
@@ -174,17 +174,17 @@ namespace StockSharp.Xaml.Charting
             }
         }
 
-        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
+        ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
             return _viewModel = new TransactionVM<T>( ( T ) this );
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > ienumerableEx_0 )
+        bool IChartElementUiDomain.StartDrawing( IEnumerableEx< ChartDrawData.IDrawValue > ienumerableEx_0 )
         {
             return _viewModel.Draw( ienumerableEx_0 );
         }
 
-        void IDrawableChartElement.StartDrawing( )
+        void IChartElementUiDomain.StartDrawing( )
         {
             _viewModel.Draw( Enumerable.Empty< ChartDrawData.IDrawValue >( ).ToEx( 0 ) );
         }

@@ -1,7 +1,9 @@
-﻿using Ecng.Collections;
+﻿using DevExpress.ClipboardSource.SpreadsheetML;
+using Ecng.Collections;
 using Ecng.Common;
 using Ecng.Serialization;
 using Ecng.Xaml;
+using MathNet.Numerics;
 using StockSharp.Charting;
 using StockSharp.Localization;
 using System;
@@ -9,23 +11,31 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using static DevExpress.Xpo.DB.DataStoreLongrunnersWatch;
+using System.Windows.Forms;
 
 #nullable enable
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>
 /// The base class that makes up the UI for any ChartComponents (indicator, candle, etc.).
+/// 
+/// The ViewModel is responsible for the following:
+/// Encapsulating UI state: It holds the data that the view needs to display and persists it through configuration changes, like screen rotations.
+/// Preparing data for display: It fetches data from a repository or use case and then transforms it into a format that the view can easily render.
+/// This involves things like filtering, sorting, or combining data from multiple sources.
+/// Handling user events: It responds to user actions from the view, such as a button click, and decides what business logic to call in the layers below.
 /// </summary>
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
-public abstract class ChartComponentView<T> :   ChartPart<T>,
-                                                IChartElement,
-                                                IChartPart<IChartElement>,
+public abstract class ChartComponentViewModel<T> :   ChartPart<T>,
+IChartElement,
+IChartPart<IChartElement>,
                                                 INotifyPropertyChanged,
                                                 INotifyPropertyChanging,
                                                 IPersistable,
                                                 IChartComponent
-                                                where T : ChartComponentView<T>
+                                                where T : ChartComponentViewModel<T>
 {
    
     private readonly SynchronizedDictionary<Guid, string>   _idToName = new SynchronizedDictionary<Guid, string>();

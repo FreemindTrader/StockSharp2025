@@ -23,7 +23,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    public class ChartLineElement : ChartComponentView<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public class ChartLineElement : ChartComponentViewModel<ChartLineElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, IChartElement
     {
         private TASignalSymbol           _signalType;
         private DrawStyles _indicatorDrawStyle;
@@ -43,12 +43,12 @@ namespace StockSharp.Xaml.Charting
         private bool                     _showAxisMarker;
         private ControlTemplate          _drawTemplate;
         private IPointMarker             _pointMarker;
-        private DrawableChartComponentBaseViewModel                 _lineViewModel;
+        private ChartElementUiDomain                 _lineViewModel;
 
-        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
+        ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
             _scichartSurfaceVM = ( ScichartSurfaceMVVM) viewModel;
-            _lineViewModel     = _scichartSurfaceVM.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( DrawableChartComponentBaseViewModel )new ChartLineElementVM<DateTime>( this );
+            _lineViewModel     = _scichartSurfaceVM.Area.XAxisType == ChartAxisType.Numeric ? new ChartLineElementVM<double>( this ) : ( ChartElementUiDomain )new ChartLineElementVM<DateTime>( this );
 
             var xAxis = _scichartSurfaceVM.XAxises.FirstOrDefault( );
 
@@ -463,12 +463,12 @@ namespace StockSharp.Xaml.Charting
 
         
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
+        bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
             return _lineViewModel.Draw( drawValues );
         }
 
-        void IDrawableChartElement.StartDrawing( )
+        void IChartElementUiDomain.StartDrawing( )
         {
             _lineViewModel.Draw(   Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
         }
@@ -480,7 +480,7 @@ namespace StockSharp.Xaml.Charting
 
             //if ( drawValues != null && !drawValues.IsEmpty( ) )
             //{
-            //    return ( ( IDrawableChartElement )this ).StartDrawing( drawValues );
+            //    return ( ( IChartElementUiDomain )this ).StartDrawing( drawValues );
             //}
 
             //return false;

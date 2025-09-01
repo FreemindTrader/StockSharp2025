@@ -17,7 +17,7 @@ using StockSharp.Charting;
 namespace StockSharp.Xaml.Charting
 {
     
-    public partial class ChartCandleElementEx : ChartComponentView<ChartCandleElementEx>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElementEx : ChartComponentViewModel<ChartCandleElementEx>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, IChartElement
     {
         private Func<DateTimeOffset, bool, bool, Color?> _colorer;
         private CandlestickVM _viewModel;
@@ -97,7 +97,7 @@ namespace StockSharp.Xaml.Charting
             DrawStyle       = ChartCandleDrawStyles.CandleStick;
         }
 
-        Color IDrawableChartElement.Color
+        Color IChartElementUiDomain.Color
         {
             get
             {
@@ -679,7 +679,7 @@ namespace StockSharp.Xaml.Charting
             _viewModel.CheckAndShowFibonacci( );
         }
 
-        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
+        ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
             return _viewModel = new CandlestickVM( this );
         }
@@ -711,7 +711,7 @@ namespace StockSharp.Xaml.Charting
                 }
             }
             
-            ( ( IDrawableChartElement ) this ).StartDrawing();
+            ( ( IChartElementUiDomain ) this ).StartDrawing();
             return false;
         }
 
@@ -720,12 +720,12 @@ namespace StockSharp.Xaml.Charting
             return _viewModel.TonyDrawSeries( drawValues );
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
+        bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
             return _viewModel.Draw( drawValues );
         }
 
-        void IDrawableChartElement.StartDrawing()
+        void IChartElementUiDomain.StartDrawing()
         {
             _viewModel.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>().ToEx( 0 ) );
         }

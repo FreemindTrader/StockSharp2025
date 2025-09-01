@@ -582,7 +582,7 @@
 //            //var combinedElements = MoreEnumerable.Append( element.ChildElements, element );
 
 //            //var childElements = combinedElements
-//            //                                    .OfType<IDrawableChartElement>( )
+//            //                                    .OfType<IChartElementUiDomain>( )
 //            //                                    .Where( e => !e.DontDraw )
 //            //                                    .Select( e => e.CreateViewModel( this ) )
 //            //                                    .Where( e => e != null );
@@ -619,7 +619,7 @@
 //        //if ( Chart != null )
 //        //{
 //        //    var combinedElements = MoreEnumerable.Append( anyChartUiXY.ChildElements, anyChartUiXY );
-//        //    var childElements = combinedElements.OfType<IDrawableChartElement>( ).Where( e => !e.DontDraw ).Select( e => e.CreateViewModel( this ) ).Where( e => e != null );
+//        //    var childElements = combinedElements.OfType<IChartElementUiDomain>( ).Where( e => !e.DontDraw ).Select( e => e.CreateViewModel( this ) ).Where( e => e != null );
 
 //        //    foreach ( var child in childElements )
 //        //    {

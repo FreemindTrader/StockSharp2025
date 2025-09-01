@@ -1,4 +1,9 @@
-﻿using Ecng.Collections;
+﻿using DevExpress.Dialogs.Core.View;
+using DevExpress.Xpf.Grid.GroupRowLayout;
+using Ecng.Collections;
+using fx.DefinitionsWnd;
+using fx.TALib;
+using Microsoft.VisualBasic.ApplicationServices;
 using StockSharp.BusinessEntities;
 using StockSharp.Charting;
 using StockSharp.Xaml.Charting;
@@ -30,15 +35,20 @@ namespace StockSharp.Xaml.Charting;
 ///     1) Ask Line - Children one, AskLine
 ///     2) Bid Line - Children two, BidLine
 /// 
+/// 2. Business logic (Domain layer)
+/// In modern app architecture, complex business logic is separated from the ViewModel into a dedicated layer known as the Domain layer
+/// Encapsulates complex rules: This layer handles the core business rules of the application, independent of any specific UI.An example is the logic for calculating a discounted price or validating user input.
+/// Promotes reusability: By keeping the business logic in the Domain layer, it can be reused by multiple ViewModels or different parts of the application without duplication.
+/// Improves testability: This separation makes the business logic easier to unit test, as it is no longer tied to the UI. 
 /// </summary>
-public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
+public sealed class ChartComponentUiDomain : ChartPropertiesViewModel, IDisposable
 {
 
     // This is the View Model of the Chart Component
     private readonly ObservableCollection<ChartElementViewModel> _chartElementsViewModel = new ObservableCollection<ChartElementViewModel>();
 
     // This is the View of the Chart Component
-    private readonly List<DrawableChartComponentBaseViewModel>   _chartElementsView = new List<DrawableChartComponentBaseViewModel>();
+    private readonly List<ChartElementUiDomain>                  _chartElementsUiDomain  = new List<ChartElementUiDomain>();
 
     private readonly ScichartSurfaceMVVM _drawingSurface;
 
@@ -50,7 +60,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     private bool                         _isDisposed;
 
-    public ChartComponentViewModel( ScichartSurfaceMVVM drawingSurface, IChartComponent component )
+    public ChartComponentUiDomain( ScichartSurfaceMVVM drawingSurface, IChartComponent component )
     {
         _drawingSurface   = drawingSurface ?? throw new ArgumentNullException( "pane" );
         _chartUiComponent = component ?? throw new ArgumentNullException( "element" );
@@ -89,11 +99,11 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
         private set => _ChartCandleElementViewModel = value;
     }
 
-    public IEnumerable<DrawableChartComponentBaseViewModel> Elements
+    public IEnumerable<ChartElementUiDomain> Elements
     {
         get
         {
-            return _chartElementsView;
+            return _chartElementsUiDomain;
         }
     }
 
@@ -109,7 +119,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         get
         {
-            return _chartElementsView.Count == 1 ? _chartElementsView[0].Element.Color : Colors.Transparent;
+            return _chartElementsUiDomain.Count == 1 ? _chartElementsUiDomain[0].Element.Color : Colors.Transparent;
         }
     }
 
@@ -121,28 +131,28 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     /// </summary>
     /// <param name="children"></param>
     /// <exception cref="ArgumentException"></exception>
-    public void InitializeChildElements( IEnumerable<DrawableChartComponentBaseViewModel> children )
+    public void InitializeChildElements( IEnumerable<ChartElementUiDomain> children )
     {
-        var childElements = children.ToArray();
+        var childrenUI = children.ToArray();
 
-        if ( childElements.IsEmpty() )
+        if ( childrenUI.IsEmpty() )
         {
             throw new ArgumentException( "zero child elements" );
         }
             
-        _chartElementsView.AddRange( childElements );
+        _chartElementsUiDomain.AddRange( childrenUI );
 
         if ( IsCandleElement && CandlesViewModel == null )
         {
-            CandlesViewModel = childElements.OfType<ChartCandleElementViewModel>().First<ChartCandleElementViewModel>();
+            CandlesViewModel = childrenUI.OfType<ChartCandleElementViewModel>().First<ChartCandleElementViewModel>();
         }
 
-        if ( _chartElementsView.Count == 1 )
+        if ( _chartElementsUiDomain.Count == 1 )
         {
-            MapPropertyChangeNotification( _chartElementsView[0].Element, "Color", "Color" );
+            MapPropertyChangeNotification( _chartElementsUiDomain[0].Element, "Color", "Color" );
         }
 
-        childElements.ForEach<DrawableChartComponentBaseViewModel>( p => p.Init( this ) );
+        childrenUI.ForEach<ChartElementUiDomain>( p => p.Init( this ) );
     }
 
     private void OnAllowToRemove()
@@ -180,7 +190,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
     {
         RootChartComponent.Reset();
 
-        foreach ( var child in _chartElementsView )
+        foreach ( var child in _chartElementsUiDomain )
         {
             child.Reset();
         }
@@ -188,7 +198,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     public void UpdateYAxisMarker()
     {
-        foreach ( var child in _chartElementsView )
+        foreach ( var child in _chartElementsUiDomain )
         {
             child.UpdateYAxisMarker();
         }
@@ -196,7 +206,7 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     public void PerformPeriodicalAction()
     {
-        foreach ( var child in _chartElementsView )
+        foreach ( var child in _chartElementsUiDomain )
         {
             child.PerformPeriodicalAction();
         }
@@ -204,19 +214,15 @@ public sealed class ChartComponentViewModel : ChartBaseViewModel, IDisposable
 
     public void GuiUpdateAndClear()
     {
-        foreach ( var child in _chartElementsView )
+        foreach ( var child in _chartElementsUiDomain )
         {
             child.GuiUpdateAndClear();
         }
     }
 
-    internal Subscription GetSubscription( IChartComponent _param1 )
-    {
-        throw new NotImplementedException();
-
-        // BUG: Wait till Chart Code has been upgrade to uncomment the following code.
-
-        // return ( ( Chart ) Pane.Chart ).TryGetSubscription( ( IChartElement ) _param1 );
+    internal Subscription GetSubscription( IChartComponent com )
+    {        
+        return ( ( Chart ) Pane.Chart ).TryGetSubscription( ( IChartElement ) com );
     }
 
     public bool IsDisposed

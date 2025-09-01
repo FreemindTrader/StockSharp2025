@@ -23,7 +23,7 @@ namespace StockSharp.Xaml.Charting;
 /// This class contains the code for the CandleStick UI.
 /// </summary>
 [Display(ResourceType = typeof(LocalizedStrings), Name = "CandleSettings")]
-public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
+public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
                                   IChartElement,
                                   IChartPart<IChartElement>,
                                   INotifyPropertyChanged,
@@ -31,7 +31,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
                                   INotifyPropertyChanging,
                                   IPersistable,
                                   IChartComponent,
-                                  IDrawableChartElement
+                                  IChartElementUiDomain
 {
 
     private ChartCandleDrawStyles _drawStyle;
@@ -112,7 +112,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 
     private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _drawingColor;
 
-    private DrawableChartComponentBaseViewModel _baseViewModel;
+    private ChartElementUiDomain _baseViewModel;
 
     public ChartCandleElement()
     {
@@ -122,7 +122,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
         DrawStyle = ChartCandleDrawStyles.CandleStick;
     }
 
-    System.Windows.Media.Color IDrawableChartElement.Color
+    System.Windows.Media.Color IChartElementUiDomain.Color
     {
         get
         {
@@ -1084,22 +1084,22 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
         return _param1;
     }
 
-    //DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(
+    //DrawableChartComponentBaseViewModel IChartElementUiDomain.CreateViewModel(
     //  IDrawingSurfaceVM _param1)
-    public DrawableChartComponentBaseViewModel CreateViewModel(IDrawingSurfaceVM viewModel)
+    public ChartElementUiDomain CreateViewModel(IDrawingSurfaceVM viewModel)
     {
         throw new NotImplementedException();
 
         //return _baseViewModel = (DrawableChartComponentBaseViewModel)new ChartCandleElement(this);
     }
 
-    bool IDrawableChartElement.StartDrawing(
+    bool IChartElementUiDomain.StartDrawing(
       IEnumerableEx<ChartDrawData.IDrawValue> _param1)
     {
         return _baseViewModel.Draw(_param1);
     }
 
-    void IDrawableChartElement.StartDrawing()
+    void IChartElementUiDomain.StartDrawing()
     {
         _baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
     }
@@ -1111,8 +1111,8 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
         bool flag1 = source1 != null && !CollectionHelper.IsEmpty<ChartDrawData.sCandle>((ICollection<ChartDrawData.sCandle>)source1);
         bool flag2 = source2 != null && !CollectionHelper.IsEmpty<ChartDrawData.sCandleColor>((ICollection<ChartDrawData.sCandleColor>)source2);
         if ( flag1 || flag2 )
-            return ( ( !flag1 ? 0 : ( ( (IDrawableChartElement)this ).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source1.Cast<ChartDrawData.IDrawValue>(), source1.Count)) ? 1 : 0 ) ) | ( !flag2 ? ( false ? 1 : 0 ) : ( ( (IDrawableChartElement)this ).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source2.Cast<ChartDrawData.IDrawValue>(), source2.Count)) ? 1 : 0 ) ) ) != 0;
-        ( (IDrawableChartElement)this ).StartDrawing();
+            return ( ( !flag1 ? 0 : ( ( (IChartElementUiDomain)this ).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source1.Cast<ChartDrawData.IDrawValue>(), source1.Count)) ? 1 : 0 ) ) | ( !flag2 ? ( false ? 1 : 0 ) : ( ( (IChartElementUiDomain)this ).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source2.Cast<ChartDrawData.IDrawValue>(), source2.Count)) ? 1 : 0 ) ) ) != 0;
+        ( (IChartElementUiDomain)this ).StartDrawing();
         return false;
     }
 
@@ -1163,7 +1163,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 //namespace StockSharp.Xaml.Charting
 //{
 
-//    public partial class ChartCandleElement : ChartComponentView<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+//    public partial class ChartCandleElement : ChartComponentView<ChartCandleElement>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, IChartElement
 //    {
 //        private Func<DateTimeOffset, bool, bool, Color?> _colorer;
 //        private CandlestickVM _viewModel;
@@ -1243,7 +1243,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 //            DrawStyle       = ChartCandleDrawStyles.CandleStick;
 //        }
 
-//        Color IDrawableChartElement.Color
+//        Color IChartElementUiDomain.Color
 //        {
 //            get
 //            {
@@ -1825,7 +1825,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 //            _viewModel.CheckAndShowFibonacci();
 //        }
 
-//        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(IDrawingSurfaceVM viewModel)
+//        DrawableChartComponentBaseViewModel IChartElementUiDomain.CreateViewModel(IDrawingSurfaceVM viewModel)
 //        {
 //            return _viewModel = new CandlestickVM(this);
 //        }
@@ -1857,7 +1857,7 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 //                }
 //            }
 
-//            ( (IDrawableChartElement)this ).StartDrawing();
+//            ( (IChartElementUiDomain)this ).StartDrawing();
 //            return false;
 //        }
 
@@ -1866,12 +1866,12 @@ public class ChartCandleElement : ChartComponentView<ChartCandleElement>,
 //            return _viewModel.TonyDrawSeries(drawValues);
 //        }
 
-//        bool IDrawableChartElement.StartDrawing(IEnumerableEx<ChartDrawData.IDrawValue> drawValues)
+//        bool IChartElementUiDomain.StartDrawing(IEnumerableEx<ChartDrawData.IDrawValue> drawValues)
 //        {
 //            return _viewModel.Draw(drawValues);
 //        }
 
-//        void IDrawableChartElement.StartDrawing()
+//        void IChartElementUiDomain.StartDrawing()
 //        {
 //            _viewModel.Draw(Enumerable.Empty<ChartDrawData.IDrawValue>().ToEx(0));
 //        }

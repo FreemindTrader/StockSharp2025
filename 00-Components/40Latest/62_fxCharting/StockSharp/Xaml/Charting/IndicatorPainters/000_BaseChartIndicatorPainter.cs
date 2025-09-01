@@ -18,7 +18,7 @@ namespace StockSharp.Xaml.Charting.IndicatorPainters;
 /// The indicator renderer base class on the chart (for example, lines, histograms, etc.).
 /// </summary>
 /// <typeparam name="TIndicator">Type of <see cref="T:StockSharp.Algo.Indicators.IIndicator" />.</typeparam>
-public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel, IPersistable, IChartIndicatorPainter
+public abstract class BaseChartIndicatorPainter<TIndicator> : ChartPropertiesViewModel, IPersistable, IChartIndicatorPainter
     where TIndicator : IIndicator
 {
     private readonly List<IChartElement> _innerElements = new List<IChartElement>();
@@ -52,7 +52,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
 
     private void StartDrawing()
     {
-        CollectionHelper.ForEach( GetIndicatorElement().ChildElements.OfType<IDrawableChartElement>(), p => p.StartDrawing() );
+        CollectionHelper.ForEach( GetIndicatorElement().ChildElements.OfType<IChartElementUiDomain>(), p => p.StartDrawing() );
     }
 
     /// <summary>Draw values on chart.</summary>
@@ -159,7 +159,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
 
     private static bool InternalDrawValues( IChartElement element, int count, Func<int, DateTime> func1, Func<int, double> func2, Func<int, double> func3, Func<int, int> func4 )
     {
-        if ( !( element is IDrawableChartElement draw ) )
+        if ( !( element is IChartElementUiDomain draw ) )
         {
             throw new InvalidOperationException( "invalid chart element" );
         }
@@ -269,15 +269,15 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
                     GetIndicatorElement().AddChildElement(element);
 
                     var surface = ((ChartArea)Element.PersistentChartArea).ViewModel;
-                    ChartComponentViewModel vm;
+                    ChartComponentUiDomain vm;
 
                     if(!surface.GetViewModelFromCache(GetIndicatorElement(), out vm))
                     {
                         return;
                     }
 
-                    var draw_vm = ((IDrawableChartElement) element).CreateViewModel(surface);
-                    var drawVMList = new List<DrawableChartComponentBaseViewModel>();
+                    var draw_vm = ((IChartElementUiDomain) element).CreateViewModel(surface);
+                    var drawVMList = new List<ChartElementUiDomain>();
                     drawVMList.Add( draw_vm );
 
                     vm.InitializeChildElements( drawVMList );
@@ -385,7 +385,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
 
 //    private void ChildElementsStartDrawing()
 //    {
-//        var elements = Element.ChildElements.OfType<IDrawableChartElement>();
+//        var elements = Element.ChildElements.OfType<IChartElementUiDomain>();
 
 //        foreach(var element in elements)
 //        {
@@ -509,7 +509,7 @@ public abstract class BaseChartIndicatorPainter<TIndicator> : ChartBaseViewModel
 //        Func<int, double> myFunc1,
 //        Func<int, double> myFunc2)
 //    {
-//        var drawableElement = chartElement as IDrawableChartElement;
+//        var drawableElement = chartElement as IChartElementUiDomain;
 
 //        if(drawableElement == null)
 //        {

@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting;
 
 /// <summary>The chart element representing the indicator.</summary>
 [Display(ResourceType = typeof(LocalizedStrings), Name = "IndicatorSettings")]
-public sealed class ChartIndicatorElement : ChartComponentView<ChartIndicatorElement>, IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartIndicatorElement
+public sealed class ChartIndicatorElement : ChartComponentViewModel<ChartIndicatorElement>, IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartIndicatorElement
 {
     private DefaultPainter _defaultPainter;
 

@@ -2,8 +2,6 @@
 using Ecng.Xaml;
 using SciChart.Charting.Visuals.Annotations;
 using SciChart.Charting.Visuals.RenderableSeries;
-using StockSharp.Xaml;
-using StockSharp.Xaml.Charting;
 using System;
 using System.Collections.Generic; using fx.Collections;
 using System.Windows;
@@ -18,7 +16,7 @@ using Ecng.Xaml.Converters;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>
-/// This class mainly take care of the drawing of the Chart Elment.
+/// This class mainly take care of the drawing of the Chart Componenets
 /// 
 /// It defines the abstract drawing methods for the Chart Elements or Chart components
 /// 
@@ -29,12 +27,12 @@ namespace StockSharp.Xaml.Charting;
 ///     
 /// It provides the basic abstract functions for the dervied class to implement.
 /// </summary>
-public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
+public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 {
-    private readonly PooledDictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new PooledDictionary< IRenderableSeries, AxisMarkerAnnotation >( );
-    private ChartComponentViewModel _chartComponentViewModel;    
+    private readonly Dictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new Dictionary< IRenderableSeries, AxisMarkerAnnotation >( );
+    private ChartComponentUiDomain _chartComponentViewModel;    
 
-    protected ChartComponentViewModel ChartViewModel
+    protected ChartComponentUiDomain ChartViewModel
     {
         get
         {
@@ -47,7 +45,7 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
         }
     }
 
-    public abstract IDrawableChartElement Element
+    public abstract IChartElementUiDomain Element
     {
         get;
     }
@@ -122,12 +120,13 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
     {
     }
 
-    public void Init( ChartComponentViewModel parentVM )
+    public void Init( ChartComponentUiDomain parentVM )
     {
         if( ChartViewModel != null )
         {
             throw new InvalidOperationException( "parent was already addded" );
         }
+
         ChartViewModel =  parentVM;
         Init( );
         Reset( );
@@ -190,7 +189,7 @@ public abstract class DrawableChartComponentBaseViewModel : ChartBaseViewModel
 
         if( colorStr != null )
         {
-            axisMarker.SetBindings( Control.BackgroundProperty, element, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+            axisMarker.SetBindings( Control.BackgroundProperty,  element, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
             axisMarker.SetBindings( Control.BorderBrushProperty, element, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
         }
         else

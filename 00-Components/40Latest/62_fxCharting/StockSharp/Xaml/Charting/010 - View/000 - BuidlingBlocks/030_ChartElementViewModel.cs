@@ -31,7 +31,7 @@ namespace StockSharp.Xaml.Charting;
 /// And we need a function to be called (_colorFunction) when we need to draw the high, this function will return the color for the Candlestick High.
 /// and we also need to know the value of the high, so we have a function (_valueFunction) that will return the value of the high.
 /// </summary>
-public sealed class ChartElementViewModel : ChartBaseViewModel
+public sealed class ChartElementViewModel : ChartPropertiesViewModel
 {
     private readonly Func<SeriesInfo, Color>  _colorFunction;
     private readonly Func<SeriesInfo, string> _valueFunction;
@@ -39,7 +39,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
     private string                            _value;
     private Color                             _color;
     private SeriesInfo                        _seriesInfo;
-    private ChartComponentViewModel           _chartComponent;
+    private ChartComponentUiDomain           _chartComponent;
 
     public ChartElementViewModel( INotifyPropertyChanged mypropertyOwner, Func<SeriesInfo, Color> getColorFunc, Func<SeriesInfo, string> getValueFunc, params string[ ] string_2 ) : this( null, mypropertyOwner, getColorFunc, getValueFunc, string_2 )
     {
@@ -72,7 +72,7 @@ public sealed class ChartElementViewModel : ChartBaseViewModel
     /// 
     /// eg. ChartCandleElementViewModel is the ChartCompent and the childrens are the High ChartComponent, Low ChartComponent, Open ChartComponent, Close ChartComponent
     /// </summary>
-    public ChartComponentViewModel ChartComponent
+    public ChartComponentUiDomain ChartComponent
     {
         get
         {

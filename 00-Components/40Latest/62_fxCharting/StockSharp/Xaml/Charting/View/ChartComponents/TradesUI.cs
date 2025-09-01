@@ -20,7 +20,7 @@ namespace StockSharp.Xaml.Charting
 
             //if( source != null && !source.IsEmpty( ) )
             //{
-            //    return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
+            //    return ( ( IChartElementUiDomain )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
             //}
             //return false;
         }

@@ -19,7 +19,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>The chart element representing active orders.</summary>
 
 [Display( ResourceType = typeof( LocalizedStrings ), Name = "ActiveOrders" )]
-public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElement>, 
+public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrdersElement>, 
                                         IChartElement, 
                                         IChartPart<IChartElement>, 
                                         INotifyPropertyChanged, 
@@ -27,7 +27,7 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
                                         IPersistable, 
                                         IChartActiveOrdersElement, 
                                         IChartComponent, 
-                                        IDrawableChartElement
+                                        IChartElementUiDomain
 {
     
     private System.Windows.Media.Color _buyPendingColor;
@@ -50,7 +50,7 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
     
     private bool _isAnimationEnabled;
     
-    private DrawableChartComponentBaseViewModel _baseViewModel;
+    private ChartElementUiDomain _baseViewModel;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartActiveOrdersElement" />.
@@ -245,23 +245,23 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
 
     public IChartArea PersistentChartArea => throw new NotImplementedException();
 
-    //DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( ScichartSurfaceMVVM _param1 )
+    //DrawableChartComponentBaseViewModel IChartElementUiDomain.CreateViewModel( ScichartSurfaceMVVM _param1 )
     //{
     //    return _baseViewModel = ( DrawableChartComponentBaseViewModel ) new ChartActiveOrdersElementVM( this );
     //}
 
-    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
+    ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
     {
         return _baseViewModel = new ChartActiveOrdersElementVM( this );
     }
 
-    bool IDrawableChartElement.StartDrawing(
+    bool IChartElementUiDomain.StartDrawing(
       IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
     {
         return _baseViewModel.Draw( _param1 );
     }
 
-    void IDrawableChartElement.StartDrawing()
+    void IChartElementUiDomain.StartDrawing()
     {
         _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
@@ -269,7 +269,7 @@ public class ChartActiveOrdersElement : ChartComponentView<ChartActiveOrdersElem
     protected override bool OnDraw( ChartDrawData data )
     {
         var source = data.GetActiveOrderMap( );
-        return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sActiveOrder>( ( ICollection<ChartDrawData.sActiveOrder> ) source ) && ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source.Cast<ChartDrawData.IDrawValue>(), source.Count ) );
+        return source != null && !CollectionHelper.IsEmpty<ChartDrawData.sActiveOrder>( ( ICollection<ChartDrawData.sActiveOrder> ) source ) && ( ( IChartElementUiDomain ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( source.Cast<ChartDrawData.IDrawValue>(), source.Count ) );
     }
 
     public override void Load( SettingsStorage storage )

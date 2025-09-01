@@ -13,7 +13,7 @@ using StockSharp.Charting;
 
 namespace StockSharp.Xaml.Charting
 {    
-    public partial class ChartCandleElementEx : ChartComponentView<ChartCandleElementEx>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IDrawableChartElement, IChartElement
+    public partial class ChartCandleElementEx : ChartComponentViewModel<ChartCandleElementEx>, ICloneable, INotifyPropertyChanging, INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, IChartElement
     {
         public void ShowLessWaves( )
         {

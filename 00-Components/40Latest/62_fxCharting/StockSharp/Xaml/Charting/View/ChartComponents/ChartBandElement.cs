@@ -17,7 +17,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>The chart element representing a band.</summary>
-public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
+public sealed class ChartBandElement : ChartComponentViewModel<ChartBandElement>,
                                           IChartElement,
                                           IChartPart<IChartElement>,
                                           INotifyPropertyChanged,
@@ -25,7 +25,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
                                           IPersistable,
                                           IChartBandElement,
                                           IChartComponent,
-                                          IDrawableChartElement
+                                          IChartElementUiDomain
 {
 
     private DrawStyles _drawStyle = DrawStyles.Band;
@@ -34,7 +34,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
 
     private readonly ChartLineElement _lineTwo;
 
-    private DrawableChartComponentBaseViewModel _baseViewModel;
+    private ChartElementUiDomain _baseViewModel;
 
     /// <summary>Create instance.</summary>
     public ChartBandElement()
@@ -54,7 +54,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
         AddChildElement( ( IChartElement ) Line2, true );
     }
 
-    Color IDrawableChartElement.Color
+    Color IChartElementUiDomain.Color
     {
         get
         {
@@ -111,7 +111,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
         return !yType.HasValue || yType.GetValueOrDefault() == ChartAxisType.Numeric;
     }
 
-    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM _param1 )
+    ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM _param1 )
     {
         // BUG: need to Decode ScichartSurfaceMVVM.cs first
 
@@ -121,13 +121,13 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
         //return _baseViewModel;
     }
 
-    bool IDrawableChartElement.StartDrawing(
+    bool IChartElementUiDomain.StartDrawing(
       IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
     {
         return _baseViewModel.Draw( _param1 );
     }
 
-    void IDrawableChartElement.StartDrawing()
+    void IChartElementUiDomain.StartDrawing()
     {
         _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
@@ -139,7 +139,7 @@ public sealed class ChartBandElement : ChartComponentView<ChartBandElement>,
         //var drawValue = data.GetBandDrawValues( this );
         //if ( drawValue != null && !drawValue.IsEmpty() )
         //{
-        //    return ( ( IDrawableChartElement ) this ).StartDrawing( drawValue );
+        //    return ( ( IChartElementUiDomain ) this ).StartDrawing( drawValue );
         //}
         //return false;
     }

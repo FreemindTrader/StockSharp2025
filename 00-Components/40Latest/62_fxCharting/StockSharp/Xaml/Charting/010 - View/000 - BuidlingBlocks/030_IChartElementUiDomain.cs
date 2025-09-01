@@ -11,7 +11,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 ///     The interface is where the color to implement the logic to draw the indicators, active orders and stuff on the chart
 /// </summary>
-public interface IDrawableChartElement : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartComponent
+public interface IChartElementUiDomain : IChartElement, IChartPart<IChartElement>, INotifyPropertyChanged, INotifyPropertyChanging, IPersistable, IChartComponent
 {
     public System.Windows.Media.Color Color
     {
@@ -19,7 +19,7 @@ public interface IDrawableChartElement : IChartElement, IChartPart<IChartElement
     }
 
     //
-    public DrawableChartComponentBaseViewModel CreateViewModel( IDrawingSurfaceVM _param1 );
+    public ChartElementUiDomain CreateViewModel( IDrawingSurfaceVM _param1 );
 
     public bool StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> _param1 );
 

@@ -17,13 +17,13 @@ namespace StockSharp.Xaml.Charting;
 /// 
 /// I don't remember why I did that, will update the document later.
 /// </summary>
-public sealed class LegendModifierVM : ChartBaseViewModel
+public sealed class LegendModifierVM : ChartPropertiesViewModel
 {
     private LegendModifierEx _legendModifier;
 
     private bool _allowToHide = true;
 
-    private IEnumerable<ChartComponentViewModel> _componentsCache;
+    private IEnumerable<ChartComponentUiDomain> _componentsCache;
 
     private readonly ScichartSurfaceMVVM _scichartSurfaceVM;
 
@@ -34,7 +34,7 @@ public sealed class LegendModifierVM : ChartBaseViewModel
     public LegendModifierVM( ScichartSurfaceMVVM vm )
     {
         _scichartSurfaceVM = vm ?? throw new ArgumentNullException( "pane" );
-        Elements = ( IEnumerable<ChartComponentViewModel> ) vm.LegendElements;
+        Elements = ( IEnumerable<ChartComponentUiDomain> ) vm.LegendElements;
 
         // BUG: need to work on ChartComponentViewModel first
         //_removeElementCommand = new ActionCommand<ChartComponentViewModel>(
@@ -49,12 +49,12 @@ public sealed class LegendModifierVM : ChartBaseViewModel
 
     public ICommand RemoveElementCommand => _removeElementCommand;
 
-    public IEnumerable<ChartComponentViewModel> Elements
+    public IEnumerable<ChartComponentUiDomain> Elements
     {
         get => _componentsCache;
         set
         {
-            SetField<IEnumerable<ChartComponentViewModel>>( ref _componentsCache, value, nameof( Elements ) );
+            SetField<IEnumerable<ChartComponentUiDomain>>( ref _componentsCache, value, nameof( Elements ) );
         }
     }
 

@@ -12,7 +12,7 @@ namespace StockSharp.Xaml.Charting;
 /// Base class for chart related view models. It mainly contains methods for the properties including Setting property value and the event that get triggered
 /// when the property is changed.
 /// </summary>
-public class ChartBaseViewModel : NotifiableObject
+public class ChartPropertiesViewModel : NotifiableObject
 {
 
     private readonly SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>> _propertyChangedMap = new SynchronizedDictionary<INotifyPropertyChanged, Dictionary<string, HashSet<string>>>();
@@ -22,7 +22,7 @@ public class ChartBaseViewModel : NotifiableObject
     /// </summary>
     public event Action<object, string, object> PropertyValueChanging;
 
-    private void OnPropertyChanging( string propertyName, object propertyValue )
+    private void NotifyChanging( string propertyName, object propertyValue )
     {
         PropertyValueChanging?.Invoke( this, propertyName, propertyValue );
     }
@@ -38,9 +38,11 @@ public class ChartBaseViewModel : NotifiableObject
     {
         if ( EqualityComparer<T>.Default.Equals( field, value ) )
             return false;
-        OnPropertyChanging( propertyName, ( object ) value );
+
+        NotifyChanging( propertyName, value );
         field = value;
         NotifyChanged( propertyName );
+        
         return true;
     }
 

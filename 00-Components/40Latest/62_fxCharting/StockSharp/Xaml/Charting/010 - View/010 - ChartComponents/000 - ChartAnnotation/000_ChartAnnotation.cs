@@ -13,7 +13,7 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 /// <summary>Annotation.</summary>
-public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
+public class ChartAnnotation : ChartComponentViewModel<ChartAnnotation>,
                                   IChartElement,
                                   IChartPart<IChartElement>,
                                   INotifyPropertyChanged,
@@ -21,7 +21,7 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
                                   IPersistable,
                                   IChartAnnotationElement,
                                   IChartComponent,
-                                  IDrawableChartElement
+                                  IChartElementUiDomain
 {
     
     private ChartAnnotationTypes _chartAnnotationTypes;
@@ -54,22 +54,22 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
         }
     }  
 
-    public DrawableChartComponentBaseViewModel CreateViewModel( IDrawingSurfaceVM viewModel )
+    public ChartElementUiDomain CreateViewModel( IDrawingSurfaceVM viewModel )
     {
         if ( Type == ChartAnnotationTypes.None )
             throw new InvalidOperationException( "annotation type is not set" );
-        return ( DrawableChartComponentBaseViewModel ) ( _baseViewModel = new ChartAnnotationViewModel( this ) );
+        return ( ChartElementUiDomain ) ( _baseViewModel = new ChartAnnotationViewModel( this ) );
     }
 
     //public DrawableChartComponentBaseViewModel CreateViewModel( ScichartSurfaceMVVM _param1 );
 
-    bool IDrawableChartElement.StartDrawing(
+    bool IChartElementUiDomain.StartDrawing(
       IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
     {
         return _baseViewModel.Draw( _param1 );
     }
 
-    void IDrawableChartElement.StartDrawing()
+    void IChartElementUiDomain.StartDrawing()
     {
         _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
@@ -84,7 +84,7 @@ public class ChartAnnotation : ChartComponentView<ChartAnnotation>,
         var annotationData = data.GetAnnotation( this );
         if ( annotationData == null )
             return false;
-        return ( ( IDrawableChartElement ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( ( IEnumerable<ChartDrawData.IDrawValue> ) new ChartDrawData.IDrawValue[ 1 ]
+        return ( ( IChartElementUiDomain ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( ( IEnumerable<ChartDrawData.IDrawValue> ) new ChartDrawData.IDrawValue[ 1 ]
         {
       (ChartDrawData.IDrawValue) annotationData
         }, 1 ) );

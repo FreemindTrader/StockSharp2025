@@ -22,7 +22,7 @@ namespace StockSharp.Xaml.Charting
             //PooledList< ChartDrawData.sTrade > source = data.GetOrder( this );
             //if( source != null && !source.IsEmpty( ) )
             //{
-            //    return ( ( IDrawableChartElement )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
+            //    return ( ( IChartElementUiDomain )this ).StartDrawing( source.Cast< ChartDrawData.IDrawValue >( ).ToEx( source.Count ) );
             //}
             //return false;
         }

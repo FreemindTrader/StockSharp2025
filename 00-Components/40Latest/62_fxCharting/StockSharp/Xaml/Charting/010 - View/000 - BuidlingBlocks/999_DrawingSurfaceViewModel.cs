@@ -50,26 +50,26 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// 
 /// </summary>
-public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
+public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
                                                 IDisposable, 
                                                 IDrawingSurfaceVM
 {
     /// <summary>
     /// Chart Components Cache 
     /// </summary>
-    private sealed class ChartComponentsCache : CachedSynchronizedDictionary<IChartComponent, ChartComponentViewModel>
+    private sealed class ChartComponentsCache : CachedSynchronizedDictionary<IChartComponent, ChartComponentUiDomain>
     {
 
-        private ChartComponentViewModel[ ]? _componentViewModels =  null;
+        private ChartComponentUiDomain[ ]? _componentViewModels =  null;
 
-        public ChartComponentViewModel[ ] InitCache()
+        public ChartComponentUiDomain[ ] InitCache()
         {
-            lock ( ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) this ).SyncRoot )
+            lock ( ( ( SynchronizedDictionary<IChartComponent, ChartComponentUiDomain> ) this ).SyncRoot )
             {
                 if ( _componentViewModels == null )
                 {
-                    var holders = new List<ChartComponentViewModel>();
-                    holders.AddRange( ( ( IEnumerable<KeyValuePair<IChartComponent, ChartComponentViewModel>> ) this ).OrderBy( p => p.Key.Priority ).Select( x => x.Value ) );
+                    var holders = new List<ChartComponentUiDomain>();
+                    holders.AddRange( ( ( IEnumerable<KeyValuePair<IChartComponent, ChartComponentUiDomain>> ) this ).OrderBy( p => p.Key.Priority ).Select( x => x.Value ) );
                     _componentViewModels = holders.ToArray();
                 }
 
@@ -100,13 +100,13 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private readonly DispatcherTimer _dispatcherTimer;
 
-    private readonly SynchronizedSet<ChartComponentViewModel> _parentChartViewModelCache = new SynchronizedSet<ChartComponentViewModel>();
+    private readonly SynchronizedSet<ChartComponentUiDomain> _parentChartViewModelCache = new SynchronizedSet<ChartComponentUiDomain>();
 
     private readonly Queue<double> _queue = new Queue<double>();
 
     private double _fpsTotal;
 
-    private readonly ObservableCollection<ChartComponentViewModel> _legendElements = new ObservableCollection<ChartComponentViewModel>();
+    private readonly ObservableCollection<ChartComponentUiDomain> _legendElements = new ObservableCollection<ChartComponentUiDomain>();
 
     public event Action<IChartElement> RemoveElementEvent;
 
@@ -126,7 +126,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private bool _paneHasCandles;
 
-    private ChartComponentViewModel _candleCompositeElement;
+    private ChartComponentUiDomain _candleCompositeElement;
 
     private readonly AnnotationCollection _annotationCollection = new AnnotationCollection();
 
@@ -201,7 +201,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private object GetRootElement() => ( object ) ParentViewModel ?? ( object ) this;
 
-    public ObservableCollection<ChartComponentViewModel> LegendElements
+    public ObservableCollection<ChartComponentUiDomain> LegendElements
     {
         get => _legendElements;
     }
@@ -586,7 +586,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
                 }
             } );
 
-        CollectionHelper.ForEach<ChartComponentViewModel>( _componentsCache.CachedValues, component => component.UpdateYAxisMarker() );
+        CollectionHelper.ForEach<ChartComponentUiDomain>( _componentsCache.CachedValues, component => component.UpdateYAxisMarker() );
 
         if ( ShowPerfStats && e.Duration > 0.0 )
         {
@@ -612,11 +612,11 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
     private void OnTimer( object _param1, EventArgs _param2 )
     {
-        ChartComponentViewModel[] vms;
+        ChartComponentUiDomain[] vms;
         lock (  _parentChartViewModelCache.SyncRoot )
-            vms = CollectionHelper.CopyAndClear<ChartComponentViewModel>( _parentChartViewModelCache );
+            vms = CollectionHelper.CopyAndClear<ChartComponentUiDomain>( _parentChartViewModelCache );
 
-        foreach ( ChartComponentViewModel vm in vms )
+        foreach ( ChartComponentUiDomain vm in vms )
             vm.PerformPeriodicalAction();
     }
 
@@ -624,7 +624,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     {
         foreach ( IChartComponent comp in chartElement )
         {
-            ChartComponentViewModel vm;
+            ChartComponentUiDomain vm;
             if ( GetViewModelFromCache( comp, out vm ))
       {
                 _parentChartViewModelCache.Add( vm );
@@ -637,16 +637,16 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     {
         foreach ( var chartComp in ( _componentsCache ).Where(p => p.Value == null ).Select( p => p.Key ).ToArray() )
         {
-            ChartComponentViewModel vm = new ChartComponentViewModel(this, chartComp);
+            ChartComponentUiDomain vm = new ChartComponentUiDomain(this, chartComp);
 
             vm.InitializeChildElements( chartComp.ChildElements.Append2( chartComp )
-                                        .OfType<IDrawableChartElement>()
+                                        .OfType<IChartElementUiDomain>()
                                         .Where( e => !e.DontDraw )
                                         .Select( e => e.CreateViewModel( this ) )
                                         .Where( e => e != null ));
 
             
-            ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) _componentsCache )[ chartComp ] = vm;
+            ( ( SynchronizedDictionary<IChartComponent, ChartComponentUiDomain> ) _componentsCache )[ chartComp ] = vm;
             if ( chartComp.IsLegend )
                 LegendElements.Add( vm );
         }
@@ -659,7 +659,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         PaneHasCandles = CandlesCompositeElement != null;
     }
 
-    public bool GetViewModelFromCache( IChartComponent comp, out ChartComponentViewModel viewModel )
+    public bool GetViewModelFromCache( IChartComponent comp, out ChartComponentUiDomain viewModel )
     {
         return  _componentsCache.TryGetValue( comp, out viewModel );
     }
@@ -696,8 +696,8 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
 
         if ( Chart != null )
         {
-            var vm = new ChartComponentViewModel(this, chartComponent);
-            vm.InitializeChildElements( CollectionHelper.Append2( chartComponent.ChildElements, chartComponent ).OfType<IDrawableChartElement>()
+            var vm = new ChartComponentUiDomain(this, chartComponent);
+            vm.InitializeChildElements( CollectionHelper.Append2( chartComponent.ChildElements, chartComponent ).OfType<IChartElementUiDomain>()
                                                         .Where( e => !e.DontDraw )
                                                         .Select( d => d.CreateViewModel( this ) ) );
 
@@ -729,14 +729,14 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         if ( chart != null )
             chart.EnsureUIThread();
         IChartComponent chartComp = (IChartComponent) _param1;
-        ChartComponentViewModel vm;
+        ChartComponentUiDomain vm;
         if ( !GetViewModelFromCache( chartComp, out vm ))
       return false;
         chartComp.RemoveAxisesEventHandler();
         if ( chartComp is IChartCandleElement chartCandleElement )
             chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
         chartComp.PropertyChanged -= new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
-        ( ( SynchronizedDictionary<IChartComponent, ChartComponentViewModel> ) _componentsCache ).Remove( chartComp );
+        ( ( SynchronizedDictionary<IChartComponent, ChartComponentUiDomain> ) _componentsCache ).Remove( chartComp );
         if ( vm != null )
         {
             vm.GuiUpdateAndClear();
@@ -997,7 +997,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         get => _yAxises;
     }
 
-    public ChartComponentViewModel CandlesCompositeElement
+    public ChartComponentUiDomain CandlesCompositeElement
     {
         get => _candleCompositeElement;
         private set => _candleCompositeElement = value;
@@ -1213,7 +1213,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         _sciChartSurface = ( SciChartSurface ) null;
     }
 
-    public bool AllowElementToBeRemoved( ChartComponentViewModel vm )
+    public bool AllowElementToBeRemoved( ChartComponentUiDomain vm )
     {
         if ( ParentViewModel == null || !ParentViewModel.IsInteracted )
             return false;
@@ -1298,12 +1298,12 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
         RemoveAxis( _param1, ( ICollection<IAxis> ) YAxises );
     }
     
-    private DrawableChartComponentBaseViewModel CreateDrawableChartElementBaseViewModel( IDrawableChartElement _param1 )
+    private ChartElementUiDomain CreateDrawableChartElementBaseViewModel( IChartElementUiDomain _param1 )
     {
         return _param1.CreateViewModel( this );
     }
 
-    private DrawableChartComponentBaseViewModel NewDrawableChartElementBaseViewModel( IDrawableChartElement d )
+    private ChartElementUiDomain NewDrawableChartElementBaseViewModel( IChartElementUiDomain d )
     {
         return d.CreateViewModel( this );
     }
@@ -1353,10 +1353,10 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     //    public static Func<IRenderableSeries, int> m_public_static_Func_IRenderableSeries__nt_;
     //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_;
     //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_;
-    //    public static Func<IDrawableChartElement, bool> Func_IDrawableChartElement_bool_098;
+    //    public static Func<IChartElementUiDomain, bool> Func_IDrawableChartElement_bool_098;
     //    public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
     //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> _Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_;
-    //    public static Func<IDrawableChartElement, bool> __Func_IDrawableChartElement__bool__903;
+    //    public static Func<IChartElementUiDomain, bool> __Func_IDrawableChartElement__bool__903;
     //    public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
     //    public static Action<IChartAxis> _Action_IChartAxis_0932;
     //    public static Action<IChartAxis> _Action_IChartAxis_0932323;
@@ -1409,7 +1409,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     //    }
 
     //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_0352(
-    //      IDrawableChartElement _param1 )
+    //      IChartElementUiDomain _param1 )
     //    {
     //        return !_param1.DontDraw;
     //    }
@@ -1427,7 +1427,7 @@ public sealed class ScichartSurfaceMVVM : ChartBaseViewModel,
     //    }
 
     //    public bool public_bool_Method_0983333(
-    //      IDrawableChartElement e )
+    //      IChartElementUiDomain e )
     //    {
     //        return !e.DontDraw;
     //    }

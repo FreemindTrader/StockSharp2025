@@ -466,7 +466,7 @@ label_4:
 
     private void GuiInitSeries()
     {
-        if ( !DrawableChartComponentBaseViewModel.IsUiThread() )
+        if ( !ChartElementUiDomain.IsUiThread() )
         {
             PerformUiAction(new Action(GuiInitSeries), true);
         }

@@ -20,21 +20,21 @@ using System.Windows.Media;
 namespace StockSharp.Xaml.Charting;
 
 public class CandlePatternElement :
-  ChartComponentView<CandlePatternElement>,
+  ChartComponentViewModel<CandlePatternElement>,
   IChartElement,
   IChartPart<IChartElement>,
   INotifyPropertyChanged,
   INotifyPropertyChanging,
   IPersistable,
   IChartComponent,
-  IDrawableChartElement
+  IChartElementUiDomain
 {
 
     private Color _downColor;
 
     private Color _upColor;
 
-    private DrawableChartComponentBaseViewModel _baseViewModel;
+    private ChartElementUiDomain _baseViewModel;
 
     [Display(ResourceType = typeof(LocalizedStrings), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30)]
     public Color DownColor
@@ -58,25 +58,25 @@ public class CandlePatternElement :
         }
     }
 
-    DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel(IDrawingSurfaceVM viewModel)
+    ChartElementUiDomain IChartElementUiDomain.CreateViewModel(IDrawingSurfaceVM viewModel)
     {
         return _baseViewModel = new CandlePatternElementViewModel(this);
     }
     
 
-    bool IDrawableChartElement.StartDrawing(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+    bool IChartElementUiDomain.StartDrawing(IEnumerableEx<ChartDrawData.IDrawValue> _param1)
     {
         return _baseViewModel.Draw(_param1);
     }
 
-    void IDrawableChartElement.StartDrawing()
+    void IChartElementUiDomain.StartDrawing()
     {
         _baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
     }
 
     protected override bool OnDraw(ChartDrawData data) => throw new NotSupportedException();
 
-    Color IDrawableChartElement.Color
+    Color IChartElementUiDomain.Color
     {
         get
         {

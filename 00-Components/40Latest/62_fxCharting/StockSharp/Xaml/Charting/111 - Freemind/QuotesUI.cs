@@ -14,12 +14,12 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting
 {
-    public sealed class QuotesUI : ChartComponentView<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IDrawableChartElement, ICloneable, INotifyPropertyChanging, IChartElement
+    public sealed class QuotesUI : ChartComponentViewModel<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
         private ChartLineElement                   _bidLine;
         private ChartLineElement                   _askLine;
-        private DrawableChartComponentBaseViewModel                 _viewModel;
+        private ChartElementUiDomain                 _viewModel;
 
         public QuotesUI( )
         {
@@ -41,7 +41,7 @@ namespace StockSharp.Xaml.Charting
             AddChildElement( AskLine, true );
         }
 
-        Color IDrawableChartElement.Color
+        Color IChartElementUiDomain.Color
         {
             get
             {
@@ -108,18 +108,18 @@ namespace StockSharp.Xaml.Charting
             return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
         }
 
-        DrawableChartComponentBaseViewModel IDrawableChartElement.CreateViewModel( IDrawingSurfaceVM viewModel )
+        ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
             _viewModel = new QuotesVM( this );
             return _viewModel;
         }
 
-        bool IDrawableChartElement.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
+        bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
             return _viewModel.Draw( drawValues );
         }
 
-        void IDrawableChartElement.StartDrawing( )
+        void IChartElementUiDomain.StartDrawing( )
         {
             _viewModel.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
         }
@@ -129,7 +129,7 @@ namespace StockSharp.Xaml.Charting
             //IEnumerableEx<ChartDrawData.IDrawValue> enumerableEx = data.GetBandDrawValues( this );
             //if ( enumerableEx != null && !enumerableEx.IsEmpty<ChartDrawData.IDrawValue>( ) )
             //{
-            //    return ( ( IDrawableChartElement )this ).StartDrawing( enumerableEx );
+            //    return ( ( IChartElementUiDomain )this ).StartDrawing( enumerableEx );
             //}
             return false;
         }

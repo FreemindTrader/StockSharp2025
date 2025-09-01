@@ -87,9 +87,9 @@ namespace StockSharp.Xaml.Charting
 
 
 
-            Func<SeriesInfo, DrawableChartComponentBaseViewModel> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[ ]> )?.Item1 );
+            Func<SeriesInfo, ChartElementUiDomain> groupByCondition = ( s => ( ( ( FrameworkElement )s.RenderableSeries ).Tag as Tuple<ChartElementUiDomain, ChartElementViewModel[ ]> )?.Item1 );
 
-            Func<IGrouping<DrawableChartComponentBaseViewModel, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
+            Func<IGrouping<ChartElementUiDomain, SeriesInfo>, bool> whereCondition = ( g => g.Key != null );
 
             var groupDatas = SeriesData.SeriesInfo.GroupBy( groupByCondition ).Where( whereCondition );
 
@@ -97,14 +97,14 @@ namespace StockSharp.Xaml.Charting
             {
                 foreach ( SeriesInfo info in myGroup )
                 {
-                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<DrawableChartComponentBaseViewModel, ChartElementViewModel[ ]>;
+                    var tag = ( ( FrameworkElement )info.RenderableSeries ).Tag as Tuple<ChartElementUiDomain, ChartElementViewModel[ ]>;
 
                     if ( tag == null )
                     {
                         return;
                     }
 
-                    ChartComponentViewModel parentVm = null;
+                    ChartComponentUiDomain parentVm = null;
 
                     foreach ( ChartElementViewModel vm in tag.Item2 )
                     {
@@ -117,7 +117,7 @@ namespace StockSharp.Xaml.Charting
                     {
                         if ( ViewModel.Elements != null )
                         {
-                            var e = ( ObservableCollection<ChartComponentViewModel> )ViewModel.Elements;
+                            var e = ( ObservableCollection<ChartComponentUiDomain> )ViewModel.Elements;
                             //e.Add( parentVm );
                         }
 
