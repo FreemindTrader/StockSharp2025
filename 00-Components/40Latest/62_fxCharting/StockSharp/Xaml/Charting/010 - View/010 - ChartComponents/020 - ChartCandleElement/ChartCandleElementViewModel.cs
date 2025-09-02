@@ -37,7 +37,7 @@ using Color = System.Windows.Media.Color;
 
 namespace StockSharp.Xaml.Charting;
 
-public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : ChartCompentWpfBaseViewModel<ChartCandleElement>(candle), IPaletteProvider, IPaletteProviderSS
+public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : ChartCompentWpfUiDomain<ChartCandleElement>(candle), IPaletteProvider, IPaletteProviderSS
 {
     private sealed class TimeSpanConverter(TimeSpan? _param1) : IValueConverter
     {

@@ -28,19 +28,19 @@ namespace StockSharp.Xaml.Charting;
 /// </summary>
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
-public abstract class ChartComponentViewModel<T> :   ChartPart<T>,
-IChartElement,
-IChartPart<IChartElement>,
-                                                INotifyPropertyChanged,
-                                                INotifyPropertyChanging,
-                                                IPersistable,
-                                                IChartComponent
-                                                where T : ChartComponentViewModel<T>
+public abstract class ChartComponentViewModel<T> :  ChartPart<T>,
+                                                    IChartElement,
+                                                    IChartPart<IChartElement>,
+                                                    INotifyPropertyChanged,
+                                                    INotifyPropertyChanging,
+                                                    IPersistable,
+                                                    IChartComponent
+                                                    where T : ChartComponentViewModel<T>
 {
    
-    private readonly SynchronizedDictionary<Guid, string>   _idToName = new SynchronizedDictionary<Guid, string>();
+    private readonly SynchronizedDictionary<Guid, string>   _idToName        = new SynchronizedDictionary<Guid, string>();
 
-    private readonly SynchronizedSet<string>                _extraName = new SynchronizedSet<string>();
+    private readonly SynchronizedSet<string>                _extraName       = new SynchronizedSet<string>();
 
     private readonly CachedSynchronizedSet<IChartElement>   _componentsCache = new CachedSynchronizedSet<IChartElement>();
 

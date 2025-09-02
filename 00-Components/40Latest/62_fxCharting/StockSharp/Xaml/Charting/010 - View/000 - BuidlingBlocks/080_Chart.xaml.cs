@@ -43,22 +43,23 @@ public partial class Chart : UserControl,
                               IThemeableChart,
                               INotifyPropertyChangedEx,
                               IWpfChart
-{    
+{
     private sealed class ChartIndicatorMap : Disposable
     {
 
         private readonly Chart _chart;
 
-        private readonly IChartIndicatorElement _baseViewModel;
+        private readonly IChartIndicatorElement _indicatorUI;
 
         private readonly IIndicator _indicator;
 
-        public ChartIndicatorMap(Chart chart, IChartIndicatorElement indicatorUI, IIndicator indicator)
+        public ChartIndicatorMap( Chart chart, IChartIndicatorElement indicatorUI, IIndicator indicator )
         {
-            _chart = chart ?? throw new ArgumentNullException("parent");
-            _baseViewModel = indicatorUI ?? throw new ArgumentNullException("element");
-            _indicator = indicator ?? throw new ArgumentNullException("indicator");
-            Indicator.Reseted += new Action(OnResetCallback);
+            _chart       = chart ?? throw new ArgumentNullException( "parent" );
+            _indicatorUI = indicatorUI ?? throw new ArgumentNullException( "element" );
+            _indicator   = indicator ?? throw new ArgumentNullException( "indicator" );
+
+            Indicator.Reseted += new Action( OnResetCallback );
         }
 
         public IIndicator Indicator => _indicator;
@@ -66,14 +67,14 @@ public partial class Chart : UserControl,
         protected override void DisposeManaged()
         {
             base.DisposeManaged();
-            Indicator.Reseted -= new Action(OnResetCallback);
+            Indicator.Reseted -= OnResetCallback;
         }
 
         private void OnResetCallback()
         {
             if ( _chart.DisableIndicatorReset )
                 return;
-            _chart.ResetIndicator(_baseViewModel, Indicator);
+            _chart.ResetIndicator( _indicatorUI, Indicator );
         }
     }
 
@@ -84,7 +85,7 @@ public partial class Chart : UserControl,
 
     private readonly ChartBuilder _chartBuilder = new ChartBuilder();
 
-    private Subscription _subscription;
+    private Subscription? _subscription;
 
     private ChartCandleDrawStyles _chartCandleDrawStyles;
 
@@ -123,7 +124,7 @@ public partial class Chart : UserControl,
 
     private readonly List<IChartArea> _iChartAreaList = new List<IChartArea>();
 
-    private ISecurityProvider _securityProvider;
+    private ISecurityProvider? _securityProvider;
 
     private bool _disableIndicatorReset;
 
@@ -131,20 +132,66 @@ public partial class Chart : UserControl,
 
     private bool _showNonFormedIndicators;
 
-    private Security _security;
+    private Security? _security;
 
-    private Subscription _candleSubscription;
+    private Subscription? _candleSubscription;
 
-    private Action<IChartArea> UngroupEvent;
+    private Action<IChartArea>? UngroupEvent;
 
-    private Action ResetSubscriptionEvent;
+    private Action? ResetSubscriptionEvent;
 
-    private PropertyChangedEventHandler PropertyChangedEvent;
+    private PropertyChangedEventHandler? PropertyChangedEvent;
 
-    public SciChartGroup _scichartGroup;
+    public SciChartGroup? _scichartGroup;
 
+    public event Action<IChartArea>? AreaAdded;
 
+    public event Action<IChartArea>? AreaRemoved;
+    /// <summary>The new order creation event.</summary>
+    public event Action < ChartArea, Order > ? CreateOrder;
 
+    /// <summary>Move order event.</summary>
+    public event Action < Order, Decimal > ? MoveOrder;
+
+    /// <summary>Cancel order event.</summary>
+    public event Action < Order > ? CancelOrder;
+
+    /// <summary>Annotation created event.</summary>
+    public event Action < IChartAnnotationElement > ? AnnotationCreated;
+
+    /// <summary>Annotation Modified event.</summary>
+    public event Action<IChartAnnotationElement, ChartDrawData.AnnotationData>? AnnotationModified;
+
+    /// <summary>Annotation deleted event.</summary>
+    public event Action < IChartAnnotationElement > ? AnnotationDeleted;
+
+    /// <summary>Annotation selection event.</summary>
+    public event Action < IChartAnnotationElement, ChartDrawData.AnnotationData > ? AnnotationSelected;
+
+    /// <summary>
+    /// The event of the subscription to getting data for the element.
+    /// </summary>
+    public event Action < IChartCandleElement, Subscription > ? SubscribeCandleElement;
+
+    /// <summary>
+    /// The event of the subscription to getting data for the Indicator Chart element.
+    /// </summary>
+    public event Action < IChartIndicatorElement, Subscription, IIndicator > ? SubscribeIndicatorElement;
+
+    /// <summary>
+    /// The event of the subscription to getting data for the Order Chart Element UI.
+    /// </summary>
+    public event Action < IChartOrderElement, Subscription > ? SubscribeOrderElement;
+
+    /// <summary>
+    /// The event of the subscription to getting data for the Trade Chart Element UI.
+    /// </summary>
+    public event Action < IChartTradeElement, Subscription > ? SubscribeTradeElement;
+
+    /// <summary>
+    /// The event of the unsubscribe from getting data for the element.
+    /// </summary>
+    public event Action < IChartElement > ? UnSubscribeElement;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.Chart" />.
@@ -152,16 +199,18 @@ public partial class Chart : UserControl,
     public Chart()
     {
         InitializeComponent();
-        DataContext = ( _chartSurfaceVM = new ChartViewModel() );
+
+        DataContext = _chartSurfaceVM = new ChartViewModel();
+
         ViewModel.CancelActiveOrderEvent += InvokeCancelOrderEvent;
-        ViewModel.UngroupEvent += OnUngroupEvent;
-        AreaAdding += OnAreaAdding;
-        AddCandles += OnAddCandles;
-        RebuildCandles += OnRebuildCandles;
-        AddIndicator += OnAddIndicator;
-        AddOrders += OnAddOrders;
-        AddTrades += OnAddTrades;
-        RemoveElement += OnRemoveElement;
+        ViewModel.UngroupEvent           += OnUngroupEvent;
+        AreaAdding                       += OnAreaAdding;
+        AddCandles                       += OnAddCandles;
+        RebuildCandles                   += OnRebuildCandles;
+        AddIndicator                     += OnAddIndicator;
+        AddOrders                        += OnAddOrders;
+        AddTrades                        += OnAddTrades;
+        RemoveElement                    += OnRemoveElement;
 
         var mySettings = new string[7]
         {
@@ -175,19 +224,19 @@ public partial class Chart : UserControl,
         };
         ChartViewModel.InteractedEvent += () =>
         {
-            CollectionHelper.ForEach<string>(mySettings, p => ( (INotifyPropertyChangedEx)this ).NotifyPropertyChanged(p) );
+            CollectionHelper.ForEach<string>( mySettings, p => ( ( INotifyPropertyChangedEx ) this ).NotifyPropertyChanged( p ) );
         };
         if ( IChartExtensions.TryIndicatorProvider == null )
         {
             IndicatorProvider indicatorProvider = new IndicatorProvider();
             indicatorProvider.Init();
-            ConfigManager.RegisterService((IIndicatorProvider)indicatorProvider);
+            ConfigManager.RegisterService( ( IIndicatorProvider ) indicatorProvider );
         }
         if ( IChartExtensions.TryIndicatorPainterProvider != null )
             return;
         var provider = new IndicatorColorProvider();
-        ( (IChartIndicatorPainterProvider)provider ).Init();
-        ConfigManager.RegisterService((IChartIndicatorPainterProvider)provider);
+        ( ( IChartIndicatorPainterProvider ) provider ).Init();
+        ConfigManager.RegisterService( ( IChartIndicatorPainterProvider ) provider );
     }
 
     public int GetInstanceCount() => _instanceCount;
@@ -212,7 +261,7 @@ public partial class Chart : UserControl,
         get => _defaultCandlesSettings;
         set
         {
-            _defaultCandlesSettings = value ?? throw new ArgumentNullException(nameof(value));
+            _defaultCandlesSettings = value ?? throw new ArgumentNullException( nameof( value ) );
         }
     }
 
@@ -224,7 +273,7 @@ public partial class Chart : UserControl,
         }
     }
 
-    public IEnumerable<IChartArea> Areas => (IEnumerable<IChartArea>)_iChartAreaList;
+    public IEnumerable<IChartArea> Areas => ( IEnumerable<IChartArea> ) _iChartAreaList;
 
     public bool IsAutoScroll
     {
@@ -232,7 +281,7 @@ public partial class Chart : UserControl,
         set
         {
             _isAutoScroll = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(IsAutoScroll));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( IsAutoScroll ) );
         }
     }
 
@@ -243,8 +292,8 @@ public partial class Chart : UserControl,
         {
             _isAutoRange = value;
             foreach ( IChartArea area in Areas )
-                area.SetAutoRange(value);
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(IsAutoRange));
+                area.SetAutoRange( value );
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( IsAutoRange ) );
         }
     }
 
@@ -254,8 +303,8 @@ public partial class Chart : UserControl,
         get => _autoRangeIntervalNoGroup;
         set
         {
-            _autoRangeIntervalNoGroup = !( value <= TimeSpan.Zero ) ? value : throw new ArgumentOutOfRangeException(nameof(value), value, LocalizedStrings.InvalidValue);
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(AutoRangeInterval));
+            _autoRangeIntervalNoGroup = !( value <= TimeSpan.Zero ) ? value : throw new ArgumentOutOfRangeException( nameof( value ), value, LocalizedStrings.InvalidValue );
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( AutoRangeInterval ) );
         }
     }
 
@@ -274,67 +323,67 @@ public partial class Chart : UserControl,
         set => _disableIndicatorReset = value;
     }
 
-    public void AddArea(IChartArea area)
+    public void AddArea( IChartArea area )
     {
-        ( (DispatcherObject)this ).GuiSync( () =>
+        ( ( DispatcherObject ) this ).GuiSync( () =>
         {
             if ( area.Chart != null )
-                throw new ArgumentException("area.Chart != null", "area");
-            
-            if ( area == null || _iChartAreaList.Contains(area) )
-                throw new ArgumentException("area2");
+                throw new ArgumentException( "area.Chart != null", "area" );
+
+            if ( area == null || _iChartAreaList.Contains( area ) )
+                throw new ArgumentException( "area2" );
 
             ChartAxisType? xaxisType = _iChartAreaList.FirstOrDefault<IChartArea>()?.XAxisType;
-            
+
             if ( xaxisType.HasValue )
             {
-                if ( CollectionHelper.IsEmpty<IChartElement>( area.Elements) )
+                if ( CollectionHelper.IsEmpty<IChartElement>( area.Elements ) )
                 {
                     area.XAxisType = xaxisType.Value;
-                }                    
+                }
                 else if ( area.XAxisType != xaxisType.Value )
                 {
-                    throw new InvalidOperationException(LocalizedStrings.InvalidAxisType);
+                    throw new InvalidOperationException( LocalizedStrings.InvalidAxisType );
                 }
-                    
+
             }
             CollectionHelper.ForEach<IChartAxis>( area.XAxises, p => p.AutoRange = IsAutoRange );
             area.PropertyChanged += OnHeightPropertyChanged;
 
             area.Elements.Added += OnChartAreaElementAdded;
             area.Elements.Removed += OnChartAreaElementRemoved;
-            _iChartAreaList.Add(area);
+            _iChartAreaList.Add( area );
 
-            area.Chart = (IChart)this;
-            ViewModel.ChartPaneViewModels.Add(( (ChartArea)area ).ViewModel);
-            
-            CollectionHelper.ForEach<IChartElement>((IEnumerable<IChartElement>)area.Elements, new Action<IChartElement>(OnChartAreaElementAdded));                       
+            area.Chart = ( IChart ) this;
+            ViewModel.ChartPaneViewModels.Add( ( ( ChartArea ) area ).ViewModel );
 
-            AreaAdded?.Invoke(area);
-        });
+            CollectionHelper.ForEach<IChartElement>( ( IEnumerable<IChartElement> ) area.Elements, new Action<IChartElement>( OnChartAreaElementAdded ) );
+
+            AreaAdded?.Invoke( area );
+        } );
     }
 
-    
 
-    public void RemoveArea(IChartArea area)
+
+    public void RemoveArea( IChartArea area )
     {
-        ( (DispatcherObject)this ).GuiSync( () =>
+        ( ( DispatcherObject ) this ).GuiSync( () =>
                                             {
-                                                if ( !_iChartAreaList.Remove(area) )
+                                                if ( !_iChartAreaList.Remove( area ) )
                                                     return;
 
                                                 area.PropertyChanged -= OnHeightPropertyChanged;
                                                 area.Elements.Added -= OnChartAreaElementAdded;
                                                 area.Elements.Removed -= OnChartAreaElementRemoved;
-                                                ViewModel.ChartPaneViewModels.Remove(( (ChartArea)area ).ViewModel);
-                                                CollectionHelper.ForEach<IChartElement>( area.Elements, new Action<IChartElement>(OnChartAreaElementRemoved));
-            
-                                                area.Chart = null;
-                                                TypeHelper.DoDispose<IChartArea>(area);
-            
-                                                AreaRemoved?.Invoke(area);
+                                                ViewModel.ChartPaneViewModels.Remove( ( ( ChartArea ) area ).ViewModel );
+                                                CollectionHelper.ForEach<IChartElement>( area.Elements, new Action<IChartElement>( OnChartAreaElementRemoved ) );
 
-                                                if ( !CollectionHelper.IsEmpty<IChartArea>( _iChartAreaList) )
+                                                area.Chart = null;
+                                                TypeHelper.DoDispose<IChartArea>( area );
+
+                                                AreaRemoved?.Invoke( area );
+
+                                                if ( !CollectionHelper.IsEmpty<IChartArea>( _iChartAreaList ) )
                                                     return;
 
                                                 ViewModel.InitRangeDepProperty();
@@ -342,7 +391,7 @@ public partial class Chart : UserControl,
         );
     }
 
-    private void OnHeightPropertyChanged(object area, PropertyChangedEventArgs e)
+    private void OnHeightPropertyChanged( object area, PropertyChangedEventArgs e )
     {
         ChartArea chartArea = (ChartArea)area;
         if ( e.PropertyName != "Height" )
@@ -351,64 +400,62 @@ public partial class Chart : UserControl,
         chartArea.ViewModel.Height = chartArea.Height;
     }
 
-    public event Action<IChartArea> AreaAdded;
+    
 
-    public event Action<IChartArea> AreaRemoved;
-
-    public void AddElement(IChartArea area, IChartElement element)
+    public void AddElement( IChartArea area, IChartElement element )
     {
         if ( area == null )
         {
-            throw new ArgumentNullException(nameof(area));
+            throw new ArgumentNullException( nameof( area ) );
         }
 
         if ( element == null )
         {
-            throw new ArgumentNullException(nameof(element));
+            throw new ArgumentNullException( nameof( element ) );
         }
-        
-        ( (DispatcherObject)this ).GuiSync( () =>
+
+        ( ( DispatcherObject ) this ).GuiSync( () =>
                                             {
                                                 Chart.ChartIndicatorMap chartIndicatorMap;
-                                                if ( element is IChartIndicatorElement myIndicator && myIndicator.AutoAssignYAxis && _indicatorElementMap.TryGetValue(myIndicator, out chartIndicatorMap) && chartIndicatorMap.Indicator.Measure != IndicatorMeasures.Price )
+                                                if ( element is IChartIndicatorElement myIndicator && myIndicator.AutoAssignYAxis && _indicatorElementMap.TryGetValue( myIndicator, out chartIndicatorMap ) && chartIndicatorMap.Indicator.Measure != IndicatorMeasures.Price )
 
                                                 {
                                                     (IChartArea, IndicatorMeasures) key = (area, chartIndicatorMap.Indicator.Measure);
                                                     string measure;
-                                                    if ( !_area2IndicatorMeasuresMap.TryGetValue(key, out measure) )
+                                                    if ( !_area2IndicatorMeasuresMap.TryGetValue( key, out measure ) )
                                                     {
                                                         measure = $"{"Y"}({Guid.NewGuid()})";
-                    
+
                                                         IChartAxis axis = ( CreateAxis() );
                                                         axis.Id = measure;
                                                         axis.AxisType = ChartAxisType.Numeric;
-                                                        area.YAxises.Add(axis);
+                                                        area.YAxises.Add( axis );
 
-                                                        _area2IndicatorMeasuresMap.Add(key, axis.Id);
+                                                        _area2IndicatorMeasuresMap.Add( key, axis.Id );
                                                     }
                                                     element.YAxisId = measure;
                                                 }
 
-                                              ( (ICollection<IChartElement>) area.Elements ).Add( element );
-                                            }            
+                                              ( ( ICollection<IChartElement> ) area.Elements ).Add( element );
+                                            }
                                         );
     }
 
-    
+
     /// <summary>To add an element to the chart.</summary>
     /// <param name="area">Chart area.</param>
     /// <param name="element">The chart element.</param>
     /// <param name="subscription">Subscription.</param>
-    public void AddElement(IChartArea area, IChartCandleElement element, Subscription subscription)
+    public void AddElement( IChartArea area, IChartCandleElement element, Subscription subscription )
     {
         if ( area == null )
-            throw new ArgumentNullException(nameof(area));
+            throw new ArgumentNullException( nameof( area ) );
         if ( element == null )
-            throw new ArgumentNullException(nameof(element));
+            throw new ArgumentNullException( nameof( element ) );
         if ( subscription == null )
-            throw new ArgumentNullException(nameof(subscription));
-        _subscriptionMap.Add((IChartElement)element, subscription);
-        AddElement(area, (IChartElement)element);
+            throw new ArgumentNullException( nameof( subscription ) );
+        _subscriptionMap.Add( ( IChartElement ) element, subscription );
+        AddElement( area, ( IChartElement ) element );
     }
 
 
@@ -420,69 +467,69 @@ public partial class Chart : UserControl,
       IChartArea area,
       IChartIndicatorElement element,
       Subscription subscription,
-      IIndicator indicator)
+      IIndicator indicator )
     {
         if ( area == null )
-            throw new ArgumentNullException(nameof(area));
+            throw new ArgumentNullException( nameof( area ) );
         if ( element == null )
-            throw new ArgumentNullException(nameof(element));
+            throw new ArgumentNullException( nameof( element ) );
         if ( indicator == null )
-            throw new ArgumentNullException(nameof(indicator));
+            throw new ArgumentNullException( nameof( indicator ) );
         if ( subscription != null )
-            _subscriptionMap.Add((IChartElement)element, subscription);
-        _indicatorElementMap.Add(element, new Chart.ChartIndicatorMap(this, element, indicator));
-        ( (ChartIndicatorElement)element ).CreateIndicatorPainter(IndicatorTypes, indicator);
-        AddElement(area, (IChartElement)element);
+            _subscriptionMap.Add( ( IChartElement ) element, subscription );
+        _indicatorElementMap.Add( element, new Chart.ChartIndicatorMap( this, element, indicator ) );
+        ( ( ChartIndicatorElement ) element ).CreateIndicatorPainter( IndicatorTypes, indicator );
+        AddElement( area, ( IChartElement ) element );
     }
 
-    public void AddElement(IChartArea area, IChartOrderElement element, Subscription subscription)
+    public void AddElement( IChartArea area, IChartOrderElement element, Subscription subscription )
     {
         if ( area == null )
-            throw new ArgumentNullException(nameof(area));
+            throw new ArgumentNullException( nameof( area ) );
         if ( element == null )
-            throw new ArgumentNullException(nameof(element));
+            throw new ArgumentNullException( nameof( element ) );
         if ( subscription == null )
-            throw new ArgumentNullException(nameof(subscription));
-        _subscriptionMap.Add((IChartElement)element, subscription);
-        AddElement(area, (IChartElement)element);
+            throw new ArgumentNullException( nameof( subscription ) );
+        _subscriptionMap.Add( ( IChartElement ) element, subscription );
+        AddElement( area, ( IChartElement ) element );
     }
 
-    public void AddElement(IChartArea area, IChartTradeElement element, Subscription subscription)
+    public void AddElement( IChartArea area, IChartTradeElement element, Subscription subscription )
     {
         if ( area == null )
-            throw new ArgumentNullException(nameof(area));
+            throw new ArgumentNullException( nameof( area ) );
         if ( element == null )
-            throw new ArgumentNullException(nameof(element));
+            throw new ArgumentNullException( nameof( element ) );
         if ( subscription == null )
-            throw new ArgumentNullException(nameof(subscription));
-        _subscriptionMap.Add((IChartElement)element, subscription);
-        AddElement(area, (IChartElement)element);
+            throw new ArgumentNullException( nameof( subscription ) );
+        _subscriptionMap.Add( ( IChartElement ) element, subscription );
+        AddElement( area, ( IChartElement ) element );
     }
 
-    void IChart.RemoveElement(IChartArea area, IChartElement element)
-    {        
+    void IChart.RemoveElement( IChartArea area, IChartElement element )
+    {
         if ( area == null )
-            throw new ArgumentNullException(nameof(area));
+            throw new ArgumentNullException( nameof( area ) );
 
         if ( element == null )
-            throw new ArgumentNullException(nameof(element));
+            throw new ArgumentNullException( nameof( element ) );
 
         Chart.ChartIndicatorMap myMap;
 
-        if ( element is IChartIndicatorElement indicatorUI && _indicatorElementMap.TryGetValue(indicatorUI, out myMap) )
+        if ( element is IChartIndicatorElement indicatorUI && _indicatorElementMap.TryGetValue( indicatorUI, out myMap ) )
         {
             myMap.Dispose();
-            _indicatorElementMap.Remove(indicatorUI);
+            _indicatorElementMap.Remove( indicatorUI );
         }
 
-        ( (DispatcherObject)this ).GuiSync<bool>(
+        ( ( DispatcherObject ) this ).GuiSync<bool>(
                                                     () =>
                                                         {
-                                                            return ( (ICollection<IChartElement>) area.Elements ).Remove( element );
+                                                            return ( ( ICollection<IChartElement> ) area.Elements ).Remove( element );
                                                         }
                                                     );
 
-        _subscriptionMap.Remove(element);
+        _subscriptionMap.Remove( element );
     }
 
 
@@ -491,32 +538,32 @@ public partial class Chart : UserControl,
     /// </summary>
     /// <param name="element">The chart element.</param>
     /// <returns>Indicator.</returns>
-    public IIndicator GetIndicatorElement(IChartIndicatorElement element)
+    public IIndicator GetIndicatorElement( IChartIndicatorElement element )
     {
         return CollectionHelper.TryGetValue( _indicatorElementMap, element )?.Indicator;
     }
 
-    public Subscription TryGetSubscription(IChartElement element)
+    public Subscription TryGetSubscription( IChartElement element )
     {
-        return CollectionHelper.TryGetValue( _subscriptionMap, element);
+        return CollectionHelper.TryGetValue( _subscriptionMap, element );
     }
 
     private (IChartCandleElement, Subscription) GetChartCandleElementToSubscription()
     {
-        foreach ( IChartElement chartElement in Areas.SelectMany( p => p.Elements) )
+        foreach ( IChartElement chartElement in Areas.SelectMany( p => p.Elements ) )
         {
             if ( chartElement is IChartCandleElement candle )
             {
                 Subscription subscription = TryGetSubscription((IChartElement)candle);
-                
+
                 if ( subscription != null && subscription.SecurityId.HasValue )
                 {
                     return (candle, subscription);
                 }
-                    
+
             }
         }
-        return ( null, null );
+        return (null, null);
     }
 
     private void ResetSecurityAndSubscription()
@@ -528,20 +575,20 @@ public partial class Chart : UserControl,
         if ( myCandleSubscription == newCandleSubscription && GetSecurity() == ( newCandleSubscription != null ? newCandleSubscription.TryGetSecurity() : null ) )
             return;
 
-        SetSubscription(newCandleSubscription);
-        
+        SetSubscription( newCandleSubscription );
+
         Subscription newSubscription = GetCandleSubscription();
-        SetSecurity(newSubscription != null ? newSubscription.TryGetSecurity() : null);
-                
+        SetSecurity( newSubscription != null ? newSubscription.TryGetSecurity() : null );
+
         ResetSubscriptionEvent?.Invoke();
     }
 
-    public void SetSubscription(IChartElement element, Subscription subscription)
+    public void SetSubscription( IChartElement element, Subscription subscription )
     {
         SynchronizedDictionary<IChartElement, Subscription> mySubscrption = _subscriptionMap;
         IChartElement chartElement = element;
-        mySubscrption[chartElement] = subscription ?? throw new ArgumentNullException(nameof(subscription));
-        ( (IChartComponent)element ).ResetUI();
+        mySubscrption[chartElement] = subscription ?? throw new ArgumentNullException( nameof( subscription ) );
+        ( ( IChartComponent ) element ).ResetUI();
     }
 
 
@@ -549,13 +596,13 @@ public partial class Chart : UserControl,
     /// Cancel orders that were added to this instance of <see cref="T:StockSharp.Xaml.Charting.Chart" />.
     /// This method does not cancel orders by itself. It just notifies subscribers with <see cref="E:StockSharp.Xaml.Charting.Chart.CancelOrder" /> event.
     /// </summary>
-    public void CancelOrders(Func<Order, bool> predicate = null)
+    public void CancelOrders( Func<Order, bool> predicate = null )
     {
-        ( (DispatcherObject)this ).GuiSync( () =>
+        ( ( DispatcherObject ) this ).GuiSync( () =>
                                                 {
                                                     ViewModel.InternalExecuteCancelActiveOrders( predicate );
                                                 }
-                                   
+
                                            );
     }
 
@@ -571,7 +618,7 @@ public partial class Chart : UserControl,
             if ( _autoRangeByAnnotations == value )
                 return;
             _autoRangeByAnnotations = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(AutoRangeByAnnotations));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( AutoRangeByAnnotations ) );
         }
     }
 
@@ -609,7 +656,7 @@ public partial class Chart : UserControl,
             if ( _showPerfStats == value )
                 return;
             _showPerfStats = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(ShowPerfStats));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( ShowPerfStats ) );
         }
     }
 
@@ -670,7 +717,7 @@ public partial class Chart : UserControl,
             if ( _crossHair == value )
                 return;
             _crossHair = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(CrossHair));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( CrossHair ) );
         }
     }
 
@@ -682,7 +729,7 @@ public partial class Chart : UserControl,
             if ( _crossHairTooltip == value )
                 return;
             _crossHairTooltip = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(CrossHairTooltip));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( CrossHairTooltip ) );
         }
     }
 
@@ -694,7 +741,7 @@ public partial class Chart : UserControl,
             if ( _crossHairAxisLabels == value )
                 return;
             _crossHairAxisLabels = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(CrossHairAxisLabels));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( CrossHairAxisLabels ) );
         }
     }
 
@@ -707,7 +754,7 @@ public partial class Chart : UserControl,
             if ( _annotationType == value )
                 return;
             _annotationType = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(AnnotationType));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( AnnotationType ) );
         }
     }
 
@@ -719,7 +766,7 @@ public partial class Chart : UserControl,
             if ( _orderCreationMode == value )
                 return;
             _orderCreationMode = value;
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(OrderCreationMode));
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( OrderCreationMode ) );
         }
     }
 
@@ -730,8 +777,8 @@ public partial class Chart : UserControl,
         {
             if ( _timeZone == value )
                 return;
-            _timeZone = value ?? throw new ArgumentNullException(nameof(value));
-            NotifyPropertyChangedExHelper.Notify<Chart>(this, nameof(TimeZone));
+            _timeZone = value ?? throw new ArgumentNullException( nameof( value ) );
+            NotifyPropertyChangedExHelper.Notify<Chart>( this, nameof( TimeZone ) );
         }
     }
 
@@ -743,7 +790,7 @@ public partial class Chart : UserControl,
 
     public IList<IndicatorType> IndicatorTypes
     {
-        get => (IList<IndicatorType>)ViewModel.IndicatorTypes;
+        get => ( IList<IndicatorType> ) ViewModel.IndicatorTypes;
     }
 
     public Security GetSecurity()
@@ -751,7 +798,7 @@ public partial class Chart : UserControl,
         return _security;
     }
 
-    private void SetSecurity(Security _param1)
+    private void SetSecurity( Security _param1 )
     {
         _security = _param1;
     }
@@ -761,7 +808,7 @@ public partial class Chart : UserControl,
         return _candleSubscription;
     }
 
-    private void SetSubscription(Subscription _param1)
+    private void SetSubscription( Subscription _param1 )
     {
         _candleSubscription = _param1;
     }
@@ -847,233 +894,189 @@ public partial class Chart : UserControl,
         remove => ViewModel.RebuildCandlesEvent -=value;
     }
 
-    /// <summary>The new order creation event.</summary>
-    public event Action<ChartArea, Order> CreateOrder;
+    
 
-    /// <summary>Move order event.</summary>
-    public event Action<Order, Decimal> MoveOrder;
-
-    /// <summary>Cancel order event.</summary>
-    public event Action<Order> CancelOrder;
-
-    /// <summary>Annotation created event.</summary>
-    public event Action<IChartAnnotationElement> AnnotationCreated;
-
-    /// <summary>Annotation Modified event.</summary>
-    public event Action<IChartAnnotationElement, ChartDrawData.AnnotationData> AnnotationModified;
-
-    /// <summary>Annotation deleted event.</summary>
-    public event Action<IChartAnnotationElement> AnnotationDeleted;
-
-    /// <summary>Annotation selection event.</summary>
-    public event Action<IChartAnnotationElement, ChartDrawData.AnnotationData> AnnotationSelected;
-
-    /// <summary>
-    /// The event of the subscription to getting data for the element.
-    /// </summary>
-    public event Action<IChartCandleElement, Subscription> SubscribeCandleElement;
-
-    /// <summary>
-    /// The event of the subscription to getting data for the Indicator Chart element.
-    /// </summary>
-    public event Action<IChartIndicatorElement, Subscription, IIndicator> SubscribeIndicatorElement;
-
-    /// <summary>
-    /// The event of the subscription to getting data for the Order Chart Element UI.
-    /// </summary>
-    public event Action<IChartOrderElement, Subscription> SubscribeOrderElement;
-
-    /// <summary>
-    /// The event of the subscription to getting data for the Trade Chart Element UI.
-    /// </summary>
-    public event Action<IChartTradeElement, Subscription> SubscribeTradeElement;
-
-    /// <summary>
-    /// The event of the unsubscribe from getting data for the element.
-    /// </summary>
-    public event Action<IChartElement> UnSubscribeElement;
-
-    public void AddUngroupEvent(Action<IChartArea> _param1)
+    public void AddUngroupEvent( Action<IChartArea> _param1 )
     {
         Action<IChartArea> action = UngroupEvent;
         Action<IChartArea> comparand;
         do
         {
             comparand = action;
-            action = Interlocked.CompareExchange<Action<IChartArea>>(ref UngroupEvent, comparand + _param1, comparand);
+            action = Interlocked.CompareExchange<Action<IChartArea>>( ref UngroupEvent, comparand + _param1, comparand );
         }
         while ( action != comparand );
     }
 
-    public void RemoveUngroupEvent(Action<IChartArea> _param1)
+    public void RemoveUngroupEvent( Action<IChartArea> _param1 )
     {
         Action<IChartArea> action = UngroupEvent;
         Action<IChartArea> comparand;
         do
         {
             comparand = action;
-            action = Interlocked.CompareExchange<Action<IChartArea>>(ref UngroupEvent, comparand - _param1, comparand);
+            action = Interlocked.CompareExchange<Action<IChartArea>>( ref UngroupEvent, comparand - _param1, comparand );
         }
         while ( action != comparand );
     }
 
-    public void AddResetSubscriptionEvent(Action _param1)
+    public void AddResetSubscriptionEvent( Action _param1 )
     {
         Action action = ResetSubscriptionEvent;
         Action comparand;
         do
         {
             comparand = action;
-            action = Interlocked.CompareExchange<Action>(ref ResetSubscriptionEvent, comparand + _param1, comparand);
+            action = Interlocked.CompareExchange<Action>( ref ResetSubscriptionEvent, comparand + _param1, comparand );
         }
         while ( action != comparand );
     }
 
-    public void RemoveResetSubscriptionEvent(Action _param1)
+    public void RemoveResetSubscriptionEvent( Action _param1 )
     {
         Action action = ResetSubscriptionEvent;
         Action comparand;
         do
         {
             comparand = action;
-            action = Interlocked.CompareExchange<Action>(ref ResetSubscriptionEvent, comparand - _param1, comparand);
+            action = Interlocked.CompareExchange<Action>( ref ResetSubscriptionEvent, comparand - _param1, comparand );
         }
         while ( action != comparand );
     }
 
-    public void Reset(IEnumerable<IChartElement> elements)
-    {        
+    public void Reset( IEnumerable<IChartElement> elements )
+    {
         var chartElementList = new List<IChartElement>();
-        chartElementList.AddRange(elements);
-     
-        ( (DispatcherObject)this ).GuiSync( () =>
+        chartElementList.AddRange( elements );
+
+        ( ( DispatcherObject ) this ).GuiSync( () =>
         {
             foreach ( ChartArea chartArea in _iChartAreaList )
-                chartArea.ViewModel.Reset(elements);
-        });
+                chartArea.ViewModel.Reset( elements );
+        } );
     }
 
-    public IChartDrawData CreateData() => (IChartDrawData)new ChartDrawData();
+    public IChartDrawData CreateData() => ( IChartDrawData ) new ChartDrawData();
 
     public IChartArea CreateArea()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartArea>(new Func<IChartArea>(_chartBuilder.CreateArea));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartArea>( new Func<IChartArea>( _chartBuilder.CreateArea ) );
     }
 
     public IChartAxis CreateAxis()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartAxis>(new Func<IChartAxis>(_chartBuilder.CreateAxis));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartAxis>( new Func<IChartAxis>( _chartBuilder.CreateAxis ) );
     }
 
     public IChartCandleElement CreateCandleElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartCandleElement>(new Func<IChartCandleElement>(_chartBuilder.CreateCandleElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartCandleElement>( new Func<IChartCandleElement>( _chartBuilder.CreateCandleElement ) );
     }
 
     public IChartIndicatorElement CreateIndicatorElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartIndicatorElement>(new Func<IChartIndicatorElement>(_chartBuilder.CreateIndicatorElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartIndicatorElement>( new Func<IChartIndicatorElement>( _chartBuilder.CreateIndicatorElement ) );
     }
 
     public IChartActiveOrdersElement CreateActiveOrdersElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartActiveOrdersElement>(new Func<IChartActiveOrdersElement>(_chartBuilder.CreateActiveOrdersElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartActiveOrdersElement>( new Func<IChartActiveOrdersElement>( _chartBuilder.CreateActiveOrdersElement ) );
     }
 
     public IChartAnnotationElement CreateAnnotation()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartAnnotationElement>(new Func<IChartAnnotationElement>(_chartBuilder.CreateAnnotation));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartAnnotationElement>( new Func<IChartAnnotationElement>( _chartBuilder.CreateAnnotation ) );
     }
 
     public IChartBandElement CreateBandElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartBandElement>(new Func<IChartBandElement>(_chartBuilder.CreateBandElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartBandElement>( new Func<IChartBandElement>( _chartBuilder.CreateBandElement ) );
     }
 
     public IChartLineElement CreateLineElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartLineElement>(new Func<IChartLineElement>(_chartBuilder.CreateLineElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartLineElement>( new Func<IChartLineElement>( _chartBuilder.CreateLineElement ) );
     }
 
     public IChartLineElement CreateBubbleElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartLineElement>(new Func<IChartLineElement>(_chartBuilder.CreateBubbleElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartLineElement>( new Func<IChartLineElement>( _chartBuilder.CreateBubbleElement ) );
     }
 
     public IChartOrderElement CreateOrderElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartOrderElement>(new Func<IChartOrderElement>(_chartBuilder.CreateOrderElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartOrderElement>( new Func<IChartOrderElement>( _chartBuilder.CreateOrderElement ) );
     }
 
     public IChartTradeElement CreateTradeElement()
     {
-        return ( (DispatcherObject)this ).GuiSync<IChartTradeElement>(new Func<IChartTradeElement>(_chartBuilder.CreateTradeElement));
+        return ( ( DispatcherObject ) this ).GuiSync<IChartTradeElement>( new Func<IChartTradeElement>( _chartBuilder.CreateTradeElement ) );
     }
 
-    public void Draw(IChartDrawData data)
+    public void Draw( IChartDrawData data )
     {
         ChartDrawData chartDrawData = data != null ? (ChartDrawData)data : throw new ArgumentNullException(nameof(data));
         foreach ( ChartArea chartArea in _iChartAreaList )
-            chartArea.ViewModel.Draw(chartDrawData);
+            chartArea.ViewModel.Draw( chartDrawData );
     }
 
-    public void InvokeCreateOrderEvent(ChartArea area, Order myOrder)
-    {        
-        CreateOrder?.Invoke(area, myOrder);
+    public void InvokeCreateOrderEvent( ChartArea area, Order myOrder )
+    {
+        CreateOrder?.Invoke( area, myOrder );
     }
 
-    public void InvokeMoveOrderEvent(Order myOrder, Decimal price)
-    {        
-        MoveOrder?.Invoke(myOrder, price);
+    public void InvokeMoveOrderEvent( Order myOrder, Decimal price )
+    {
+        MoveOrder?.Invoke( myOrder, price );
     }
 
-    public void InvokeCancelOrderEvent(Order myOrder)
-    {        
-        CancelOrder?.Invoke(myOrder);
+    public void InvokeCancelOrderEvent( Order myOrder )
+    {
+        CancelOrder?.Invoke( myOrder );
     }
 
-    public void InvokeAnnotationCreatedEvent(ChartAnnotation annotation)
-    {        
-        AnnotationCreated?.Invoke((IChartAnnotationElement)annotation);
+    public void InvokeAnnotationCreatedEvent( ChartAnnotation annotation )
+    {
+        AnnotationCreated?.Invoke( ( IChartAnnotationElement ) annotation );
     }
 
-    public void InvokeAnnotationModifiedEvent(ChartAnnotation annotation, ChartDrawData.AnnotationData data)
-    {        
-        AnnotationModified?.Invoke((IChartAnnotationElement)annotation, data);
+    public void InvokeAnnotationModifiedEvent( ChartAnnotation annotation, ChartDrawData.AnnotationData data )
+    {
+        AnnotationModified?.Invoke( ( IChartAnnotationElement ) annotation, data );
     }
 
-    public void InvokeAnnotationDeletedEvent(ChartAnnotation annotation)
-    {        
-        AnnotationDeleted?.Invoke((IChartAnnotationElement)annotation);
+    public void InvokeAnnotationDeletedEvent( ChartAnnotation annotation )
+    {
+        AnnotationDeleted?.Invoke( ( IChartAnnotationElement ) annotation );
     }
 
-    public void InvokeAnnotationSelectedEvent(ChartAnnotation annotation, ChartDrawData.AnnotationData data)
-    {        
-        AnnotationSelected?.Invoke((IChartAnnotationElement)annotation, data);
+    public void InvokeAnnotationSelectedEvent( ChartAnnotation annotation, ChartDrawData.AnnotationData data )
+    {
+        AnnotationSelected?.Invoke( ( IChartAnnotationElement ) annotation, data );
     }
 
     public TimeZoneInfo GetTimeZoneInfo()
     {
-        return Areas.Select( p => p.XAxises.FirstOrDefault<IChartAxis>(x => x.TimeZone != null)).LastOrDefault<IChartAxis>( a => a != null )?.TimeZone;
+        return Areas.Select( p => p.XAxises.FirstOrDefault<IChartAxis>( x => x.TimeZone != null ) ).LastOrDefault<IChartAxis>( a => a != null )?.TimeZone;
     }
 
-    public void ChangeCandleTimeFrame(TimeSpan tf)
+    public void ChangeCandleTimeFrame( TimeSpan tf )
     {
         (IChartCandleElement candle, Subscription subscription) = GetChartCandleElementToSubscription();
         if ( candle == null )
             return;
 
         object period = subscription.DataType.Arg;
-        
-        if ( period != null && period.Equals(tf) )
+
+        if ( period != null && period.Equals( tf ) )
         {
             return;
         }
-            
-        OnRebuildCandles( candle, new Subscription(StockSharp.Messages.Extensions.TimeFrame(tf), (SecurityMessage)subscription.MarketData));
+
+        OnRebuildCandles( candle, new Subscription( StockSharp.Messages.Extensions.TimeFrame( tf ), ( SecurityMessage ) subscription.MarketData ) );
     }
 
-    private void OnRebuildCandles(IChartElement candle, Subscription subscription)
+    private void OnRebuildCandles( IChartElement candle, Subscription subscription )
     {
         var myCandle = candle as IChartCandleElement;
 
@@ -1083,99 +1086,99 @@ public partial class Chart : UserControl,
         }
 
         var area = myCandle.ChartArea;
-        
+
         var mySubscription = TryGetSubscription( myCandle );
         var indciatorTuple = _subscriptionMap.Where( p => p.Value == mySubscription && p.Key != myCandle ).Select( i => (IChartIndicatorElement)i.Key ).ToDictionary(p => p, i => Tuple.Create<IIndicator, IChartArea>(GetIndicatorElement(i), i.ChartArea));
 
         OnRemoveElement( myCandle );
-        CollectionHelper.ForEach( indciatorTuple.Keys, new Action<IChartIndicatorElement>(OnRemoveElement));
-        ( (IChartComponent)myCandle ).ResetUI();
+        CollectionHelper.ForEach( indciatorTuple.Keys, new Action<IChartIndicatorElement>( OnRemoveElement ) );
+        ( ( IChartComponent ) myCandle ).ResetUI();
 
-        AddElement(area, myCandle, subscription);
-        
+        AddElement( area, myCandle, subscription );
+
         foreach ( var indicator in indciatorTuple )
         {
-            AddElement(indicator.Value.Item2, indicator.Key, subscription, indicator.Value.Item1);
+            AddElement( indicator.Value.Item2, indicator.Key, subscription, indicator.Value.Item1 );
         }
-            
+
         ResetSecurityAndSubscription();
     }
 
-    private void OnRemoveElement(IChartElement element)
+    private void OnRemoveElement( IChartElement element )
     {
         if ( element is ChartIndicatorElement indicator && indicator.ParentElement != null )
             element = indicator.ParentElement;
 
-        ( (IChart)this ).RemoveElement(element.ChartArea, element);
-        
+        ( ( IChart ) this ).RemoveElement( element.ChartArea, element );
+
         ResetSecurityAndSubscription();
     }
 
-    private void InvokeUnscribeElement(IChartElement element)
+    private void InvokeUnscribeElement( IChartElement element )
     {
-        if ( TryGetSubscription(element) == null )
+        if ( TryGetSubscription( element ) == null )
             return;
-        
-        UnSubscribeElement?.Invoke(element);
+
+        UnSubscribeElement?.Invoke( element );
     }
 
     /// <summary>Load settings.</summary>
     /// <param name="storage">Settings storage.</param>
-    public void Load(SettingsStorage storage)
+    public void Load( SettingsStorage storage )
     {
-        IsAutoScroll = storage.GetValue<bool>("IsAutoScroll", IsAutoScroll);
-        IsAutoRange = storage.GetValue<bool>("IsAutoRange", IsAutoRange);
-        AutoRangeByAnnotations = storage.GetValue<bool>("AutoRangeByAnnotations", AutoRangeByAnnotations);
-        ShowOverview = storage.GetValue<bool>("ShowOverview", ShowOverview);
-        ShowLegend = storage.GetValue<bool>("ShowLegend", ShowLegend);
-        CrossHair = storage.GetValue<bool>("CrossHair", CrossHair);
-        CrossHairTooltip = storage.GetValue<bool>("CrossHairTooltip", CrossHairTooltip);
-        CrossHairAxisLabels = storage.GetValue<bool>("CrossHairAxisLabels", CrossHairAxisLabels);
-        OrderCreationMode = storage.GetValue<bool>("OrderCreationMode", OrderCreationMode);
-        TimeZone = Converter.To<TimeZoneInfo>(storage.GetValue<string>("TimeZone", null)) ?? TimeZone;
-        ShowPerfStats = storage.GetValue<bool>("ShowPerfStats", ShowPerfStats);
+        IsAutoScroll = storage.GetValue<bool>( "IsAutoScroll", IsAutoScroll );
+        IsAutoRange = storage.GetValue<bool>( "IsAutoRange", IsAutoRange );
+        AutoRangeByAnnotations = storage.GetValue<bool>( "AutoRangeByAnnotations", AutoRangeByAnnotations );
+        ShowOverview = storage.GetValue<bool>( "ShowOverview", ShowOverview );
+        ShowLegend = storage.GetValue<bool>( "ShowLegend", ShowLegend );
+        CrossHair = storage.GetValue<bool>( "CrossHair", CrossHair );
+        CrossHairTooltip = storage.GetValue<bool>( "CrossHairTooltip", CrossHairTooltip );
+        CrossHairAxisLabels = storage.GetValue<bool>( "CrossHairAxisLabels", CrossHairAxisLabels );
+        OrderCreationMode = storage.GetValue<bool>( "OrderCreationMode", OrderCreationMode );
+        TimeZone = Converter.To<TimeZoneInfo>( storage.GetValue<string>( "TimeZone", null ) ) ?? TimeZone;
+        ShowPerfStats = storage.GetValue<bool>( "ShowPerfStats", ShowPerfStats );
         if ( !IsInteracted )
             return;
         _subscriptionMap.Clear();
-        CollectionHelper.ForEach( _indicatorElementMap.Values,  i => i.Dispose() );
+        CollectionHelper.ForEach( _indicatorElementMap.Values, i => i.Dispose() );
         _indicatorElementMap.Clear();
-        
+
         object myArea = storage.GetValue<object>("Areas", null);
-        
+
         if ( myArea == null )
             return;
 
         if ( myArea is SettingsStorage settingsStorage )
         {
-            myArea = settingsStorage.GetValue<IEnumerable<SettingsStorage>>("Areas", (IEnumerable<SettingsStorage>)null);
+            myArea = settingsStorage.GetValue<IEnumerable<SettingsStorage>>( "Areas", ( IEnumerable<SettingsStorage> ) null );
         }
-            
-        LoadAreasSettings(( (IEnumerable)myArea ).Cast<SettingsStorage>());
+
+        LoadAreasSettings( ( ( IEnumerable ) myArea ).Cast<SettingsStorage>() );
     }
 
     /// <summary>Save settings.</summary>
     /// <param name="storage">Settings storage.</param>
-    public void Save(SettingsStorage storage)
+    public void Save( SettingsStorage storage )
     {
-        storage.SetValue<bool>("IsAutoScroll", IsAutoScroll);
-        storage.SetValue<bool>("IsAutoRange", IsAutoRange);
-        storage.SetValue<bool>("AutoRangeByAnnotations", AutoRangeByAnnotations);
-        storage.SetValue<bool>("ShowOverview", ShowOverview);
-        storage.SetValue<bool>("ShowLegend", ShowLegend);
-        storage.SetValue<bool>("CrossHair", CrossHair);
-        storage.SetValue<bool>("CrossHairTooltip", CrossHairTooltip);
-        storage.SetValue<bool>("CrossHairAxisLabels", CrossHairAxisLabels);
-        storage.SetValue<bool>("OrderCreationMode", OrderCreationMode);
-        storage.SetValue<string>("TimeZone", TimeZone?.Id);
-        storage.SetValue<bool>("ShowPerfStats", ShowPerfStats);
+        storage.SetValue<bool>( "IsAutoScroll", IsAutoScroll );
+        storage.SetValue<bool>( "IsAutoRange", IsAutoRange );
+        storage.SetValue<bool>( "AutoRangeByAnnotations", AutoRangeByAnnotations );
+        storage.SetValue<bool>( "ShowOverview", ShowOverview );
+        storage.SetValue<bool>( "ShowLegend", ShowLegend );
+        storage.SetValue<bool>( "CrossHair", CrossHair );
+        storage.SetValue<bool>( "CrossHairTooltip", CrossHairTooltip );
+        storage.SetValue<bool>( "CrossHairAxisLabels", CrossHairAxisLabels );
+        storage.SetValue<bool>( "OrderCreationMode", OrderCreationMode );
+        storage.SetValue<string>( "TimeZone", TimeZone?.Id );
+        storage.SetValue<bool>( "ShowPerfStats", ShowPerfStats );
         if ( !IsInteracted )
             return;
-        storage.SetValue<SettingsStorage[]>("Areas", _iChartAreaList.Select( a =>
+        storage.SetValue<SettingsStorage[ ]>( "Areas", _iChartAreaList.Select( a =>
         {
             var set = PersistableHelper.Save((IPersistable)a);
-            set.SetValue<double>("Height", ( (ChartArea)a ).ViewModel.Height);
+            set.SetValue<double>( "Height", ( ( ChartArea ) a ).ViewModel.Height );
             return set;
-        }).ToArray<SettingsStorage>());
+        } ).ToArray<SettingsStorage>() );
     }
 
     /// <summary>To re-subscribe to getting data for all elements.</summary>
@@ -1184,72 +1187,72 @@ public partial class Chart : UserControl,
         if ( !IsInteracted )
             return;
 
-        foreach ( IChartElement element in IChartExtensions.GetElements((IChart)this) )
+        foreach ( IChartElement element in IChartExtensions.GetElements( ( IChart ) this ) )
         {
-            InvokeUnscribeElement(element);
-            ProcessSubscription(element);
+            InvokeUnscribeElement( element );
+            ProcessSubscription( element );
         }
     }
 
-    private void LoadAreasSettings(IEnumerable<SettingsStorage> _param1)
+    private void LoadAreasSettings( IEnumerable<SettingsStorage> _param1 )
     {
         _iChartAreaList.Clear();
         foreach ( SettingsStorage storage in _param1 )
         {
             ChartArea area = new ChartArea();
-            area.Load(storage);
-            AddArea((IChartArea)area);
-            area.ViewModel.Height = storage.GetValue<double>("Height", double.NaN);
+            area.Load( storage );
+            AddArea( ( IChartArea ) area );
+            area.ViewModel.Height = storage.GetValue<double>( "Height", double.NaN );
         }
     }
 
-    private void ProcessSubscription(IChartElement element)
+    private void ProcessSubscription( IChartElement element )
     {
         Subscription subscription = TryGetSubscription(element);
         if ( subscription == null )
             return;
-        RaiseChartElementSubscribedEvent(element, subscription);
+        RaiseChartElementSubscribedEvent( element, subscription );
     }
 
-    private void RaiseChartElementSubscribedEvent(IChartElement element, Subscription subscription)
+    private void RaiseChartElementSubscribedEvent( IChartElement element, Subscription subscription )
     {
         switch ( element )
         {
-            case IChartCandleElement myCandle:                
-                SubscribeCandleElement?.Invoke(myCandle, subscription);
+            case IChartCandleElement myCandle:
+                SubscribeCandleElement?.Invoke( myCandle, subscription );
                 break;
 
-            case IChartIndicatorElement myIndicator:                
-                SubscribeIndicatorElement?.Invoke(myIndicator, subscription, GetIndicatorElement(myIndicator));
+            case IChartIndicatorElement myIndicator:
+                SubscribeIndicatorElement?.Invoke( myIndicator, subscription, GetIndicatorElement( myIndicator ) );
                 break;
 
-            case IChartOrderElement myOrder:                
-                SubscribeOrderElement?.Invoke(myOrder, subscription);
+            case IChartOrderElement myOrder:
+                SubscribeOrderElement?.Invoke( myOrder, subscription );
                 break;
 
-            case IChartTradeElement myTrade:                
-                SubscribeTradeElement?.Invoke(myTrade, subscription);
+            case IChartTradeElement myTrade:
+                SubscribeTradeElement?.Invoke( myTrade, subscription );
                 break;
         }
     }
 
 
 
-    private void OnChartAreaElementAdded(IChartElement element)
+    private void OnChartAreaElementAdded( IChartElement element )
     {
         ResetSecurityAndSubscription();
         if ( !IsInteracted )
             return;
-        ProcessSubscription(element);
+        ProcessSubscription( element );
     }
 
-    private void OnChartAreaElementRemoved(IChartElement element)
+    private void OnChartAreaElementRemoved( IChartElement element )
     {
         ResetSecurityAndSubscription();
-        InternalUnReSubscribeEvents(element, false);
+        InternalUnReSubscribeEvents( element, false );
     }
 
-    private void InternalUnReSubscribeEvents(IChartElement element, bool resubscribe)
+    private void InternalUnReSubscribeEvents( IChartElement element, bool resubscribe )
     {
         IChartElement[] elements;
         if ( element is IChartCandleElement )
@@ -1257,50 +1260,50 @@ public partial class Chart : UserControl,
             var mySubscription = TryGetSubscription(element);
             var myCandles = new List<IChartElement>();
             var myList = new List<IChartElement>();
-            myList.Add(element);
+            myList.Add( element );
 
-            myCandles.AddRange(IChartExtensions.GetElements((IChart)this).Where( e => TryGetSubscription(e) == mySubscription ).Concat<IChartElement>( myList ).Distinct<IChartElement>());
+            myCandles.AddRange( IChartExtensions.GetElements( ( IChart ) this ).Where( e => TryGetSubscription( e ) == mySubscription ).Concat<IChartElement>( myList ).Distinct<IChartElement>() );
             elements = myCandles.ToArray();
         }
         else
         {
             elements = new IChartElement[1] { element };
         }
-            
+
         if ( resubscribe )
         {
             if ( IsInteracted )
-                CollectionHelper.ForEach<IChartElement>(elements, new Action<IChartElement>(InvokeUnscribeElementNoChecking));
-            Reset(elements);
+                CollectionHelper.ForEach<IChartElement>( elements, new Action<IChartElement>( InvokeUnscribeElementNoChecking ) );
+            Reset( elements );
 
             if ( IsInteracted )
-                CollectionHelper.ForEach<IChartElement>(elements, new Action<IChartElement>(InvokeSubscriptionEvent));
+                CollectionHelper.ForEach<IChartElement>( elements, new Action<IChartElement>( InvokeSubscriptionEvent ) );
         }
         else
         {
             if ( IsInteracted )
-                CollectionHelper.ForEach<IChartElement>(elements, new Action<IChartElement>(InvokeUnscribeElement));
+                CollectionHelper.ForEach<IChartElement>( elements, new Action<IChartElement>( InvokeUnscribeElement ) );
 
         }
     }
 
-    public static void SetupScichartSurface(SciChartSurface s)
-    {        
+    public static void SetupScichartSurface( SciChartSurface s )
+    {
         if ( s.DataContext != null )
-            ( (ScichartSurfaceMVVM)s.DataContext ).SetScichartSurface(s);
+            ( ( ScichartSurfaceMVVM ) s.DataContext ).SetScichartSurface( s );
         else
-            s.DataContextChanged += (o,e) => ( (ScichartSurfaceMVVM)s.DataContext ).SetScichartSurface(s) ;
+            s.DataContextChanged += ( o, e ) => ( ( ScichartSurfaceMVVM ) s.DataContext ).SetScichartSurface( s );
     }
 
-    private void OnInitialized(object o, EventArgs e)
+    private void OnInitialized( object o, EventArgs e )
     {
-        Chart.SetupScichartSurface((SciChartSurface)o);
+        Chart.SetupScichartSurface( ( SciChartSurface ) o );
     }
 
-    private void ResetIndicator(IChartIndicatorElement ui, IIndicator i)
+    private void ResetIndicator( IChartIndicatorElement ui, IIndicator i )
     {
-        ( (IChartComponent)ui ).ResetUI();
-        InternalUnReSubscribeEvents((IChartElement)ui, true);
+        ( ( IChartComponent ) ui ).ResetUI();
+        InternalUnReSubscribeEvents( ( IChartElement ) ui, true );
     }
 
     event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
@@ -1309,21 +1312,21 @@ public partial class Chart : UserControl,
         remove => PropertyChangedEvent -= value;
     }
 
-    void INotifyPropertyChangedEx.NotifyPropertyChanged(string propertyName)
+    void INotifyPropertyChangedEx.NotifyPropertyChanged( string propertyName )
     {
         PropertyChangedEventHandler ziApqnpw = PropertyChangedEvent;
         if ( ziApqnpw == null )
             return;
-        DelegateHelper.Invoke(ziApqnpw, this, propertyName);
+        DelegateHelper.Invoke( ziApqnpw, this, propertyName );
     }
 
 
 
-    private Security GetSelectedSecurity(ChartArea area)
+    private Security GetSelectedSecurity( ChartArea area )
     {
         IChartCandleElement[] candles = ( (IEnumerable)area.Elements ).OfType<IChartCandleElement>().ToArray<IChartCandleElement>();
         IChartCandleElement firstCandle = TemplateTypeHelper.GetFirstElement<IChartCandleElement>(candles);
-        
+
         if ( candles.Length > 1 )
         {
             var wnd = new ChartCandleElementPicker()
@@ -1331,14 +1334,14 @@ public partial class Chart : UserControl,
                 Elements = (IEnumerable<IChartCandleElement>)candles,
                 SelectedElement = firstCandle
             };
-            if ( !wnd.ShowModal((DependencyObject)this) )
+            if ( !wnd.ShowModal( ( DependencyObject ) this ) )
                 return null;
 
             firstCandle = wnd.SelectedElement;
         }
-        
+
         Security selectedSecurity;
-        
+
         if ( firstCandle != null )
         {
             Subscription subscription = TryGetSubscription((IChartElement)firstCandle);
@@ -1347,7 +1350,7 @@ public partial class Chart : UserControl,
         else
             selectedSecurity = null;
 
-        
+
         if ( selectedSecurity == null )
         {
             SecurityPickerWindow wnd = new SecurityPickerWindow()
@@ -1358,25 +1361,25 @@ public partial class Chart : UserControl,
             if ( SecurityProvider != null )
                 wnd.SecurityProvider = SecurityProvider;
 
-            if ( !wnd.ShowModal((DependencyObject)this) )
+            if ( !wnd.ShowModal( ( DependencyObject ) this ) )
                 return null;
-            
+
             selectedSecurity = wnd.SelectedSecurity;
         }
 
         return selectedSecurity;
     }
 
-    private void OnUngroupEvent(ChartArea area)
+    private void OnUngroupEvent( ChartArea area )
     {
         if ( area == null )
             return;
 
-        area.GroupId = !StringHelper.IsEmpty(area.GroupId) ? string.Empty : Guid.NewGuid().ToString();
+        area.GroupId = !StringHelper.IsEmpty( area.GroupId ) ? string.Empty : Guid.NewGuid().ToString();
         Action<IChartArea> zcHtgn6mNhxMm = UngroupEvent;
         if ( zcHtgn6mNhxMm == null )
             return;
-        zcHtgn6mNhxMm((IChartArea)area);
+        zcHtgn6mNhxMm( ( IChartArea ) area );
     }
 
     private void OnAreaAdding()
@@ -1387,14 +1390,14 @@ public partial class Chart : UserControl,
             Title = $"{LocalizedStrings.Panel} {( _iChartAreaList.Count + 1 ).ToString()}"
         };
         q4dXwYzLzYwDdBciE._timezoneInfo = GetTimeZoneInfo();
-        CollectionHelper.ForEach<IChartAxis>((IEnumerable<IChartAxis>)area.XAxises, new Action<IChartAxis>(q4dXwYzLzYwDdBciE.OnAreaYAxisesRemovingAt));
-        AddArea((IChartArea)area);
+        CollectionHelper.ForEach<IChartAxis>( ( IEnumerable<IChartAxis> ) area.XAxises, new Action<IChartAxis>( q4dXwYzLzYwDdBciE.OnAreaYAxisesRemovingAt ) );
+        AddArea( ( IChartArea ) area );
     }
 
-    private void OnAddCandles(ChartArea _param1)
+    private void OnAddCandles( ChartArea _param1 )
     {
         if ( _subscription == null )
-            _subscription = new Subscription((ISubscriptionMessage)DefaultCandlesSettings, (SecurityMessage)null);
+            _subscription = new Subscription( ( ISubscriptionMessage ) DefaultCandlesSettings, ( SecurityMessage ) null );
         //CandleSettingsWindow wnd = new CandleSettingsWindow()
         //{
         //    Subscription = ( (Cloneable<Subscription>)_subscription ).Clone()
@@ -1413,7 +1416,7 @@ public partial class Chart : UserControl,
         //AddElement((IChartArea)_param1, (IChartCandleElement)element, subscription);
     }
 
-    private void OnAddIndicator(ChartArea _param1)
+    private void OnAddIndicator( ChartArea _param1 )
     {
         IndicatorPickerWindow wnd1 = new IndicatorPickerWindow()
         {
@@ -1450,16 +1453,16 @@ public partial class Chart : UserControl,
         //}
     }
 
-    private void OnAddOrders(ChartArea _param1)
+    private void OnAddOrders( ChartArea _param1 )
     {
         Security security = GetSelectedSecurity(_param1);
         if ( security == null )
             return;
-        
+
         //AddElement((IChartArea)_param1, (IChartOrderElement)new ChartOrderElement(), new Subscription(DataType.Transactions, security));
     }
 
-    private void OnAddTrades(ChartArea _param1)
+    private void OnAddTrades( ChartArea _param1 )
     {
         Security security = GetSelectedSecurity(_param1);
         if ( security == null )
@@ -1468,22 +1471,22 @@ public partial class Chart : UserControl,
         //AddElement((IChartArea)_param1, (IChartTradeElement)new ChartTradeElement(), new Subscription(DataType.Transactions, security));
     }
 
-    private void SomeInternalFunction34382084(string p)
+    private void SomeInternalFunction34382084( string p )
     {
-        ( (INotifyPropertyChangedEx)this ).NotifyPropertyChanged(p);
+        ( ( INotifyPropertyChangedEx ) this ).NotifyPropertyChanged( p );
     }
 
-    private void InvokeUnscribeElementNoChecking(IChartElement _param1)
+    private void InvokeUnscribeElementNoChecking( IChartElement _param1 )
     {
         Action<IChartElement> z9PnYjM29SjfT = UnSubscribeElement;
         if ( z9PnYjM29SjfT == null )
             return;
-        z9PnYjM29SjfT(_param1);
+        z9PnYjM29SjfT( _param1 );
     }
 
-    private void InvokeSubscriptionEvent(IChartElement _param1)
+    private void InvokeSubscriptionEvent( IChartElement _param1 )
     {
-        RaiseChartElementSubscribedEvent(_param1, TryGetSubscription(_param1));
+        RaiseChartElementSubscribedEvent( _param1, TryGetSubscription( _param1 ) );
     }
 
     [Serializable]
@@ -1511,47 +1514,47 @@ public partial class Chart : UserControl,
 #nullable enable
         IEnumerable<
 #nullable disable
-        IChartElement> SomeMethodPJeLPTCg(IChartArea p)
+        IChartElement> SomeMethodPJeLPTCg( IChartArea p )
         {
-            return (IEnumerable<IChartElement>)p.Elements;
+            return ( IEnumerable<IChartElement> ) p.Elements;
         }
 
-        public IChartAxis Method01(IChartArea p)
+        public IChartAxis Method01( IChartArea p )
         {
-            return ( (IEnumerable<IChartAxis>)p.XAxises ).FirstOrDefault<IChartAxis>(Chart.SomeClass34343383._member01 ?? ( Chart.SomeClass34343383._member01 = new Func<IChartAxis, bool>(Chart.SomeClass34343383.SomeMethond0343.Method02) ));
+            return ( ( IEnumerable<IChartAxis> ) p.XAxises ).FirstOrDefault<IChartAxis>( Chart.SomeClass34343383._member01 ?? ( Chart.SomeClass34343383._member01 = new Func<IChartAxis, bool>( Chart.SomeClass34343383.SomeMethond0343.Method02 ) ) );
         }
 
-        public bool Method02(IChartAxis x)
+        public bool Method02( IChartAxis x )
         {
             return x.TimeZone != null;
         }
 
-        public bool Method03(IChartAxis a) => a != null;
+        public bool Method03( IChartAxis a ) => a != null;
 
         public IChartIndicatorElement Method04(
-          KeyValuePair<IChartElement, Subscription> i)
+          KeyValuePair<IChartElement, Subscription> i )
         {
-            return (IChartIndicatorElement)i.Key;
+            return ( IChartIndicatorElement ) i.Key;
         }
 
         public
 #nullable enable
         IChartIndicatorElement Method05(
 #nullable disable
-          IChartIndicatorElement _param1)
+          IChartIndicatorElement _param1 )
         {
             return _param1;
         }
 
-        public void Method06(Chart.ChartIndicatorMap i)
+        public void Method06( Chart.ChartIndicatorMap i )
         {
             i.Dispose();
         }
 
-        public SettingsStorage SomeSettingsStorageHelpingFunction0342(IChartArea a)
+        public SettingsStorage SomeSettingsStorageHelpingFunction0342( IChartArea a )
         {
             SettingsStorage settingsStorage = PersistableHelper.Save((IPersistable)a);
-            settingsStorage.SetValue<double>("Height", ( (ChartArea)a ).ViewModel.Height);
+            settingsStorage.SetValue<double>( "Height", ( ( ChartArea ) a ).ViewModel.Height );
             return settingsStorage;
         }
     }
@@ -1560,7 +1563,7 @@ public partial class Chart : UserControl,
     {
         public TimeZoneInfo _timezoneInfo;
 
-        public void OnAreaYAxisesRemovingAt(IChartAxis _param1)
+        public void OnAreaYAxisesRemovingAt( IChartAxis _param1 )
         {
             _param1.TimeZone = _timezoneInfo;
         }
@@ -1573,7 +1576,7 @@ public partial class Chart : UserControl,
 
         public void SomeCancelOrdersMethod03343()
         {
-            _meChart.ViewModel.InternalExecuteCancelActiveOrders(m_public_Func_Order_bool_);
+            _meChart.ViewModel.InternalExecuteCancelActiveOrders( m_public_Func_Order_bool_ );
         }
     }
 
@@ -1613,7 +1616,7 @@ public partial class Chart : UserControl,
             //zk8cjLwfRrDki(area);
         }
 
-        public void SetSomeAutoRange(IChartAxis p)
+        public void SetSomeAutoRange( IChartAxis p )
         {
             // ISSUE: explicit non-virtual call
             p.AutoRange = ( _meChart.IsAutoRange );
@@ -1626,15 +1629,15 @@ public partial class Chart : UserControl,
         public IChartCandleElement _someChartElement0343123;
         public Chart _meChart;
 
-        public bool Method02341( KeyValuePair<IChartElement, Subscription> p)
+        public bool Method02341( KeyValuePair<IChartElement, Subscription> p )
         {
             return p.Value == _subscription && p.Key != _someChartElement0343123;
         }
 
         public Tuple<IIndicator, IChartArea> Method02342(
-          IChartIndicatorElement i)
+          IChartIndicatorElement i )
         {
-            return Tuple.Create<IIndicator, IChartArea>(_meChart.GetIndicatorElement(i), i.ChartArea);
+            return Tuple.Create<IIndicator, IChartArea>( _meChart.GetIndicatorElement( i ), i.ChartArea );
         }
     }
 
@@ -1645,10 +1648,10 @@ public partial class Chart : UserControl,
         public Subscription _subscription;
         public Chart _meChart;
 
-        public bool Method023(IChartElement e)
+        public bool Method023( IChartElement e )
         {
             // ISSUE: explicit non-virtual call
-            return ( _meChart.TryGetSubscription(e) ) == _subscription;
+            return ( _meChart.TryGetSubscription( e ) ) == _subscription;
         }
     }
 
@@ -1662,7 +1665,7 @@ public partial class Chart : UserControl,
         public void Method01()
         {
             foreach ( ChartArea chartArea in _meChart._iChartAreaList )
-                chartArea.ViewModel.Reset(_someChartElements3432123);
+                chartArea.ViewModel.Reset( _someChartElements3432123 );
         }
     }
 
@@ -1673,12 +1676,12 @@ public partial class Chart : UserControl,
 
         public void SetDataContext()
         {
-            ( (ScichartSurfaceMVVM)_drawingSurface.DataContext ).SetScichartSurface(_drawingSurface);
+            ( ( ScichartSurfaceMVVM ) _drawingSurface.DataContext ).SetScichartSurface( _drawingSurface );
         }
 
         public void Method02(
           object obj,
-          DependencyPropertyChangedEventArgs e)
+          DependencyPropertyChangedEventArgs e )
         {
             SetDataContext();
         }
@@ -1691,7 +1694,7 @@ public partial class Chart : UserControl,
 
         public bool Method0834()
         {
-            return ( (ICollection<IChartElement>)area.Elements ).Remove(_someChartElement0343123);
+            return ( ( ICollection<IChartElement> ) area.Elements ).Remove( _someChartElement0343123 );
         }
     }
 

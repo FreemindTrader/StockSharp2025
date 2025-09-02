@@ -31,12 +31,12 @@ namespace StockSharp.Xaml.Charting;
 /// All the ChartCandleElementViewModel, indicatorUI, quoteUI will inherit from this class
 /// </summary>
 /// <typeparam name="T"></typeparam>
-public abstract class ChartCompentWpfBaseViewModel< T > : ChartElementUiDomain where T : ChartPart< T >, IChartElementUiDomain
+public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where T : ChartPart< T >, IChartElementUiDomain
 {
     private readonly PooledSet< IChartComponent > _componentUIMap = new PooledSet< IChartComponent >( );
     private readonly T _drawableChartElement;
 
-    protected ChartCompentWpfBaseViewModel( T component )
+    protected ChartCompentWpfUiDomain( T component )
     {
         _drawableChartElement = component ?? throw new ArgumentNullException( "elem" );
         AddPropertyEvents( ChartComponentView );

@@ -30,7 +30,7 @@ using fx.Bars;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal partial class CandlestickVM : ChartCompentWpfBaseViewModel<ChartCandleElementEx>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
+    internal partial class CandlestickVM : ChartCompentWpfUiDomain<ChartCandleElementEx>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {
         public long SelectedCandleBarTime
         {

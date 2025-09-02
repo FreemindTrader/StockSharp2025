@@ -31,7 +31,7 @@ using SciChart.Charting;
 
 namespace StockSharp.Xaml.Charting
 {
-    internal sealed class ChartActiveOrdersElementVM : ChartCompentWpfBaseViewModel<ChartActiveOrdersElement>
+    internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain<ChartActiveOrdersElement>
     {
         internal static Binding CreateBinding( object obj, string propertyName )
         {
@@ -174,7 +174,7 @@ namespace StockSharp.Xaml.Charting
 
         private readonly PairSet<Order, ChartActiveOrderInfo> _orderInfoAnnotation = new PairSet<Order, ChartActiveOrderInfo>();
 
-        public ChartActiveOrdersElementVM( ChartActiveOrdersElement _param1 )
+        public ChartActiveOrdersElementUiDomain( ChartActiveOrdersElement _param1 )
           : base( _param1 )
         {
         }

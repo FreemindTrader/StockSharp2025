@@ -19,7 +19,7 @@ using Ecng.Drawing;
 
 #pragma warning disable CA1416
 
-internal sealed class ChartBandElementVM< T > : ChartCompentWpfBaseViewModel< ChartBandElement > where T : struct, IComparable
+internal sealed class ChartBandElementVM< T > : ChartCompentWpfUiDomain< ChartBandElement > where T : struct, IComparable
 {
     private readonly XyyDataSeries< T, double > _bandData;
     private readonly XyDataSeries< T, double >  _lineOneData;

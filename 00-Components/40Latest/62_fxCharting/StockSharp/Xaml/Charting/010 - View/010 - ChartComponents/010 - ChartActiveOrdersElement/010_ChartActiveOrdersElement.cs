@@ -57,15 +57,15 @@ public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrder
     /// </summary>
     public ChartActiveOrdersElement()
     {
-        SellColor = Colors.DarkRed;
-        SellBlinkColor = System.Windows.Media.Color.FromRgb( byte.MaxValue, ( byte ) 151, ( byte ) 50 );
-        SellPendingColor = BuyPendingColor = Colors.Gray;
-        BuyColor = Colors.DarkGreen;
-        BuyBlinkColor = System.Windows.Media.Color.FromRgb( ( byte ) 162, ( byte ) 204, ( byte ) 45 );
-        ForegroundColor = Colors.White;
-        CancelButtonColor = Colors.Black;
+        SellColor              = Colors.DarkRed;
+        SellBlinkColor         = System.Windows.Media.Color.FromRgb( byte.MaxValue, ( byte ) 151, ( byte ) 50 );
+        SellPendingColor       = BuyPendingColor = Colors.Gray;
+        BuyColor               = Colors.DarkGreen;
+        BuyBlinkColor          = System.Windows.Media.Color.FromRgb( ( byte ) 162, ( byte ) 204, ( byte ) 45 );
+        ForegroundColor        = Colors.White;
+        CancelButtonColor      = Colors.Black;
         CancelButtonBackground = Colors.DarkGray;
-        IsAnimationEnabled = true;
+        IsAnimationEnabled     = true;
     }
 
     /// <summary>Color of Buy order in non-active state.</summary>
@@ -252,7 +252,7 @@ public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrder
 
     ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
     {
-        return _baseViewModel = new ChartActiveOrdersElementVM( this );
+        return _baseViewModel = new ChartActiveOrdersElementUiDomain( this );
     }
 
     bool IChartElementUiDomain.StartDrawing(

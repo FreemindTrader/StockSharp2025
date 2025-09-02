@@ -19,7 +19,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-internal sealed class QuotesVM : ChartCompentWpfBaseViewModel<QuotesUI>, IFastQuotes 
+internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes 
 {
     private readonly XyDataSeries<DateTime, double> _askLine;
     private readonly XyDataSeries<DateTime, double> _bidLine;

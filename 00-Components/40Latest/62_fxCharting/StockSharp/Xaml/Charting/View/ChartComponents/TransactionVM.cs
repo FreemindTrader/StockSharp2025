@@ -16,7 +16,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 
-internal sealed class TransactionVM<T> : ChartCompentWpfBaseViewModel<T> where T : TransactionUI<T>, new()
+internal sealed class TransactionVM<T> : ChartCompentWpfUiDomain<T> where T : TransactionUI<T>, new()
 {
     private readonly ConcurrentQueue<ChartDrawData.sTrade> _concurrentQueue = new ConcurrentQueue<ChartDrawData.sTrade>( );
 

@@ -342,7 +342,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
         return _componentsCache.CachedValues.Where( p => p != null ).SelectMany(
                 x =>
                 {
-                    return x.Elements.OfType<ChartActiveOrdersElementVM>().SelectMany( ao => ao.GetActiveOrders( _param1 ) );
+                    return x.Elements.OfType<ChartActiveOrdersElementUiDomain>().SelectMany( ao => ao.GetActiveOrders( _param1 ) );
                 } ); ;
     }
 

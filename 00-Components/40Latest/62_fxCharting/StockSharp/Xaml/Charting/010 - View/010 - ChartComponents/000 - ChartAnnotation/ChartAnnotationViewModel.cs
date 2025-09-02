@@ -7,7 +7,7 @@ using StockSharp.Xaml.Charting;
 /// The view model to draw the ChartAnnotation on the chart.
 /// 
 /// </summary>
-internal sealed class ChartAnnotationViewModel : ChartCompentWpfBaseViewModel<ChartAnnotation>
+internal sealed class ChartAnnotationViewModel : ChartCompentWpfUiDomain<ChartAnnotation>
 {
     public ChartAnnotationViewModel(ChartAnnotation annotation) : base(annotation)
     {
@@ -41,7 +41,7 @@ internal sealed class ChartAnnotationViewModel : ChartCompentWpfBaseViewModel<Ch
 //#nullable disable
 //internal sealed class ChartAnnotationViewModel(
 //  ChartAnnotation _param1 ) :
-//  ChartCompentWpfBaseViewModel<ChartAnnotation>( _param1 )
+//  ChartCompentWpfUiDomain<ChartAnnotation>( _param1 )
 //{
 //    protected override void UpdateUi()
 //    {

@@ -76,7 +76,7 @@ namespace StockSharp.Xaml.Charting
         }
     }
 
-    internal partial class CandlestickVM : ChartCompentWpfBaseViewModel<ChartCandleElementEx>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
+    internal partial class CandlestickVM : ChartCompentWpfUiDomain<ChartCandleElementEx>, IPaletteProvider, IStrokePaletteProvider, IFillPaletteProvider, INullBar
     {
         private double                                      _pnfBoxSize = 0.2;
         private readonly OhlcDataSeries< DateTime, double > _ohlcDataSeries;

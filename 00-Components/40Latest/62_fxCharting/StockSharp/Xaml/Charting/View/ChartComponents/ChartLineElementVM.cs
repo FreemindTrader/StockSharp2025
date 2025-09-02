@@ -19,7 +19,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-internal sealed class ChartLineElementVM< T > : ChartCompentWpfBaseViewModel< ChartLineElement >, IPaletteProvider where T : struct, IComparable
+internal sealed class ChartLineElementVM< T > : ChartCompentWpfUiDomain< ChartLineElement >, IPaletteProvider where T : struct, IComparable
 {
     //private ChartSeriesViewModel                        _chartSeriesViewModel;
 

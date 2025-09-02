@@ -47,7 +47,7 @@ using System.Windows.Media;
 ///		pC1: closing price of the candle before the previous one, All references must be within the range of the current pattern. For example, the range of the 3 Black Crows pattern consists of the current and two previous candles, so referring to the third previous candle is not allowed.
 /// </summary>
 /// <param name="pattern"></param>
-public sealed class CandlePatternElementViewModel( CandlePatternElement pattern) : ChartCompentWpfBaseViewModel<CandlePatternElement>(pattern)
+public sealed class CandlePatternElementViewModel( CandlePatternElement pattern) : ChartCompentWpfUiDomain<CandlePatternElement>(pattern)
 {
 
 	private readonly HashSet<DateTime> _dateTimeHashSet = new HashSet<DateTime>();
