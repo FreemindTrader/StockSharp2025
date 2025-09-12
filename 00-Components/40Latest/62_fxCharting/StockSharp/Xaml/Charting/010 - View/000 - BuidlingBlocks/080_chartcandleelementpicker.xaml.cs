@@ -22,9 +22,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>The window for select candle series element.</summary>
 /// <summary>ChartCandleElementPicker</summary>
 public partial class ChartCandleElementPicker : ThemedWindow
-{
-    private bool _someInternalBoolean;
-
+{    
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartCandleElementPicker" />.
     /// </summary>

@@ -16,8 +16,9 @@ using System.Windows.Media;
 
 namespace StockSharp.Xaml.Charting;
 
-/// <summary>The chart element representing active orders.</summary>
-
+/// <summary>
+/// The chart element representing active orders.
+/// </summary>
 [Display( ResourceType = typeof( LocalizedStrings ), Name = "ActiveOrders" )]
 public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrdersElement>, 
                                         IChartElement, 
@@ -50,7 +51,7 @@ public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrder
     
     private bool _isAnimationEnabled;
     
-    private ChartElementUiDomain _baseViewModel;
+    private ChartElementUiDomain _uiBusinessLogic;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="T:StockSharp.Xaml.Charting.ChartActiveOrdersElement" />.
@@ -243,27 +244,21 @@ public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrder
         set => throw new NotImplementedException();
     }
 
-    public IChartArea PersistentChartArea => throw new NotImplementedException();
-
-    //DrawableChartComponentBaseViewModel IChartElementUiDomain.CreateViewModel( ScichartSurfaceMVVM _param1 )
-    //{
-    //    return _baseViewModel = ( DrawableChartComponentBaseViewModel ) new ChartActiveOrdersElementVM( this );
-    //}
+    public IChartArea PersistentChartArea => throw new NotImplementedException();    
 
     ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
     {
-        return _baseViewModel = new ChartActiveOrdersElementUiDomain( this );
+        return _uiBusinessLogic = new ChartActiveOrdersElementUiDomain( this );
     }
 
-    bool IChartElementUiDomain.StartDrawing(
-      IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+    bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {
-        return _baseViewModel.Draw( _param1 );
+        return _uiBusinessLogic.Draw( drawData );
     }
 
     void IChartElementUiDomain.StartDrawing()
     {
-        _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+        _uiBusinessLogic.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
     protected override bool OnDraw( ChartDrawData data )
@@ -275,16 +270,16 @@ public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrder
     public override void Load( SettingsStorage storage )
     {
         base.Load( storage );
-        BuyColor = storage.GetValue<int>( "BuyColor", 0 ).ToColor();
-        BuyBlinkColor = storage.GetValue<int>( "BuyBlinkColor", 0 ).ToColor();
-        BuyPendingColor = storage.GetValue<int>( "BuyPendingColor", 0 ).ToColor();
-        SellColor = storage.GetValue<int>( "SellColor", 0 ).ToColor();
-        SellBlinkColor = storage.GetValue<int>( "SellBlinkColor", 0 ).ToColor();
-        SellPendingColor = storage.GetValue<int>( "SellPendingColor", 0 ).ToColor();
-        ForegroundColor = storage.GetValue<int>( "ForegroundColor", 0 ).ToColor();
-        CancelButtonColor = storage.GetValue<int>( "CancelButtonColor", 0 ).ToColor();
+        BuyColor               = storage.GetValue<int>( "BuyColor", 0 ).ToColor();
+        BuyBlinkColor          = storage.GetValue<int>( "BuyBlinkColor", 0 ).ToColor();
+        BuyPendingColor        = storage.GetValue<int>( "BuyPendingColor", 0 ).ToColor();
+        SellColor              = storage.GetValue<int>( "SellColor", 0 ).ToColor();
+        SellBlinkColor         = storage.GetValue<int>( "SellBlinkColor", 0 ).ToColor();
+        SellPendingColor       = storage.GetValue<int>( "SellPendingColor", 0 ).ToColor();
+        ForegroundColor        = storage.GetValue<int>( "ForegroundColor", 0 ).ToColor();
+        CancelButtonColor      = storage.GetValue<int>( "CancelButtonColor", 0 ).ToColor();
         CancelButtonBackground = storage.GetValue<int>( "CancelButtonBackground", 0 ).ToColor();
-        IsAnimationEnabled = storage.GetValue<bool>( "IsAnimationEnabled", false );
+        IsAnimationEnabled     = storage.GetValue<bool>( "IsAnimationEnabled", false );
     }
 
     public override void Save( SettingsStorage storage )
@@ -293,18 +288,17 @@ public class ChartActiveOrdersElement : ChartComponentViewModel<ChartActiveOrder
         storage.Set<int>( "BuyColor", BuyColor.ToInt() ).Set<int>( "BuyBlinkColor", BuyBlinkColor.ToInt() ).Set<int>( "BuyPendingColor", BuyPendingColor.ToInt() ).Set<int>( "SellColor", SellColor.ToInt() ).Set<int>( "SellBlinkColor", SellBlinkColor.ToInt() ).Set<int>( "SellPendingColor", SellPendingColor.ToInt() ).Set<int>( "CancelButtonColor", CancelButtonColor.ToInt() ).Set<int>( "ForegroundColor", ForegroundColor.ToInt() ).Set<int>( "CancelButtonBackground", CancelButtonBackground.ToInt() ).Set<bool>( "IsAnimationEnabled", IsAnimationEnabled );
     }
 
-    internal override ChartActiveOrdersElement Clone(
-      ChartActiveOrdersElement _param1 )
+    internal override ChartActiveOrdersElement Clone( ChartActiveOrdersElement to )
     {
-        _param1 = base.Clone( _param1 );
-        _param1.BuyColor = BuyColor;
-        _param1.SellColor = SellColor;
-        _param1.CancelButtonColor = CancelButtonColor;
-        _param1.ForegroundColor = ForegroundColor;
-        _param1.CancelButtonBackground = CancelButtonBackground;
-        _param1.BuyPendingColor = BuyPendingColor;
-        _param1.SellPendingColor = SellPendingColor;
-        _param1.IsAnimationEnabled = IsAnimationEnabled;
-        return _param1;
+        to                        = base.Clone( to );
+        to.BuyColor               = BuyColor;
+        to.SellColor              = SellColor;
+        to.CancelButtonColor      = CancelButtonColor;
+        to.ForegroundColor        = ForegroundColor;
+        to.CancelButtonBackground = CancelButtonBackground;
+        to.BuyPendingColor        = BuyPendingColor;
+        to.SellPendingColor       = SellPendingColor;
+        to.IsAnimationEnabled     = IsAnimationEnabled;
+        return to;
     }
 }

@@ -4,12 +4,12 @@ using StockSharp.Xaml.Charting;
 
 /// < summary >
 ///
-/// The view model to draw the ChartAnnotation on the chart.
+/// The UI business Logic to draw the ChartAnnotation on the chart.
 /// 
 /// </summary>
-internal sealed class ChartAnnotationViewModel : ChartCompentWpfUiDomain<ChartAnnotation>
+internal sealed class ChartAnnotationUiDomain : ChartCompentWpfUiDomain<ChartAnnotation>
 {
-    public ChartAnnotationViewModel(ChartAnnotation annotation) : base(annotation)
+    public ChartAnnotationUiDomain( ChartAnnotation annotation ) : base( annotation )
     {
     }
 
@@ -19,12 +19,12 @@ internal sealed class ChartAnnotationViewModel : ChartCompentWpfUiDomain<ChartAn
 
     protected override void Clear()
     {
-        DrawingSurface.RemoveAnnotation(ChartComponentView, null);
+        DrawingSurface.RemoveAnnotation( ChartComponentView, null );
     }
 
-    public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> e)
+    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> e )
     {
-        PerformUIAction2(() => DrawingSurface.AnnotationModifier.Draw(ChartComponentView, e.Cast<ChartDrawData.AnnotationData>().Single()), true);
+        PerformUIAction2( () => DrawingSurface.AnnotationModifier.Draw( ChartComponentView, e.Cast<ChartDrawData.AnnotationData>().Single() ), true );
 
         return true;
     }

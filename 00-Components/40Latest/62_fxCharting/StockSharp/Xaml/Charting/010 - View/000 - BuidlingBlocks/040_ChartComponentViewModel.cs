@@ -424,7 +424,7 @@ public abstract class ChartComponentViewModel<T> :  ChartPart<T>,
         for ( int index = 0 ; index < fromCache.Length ; ++index )
         {
             var fromElement = fromCache[index];
-            var toElement = toCache[index];
+            var toElement   = toCache[index];
             
             if ( fromElement.GetType() != toElement.GetType() )
             {

@@ -47,117 +47,117 @@ using System.Windows.Media;
 ///		pC1: closing price of the candle before the previous one, All references must be within the range of the current pattern. For example, the range of the 3 Black Crows pattern consists of the current and two previous candles, so referring to the third previous candle is not allowed.
 /// </summary>
 /// <param name="pattern"></param>
-public sealed class CandlePatternElementViewModel( CandlePatternElement pattern) : ChartCompentWpfUiDomain<CandlePatternElement>(pattern)
+public sealed class CandlePatternElementViewModel( CandlePatternElement pattern ) : ChartCompentWpfUiDomain<CandlePatternElement>( pattern )
 {
 
-	private readonly HashSet<DateTime> _dateTimeHashSet = new HashSet<DateTime>();
+    private readonly HashSet<DateTime> _dateTimeHashSet = new HashSet<DateTime>();
 
-	private DateTime[] _dateTimeArray = Array.Empty<DateTime>();
+    private DateTime[] _dateTimeArray = Array.Empty<DateTime>();
 
-	private ChartCandleElementViewModel _candlestickUI;
+    private ChartCandleElementUiDomain _candlestickUI;
 
-	protected override void Init()
-	{
-		base.Init();
-		InternalInit(false);
-	}
+    protected override void Init()
+    {
+        base.Init();
+        InternalInit( false );
+    }
 
 
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <param name="shouldThrow"></param>
-	/// <exception cref="InvalidOperationException"></exception>
-	private void InternalInit(bool shouldThrow)
-	{
-		ChartCandleElementViewModel candlesVM = DrawingSurface.CandlesCompositeElement?.CandlesViewModel;
-		if ( candlesVM == null & shouldThrow )
-			throw new InvalidOperationException("unable to draw candle patterns on a chart without candles");
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="shouldThrow"></param>
+    /// <exception cref="InvalidOperationException"></exception>
+    private void InternalInit( bool shouldThrow )
+    {
+        ChartCandleElementUiDomain candlesVM = DrawingSurface.CandlesCompositeElement?.CandlesViewModel;
+        if ( candlesVM == null & shouldThrow )
+            throw new InvalidOperationException( "unable to draw candle patterns on a chart without candles" );
 
-		if ( _candlestickUI == candlesVM )
-			return;
-		_candlestickUI?.RemovePattern(this);
-		_candlestickUI = candlesVM;
-		_candlestickUI?.AddPattern(this);
-	}
+        if ( _candlestickUI == candlesVM )
+            return;
+        _candlestickUI?.RemovePattern( this );
+        _candlestickUI = candlesVM;
+        _candlestickUI?.AddPattern( this );
+    }
 
-	protected override void Clear()
-	{
-		_candlestickUI?.RemovePattern(this);
-		DrawingSurface.Refresh();
-	}
+    protected override void Clear()
+    {
+        _candlestickUI?.RemovePattern( this );
+        DrawingSurface.Refresh();
+    }
 
-	protected override void UpdateUi()
-	{
-		lock ( _dateTimeHashSet )
-			_dateTimeHashSet.Clear();
+    protected override void UpdateUi()
+    {
+        lock ( _dateTimeHashSet )
+            _dateTimeHashSet.Clear();
 
-		DrawingSurface.Refresh();
-	}
+        DrawingSurface.Refresh();
+    }
 
-	protected override void RootElementPropertyChanged( IChartComponent com, string propName)
-	{
-		base.RootElementPropertyChanged(com, propName);
+    protected override void RootElementPropertyChanged( IChartComponent com, string propName )
+    {
+        base.RootElementPropertyChanged( com, propName );
 
-		if ( !( propName == "UpColor" ) && !( propName == "DownColor" ) && !( propName == "IsVisible" ) )
-			return;
-		
-		DrawingSurface.Refresh();
-	}
+        if ( !( propName == "UpColor" ) && !( propName == "DownColor" ) && !( propName == "IsVisible" ) )
+            return;
 
-	public override bool Draw(IEnumerableEx<ChartDrawData.IDrawValue> data)
-	{		
-		if ( data == null || CollectionHelper.IsEmpty( data ) )
-			return false;
-		InternalInit(true);		
+        DrawingSurface.Refresh();
+    }
+
+    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> data )
+    {
+        if ( data == null || CollectionHelper.IsEmpty( data ) )
+            return false;
+        InternalInit( true );
 
         var shouldUpdate = false;
 
-		lock ( _dateTimeHashSet )
-		{
-			foreach ( ChartDrawData.IndicatorData indicatorData in data )
-			{
-				CandlePatternIndicatorValue pattern = (CandlePatternIndicatorValue)indicatorData.Value;
-				if ( pattern.Value )
-				{
-					if ( pattern.IsFinal )
-					{
-						CollectionHelper.ForEach( pattern.CandleOpenTimes,  p => shouldUpdate = shouldUpdate | _dateTimeHashSet.Add(p.UtcDateTime) );
-					}
-					else
-					{
-						var dateTimeList = new List<DateTime>();
-						dateTimeList.AddRange(pattern.CandleOpenTimes.Select( p => p.UtcDateTime ));
-						_dateTimeArray = dateTimeList.ToArray();
+        lock ( _dateTimeHashSet )
+        {
+            foreach ( ChartDrawData.IndicatorData indicatorData in data )
+            {
+                CandlePatternIndicatorValue pattern = (CandlePatternIndicatorValue)indicatorData.Value;
+                if ( pattern.Value )
+                {
+                    if ( pattern.IsFinal )
+                    {
+                        CollectionHelper.ForEach( pattern.CandleOpenTimes, p => shouldUpdate = shouldUpdate | _dateTimeHashSet.Add( p.UtcDateTime ) );
+                    }
+                    else
+                    {
+                        var dateTimeList = new List<DateTime>();
+                        dateTimeList.AddRange( pattern.CandleOpenTimes.Select( p => p.UtcDateTime ) );
+                        _dateTimeArray = dateTimeList.ToArray();
                         shouldUpdate = true;
-					}
-				}
-				else if ( _dateTimeArray.Length != 0 )
-				{
+                    }
+                }
+                else if ( _dateTimeArray.Length != 0 )
+                {
                     shouldUpdate = true;
-					_dateTimeArray = Array.Empty<DateTime>();
-				}
-			}
-		}
-		if ( shouldUpdate )
-			DrawingSurface.Refresh();
+                    _dateTimeArray = Array.Empty<DateTime>();
+                }
+            }
+        }
+        if ( shouldUpdate )
+            DrawingSurface.Refresh();
 
-		return shouldUpdate;
-	}
+        return shouldUpdate;
+    }
 
-	public Color? GetCandleColor(DateTime barTime, bool isUp)
-	{
-		if ( !RootElem.IsVisible || !ChartComponentView.IsVisible )
-			return new Color?();
-		
-		lock ( _dateTimeHashSet )
-		{
-			if ( !_dateTimeHashSet.Contains(barTime) )
-			{
-				if ( !( (IEnumerable<DateTime>)_dateTimeArray ).Contains<DateTime>(barTime) )
-					return new Color?();
-			}
-		}
-		return new Color?(isUp ? ChartComponentView.UpColor : ChartComponentView.DownColor);
-	}
+    public Color? GetCandleColor( DateTime barTime, bool isUp )
+    {
+        if ( !RootElem.IsVisible || !ChartComponentView.IsVisible )
+            return new Color?();
+
+        lock ( _dateTimeHashSet )
+        {
+            if ( !_dateTimeHashSet.Contains( barTime ) )
+            {
+                if ( !( ( IEnumerable<DateTime> ) _dateTimeArray ).Contains<DateTime>( barTime ) )
+                    return new Color?();
+            }
+        }
+        return new Color?( isUp ? ChartComponentView.UpColor : ChartComponentView.DownColor );
+    }
 }

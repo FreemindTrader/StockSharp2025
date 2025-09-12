@@ -37,7 +37,11 @@ using Color = System.Windows.Media.Color;
 
 namespace StockSharp.Xaml.Charting;
 
-public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : ChartCompentWpfUiDomain<ChartCandleElement>(candle), IPaletteProvider, IPaletteProviderSS
+/// <summary>
+/// 
+/// </summary>
+/// <param name="candle"></param>
+public sealed class ChartCandleElementUiDomain(ChartCandleElement candle) : ChartCompentWpfUiDomain<ChartCandleElement>(candle), IPaletteProvider, IPaletteProviderSS
 {
     private sealed class TimeSpanConverter(TimeSpan? _param1) : IValueConverter
     {
@@ -142,10 +146,10 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
         public Color LineColor
         {
             get
-            {
-                Color? lineColor = _candle.LineColor;
-                if ( lineColor.HasValue )
-                    return lineColor.GetValueOrDefault();
+            {                
+                if ( _candle.LineColor.HasValue )
+                    return _candle.LineColor.GetValueOrDefault();
+
                 return !IsDark ? Colors.Blue : Colors.Orange;
             }
             set => _candle.LineColor = new Color?(value);
@@ -154,10 +158,10 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
         public Color AreaColor
         {
             get
-            {
-                Color? areaColor = _candle.AreaColor;
-                if ( areaColor.HasValue )
-                    return areaColor.GetValueOrDefault();
+            {                
+                if ( _candle.AreaColor.HasValue )
+                    return _candle.AreaColor.GetValueOrDefault();
+
                 return !IsDark ? Colors.Blue : Colors.Orange;
             }
             set => _candle.AreaColor = new Color?(value);
@@ -166,10 +170,10 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
         public Color FontColor
         {
             get
-            {
-                Color? fontColor = _candle.FontColor;
-                if ( fontColor.HasValue )
-                    return fontColor.GetValueOrDefault();
+            {                
+                if ( _candle.FontColor.HasValue )
+                    return _candle.FontColor.GetValueOrDefault();
+
                 return !IsDark ? Colors.Black : Colors.White;
             }
             set => _candle.FontColor = new Color?(value);
@@ -314,11 +318,11 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
         }
     }
 
-    private readonly OhlcDataSeriesTF<DateTime, double> _ohlcDataSeries;
+    private readonly OhlcDataSeriesTF<DateTime, double> _ohlcDataSeries = new OhlcDataSeriesTF<DateTime, double>();
 
-    private readonly XyDataSeries<DateTime, double> _xyDataSeries;
+    private readonly XyDataSeries<DateTime, double> _xyDataSeries = new XyDataSeries<DateTime, double>();
 
-    private readonly SynchronizedList<CandlePatternElementViewModel> _chartPatternList;
+    private readonly SynchronizedList<CandlePatternElementViewModel> _chartPatternList = new SynchronizedList<CandlePatternElementViewModel>();
 
     private ChartSeriesViewModel _chartSeriesViewModel;
 
@@ -348,7 +352,7 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
 
     private readonly SynchronizedDictionary<DateTime, Color> _dateTime2ColorMap;
 
-    private readonly ChartCandleElementViewModel.ChartCandleElementHelper _candleHelper = new ChartCandleElementViewModel.ChartCandleElementHelper(candle);
+    private readonly ChartCandleElementUiDomain.ChartCandleElementHelper _candleHelper = new ChartCandleElementUiDomain.ChartCandleElementHelper(candle);
 
     private bool _boolean02;
 
@@ -408,7 +412,7 @@ public sealed class ChartCandleElementViewModel(ChartCandleElement candle) : Cha
         Color color;
         if ( _dateTime2ColorMap.TryGetValue(OhlcSeries.XValues[series.DataSeriesIndex], out color) )
             return color;
-        return ChartCandleElementViewModel.IsRising(series) ? ( !_candleHelper.IsDark ? Colors.Green : Colors.LimeGreen ) : ( !_candleHelper.IsDark ? Colors.Red : Colors.OrangeRed );
+        return ChartCandleElementUiDomain.IsRising(series) ? ( !_candleHelper.IsDark ? Colors.Green : Colors.LimeGreen ) : ( !_candleHelper.IsDark ? Colors.Red : Colors.OrangeRed );
     }
 
     private string SetLineViewModelName(SeriesInfo s)
@@ -650,8 +654,8 @@ label_4:
                     Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.CellFontColorProperty, _candleHelper, "FontColor");
                     Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.HighVolColorProperty, _candleHelper, "MaxVolumeColor");
                     Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.HighVolBackgroundProperty, _candleHelper, "MaxVolumeBackground");
-                    Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.Timeframe2Property, ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, (IValueConverter)new ChartCandleElementViewModel.TimeSpanConverter(CandlesTimeframe));
-                    Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.Timeframe3Property, ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, (IValueConverter)new ChartCandleElementViewModel.TimeSpanConverter(CandlesTimeframe));
+                    Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.Timeframe2Property, ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, (IValueConverter)new ChartCandleElementUiDomain.TimeSpanConverter(CandlesTimeframe));
+                    Ecng.Xaml.XamlHelper.SetBindings(target, BoxVolumeRenderableSeries.Timeframe3Property, ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, (IValueConverter)new ChartCandleElementUiDomain.TimeSpanConverter(CandlesTimeframe));
                 }
                 break;
 

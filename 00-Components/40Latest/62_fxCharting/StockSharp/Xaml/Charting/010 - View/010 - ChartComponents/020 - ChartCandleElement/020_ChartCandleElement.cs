@@ -22,7 +22,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// This class contains the code for the CandleStick UI.
 /// </summary>
-[Display(ResourceType = typeof(LocalizedStrings), Name = "CandleSettings")]
+[Display( ResourceType = typeof( LocalizedStrings ), Name = "CandleSettings" )]
 public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
                                   IChartElement,
                                   IChartPart<IChartElement>,
@@ -116,10 +116,10 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
 
     public ChartCandleElement()
     {
-        DownFillColor = DownBorderColor = Colors.Red;
-        UpFillColor = UpBorderColor = Colors.Green;
+        DownFillColor   = DownBorderColor = Colors.Red;
+        UpFillColor     = UpBorderColor = Colors.Green;
         StrokeThickness = 1;
-        DrawStyle = ChartCandleDrawStyles.CandleStick;
+        DrawStyle       = ChartCandleDrawStyles.CandleStick;
     }
 
     System.Windows.Media.Color IChartElementUiDomain.Color
@@ -130,8 +130,7 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Style", Description = "StyleCandlesRender", GroupName = "Style", Order = 25)]    
-
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Style", Description = "StyleCandlesRender", GroupName = "Style", Order = 25 )]
     public ChartCandleDrawStyles DrawStyle
     {
         get => _drawStyle;
@@ -139,9 +138,12 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
         {
             if ( _drawStyle == value )
                 return;
-            RaisePropertyValueChanging(nameof(DrawStyle), (object)value);
+
+            RaisePropertyValueChanging( nameof( DrawStyle ),  value );
+
             if ( _drawStyle == ChartCandleDrawStyles.PnF )
                 AntiAliasing = false;
+
             switch ( value )
             {
                 case ChartCandleDrawStyles.CandleStick:
@@ -156,26 +158,30 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
                         break;
                     }
                     break;
+
                 case ChartCandleDrawStyles.Ohlc:
                     StrokeThickness = 8;
                     break;
+
                 case ChartCandleDrawStyles.BoxVolume:
                 case ChartCandleDrawStyles.ClusterProfile:
                     StrokeThickness = 1;
                     break;
+
                 case ChartCandleDrawStyles.PnF:
                     StrokeThickness = 1;
                     AntiAliasing = true;
                     break;
+
                 default:
-                    throw new ArgumentOutOfRangeException(nameof(value), (object)value, LocalizedStrings.InvalidValue);
+                    throw new ArgumentOutOfRangeException( nameof( value ),  value, LocalizedStrings.InvalidValue );
             }
             _drawStyle = value;
-            RaisePropertyChanged(nameof(DrawStyle));
+            RaisePropertyChanged( nameof( DrawStyle ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30 )]
     public System.Windows.Media.Color DownFillColor
     {
         get => _downFillColor;
@@ -184,11 +190,11 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _downFillColor == value )
                 return;
             _downFillColor = value;
-            RaisePropertyChanged(nameof(DownFillColor));
+            RaisePropertyChanged( nameof( DownFillColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Increase", Description = "ColorOfIncreaseCandle", GroupName = "Style", Order = 32 /*0x20*/)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Increase", Description = "ColorOfIncreaseCandle", GroupName = "Style", Order = 32 /*0x20*/)]
     public System.Windows.Media.Color UpFillColor
     {
         get => _upFillColor;
@@ -197,11 +203,11 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _upFillColor == value )
                 return;
             _upFillColor = value;
-            RaisePropertyChanged(nameof(UpFillColor));
+            RaisePropertyChanged( nameof( UpFillColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "DecreaseBorder", Description = "DecreaseBorderDesc", GroupName = "Style", Order = 31 /*0x1F*/)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "DecreaseBorder", Description = "DecreaseBorderDesc", GroupName = "Style", Order = 31 /*0x1F*/)]
     public System.Windows.Media.Color DownBorderColor
     {
         get => _downBorderColor;
@@ -210,11 +216,11 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _downBorderColor == value )
                 return;
             _downBorderColor = value;
-            RaisePropertyChanged(nameof(DownBorderColor));
+            RaisePropertyChanged( nameof( DownBorderColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "IncreaseBorder", Description = "IncreaseBorderDesc", GroupName = "Style", Order = 33)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "IncreaseBorder", Description = "IncreaseBorderDesc", GroupName = "Style", Order = 33 )]
     public System.Windows.Media.Color UpBorderColor
     {
         get => _upBorderColor;
@@ -223,11 +229,11 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _upBorderColor == value )
                 return;
             _upBorderColor = value;
-            RaisePropertyChanged(nameof(UpBorderColor));
+            RaisePropertyChanged( nameof( UpBorderColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "LineWidth", Description = "LineWidthDesc", GroupName = "Style", Order = 40)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "LineWidth", Description = "LineWidthDesc", GroupName = "Style", Order = 40 )]
     public int StrokeThickness
     {
         get => _strokeThickness;
@@ -237,12 +243,12 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
                 return;
             _strokeThickness = value;
             if ( _strokeThickness < 1 || _strokeThickness > 10 )
-                throw new ArgumentOutOfRangeException(nameof(value), (object)value, LocalizedStrings.InvalidValue);
-            RaisePropertyChanged(nameof(StrokeThickness));
+                throw new ArgumentOutOfRangeException( nameof( value ),  value, LocalizedStrings.InvalidValue );
+            RaisePropertyChanged( nameof( StrokeThickness ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "AntiAliasing", Description = "CandlesRenderAntiAliasing", GroupName = "Style", Order = 40)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "AntiAliasing", Description = "CandlesRenderAntiAliasing", GroupName = "Style", Order = 40 )]
     public bool AntiAliasing
     {
         get => _antiAliasing;
@@ -251,41 +257,37 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _antiAliasing == value )
                 return;
             _antiAliasing = value;
-            RaisePropertyChanged(nameof(AntiAliasing));
+            RaisePropertyChanged( nameof( AntiAliasing ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "LineColor", Description = "LineColorDot", GroupName = "Style", Order = 46)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "LineColor", Description = "LineColorDot", GroupName = "Style", Order = 46 )]
     public System.Windows.Media.Color? LineColor
     {
         get => _lineColor;
         set
         {
-            System.Windows.Media.Color? zgRuR77srSeQq = _lineColor;
-            System.Windows.Media.Color? nullable = value;
-            if ( ( zgRuR77srSeQq.HasValue == nullable.HasValue ? ( zgRuR77srSeQq.HasValue ? ( zgRuR77srSeQq.GetValueOrDefault() == nullable.GetValueOrDefault() ? 1 : 0 ) : 1 ) : 0 ) != 0 )
+            if ( ( _lineColor.HasValue == value.HasValue ? ( _lineColor.HasValue ? ( _lineColor.GetValueOrDefault() == value.GetValueOrDefault() ? 1 : 0 ) : 1 ) : 0 ) != 0 )
                 return;
             _lineColor = value;
-            RaisePropertyChanged(nameof(LineColor));
+            RaisePropertyChanged( nameof( LineColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "AreaColor", Description = "AreaColorDot", GroupName = "Style", Order = 47)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "AreaColor", Description = "AreaColorDot", GroupName = "Style", Order = 47 )]
     public System.Windows.Media.Color? AreaColor
     {
         get => _areaColor;
         set
         {
-            System.Windows.Media.Color? z1qvt9yuVxTg7 = _areaColor;
-            System.Windows.Media.Color? nullable = value;
-            if ( ( z1qvt9yuVxTg7.HasValue == nullable.HasValue ? ( z1qvt9yuVxTg7.HasValue ? ( z1qvt9yuVxTg7.GetValueOrDefault() == nullable.GetValueOrDefault() ? 1 : 0 ) : 1 ) : 0 ) != 0 )
+            if ( ( _areaColor.HasValue == value.HasValue ? ( _areaColor.HasValue ? ( _areaColor.GetValueOrDefault() == value.GetValueOrDefault() ? 1 : 0 ) : 1 ) : 0 ) != 0 )
                 return;
             _areaColor = value;
-            RaisePropertyChanged(nameof(AreaColor));
+            RaisePropertyChanged( nameof( AreaColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Marker", Description = "ShowAxisMarker", GroupName = "Style", Order = 50)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Marker", Description = "ShowAxisMarker", GroupName = "Style", Order = 50 )]
     public bool ShowAxisMarker
     {
         get => _showAxisMarker;
@@ -294,201 +296,199 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _showAxisMarker == value )
                 return;
             _showAxisMarker = value;
-            RaisePropertyChanged(nameof(ShowAxisMarker));
+            RaisePropertyChanged( nameof( ShowAxisMarker ) );
         }
     }
 
     [DataMember]
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "PriceStep", Description = "MinPriceStep", GroupName = "Common", Order = 1004)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "PriceStep", Description = "MinPriceStep", GroupName = "Common", Order = 1004 )]
     public Decimal? PriceStep
     {
         get => _priceStep;
         set
         {
-            Decimal? kpsOhjyC4ZcEekGzw = _priceStep;
-            Decimal? nullable1 = value;
-            if ( kpsOhjyC4ZcEekGzw.GetValueOrDefault() == nullable1.GetValueOrDefault() & kpsOhjyC4ZcEekGzw.HasValue == nullable1.HasValue )
+            if ( _priceStep.GetValueOrDefault() == value.GetValueOrDefault() & _priceStep.HasValue == value.HasValue )
                 return;
-            Decimal? nullable2 = value;
-            Decimal num = 0M;
-            if ( nullable2.GetValueOrDefault() <= num & nullable2.HasValue )
-                throw new ArgumentOutOfRangeException(nameof(value), (object)value, LocalizedStrings.InvalidValue);
+
+            if ( value.GetValueOrDefault() <= 0M & value.HasValue )
+                throw new ArgumentOutOfRangeException( nameof( value ),  value, LocalizedStrings.InvalidValue );
+
             _priceStep = value;
-            RaisePropertyChanged(nameof(PriceStep));
+            RaisePropertyChanged( nameof( PriceStep ) );
         }
     }
 
-    [Browsable(false)]
+    
     public Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?> Colorer
     {
         get => _colorer;
         set
         {
             _colorer = value;
-            RaisePropertyChanged(nameof(Colorer));
+            RaisePropertyChanged( nameof( Colorer ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Timeframe2Multiplier", Description = "TimeframeMultiplierDescr", GroupName = "VolumeSettings", Order = 3)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Timeframe2Multiplier", Description = "TimeframeMultiplierDescr", GroupName = "VolumeSettings", Order = 3 )]
     public int? Timeframe2Multiplier
     {
         get => _timeframe2Multiplier;
         set
-        {            
+        {
             if ( _timeframe2Multiplier.GetValueOrDefault() == value.GetValueOrDefault() & _timeframe2Multiplier.HasValue == value.HasValue )
                 return;
-            
-            if ( value.GetValueOrDefault() < 1 & value.HasValue )
-                throw new ArgumentOutOfRangeException(nameof(Timeframe2Multiplier));
 
-            SetField<int?>(ref _timeframe2Multiplier, value, nameof(Timeframe2Multiplier));
+            if ( value.GetValueOrDefault() < 1 & value.HasValue )
+                throw new ArgumentOutOfRangeException( nameof( Timeframe2Multiplier ) );
+
+            SetField<int?>( ref _timeframe2Multiplier, value, nameof( Timeframe2Multiplier ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Timeframe3Multiplier", Description = "TimeframeMultiplierDescr", GroupName = "VolumeSettings", Order = 4)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Timeframe3Multiplier", Description = "TimeframeMultiplierDescr", GroupName = "VolumeSettings", Order = 4 )]
     public int? Timeframe3Multiplier
     {
         get => _timeframe3Multiplier;
         set
-        {            
+        {
             if ( _timeframe3Multiplier.GetValueOrDefault() == value.GetValueOrDefault() & _timeframe3Multiplier.HasValue == value.HasValue )
                 return;
-            
-            if ( value.GetValueOrDefault() < 1 & value.HasValue )
-                throw new ArgumentOutOfRangeException(nameof(Timeframe3Multiplier));
 
-            SetField<int?>(ref _timeframe3Multiplier, value, nameof(Timeframe3Multiplier));
+            if ( value.GetValueOrDefault() < 1 & value.HasValue )
+                throw new ArgumentOutOfRangeException( nameof( Timeframe3Multiplier ) );
+
+            SetField<int?>( ref _timeframe3Multiplier, value, nameof( Timeframe3Multiplier ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "FontColor", Description = "FontColorDot", GroupName = "VolumeSettings", Order = 5)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "FontColor", Description = "FontColorDot", GroupName = "VolumeSettings", Order = 5 )]
     public System.Windows.Media.Color? FontColor
     {
         get => _fontColor;
-        set => SetField<System.Windows.Media.Color?>(ref _fontColor, value, nameof(FontColor));
+        set => SetField<System.Windows.Media.Color?>( ref _fontColor, value, nameof( FontColor ) );
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Timeframe2GridColor", Description = "Timeframe2GridColorDot", GroupName = "VolumeSettings", Order = 6)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Timeframe2GridColor", Description = "Timeframe2GridColorDot", GroupName = "VolumeSettings", Order = 6 )]
     public System.Windows.Media.Color? Timeframe2Color
     {
         get => _timeframe2Color;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _timeframe2Color, value, nameof(Timeframe2Color));
+            SetField<System.Windows.Media.Color?>( ref _timeframe2Color, value, nameof( Timeframe2Color ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Timeframe2FrameColor", Description = "Timeframe2FrameColorDot", GroupName = "VolumeSettings", Order = 7)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Timeframe2FrameColor", Description = "Timeframe2FrameColorDot", GroupName = "VolumeSettings", Order = 7 )]
     public System.Windows.Media.Color? Timeframe2FrameColor
     {
         get => _timeframe2FrameColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _timeframe2FrameColor, value, nameof(Timeframe2FrameColor));
+            SetField<System.Windows.Media.Color?>( ref _timeframe2FrameColor, value, nameof( Timeframe2FrameColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Timeframe3GridColor", Description = "Timeframe3GridColorDot", GroupName = "VolumeSettings", Order = 8)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Timeframe3GridColor", Description = "Timeframe3GridColorDot", GroupName = "VolumeSettings", Order = 8 )]
     public System.Windows.Media.Color? Timeframe3Color
     {
         get => _timeframe3Color;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _timeframe3Color, value, nameof(Timeframe3Color));
+            SetField<System.Windows.Media.Color?>( ref _timeframe3Color, value, nameof( Timeframe3Color ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "MaxVolumeColor", Description = "MaxVolumeColorDot", GroupName = "VolumeSettings", Order = 9)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "MaxVolumeColor", Description = "MaxVolumeColorDot", GroupName = "VolumeSettings", Order = 9 )]
     public System.Windows.Media.Color? MaxVolumeColor
     {
         get => _maxVolumeColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _maxVolumeColor, value, nameof(MaxVolumeColor));
+            SetField<System.Windows.Media.Color?>( ref _maxVolumeColor, value, nameof( MaxVolumeColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "MaxVolumeBackground", Description = "MaxVolumeBackground", GroupName = "VolumeSettings", Order = 9)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "MaxVolumeBackground", Description = "MaxVolumeBackground", GroupName = "VolumeSettings", Order = 9 )]
     public System.Windows.Media.Color? MaxVolumeBackground
     {
         get => _maxVolumeBackground;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _maxVolumeBackground, value, nameof(MaxVolumeBackground));
+            SetField<System.Windows.Media.Color?>( ref _maxVolumeBackground, value, nameof( MaxVolumeBackground ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "ClusterLineColor", Description = "ClusterLineColorDot", GroupName = "VolumeSettings", Order = 10)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "ClusterLineColor", Description = "ClusterLineColorDot", GroupName = "VolumeSettings", Order = 10 )]
     public System.Windows.Media.Color? ClusterLineColor
     {
         get => _clusterLineColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _clusterLineColor, value, nameof(ClusterLineColor));
+            SetField<System.Windows.Media.Color?>( ref _clusterLineColor, value, nameof( ClusterLineColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "ClusterSeparatorLineColor", Description = "ClusterSeparatorLineColorDot", GroupName = "VolumeSettings", Order = 11)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "ClusterSeparatorLineColor", Description = "ClusterSeparatorLineColorDot", GroupName = "VolumeSettings", Order = 11 )]
     public System.Windows.Media.Color? ClusterSeparatorLineColor
     {
         get => _clusterSeparatorLineColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _clusterSeparatorLineColor, value, nameof(ClusterSeparatorLineColor));
+            SetField<System.Windows.Media.Color?>( ref _clusterSeparatorLineColor, value, nameof( ClusterSeparatorLineColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "ClusterTextColor", Description = "ClusterTextColorDot", GroupName = "VolumeSettings", Order = 12)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "ClusterTextColor", Description = "ClusterTextColorDot", GroupName = "VolumeSettings", Order = 12 )]
     public System.Windows.Media.Color? ClusterTextColor
     {
         get => _clusterTextColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _clusterTextColor, value, nameof(ClusterTextColor));
+            SetField<System.Windows.Media.Color?>( ref _clusterTextColor, value, nameof( ClusterTextColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "ClusterColor", Description = "ClusterColorDot", GroupName = "VolumeSettings", Order = 13)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "ClusterColor", Description = "ClusterColorDot", GroupName = "VolumeSettings", Order = 13 )]
     public System.Windows.Media.Color? ClusterColor
     {
         get => _clusterColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _clusterColor, value, nameof(ClusterColor));
+            SetField<System.Windows.Media.Color?>( ref _clusterColor, value, nameof( ClusterColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "ClusterMaxVolumeColor", Description = "ClusterMaxVolumeColorDot", GroupName = "VolumeSettings", Order = 14)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "ClusterMaxVolumeColor", Description = "ClusterMaxVolumeColorDot", GroupName = "VolumeSettings", Order = 14 )]
     public System.Windows.Media.Color? ClusterMaxColor
     {
         get => _clusterMaxColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _clusterMaxColor, value, nameof(ClusterMaxColor));
+            SetField<System.Windows.Media.Color?>( ref _clusterMaxColor, value, nameof( ClusterMaxColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "ShowHorizontalVolumes", Description = "ShowHorizontalVolumesDot", GroupName = "VolumeSettings", Order = 15)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "ShowHorizontalVolumes", Description = "ShowHorizontalVolumesDot", GroupName = "VolumeSettings", Order = 15 )]
     public bool ShowHorizontalVolumes
     {
         get => _showHorizontalVolumes;
         set
         {
-            SetField<bool>(ref _showHorizontalVolumes, value, nameof(ShowHorizontalVolumes));
+            SetField<bool>( ref _showHorizontalVolumes, value, nameof( ShowHorizontalVolumes ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "LocalHorizontalVolumes", Description = "LocalHorizontalVolumesDot", GroupName = "VolumeSettings", Order = 16 /*0x10*/)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "LocalHorizontalVolumes", Description = "LocalHorizontalVolumesDot", GroupName = "VolumeSettings", Order = 16 /*0x10*/)]
     public bool LocalHorizontalVolumes
     {
         get => _localHorizontalVolumes;
         set
         {
-            SetField<bool>(ref _localHorizontalVolumes, value, nameof(LocalHorizontalVolumes));
+            SetField<bool>( ref _localHorizontalVolumes, value, nameof( LocalHorizontalVolumes ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "HorizontalVolumeWidthFraction", Description = "HorizontalVolumeWidthFractionDot", GroupName = "VolumeSettings", Order = 17)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "HorizontalVolumeWidthFraction", Description = "HorizontalVolumeWidthFractionDot", GroupName = "VolumeSettings", Order = 17 )]
     public double HorizontalVolumeWidthFraction
     {
         get => _horizontalVolumeWidthFraction;
@@ -497,45 +497,44 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _horizontalVolumeWidthFraction == value )
                 return;
             if ( value < 0.0 || value > 1.0 )
-                throw new ArgumentOutOfRangeException(nameof(HorizontalVolumeWidthFraction));
-            SetField<double>(ref _horizontalVolumeWidthFraction, value, nameof(HorizontalVolumeWidthFraction));
+                throw new ArgumentOutOfRangeException( nameof( HorizontalVolumeWidthFraction ) );
+            SetField<double>( ref _horizontalVolumeWidthFraction, value, nameof( HorizontalVolumeWidthFraction ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "HorizontalVolumeColor", Description = "HorizontalVolumeColorDot", GroupName = "VolumeSettings", Order = 18)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "HorizontalVolumeColor", Description = "HorizontalVolumeColorDot", GroupName = "VolumeSettings", Order = 18 )]
     public System.Windows.Media.Color? HorizontalVolumeColor
     {
         get => _horizontalVolumeColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _horizontalVolumeColor, value, nameof(HorizontalVolumeColor));
+            SetField<System.Windows.Media.Color?>( ref _horizontalVolumeColor, value, nameof( HorizontalVolumeColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "HorizontalVolumeFontColor", Description = "HorizontalVolumeFontColorDot", GroupName = "VolumeSettings", Order = 19)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "HorizontalVolumeFontColor", Description = "HorizontalVolumeFontColorDot", GroupName = "VolumeSettings", Order = 19 )]
     public System.Windows.Media.Color? HorizontalVolumeFontColor
     {
         get => _horizontalVolumeFontColor;
         set
         {
-            SetField<System.Windows.Media.Color?>(ref _horizontalVolumeFontColor, value, nameof(HorizontalVolumeFontColor));
+            SetField<System.Windows.Media.Color?>( ref _horizontalVolumeFontColor, value, nameof( HorizontalVolumeFontColor ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "FontFamily", Description = "FontFamily", GroupName = "VolumeSettings", Order = 20)]
-    [ItemsSource(typeof(FontFamilyNamesItemsSource))]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "FontFamily", Description = "FontFamily", GroupName = "VolumeSettings", Order = 20 )]
+    [ItemsSource( typeof( FontFamilyNamesItemsSource ) )]
     public string FontFamily
     {
         get => _fontFamily;
         set
-        {
-            ref string local = ref _fontFamily;
+        {            
             string str = !StringHelper.IsEmpty(value) ? value : throw new ArgumentNullException(nameof(value));
-            SetField<string>(ref local, str, nameof(FontFamily));
+            SetField<string>( ref _fontFamily, str, nameof( FontFamily ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "FontSize", Description = "FontSize", GroupName = "VolumeSettings", Order = 21)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "FontSize", Description = "FontSize", GroupName = "VolumeSettings", Order = 21 )]
     public Decimal FontSize
     {
         get => _fontSize;
@@ -544,57 +543,57 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             if ( _fontSize == value )
                 return;
             if ( value < 7M )
-                throw new ArgumentOutOfRangeException(nameof(value), (object)value, LocalizedStrings.InvalidValue);
-            SetField<Decimal>(ref _fontSize, value, nameof(FontSize));
+                throw new ArgumentOutOfRangeException( nameof( value ),  value, LocalizedStrings.InvalidValue );
+            SetField<Decimal>( ref _fontSize, value, nameof( FontSize ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "FontWeight", Description = "FontWeight", GroupName = "VolumeSettings", Order = 22)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "FontWeight", Description = "FontWeight", GroupName = "VolumeSettings", Order = 22 )]
     public FontWeight FontWeight
     {
         get => _fontWeight;
         set
         {
-            SetField<FontWeight>(ref _fontWeight, value, nameof(FontWeight));
+            SetField<FontWeight>( ref _fontWeight, value, nameof( FontWeight ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Separate", Description = "DrawSeparateVolumes", GroupName = "VolumeSettings", Order = 23)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Separate", Description = "DrawSeparateVolumes", GroupName = "VolumeSettings", Order = 23 )]
     public bool DrawSeparateVolumes
     {
         get => _drawSeparateVolumes;
         set
         {
-            SetField<bool>(ref _drawSeparateVolumes, value, nameof(DrawSeparateVolumes));
+            SetField<bool>( ref _drawSeparateVolumes, value, nameof( DrawSeparateVolumes ) );
         }
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Buy", Description = "BuyColor", GroupName = "VolumeSettings", Order = 24)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Buy", Description = "BuyColor", GroupName = "VolumeSettings", Order = 24 )]
     public System.Windows.Media.Color? BuyColor
     {
         get => _buyColor;
-        set => SetField<System.Windows.Media.Color?>(ref _buyColor, value, nameof(BuyColor));
+        set => SetField<System.Windows.Media.Color?>( ref _buyColor, value, nameof( BuyColor ) );
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Sell", Description = "SellColor", GroupName = "VolumeSettings", Order = 25)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Sell", Description = "SellColor", GroupName = "VolumeSettings", Order = 25 )]
     public System.Windows.Media.Color? SellColor
     {
         get => _sellColor;
-        set => SetField<System.Windows.Media.Color?>(ref _sellColor, value, nameof(SellColor));
+        set => SetField<System.Windows.Media.Color?>( ref _sellColor, value, nameof( SellColor ) );
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Up", Description = "UpTrend", GroupName = "VolumeSettings", Order = 26)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Up", Description = "UpTrend", GroupName = "VolumeSettings", Order = 26 )]
     public System.Windows.Media.Color? UpColor
     {
         get => _upColor;
-        set => SetField<System.Windows.Media.Color?>(ref _upColor, value, nameof(UpColor));
+        set => SetField<System.Windows.Media.Color?>( ref _upColor, value, nameof( UpColor ) );
     }
 
-    [Display(ResourceType = typeof(LocalizedStrings), Name = "Down", Description = "DownTrend", GroupName = "VolumeSettings", Order = 27)]
+    [Display( ResourceType = typeof( LocalizedStrings ), Name = "Down", Description = "DownTrend", GroupName = "VolumeSettings", Order = 27 )]
     public System.Windows.Media.Color? DownColor
     {
         get => _downColor;
-        set => SetField<System.Windows.Media.Color?>(ref _downColor, value, nameof(DownColor));
+        set => SetField<System.Windows.Media.Color?>( ref _downColor, value, nameof( DownColor ) );
     }
 
     System.Drawing.Color IChartCandleElement.DownFillColor
@@ -624,224 +623,193 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
     System.Drawing.Color? IChartCandleElement.LineColor
     {
         get
-        {
-            System.Windows.Media.Color? lineColor = LineColor;
-            ref System.Windows.Media.Color? local = ref lineColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !LineColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( LineColor.GetValueOrDefault().FromWpf() );
         }
+
         set
         {
-            LineColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            LineColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.AreaColor
     {
         get
-        {
-            System.Windows.Media.Color? areaColor = AreaColor;
-            ref System.Windows.Media.Color? local = ref areaColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !AreaColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( AreaColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            AreaColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            AreaColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.FontColor
     {
         get
-        {
-            System.Windows.Media.Color? fontColor = FontColor;
-            ref System.Windows.Media.Color? local = ref fontColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !FontColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( FontColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            FontColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            FontColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.Timeframe2Color
     {
         get
-        {
-            System.Windows.Media.Color? timeframe2Color = Timeframe2Color;
-            ref System.Windows.Media.Color? local = ref timeframe2Color;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !Timeframe2Color.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( Timeframe2Color.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            Timeframe2Color = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            Timeframe2Color = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.Timeframe2FrameColor
     {
         get
-        {
-            System.Windows.Media.Color? timeframe2FrameColor = Timeframe2FrameColor;
-            ref System.Windows.Media.Color? local = ref timeframe2FrameColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !Timeframe2FrameColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( Timeframe2FrameColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            Timeframe2FrameColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            Timeframe2FrameColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.Timeframe3Color
     {
         get
-        {
-            System.Windows.Media.Color? timeframe3Color = Timeframe3Color;
-            ref System.Windows.Media.Color? local = ref timeframe3Color;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !Timeframe3Color.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( Timeframe3Color.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            Timeframe3Color = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            Timeframe3Color = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.MaxVolumeColor
     {
         get
-        {
-            System.Windows.Media.Color? maxVolumeColor = MaxVolumeColor;
-            ref System.Windows.Media.Color? local = ref maxVolumeColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !MaxVolumeColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( MaxVolumeColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            MaxVolumeColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            MaxVolumeColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.ClusterLineColor
     {
         get
-        {
-            System.Windows.Media.Color? clusterLineColor = ClusterLineColor;
-            ref System.Windows.Media.Color? local = ref clusterLineColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !ClusterLineColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( ClusterLineColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            ClusterLineColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            ClusterLineColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.ClusterSeparatorLineColor
     {
         get
-        {
-            System.Windows.Media.Color? separatorLineColor = ClusterSeparatorLineColor;
-            ref System.Windows.Media.Color? local = ref separatorLineColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !ClusterSeparatorLineColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( ClusterSeparatorLineColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            ClusterSeparatorLineColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            ClusterSeparatorLineColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.ClusterTextColor
     {
         get
-        {
-            System.Windows.Media.Color? clusterTextColor = ClusterTextColor;
-            ref System.Windows.Media.Color? local = ref clusterTextColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !ClusterTextColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( ClusterTextColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            ClusterTextColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            ClusterTextColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.ClusterColor
     {
         get
-        {
-            System.Windows.Media.Color? clusterColor = ClusterColor;
-            ref System.Windows.Media.Color? local = ref clusterColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !ClusterColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( ClusterColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            ClusterColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            ClusterColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.ClusterMaxColor
     {
         get
-        {
-            System.Windows.Media.Color? clusterMaxColor = ClusterMaxColor;
-            ref System.Windows.Media.Color? local = ref clusterMaxColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !ClusterMaxColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( ClusterMaxColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            ClusterMaxColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            ClusterMaxColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.HorizontalVolumeColor
     {
         get
-        {
-            System.Windows.Media.Color? horizontalVolumeColor = HorizontalVolumeColor;
-            ref System.Windows.Media.Color? local = ref horizontalVolumeColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !HorizontalVolumeColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( HorizontalVolumeColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            HorizontalVolumeColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            HorizontalVolumeColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.HorizontalVolumeFontColor
     {
         get
-        {
-            System.Windows.Media.Color? horizontalVolumeFontColor = HorizontalVolumeFontColor;
-            ref System.Windows.Media.Color? local = ref horizontalVolumeFontColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !HorizontalVolumeFontColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( HorizontalVolumeFontColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            HorizontalVolumeFontColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            HorizontalVolumeFontColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.BuyColor
     {
         get
-        {
-            System.Windows.Media.Color? buyColor = BuyColor;
-            ref System.Windows.Media.Color? local = ref buyColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !BuyColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( BuyColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            BuyColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            BuyColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
     System.Drawing.Color? IChartCandleElement.SellColor
     {
         get
-        {
-            System.Windows.Media.Color? sellColor = SellColor;
-            ref System.Windows.Media.Color? local = ref sellColor;
-            return !local.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?(local.GetValueOrDefault().FromWpf());
+        {            
+            return !SellColor.HasValue ? new System.Drawing.Color?() : new System.Drawing.Color?( SellColor.GetValueOrDefault().FromWpf() );
         }
         set
         {
-            SellColor = value.HasValue ? new System.Windows.Media.Color?(value.GetValueOrDefault().ToWpf()) : new System.Windows.Media.Color?();
+            SellColor = value.HasValue ? new System.Windows.Media.Color?( value.GetValueOrDefault().ToWpf() ) : new System.Windows.Media.Color?();
         }
     }
 
@@ -849,297 +817,260 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
     {
         get => _drawingColor;
         set
-        {
-            ChartCandleElement.InternalSealClassQMSS v89qiXjFj7EloQmsS0 = new ChartCandleElement.InternalSealClassQMSS();
-            v89qiXjFj7EloQmsS0._colorFunctionGz2 = value;
-            _drawingColor = v89qiXjFj7EloQmsS0._colorFunctionGz2;
+        {            
+            _drawingColor = value;
+
             if ( _drawingColor == null )
-                Colorer = (Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?>)null;
+            {
+                Colorer = null;
+            }                
             else
-                Colorer = new Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?>(v89qiXjFj7EloQmsS0.Method0123);
+            {
+                Colorer = new Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?>( ( dt, p1, p2 ) =>
+                {
+                    var output = value(dt, p1, p2);
+
+                    return !output.HasValue ? new System.Windows.Media.Color?() : new System.Windows.Media.Color?( output.GetValueOrDefault().ToWpf() );
+                } );
+            }                
         }
     }
+    
 
-    public override void Load(SettingsStorage storage)
+    public override void Load( SettingsStorage storage )
     {
-        base.Load(storage);
+        base.Load( storage );
 
-        UpFillColor          = storage.GetValue<int>("UpFillColor", UpFillColor.ToInt()).ToColor();
-        UpBorderColor        = storage.GetValue<int>("UpBorderColor", UpBorderColor.ToInt()).ToColor();
-        DownFillColor        = storage.GetValue<int>("DownFillColor", DownFillColor.ToInt()).ToColor();
-        DownBorderColor      = storage.GetValue<int>("DownBorderColor", DownBorderColor.ToInt()).ToColor();        
-        var lineColorSetting = storage.GetValue<int?>("LineColor", null );        
-        LineColor            = lineColorSetting.HasValue ? new System.Windows.Media.Color?(lineColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();               
-        var AreaColorSetting = storage.GetValue<int?>("AreaColor", null );        
-        AreaColor            = AreaColorSetting.HasValue ? new System.Windows.Media.Color?(AreaColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        DrawStyle            = storage.GetValue<ChartCandleDrawStyles>("DrawStyle", DrawStyle);
-        StrokeThickness      = storage.GetValue<int>("StrokeThickness", StrokeThickness);
-        AntiAliasing         = storage.GetValue<bool>("AntiAliasing", AntiAliasing);
-        ShowAxisMarker       = storage.GetValue<bool>("ShowAxisMarker", ShowAxisMarker);
-        var ClusterSetting = storage.GetValue<SettingsStorage>("Cluster", (SettingsStorage)null);
+        UpFillColor          = storage.GetValue<int>( "UpFillColor", UpFillColor.ToInt() ).ToColor();
+        UpBorderColor        = storage.GetValue<int>( "UpBorderColor", UpBorderColor.ToInt() ).ToColor();
+        DownFillColor        = storage.GetValue<int>( "DownFillColor", DownFillColor.ToInt() ).ToColor();
+        DownBorderColor      = storage.GetValue<int>( "DownBorderColor", DownBorderColor.ToInt() ).ToColor();
+        var lineColorSetting = storage.GetValue<int?>("LineColor", null );
+        LineColor            = lineColorSetting.HasValue ? new System.Windows.Media.Color?( lineColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+        var AreaColorSetting = storage.GetValue<int?>("AreaColor", null );
+        AreaColor            = AreaColorSetting.HasValue ? new System.Windows.Media.Color?( AreaColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+        DrawStyle            = storage.GetValue<ChartCandleDrawStyles>( "DrawStyle", DrawStyle );
+        StrokeThickness      = storage.GetValue<int>( "StrokeThickness", StrokeThickness );
+        AntiAliasing         = storage.GetValue<bool>( "AntiAliasing", AntiAliasing );
+        ShowAxisMarker       = storage.GetValue<bool>( "ShowAxisMarker", ShowAxisMarker );
+        var ClusterSetting   = storage.GetValue<SettingsStorage>("Cluster", (SettingsStorage)null);
         if ( ClusterSetting == null )
             return;
-        LoadCluster(ClusterSetting);
+        LoadCluster( ClusterSetting );
     }
 
-    public override void Save(SettingsStorage storage)
+    public override void Save( SettingsStorage storage )
     {
-        base.Save(storage);
-        storage.SetValue<int>("UpFillColor", UpFillColor.ToInt());
-        storage.SetValue<int>("UpBorderColor", UpBorderColor.ToInt());
-        storage.SetValue<int>("DownFillColor", DownFillColor.ToInt());
-        storage.SetValue<int>("DownBorderColor", DownBorderColor.ToInt());
-        
+        base.Save( storage );
+        storage.SetValue<int>( "UpFillColor", UpFillColor.ToInt() );
+        storage.SetValue<int>( "UpBorderColor", UpBorderColor.ToInt() );
+        storage.SetValue<int>( "DownFillColor", DownFillColor.ToInt() );
+        storage.SetValue<int>( "DownBorderColor", DownBorderColor.ToInt() );
+
         int? lineColorSetting = LineColor.HasValue ? new int?(LineColor.GetValueOrDefault().ToInt()) : new int?();
-        storage.SetValue<int?>("LineColor", lineColorSetting);
-                
+        storage.SetValue<int?>( "LineColor", lineColorSetting );
+
         int? AreaColorSetting = AreaColor.HasValue ? new int?(AreaColor.GetValueOrDefault().ToInt()) : new int?();
-        storage.SetValue<int?>("AreaColor", AreaColorSetting);
-        storage.SetValue<string>("DrawStyle", Converter.To<string>((object)DrawStyle));
-        storage.SetValue<int>("StrokeThickness", StrokeThickness);
-        storage.SetValue<bool>("AntiAliasing", AntiAliasing);
-        storage.SetValue<bool>("ShowAxisMarker", ShowAxisMarker);
-        storage.SetValue<SettingsStorage>("Cluster", SaveCluster());
+        storage.SetValue<int?>( "AreaColor", AreaColorSetting );
+        storage.SetValue<string>( "DrawStyle", Converter.To<string>(  DrawStyle ) );
+        storage.SetValue<int>( "StrokeThickness", StrokeThickness );
+        storage.SetValue<bool>( "AntiAliasing", AntiAliasing );
+        storage.SetValue<bool>( "ShowAxisMarker", ShowAxisMarker );
+        storage.SetValue<SettingsStorage>( "Cluster", SaveCluster() );
     }
 
-    private void LoadCluster(SettingsStorage settings)
+    private void LoadCluster( SettingsStorage settings )
     {
-        Timeframe2Multiplier = settings != null ? settings.GetValue<int?>("Timeframe2Multiplier", Timeframe2Multiplier) : throw new ArgumentNullException("storage");
-        Timeframe3Multiplier = settings.GetValue<int?>("Timeframe3Multiplier", Timeframe3Multiplier);
-        
-        var fontColor = settings.GetValue<int?>("FontColor", new int?());
-        FontColor = fontColor.HasValue ? new System.Windows.Media.Color?(fontColor.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-                
-        var timeframe2ColorSetting = settings.GetValue<int?>("Timeframe2Color", null );        
-        Timeframe2Color = timeframe2ColorSetting.HasValue ? new System.Windows.Media.Color?(timeframe2ColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-                
-        var Timeframe2FrameColorSetting = settings.GetValue<int?>("Timeframe2FrameColor", null );        
-        Timeframe2FrameColor = Timeframe2FrameColorSetting.HasValue ? new System.Windows.Media.Color?(Timeframe2FrameColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var Timeframe3Colorsetting = settings.GetValue<int?>("Timeframe3Color", null );        
-        Timeframe3Color = Timeframe3Colorsetting.HasValue ? new System.Windows.Media.Color?(Timeframe3Colorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var MaxVolumeColorSettings = settings.GetValue<int?>("MaxVolumeColor", null);        
-        MaxVolumeColor = MaxVolumeColorSettings.HasValue ? new System.Windows.Media.Color?(MaxVolumeColorSettings.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var MaxVolumeBackgroundsetting = settings.GetValue<int?>("MaxVolumeBackground", null );        
-        MaxVolumeBackground = MaxVolumeBackgroundsetting.HasValue ? new System.Windows.Media.Color?(MaxVolumeBackgroundsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var clusterSeparatorLineColorsetting = settings.GetValue<int?>("ClusterSeparatorLineColor", null );        
-        ClusterSeparatorLineColor = clusterSeparatorLineColorsetting.HasValue ? new System.Windows.Media.Color?(clusterSeparatorLineColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var ClusterLineColorsetting = settings.GetValue<int?>("ClusterLineColor", null );        
-        ClusterLineColor = ClusterLineColorsetting.HasValue ? new System.Windows.Media.Color?(ClusterLineColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var ClusterTextColorsetting = settings.GetValue<int?>("ClusterTextColor", null );        
-        ClusterTextColor = ClusterTextColorsetting.HasValue ? new System.Windows.Media.Color?(ClusterTextColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
+        Timeframe2Multiplier                 = settings != null ? settings.GetValue<int?>( "Timeframe2Multiplier", Timeframe2Multiplier ) : throw new ArgumentNullException( "storage" );
+        Timeframe3Multiplier                 = settings.GetValue<int?>( "Timeframe3Multiplier", Timeframe3Multiplier );
 
-        
-        var ClusterColorsetting = settings.GetValue<int?>("ClusterColor", null );        
-        ClusterColor = ClusterColorsetting.HasValue ? new System.Windows.Media.Color?(ClusterColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        
-        var ClusterMaxColorSetting = settings.GetValue<int?>("ClusterMaxColor", null );        
-        ClusterMaxColor = ClusterMaxColorSetting.HasValue ? new System.Windows.Media.Color?(ClusterMaxColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        ShowHorizontalVolumes = settings.GetValue<bool>("ShowHorizontalVolumes", false);
-        LocalHorizontalVolumes = settings.GetValue<bool>("LocalHorizontalVolumes", false);
-        HorizontalVolumeWidthFraction = settings.GetValue<double>("HorizontalVolumeWidthFraction", 0.0);
+        var fontColor                        = settings.GetValue<int?>("FontColor", new int?());
+        FontColor                            = fontColor.HasValue ? new System.Windows.Media.Color?( fontColor.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
 
-        
-        var HorizontalVolumeColorSetting = settings.GetValue<int?>("HorizontalVolumeColor", null );        
-        HorizontalVolumeColor = HorizontalVolumeColorSetting.HasValue ? new System.Windows.Media.Color?(HorizontalVolumeColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
+        var timeframe2ColorSetting           = settings.GetValue<int?>("Timeframe2Color", null );
+        Timeframe2Color                      = timeframe2ColorSetting.HasValue ? new System.Windows.Media.Color?( timeframe2ColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
 
-        
-        var HorizontalVolumeFontColorSetting = settings.GetValue<int?>("HorizontalVolumeFontColor", null );        
-        HorizontalVolumeFontColor = HorizontalVolumeFontColorSetting.HasValue ? new System.Windows.Media.Color?(HorizontalVolumeFontColorSetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
+        var Timeframe2FrameColorSetting      = settings.GetValue<int?>("Timeframe2FrameColor", null );
+        Timeframe2FrameColor                 = Timeframe2FrameColorSetting.HasValue ? new System.Windows.Media.Color?( Timeframe2FrameColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
 
-        PriceStep = settings.GetValue<Decimal?>("PriceStep", new Decimal?());
-        FontFamily = settings.GetValue<string>("FontFamily", FontFamily);
-        FontSize = settings.GetValue<Decimal>("FontSize", FontSize);
-        FontWeight = FontWeight.FromOpenTypeWeight(settings.GetValue<int>("FontWeight", FontWeight.ToOpenTypeWeight()));
-        DrawSeparateVolumes = settings.GetValue<bool>("DrawSeparateVolumes", DrawSeparateVolumes);
-        SettingsStorage settingsStorage13 = settings;
-        
-        var BuyColorsetting = settings.GetValue<int?>("BuyColor", null );        
-        BuyColor = BuyColorsetting.HasValue ? new System.Windows.Media.Color?(BuyColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var SellColorsetting = settings.GetValue<int?>("SellColor", null );        
-        SellColor = SellColorsetting.HasValue ? new System.Windows.Media.Color?(SellColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var UpColorsetting = settings.GetValue<int?>("UpColor", null);
-        
-        UpColor = UpColorsetting.HasValue ? new System.Windows.Media.Color?(UpColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
-        
-        var DownColorsetting = settings.GetValue<int?>("DownColor", null );
-        
-        DownColor = DownColorsetting.HasValue ? new System.Windows.Media.Color?(DownColorsetting.GetValueOrDefault().ToColor()) : new System.Windows.Media.Color?();
+        var Timeframe3Colorsetting           = settings.GetValue<int?>("Timeframe3Color", null );
+        Timeframe3Color                      = Timeframe3Colorsetting.HasValue ? new System.Windows.Media.Color?( Timeframe3Colorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var MaxVolumeColorSettings           = settings.GetValue<int?>("MaxVolumeColor", null);
+        MaxVolumeColor                       = MaxVolumeColorSettings.HasValue ? new System.Windows.Media.Color?( MaxVolumeColorSettings.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var MaxVolumeBackgroundsetting       = settings.GetValue<int?>("MaxVolumeBackground", null );
+        MaxVolumeBackground                  = MaxVolumeBackgroundsetting.HasValue ? new System.Windows.Media.Color?( MaxVolumeBackgroundsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var clusterSeparatorLineColorsetting = settings.GetValue<int?>("ClusterSeparatorLineColor", null );
+        ClusterSeparatorLineColor            = clusterSeparatorLineColorsetting.HasValue ? new System.Windows.Media.Color?( clusterSeparatorLineColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var ClusterLineColorsetting          = settings.GetValue<int?>("ClusterLineColor", null );
+        ClusterLineColor                     = ClusterLineColorsetting.HasValue ? new System.Windows.Media.Color?( ClusterLineColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var ClusterTextColorsetting          = settings.GetValue<int?>("ClusterTextColor", null );
+        ClusterTextColor                     = ClusterTextColorsetting.HasValue ? new System.Windows.Media.Color?( ClusterTextColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+
+        var ClusterColorsetting              = settings.GetValue<int?>("ClusterColor", null );
+        ClusterColor                         = ClusterColorsetting.HasValue ? new System.Windows.Media.Color?( ClusterColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+
+        var ClusterMaxColorSetting           = settings.GetValue<int?>("ClusterMaxColor", null );
+        ClusterMaxColor                      = ClusterMaxColorSetting.HasValue ? new System.Windows.Media.Color?( ClusterMaxColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+        ShowHorizontalVolumes                = settings.GetValue<bool>( "ShowHorizontalVolumes", false );
+        LocalHorizontalVolumes               = settings.GetValue<bool>( "LocalHorizontalVolumes", false );
+        HorizontalVolumeWidthFraction        = settings.GetValue<double>( "HorizontalVolumeWidthFraction", 0.0 );
+
+
+        var HorizontalVolumeColorSetting     = settings.GetValue<int?>("HorizontalVolumeColor", null );
+        HorizontalVolumeColor                = HorizontalVolumeColorSetting.HasValue ? new System.Windows.Media.Color?( HorizontalVolumeColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+
+        var HorizontalVolumeFontColorSetting = settings.GetValue<int?>("HorizontalVolumeFontColor", null );
+        HorizontalVolumeFontColor            = HorizontalVolumeFontColorSetting.HasValue ? new System.Windows.Media.Color?( HorizontalVolumeFontColorSetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        PriceStep                            = settings.GetValue<Decimal?>( "PriceStep", new Decimal?() );
+        FontFamily                           = settings.GetValue<string>( "FontFamily", FontFamily );
+        FontSize                             = settings.GetValue<Decimal>( "FontSize", FontSize );
+        FontWeight                           = FontWeight.FromOpenTypeWeight( settings.GetValue<int>( "FontWeight", FontWeight.ToOpenTypeWeight() ) );
+        DrawSeparateVolumes                  = settings.GetValue<bool>( "DrawSeparateVolumes", DrawSeparateVolumes );
+        SettingsStorage settingsStorage13    = settings;
+
+        var BuyColorsetting                  = settings.GetValue<int?>("BuyColor", null );
+        BuyColor                             = BuyColorsetting.HasValue ? new System.Windows.Media.Color?( BuyColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var SellColorsetting                 = settings.GetValue<int?>("SellColor", null );
+        SellColor                            = SellColorsetting.HasValue ? new System.Windows.Media.Color?( SellColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var UpColorsetting                   = settings.GetValue<int?>("UpColor", null);
+
+        UpColor                              = UpColorsetting.HasValue ? new System.Windows.Media.Color?( UpColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
+
+        var DownColorsetting                 = settings.GetValue<int?>("DownColor", null );
+
+        DownColor                            = DownColorsetting.HasValue ? new System.Windows.Media.Color?( DownColorsetting.GetValueOrDefault().ToColor() ) : new System.Windows.Media.Color?();
     }
 
     private SettingsStorage SaveCluster()
     {
         SettingsStorage settingsStorage = new SettingsStorage();
-        settingsStorage.SetValue<int?>("Timeframe2Multiplier", Timeframe2Multiplier);
-        settingsStorage.SetValue<int?>("Timeframe3Multiplier", Timeframe3Multiplier);
-        System.Windows.Media.Color? nullable = FontColor;
-        ref System.Windows.Media.Color? local1 = ref nullable;
-        settingsStorage.SetValue<int?>("FontColor", local1.HasValue ? new int?(local1.GetValueOrDefault().ToInt()) : new int?());
-        nullable = Timeframe2Color;
-        ref System.Windows.Media.Color? local2 = ref nullable;
-        settingsStorage.SetValue<int?>("Timeframe2Color", local2.HasValue ? new int?(local2.GetValueOrDefault().ToInt()) : new int?());
-        nullable = Timeframe2FrameColor;
-        ref System.Windows.Media.Color? local3 = ref nullable;
-        settingsStorage.SetValue<int?>("Timeframe2FrameColor", local3.HasValue ? new int?(local3.GetValueOrDefault().ToInt()) : new int?());
-        nullable = Timeframe3Color;
-        ref System.Windows.Media.Color? local4 = ref nullable;
-        settingsStorage.SetValue<int?>("Timeframe3Color", local4.HasValue ? new int?(local4.GetValueOrDefault().ToInt()) : new int?());
-        nullable = MaxVolumeColor;
-        ref System.Windows.Media.Color? local5 = ref nullable;
-        settingsStorage.SetValue<int?>("MaxVolumeColor", local5.HasValue ? new int?(local5.GetValueOrDefault().ToInt()) : new int?());
-        nullable = MaxVolumeBackground;
-        ref System.Windows.Media.Color? local6 = ref nullable;
-        settingsStorage.SetValue<int?>("MaxVolumeBackground", local6.HasValue ? new int?(local6.GetValueOrDefault().ToInt()) : new int?());
-        nullable = ClusterLineColor;
-        ref System.Windows.Media.Color? local7 = ref nullable;
-        settingsStorage.SetValue<int?>("ClusterLineColor", local7.HasValue ? new int?(local7.GetValueOrDefault().ToInt()) : new int?());
-        nullable = ClusterSeparatorLineColor;
-        ref System.Windows.Media.Color? local8 = ref nullable;
-        settingsStorage.SetValue<int?>("ClusterSeparatorLineColor", local8.HasValue ? new int?(local8.GetValueOrDefault().ToInt()) : new int?());
-        nullable = ClusterTextColor;
-        ref System.Windows.Media.Color? local9 = ref nullable;
-        settingsStorage.SetValue<int?>("ClusterTextColor", local9.HasValue ? new int?(local9.GetValueOrDefault().ToInt()) : new int?());
-        nullable = ClusterColor;
-        ref System.Windows.Media.Color? local10 = ref nullable;
-        settingsStorage.SetValue<int?>("ClusterColor", local10.HasValue ? new int?(local10.GetValueOrDefault().ToInt()) : new int?());
-        nullable = ClusterMaxColor;
-        ref System.Windows.Media.Color? local11 = ref nullable;
-        settingsStorage.SetValue<int?>("ClusterMaxColor", local11.HasValue ? new int?(local11.GetValueOrDefault().ToInt()) : new int?());
-        settingsStorage.SetValue<bool>("ShowHorizontalVolumes", ShowHorizontalVolumes);
-        settingsStorage.SetValue<bool>("LocalHorizontalVolumes", LocalHorizontalVolumes);
-        settingsStorage.SetValue<double>("HorizontalVolumeWidthFraction", HorizontalVolumeWidthFraction);
-        nullable = HorizontalVolumeColor;
-        ref System.Windows.Media.Color? local12 = ref nullable;
-        settingsStorage.SetValue<int?>("HorizontalVolumeColor", local12.HasValue ? new int?(local12.GetValueOrDefault().ToInt()) : new int?());
-        nullable = HorizontalVolumeFontColor;
-        ref System.Windows.Media.Color? local13 = ref nullable;
-        settingsStorage.SetValue<int?>("HorizontalVolumeFontColor", local13.HasValue ? new int?(local13.GetValueOrDefault().ToInt()) : new int?());
-        settingsStorage.SetValue<Decimal?>("PriceStep", PriceStep);
-        settingsStorage.SetValue<string>("FontFamily", FontFamily);
-        settingsStorage.SetValue<Decimal>("FontSize", FontSize);
-        settingsStorage.SetValue<int>("FontWeight", FontWeight.ToOpenTypeWeight());
-        settingsStorage.SetValue<bool>("DrawSeparateVolumes", DrawSeparateVolumes);
-        nullable = BuyColor;
-        ref System.Windows.Media.Color? local14 = ref nullable;
-        settingsStorage.SetValue<int?>("BuyColor", local14.HasValue ? new int?(local14.GetValueOrDefault().ToInt()) : new int?());
-        nullable = SellColor;
-        ref System.Windows.Media.Color? local15 = ref nullable;
-        settingsStorage.SetValue<int?>("SellColor", local15.HasValue ? new int?(local15.GetValueOrDefault().ToInt()) : new int?());
-        nullable = UpColor;
-        ref System.Windows.Media.Color? local16 = ref nullable;
-        settingsStorage.SetValue<int?>("UpColor", local16.HasValue ? new int?(local16.GetValueOrDefault().ToInt()) : new int?());
-        nullable = DownColor;
-        ref System.Windows.Media.Color? local17 = ref nullable;
-        settingsStorage.SetValue<int?>("DownColor", local17.HasValue ? new int?(local17.GetValueOrDefault().ToInt()) : new int?());
+        settingsStorage.SetValue<int?>( "Timeframe2Multiplier"           , Timeframe2Multiplier );
+        settingsStorage.SetValue<int?>( "Timeframe3Multiplier"           , Timeframe3Multiplier );        
+        settingsStorage.SetValue<int?>( "FontColor"                      , FontColor.HasValue ? new int?( FontColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "Timeframe2Color"                , Timeframe2Color.HasValue ? new int?( Timeframe2Color.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "Timeframe2FrameColor"           , Timeframe2FrameColor.HasValue ? new int?( Timeframe2FrameColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "Timeframe3Color"                , Timeframe3Color.HasValue ? new int?( Timeframe3Color.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "MaxVolumeColor"                 , MaxVolumeColor.HasValue ? new int?( MaxVolumeColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "MaxVolumeBackground"            , MaxVolumeBackground.HasValue ? new int?( MaxVolumeBackground.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "ClusterLineColor"               , ClusterLineColor.HasValue ? new int?( ClusterLineColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "ClusterSeparatorLineColor"      , ClusterSeparatorLineColor.HasValue ? new int?( ClusterSeparatorLineColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "ClusterTextColor"               , ClusterTextColor.HasValue ? new int?( ClusterTextColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "ClusterColor"                   , ClusterColor.HasValue ? new int?( ClusterColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "ClusterMaxColor"                , ClusterMaxColor.HasValue ? new int?( ClusterMaxColor.GetValueOrDefault().ToInt() ) : new int?() );
+        settingsStorage.SetValue<bool>( "ShowHorizontalVolumes"          , ShowHorizontalVolumes );
+        settingsStorage.SetValue<bool>( "LocalHorizontalVolumes"         , LocalHorizontalVolumes );
+        settingsStorage.SetValue<double>( "HorizontalVolumeWidthFraction", HorizontalVolumeWidthFraction );        
+        settingsStorage.SetValue<int?>( "HorizontalVolumeColor"          , HorizontalVolumeColor.HasValue ? new int?( HorizontalVolumeColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "HorizontalVolumeFontColor"      , HorizontalVolumeFontColor.HasValue ? new int?( HorizontalVolumeFontColor.GetValueOrDefault().ToInt() ) : new int?() );
+        settingsStorage.SetValue<Decimal?>( "PriceStep"                  , PriceStep );
+        settingsStorage.SetValue<string>( "FontFamily"                   , FontFamily );
+        settingsStorage.SetValue<Decimal>( "FontSize"                    , FontSize );
+        settingsStorage.SetValue<int>( "FontWeight"                      , FontWeight.ToOpenTypeWeight() );
+        settingsStorage.SetValue<bool>( "DrawSeparateVolumes"            , DrawSeparateVolumes );        
+        settingsStorage.SetValue<int?>( "BuyColor"                       , BuyColor.HasValue ? new int?( BuyColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "SellColor"                      , SellColor.HasValue ? new int?( SellColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "UpColor"                        , UpColor.HasValue ? new int?( UpColor.GetValueOrDefault().ToInt() ) : new int?() );        
+        settingsStorage.SetValue<int?>( "DownColor"                      , DownColor.HasValue ? new int?( DownColor.GetValueOrDefault().ToInt() ) : new int?() );
+
         return settingsStorage;
     }
 
-    internal override ChartCandleElement Clone(ChartCandleElement _param1)
+    internal override ChartCandleElement Clone( ChartCandleElement to )
     {
-        _param1 = base.Clone(_param1);
-        _param1.DownFillColor = DownFillColor;
-        _param1.UpFillColor = UpFillColor;
-        _param1.DownBorderColor = DownBorderColor;
-        _param1.UpBorderColor = UpBorderColor;
-        _param1.AntiAliasing = AntiAliasing;
-        _param1.StrokeThickness = StrokeThickness;
-        _param1.LineColor = LineColor;
-        _param1.AreaColor = AreaColor;
-        _param1.DrawStyle = DrawStyle;
-        _param1.ShowAxisMarker = ShowAxisMarker;
-        _param1.FontColor = FontColor;
-        _param1.Timeframe2Color = Timeframe2Color;
-        _param1.Timeframe2FrameColor = Timeframe2FrameColor;
-        _param1.Timeframe3Color = Timeframe3Color;
-        _param1.MaxVolumeColor = MaxVolumeColor;
-        _param1.MaxVolumeBackground = MaxVolumeBackground;
-        _param1.Timeframe2Multiplier = Timeframe2Multiplier;
-        _param1.Timeframe3Multiplier = Timeframe3Multiplier;
-        _param1.ClusterLineColor = ClusterLineColor;
-        _param1.ClusterSeparatorLineColor = ClusterSeparatorLineColor;
-        _param1.ClusterTextColor = ClusterTextColor;
-        _param1.ClusterColor = ClusterColor;
-        _param1.ClusterMaxColor = ClusterMaxColor;
-        _param1.ShowHorizontalVolumes = ShowHorizontalVolumes;
-        _param1.LocalHorizontalVolumes = LocalHorizontalVolumes;
-        _param1.HorizontalVolumeWidthFraction = HorizontalVolumeWidthFraction;
-        _param1.HorizontalVolumeColor = HorizontalVolumeColor;
-        _param1.HorizontalVolumeFontColor = HorizontalVolumeFontColor;
-        _param1.FontFamily = FontFamily;
-        _param1.FontSize = FontSize;
-        _param1.FontWeight = FontWeight;
-        _param1.DrawSeparateVolumes = DrawSeparateVolumes;
-        _param1.BuyColor = BuyColor;
-        _param1.SellColor = SellColor;
-        _param1.UpColor = UpColor;
-        _param1.DownColor = DownColor;
-        return _param1;
+        to                               = base.Clone( to );
+        to.DownFillColor                 = DownFillColor;
+        to.UpFillColor                   = UpFillColor;
+        to.DownBorderColor               = DownBorderColor;
+        to.UpBorderColor                 = UpBorderColor;
+        to.AntiAliasing                  = AntiAliasing;
+        to.StrokeThickness               = StrokeThickness;
+        to.LineColor                     = LineColor;
+        to.AreaColor                     = AreaColor;
+        to.DrawStyle                     = DrawStyle;
+        to.ShowAxisMarker                = ShowAxisMarker;
+        to.FontColor                     = FontColor;
+        to.Timeframe2Color               = Timeframe2Color;
+        to.Timeframe2FrameColor          = Timeframe2FrameColor;
+        to.Timeframe3Color               = Timeframe3Color;
+        to.MaxVolumeColor                = MaxVolumeColor;
+        to.MaxVolumeBackground           = MaxVolumeBackground;
+        to.Timeframe2Multiplier          = Timeframe2Multiplier;
+        to.Timeframe3Multiplier          = Timeframe3Multiplier;
+        to.ClusterLineColor              = ClusterLineColor;
+        to.ClusterSeparatorLineColor     = ClusterSeparatorLineColor;
+        to.ClusterTextColor              = ClusterTextColor;
+        to.ClusterColor                  = ClusterColor;
+        to.ClusterMaxColor               = ClusterMaxColor;
+        to.ShowHorizontalVolumes         = ShowHorizontalVolumes;
+        to.LocalHorizontalVolumes        = LocalHorizontalVolumes;
+        to.HorizontalVolumeWidthFraction = HorizontalVolumeWidthFraction;
+        to.HorizontalVolumeColor         = HorizontalVolumeColor;
+        to.HorizontalVolumeFontColor     = HorizontalVolumeFontColor;
+        to.FontFamily                    = FontFamily;
+        to.FontSize                      = FontSize;
+        to.FontWeight                    = FontWeight;
+        to.DrawSeparateVolumes           = DrawSeparateVolumes;
+        to.BuyColor                      = BuyColor;
+        to.SellColor                     = SellColor;
+        to.UpColor                       = UpColor;
+        to.DownColor                     = DownColor;
+        return to;
     }
 
-    //DrawableChartComponentBaseViewModel IChartElementUiDomain.CreateViewModel(
-    //  IDrawingSurfaceVM _param1)
-    public ChartElementUiDomain CreateViewModel(IDrawingSurfaceVM viewModel)
-    {
-        throw new NotImplementedException();
-
-        //return _baseViewModel = (DrawableChartComponentBaseViewModel)new ChartCandleElement(this);
+    
+    public ChartElementUiDomain CreateViewModel( IDrawingSurfaceVM viewModel )
+    {        
+        return _baseViewModel = new ChartCandleElementUiDomain( this);
     }
 
-    bool IChartElementUiDomain.StartDrawing(
-      IEnumerableEx<ChartDrawData.IDrawValue> _param1)
+    bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {
-        return _baseViewModel.Draw(_param1);
+        return _baseViewModel.Draw( drawData );
     }
 
     void IChartElementUiDomain.StartDrawing()
     {
-        _baseViewModel.Draw(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(Enumerable.Empty<ChartDrawData.IDrawValue>(), 0));
+        _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
-    protected override bool OnDraw(ChartDrawData data)
+    protected override bool OnDraw( ChartDrawData data )
     {
-        List<ChartDrawData.sCandle> source1 = data.GetCandleRelatedData((IChartCandleElement)this);
-        List<ChartDrawData.sCandleColor> source2 = data.GetCandleColor((IChartCandleElement)this);
-        bool flag1 = source1 != null && !CollectionHelper.IsEmpty<ChartDrawData.sCandle>((ICollection<ChartDrawData.sCandle>)source1);
-        bool flag2 = source2 != null && !CollectionHelper.IsEmpty<ChartDrawData.sCandleColor>((ICollection<ChartDrawData.sCandleColor>)source2);
-        if ( flag1 || flag2 )
-            return ( ( !flag1 ? 0 : ( ( (IChartElementUiDomain)this ).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source1.Cast<ChartDrawData.IDrawValue>(), source1.Count)) ? 1 : 0 ) ) | ( !flag2 ? ( false ? 1 : 0 ) : ( ( (IChartElementUiDomain)this ).StartDrawing(CollectionHelper.ToEx<ChartDrawData.IDrawValue>(source2.Cast<ChartDrawData.IDrawValue>(), source2.Count)) ? 1 : 0 ) ) ) != 0;
-        ( (IChartElementUiDomain)this ).StartDrawing();
+        var candleData    = data.GetCandleRelatedData((IChartCandleElement)this);
+        var colors        = data.GetCandleColor((IChartCandleElement)this);
+
+        var hasCandleData = candleData != null && !CollectionHelper.IsEmpty<ChartDrawData.sCandle>((ICollection<ChartDrawData.sCandle>)candleData);
+        var hasColorInfo  = colors != null && !CollectionHelper.IsEmpty<ChartDrawData.sCandleColor>((ICollection<ChartDrawData.sCandleColor>)colors);
+
+        if ( hasCandleData || hasColorInfo )
+            return ( ( !hasCandleData ? 0 : ( ( ( IChartElementUiDomain ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( candleData.Cast<ChartDrawData.IDrawValue>(), candleData.Count ) ) ? 1 : 0 ) ) | 
+                     ( !hasColorInfo ? ( false ? 1 : 0 ) : ( ( ( IChartElementUiDomain ) this ).StartDrawing( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( colors.Cast<ChartDrawData.IDrawValue>(), colors.Count ) ) ? 1 : 0 ) ) ) != 0;
+        
+        ( ( IChartElementUiDomain ) this ).StartDrawing();
         return false;
     }
 
     protected override string GetGeneratedTitle()
     {
         Subscription subscription = ChartHelper2025.TryGetSubscription( this );
-        return subscription == null ? (string)null : ChartHelper2025.ChartSeriesTitle(subscription);
+        return subscription == null ? ( string ) null : ChartHelper2025.ChartSeriesTitle( subscription );
     }
 
     protected override int Priority => 0;
 
+
+
     
-
-    private sealed class InternalSealClassQMSS
-    {
-        public Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _colorFunctionGz2;
-
-        public System.Windows.Media.Color? Method0123(
-          DateTimeOffset _param1,
-          bool _param2,
-          bool _param3)
-        {
-            System.Drawing.Color? nullable = _colorFunctionGz2(_param1, _param2, _param3);
-            ref System.Drawing.Color? local = ref nullable;
-            return !local.HasValue ? new System.Windows.Media.Color?() : new System.Windows.Media.Color?(local.GetValueOrDefault().ToWpf());
-        }
-    }
 }
 
 

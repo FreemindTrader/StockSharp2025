@@ -56,7 +56,7 @@ public sealed class ChartComponentUiDomain : ChartPropertiesViewModel, IDisposab
 
     private readonly bool                _isCandleElement;
 
-    private ChartCandleElementViewModel  _ChartCandleElementViewModel;
+    private ChartCandleElementUiDomain  _ChartCandleElementViewModel;
 
     private bool                         _isDisposed;
 
@@ -93,7 +93,7 @@ public sealed class ChartComponentUiDomain : ChartPropertiesViewModel, IDisposab
 
     public bool IsCandleElement => _isCandleElement;
 
-    public ChartCandleElementViewModel CandlesViewModel
+    public ChartCandleElementUiDomain CandlesViewModel
     {
         get => _ChartCandleElementViewModel;
         private set => _ChartCandleElementViewModel = value;
@@ -144,7 +144,7 @@ public sealed class ChartComponentUiDomain : ChartPropertiesViewModel, IDisposab
 
         if ( IsCandleElement && CandlesViewModel == null )
         {
-            CandlesViewModel = childrenUI.OfType<ChartCandleElementViewModel>().First<ChartCandleElementViewModel>();
+            CandlesViewModel = childrenUI.OfType<ChartCandleElementUiDomain>().First<ChartCandleElementUiDomain>();
         }
 
         if ( _chartElementsUiDomain.Count == 1 )
