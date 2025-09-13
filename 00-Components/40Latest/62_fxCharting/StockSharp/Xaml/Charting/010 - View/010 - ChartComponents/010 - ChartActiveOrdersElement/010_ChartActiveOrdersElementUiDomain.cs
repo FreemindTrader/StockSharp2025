@@ -42,6 +42,339 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
         return new Binding( propertyName ) { Source = obj, Mode = BindingMode.OneWay };
     }
 
+
+
+    private readonly PairSet<Order, ObservableActiveOrdersInfo> _orderInfoAnnotation = new PairSet<Order, ObservableActiveOrdersInfo>();
+
+    public ChartActiveOrdersElementUiDomain( ChartActiveOrdersElement ao ) : base( ao )
+    {
+    }
+
+    protected override void UpdateUi()
+    {
+        PerformUiAction( new Action( RemoveActiveOrdersInfo ), true );
+    }
+
+
+    private void RemoveActiveOrdersInfo()
+    {
+        Ecng.Collections.CollectionHelper.ForEach( _orderInfoAnnotation.Keys.ToArray(), new Action<Order>( RemoveActiveOrderInfo ) );
+    }
+
+    protected override void Clear()
+    {
+    }
+
+    /// <summary>
+    /// This function check if the order has been filled. Or if the order has either failed or been cancelled, or it is done.
+    /// 
+    /// Only when it is in a state of Done or either failed, then we will want to show the active order on the chart.
+    /// </summary>
+    /// <param name="activeOrder"></param>
+    /// <param name="autoRemove"></param>
+    /// <param name="states"></param>
+    /// <param name="isError"></param>
+    /// <returns></returns>
+    private static bool IsOrderFinal( Order activeOrder, bool autoRemove, OrderStates states, bool isError )
+    {
+        if ( isError )
+            return true;
+
+        if ( activeOrder.Price <= Decimal.Zero )
+            return false;
+
+        if ( !autoRemove )
+            return true;
+
+        return !states.IsFinal();
+    }
+
+
+    /// <summary>
+    /// Get Active Orders that fulfill specific condition.
+    /// </summary>
+    /// <param name="condition"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
+    public IEnumerable<Order> GetActiveOrders( Func<Order, bool> condition )
+    {
+        if ( !IsUiThread() )
+            throw new InvalidOperationException( "UI Thread" );
+
+        if ( condition == null )
+            condition = new Func<Order, bool>( p => true );
+
+        return _orderInfoAnnotation.Keys.Where( condition );
+    }
+
+    /// <summary>
+    /// Draw the active order on the chart
+    /// </summary>
+    /// <param name="order"></param>
+    private void DrawActiveOrder( ChartDrawData.sActiveOrder order )
+    {
+        if ( !IsUiThread() )
+        {
+            PerformUiAction( new Action( () => DrawActiveOrder( order ) ), true );
+        }
+        else
+        {
+            var myOrder = order.Order;
+
+            if ( !_orderInfoAnnotation.TryGetValue( myOrder, out var aoInfo ) )
+            {
+                if ( !IsOrderFinal( myOrder, order.AutoRemove, order.OrderStates, order.IsError ) )
+                    return;
+
+                aoInfo = SetupAnnotationBinding( order );
+                _orderInfoAnnotation.Add( myOrder, aoInfo );
+                DrawingSurface.AddAxisMakerAnnotation( RootElem, aoInfo.Annotation, myOrder );
+                OrderAnimation( aoInfo, order, true );
+            }
+            else if ( IsOrderFinal( myOrder, aoInfo.AutoRemoveFromChart, order.OrderStates, order.IsError ) )
+            {
+                OrderAnimation( aoInfo, order, true );
+            }
+            else
+            {
+                OrderAnimation( aoInfo, order, false );
+            }
+        }
+    }
+
+    /// <summary>
+    /// Animate the order if it is in a state of Done, Failed or Error
+    /// </summary>
+    /// <param name="orderInfo"></param>
+    /// <param name="order"></param>
+    /// <param name="enableAnimation"></param>
+    private void OrderAnimation( ObservableActiveOrdersInfo orderInfo, ChartDrawData.sActiveOrder order, bool enableAnimation )
+    {
+        var ao        = orderInfo.Annotation;
+        var notDone   = true;
+        var notFilled = orderInfo.Balance != order.Balance;
+
+        PopulateAnnotationWithOrderInfo( orderInfo, order );
+
+        if ( ao.IsAnimationEnabled )
+        {
+            if ( order.IsError )
+            {
+                ao.AnimateError();
+                notDone = false;
+
+                if ( !enableAnimation )
+                {
+                    ao.IsAnimationEnabled = false;
+                }
+            }
+            else if ( ( ( order.OrderStates != OrderStates.Done ? 0 : ( order.Balance == Decimal.Zero ? 1 : 0 ) ) | ( notFilled ? 1 : 0 ) ) != 0 )
+            {
+                ao.AnimateOrderFill();
+                notDone = false;
+
+                if ( !enableAnimation )
+                {
+                    ao.IsAnimationEnabled = false;
+                }
+            }
+        }
+        if ( !( !enableAnimation & notDone ) )
+            return;
+
+        RemoveActiveOrderInfo( order.Order );
+    }
+
+    /// <summary>
+    /// Override the virtual draw function to draw the active orders
+    /// </summary>
+    /// <param name="drawData"></param>
+    /// <returns></returns>
+    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
+    {
+        if ( drawData == null || drawData.Count == 0 )
+            return false;
+
+        foreach ( var order in drawData.Cast<ChartDrawData.sActiveOrder>() )
+        {
+            DrawActiveOrder( order );
+        }
+
+        return true;
+    }
+
+
+    private void RemoveActiveOrderInfo( Order orderInfo )
+    {
+        if ( _orderInfoAnnotation.TryGetValue( orderInfo ) == null )
+            return;
+
+        _orderInfoAnnotation.Remove( orderInfo );
+        DrawingSurface.RemoveAnnotation( RootElem, orderInfo );
+    }
+
+    /// <summary>
+    /// Setup the ActiveOrderAnnotation binding
+    /// </summary>
+    /// <param name="sActiveOrder"></param>
+    /// <returns></returns>
+    private ObservableActiveOrdersInfo SetupAnnotationBinding( ChartDrawData.sActiveOrder sActiveOrder )
+    {
+        var order            = sActiveOrder.Order;
+        var ao               = new ActiveOrderAnnotation();
+        ao.CoordinateMode    = SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeX;
+        ao.DragDirections    = XyDirection.YDirection;
+        ao.ResizeDirections  = XyDirection.XDirection;
+        ao.OrderErrorText    = LocalizedStrings.OrderError.ToUpperInvariant();
+        ao.OrderText         = order.Side == Sides.Sell ? "Sell" : "Buy";
+        ao.X1                = 0.8;
+        var orderInfo        = new ObservableActiveOrdersInfo(ao);
+        var toBrushConverter = new ColorToBrushConverter();
+        var buySellColor     = order.Side == Sides.Sell ? "SellBlinkColor" : "BuyBlinkColor";
+
+        ao.SetBindings( AnnotationBase.XAxisIdProperty, ChartComponentView, "XAxisId", BindingMode.TwoWay, null, null );
+        ao.SetBindings( AnnotationBase.YAxisIdProperty, ChartComponentView, "YAxisId", BindingMode.TwoWay, null, null );
+        ao.SetBindings( AnnotationBase.IsHiddenProperty, ChartComponentView, "IsVisible", BindingMode.TwoWay, new InverseBooleanConverter(), null );
+        ao.SetBindings( AnnotationBase.IsEditableProperty, orderInfo, "IsFrozen", BindingMode.OneWay, new InverseBooleanConverter(), null );
+        ao.SetBindings( Control.ForegroundProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
+        ao.SetBindings( ActiveOrderAnnotation.StrokeProperty, ChartComponentView, "ForegroundColor", BindingMode.OneWay, toBrushConverter, null );
+        ao.SetBindings( ActiveOrderAnnotation.CancelButtonFillProperty, ChartComponentView, "CancelButtonBackground", BindingMode.OneWay, toBrushConverter, null );
+        ao.SetBindings( ActiveOrderAnnotation.CancelButtonColorProperty, ChartComponentView, "CancelButtonColor", BindingMode.OneWay, toBrushConverter, null );
+        ao.SetBindings( ActiveOrderAnnotation.IsAnimationEnabledProperty, ChartComponentView, "IsAnimationEnabled", BindingMode.OneWay, null, null );
+        ao.SetBindings( ActiveOrderAnnotation.BlinkColorProperty, ChartComponentView, buySellColor, BindingMode.OneWay, null, null );
+
+        MultiBinding mb = new MultiBinding()
+        {
+            Converter = new OrderStatesToColorConverter(),
+            Mode      = BindingMode.OneWay
+        };
+
+        mb.Bindings.Add( CreateBinding( orderInfo, "State" ) );
+        mb.Bindings.Add( CreateBinding( orderInfo, "Direction" ) );
+        mb.Bindings.Add( CreateBinding( ChartComponentView, "BuyPendingColor" ) );
+        mb.Bindings.Add( CreateBinding( ChartComponentView, "BuyColor" ) );
+        mb.Bindings.Add( CreateBinding( ChartComponentView, "SellPendingColor" ) );
+        mb.Bindings.Add( CreateBinding( ChartComponentView, "SellColor" ) );
+
+        ao.SetBinding( Control.BackgroundProperty, mb );
+        PopulateAnnotationWithOrderInfo( orderInfo, sActiveOrder );
+
+        ao.CancelClick   += new Action<ActiveOrderAnnotation>( OnCancelClicked );
+        ao.DragEnded     += OnDragEnded;
+        ao.AnimationDone += OnAnimationDone;
+
+        return orderInfo;
+    }
+
+    /// <summary>
+    /// Populate the ActiveOrderAnnotation with the OrderInfo. When content in ObservableActiveOrdersInfo aOrderInfo changed, 
+    /// the oberservers will get notification of the change and update the UI accordingly.
+    /// </summary>
+    /// <param name="aOrderInfo"></param>
+    /// <param name="aOrder"></param>
+    private static void PopulateAnnotationWithOrderInfo( ObservableActiveOrdersInfo aOrderInfo, ChartDrawData.sActiveOrder aOrder )
+    {
+        var aoAnnot                    = aOrderInfo.Annotation;
+        var order                      = aOrder.Order;
+
+        aOrderInfo.Balance             = aOrder.Balance;
+        aOrderInfo.State               = aOrder.OrderStates;
+        aOrderInfo.PriceStep           = aOrder.PriceStep;
+        aOrderInfo.IsFrozen            = aOrder.IsFrozen;
+        aOrderInfo.AutoRemoveFromChart = aOrder.AutoRemove;
+
+        aoAnnot.Y1                     = ( double ) aOrder.Price;
+        aoAnnot.OrderSizeText          = string.Format( "{0} {1}", order.Volume - aOrder.Balance, order.Volume );
+        aoAnnot.YDragStep              = ( double ) aOrder.PriceStep;
+    }
+
+
+    private Order GetActiveOrderInfo( ActiveOrderAnnotation annot, out ObservableActiveOrdersInfo ObsAO )
+    {
+        var ao1st = _orderInfoAnnotation.FirstOrDefault(p => p.Value.Annotation == annot);
+        ObsAO = ao1st.Value;
+        return ao1st.Key;
+    }
+
+    /// <summary>
+    /// It seems like dragging the active Order to a different price will change the active order to another price
+    /// </summary>
+    /// <param name="ao"></param>
+    /// <param name="e"></param>
+    /// <exception cref="InvalidOperationException"></exception>
+    private void OnDragEnded( object ao, EventArgs e )
+    {
+        var actOrder = (ActiveOrderAnnotation) ao;        
+        var order    = GetActiveOrderInfo( actOrder, out var orderInfo );
+
+        if ( order == null )
+            return;
+
+        var price         = order.Price;
+        var aoNewY1       = actOrder.Y1 as double?;
+        
+        double newPrice;
+
+        if ( !aoNewY1.HasValue )
+        {
+            newPrice      = !( actOrder.Y1 is Decimal ) ? 0.0 : ( double ) ( ( Decimal ) actOrder.Y1 );
+        }
+        else
+        {
+            newPrice      = aoNewY1.GetValueOrDefault();
+        }
+
+        var validNewPrice = newPrice;
+        var ydragStep     = actOrder.YDragStep;
+
+        if ( ydragStep > 0.0 )
+        {
+            validNewPrice = Math.Round( ( ( double ) validNewPrice ) / ydragStep ) * ydragStep;
+        }
+
+        if ( validNewPrice == 0.0 )
+            throw new InvalidOperationException( nameof( validNewPrice ) );
+        
+        if ( price == ( decimal ) validNewPrice )
+            return;
+
+        ( ( Chart ) DrawingSurface.Chart ).InvokeMoveOrderEvent( order, ( Decimal ) validNewPrice );
+    }
+
+    /// <summary>
+    /// When the animation is done, we will check if the order is in a final state of Done, Failed or Error
+    /// 
+    /// If the active Order is not final ( meaning doesn't have error and not done or failed ) then we will redraw the active order on the chart
+    /// </summary>
+    /// <param name="ao"></param>
+    private void OnAnimationDone( ActiveOrderAnnotation ao )
+    {
+        var order = GetActiveOrderInfo(ao, out var aoInfo);
+
+        if ( order == null || IsOrderFinal( order, aoInfo.AutoRemoveFromChart, aoInfo.State, false ) )
+            return;
+
+        DrawActiveOrder( new ChartDrawData.sActiveOrder( order, aoInfo.Balance, aoInfo.State, aoInfo.PriceStep, aoInfo.AutoRemoveFromChart, false, false, false, order.Price ) );
+    }
+
+
+    /// <summary>
+    /// Cancel the active order
+    /// </summary>
+    /// <param name="ao"></param>
+    private void OnCancelClicked( ActiveOrderAnnotation ao )
+    {
+        var order = GetActiveOrderInfo(ao, out var aoInfo);
+        if ( order == null )
+            return;
+
+
+        ( ( Chart ) DrawingSurface.Chart ).InvokeCancelOrderEvent( order );
+    }
+
+    /// <summary>
+    /// Convert the OrderStates and Sides to a color
+    /// </summary>
     private sealed class OrderStatesToColorConverter : IMultiValueConverter
     {
         object IMultiValueConverter.Convert( object[ ] values, Type targetType, object parameter, CultureInfo culture )
@@ -69,8 +402,7 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
                     return new SolidColorBrush( myOrderSides.Value == Sides.Buy ? activeDoneFailedBuyColor.Value : activeDoneFailedSellColor.Value );
                 }
 
-                return new SolidColorBrush(
-                    myOrderSides.Value == Sides.Buy ? nonePendingBuyColor.Value : nonePendingSellColor.Value );
+                return new SolidColorBrush( myOrderSides.Value == Sides.Buy ? nonePendingBuyColor.Value : nonePendingSellColor.Value );
             }
             throw new ArgumentNullException( string.Format( "Incomplete params: ({0},{1},{2},{3},{4},{5})", myOrderStates, myOrderSides, nonePendingBuyColor, activeDoneFailedBuyColor, nonePendingSellColor, activeDoneFailedSellColor ) );
         }
@@ -81,7 +413,14 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
         }
     }
 
-    private sealed class ChartActiveOrderInfo : ViewModelBase
+    /// <summary>
+    /// ObservableActiveOrdersInfo object can be "observed" by other components, such as ChartActiveOrdersElementUiDomain. 
+    /// When a property on the object changes, it "notifies" its observers by raising the PropertyChanged event.
+    /// 
+    /// an object that implements the INotifyPropertyChanged interface is often called an observable object or a bindable object. 
+    /// This is because it provides notifications to clients—typically UI data-binding clients—that a property value has changed.
+    /// </summary>
+    private sealed class ObservableActiveOrdersInfo : ViewModelBase
     {
         private bool _autoRemoveFromChart = true;
         private readonly ActiveOrderAnnotation _activeOrderAnnotation;
@@ -91,7 +430,7 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
         private Decimal _price;
         private bool _isFrozen;
 
-        public ChartActiveOrderInfo( ActiveOrderAnnotation ao )
+        public ObservableActiveOrdersInfo( ActiveOrderAnnotation ao )
         {
             if ( ao == null )
                 throw new ArgumentNullException( nameof( ao ) );
@@ -167,6 +506,9 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public bool IsFrozen
         {
             get
@@ -178,292 +520,5 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
                 SetField( ref _isFrozen, value, nameof( IsFrozen ) );
             }
         }
-    }
-
-    private readonly PairSet<Order, ChartActiveOrderInfo> _orderInfoAnnotation = new PairSet<Order, ChartActiveOrderInfo>();
-
-    public ChartActiveOrdersElementUiDomain( ChartActiveOrdersElement ao ) : base( ao )
-    {
-    }
-
-    protected override void UpdateUi()
-    {
-        PerformUiAction( new Action( RemoveActiveOrdersInfo ), true );
-    }
-
-
-    private void RemoveActiveOrdersInfo()
-    {
-        Ecng.Collections.CollectionHelper.ForEach( _orderInfoAnnotation.Keys.ToArray(), new Action<Order>( RemoveActiveOrderInfo ) );
-    }
-
-    protected override void Clear()
-    {
-    }
-
-    /// <summary>
-    /// This function check if the order has been filled. Or if the order has either failed or been cancelled, or it is done.
-    /// 
-    /// Only when it is in a state of Done or either failed, then we will want to show the active order on the chart.
-    /// </summary>
-    /// <param name="activeOrder"></param>
-    /// <param name="autoRemove"></param>
-    /// <param name="states"></param>
-    /// <param name="isError"></param>
-    /// <returns></returns>
-    private static bool IsOrderFinal( Order activeOrder, bool autoRemove, OrderStates states, bool isError )
-    {
-        if ( isError )
-            return true;
-
-        if ( activeOrder.Price <= Decimal.Zero )
-            return false;
-
-        if ( !autoRemove )
-            return true;
-
-        return !states.IsFinal();
-    }
-
-    public IEnumerable<Order> GetActiveOrders( Func<Order, bool> _param1 )
-    {
-        if ( !IsUiThread() )
-            throw new InvalidOperationException( "UI Thread" );
-        if ( _param1 == null )
-            _param1 = new Func<Order, bool>( p => true );
-
-        return _orderInfoAnnotation.Keys.Where( _param1 );
-    }
-
-    private void DrawActiveOrder( ChartDrawData.sActiveOrder order )
-    {
-        if ( !IsUiThread() )
-        {
-            PerformUiAction( new Action( () => DrawActiveOrder( order ) ), true );
-        }
-        else
-        {
-            ChartActiveOrderInfo aoInfo;
-
-            var myOrder = order.Order;
-
-            if ( !_orderInfoAnnotation.TryGetValue( myOrder, out aoInfo ) )
-            {
-                if ( !IsOrderFinal( myOrder, order.AutoRemove, order.OrderStates, order.IsError ) )
-                    return;
-
-                aoInfo = SetupAnnotationBinding( order );
-                _orderInfoAnnotation.Add( myOrder, aoInfo );
-                DrawingSurface.AddAxisMakerAnnotation( RootElem, aoInfo.Annotation, myOrder );
-                OrderAnimation( aoInfo, order, true );
-            }
-            else if ( IsOrderFinal( myOrder, aoInfo.AutoRemoveFromChart, order.OrderStates, order.IsError ) )
-            {
-                OrderAnimation( aoInfo, order, true );
-            }
-            else
-            {
-                OrderAnimation( aoInfo, order, false );
-            }
-        }
-    }
-
-    private void OrderAnimation( ChartActiveOrderInfo orderInfo, ChartDrawData.sActiveOrder order, bool _param2 )
-    {
-        ActiveOrderAnnotation annotation = orderInfo.Annotation;
-        bool flag1 = true;
-        bool flag2 = orderInfo.Balance != order.Balance;
-        PopulateAnnotationWithOrderInfo( orderInfo, order );
-
-        if ( annotation.IsAnimationEnabled )
-        {
-            if ( order.IsError )
-            {
-                annotation.AnimateError();
-                flag1 = false;
-                if ( !_param2 )
-                    annotation.IsAnimationEnabled = false;
-            }
-            else if ( ( ( order.OrderStates != OrderStates.Done ? 0 : ( order.Balance == Decimal.Zero ? 1 : 0 ) ) |
-                    ( flag2 ? 1 : 0 ) ) !=
-                0 )
-            {
-                annotation.AnimateOrderFill();
-                flag1 = false;
-                if ( !_param2 )
-                    annotation.IsAnimationEnabled = false;
-            }
-        }
-        if ( !( !_param2 & flag1 ) )
-            return;
-
-        RemoveActiveOrderInfo( order.Order );
-    }
-
-    /// <summary>
-    /// Override the virtual draw function to draw the active orders
-    /// </summary>
-    /// <param name="drawData"></param>
-    /// <returns></returns>
-    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
-    {
-        if ( drawData == null || drawData.Count == 0 )
-            return false;
-
-        foreach ( var order in drawData.Cast<ChartDrawData.sActiveOrder>() )
-        {
-            DrawActiveOrder( order );
-        }
-
-        return true;
-    }
-
-
-    private void RemoveActiveOrderInfo( Order orderInfo )
-    {
-        if ( _orderInfoAnnotation.TryGetValue( orderInfo ) == null )
-            return;
-
-        _orderInfoAnnotation.Remove( orderInfo );
-        DrawingSurface.RemoveAnnotation( RootElem, orderInfo );
-    }
-
-    /// <summary>
-    /// Setup the ActiveOrderAnnotation binding
-    /// </summary>
-    /// <param name="sActiveOrder"></param>
-    /// <returns></returns>
-    private ChartActiveOrderInfo SetupAnnotationBinding( ChartDrawData.sActiveOrder sActiveOrder )
-    {
-        var order            = sActiveOrder.Order;
-        var ao               = new ActiveOrderAnnotation();
-        ao.CoordinateMode    = SciChart.Charting.Visuals.Annotations.AnnotationCoordinateMode.RelativeX;
-        ao.DragDirections    = XyDirection.YDirection;
-        ao.ResizeDirections  = XyDirection.XDirection;
-        ao.OrderErrorText    = LocalizedStrings.OrderError.ToUpperInvariant();
-        ao.OrderText         = order.Side == Sides.Sell ? "Sell" : "Buy";
-        ao.X1                = 0.8;
-        var orderInfo        = new ChartActiveOrderInfo(ao);
-        var toBrushConverter = new ColorToBrushConverter();
-        var buySellColor     = order.Side == Sides.Sell ? "SellBlinkColor" : "BuyBlinkColor";
-
-        ao.SetBindings( AnnotationBase.XAxisIdProperty                  , ChartComponentView, "XAxisId",                BindingMode.TwoWay, null, null );
-        ao.SetBindings( AnnotationBase.YAxisIdProperty                  , ChartComponentView, "YAxisId",                BindingMode.TwoWay, null, null );
-        ao.SetBindings( AnnotationBase.IsHiddenProperty                 , ChartComponentView, "IsVisible",              BindingMode.TwoWay, new InverseBooleanConverter(), null );
-        ao.SetBindings( AnnotationBase.IsEditableProperty               , orderInfo, "IsFrozen",                        BindingMode.OneWay, new InverseBooleanConverter(), null );
-        ao.SetBindings( Control.ForegroundProperty                      , ChartComponentView, "ForegroundColor",        BindingMode.OneWay, toBrushConverter, null );
-        ao.SetBindings( ActiveOrderAnnotation.StrokeProperty            , ChartComponentView, "ForegroundColor",        BindingMode.OneWay, toBrushConverter, null );
-        ao.SetBindings( ActiveOrderAnnotation.CancelButtonFillProperty  , ChartComponentView, "CancelButtonBackground", BindingMode.OneWay, toBrushConverter, null );
-        ao.SetBindings( ActiveOrderAnnotation.CancelButtonColorProperty , ChartComponentView, "CancelButtonColor",      BindingMode.OneWay, toBrushConverter, null );
-        ao.SetBindings( ActiveOrderAnnotation.IsAnimationEnabledProperty, ChartComponentView, "IsAnimationEnabled",     BindingMode.OneWay, null, null );        
-        ao.SetBindings( ActiveOrderAnnotation.BlinkColorProperty        , ChartComponentView, buySellColor,             BindingMode.OneWay, null, null );
-
-        MultiBinding mb = new MultiBinding()
-        {
-            Converter = new OrderStatesToColorConverter(),
-            Mode      = BindingMode.OneWay
-        };
-
-        mb.Bindings.Add( CreateBinding( orderInfo         , "State" ) );
-        mb.Bindings.Add( CreateBinding( orderInfo         , "Direction" ) );
-        mb.Bindings.Add( CreateBinding( ChartComponentView, "BuyPendingColor" ) );
-        mb.Bindings.Add( CreateBinding( ChartComponentView, "BuyColor" ) );
-        mb.Bindings.Add( CreateBinding( ChartComponentView, "SellPendingColor" ) );
-        mb.Bindings.Add( CreateBinding( ChartComponentView, "SellColor" ) );
-
-        ao.SetBinding( Control.BackgroundProperty, mb );
-        PopulateAnnotationWithOrderInfo( orderInfo, sActiveOrder );
-        ao.CancelClick += new Action<ActiveOrderAnnotation>( OnCancelClicked );
-        ao.DragEnded += OnDragEnded;
-        ao.AnimationDone += OnAnimationDone;
-        return orderInfo;
-    }
-
-    private static void PopulateAnnotationWithOrderInfo( ChartActiveOrderInfo aOrderInfo, ChartDrawData.sActiveOrder aOrder )
-    {
-        var annotation = aOrderInfo.Annotation;
-        var order = aOrder.Order;
-        aOrderInfo.Balance = aOrder.Balance;
-        aOrderInfo.State = aOrder.OrderStates;
-        aOrderInfo.PriceStep = aOrder.PriceStep;
-        aOrderInfo.IsFrozen = aOrder.IsFrozen;
-        aOrderInfo.AutoRemoveFromChart = aOrder.AutoRemove;
-        annotation.Y1 = ( double ) aOrder.Price;
-        annotation.OrderSizeText = string.Format( "{0} {1}", order.Volume - aOrder.Balance, order.Volume );
-        annotation.YDragStep = ( double ) aOrder.PriceStep;
-    }
-
-    private Order GetActiveOrderInfo( ActiveOrderAnnotation _param1, out ChartActiveOrderInfo _param2 )
-    {
-        var keyValuePair = _orderInfoAnnotation.FirstOrDefault(p => p.Value.Annotation == _param1);
-        _param2 = keyValuePair.Value;
-        return keyValuePair.Key;
-    }
-
-    private void OnDragEnded( object _param1, EventArgs _param2 )
-    {
-        ActiveOrderAnnotation actOrder = (ActiveOrderAnnotation) _param1;
-        ChartActiveOrderInfo orderInfo;
-        Order order = GetActiveOrderInfo(actOrder, out orderInfo);
-        if ( order == null )
-            return;
-        Decimal price = order.Price;
-        double? y1Value = actOrder.Y1 as double?;
-        double y1;
-
-        if ( !y1Value.HasValue )
-        {
-            y1 = !( actOrder.Y1 is Decimal ) ? 0.0 : ( double ) ( ( Decimal ) actOrder.Y1 );
-        }
-        else
-        {
-            y1 = y1Value.GetValueOrDefault();
-        }
-
-        double y1DragStep = y1;
-        double ydragStep = actOrder.YDragStep;
-
-        if ( ydragStep > 0.0 )
-        {
-            y1DragStep = Math.Round( ( ( double ) y1DragStep ) / ydragStep ) * ydragStep;
-        }
-
-        if ( y1DragStep == 0.0 )
-            throw new InvalidOperationException( nameof( y1DragStep ) );
-        Decimal num3 = (Decimal) y1DragStep;
-        Decimal num4 = num3;
-        if ( price == num4 )
-            return;
-
-        ( ( Chart ) DrawingSurface.Chart ).InvokeMoveOrderEvent( order, num3 );
-    }
-
-    private void OnAnimationDone( ActiveOrderAnnotation ao )
-    {        
-        Order order = GetActiveOrderInfo(ao, out var aoInfo);
-        if ( order == null || IsOrderFinal( order, aoInfo.AutoRemoveFromChart, aoInfo.State, false ) )
-            return;
-        DrawActiveOrder(
-            new ChartDrawData.sActiveOrder(
-                order,
-                aoInfo.Balance,
-                aoInfo.State,
-                aoInfo.PriceStep,
-                aoInfo.AutoRemoveFromChart,
-                false,
-                false,
-                false,
-                order.Price ) );
-    }
-
-    private void OnCancelClicked( ActiveOrderAnnotation _param1 )
-    {
-        ChartActiveOrderInfo activeOrderInfo;
-        Order order = GetActiveOrderInfo(_param1, out activeOrderInfo);
-        if ( order == null )
-            return;
-
-        throw new NotImplementedException();
-        //DrawingSurface.GroupChartEx.InvokeCancelOrderEvent( order );
     }
 }

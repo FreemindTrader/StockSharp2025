@@ -34,86 +34,56 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
                                   IChartElementUiDomain
 {
 
-    private ChartCandleDrawStyles _drawStyle;
-
-    private System.Windows.Media.Color _downFillColor;
-
-    private System.Windows.Media.Color _upFillColor;
-
-    private System.Windows.Media.Color _downBorderColor;
-
-    private System.Windows.Media.Color _upBorderColor;
-
-    private int _strokeThickness;
-
-    private bool _antiAliasing;
-
+    private ChartCandleDrawStyles       _drawStyle;
+    private System.Windows.Media.Color  _downFillColor;
+    private System.Windows.Media.Color  _upFillColor;
+    private System.Windows.Media.Color  _downBorderColor;
+    private System.Windows.Media.Color  _upBorderColor;
+    private int                         _strokeThickness;
+    private bool                        _antiAliasing;
     private System.Windows.Media.Color? _lineColor;
-
     private System.Windows.Media.Color? _areaColor;
-
-    private bool _showAxisMarker = true;
-
-    private Decimal? _priceStep;
+    private bool                        _showAxisMarker = true;
+    private Decimal?                    _priceStep;    
+    private int?                        _timeframe2Multiplier;
+    private int?                        _timeframe3Multiplier = new int?(15);
+    private System.Windows.Media.Color? _fontColor;
+    private System.Windows.Media.Color? _timeframe2Color;
+    private System.Windows.Media.Color? _timeframe2FrameColor;
+    private System.Windows.Media.Color? _timeframe3Color;
+    private System.Windows.Media.Color? _maxVolumeColor;
+    private System.Windows.Media.Color? _maxVolumeBackground;
+    private System.Windows.Media.Color? _clusterLineColor;
+    private System.Windows.Media.Color? _clusterSeparatorLineColor;
+    private System.Windows.Media.Color? _clusterTextColor;
+    private System.Windows.Media.Color? _clusterColor;
+    private System.Windows.Media.Color? _clusterMaxColor;
+    private bool                        _showHorizontalVolumes = true;
+    private bool                        _localHorizontalVolumes = true;
+    private double                      _horizontalVolumeWidthFraction = 0.15;
+    private System.Windows.Media.Color? _horizontalVolumeColor;
+    private System.Windows.Media.Color? _horizontalVolumeFontColor;
+    private string                      _fontFamily = "Segoe UI";
+    private Decimal                     _fontSize = 14M;
+    private FontWeight                  _fontWeight = FontWeights.Bold;
+    private bool                        _drawSeparateVolumes = true;
+    private System.Windows.Media.Color? _buyColor;
+    private System.Windows.Media.Color? _sellColor;
+    private System.Windows.Media.Color? _upColor;
+    private System.Windows.Media.Color? _downColor;
+    private ChartElementUiDomain        _uiBusinessLogic;
 
     private Func<DateTimeOffset, bool, bool, System.Windows.Media.Color?> _colorer;
-
-    private int? _timeframe2Multiplier;
-
-    private int? _timeframe3Multiplier = new int?(15);
-
-    private System.Windows.Media.Color? _fontColor;
-
-    private System.Windows.Media.Color? _timeframe2Color;
-
-    private System.Windows.Media.Color? _timeframe2FrameColor;
-
-    private System.Windows.Media.Color? _timeframe3Color;
-
-    private System.Windows.Media.Color? _maxVolumeColor;
-
-    private System.Windows.Media.Color? _maxVolumeBackground;
-
-    private System.Windows.Media.Color? _clusterLineColor;
-
-    private System.Windows.Media.Color? _clusterSeparatorLineColor;
-
-    private System.Windows.Media.Color? _clusterTextColor;
-
-    private System.Windows.Media.Color? _clusterColor;
-
-    private System.Windows.Media.Color? _clusterMaxColor;
-
-    private bool _showHorizontalVolumes = true;
-
-    private bool _localHorizontalVolumes = true;
-
-    private double _horizontalVolumeWidthFraction = 0.15;
-
-    private System.Windows.Media.Color? _horizontalVolumeColor;
-
-    private System.Windows.Media.Color? _horizontalVolumeFontColor;
-
-    private string _fontFamily = "Segoe UI";
-
-    private Decimal _fontSize = 14M;
-
-    private FontWeight _fontWeight = FontWeights.Bold;
-
-    private bool _drawSeparateVolumes = true;
-
-    private System.Windows.Media.Color? _buyColor;
-
-    private System.Windows.Media.Color? _sellColor;
-
-    private System.Windows.Media.Color? _upColor;
-
-    private System.Windows.Media.Color? _downColor;
-
     private Func<DateTimeOffset, bool, bool, System.Drawing.Color?> _drawingColor;
 
-    private ChartElementUiDomain _baseViewModel;
 
+    /// <summary>
+    /// Default CandlestickUI has following properties
+    ///     - Red Down Fill Color
+    ///     - Green Up Fill Color
+    ///     - One pixel of stroke Thickness
+    ///     - CandleStick Draw Style
+    /// </summary>
     public ChartCandleElement()
     {
         DownFillColor   = DownBorderColor = Colors.Red;
@@ -194,6 +164,18 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
         }
     }
 
+    /// <summary>
+    /// When I was discussing with Pavel Savinov about WPF and WinForms interoperability, he suggested to implement the interface this way.
+    /// 
+    /// Currently System.Windows.Media.Color is the color type used throughout WPF. 
+    /// This type however is not part of .NET Standard, which uses System.Drawing.Color instead.
+    /// </summary>
+    System.Drawing.Color IChartCandleElement.DownFillColor
+    {
+        get => DownFillColor.FromWpf();
+        set => DownFillColor = value.ToWpf();
+    }
+
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "Increase", Description = "ColorOfIncreaseCandle", GroupName = "Style", Order = 32 /*0x20*/)]
     public System.Windows.Media.Color UpFillColor
     {
@@ -207,6 +189,12 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
         }
     }
 
+    System.Drawing.Color IChartCandleElement.UpFillColor
+    {
+        get => UpFillColor.FromWpf();
+        set => UpFillColor = value.ToWpf();
+    }
+
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "DecreaseBorder", Description = "DecreaseBorderDesc", GroupName = "Style", Order = 31 /*0x1F*/)]
     public System.Windows.Media.Color DownBorderColor
     {
@@ -218,6 +206,12 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
             _downBorderColor = value;
             RaisePropertyChanged( nameof( DownBorderColor ) );
         }
+    }
+
+    System.Drawing.Color IChartCandleElement.DownBorderColor
+    {
+        get => DownBorderColor.FromWpf();
+        set => DownBorderColor = value.ToWpf();
     }
 
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "IncreaseBorder", Description = "IncreaseBorderDesc", GroupName = "Style", Order = 33 )]
@@ -596,23 +590,11 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
         set => SetField<System.Windows.Media.Color?>( ref _downColor, value, nameof( DownColor ) );
     }
 
-    System.Drawing.Color IChartCandleElement.DownFillColor
-    {
-        get => DownFillColor.FromWpf();
-        set => DownFillColor = value.ToWpf();
-    }
+    
 
-    System.Drawing.Color IChartCandleElement.UpFillColor
-    {
-        get => UpFillColor.FromWpf();
-        set => UpFillColor = value.ToWpf();
-    }
+    
 
-    System.Drawing.Color IChartCandleElement.DownBorderColor
-    {
-        get => DownBorderColor.FromWpf();
-        set => DownBorderColor = value.ToWpf();
-    }
+    
 
     System.Drawing.Color IChartCandleElement.UpBorderColor
     {
@@ -1031,17 +1013,17 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
     
     public ChartElementUiDomain CreateViewModel( IDrawingSurfaceVM viewModel )
     {        
-        return _baseViewModel = new ChartCandleElementUiDomain( this);
+        return _uiBusinessLogic = new ChartCandleElementUiDomain( this);
     }
 
     bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {
-        return _baseViewModel.Draw( drawData );
+        return _uiBusinessLogic.Draw( drawData );
     }
 
     void IChartElementUiDomain.StartDrawing()
     {
-        _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+        _uiBusinessLogic.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
     protected override bool OnDraw( ChartDrawData data )
@@ -1066,11 +1048,7 @@ public class ChartCandleElement : ChartComponentViewModel<ChartCandleElement>,
         return subscription == null ? ( string ) null : ChartHelper2025.ChartSeriesTitle( subscription );
     }
 
-    protected override int Priority => 0;
-
-
-
-    
+    protected override int Priority => 0;    
 }
 
 

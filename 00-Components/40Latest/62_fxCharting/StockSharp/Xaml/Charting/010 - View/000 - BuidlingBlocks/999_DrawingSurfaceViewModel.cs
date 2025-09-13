@@ -255,48 +255,48 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
             return;
         }
 
-        var cursor = new UltrachartCursormodifier();
-        cursor.ShowTooltip = true;
-        cursor.ReceiveHandledEvents = true;
-        //cursor.ShowTooltipOn = ShowTooltipOptions.MouseHover;
-        //cursor.HoverDelay = 1000;
+        var cursor                              = new UltrachartCursormodifier();
+        cursor.ShowTooltip                      = true;
+        cursor.ReceiveHandledEvents             = true;
+        //cursor.ShowTooltipOn                  = ShowTooltipOptions.MouseHover;
+        //cursor.HoverDelay                     = 1000;
 
-        var orderLines = new ChartOrderModifier(Area);
-        orderLines.IsEnabled = true;
-        //orderLines.CanCreateOrders = true;
+        var orderLines                          = new ChartOrderModifier(Area);
+        orderLines.IsEnabled                    = true;
+        //orderLines.CanCreateOrders            = true;
 
-        _dataPointSelector = new fxDataPointSelectionModifier();
-        _dataPointSelector.ExecuteOn = ExecuteOn.MouseMiddleButton;
+        _dataPointSelector                      = new fxDataPointSelectionModifier();
+        _dataPointSelector.ExecuteOn            = ExecuteOn.MouseMiddleButton;
         _dataPointSelector.ReceiveHandledEvents = true;
-        _dataPointSelector.XAxisId = "X";
-        _dataPointSelector.IsEnabled = true;
+        _dataPointSelector.XAxisId              = "X";
+        _dataPointSelector.IsEnabled            = true;
         _dataPointSelector.AllowsMultiSelection = true;
 
 
-        var zoomPan = new fxZoomPanModifier();
-        zoomPan.ExecuteOn = ExecuteOn.MouseLeftButton;
-        zoomPan.ReceiveHandledEvents = true;
-        zoomPan.ClipModeX = ClipMode.None;
-        //zoomPan.XyDirection = XyDirection.XYDirection;
+        var zoomPan                             = new fxZoomPanModifier();
+        zoomPan.ExecuteOn                       = ExecuteOn.MouseLeftButton;
+        zoomPan.ReceiveHandledEvents            = true;
+        zoomPan.ClipModeX                       = ClipMode.None;
+        //zoomPan.XyDirection                   = XyDirection.XYDirection;
 
 
-        var xaxisDragModifier = new XAxisDragModifier();
-        xaxisDragModifier.AxisId = "X";
-        xaxisDragModifier.ClipModeX = ClipMode.None;
+        var xaxisDragModifier                   = new XAxisDragModifier();
+        xaxisDragModifier.AxisId                = "X";
+        xaxisDragModifier.ClipModeX             = ClipMode.None;
 
-        var yaxisDragModifier = new YAxisDragModifier();
-        yaxisDragModifier.AxisId = "Y";
+        var yaxisDragModifier                   = new YAxisDragModifier();
+        yaxisDragModifier.AxisId                = "Y";
 
-        var bandXyZoomModifier = new RubberBandXyZoomModifier();
-        bandXyZoomModifier.IsXAxisOnly = true;
-        bandXyZoomModifier.ExecuteOn = ExecuteOn.MouseRightButton;
+        var bandXyZoomModifier                  = new RubberBandXyZoomModifier();
+        bandXyZoomModifier.IsXAxisOnly          = true;
+        bandXyZoomModifier.ExecuteOn            = ExecuteOn.MouseRightButton;
         bandXyZoomModifier.ReceiveHandledEvents = true;
 
-        var zoomExtentsModifier = new ZoomExtentsModifier();
-        zoomExtentsModifier.ExecuteOn = ExecuteOn.MouseDoubleClick;
-        zoomExtentsModifier.XyDirection = XyDirection.YDirection;
+        var zoomExtentsModifier                 = new ZoomExtentsModifier();
+        zoomExtentsModifier.ExecuteOn           = ExecuteOn.MouseDoubleClick;
+        zoomExtentsModifier.XyDirection         = XyDirection.YDirection;
 
-        var seriesValueModifer = new SeriesValueModifier();
+        var seriesValueModifer                  = new SeriesValueModifier();
 
         //_tradingAPI                             = new fxTradingAnnotationCreationModifier( );
         //_tradingAPI.XAxisId                     = "X";
@@ -337,12 +337,12 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
         }
     }
 
-    public IEnumerable<Order> GetActiveOrders( Func<Order, bool> _param1 )
+    public IEnumerable<Order> GetActiveOrders( Func<Order, bool> condition )
     {
         return _componentsCache.CachedValues.Where( p => p != null ).SelectMany(
                 x =>
                 {
-                    return x.Elements.OfType<ChartActiveOrdersElementUiDomain>().SelectMany( ao => ao.GetActiveOrders( _param1 ) );
+                    return x.Elements.OfType<ChartActiveOrdersElementUiDomain>().SelectMany( ao => ao.GetActiveOrders( condition ) );
                 } ); ;
     }
 
