@@ -99,9 +99,9 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
         RootElementPropertyChanged( ( IChartComponent )sender, e.PropertyName );
     }
 
-    protected void AddStylePropertyChanging< U >( IChartComponent elementXY, string style, U[ ] drawStyles )
+    protected void AddDrawStylePropertyChanging< U >( IChartComponent com, string style, U[ ] drawStyles )
     {
-        elementXY.PropertyValueChanging += ( x, s, y ) =>
+        com.PropertyValueChanging += ( x, s, y ) =>
         {
             if( s != style )
             {

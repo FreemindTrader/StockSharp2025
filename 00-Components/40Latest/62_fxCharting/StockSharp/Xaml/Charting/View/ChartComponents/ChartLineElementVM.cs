@@ -54,7 +54,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfUiDomain< ChartLi
     protected override void Init( )
     {
         base.Init( );
-        AddStylePropertyChanging( ChartComponentView, "Style", new DrawStyles[ 9 ]  {
+        AddDrawStylePropertyChanging( ChartComponentView, "Style", new DrawStyles[ 9 ]  {
                                                                                                 DrawStyles.Line,
                                                                                                 DrawStyles.NoGapLine,
                                                                                                 DrawStyles.StepLine,

@@ -163,7 +163,7 @@ namespace StockSharp.Xaml.Charting
             //ChartViewModel.AddChild( _volumeViewModel = new ChildrenChartViewModel( "Vol", ChartComponent, new Func< SeriesInfo, Color >( GetCandleColor ), ( s => ( s as TimeframeSegmentSeriesInfo )?.Volume.ToString( ) ), strArray ) );
 
             GuiInitSeries( );
-            AddStylePropertyChanging( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[ 10 ]
+            AddDrawStylePropertyChanging( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[ 10 ]
                                                                                                                         {
                                                                                                                             ChartCandleDrawStyles.CandleStick,
                                                                                                                             ChartCandleDrawStyles.Ohlc,

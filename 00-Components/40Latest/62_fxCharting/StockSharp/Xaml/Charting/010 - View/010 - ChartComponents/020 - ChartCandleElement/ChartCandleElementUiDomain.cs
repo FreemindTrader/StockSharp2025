@@ -32,7 +32,6 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
-using ChartCandleDrawStyles = StockSharp.Charting.ChartCandleDrawStyles;
 using Color = System.Windows.Media.Color;
 
 namespace StockSharp.Xaml.Charting;
@@ -50,21 +49,33 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     private readonly NotifiableCandlestickUI                            _candleHelper      = new NotifiableCandlestickUI(candle);
     private Func<DateTimeOffset, bool, bool, Color?>                    _colorerFunction;
 
+    //
+    // Summary:
+    //     A viewmodel to a single data-render series pair, used in the new SciChart.Charting.Visuals.SciChartSurface
+    //     Mvvm API. For usage, see the SeriesSource property and the Mvvm examples in the
+    //     examples suite. You may bind SeriesSource to a collection of SciChart.Charting.Model.ChartSeries.IChartSeriesViewModel
+    //     and SciChart will automatically associated the SciChart.Charting.Visuals.RenderableSeries.BaseRenderableSeries
+    //     and SciChart.Charting.Model.DataSeries.IDataSeries instances
+    //
+    // Remarks:
+    //     DataSeries are assigned to the RenderableSeries via the SciChart.Charting.Visuals.RenderableSeries.IRenderableSeries.DataSeries
+    //     property. Any time a DataSeries is appended to, the parent SciChart.Charting.Visuals.SciChartSurface
+    //     will be redrawn
     private ChartSeriesViewModel       _chartSeriesViewModel;
-    private TimeframeSegmentDataSeries _timeframeSegmentDataSeries;
+    private TimeframeSegmentDataSeries _tfsDataSeries;
     private DateTime                   _dateTimeUtc;
-    private bool?                      _boolean01;
+    private bool?                      notAutoScroll;
     private IndexRange                 _indexRange;
     private ChartElementViewModel      _openViewModel;
     private ChartElementViewModel      _highViewModel;
     private ChartElementViewModel      _lowViewModel;
     private ChartElementViewModel      _closeViewModel;
-    private ChartElementViewModel      _lineViewModel;
+    private ChartElementViewModel      _lineViewModel;              // When we are drawing lines instead of candlesticks
     private ChartElementViewModel      _volumeViewModel;
     private Decimal?                   _pnfBoxSize;
 
 
-    private bool _boolean02;
+    private bool _hasDrawnOnce;
 
     public OhlcDataSeriesTF<DateTime, double> OhlcSeries
     {
@@ -80,7 +91,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     /// <param name="pattern"></param>
     public void AddPattern( CandlePatternElementViewModel pattern )
     {
-        if (  _chartPatternsList.Contains( pattern ) )
+        if ( _chartPatternsList.Contains( pattern ) )
             return;
 
         _chartPatternsList.Add( pattern );
@@ -104,12 +115,12 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
           "DownFillColor"
         };
 
-        ChartViewModel.AddChild( _openViewModel   = new ChartElementViewModel( "O",    ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
-        ChartViewModel.AddChild( _highViewModel   = new ChartElementViewModel( "H",    ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
-        ChartViewModel.AddChild( _lowViewModel    = new ChartElementViewModel( "L",    ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
-        ChartViewModel.AddChild( _closeViewModel  = new ChartElementViewModel( "C",    ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
-        ChartViewModel.AddChild( _lineViewModel   = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
-        ChartViewModel.AddChild( _volumeViewModel = new ChartElementViewModel( "Vol",  ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => 
+        ChartViewModel.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
+        ChartViewModel.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
+        ChartViewModel.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
+        ChartViewModel.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
+        ChartViewModel.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
+        ChartViewModel.AddChild( _volumeViewModel = new ChartElementViewModel( "Vol", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s =>
                                                                                                                                                                     {
                                                                                                                                                                         var plc = s as OhlCPLSeriesInfo;
                                                                                                                                                                         if ( plc != null )
@@ -125,21 +136,24 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
                                                                                                                                                                         return $"{str}   {plc.Level}";
 
                                                                                                                                                                     } ), strArray ) );
-        
+
 
         GuiInitSeries();
-        AddStylePropertyChanging<StockSharp.Charting.ChartCandleDrawStyles>( ( IChartComponent ) ChartComponentView, "DrawStyle", new StockSharp.Charting.ChartCandleDrawStyles[10]
+
+        // The following code will add the DrawStyle property to the Candle element
+        // And whenever the DrawStyle property is changed, the event handler will be called to redraw the candle
+        AddDrawStylePropertyChanging<ChartCandleDrawStyles>( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
         {
-              StockSharp.Charting.ChartCandleDrawStyles.CandleStick,
-              StockSharp.Charting.ChartCandleDrawStyles.Ohlc,
-              StockSharp.Charting.ChartCandleDrawStyles.PnF,
-              StockSharp.Charting.ChartCandleDrawStyles.LineOpen,
-              StockSharp.Charting.ChartCandleDrawStyles.LineHigh,
-              StockSharp.Charting.ChartCandleDrawStyles.LineLow,
-              StockSharp.Charting.ChartCandleDrawStyles.LineClose,
-              StockSharp.Charting.ChartCandleDrawStyles.BoxVolume,
-              StockSharp.Charting.ChartCandleDrawStyles.ClusterProfile,
-              StockSharp.Charting.ChartCandleDrawStyles.Area
+              ChartCandleDrawStyles.CandleStick,
+              ChartCandleDrawStyles.Ohlc,
+              ChartCandleDrawStyles.PnF,
+              ChartCandleDrawStyles.LineOpen,
+              ChartCandleDrawStyles.LineHigh,
+              ChartCandleDrawStyles.LineLow,
+              ChartCandleDrawStyles.LineClose,
+              ChartCandleDrawStyles.BoxVolume,
+              ChartCandleDrawStyles.ClusterProfile,
+              ChartCandleDrawStyles.Area
         } );
     }
 
@@ -161,21 +175,26 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             case ChartCandleDrawStyles.LineOpen:
                 _lineViewModel.Name = "O";
                 return xySeriesInfo.FormattedYValue;
+
             case ChartCandleDrawStyles.LineHigh:
                 _lineViewModel.Name = "H";
                 return xySeriesInfo.FormattedYValue;
+
             case ChartCandleDrawStyles.LineLow:
                 _lineViewModel.Name = "L";
                 return xySeriesInfo.FormattedYValue;
+
             case ChartCandleDrawStyles.LineClose:
                 _lineViewModel.Name = "C";
                 return xySeriesInfo.FormattedYValue;
+
             case ChartCandleDrawStyles.Area:
                 _lineViewModel.Name = "C";
                 return xySeriesInfo.FormattedYValue;
+
             default:
-                _lineViewModel.Value = ( string ) null;
-                return ( string ) null;
+                _lineViewModel.Value = null;
+                return null;
         }
     }
 
@@ -186,33 +205,29 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
     private void InitTimeframeSegmentDataSeries()
     {
-        TimeSpan? candlesTimeframe = CandlesTimeframe;
-        TimeframeSegmentDataSeries segmentDataSeries;
-
-        if ( _timeframeSegmentDataSeries != null )
+        if ( _tfsDataSeries != null )
         {
-            TimeSpan? timeframe = _timeframeSegmentDataSeries.Timeframe;
-            TimeSpan? nullable = candlesTimeframe;
-            if ( ( timeframe.HasValue == nullable.HasValue ? ( timeframe.HasValue ? ( timeframe.GetValueOrDefault() == nullable.GetValueOrDefault() ? 1 : 0 ) : 1 ) : 0 ) != 0 )
+            TimeSpan? timeframe = _tfsDataSeries.Timeframe;
+
+            if ( ( timeframe.HasValue == CandlesTimeframe.HasValue ? ( timeframe.HasValue ? ( timeframe.GetValueOrDefault() == CandlesTimeframe.GetValueOrDefault() ? 1 : 0 ) : 1 ) : 0 ) != 0 )
             {
-                segmentDataSeries = _timeframeSegmentDataSeries;
-                goto label_4;
+                return;
             }
         }
-        segmentDataSeries = new TimeframeSegmentDataSeries( candlesTimeframe, ChartComponentView );
-label_4:
-        _timeframeSegmentDataSeries = segmentDataSeries;
+
+        _tfsDataSeries = new TimeframeSegmentDataSeries( CandlesTimeframe, ChartComponentView );
     }
 
     private void GuiInitSeries()
     {
-        if ( !ChartElementUiDomain.IsUiThread() )
+        if ( !IsUiThread() )
         {
             PerformUiAction( new Action( GuiInitSeries ), true );
         }
         else
         {
             InitTimeframeSegmentDataSeries();
+
             if ( GetDataSeriesByDrawStyle() == null )
             {
                 RemoveChartSeries();
@@ -221,12 +236,14 @@ label_4:
             {
                 if ( _chartSeriesViewModel != null )
                 {
-                    Type type1 = GetRenderingSeriesByType();
-                    Type type2 = _chartSeriesViewModel.RenderSeries.GetType();
-                    if ( _chartSeriesViewModel.DataSeries == GetDataSeriesByDrawStyle() && type1 == type2 )
+                    Type drawStyleRS = GetRenderingSeriesByDrawStyle();
+                    Type realDrawRS = _chartSeriesViewModel.RenderSeries.GetType();
+                    if ( _chartSeriesViewModel.DataSeries == GetDataSeriesByDrawStyle() && drawStyleRS == realDrawRS )
                         return;
+
                     BindingOperations.ClearAllBindings( ( DependencyObject ) _chartSeriesViewModel.RenderSeries );
                 }
+
                 if ( _chartSeriesViewModel == null || _chartSeriesViewModel.DataSeries != GetDataSeriesByDrawStyle() )
                 {
                     RemoveChartSeries();
@@ -252,7 +269,7 @@ label_4:
 
     private void InternalGuiInitSeries()
     {
-        if ( _timeframeSegmentDataSeries != null )
+        if ( _tfsDataSeries != null )
             return;
         GuiInitSeries();
     }
@@ -261,7 +278,7 @@ label_4:
     {
         if ( ChartComponentView.DrawStyle.IsVolumeProfileChart() )
         {
-            return ( IDataSeries ) _timeframeSegmentDataSeries;
+            return ( IDataSeries ) _tfsDataSeries;
         }
 
         return ChartComponentView.DrawStyle != ChartCandleDrawStyles.Area ? ( IDataSeries ) OhlcSeries : ( IDataSeries ) _xyDataSeries;
@@ -278,8 +295,12 @@ label_4:
     }
 
 
-
-    private Type GetRenderingSeriesByType()
+    /// <summary>
+    /// For different DrawStyle, we need to return different RenderableSeries type
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="ArgumentOutOfRangeException"></exception>
+    private Type GetRenderingSeriesByDrawStyle()
     {
         switch ( ChartComponentView.DrawStyle )
         {
@@ -472,7 +493,7 @@ label_4:
         OhlcSeries.Clear();
         OhlcSeries.Timeframe = new TimeSpan?();
         _xyDataSeries.Clear();
-        _timeframeSegmentDataSeries = ( TimeframeSegmentDataSeries ) null;
+        _tfsDataSeries = ( TimeframeSegmentDataSeries ) null;
         _dateTimeUtc = new DateTime();
         _pnfBoxSize = new Decimal?();
         _dateTime2ColorMap.Clear();
@@ -492,49 +513,56 @@ label_4:
     public override void PerformPeriodicalAction()
     {
         base.PerformPeriodicalAction();
+
+        // get the current x-axis range for the view port
         VisibleRangeDpo xAxisVisibleRange = DrawingSurface.GetVisibleRangeDpo(ChartComponentView.XAxisId);
         if ( xAxisVisibleRange == null )
             return;
-        IndexRange categoryDateTimeRange = xAxisVisibleRange.CategoryDateTimeRange;
-        int count = OhlcSeries.Count;
-        bool flag1 = count > 0 && categoryDateTimeRange.IsDefined && !DrawingSurface.Chart.IsAutoRange;
-        bool flag2 = flag1 && DrawingSurface.Chart.IsAutoScroll;
-        if ( !_boolean02 & flag1 )
+
+        IndexRange currentVisibleIndexRange = xAxisVisibleRange.CategoryDateTimeRange;
+        
+        var totalBarCount = OhlcSeries.Count;
+        var notAutoRange  = totalBarCount > 0 && currentVisibleIndexRange.IsDefined && !DrawingSurface.Chart.IsAutoRange;
+        var autoScroll    = notAutoRange && DrawingSurface.Chart.IsAutoScroll;
+
+        if ( !_hasDrawnOnce & notAutoRange )
         {
-            _boolean02 = true;
-            if ( !flag2 )
+            _hasDrawnOnce = true;
+
+            if ( !autoScroll )
             {
-                IndexRange g8Oq2rGx6KyfAreq = new IndexRange(0, categoryDateTimeRange.Max - categoryDateTimeRange.Min);
-                xAxisVisibleRange.CategoryDateTimeRange = g8Oq2rGx6KyfAreq;
+                IndexRange visibleRange = new IndexRange(0, currentVisibleIndexRange.Max - currentVisibleIndexRange.Min);
+                xAxisVisibleRange.CategoryDateTimeRange = visibleRange;
             }
         }
-        if ( !flag2 )
+
+        if ( !autoScroll )
         {
-            _boolean01 = new bool?();
-            _indexRange = ( IndexRange ) null;
+            notAutoScroll = false;
+            _indexRange   =  null;
         }
         else
         {
             int num1;
-            if ( _boolean01.HasValue && ( !_boolean01.GetValueOrDefault() || _indexRange != categoryDateTimeRange ) )
+            if ( notAutoScroll.HasValue && ( !notAutoScroll.GetValueOrDefault() || _indexRange != currentVisibleIndexRange ) )
             {
-                bool? zuuCmXeHwuMy = _boolean01;
-                num1 = !( !zuuCmXeHwuMy.GetValueOrDefault() & zuuCmXeHwuMy.HasValue ) ? 0 : ( categoryDateTimeRange.Max >= count ? 1 : 0 );
+                
+                num1 = !( !notAutoScroll.GetValueOrDefault() & notAutoScroll.HasValue ) ? 0 : ( currentVisibleIndexRange.Max >= totalBarCount ? 1 : 0 );
             }
             else
                 num1 = 1;
             bool flag3 = num1 != 0;
-            int num2 = count;
-            if ( flag3 && ( categoryDateTimeRange.Max < num2 || !_boolean01.HasValue ) )
+            
+            if ( flag3 && ( currentVisibleIndexRange.Max < totalBarCount || !notAutoScroll.HasValue ) )
             {
-                int num3 = categoryDateTimeRange.Max - categoryDateTimeRange.Min + 1;
-                IndexRange g8Oq2rGx6KyfAreq = new IndexRange(num2 - num3 + 1, num2);
+                int visibleBarCount = currentVisibleIndexRange.Max - currentVisibleIndexRange.Min + 1;
+                IndexRange g8Oq2rGx6KyfAreq = new IndexRange(totalBarCount - visibleBarCount + 1, totalBarCount);
                 xAxisVisibleRange.CategoryDateTimeRange = g8Oq2rGx6KyfAreq;
                 _indexRange = g8Oq2rGx6KyfAreq;
             }
             else
-                _indexRange = categoryDateTimeRange;
-            _boolean01 = new bool?( flag3 );
+                _indexRange = currentVisibleIndexRange;
+            notAutoScroll = new bool?( flag3 );
         }
     }
 
@@ -620,10 +648,10 @@ label_4:
                     OhlcSeries.Update( bar.Time, bar.OpenPrice, bar.HighPrice, bar.LowPrice, bar.ClosePrice );
                     _xyDataSeries.Update( bar.Time, bar.ClosePrice );
 
-                    if ( bar.CandlePriceLevel != null && _timeframeSegmentDataSeries != null )
+                    if ( bar.CandlePriceLevel != null && _tfsDataSeries != null )
                     {
                         foreach ( CandlePriceLevel level in bar.CandlePriceLevel )
-                            _timeframeSegmentDataSeries.Update( bar.Time, ( double ) level.Price, level );
+                            _tfsDataSeries.Update( bar.Time, ( double ) level.Price, level );
                     }
                     --count;
                     break;
@@ -635,10 +663,10 @@ label_4:
                     lowArray[index] = bar.LowPrice;
                     closeArray[index] = bar.ClosePrice;
 
-                    if ( bar.CandlePriceLevel != null && _timeframeSegmentDataSeries != null )
+                    if ( bar.CandlePriceLevel != null && _tfsDataSeries != null )
                     {
                         foreach ( CandlePriceLevel level in bar.CandlePriceLevel )
-                            _timeframeSegmentDataSeries.Append( bar.Time, ( double ) level.Price, level );
+                            _tfsDataSeries.Append( bar.Time, ( double ) level.Price, level );
 
                         break;
                     }

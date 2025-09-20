@@ -62,8 +62,8 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
                                                                                     DrawStyles.StepLine,
                                                                                     DrawStyles.DashedLine
                                                                                   };
-        AddStylePropertyChanging( ChartComponentView.BidLine, "Style", lineStyle );
-        AddStylePropertyChanging( ChartComponentView.AskLine, "Style", lineStyle );
+        AddDrawStylePropertyChanging( ChartComponentView.BidLine, "Style", lineStyle );
+        AddDrawStylePropertyChanging( ChartComponentView.AskLine, "Style", lineStyle );
 
         string[ ] strArray = new string[ 2 ] { "Color", "AdditionalColor" };
 

@@ -58,8 +58,8 @@ internal sealed class ChartBandElementVM< T > : ChartCompentWpfUiDomain< ChartBa
                                                                                     DrawStyles.StepLine,
                                                                                     DrawStyles.DashedLine
                                                                                 };
-        AddStylePropertyChanging( ChartComponentView.Line1, "Style", lineStyle );
-        AddStylePropertyChanging( ChartComponentView.Line2, "Style", lineStyle );
+        AddDrawStylePropertyChanging( ChartComponentView.Line1, "Style", lineStyle );
+        AddDrawStylePropertyChanging( ChartComponentView.Line2, "Style", lineStyle );
 
         string[ ] strArray = new string[ 2 ]
                                             {
