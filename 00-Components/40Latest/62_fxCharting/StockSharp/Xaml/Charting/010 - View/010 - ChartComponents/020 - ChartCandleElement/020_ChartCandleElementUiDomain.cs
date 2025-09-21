@@ -1,4 +1,5 @@
-﻿using DevExpress.Mvvm.Native;
+﻿using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.Mvvm.Native;
 using DevExpress.Mvvm.UI;
 
 using Ecng.Collections;
@@ -30,6 +31,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Forms;
 using System.Windows.Media;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 using Color = System.Windows.Media.Color;
@@ -42,11 +44,11 @@ namespace StockSharp.Xaml.Charting;
 /// <param name="candle"></param>
 public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : ChartCompentWpfUiDomain<ChartCandleElement>( candle ), IPaletteProvider, IPaletteProviderSS
 {
-    private readonly OhlcDataSeriesTF<DateTime, double>                 _ohlcDataSeries    = new OhlcDataSeriesTF<DateTime, double>();
-    private readonly XyDataSeries<DateTime, double>                     _xyDataSeries      = new XyDataSeries<DateTime, double>();
-    private readonly SynchronizedList<CandlePatternElementViewModel>    _chartPatternsList = new SynchronizedList<CandlePatternElementViewModel>();
-    private readonly SynchronizedDictionary<DateTime, Color>            _dateTime2ColorMap = new SynchronizedDictionary<DateTime, Color>();
-    private readonly NotifiableCandlestickUI                            _candleHelper      = new NotifiableCandlestickUI(candle);
+    private readonly OhlcDataSeriesTF<DateTime, double>                 _ohlcDataSeries          = new OhlcDataSeriesTF<DateTime, double>();
+    private readonly XyDataSeries<DateTime, double>                     _xyDataSeries            = new XyDataSeries<DateTime, double>();
+    private readonly SynchronizedList<CandlePatternElementViewModel>    _chartPatternsList       = new SynchronizedList<CandlePatternElementViewModel>();
+    private readonly SynchronizedDictionary<DateTime, Color>            _dateTime2ColorMap       = new SynchronizedDictionary<DateTime, Color>();
+    private readonly NotifiableCandlestickUI                            _notifiableCandlestickUI = new NotifiableCandlestickUI(candle);
     private Func<DateTimeOffset, bool, bool, Color?>                    _colorerFunction;
 
     //
@@ -115,11 +117,11 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
           "DownFillColor"
         };
 
-        ChartViewModel.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
-        ChartViewModel.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
-        ChartViewModel.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
-        ChartViewModel.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
-        ChartViewModel.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
+        ChartViewModel.AddChild( _openViewModel   = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
+        ChartViewModel.AddChild( _highViewModel   = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
+        ChartViewModel.AddChild( _lowViewModel    = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
+        ChartViewModel.AddChild( _closeViewModel  = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
+        ChartViewModel.AddChild( _lineViewModel   = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
         ChartViewModel.AddChild( _volumeViewModel = new ChartElementViewModel( "Vol", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s =>
                                                                                                                                                                     {
                                                                                                                                                                         var plc = s as OhlCPLSeriesInfo;
@@ -162,7 +164,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         Color color;
         if ( _dateTime2ColorMap.TryGetValue( OhlcSeries.XValues[series.DataSeriesIndex], out color ) )
             return color;
-        return ChartCandleElementUiDomain.IsRising( series ) ? ( !_candleHelper.IsDark ? Colors.Green : Colors.LimeGreen ) : ( !_candleHelper.IsDark ? Colors.Red : Colors.OrangeRed );
+        return ChartCandleElementUiDomain.IsRising( series ) ? ( !_notifiableCandlestickUI.IsDark ? Colors.Green : Colors.LimeGreen ) : ( !_notifiableCandlestickUI.IsDark ? Colors.Red : Colors.OrangeRed );
     }
 
     private string SetLineViewModelName( SeriesInfo s )
@@ -251,7 +253,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
                 }
                 else
                 {
-                    _chartSeriesViewModel.RenderSeries = ( IRenderableSeries ) CreateRenderableSeries();
+                    _chartSeriesViewModel.RenderSeries = ( IRenderableSeries ) CreateRenderableSeriesAndBinding();
                     ClearAll();
                     SetupAxisMarkerAndBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
                 }
@@ -341,120 +343,101 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         GuiInitSeries();
     }
 
-    private BaseRenderableSeries CreateRenderableSeries()
+    /// <summary>
+    /// Create the RenderableSeries according to the DrawStyle and setup the binding to 
+    /// </summary>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
+    private BaseRenderableSeries CreateRenderableSeriesAndBinding()
     {
-        BaseRenderableSeries target;
+        BaseRenderableSeries rSeries;
+
         switch ( ChartComponentView.DrawStyle )
         {
             case ChartCandleDrawStyles.CandleStick:
-                {
-                    target = ( BaseRenderableSeries ) CreateRenderableSeries<FastCandlestickRenderableSeries>( new ChartElementViewModel[4]
-                                {
-                            _openViewModel,
-                            _highViewModel,
-                            _lowViewModel,
-                            _closeViewModel
-                                } );
+                
+                rSeries = CreateRenderableSeries<FastCandlestickRenderableSeries>( new ChartElementViewModel[4] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
 
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastCandlestickRenderableSeries.FillUpProperty, ChartComponentView, "UpFillColor", converter: ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter() );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastCandlestickRenderableSeries.FillDownProperty, ChartComponentView, "DownFillColor", converter: ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter() );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastCandlestickRenderableSeries.StrokeUpProperty, ChartComponentView, "UpBorderColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastCandlestickRenderableSeries.StrokeDownProperty, ChartComponentView, "DownBorderColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
-                    target.PaletteProvider = this;
-                }
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastCandlestickRenderableSeries.FillUpProperty,            ChartComponentView, "UpFillColor",     converter: ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter()                                   );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastCandlestickRenderableSeries.FillDownProperty,          ChartComponentView, "DownFillColor",   converter: ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter()                                   );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastCandlestickRenderableSeries.StrokeUpProperty,          ChartComponentView, "UpBorderColor"                                                                                                                      );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastCandlestickRenderableSeries.StrokeDownProperty,        ChartComponentView, "DownBorderColor"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseRenderableSeries.StrokeThicknessProperty,              ChartComponentView, "StrokeThickness"                                                                                                                    );
+                rSeries.PaletteProvider = this;
+                
                 break;
 
             case ChartCandleDrawStyles.Ohlc:
-                {
-                    target = ( BaseRenderableSeries ) CreateRenderableSeries<FastOhlcRenderableSeries>( new ChartElementViewModel[4]
-                            {
-                                _openViewModel,
-                                _highViewModel,
-                                _lowViewModel,
-                                _closeViewModel
-                            } );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastOhlcRenderableSeries.StrokeUpProperty, ChartComponentView, "UpBorderColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastOhlcRenderableSeries.StrokeDownProperty, ChartComponentView, "DownBorderColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, FastOhlcRenderableSeries.DataPointWidthProperty, ChartComponentView, "StrokeThickness", converter: ( IValueConverter ) new StrokeThickToPointWidthConverter() );
-                    BindingOperations.ClearBinding( ( DependencyObject ) target, BaseRenderableSeries.StrokeThicknessProperty );
-                    target.PaletteProvider = this;
-                }
+                
+                rSeries = CreateRenderableSeries<FastOhlcRenderableSeries>( new ChartElementViewModel[4] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel } );
+
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastOhlcRenderableSeries.StrokeUpProperty,                 ChartComponentView, "UpBorderColor"                                                                                                                      );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastOhlcRenderableSeries.StrokeDownProperty,               ChartComponentView, "DownBorderColor"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastOhlcRenderableSeries.DataPointWidthProperty,           ChartComponentView, "StrokeThickness", converter: ( IValueConverter ) new StrokeThickToPointWidthConverter()                                             );
+                BindingOperations.ClearBinding( rSeries, BaseRenderableSeries.StrokeThicknessProperty                                                                                                                                                                          );
+                rSeries.PaletteProvider = this;
+                
                 break;
 
             case ChartCandleDrawStyles.LineOpen:
             case ChartCandleDrawStyles.LineHigh:
             case ChartCandleDrawStyles.LineLow:
             case ChartCandleDrawStyles.LineClose:
-                {
-                    target = ( BaseRenderableSeries ) CreateRenderableSeries<FastLineRenderableSeries>( new ChartElementViewModel[1]
-                    {
-                    _lineViewModel
-                    } );
+                
+                rSeries = CreateRenderableSeries<FastLineRenderableSeries>( new ChartElementViewModel[1] { _lineViewModel } );
 
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BaseRenderableSeries.StrokeProperty, _candleHelper, "LineColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, MyFastLineRenderableSeries.OhlcDrawModeProperty, ChartComponentView, "DrawStyle", converter: ( IValueConverter ) new DrawStylesToModeConverter() );
-                }
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseRenderableSeries.StrokeProperty,                       _notifiableCandlestickUI, "LineColor"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseRenderableSeries.StrokeThicknessProperty,              ChartComponentView, "StrokeThickness"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, MyFastLineRenderableSeries.OhlcDrawModeProperty,           ChartComponentView, "DrawStyle",       converter: ( IValueConverter ) new DrawStylesToModeConverter()                                                    );
+                
                 break;
 
             case ChartCandleDrawStyles.BoxVolume:
-                {
-                    target = ( BaseRenderableSeries ) CreateRenderableSeries<BoxVolumeRenderableSeries>( new ChartElementViewModel[1]
-                    {
-                    _volumeViewModel
-                    } );
+                
+                rSeries = CreateRenderableSeries<BoxVolumeRenderableSeries>( new ChartElementViewModel[1] { _volumeViewModel } );
 
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.Timeframe2ColorProperty, _candleHelper, "Timeframe2Color" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.Timeframe2FrameColorProperty, _candleHelper, "Timeframe2FrameColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.Timeframe3ColorProperty, _candleHelper, "Timeframe3Color" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.CellFontColorProperty, _candleHelper, "FontColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.HighVolColorProperty, _candleHelper, "MaxVolumeColor" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.HighVolBackgroundProperty, _candleHelper, "MaxVolumeBackground" );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.Timeframe2Property, ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, ( IValueConverter ) new ChartCandleElementUiDomain.TimeSpanConverter( CandlesTimeframe ) );
-                    Ecng.Xaml.XamlHelper.SetBindings( target, BoxVolumeRenderableSeries.Timeframe3Property, ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, ( IValueConverter ) new ChartCandleElementUiDomain.TimeSpanConverter( CandlesTimeframe ) );
-                }
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe2ColorProperty,         _notifiableCandlestickUI, "Timeframe2Color"                                                                                                              );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe2FrameColorProperty,    _notifiableCandlestickUI, "Timeframe2FrameColor"                                                                                                         );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe3ColorProperty,         _notifiableCandlestickUI, "Timeframe3Color"                                                                                                              );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.CellFontColorProperty,           _notifiableCandlestickUI, "FontColor"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.HighVolColorProperty,            _notifiableCandlestickUI, "MaxVolumeColor"                                                                                                               );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.HighVolBackgroundProperty,       _notifiableCandlestickUI, "MaxVolumeBackground"                                                                                                          );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe2Property,              ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, ( IValueConverter ) new ChartCandleElementUiDomain.TimeSpanConverter( CandlesTimeframe ) );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe3Property,              ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, ( IValueConverter ) new ChartCandleElementUiDomain.TimeSpanConverter( CandlesTimeframe ) );
+                
                 break;
 
             case ChartCandleDrawStyles.ClusterProfile:
-                target = ( BaseRenderableSeries ) CreateRenderableSeries<ClusterProfileRenderableSeries>( new ChartElementViewModel[1]
-                {
-                    _volumeViewModel
-                } );
-                Ecng.Xaml.XamlHelper.SetBindings( target, ClusterProfileRenderableSeries.SeparatorLineColorProperty, _candleHelper, "ClusterSeparatorLineColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, ClusterProfileRenderableSeries.LineColorProperty, _candleHelper, "ClusterLineColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, ClusterProfileRenderableSeries.TextColorProperty, _candleHelper, "ClusterTextColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, ClusterProfileRenderableSeries.ClusterColorProperty, _candleHelper, "ClusterColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, ClusterProfileRenderableSeries.ClusterMaxColorProperty, _candleHelper, "ClusterMaxColor" );
+                rSeries = ( BaseRenderableSeries ) CreateRenderableSeries<ClusterProfileRenderableSeries>( new ChartElementViewModel[1] { _volumeViewModel }                                                                                                                   );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, ClusterProfileRenderableSeries.SeparatorLineColorProperty, _notifiableCandlestickUI, "ClusterSeparatorLineColor"                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, ClusterProfileRenderableSeries.LineColorProperty,          _notifiableCandlestickUI, "ClusterLineColor"                                                                                                             );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, ClusterProfileRenderableSeries.TextColorProperty,          _notifiableCandlestickUI, "ClusterTextColor"                                                                                                             );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, ClusterProfileRenderableSeries.ClusterColorProperty,       _notifiableCandlestickUI, "ClusterColor"                                                                                                                 );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, ClusterProfileRenderableSeries.ClusterMaxColorProperty,    _notifiableCandlestickUI, "ClusterMaxColor"                                                                                                              );
                 break;
+
             case ChartCandleDrawStyles.Area:
-                target = ( BaseRenderableSeries ) CreateRenderableSeries<FastMountainRenderableSeries>( new ChartElementViewModel[1]
-                {
-                    _lineViewModel
-                } );
-                target.Stroke = Colors.Transparent;
-                Ecng.Xaml.XamlHelper.SetBindings( target, BaseRenderableSeries.StrokeProperty, _candleHelper, "LineColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, BaseMountainRenderableSeries.FillProperty, _candleHelper, "AreaColor", converter: ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter() );
+                rSeries        = CreateRenderableSeries<FastMountainRenderableSeries>( new ChartElementViewModel[1] { _lineViewModel } );
+                rSeries.Stroke = Colors.Transparent;
+
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseRenderableSeries.StrokeProperty,                       _notifiableCandlestickUI, "LineColor"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseRenderableSeries.StrokeThicknessProperty,              ChartComponentView, "StrokeThickness"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseMountainRenderableSeries.FillProperty,                 _notifiableCandlestickUI, "AreaColor", converter: ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter()                                   );
                 break;
+
             case ChartCandleDrawStyles.PnF:
-                target = ( BaseRenderableSeries ) CreateRenderableSeries<FastXORenderableSeries>( new ChartElementViewModel[4]
-                {
-          _openViewModel,
-          _highViewModel,
-          _lowViewModel,
-          _closeViewModel
-                } );
-                Ecng.Xaml.XamlHelper.SetBindings( target, FastOhlcRenderableSeries.StrokeUpProperty, ChartComponentView, "UpBorderColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, FastOhlcRenderableSeries.StrokeDownProperty, ChartComponentView, "DownBorderColor" );
-                Ecng.Xaml.XamlHelper.SetBindings( target, BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
-                Decimal? zfIlpmP5Jfeem = _pnfBoxSize;
-                if ( zfIlpmP5Jfeem.HasValue )
-                {
-                    Decimal valueOrDefault = zfIlpmP5Jfeem.GetValueOrDefault();
-                    ( ( FastXORenderableSeries ) target ).XOBoxSize = ( double ) valueOrDefault;
+                rSeries = CreateRenderableSeries<FastXORenderableSeries>( new ChartElementViewModel[4] { _openViewModel, _highViewModel, _lowViewModel, _closeViewModel });
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastOhlcRenderableSeries.StrokeUpProperty,                 ChartComponentView, "UpBorderColor"                                                                                                                      );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, FastOhlcRenderableSeries.StrokeDownProperty,               ChartComponentView, "DownBorderColor"                                                                                                                    );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BaseRenderableSeries.StrokeThicknessProperty,              ChartComponentView, "StrokeThickness"                                                                                                                    );
+                
+                if ( _pnfBoxSize.HasValue )
+                {                    
+                    ( ( FastXORenderableSeries ) rSeries ).XOBoxSize = ( double ) _pnfBoxSize.GetValueOrDefault( );
                 }
-                target.PaletteProvider = this;
+
+                rSeries.PaletteProvider = this;
+
                 break;
             default:
                 throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnsupportedType, new object[1]
@@ -462,30 +445,31 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
            ChartComponentView.DrawStyle
                 } ) );
         }
+
         if ( ChartComponentView.DrawStyle.IsVolumeProfileChart() )
         {
-            Ecng.Xaml.XamlHelper.SetBindings( target, Control.FontFamilyProperty, ChartComponentView, "FontFamily", converter: ( IValueConverter ) new FontFamilyValueConverter() );
-            Ecng.Xaml.XamlHelper.SetBindings( target, Control.FontSizeProperty, ChartComponentView, "FontSize", converter: ( IValueConverter ) new TypeCastConverter() );
-            Ecng.Xaml.XamlHelper.SetBindings( target, Control.FontWeightProperty, ChartComponentView, "FontWeight" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.PriceStepProperty, ChartComponentView, "PriceStep" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty, ChartComponentView, "ShowHorizontalVolumes" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty, ChartComponentView, "LocalHorizontalVolumes" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, ChartComponentView, "HorizontalVolumeWidthFraction" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty, _candleHelper, "HorizontalVolumeColor", BindingMode.OneWay, ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter() );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.VolBarsFontColorProperty, _candleHelper, "HorizontalVolumeFontColor" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.DrawSeparateVolumesProperty, ChartComponentView, "DrawSeparateVolumes" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.BuyColorProperty, _candleHelper, "BuyColor" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.SellColorProperty, _candleHelper, "SellColor" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.UpColorProperty, _candleHelper, "UpColor" );
-            Ecng.Xaml.XamlHelper.SetBindings( target, TimeframeSegmentRenderableSeries.DownColorProperty, _candleHelper, "DownColor" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, System.Windows.Controls.Control.FontFamilyProperty,                     ChartComponentView, "FontFamily", converter: ( IValueConverter ) new FontFamilyValueConverter() );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, System.Windows.Controls.Control.FontSizeProperty,                       ChartComponentView, "FontSize", converter: ( IValueConverter ) new TypeCastConverter() );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, System.Windows.Controls.Control.FontWeightProperty,                     ChartComponentView, "FontWeight" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.PriceStepProperty,                     ChartComponentView, "PriceStep" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.ShowHorizontalVolumesProperty,         ChartComponentView, "ShowHorizontalVolumes" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.LocalHorizontalVolumesProperty,        ChartComponentView, "LocalHorizontalVolumes" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.HorizontalVolumeWidthFractionProperty, ChartComponentView, "HorizontalVolumeWidthFraction" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.VolumeBarsBrushProperty,               _notifiableCandlestickUI, "HorizontalVolumeColor", BindingMode.OneWay, ( IValueConverter ) new Ecng.Xaml.Converters.ColorToBrushConverter() );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.VolBarsFontColorProperty,              _notifiableCandlestickUI, "HorizontalVolumeFontColor" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.DrawSeparateVolumesProperty,           ChartComponentView, "DrawSeparateVolumes" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.BuyColorProperty,                      _notifiableCandlestickUI, "BuyColor" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.SellColorProperty,                     _notifiableCandlestickUI, "SellColor" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.UpColorProperty,                       _notifiableCandlestickUI, "UpColor" );
+            Ecng.Xaml.XamlHelper.SetBindings( rSeries, TimeframeSegmentRenderableSeries.DownColorProperty,                     _notifiableCandlestickUI, "DownColor" );
         }
-        return target;
+        return rSeries;
     }
 
     protected override void Clear()
     {
         RemoveChartSeries();
-        _candleHelper.Dispose();
+        _notifiableCandlestickUI.Dispose();
     }
 
     protected override void UpdateUi()
@@ -502,7 +486,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
     private void NewChartSeries()
     {
-        _chartSeriesViewModel = new ChartSeriesViewModel( GetDataSeriesByDrawStyle(), ( IRenderableSeries ) CreateRenderableSeries() );
+        _chartSeriesViewModel = new ChartSeriesViewModel( GetDataSeriesByDrawStyle(), ( IRenderableSeries ) CreateRenderableSeriesAndBinding() );
         DrawingSurface.AddSeriesViewModelsToRoot( RootElem, ( IRenderableSeries ) _chartSeriesViewModel );
         ClearAll();
         SetupAxisMarkerAndBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
@@ -536,46 +520,58 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             }
         }
 
-        if ( !autoScroll )
+        if ( autoScroll )
         {
-            notAutoScroll = false;
-            _indexRange   =  null;
+            bool shouldScrollNow;
+            
+            if ( notAutoScroll.HasValue && ( !notAutoScroll.GetValueOrDefault( ) || _indexRange != currentVisibleIndexRange ) )
+            {
+                // Since the desired range is not in the current visible range, we should scroll the view port.
+                shouldScrollNow = !( !notAutoScroll.GetValueOrDefault( ) & notAutoScroll.HasValue ) ? false : ( currentVisibleIndexRange.Max >= totalBarCount ? true : false );
+            }
+            else
+            {
+                shouldScrollNow = true;
+            }
+                            
+
+            if ( shouldScrollNow && ( currentVisibleIndexRange.Max < totalBarCount || !notAutoScroll.HasValue ) )
+            {
+                // scrolling conditions fulfilled, scroll to the end of the total bars
+                var visibleBarCount = currentVisibleIndexRange.Max - currentVisibleIndexRange.Min + 1;
+                var newRange        = new IndexRange(totalBarCount - visibleBarCount + 1, totalBarCount);
+                _indexRange         = newRange;
+
+                xAxisVisibleRange.CategoryDateTimeRange = newRange;
+                
+            }
+            else
+            {
+                _indexRange = currentVisibleIndexRange;
+            }
+                
+            notAutoScroll = shouldScrollNow;            
         }
         else
         {
-            int num1;
-            if ( notAutoScroll.HasValue && ( !notAutoScroll.GetValueOrDefault() || _indexRange != currentVisibleIndexRange ) )
-            {
-                
-                num1 = !( !notAutoScroll.GetValueOrDefault() & notAutoScroll.HasValue ) ? 0 : ( currentVisibleIndexRange.Max >= totalBarCount ? 1 : 0 );
-            }
-            else
-                num1 = 1;
-            bool flag3 = num1 != 0;
-            
-            if ( flag3 && ( currentVisibleIndexRange.Max < totalBarCount || !notAutoScroll.HasValue ) )
-            {
-                int visibleBarCount = currentVisibleIndexRange.Max - currentVisibleIndexRange.Min + 1;
-                IndexRange g8Oq2rGx6KyfAreq = new IndexRange(totalBarCount - visibleBarCount + 1, totalBarCount);
-                xAxisVisibleRange.CategoryDateTimeRange = g8Oq2rGx6KyfAreq;
-                _indexRange = g8Oq2rGx6KyfAreq;
-            }
-            else
-                _indexRange = currentVisibleIndexRange;
-            notAutoScroll = new bool?( flag3 );
+            notAutoScroll = false;
+            _indexRange   = null;
         }
     }
 
-    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {
-        switch ( _param1 != null ? ( ( IEnumerable<ChartDrawData.IDrawValue> ) _param1 ).FirstOrDefault<ChartDrawData.IDrawValue>() : ( ChartDrawData.IDrawValue ) null )
+        switch ( drawData != null ? drawData.FirstOrDefault() :  null )
         {
             case null:
                 return false;
+
             case ChartDrawData.sCandle _:
-                return Draw( CollectionHelper.ToEx<ChartDrawData.sCandle>( ( ( IEnumerable ) _param1 ).Cast<ChartDrawData.sCandle>(), ( ( IEnumerableEx ) _param1 ).Count ) );
+                return Draw( CollectionHelper.ToEx( drawData.Cast<ChartDrawData.sCandle>(), drawData.Count ) );
+
             case ChartDrawData.sCandleColor _:
-                return Draw( CollectionHelper.ToEx<ChartDrawData.sCandleColor>( ( ( IEnumerable ) _param1 ).Cast<ChartDrawData.sCandleColor>(), ( ( IEnumerableEx ) _param1 ).Count ) );
+                return Draw( CollectionHelper.ToEx( drawData.Cast<ChartDrawData.sCandleColor>(), drawData.Count ) );
+
             default:
                 throw new ArgumentOutOfRangeException( "values" );
         }
@@ -587,28 +583,45 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     }
 
 
+    /// <summary>
+    /// Given a list of candle colors, update the _dateTime2ColorMap dictionary
+    /// 
+    /// So that the candle that correspond to candleColor.Time will be updated to the candleColor.Color
+    /// 
+    /// </summary>
+    /// <param name="candleColors"></param>
+    /// <returns></returns>
     private bool Draw( IEnumerableEx<ChartDrawData.sCandleColor> candleColors )
     {
-        if ( CollectionHelper.IsEmpty<ChartDrawData.sCandleColor>( ( IEnumerable<ChartDrawData.sCandleColor> ) candleColors ) )
+        if ( CollectionHelper.IsEmpty( candleColors ) )
             return false;
-        foreach ( ChartDrawData.sCandleColor candleColor in ( IEnumerable<ChartDrawData.sCandleColor> ) candleColors )
+
+        foreach ( var candleColor in candleColors )
         {
-            Color? color1 = candleColor.Color;
-            if ( color1.HasValue )
-            {
-                SynchronizedDictionary<DateTime, Color> zK1tfXeY7PpNb = _dateTime2ColorMap;
-                DateTime dateTime = candleColor.Time;
-                color1 = candleColor.Color;
-                Color color2 = color1.Value;
-                zK1tfXeY7PpNb[dateTime] = color2;
+            Color? drawColor = candleColor.Color;
+            
+            if ( drawColor.HasValue )
+            {                                
+                _dateTime2ColorMap[candleColor.Time] = candleColor.Color.Value;
             }
             else
+            {
                 _dateTime2ColorMap.Remove( candleColor.Time );
+            }
+                
         }
         _chartSeriesViewModel?.RenderSeries.Services?.GetService<ISciChartSurface>()?.InvalidateElement();
         return true;
     }
 
+    /// <summary>
+    /// Given a list of candles, update the OhlcSeries and XySeries. 
+    /// Since OhlcSeries are scichart data series, which will be used in the RenderableSeries to draw the candles. Updating this series will update the chart.
+    /// 
+    /// </summary>
+    /// <param name="candles"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     private bool Draw( IEnumerableEx<ChartDrawData.sCandle> candles )
     {
         if ( _colorerFunction != ChartComponentView.Colorer )
@@ -616,74 +629,91 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             _colorerFunction = ChartComponentView.Colorer;
             _chartSeriesViewModel?.RenderSeries.Services?.GetService<ISciChartSurface>()?.InvalidateElement();
         }
-        if ( candles == null || CollectionHelper.IsEmpty<ChartDrawData.sCandle>( candles ) )
+        if ( candles == null || CollectionHelper.IsEmpty( candles ) )
             return false;
 
-        int count = ( (IEnumerableEx)candles ).Count;
-        DateTime dateTime = _dateTimeUtc;
+        int barCount = ( (IEnumerableEx)candles ).Count;
+        DateTime lastCandleTime = _dateTimeUtc;
         int index = -1;
-        bool flag = false;
-        DateTime[] timeArray = new DateTime[count];
-        double[] openArray = new double[count];
-        double[] highArray = new double[count];
-        double[] lowArray = new double[count];
-        double[] closeArray = new double[count];
+        bool candleNotFinished = false;
 
-        foreach ( var bar in candles )
+        var timeArray  = new DateTime[barCount];
+        var openArray  = new double[barCount];
+        var highArray  = new double[barCount];
+        var lowArray   = new double[barCount];
+        var closeArray = new double[barCount];
+
+        foreach ( var currentCandle in candles )
         {
-            object tf = bar.DataType.Arg;
+            object tf = currentCandle.DataType.Arg;
+
             if ( tf is TimeSpan timeSpan )
-                OhlcSeries.Timeframe = new TimeSpan?( timeSpan );
+            {
+                _ohlcDataSeries.Timeframe = new TimeSpan?( timeSpan );
+            }
+                
             SetPnfBoxSize( tf );
 
             InternalGuiInitSeries();
 
-            switch ( bar.Time.CompareTo( dateTime ) )
+            switch ( currentCandle.Time.CompareTo( lastCandleTime ) )
             {
+                // The new candle is earlier than the last candle, this is not allowed
                 case -1:
-                    throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.CannotChangeCandleValue, bar.Time, dateTime ) );
+                    throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.CannotChangeCandleValue, currentCandle.Time, lastCandleTime ) );
 
+                // We are updating the same candle.
                 case 0:
-                    flag = true;
-                    OhlcSeries.Update( bar.Time, bar.OpenPrice, bar.HighPrice, bar.LowPrice, bar.ClosePrice );
-                    _xyDataSeries.Update( bar.Time, bar.ClosePrice );
+                    candleNotFinished = true;
+                    _ohlcDataSeries.Update( currentCandle.Time, currentCandle.OpenPrice, currentCandle.HighPrice, currentCandle.LowPrice, currentCandle.ClosePrice );
+                    _xyDataSeries.Update( currentCandle.Time, currentCandle.ClosePrice );
 
-                    if ( bar.CandlePriceLevel != null && _tfsDataSeries != null )
+                    if ( currentCandle.CandlePriceLevel != null && _tfsDataSeries != null )
                     {
-                        foreach ( CandlePriceLevel level in bar.CandlePriceLevel )
-                            _tfsDataSeries.Update( bar.Time, ( double ) level.Price, level );
+                        foreach ( CandlePriceLevel level in currentCandle.CandlePriceLevel )
+                        {
+                            _tfsDataSeries.Update( currentCandle.Time, ( double ) level.Price, level );
+                        }                            
                     }
-                    --count;
+                    --barCount;
                     break;
+
+                // We have a new candle
                 default:
                     ++index;
-                    timeArray[index] = bar.Time;
-                    openArray[index] = bar.OpenPrice;
-                    highArray[index] = bar.HighPrice;
-                    lowArray[index] = bar.LowPrice;
-                    closeArray[index] = bar.ClosePrice;
+                    timeArray[index]  = currentCandle.Time;
+                    openArray[index]  = currentCandle.OpenPrice;
+                    highArray[index]  = currentCandle.HighPrice;
+                    lowArray[index]   = currentCandle.LowPrice;
+                    closeArray[index] = currentCandle.ClosePrice;
 
-                    if ( bar.CandlePriceLevel != null && _tfsDataSeries != null )
+                    if ( currentCandle.CandlePriceLevel != null && _tfsDataSeries != null )
                     {
-                        foreach ( CandlePriceLevel level in bar.CandlePriceLevel )
-                            _tfsDataSeries.Append( bar.Time, ( double ) level.Price, level );
-
+                        foreach ( CandlePriceLevel level in currentCandle.CandlePriceLevel )
+                        {
+                            _tfsDataSeries.Append( currentCandle.Time, ( double ) level.Price, level );
+                        }                           
                         break;
                     }
                     break;
             }
-            dateTime = bar.Time;
+            lastCandleTime = currentCandle.Time;
         }
-        if ( count == 0 )
-            return flag;
-        Array.Resize<DateTime>( ref timeArray, count );
-        Array.Resize<double>( ref openArray, count );
-        Array.Resize<double>( ref highArray, count );
-        Array.Resize<double>( ref lowArray, count );
-        Array.Resize<double>( ref closeArray, count );
-        OhlcSeries.Append( ( IEnumerable<DateTime> ) timeArray, ( IEnumerable<double> ) openArray, ( IEnumerable<double> ) highArray, ( IEnumerable<double> ) lowArray, ( IEnumerable<double> ) closeArray );
+
+        if ( barCount == 0 )
+        {
+            return candleNotFinished;
+        }
+            
+        Array.Resize<DateTime>( ref timeArray, barCount );
+        Array.Resize<double>( ref openArray, barCount );
+        Array.Resize<double>( ref highArray, barCount );
+        Array.Resize<double>( ref lowArray, barCount );
+        Array.Resize<double>( ref closeArray, barCount );
+
+        _ohlcDataSeries.Append( timeArray, openArray, highArray, lowArray, closeArray );
         _xyDataSeries.Append( ( IEnumerable<DateTime> ) timeArray, ( IEnumerable<double> ) closeArray );
-        _dateTimeUtc = dateTime;
+        _dateTimeUtc = lastCandleTime;
         return true;
     }
 
@@ -699,20 +729,21 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
     Color? IPaletteProviderSS.OverrideColor( IRenderableSeries rSeries, double candleIndex, double openPrice, double highPrice, double lowPrice, double closePrice )
     {
-        int index = (int)candleIndex;
-        DateTime dataTime = OhlcSeries.XValues[index];
-        foreach ( CandlePatternElementViewModel pattern in ( BaseCollection<CandlePatternElementViewModel, List<CandlePatternElementViewModel>> ) _chartPatternsList )
-        {
-            Color? nullable = pattern.GetCandleColor(dataTime, closePrice > openPrice);
-            if ( nullable.HasValue )
-                return nullable;
-        }
-        Color color;
-        if ( _dateTime2ColorMap.TryGetValue( dataTime, out color ) )
-            return new Color?( color );
+        var barIndex = (int)candleIndex;
+        var barTime  = OhlcSeries.XValues[barIndex];
 
-        var colorer = _colorerFunction;
-        return colorer == null ? new Color?() : colorer( TimeHelper.ToDateTimeOffset( dataTime, TimeZoneInfo.Utc ), closePrice >= openPrice, index == OhlcSeries.Count - 1 );
+        foreach ( var pattern in ( BaseCollection<CandlePatternElementViewModel, List<CandlePatternElementViewModel>> ) _chartPatternsList )
+        {
+            var candleColor = pattern.GetCandleColor(barTime, closePrice > openPrice);
+            
+            if ( candleColor.HasValue )
+                return candleColor;
+        }
+        
+        if ( _dateTime2ColorMap.TryGetValue( barTime, out var barColor ) )
+            return barColor;
+        
+        return _colorerFunction == null ? null : _colorerFunction( TimeHelper.ToDateTimeOffset( barTime, TimeZoneInfo.Utc ), closePrice >= openPrice, barIndex == OhlcSeries.Count - 1 );
     }
 
 
@@ -727,10 +758,10 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         NewChartSeries();
     }
 
-    private sealed class TimeSpanConverter( TimeSpan? _param1 ) : IValueConverter
+    private sealed class TimeSpanConverter( TimeSpan? tf ) : IValueConverter
     {
 
-        private readonly TimeSpan? _myTimeSpan = _param1;
+        private readonly TimeSpan? _myTimeSpan = tf;
 
         object IValueConverter.Convert( object _param1, Type _param2, object _param3, CultureInfo _param4 )
         {
@@ -743,6 +774,9 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         }
     }
 
+    /// <summary>
+    /// An notifiable Object for CandleStick which will bind to the ChartCandleElement
+    /// </summary>
     private sealed class NotifiableCandlestickUI : NotifiableObject, IDisposable
     {
 
@@ -752,9 +786,9 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
         private bool _isDarkTheme;
 
-        public NotifiableCandlestickUI( ChartCandleElement _param1 )
+        public NotifiableCandlestickUI( ChartCandleElement candle )
         {
-            _candle = _param1 ?? throw new ArgumentNullException( "elem" );
+            _candle = candle ?? throw new ArgumentNullException( "elem" );
             _candle.PropertyChanged += new PropertyChangedEventHandler( OnPropertyChanged );
             InitThemes();
             DevExpress.Xpf.Core.ThemeManager.ApplicationThemeChanged += new DevExpress.Xpf.Core.ThemeChangedRoutedEventHandler( OnThemeChanged );
@@ -775,25 +809,25 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         private void OnThemeChanged( DependencyObject d, DevExpress.Xpf.Core.ThemeChangedRoutedEventArgs e )
         {
             InitThemes();
-            NotifyChanged( "LineColor" );
-            NotifyChanged( "AreaColor" );
-            NotifyChanged( "FontColor" );
-            NotifyChanged( "Timeframe2Color" );
-            NotifyChanged( "Timeframe2FrameColor" );
-            NotifyChanged( "Timeframe3Color" );
-            NotifyChanged( "MaxVolumeColor" );
-            NotifyChanged( "MaxVolumeBackground" );
-            NotifyChanged( "ClusterLineColor" );
+            NotifyChanged( "LineColor"                 );
+            NotifyChanged( "AreaColor"                 );
+            NotifyChanged( "FontColor"                 );
+            NotifyChanged( "Timeframe2Color"           );
+            NotifyChanged( "Timeframe2FrameColor"      );
+            NotifyChanged( "Timeframe3Color"           );
+            NotifyChanged( "MaxVolumeColor"            );
+            NotifyChanged( "MaxVolumeBackground"       );
+            NotifyChanged( "ClusterLineColor"          );
             NotifyChanged( "ClusterSeparatorLineColor" );
-            NotifyChanged( "ClusterTextColor" );
-            NotifyChanged( "ClusterColor" );
-            NotifyChanged( "ClusterMaxColor" );
-            NotifyChanged( "HorizontalVolumeColor" );
+            NotifyChanged( "ClusterTextColor"          );
+            NotifyChanged( "ClusterColor"              );
+            NotifyChanged( "ClusterMaxColor"           );
+            NotifyChanged( "HorizontalVolumeColor"     );
             NotifyChanged( "HorizontalVolumeFontColor" );
-            NotifyChanged( "BuyColor" );
-            NotifyChanged( "SellColor" );
-            NotifyChanged( "UpColor" );
-            NotifyChanged( "DownColor" );
+            NotifyChanged( "BuyColor"                  );
+            NotifyChanged( "SellColor"                 );
+            NotifyChanged( "UpColor"                   );
+            NotifyChanged( "DownColor"                 );
         }
 
         private void InitThemes()
@@ -803,16 +837,16 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
             _themeProvider = new ThemeColorProviderEx
             {
-                BoxVolumeTimeframe2Color = Colors.LightGray,
-                BoxVolumeTimeframe2FrameColor = Colors.Gray,
-                BoxVolumeTimeframe3Color = Colors.DarkGray,
-                BoxVolumeHighVolColor = Colors.Red,
-                ClusterProfileLineColor = Colors.Black,
+                BoxVolumeTimeframe2Color         = Colors.LightGray,
+                BoxVolumeTimeframe2FrameColor    = Colors.Gray,
+                BoxVolumeTimeframe3Color         = Colors.DarkGray,
+                BoxVolumeHighVolColor            = Colors.Red,
+                ClusterProfileLineColor          = Colors.Black,
                 ClusterProfileSeparatorLineColor = Colors.Gray,
-                ClusterProfileTextColor = Colors.White,
-                ClusterProfileClusterColor = Colors.LightBlue,
-                ClusterProfileClusterMaxColor = Colors.DarkBlue,
-                BoxVolumeCellFontColor = Colors.Black
+                ClusterProfileTextColor          = Colors.White,
+                ClusterProfileClusterColor       = Colors.LightBlue,
+                ClusterProfileClusterMaxColor    = Colors.DarkBlue,
+                BoxVolumeCellFontColor           = Colors.Black
             };
         }
 
@@ -858,6 +892,10 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             set => _candle.FontColor = new Color?( value );
         }
 
+        /// <summary>
+        /// This likely refers to how different timeframes (e.g., daily, hourly, 15-minute charts) might be visually represented or differentiated,
+        /// possibly with different colors, within the StockSharp platform's charting tools or when designing trading strategies.
+        /// </summary>
         public Color Timeframe2Color
         {
             get
@@ -867,6 +905,13 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             set => _candle.Timeframe2Color = new Color?( value );
         }
 
+        /// <summary>
+        /// Similar to "Timeframe2Color," "Timeframe2FrameColor" is likely a concept within StockSharp related to customizing the visual representation of 
+        /// different timeframes on charts, potentially by applying specific colors to elements associated with each timeframe, 
+        /// such as the borders or backgrounds of frames within the charting interface. Although a direct definition wasn't found, 
+        /// it's probable that this feature would allow users to visually distinguish between charts displaying data from different 
+        /// timeframes for enhanced analysis or strategy development within the StockSharp platform.
+        /// </summary>
         public Color Timeframe2FrameColor
         {
             get
@@ -876,6 +921,11 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             set => _candle.Timeframe2FrameColor = new Color?( value );
         }
 
+        /// <summary>
+        /// "Timeframe3Color" likely refers to the ability to define distinct color schemes or styles that are applied to charts
+        /// when using a specific timeframe, possibly the third in a sequence of defined timeframes or a specific custom setting. 
+        /// To implement this, you would likely use the chart customization features within StockSharp to save different color schemes as chart styles tied to different timeframes.
+        /// </summary>
         public Color Timeframe3Color
         {
             get
@@ -997,55 +1047,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         }
     }
 
-    //    [Serializable]
-    //    private new sealed class SomeClass34343383
-    //    {
-    //        public static readonly ChartCandleElementViewModel.SomeClass34343383 SomeMethond0343 = new ChartCandleElementViewModel.SomeClass34343383();
-    //        public static Func<SeriesInfo, string> \u0023\u003DzU9srAoETJDIIA3EbGw\u003D\u003D;
-    //    public static Func<SeriesInfo, string> \u0023\u003Dzv7x3aq5xjFNkgWHCPg\u003D\u003D;
-    //    public static Func<SeriesInfo, string> \u0023\u003Dz3QgfRT\u0024GTbbdeFCZLg\u003D\u003D;
-    //    public static Func<SeriesInfo, string> \u0023\u003Dz3XWQ58Tacl3uxVgGiw\u003D\u003D;
-    //    public static Func<SeriesInfo, string> \u0023\u003DztKkeF19DCI_S9dyd\u0024A\u003D\u003D;
-
-    //    public string Method01(
-    //      SeriesInfo _param1)
-    //        {
-    //            return !( _param1 is OhlcSeriesInfo vo1e0c8c41pWqbDkntdB13Yg ) ? (string)null : vo1e0c8c41pWqbDkntdB13Yg.FormattedOpenValue;
-    //        }
-
-    //        public string \u0023\u003DzyboOJPrkbYbHrtK_jYxCKz0\u003D(
-    //          SeriesInfo _param1)
-    //    {
-    //      return !(_param1 is OhlcSeriesInfo vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedHighValue;
-    //    }
-
-    //    public string \u0023\u003Dz_F9udS\u0024bvXmu7p7kNM2l1tM\u003D(
-    //      SeriesInfo _param1)
-    //    {
-    //      return !(_param1 is OhlcSeriesInfo vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedLowValue;
-    //    }
-
-    //public string \u0023\u003Dz_2ZdaKSEm\u0024dowilMRXDN0r4\u003D(
-    //  SeriesInfo _param1)
-    //    {
-    //      return !(_param1 is OhlcSeriesInfo vo1e0c8c41pWqbDkntdB13Yg) ? (string) null : vo1e0c8c41pWqbDkntdB13Yg.FormattedCloseValue;
-    //    }
-
-    //    public string \u0023\u003Dzu0cWRPhAEXPa2F76HfbtuFw\u003D(
-    //      SeriesInfo _param1)
-    //    {
-    //      if (!(_param1 is \u0023\u003DzGULZ_B3lGVEDiq9xPbVQjsPdCs3fSNYVEdhm_bS76Lhc cs3fSnyvEdhmBS76Lhc))
-    //        return string.Empty;
-    //string str = string.Empty;
-    //if ( cs3fSnyvEdhmBS76Lhc.XValue != null )
-    //    str = $"O:{cs3fSnyvEdhmBS76Lhc.FormattedOpenValue} H:{cs3fSnyvEdhmBS76Lhc.FormattedHighValue} L:{cs3fSnyvEdhmBS76Lhc.FormattedLowValue} C:{cs3fSnyvEdhmBS76Lhc.FormattedCloseValue}";
-    //return $"{str}   {cs3fSnyvEdhmBS76Lhc.Level}";
-    //    }
-    //  }
-
-
-
-
+    
 }
 
 

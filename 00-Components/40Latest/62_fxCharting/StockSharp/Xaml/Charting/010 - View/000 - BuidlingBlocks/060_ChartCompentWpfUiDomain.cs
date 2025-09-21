@@ -34,14 +34,32 @@ namespace StockSharp.Xaml.Charting;
 public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where T : ChartPart< T >, IChartElementUiDomain
 {
     private readonly PooledSet< IChartComponent > _componentUIMap = new PooledSet< IChartComponent >( );
-    private readonly T _drawableChartElement;
+    private readonly T _chartComponentUI;
 
+    /// <summary>
+    /// This constructor is called when we create the top most ChartComponent, for example, ChartCandleElementUiDomain will be called from here
+    /// 
+    /// public ChartElementUiDomain CreateViewModel( IDrawingSurfaceVM viewModel )
+    /// {        
+    ///     return _uiBusinessLogic = new ChartCandleElementUiDomain( this );
+    /// }
+    /// 
+    /// And ChartCandleElementUIDomain is declared as follows:
+    /// 
+    /// public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : ChartCompentWpfUiDomain<ChartCandleElement>( candle ), IPaletteProvider, IPaletteProviderSS
+    /// 
+    /// </summary>
+    /// <param name="component"></param>
+    /// <exception cref="ArgumentNullException"></exception>
     protected ChartCompentWpfUiDomain( T component )
     {
-        _drawableChartElement = component ?? throw new ArgumentNullException( "elem" );
+        _chartComponentUI = component ?? throw new ArgumentNullException( "elem" );
         AddPropertyEvents( ChartComponentView );
     }
 
+    /// <summary>
+    /// This will return the ChartComponentView, for example, ChartCandleElementUiDomain will return ChartCandleElement interface IChartElementUiDomain
+    /// </summary>
     public override IChartElementUiDomain Element
     {
         get
@@ -50,19 +68,22 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
         }
     }
 
+    /// <summary>
+    /// This will return the ChartComponentView, for example, ChartCandleElementUiDomain will return ChartCandleElement
+    /// </summary>
     protected T ChartComponentView
     {
         get
         {
-            return _drawableChartElement;
+            return _chartComponentUI;
         }
     }
 
     public sealed override void GuiUpdateAndClear( )
     {
-        foreach( IChartComponent elementXY in _componentUIMap.ToArray( ) )
+        foreach( IChartComponent component in _componentUIMap.ToArray( ) )
         {
-            RemovePropertyEvents( elementXY );
+            RemovePropertyEvents( component );
         }
         base.GuiUpdateAndClear( );
     }
@@ -114,8 +135,14 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
         };
     }
 
-    
 
+    /// <summary>
+    /// Create the renderable series and setup the binding for the properties
+    /// </summary>
+    /// <typeparam name="U"></typeparam>
+    /// <param name="childviewmodel"></param>
+    /// <returns></returns>
+    /// <exception cref="InvalidOperationException"></exception>
     protected U CreateRenderableSeries< U >( ChartElementViewModel[ ] childviewmodel ) where U : BaseRenderableSeries, new()
     {        
         if ( childviewmodel != null && childviewmodel.Any( vm => vm == null ) )
@@ -123,15 +150,18 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
             throw new InvalidOperationException( "value is null during creation of " + typeof( U ).Name );
         }
 
-
+        // Create an instance of the renderable series
         U instance = new U( );
 
+
+        // If this is the toppest ChartComponent, then we just need to bind to its IsVisible property
         if ( ChartComponentView.RootElement == ChartComponentView )
         {
             instance.SetBindings( BaseRenderableSeries.IsVisibleProperty, ChartComponentView, "IsVisible" );
         }
         else
         {
+            // if this is not the toppest ChartComponent, then we need to bind to both its IsVisible property and its RootElement's IsVisible property
             var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
             var converter         = new BoolAllConverter( );
             converter.Value = true;
@@ -150,17 +180,23 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
 
             instance.SetMultiBinding( isVisibleProperty, converter, bindingArray );
         }
+
+        // Set the binding for XAxisId and YAxisId
         instance.SetBindings( BaseRenderableSeries.XAxisIdProperty, RootElem, "XAxisId" );
         instance.SetBindings( BaseRenderableSeries.YAxisIdProperty, RootElem, "YAxisId" );
 
         if ( !( ChartComponentView is ChartBandElement ) && !( ChartComponentView is IChartTransactionElement ) )
         {
+            // If this is not a band or not TransactionElement, then we need to bind to its StrokeThickness and AntiAliasing property
             instance.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
             instance.SetBindings( BaseRenderableSeries.AntiAliasingProperty,    ChartComponentView, "AntiAliasing" );
         }
 
+        // Set the Tag property, so that we can get to its children's ViewModel from the renderable series
+        // For example, CandleStick will have OHLC children view model.
         instance.Tag = ( childviewmodel == null || childviewmodel.Length == 0 ) ? null : Tuple.Create( this, childviewmodel );
         ChartViewModel.ClearChildViewModels();
+        
         return instance;
     }
 
