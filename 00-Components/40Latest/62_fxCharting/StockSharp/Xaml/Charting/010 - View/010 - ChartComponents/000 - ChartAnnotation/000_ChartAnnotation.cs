@@ -67,9 +67,7 @@ public class ChartAnnotation : ChartComponentViewModel<ChartAnnotation>,
         }
             
         return ( ChartElementUiDomain ) ( _uiBusinessLogic = new ChartAnnotationUiDomain( this ) );
-    }
-
-    //public DrawableChartComponentBaseViewModel CreateViewModel( ScichartSurfaceMVVM _param1 );
+    }    
 
     bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {

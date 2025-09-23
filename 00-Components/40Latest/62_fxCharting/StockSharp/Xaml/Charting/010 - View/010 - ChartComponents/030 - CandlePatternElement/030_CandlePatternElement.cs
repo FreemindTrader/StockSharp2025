@@ -27,7 +27,7 @@ public class CandlePatternElement : ChartComponentViewModel<CandlePatternElement
 
     private Color _upColor;
 
-    private ChartElementUiDomain _baseViewModel;
+    private ChartElementUiDomain _uiBusinessLogic;
 
     [Display( ResourceType = typeof( LocalizedStrings ), Name = "Decrease", Description = "ColorOfDecreaseCandle", GroupName = "Style", Order = 30 )]
     public Color DownColor
@@ -53,18 +53,18 @@ public class CandlePatternElement : ChartComponentViewModel<CandlePatternElement
 
     ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
     {
-        return _baseViewModel = new CandlePatternElementViewModel( this );
+        return _uiBusinessLogic = new CandlePatternElementUiDomain( this );
     }
 
 
-    bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> _param1 )
+    bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {
-        return _baseViewModel.Draw( _param1 );
+        return _uiBusinessLogic.Draw( drawData );
     }
 
     void IChartElementUiDomain.StartDrawing()
     {
-        _baseViewModel.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+        _uiBusinessLogic.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
     }
 
     protected override bool OnDraw( ChartDrawData data ) => throw new NotSupportedException();
@@ -81,13 +81,13 @@ public class CandlePatternElement : ChartComponentViewModel<CandlePatternElement
     {
         base.Load( storage );
         DownColor = storage.GetValue<int>( "DownColor", 0 ).ToColor();
-        UpColor = storage.GetValue<int>( "UpColor", 0 ).ToColor();
+        UpColor   = storage.GetValue<int>( "UpColor",   0 ).ToColor();
     }
 
     public override void Save( SettingsStorage storage )
     {
         base.Save( storage );
         storage.SetValue<int>( "DownColor", DownColor.ToInt() );
-        storage.SetValue<int>( "UpColor", UpColor.ToInt() );
+        storage.SetValue<int>( "UpColor",   UpColor.ToInt() );
     }
 }

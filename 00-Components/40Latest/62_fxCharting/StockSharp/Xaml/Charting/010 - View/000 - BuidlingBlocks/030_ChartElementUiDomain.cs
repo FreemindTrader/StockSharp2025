@@ -144,19 +144,45 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
     {
     }
 
+    /// <summary>
+    /// This function will remove 
+    ///     - all the axis markers from the chart
+    ///     - all the annotation on the chart
+    /// </summary>
     protected void ClearAll( )
     {
-        foreach( KeyValuePair< IRenderableSeries, AxisMarkerAnnotation > p in _renderseries2AxisMarker )
+        //
+        // Summary:
+        //     The AxisMarkerAnnotation provides an axis label which is data-bound to its Y-value.
+        //     Used to place a marker on the Y-Axis it can give feedback about the latest value
+        //     of a series, or important points in a series.
+        foreach ( KeyValuePair< IRenderableSeries, AxisMarkerAnnotation > p in _renderseries2AxisMarker )
         {
             p.Value.IsHidden = true;
+
+            //
+            // Summary:
+            //     Removes all bindings, including bindings of type System.Windows.Data.Binding,
+            //     System.Windows.Data.MultiBinding, and System.Windows.Data.PriorityBinding, from
+            //     the specified System.Windows.DependencyObject.
+            //
+            // Parameters:
+            //   target:
+            //     The object from which to remove bindings.
+            //
+            // Exceptions:
+            //   T:System.ArgumentNullException:
+            //     If target is null.
             BindingOperations.ClearAllBindings( p.Value );
         }
+
         DrawingSurface.RemoveAnnotation( RootElem, null );
+        
         _renderseries2AxisMarker.Clear( );
     }
 
     protected void SetupAxisMarkerAndBinding( IRenderableSeries renderSeries,
-                                              IChartComponent element,
+                                              IChartComponent chartComponent,
                                               string showAxisMakerStr,
                                               string colorStr )
     {
@@ -167,8 +193,8 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
         _renderseries2AxisMarker[ renderSeries ] = axisMarker;
         DrawingSurface.AddAxisMakerAnnotation( RootElem, axisMarker, axisMarker );
 
-        axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, element, "XAxisId", BindingMode.TwoWay, null, null );
-        axisMarker.SetBindings( AnnotationBase.YAxisIdProperty, element, "YAxisId", BindingMode.TwoWay, null, null );
+        axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, chartComponent, "XAxisId", BindingMode.TwoWay, null, null );
+        axisMarker.SetBindings( AnnotationBase.YAxisIdProperty, chartComponent, "YAxisId", BindingMode.TwoWay, null, null );
 
         //AxisMarkerAnnotation markerAnnotation3 = axisMarker;
         var isHiddenProperty = AnnotationBase.IsHiddenProperty;
@@ -177,7 +203,7 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 
         Binding[ ] bindingArray = new Binding[ 2 ]
         {
-            new Binding( showAxisMakerStr ) { Source = element },
+            new Binding( showAxisMakerStr ) { Source = chartComponent },
             new Binding( )
                                             {
                                                 Source = renderSeries,
@@ -189,8 +215,8 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 
         if( colorStr != null )
         {
-            axisMarker.SetBindings( Control.BackgroundProperty,  element, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
-            axisMarker.SetBindings( Control.BorderBrushProperty, element, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+            axisMarker.SetBindings( Control.BackgroundProperty,  chartComponent, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
+            axisMarker.SetBindings( Control.BorderBrushProperty, chartComponent, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
         }
         else
         {

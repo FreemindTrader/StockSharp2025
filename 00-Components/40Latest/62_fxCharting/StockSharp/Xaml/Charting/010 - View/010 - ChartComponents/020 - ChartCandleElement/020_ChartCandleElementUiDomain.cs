@@ -46,7 +46,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 {
     private readonly OhlcDataSeriesTF<DateTime, double>                 _ohlcDataSeries          = new OhlcDataSeriesTF<DateTime, double>();
     private readonly XyDataSeries<DateTime, double>                     _xyDataSeries            = new XyDataSeries<DateTime, double>();
-    private readonly SynchronizedList<CandlePatternElementViewModel>    _chartPatternsList       = new SynchronizedList<CandlePatternElementViewModel>();
+    private readonly SynchronizedList<CandlePatternElementUiDomain>    _chartPatternsList       = new SynchronizedList<CandlePatternElementUiDomain>();
     private readonly SynchronizedDictionary<DateTime, Color>            _dateTime2ColorMap       = new SynchronizedDictionary<DateTime, Color>();
     private readonly NotifiableCandlestickUI                            _notifiableCandlestickUI = new NotifiableCandlestickUI(candle);
     private Func<DateTimeOffset, bool, bool, Color?>                    _colorerFunction;
@@ -64,20 +64,20 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     //     property. Any time a DataSeries is appended to, the parent SciChart.Charting.Visuals.SciChartSurface
     //     will be redrawn
     private ChartSeriesViewModel       _chartSeriesViewModel;
-    private TimeframeSegmentDataSeries _tfsDataSeries;
-    private DateTime                   _dateTimeUtc;
-    private bool?                      notAutoScroll;
-    private IndexRange                 _indexRange;
-    private ChartElementViewModel      _openViewModel;
-    private ChartElementViewModel      _highViewModel;
-    private ChartElementViewModel      _lowViewModel;
-    private ChartElementViewModel      _closeViewModel;
+    private TimeframeSegmentDataSeries _tfsDataSeries;              // This is used to draw the Volume Profile
+    private DateTime                   _lastCandleTime;             // The time of the most recent candle
+    private bool?                      _notAutoScroll;
+    private IndexRange                 _visibleRange;               // Current Visible Range of the viewport on the X axis
+    private ChartElementViewModel      _openViewModel;              // Candlestick Open
+    private ChartElementViewModel      _highViewModel;              // Candlestick High
+    private ChartElementViewModel      _lowViewModel;               // Candlestick Low
+    private ChartElementViewModel      _closeViewModel;             // Candlestick Close
     private ChartElementViewModel      _lineViewModel;              // When we are drawing lines instead of candlesticks
-    private ChartElementViewModel      _volumeViewModel;
-    private Decimal?                   _pnfBoxSize;
+    private ChartElementViewModel      _volumeViewModel;            // Volume for this particular candle
+    private Decimal?                   _pnfBoxSize;                 // Point and figure chart size for the X and O
 
 
-    private bool _hasDrawnOnce;
+    private bool _hasDrawnOnce;                                     // One time setting of xAxisVisibleRange.CategoryDateTimeRange = visibleRange;
 
     public OhlcDataSeriesTF<DateTime, double> OhlcSeries
     {
@@ -91,7 +91,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     /// The list of patterns associated with this candle element
     /// </summary>
     /// <param name="pattern"></param>
-    public void AddPattern( CandlePatternElementViewModel pattern )
+    public void AddPattern( CandlePatternElementUiDomain pattern )
     {
         if ( _chartPatternsList.Contains( pattern ) )
             return;
@@ -103,7 +103,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     /// Remove a pattern from the _chartPatternsList
     /// </summary>
     /// <param name="pattern"></param>
-    public void RemovePattern( CandlePatternElementViewModel pattern )
+    public void RemovePattern( CandlePatternElementUiDomain pattern )
     {
         _chartPatternsList.Remove( pattern );
     }
@@ -142,7 +142,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
         GuiInitSeries();
 
-        // The following code will add the DrawStyle property to the Candle element
+        // The following code will add the DrawStyle property to the Candlestick UI
         // And whenever the DrawStyle property is changed, the event handler will be called to redraw the candle
         AddDrawStylePropertyChanging<ChartCandleDrawStyles>( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
         {
@@ -159,12 +159,22 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         } );
     }
 
+    /// <summary>
+    /// If we have specific color for certain bar, we will return that color
+    /// 
+    /// If not, 
+    ///     In light mode, we will return Green for rising bar and Red for falling bar
+    ///     In dark mode,  we will return LineGreen for rising bar and OrangeRead for falling bar
+    /// </summary>
+    /// <param name="series"></param>
+    /// <returns></returns>
     private Color GetSereisInfoColor( SeriesInfo series )
     {
         Color color;
         if ( _dateTime2ColorMap.TryGetValue( OhlcSeries.XValues[series.DataSeriesIndex], out color ) )
             return color;
-        return ChartCandleElementUiDomain.IsRising( series ) ? ( !_notifiableCandlestickUI.IsDark ? Colors.Green : Colors.LimeGreen ) : ( !_notifiableCandlestickUI.IsDark ? Colors.Red : Colors.OrangeRed );
+
+        return IsRising( series ) ? ( !_notifiableCandlestickUI.IsDark ? Colors.Green : Colors.LimeGreen ) : ( !_notifiableCandlestickUI.IsDark ? Colors.Red : Colors.OrangeRed );
     }
 
     private string SetLineViewModelName( SeriesInfo s )
@@ -228,7 +238,8 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         }
         else
         {
-            InitTimeframeSegmentDataSeries();
+            // Setup TimeframeSegmentDataSeries for cluster profile
+            InitTimeframeSegmentDataSeries( );
 
             if ( GetDataSeriesByDrawStyle() == null )
             {
@@ -240,9 +251,12 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
                 {
                     Type drawStyleRS = GetRenderingSeriesByDrawStyle();
                     Type realDrawRS = _chartSeriesViewModel.RenderSeries.GetType();
+
+                    // If nothing changed, no need to do anything
                     if ( _chartSeriesViewModel.DataSeries == GetDataSeriesByDrawStyle() && drawStyleRS == realDrawRS )
                         return;
 
+                    // Now that user has changed the DrawStyle, we need to remove the old chart series
                     BindingOperations.ClearAllBindings( ( DependencyObject ) _chartSeriesViewModel.RenderSeries );
                 }
 
@@ -402,8 +416,8 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
                 Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.CellFontColorProperty,           _notifiableCandlestickUI, "FontColor"                                                                                                                    );
                 Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.HighVolColorProperty,            _notifiableCandlestickUI, "MaxVolumeColor"                                                                                                               );
                 Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.HighVolBackgroundProperty,       _notifiableCandlestickUI, "MaxVolumeBackground"                                                                                                          );
-                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe2Property,              ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, ( IValueConverter ) new ChartCandleElementUiDomain.TimeSpanConverter( CandlesTimeframe ) );
-                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe3Property,              ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, ( IValueConverter ) new ChartCandleElementUiDomain.TimeSpanConverter( CandlesTimeframe ) );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe2Property,              ChartComponentView, "Timeframe2Multiplier", BindingMode.OneWay, ( IValueConverter ) new TimeSpanConverter( CandlesTimeframe ) );
+                Ecng.Xaml.XamlHelper.SetBindings( rSeries, BoxVolumeRenderableSeries.Timeframe3Property,              ChartComponentView, "Timeframe3Multiplier", BindingMode.OneWay, ( IValueConverter ) new TimeSpanConverter( CandlesTimeframe ) );
                 
                 break;
 
@@ -477,9 +491,9 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         OhlcSeries.Clear();
         OhlcSeries.Timeframe = new TimeSpan?();
         _xyDataSeries.Clear();
-        _tfsDataSeries = ( TimeframeSegmentDataSeries ) null;
-        _dateTimeUtc = new DateTime();
-        _pnfBoxSize = new Decimal?();
+        _tfsDataSeries       = ( TimeframeSegmentDataSeries ) null;
+        _lastCandleTime         = new DateTime();
+        _pnfBoxSize          = new Decimal?();
         _dateTime2ColorMap.Clear();
         PerformUiAction( new Action( Reset ), true );
     }
@@ -524,10 +538,10 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         {
             bool shouldScrollNow;
             
-            if ( notAutoScroll.HasValue && ( !notAutoScroll.GetValueOrDefault( ) || _indexRange != currentVisibleIndexRange ) )
+            if ( _notAutoScroll.HasValue && ( !_notAutoScroll.GetValueOrDefault( ) || _visibleRange != currentVisibleIndexRange ) )
             {
                 // Since the desired range is not in the current visible range, we should scroll the view port.
-                shouldScrollNow = !( !notAutoScroll.GetValueOrDefault( ) & notAutoScroll.HasValue ) ? false : ( currentVisibleIndexRange.Max >= totalBarCount ? true : false );
+                shouldScrollNow = !( !_notAutoScroll.GetValueOrDefault( ) & _notAutoScroll.HasValue ) ? false : ( currentVisibleIndexRange.Max >= totalBarCount ? true : false );
             }
             else
             {
@@ -535,27 +549,27 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             }
                             
 
-            if ( shouldScrollNow && ( currentVisibleIndexRange.Max < totalBarCount || !notAutoScroll.HasValue ) )
+            if ( shouldScrollNow && ( currentVisibleIndexRange.Max < totalBarCount || !_notAutoScroll.HasValue ) )
             {
                 // scrolling conditions fulfilled, scroll to the end of the total bars
                 var visibleBarCount = currentVisibleIndexRange.Max - currentVisibleIndexRange.Min + 1;
                 var newRange        = new IndexRange(totalBarCount - visibleBarCount + 1, totalBarCount);
-                _indexRange         = newRange;
+                _visibleRange         = newRange;
 
                 xAxisVisibleRange.CategoryDateTimeRange = newRange;
                 
             }
             else
             {
-                _indexRange = currentVisibleIndexRange;
+                _visibleRange = currentVisibleIndexRange;
             }
                 
-            notAutoScroll = shouldScrollNow;            
+            _notAutoScroll = shouldScrollNow;            
         }
         else
         {
-            notAutoScroll = false;
-            _indexRange   = null;
+            _notAutoScroll = false;
+            _visibleRange    = null;
         }
     }
 
@@ -633,7 +647,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
             return false;
 
         int barCount = ( (IEnumerableEx)candles ).Count;
-        DateTime lastCandleTime = _dateTimeUtc;
+        DateTime lastCandleTime = _lastCandleTime;
         int index = -1;
         bool candleNotFinished = false;
 
@@ -713,7 +727,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
         _ohlcDataSeries.Append( timeArray, openArray, highArray, lowArray, closeArray );
         _xyDataSeries.Append( ( IEnumerable<DateTime> ) timeArray, ( IEnumerable<double> ) closeArray );
-        _dateTimeUtc = lastCandleTime;
+        _lastCandleTime = lastCandleTime;
         return true;
     }
 
@@ -732,7 +746,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         var barIndex = (int)candleIndex;
         var barTime  = OhlcSeries.XValues[barIndex];
 
-        foreach ( var pattern in ( BaseCollection<CandlePatternElementViewModel, List<CandlePatternElementViewModel>> ) _chartPatternsList )
+        foreach ( var pattern in ( BaseCollection<CandlePatternElementUiDomain, List<CandlePatternElementUiDomain>> ) _chartPatternsList )
         {
             var candleColor = pattern.GetCandleColor(barTime, closePrice > openPrice);
             

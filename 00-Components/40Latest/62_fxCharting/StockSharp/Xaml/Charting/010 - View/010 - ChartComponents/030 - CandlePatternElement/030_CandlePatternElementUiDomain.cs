@@ -1,10 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: #=zGf68ilGq59TJ0aVKr0K_9Ur9WO7TFzBBD24ufNSokcCRpZmI_iRRi1f09FSCgNU6tg==
-// Assembly: StockSharp.Xaml.Charting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: B81ABC38-30E9-4E5C-D0FB-A30B79FCF2D6
-// Assembly location: C:\00-Reverse\StockSharp.Xaml.Charting-eazfix.dll
-
-using Ecng.Collections;
+﻿using Ecng.Collections;
 using StockSharp.Algo.Indicators;
 using StockSharp.Xaml.Charting;
 using System;
@@ -47,12 +41,12 @@ using System.Windows.Media;
 ///		pC1: closing price of the candle before the previous one, All references must be within the range of the current pattern. For example, the range of the 3 Black Crows pattern consists of the current and two previous candles, so referring to the third previous candle is not allowed.
 /// </summary>
 /// <param name="pattern"></param>
-public sealed class CandlePatternElementViewModel( CandlePatternElement pattern ) : ChartCompentWpfUiDomain<CandlePatternElement>( pattern )
+public sealed class CandlePatternElementUiDomain( CandlePatternElement pattern ) : ChartCompentWpfUiDomain<CandlePatternElement>( pattern )
 {
 
-    private readonly HashSet<DateTime> _dateTimeHashSet = new HashSet<DateTime>();
+    private readonly HashSet<DateTime> _candlePatternsTime = new HashSet<DateTime>();
 
-    private DateTime[] _dateTimeArray = Array.Empty<DateTime>();
+    private DateTime[] _candlePatternsArray = Array.Empty<DateTime>();
 
     private ChartCandleElementUiDomain _candlestickUI;
 
@@ -70,14 +64,15 @@ public sealed class CandlePatternElementViewModel( CandlePatternElement pattern 
     /// <exception cref="InvalidOperationException"></exception>
     private void InternalInit( bool shouldThrow )
     {
-        ChartCandleElementUiDomain candlesVM = DrawingSurface.CandlesCompositeElement?.CandlesViewModel;
-        if ( candlesVM == null & shouldThrow )
+        var candlesUiDomain = DrawingSurface.CandlesCompositeElement?.CandlesViewModel;
+        if ( candlesUiDomain == null & shouldThrow )
             throw new InvalidOperationException( "unable to draw candle patterns on a chart without candles" );
 
-        if ( _candlestickUI == candlesVM )
+        if ( _candlestickUI == candlesUiDomain )
             return;
+
         _candlestickUI?.RemovePattern( this );
-        _candlestickUI = candlesVM;
+        _candlestickUI = candlesUiDomain;
         _candlestickUI?.AddPattern( this );
     }
 
@@ -89,8 +84,8 @@ public sealed class CandlePatternElementViewModel( CandlePatternElement pattern 
 
     protected override void UpdateUi()
     {
-        lock ( _dateTimeHashSet )
-            _dateTimeHashSet.Clear();
+        lock ( _candlePatternsTime )
+            _candlePatternsTime.Clear();
 
         DrawingSurface.Refresh();
     }
@@ -99,43 +94,44 @@ public sealed class CandlePatternElementViewModel( CandlePatternElement pattern 
     {
         base.RootElementPropertyChanged( com, propName );
 
-        if ( !( propName == "UpColor" ) && !( propName == "DownColor" ) && !( propName == "IsVisible" ) )
+        if ( ( propName != "UpColor" ) && ( propName != "DownColor" ) && ( propName != "IsVisible" ) )
             return;
 
         DrawingSurface.Refresh();
     }
 
-    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> data )
+    public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawData )
     {
-        if ( data == null || CollectionHelper.IsEmpty( data ) )
+        if ( drawData == null || CollectionHelper.IsEmpty( drawData ) )
             return false;
+
         InternalInit( true );
 
         var shouldUpdate = false;
 
-        lock ( _dateTimeHashSet )
+        lock ( _candlePatternsTime )
         {
-            foreach ( ChartDrawData.IndicatorData indicatorData in data )
+            foreach ( ChartDrawData.IndicatorData indicatorData in drawData )
             {
                 CandlePatternIndicatorValue pattern = (CandlePatternIndicatorValue)indicatorData.Value;
                 if ( pattern.Value )
                 {
                     if ( pattern.IsFinal )
                     {
-                        CollectionHelper.ForEach( pattern.CandleOpenTimes, p => shouldUpdate = shouldUpdate | _dateTimeHashSet.Add( p.UtcDateTime ) );
+                        CollectionHelper.ForEach( pattern.CandleOpenTimes, p => shouldUpdate = shouldUpdate | _candlePatternsTime.Add( p.UtcDateTime ) );
                     }
                     else
                     {
-                        var dateTimeList = new List<DateTime>();
-                        dateTimeList.AddRange( pattern.CandleOpenTimes.Select( p => p.UtcDateTime ) );
-                        _dateTimeArray = dateTimeList.ToArray();
+                        var patternTimeList = new List<DateTime>();
+                        patternTimeList.AddRange( pattern.CandleOpenTimes.Select( p => p.UtcDateTime ) );
+                        _candlePatternsArray = patternTimeList.ToArray();
                         shouldUpdate = true;
                     }
                 }
-                else if ( _dateTimeArray.Length != 0 )
+                else if ( _candlePatternsArray.Length != 0 )
                 {
                     shouldUpdate = true;
-                    _dateTimeArray = Array.Empty<DateTime>();
+                    _candlePatternsArray = Array.Empty<DateTime>();
                 }
             }
         }
@@ -150,11 +146,11 @@ public sealed class CandlePatternElementViewModel( CandlePatternElement pattern 
         if ( !RootElem.IsVisible || !ChartComponentView.IsVisible )
             return new Color?();
 
-        lock ( _dateTimeHashSet )
+        lock ( _candlePatternsTime )
         {
-            if ( !_dateTimeHashSet.Contains( barTime ) )
+            if ( !_candlePatternsTime.Contains( barTime ) )
             {
-                if ( !( ( IEnumerable<DateTime> ) _dateTimeArray ).Contains<DateTime>( barTime ) )
+                if ( !( ( IEnumerable<DateTime> ) _candlePatternsArray ).Contains<DateTime>( barTime ) )
                     return new Color?();
             }
         }

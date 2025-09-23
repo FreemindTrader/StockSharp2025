@@ -50,9 +50,7 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// 
 /// </summary>
-public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
-                                                IDisposable, 
-                                                IDrawingSurfaceVM
+public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable, IDrawingSurfaceVM
 {
     /// <summary>
     /// Chart Components Cache 
@@ -720,7 +718,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
             candle.PropertyChanged += new PropertyChangedEventHandler( Candle_PropertyChanged );
         }
         CheckForCandles();
-        chartComponent.PropertyChanged += new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
+        chartComponent.PropertyChanged += new PropertyChangedEventHandler( XYAxisId_PropertyChanged );
     }
 
     public bool OnChartAreaElementsRemoving( IChartElement _param1 )
@@ -735,7 +733,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
         chartComp.RemoveAxisesEventHandler();
         if ( chartComp is IChartCandleElement chartCandleElement )
             chartCandleElement.PropertyChanged -= new PropertyChangedEventHandler( Candle_PropertyChanged );
-        chartComp.PropertyChanged -= new PropertyChangedEventHandler( OnChartComponentPropertiesChanged );
+        chartComp.PropertyChanged -= new PropertyChangedEventHandler( XYAxisId_PropertyChanged );
         ( ( SynchronizedDictionary<IChartComponent, ChartComponentUiDomain> ) _componentsCache ).Remove( chartComp );
         if ( vm != null )
         {
@@ -747,7 +745,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
         return true;
     }
 
-    private void OnChartComponentPropertiesChanged( object chartComponent, PropertyChangedEventArgs e )
+    private void XYAxisId_PropertyChanged( object chartComponent, PropertyChangedEventArgs e )
     {
         IChartComponent chartComp = (IChartComponent) chartComponent;
         if ( e.PropertyName != "XAxisId" && e.PropertyName != "YAxisId" )
@@ -762,10 +760,10 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
         {
             if ( chartComp.TryGetXAxis() != null && chartComp.TryGetYAxis() != null )
             {
-                foreach ( IRenderableSeries oneSerie in multipleSeries )
+                foreach ( IRenderableSeries rSerie in multipleSeries )
                 {
-                    if ( !_advanceChartRenderableSeries.Contains( oneSerie ) )
-                        _advanceChartRenderableSeries.Add( oneSerie );
+                    if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
+                        _advanceChartRenderableSeries.Add( rSerie );
                 }
             }
             else
@@ -969,7 +967,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel,
             _chartUIRSeries[ component ] = componentRSeries = new List<IRenderableSeries>();
         if ( !componentRSeries.Contains( rSeries ) )
             componentRSeries.Add( rSeries );
-        OnChartComponentPropertiesChanged( ( object ) component, new PropertyChangedEventArgs( "XAxisId" ) );
+        XYAxisId_PropertyChanged( ( object ) component, new PropertyChangedEventArgs( "XAxisId" ) );
     }
 
     public void RemoveChartComponent( IChartComponent component )
