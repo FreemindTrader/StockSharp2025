@@ -36,6 +36,7 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
         DefaultStyleKey = ( object ) typeof( MyFastLineRenderableSeries );
     }
 
+
     public OhlcLineDrawMode OhlcDrawMode
     {
         get
