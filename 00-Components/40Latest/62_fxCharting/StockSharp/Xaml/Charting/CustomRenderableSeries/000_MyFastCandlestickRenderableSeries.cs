@@ -76,19 +76,7 @@ public class MyFastCandlestickRenderableSeries : FastCandlestickRenderableSeries
     protected virtual void DrawVanilla(IRenderContext2D renderContext, IRenderPassData renderPassData, IPenManager penManager)
     {
     }
-
-    public static Point TransformPoint(Point point, bool isVerticalChart)
-    {
-        if(isVerticalChart)
-        {
-            double x = point.X;
-            point.X = point.Y;
-            point.Y = x;
-        }
-        return point;
-    }
-
-
+    
     protected override void InternalDraw(IRenderContext2D rc, IRenderPassData renderPassData)
     {
         IndexRange pointRange = this.CurrentRenderPassData.PointRange;

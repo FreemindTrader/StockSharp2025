@@ -28,35 +28,35 @@ public class FastXORenderableSeries : MyFastCandlestickRenderableSeries
     {
         get
         {
-            return (double)GetValue(XOBoxSizeProperty);
+            return ( double ) GetValue( XOBoxSizeProperty );
         }
         set
         {
-            SetValue(XOBoxSizeProperty, value);
+            SetValue( XOBoxSizeProperty, value );
         }
     }
 
-    public FastXORenderableSeries()
+    public FastXORenderableSeries( )
     {
-        DefaultStyleKey = typeof(FastXORenderableSeries);
-        SetCurrentValue(FastOhlcRenderableSeries.DataPointWidthProperty, 1.0);
+        DefaultStyleKey = typeof( FastXORenderableSeries );
+        SetCurrentValue( FastOhlcRenderableSeries.DataPointWidthProperty, 1.0 );
     }
 
 
-    protected override void DrawVanilla(IRenderContext2D rc, IRenderPassData renderPassData, IPenManager penManager)
+    protected override void DrawVanilla( IRenderContext2D rc, IRenderPassData renderPassData, IPenManager penManager )
     {
         bool isVerticalChart = renderPassData.IsVerticalChart;
 
         OhlcPointSeries ohlc = renderPassData.PointSeries as OhlcPointSeries;
 
-        if(ohlc.Count == 1 || XOBoxSize <= 0.0)
+        if ( ohlc.Count == 1 || XOBoxSize <= 0.0 )
         {
             return;
         }
 
         var xCalc      = renderPassData.XCoordinateCalculator;
-        var yCalc      = renderPassData.YCoordinateCalculator;        
-        
+        var yCalc      = renderPassData.YCoordinateCalculator;
+
         // Returns number of pixels of a single bar in associated SciChart.Charting.Visuals.RenderableSeries.IRenderableSeries.
         var boxWidth   = DataPointWidthProvider.GetDataPointWidth();
 
@@ -69,7 +69,7 @@ public class FastXORenderableSeries : MyFastCandlestickRenderableSeries
         var upBrush    = rc.CreateBrush(this.StrokeUp, this.Opacity, null);
         var downBrush  = rc.CreateBrush(this.StrokeDown, this.Opacity, null);
 
-        for(int index = 0; index < ohlc.Count; ++index)
+        for ( int index = 0; index < ohlc.Count; ++index )
         {
             var high     = ohlc.HighValues[index];
             var low      = ohlc.LowValues[index];
@@ -91,55 +91,55 @@ public class FastXORenderableSeries : MyFastCandlestickRenderableSeries
             var brush    = isRising ? upBrush : downBrush;
 
             Maybe.Do<IPaletteProviderSS>( XxxPaletteProvider,
-                                                                (Action<IPaletteProviderSS>)(pp =>
+                                                                ( Action<IPaletteProviderSS> ) ( pp =>
                                                                 {
                                                                     var orColor = pp.OverrideColor((IRenderableSeries)this, xValue, open, high, low, close);
-                                                                    if(!orColor.HasValue)
+                                                                    if ( !orColor.HasValue )
                                                                     {
                                                                         return;
                                                                     }
 
-                                                                    wickPen = penManager.GetPen(orColor.Value, null);
-                                                                    brush = rc.CreateBrush(orColor.Value, this.Opacity, new bool?());
-                                                                }));
+                                                                    wickPen = penManager.GetPen( orColor.Value, null );
+                                                                    brush = rc.CreateBrush( orColor.Value, this.Opacity, new bool?( ) );
+                                                                } ) );
             int maxY = Math.Max(YLowXo, YHighXo);
             int minY = Math.Min(YLowXo, YHighXo);
 
-            if(isSmall)
+            if ( isSmall )
             {
-                rc.FillRectangle( brush, TransformPoint(new Point((double)minXi, (double)YLowXo), isVerticalChart), TransformPoint(new Point((double)maxXi, (double)YHighXo), isVerticalChart), 0.0);
-            } 
-            else if(isRising)
+                rc.FillRectangle( brush, DrawingHelper2025.NormalizePoint( new Point( ( double ) minXi, ( double ) YLowXo ), isVerticalChart ), DrawingHelper2025.NormalizePoint( new Point( ( double ) maxXi, ( double ) YHighXo ), isVerticalChart ), 0.0 );
+            }
+            else if ( isRising )
             {
                 double topY = (double)maxY;
 
-                while(topY > (double)minY)
+                while ( topY > ( double ) minY )
                 {
                     double bottomY = Math.Max(topY - boxHeight, (double)minY);
 
-                    if(topY - bottomY >= 3.0)
+                    if ( topY - bottomY >= 3.0 )
                     {
                         // The following draws a X on the chart
-                        drawHelper.DrawLine( TransformPoint(new Point((double)minXi, topY), isVerticalChart), TransformPoint(new Point((double)maxXi, bottomY), isVerticalChart), wickPen);
+                        drawHelper.DrawLine( DrawingHelper2025.NormalizePoint( new Point( ( double ) minXi, topY ), isVerticalChart ), DrawingHelper2025.NormalizePoint( new Point( ( double ) maxXi, bottomY ), isVerticalChart ), wickPen );
 
-                        drawHelper.DrawLine( TransformPoint(new Point((double)maxXi, topY), isVerticalChart), TransformPoint(new Point((double)minXi, bottomY), isVerticalChart), wickPen);
+                        drawHelper.DrawLine( DrawingHelper2025.NormalizePoint( new Point( ( double ) maxXi, topY ), isVerticalChart ), DrawingHelper2025.NormalizePoint( new Point( ( double ) minXi, bottomY ), isVerticalChart ), wickPen );
                     }
 
                     topY -= boxHeight;
                 }
-            } 
+            }
             else
             {
                 double bottomY = (double)minY;
 
-                while(bottomY < (double)maxY)
+                while ( bottomY < ( double ) maxY )
                 {
                     double boxH = Math.Min(bottomY + boxHeight, (double)maxY) - bottomY;
 
-                    if(boxH >= 3.0)
+                    if ( boxH >= 3.0 )
                     {
                         // The following draws a O on the chart
-                        rc.DrawEllipse( wickPen, (IBrush2D)null, new Point((double)Xi, bottomY + boxH / 2.0), (double)boxWidth, boxH);
+                        rc.DrawEllipse( wickPen, ( IBrush2D ) null, new Point( ( double ) Xi, bottomY + boxH / 2.0 ), ( double ) boxWidth, boxH );
                     }
 
                     bottomY += boxHeight;
