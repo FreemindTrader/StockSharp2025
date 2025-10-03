@@ -19,7 +19,7 @@ using System.Windows.Media;
 
 #pragma warning disable CA1416
 
-internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes 
+internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes 
 {
     private readonly XyDataSeries<DateTime, double> _askLine;
     private readonly XyDataSeries<DateTime, double> _bidLine;
@@ -33,7 +33,7 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
     private ChartElementViewModel _askLineVM;
     private IComparable _lastDrawValueObject;
 
-    public QuotesVM( QuotesUI bandElement ) : base( bandElement )
+    public QuotesUiDomain( QuotesUI bandElement ) : base( bandElement )
     {        
         
         _askLine  = new XyDataSeries<DateTime, double>( );
@@ -238,11 +238,11 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
         _bidLine.Append( myBand, bandTwo );        
 
         PerformUiAction( ( ) =>
-        {
-            _askLine.InvalidateParentSurface( RangeMode.None, true );
-            _bidLine.InvalidateParentSurface( RangeMode.None, true );            
-        },
-                                true
+                            {
+                                _askLine.InvalidateParentSurface( RangeMode.None, true );
+                                _bidLine.InvalidateParentSurface( RangeMode.None, true );            
+                            },
+                            true
                         );
 
         _lastDrawValueObject = lastBand;
@@ -258,19 +258,29 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
             CreateQuoteRSeriesAndBinding( _askLineRSerieVM, ChartComponentView.BidLine, _bidLineVM );
             CreateQuoteRSeriesAndBinding( _bidLineRSerieVM, ChartComponentView.AskLine, _askLineVM );
         }
-        if ( !( propName == "Style" ) )
+        if ( propName != "Style" )
         {
             return;
         }
         SetIncludeSeries( );
     }
 
-    private Color HigherAlphaColor( SeriesInfo seriesInfo_0 )
+    /// <summary>
+    /// Get from two colors' RGBA which has the higher A value
+    /// </summary>
+    /// <param name="sInfo"></param>
+    /// <returns></returns>
+    private Color HigherAlphaColor( SeriesInfo sInfo )
     {
         return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.BidLine.Color, ChartComponentView.BidLine.AdditionalColor );
     }
 
-    private Color LowerAlphaColor( SeriesInfo seriesInfo_0 )
+    /// <summary>
+    /// Get from two colors' RGBA which has the Lower A value
+    /// </summary>
+    /// <param name="sInfo"></param>
+    /// <returns></returns>
+    private Color LowerAlphaColor( SeriesInfo sInfo )
     {
         return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.AskLine.Color, ChartComponentView.AskLine.AdditionalColor );
     }

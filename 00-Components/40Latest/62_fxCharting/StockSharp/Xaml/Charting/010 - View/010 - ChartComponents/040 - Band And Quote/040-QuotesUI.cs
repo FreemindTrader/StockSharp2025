@@ -17,9 +17,9 @@ namespace StockSharp.Xaml.Charting
     public sealed class QuotesUI : ChartComponentViewModel<QuotesUI>,  INotifyPropertyChanged, IChartComponent, IChartElementUiDomain, ICloneable, INotifyPropertyChanging, IChartElement
     {
         private DrawStyles _drawStyle = DrawStyles.Band;
-        private ChartLineElement                   _bidLine;
-        private ChartLineElement                   _askLine;
-        private ChartElementUiDomain                 _viewModel;
+        private ChartLineElement _bidLine;
+        private ChartLineElement _askLine;
+        private ChartElementUiDomain _uiBusinessLogic;
 
         public QuotesUI( )
         {
@@ -64,9 +64,7 @@ namespace StockSharp.Xaml.Charting
                 }
 
                 if ( value != DrawStyles.Band && value != DrawStyles.BandOneValue )
-                {
-                    //throw new InvalidOperationException( LocalizedStrings.Str2063Params.Put( value ) );
-                }
+                    throw new InvalidOperationException( StringHelper.Put( LocalizedStrings.UnsupportedType, value ) );
 
                 RaisePropertyValueChanging( nameof( Style ), value );
                 _drawStyle = value;
@@ -100,38 +98,29 @@ namespace StockSharp.Xaml.Charting
 
         public override bool CheckAxesCompatible( ChartAxisType? xType, ChartAxisType? yType )
         {
-            if ( !yType.HasValue )
-            {
-                return true;
-            }
-            ChartAxisType? nullable = yType;
-            return nullable.GetValueOrDefault( ) == ChartAxisType.Numeric & nullable.HasValue;
+            return !yType.HasValue || yType.GetValueOrDefault( ) == ChartAxisType.Numeric;
         }
 
         ChartElementUiDomain IChartElementUiDomain.CreateViewModel( IDrawingSurfaceVM viewModel )
         {
-            _viewModel = new QuotesVM( this );
-            return _viewModel;
+            _uiBusinessLogic = new QuotesUiDomain( this );
+            return _uiBusinessLogic;
         }
 
         bool IChartElementUiDomain.StartDrawing( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )
         {
-            return _viewModel.Draw( drawValues );
+            return _uiBusinessLogic.Draw( drawValues );
         }
 
         void IChartElementUiDomain.StartDrawing( )
         {
-            _viewModel.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
+            _uiBusinessLogic.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
         }
 
         protected override bool OnDraw( ChartDrawData data )
         {
-            //IEnumerableEx<ChartDrawData.IDrawValue> enumerableEx = data.GetBandDrawValues( this );
-            //if ( enumerableEx != null && !enumerableEx.IsEmpty<ChartDrawData.IDrawValue>( ) )
-            //{
-            //    return ( ( IChartElementUiDomain )this ).StartDrawing( enumerableEx );
-            //}
-            return false;
+            IEnumerableEx<ChartDrawData.IDrawValue> drawValue = data.GetCandleRelatedData( this );
+            return drawValue != null && !CollectionHelper.IsEmpty( drawValue ) && ( ( IChartElementUiDomain ) this ).StartDrawing( drawValue );
         }
 
         public override void Load( SettingsStorage storage )

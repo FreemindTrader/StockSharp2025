@@ -52,8 +52,8 @@ public sealed class ChartBandElement : ChartComponentViewModel<ChartBandElement>
         };
 
         Line1.PropertyChanged += new PropertyChangedEventHandler( OneLineOneAdditionalColorChanged );
-        AddChildElement( ( IChartElement ) Line1, true );
-        AddChildElement( ( IChartElement ) Line2, true );
+        AddChildElement( Line1, true );
+        AddChildElement( Line2, true );
     }
 
     Color IChartElementUiDomain.Color
@@ -119,8 +119,8 @@ public sealed class ChartBandElement : ChartComponentViewModel<ChartBandElement>
     }
 
     void IChartElementUiDomain.StartDrawing()
-    {        
-        _uiBusinessLogic.Draw( CollectionHelper.ToEx<ChartDrawData.IDrawValue>( Enumerable.Empty<ChartDrawData.IDrawValue>(), 0 ) );
+    {
+        _uiBusinessLogic.Draw( Enumerable.Empty<ChartDrawData.IDrawValue>( ).ToEx( 0 ) );
     }
 
     protected override bool OnDraw( ChartDrawData data )
