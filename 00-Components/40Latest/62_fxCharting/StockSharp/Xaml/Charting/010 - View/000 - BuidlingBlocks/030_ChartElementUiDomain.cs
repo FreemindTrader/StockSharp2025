@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Threading;
 using Ecng.Xaml.Converters;
+using SciChart.Charting.Model.ChartSeries;
 
 #pragma warning disable CA1416
 
@@ -32,7 +33,7 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
     private readonly Dictionary< IRenderableSeries, AxisMarkerAnnotation > _renderseries2AxisMarker = new Dictionary< IRenderableSeries, AxisMarkerAnnotation >( );
     private ChartComponentUiDomain _chartComponentViewModel;    
 
-    protected ChartComponentUiDomain ChartViewModel
+    protected ChartComponentUiDomain ChartComponentUiDomain
     {
         get
         {
@@ -54,7 +55,7 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
     {
         get
         {
-            return ChartViewModel.RootChartComponent;
+            return ChartComponentUiDomain.RootChartComponent;
         }
     }
 
@@ -66,13 +67,13 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
     {
         get
         {
-            return ChartViewModel.Pane;
+            return ChartComponentUiDomain.Pane;
         }
     }    
 
     protected bool IsDisposed( )
     {
-        return ChartViewModel.IsDisposed;
+        return ChartComponentUiDomain.IsDisposed;
     }
 
     private static Dispatcher GetDispatcher( )
@@ -122,19 +123,19 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 
     public void Init( ChartComponentUiDomain parentVM )
     {
-        if( ChartViewModel != null )
+        if( ChartComponentUiDomain != null )
         {
             throw new InvalidOperationException( "parent was already addded" );
         }
 
-        ChartViewModel =  parentVM;
+        ChartComponentUiDomain =  parentVM;
         Init( );
         Reset( );
     }
 
     public virtual void UpdateYAxisMarker( )
     {
-        foreach( KeyValuePair< IRenderableSeries, AxisMarkerAnnotation > p in _renderseries2AxisMarker )
+        foreach( var p in _renderseries2AxisMarker )
         {
             p.Value.Y1 = p.Key.DataSeries?.LatestYValue;
         }
@@ -156,7 +157,7 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
         //     The AxisMarkerAnnotation provides an axis label which is data-bound to its Y-value.
         //     Used to place a marker on the Y-Axis it can give feedback about the latest value
         //     of a series, or important points in a series.
-        foreach ( KeyValuePair< IRenderableSeries, AxisMarkerAnnotation > p in _renderseries2AxisMarker )
+        foreach ( var p in _renderseries2AxisMarker )
         {
             p.Value.IsHidden = true;
 
@@ -181,7 +182,17 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
         _renderseries2AxisMarker.Clear( );
     }
 
-    protected void SetupAxisMarkerAndBinding( IRenderableSeries renderSeries,
+
+    /// <summary>
+    /// For the XY Axis, we need to add the labels.
+    /// 
+    ///     - the color of the Axis font is white
+    /// </summary>
+    /// <param name="rs"></param>
+    /// <param name="chartComponent"></param>
+    /// <param name="showAxisMakerStr"></param>
+    /// <param name="colorStr"></param>
+    protected void SetupAxisMarkerAndBinding( IRenderableSeries rs,
                                               IChartComponent chartComponent,
                                               string showAxisMakerStr,
                                               string colorStr )
@@ -190,7 +201,7 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
         axisMarker.FontSize   = 11.0;
         axisMarker.Foreground = Brushes.White;
         
-        _renderseries2AxisMarker[ renderSeries ] = axisMarker;
+        _renderseries2AxisMarker[ rs ] = axisMarker;
         DrawingSurface.AddAxisMakerAnnotation( RootElem, axisMarker, axisMarker );
 
         axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, chartComponent, "XAxisId", BindingMode.TwoWay, null, null );
@@ -206,14 +217,16 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
             new Binding( showAxisMakerStr ) { Source = chartComponent },
             new Binding( )
                                             {
-                                                Source = renderSeries,
+                                                Source = rs,
                                                 Path = new PropertyPath( BaseRenderableSeries.IsVisibleProperty )
                                             }
         };
 
+        // Axis Marker is visible depends on if the ChartComponent's ShowAxisMarker is true and the RenderableSeries's IsVisible is true
         axisMarker.SetMultiBinding( isHiddenProperty, converter, bindingArray );
 
-        if( colorStr != null )
+        // Both the background and broder of the axis will follow the color of the ChartComponent
+        if ( colorStr != null )
         {
             axisMarker.SetBindings( Control.BackgroundProperty,  chartComponent, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
             axisMarker.SetBindings( Control.BorderBrushProperty, chartComponent, colorStr, BindingMode.TwoWay, new ColorToBrushConverter( ), null );
@@ -260,7 +273,7 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 
     private void ResetY1Annotation( )
     {
-        foreach( KeyValuePair< IRenderableSeries, AxisMarkerAnnotation > pair in _renderseries2AxisMarker )
+        foreach( var pair in _renderseries2AxisMarker )
         {
             pair.Value.Y1 = null;
         }

@@ -1,8 +1,11 @@
 ﻿using DevExpress.Internal.WinApi.Windows.UI.Notifications;
+using DevExpress.Utils;
 using DevExpress.Xpf.Charts.Native;
+using DevExpress.Xpf.Charts.Surface;
 using SciChart.Charting.Common.Databinding;
 using SciChart.Charting.Common.Extensions;
 using SciChart.Charting.Model.DataSeries;
+using SciChart.Charting.Numerics.CoordinateCalculators;
 using SciChart.Charting.Visuals.PointMarkers;
 using SciChart.Charting.Visuals.RenderableSeries;
 using SciChart.Charting.Visuals.RenderableSeries.DrawingProviders;
@@ -116,14 +119,161 @@ public class MyFastBandRenderableSeries : FastBandRenderableSeries
     //    }
     //}
 
-    protected override void InternalDraw( IRenderContext2D rc, IRenderPassData renderPassData )
+    //protected override void InternalDraw( IRenderContext2D rc, IRenderPassData renderPassData )
+    //{        
+    //    using ( IPen2D pen1 = rc.CreatePen( this.Stroke, this.AntiAliasing, ( float ) this.StrokeThickness, this.Opacity, ( double[ ] ) null, PenLineCap.Round ) )
+    //    {
+    //        using ( IPen2D pen2 = rc.CreatePen( this.Series1Color, this.AntiAliasing, ( float ) this.StrokeThickness, this.Opacity, ( double[ ] ) null, PenLineCap.Round ) )
+    //            this.DrawBands( pen1, pen2, rc, renderPassData );
+    //    }
+    //}
+
+    //private void DrawBands( IPen2D series1Pen, IPen2D series2Pen, IRenderContext2D renderContext, IRenderPassData renderPassData )
+    //{
+    //    using ( IBrush2D brush2D = renderContext.CreateBrush( this.BandUpColor, base.Opacity, null ) )
+    //    {
+    //        using ( IBrush2D brush2D2 = renderContext.CreateBrush( this.BandDownColor, base.Opacity, null ) )
+    //        {
+    //            XyyPointSeries xyyPointSeries = (XyyPointSeries)base.CurrentRenderPassData.PointSeries;
+    //            int count = xyyPointSeries.Count;
+    //            ISeriesDrawingHelper seriesDrawingHelper = SeriesDrawingHelpersFactory.GetSeriesDrawingHelper(renderContext, base.CurrentRenderPassData);
+
+    //            foreach ( FastBandRenderableSeries.Polygon polygon in this.CreateBandPolygons( renderContext, renderPassData, xyyPointSeries.YPoints, brush2D, xyyPointSeries.Y1Points, brush2D2 ) )
+    //            {
+    //                Point[] points = PointUtil.ClipPolygon(polygon.Points, renderContext.ViewportSize, 0, 0).ToArray<Point>();
+    //                seriesDrawingHelper.FillPolygon( polygon.Brush, points );
+    //            }
+
+    //            using ( IPen2D pen2D = renderContext.CreatePen( base.SeriesColor, base.AntiAliasing, ( float ) base.StrokeThickness, base.Opacity, this.Series0StrokeDashArray, PenLineCap.Round ) )
+    //            {
+    //                FastLinesHelper.IterateLines( SeriesDrawingHelpersFactory.GetLinesPathFactory( renderContext, base.CurrentRenderPassData ), pen2D, xyyPointSeries.YPoints, base.CurrentRenderPassData.XCoordinateCalculator, base.CurrentRenderPassData.YCoordinateCalculator, this.IsDigitalLine, base.DrawNaNAs == LineDrawMode.ClosedLines );
+    //            }
+
+    //            using ( IPen2D pen2D2 = renderContext.CreatePen( this.Series1Color, base.AntiAliasing, ( float ) base.StrokeThickness, base.Opacity, this.Series1StrokeDashArray, PenLineCap.Round ) )
+    //            {
+    //                FastLinesHelper.IterateLines( SeriesDrawingHelpersFactory.GetLinesPathFactory( renderContext, base.CurrentRenderPassData ), pen2D2, xyyPointSeries.Y1Points, base.CurrentRenderPassData.XCoordinateCalculator, base.CurrentRenderPassData.YCoordinateCalculator, this.IsDigitalLine, base.DrawNaNAs == LineDrawMode.ClosedLines );
+    //            }
+
+    //            IPointMarker pointMarker = base.GetPointMarker();
+    //            if ( pointMarker != null )
+    //            {
+    //                bool flag       = pointMarker.Stroke == base.SeriesColor;
+    //                bool flag2      = pointMarker.Fill == base.SeriesColor;
+    //                IPen2D pen      = flag ? series1Pen : null;
+    //                IPen2D pen2     = flag ? series2Pen : null;
+    //                IBrush2D brush  = flag2 ? brush2D : null;
+    //                IBrush2D brush2 = flag2 ? brush2D2 : null;
+
+    //                for ( int i = 0; i < count; i++ )
+    //                {
+    //                    GenericPoint2D<XyySeriesPoint> genericPoint2D = xyyPointSeries[i] as GenericPoint2D<XyySeriesPoint>;
+
+    //                    double x   = genericPoint2D.X;
+    //                    double y   = genericPoint2D.YValues.Y0;
+    //                    double y2  = genericPoint2D.YValues.Y1;
+
+    //                    float num  = (float)renderPassData.XCoordinateCalculator.GetCoordinate(x);
+    //                    float num2 = (float)renderPassData.YCoordinateCalculator.GetCoordinate(y);
+    //                    float num3 = (float)renderPassData.YCoordinateCalculator.GetCoordinate(y2);
+
+    //                    seriesDrawingHelper.DrawPoint( pointMarker, new Point( ( double ) num, ( double ) num2 ), brush, pen );
+    //                    seriesDrawingHelper.DrawPoint( pointMarker, new Point( ( double ) num, ( double ) num3 ), brush2, pen2 );
+    //                }
+    //            }
+    //        }
+    //    }
+    //}
+
+    //protected virtual IList<FastBandRenderableSeries.Polygon> CreateBandPolygons( IRenderContext2D renderContext, IRenderPassData renderPassData, IPointSeries yPointSeries, IBrush2D yBrush, IPointSeries y1PointSeries, IBrush2D y1Brush )
+    //{
+    //    Guard.NotNull( yPointSeries, nameof( yPointSeries ) );
+    //    Guard.NotNull( y1PointSeries, nameof( y1PointSeries ) );
+    //    Guard.ArrayLengthsSame( yPointSeries.Count, nameof( yPointSeries ), y1PointSeries.Count, nameof( y1PointSeries ) );
+    //    List<FastBandRenderableSeries.Polygon> polygonList = new List<FastBandRenderableSeries.Polygon>();
+    //    int count = yPointSeries.Count;
+    //    List<Point> polygonPoints = new List<Point>(32);
+    //    int index1 = 0;
+    //    int startIndex = FastBandRenderableSeries.SkipNans(yPointSeries, y1PointSeries, index1, count);
+    //    for ( int endIndex = startIndex + 1; endIndex < count; ++endIndex )
+    //    {
+    //        double x1 = yPointSeries[endIndex - 1].X;
+    //        double y1 = yPointSeries[endIndex - 1].Y;
+    //        double y2 = y1PointSeries[endIndex - 1].Y;
+    //        double x2 = yPointSeries[endIndex].X;
+    //        double y3 = yPointSeries[endIndex].Y;
+    //        double y4 = y1PointSeries[endIndex].Y;
+
+    //        if ( ( y3.IsNaN( ) ? 1 : ( y4.IsNaN( ) ? 1 : 0 ) ) != 0 )
+    //        {
+    //            this.StartPolygon( startIndex, endIndex, yPointSeries, renderPassData, polygonPoints );
+    //            this.FinishPolygon( startIndex, endIndex, y1PointSeries, renderPassData, polygonPoints );
+    //            polygonList.Add( new FastBandRenderableSeries.Polygon( polygonPoints.ToArray( ), y1 > y2 ? yBrush : y1Brush ) );
+    //            int index2 = endIndex + 1;
+    //            endIndex = FastBandRenderableSeries.SkipNans( yPointSeries, y1PointSeries, index2, count );
+    //            if ( endIndex < count )
+    //            {
+    //                startIndex = endIndex;
+    //                polygonPoints = new List<Point>( 32 );
+    //            }
+    //            else
+    //                break;
+    //        }
+    //        else
+    //        {
+    //            Point intersectionPoint;
+    //            if ( PointUtil.LineSegmentsIntersection2D( new PointUtil.Line( x1, y1, x2, y3 ), new PointUtil.Line( x1, y2, x2, y4 ), out intersectionPoint ) )
+    //            {
+    //                ICoordinateCalculator<double> xcoordinateCalculator = renderPassData.XCoordinateCalculator;
+    //                ICoordinateCalculator<double> ycoordinateCalculator = renderPassData.YCoordinateCalculator;
+    //                bool isVerticalChart = renderPassData.IsVerticalChart;
+    //                float coordinate1 = (float) xcoordinateCalculator.GetCoordinate(x2);
+    //                float coordinate2 = (float) xcoordinateCalculator.GetCoordinate(x1);
+    //                Point point = new Point(xcoordinateCalculator.IsCategoryAxisCalculator ? (double) coordinate2 + ((double) coordinate1 - (double) coordinate2) * (intersectionPoint.X - x1) : xcoordinateCalculator.GetCoordinate(intersectionPoint.X), ycoordinateCalculator.GetCoordinate(intersectionPoint.Y));
+    //                this.StartPolygon( startIndex, endIndex, yPointSeries, renderPassData, polygonPoints );
+    //                if ( this.IsDigitalLine )
+    //                {
+    //                    polygonPoints.Add( this.TransformPoint( new Point( ( double ) coordinate1, ycoordinateCalculator.GetCoordinate( y1 ) ), isVerticalChart ) );
+    //                    polygonPoints.Add( this.TransformPoint( new Point( ( double ) coordinate1, ycoordinateCalculator.GetCoordinate( y2 ) ), isVerticalChart ) );
+    //                }
+    //                else
+    //                    polygonPoints.Add( this.TransformPoint( point, isVerticalChart ) );
+    //                this.FinishPolygon( startIndex, endIndex, y1PointSeries, renderPassData, polygonPoints );
+    //                polygonList.Add( new FastBandRenderableSeries.Polygon( polygonPoints.ToArray( ), y1 > y2 ? yBrush : y1Brush ) );
+    //                startIndex = endIndex;
+    //                polygonPoints = new List<Point>( 32 );
+    //                if ( !this.IsDigitalLine )
+    //                    polygonPoints.Add( this.TransformPoint( point, isVerticalChart ) );
+    //            }
+    //        }
+    //    }
+    //    if ( count > 0 )
+    //    {
+    //        IPoint point1 = yPointSeries[count - 1];
+    //        IPoint point2 = y1PointSeries[count - 1];
+    //        if ( !point1.Y.IsNaN( ) && !point2.Y.IsNaN( ) )
+    //        {
+    //            this.StartPolygon( startIndex, count, yPointSeries, renderPassData, polygonPoints );
+    //            this.FinishPolygon( startIndex, count, y1PointSeries, renderPassData, polygonPoints );
+    //            IBrush2D brush2D = point1.Y > point2.Y ? yBrush : y1Brush;
+    //            polygonList.Add( new FastBandRenderableSeries.Polygon( polygonPoints.ToArray( ), brush2D ) );
+    //        }
+    //    }
+    //    return ( IList<FastBandRenderableSeries.Polygon> ) polygonList;
+    //}
+
+
+    protected override bool GetIsValidForDrawing( )
     {
-        base.InternalDraw( rc, renderPassData );
+        if ( !base.GetIsValidForDrawing( ) )
+            return false;
 
-
+        return Stroke.A        != 0 && StrokeThickness > 0 || 
+               Series1Color.A  != 0 && StrokeThickness > 0 || 
+               BandDownColor.A != 0 || 
+               BandUpColor.A   != 0 || 
+               PointMarker     != null;
     }
 
-    
 
 
 

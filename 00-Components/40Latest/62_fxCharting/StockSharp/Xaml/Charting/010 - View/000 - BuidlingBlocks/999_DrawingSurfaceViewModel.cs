@@ -84,7 +84,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
 
     private readonly ChartComponentsCache _componentsCache = new ChartComponentsCache();
 
-    private readonly Dictionary<IChartComponent, List<IRenderableSeries>> _chartUIRSeries = new Dictionary<IChartComponent, List<IRenderableSeries>>();
+    private readonly Dictionary<IChartComponent, List<IChartSeriesViewModel>> _chartUIRSeries = new Dictionary<IChartComponent, List<IChartSeriesViewModel>>();
 
     private readonly Dictionary<IChartComponent, Dictionary<object, IAnnotation>> _topChartElmentAnnotationMap = new Dictionary<IChartComponent, Dictionary<object, IAnnotation>>();
 
@@ -116,7 +116,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
 
     private AnnotationModifier _annotationModifier;
 
-    private readonly ObservableCollection<IRenderableSeries> _advanceChartRenderableSeries = new ObservableCollection<IRenderableSeries>();
+    private readonly ObservableCollection<IChartSeriesViewModel> _advanceChartRenderableSeries = new ObservableCollection<IChartSeriesViewModel>();
 
     private readonly AxisCollection _xAxises = new AxisCollection();
 
@@ -161,14 +161,14 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
 
     public ScichartSurfaceMVVM( ChartArea area ) : base()
     {
-        _chartArea = area ?? throw new ArgumentNullException( "area" );
-        _dispatcherTimer = new DispatcherTimer( ( DispatcherPriority ) 7, Application.Current.Dispatcher );
-        _dispatcherTimer.Tick += new EventHandler( OnTimer );
-        _showHiddenAxesCommand = ( ICommand ) new DelegateCommand( new Action( OnShowHiddenAxes ) );
-        ResetAxisTimeZoneCommand = new ActionCommand<ChartAxis>( a => a.TimeZone = null );
-        Height = area.Height;
-        area.Elements.Added += new Action<IChartElement>( OnChartAreaElementsAdded );
-        area.Elements.Removing += new Func<IChartElement, bool>( OnChartAreaElementsRemoving );
+        _chartArea                = area ?? throw new ArgumentNullException( "area" );
+        _dispatcherTimer          = new DispatcherTimer( ( DispatcherPriority ) 7, Application.Current.Dispatcher );
+        _dispatcherTimer.Tick    += new EventHandler( OnTimer );
+        _showHiddenAxesCommand    = ( ICommand ) new DelegateCommand( new Action( OnShowHiddenAxes ) );
+        ResetAxisTimeZoneCommand  = new ActionCommand<ChartAxis>( a => a.TimeZone = null );
+        Height                    = area.Height;
+        area.Elements.Added      += new Action<IChartElement>( OnChartAreaElementsAdded );
+        area.Elements.Removing   += new Func<IChartElement, bool>( OnChartAreaElementsRemoving );
         area.Elements.RemovingAt += ( i => OnChartAreaElementsRemoving(  area.Elements[ i ] ));
 
         area.Elements.Clearing += () =>
@@ -176,19 +176,22 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
             CollectionHelper.ForEach<IChartElement>( area.Elements, ( i => OnChartAreaElementsRemoving( i ) ) );
             return true;
         };
-        area.XAxises.Added += ( x => AddAxis( x, XAxises ) );
-        area.XAxises.Removing += ( a => RemoveAxis( a, XAxises ) );
+
+        area.XAxises.Added      += ( x => AddAxis( x, XAxises ) );
+        area.XAxises.Removing   += ( a => RemoveAxis( a, XAxises ) );
         area.XAxises.RemovingAt += ( i => RemoveAxis( area.XAxises[ i ], XAxises ) );
-        area.YAxises.Added += ( y => AddAxis( y, YAxises ) );
-        area.YAxises.Removing += ( y => RemoveAxis( y, YAxises ) );
+        area.YAxises.Added      += ( y => AddAxis( y, YAxises ) );
+        area.YAxises.Removing   += ( y => RemoveAxis( y, YAxises ) );
         area.YAxises.RemovingAt += ( i => RemoveAxis( area.YAxises[ i ], YAxises ) );
 
         
         ThemeManager.ApplicationThemeChanged += (d,e) => ChangeApplicationTheme();
         ChangeApplicationTheme();
-        CollectionHelper.ForEach<IChartElement>( ( IEnumerable<IChartElement> ) Area.Elements, new Action<IChartElement>( OnChartAreaElementsAdded ) );
+
+        CollectionHelper.ForEach( Area.Elements, OnChartAreaElementsAdded );
         Area.PropertyChanged += new PropertyChangedEventHandler( OnAreaPropertyChanged );
-        RubberBandXyZoomModifier rb = new RubberBandXyZoomModifier();
+
+        var rb = new RubberBandXyZoomModifier();
         rb.IsXAxisOnly = true;
         rb.ExecuteOn = ExecuteOn.MouseRightButton;
         rb.ReceiveHandledEvents = true;
@@ -754,13 +757,13 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
         if ( chart != null )
             chart.EnsureUIThread();
 
-        List<IRenderableSeries> multipleSeries;
+        List<IChartSeriesViewModel> multipleSeries;
 
         if ( _chartUIRSeries.TryGetValue( chartComp, out multipleSeries ) )
         {
             if ( chartComp.TryGetXAxis() != null && chartComp.TryGetYAxis() != null )
             {
-                foreach ( IRenderableSeries rSerie in multipleSeries )
+                foreach ( var rSerie in multipleSeries )
                 {
                     if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
                         _advanceChartRenderableSeries.Add( rSerie );
@@ -768,7 +771,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
             }
             else
             {
-                foreach ( IRenderableSeries oneSerie in multipleSeries )
+                foreach ( var oneSerie in multipleSeries )
                     _advanceChartRenderableSeries.Remove( oneSerie );
             }
         }
@@ -859,12 +862,10 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
             {
                 throw new NotSupportedException();
             }
-
-            throw new NotSupportedException();
-
-            //objArray[ 0 ] = GroupChart.ViewModel.InstanceCount;
-            //objArray[ 1 ] = _paneGroupSuffix;
-            //return StringHelper.Put( "ssharpultrachart{0}_{1}", objArray );
+            
+            objArray[0] = GroupChart.ViewModel.InstanceCount;
+            objArray[1] = _paneGroupSuffix;
+            return StringHelper.Put( "ssharpultrachart{0}_{1}", objArray );
         }
     }
 
@@ -912,11 +913,11 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
         }
     }
 
-    public IEnumerable<IRenderableSeries> ChartSeriesViewModels
+    public IEnumerable<IChartSeriesViewModel> ChartSeriesViewModels
     {
         get
         {
-            return ( IEnumerable<IRenderableSeries> ) _advanceChartRenderableSeries;
+            return ( IEnumerable<IChartSeriesViewModel> ) _advanceChartRenderableSeries;
         }
     }
 
@@ -960,11 +961,11 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
         }
     }
 
-    public void AddSeriesViewModelsToRoot( IChartComponent component, IRenderableSeries rSeries )
+    public void AddSeriesViewModelsToRoot( IChartComponent component, IChartSeriesViewModel rSeries )
     {
-        List<IRenderableSeries> componentRSeries;
+        List<IChartSeriesViewModel> componentRSeries;
         if ( !_chartUIRSeries.TryGetValue( component, out componentRSeries ) )
-            _chartUIRSeries[ component ] = componentRSeries = new List<IRenderableSeries>();
+            _chartUIRSeries[ component ] = componentRSeries = new List<IChartSeriesViewModel>();
         if ( !componentRSeries.Contains( rSeries ) )
             componentRSeries.Add( rSeries );
         XYAxisId_PropertyChanged( ( object ) component, new PropertyChangedEventArgs( "XAxisId" ) );
@@ -972,10 +973,10 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
 
     public void RemoveChartComponent( IChartComponent component )
     {
-        List<IRenderableSeries> componentRSeries;
+        List<IChartSeriesViewModel> componentRSeries;
         if ( !_chartUIRSeries.TryGetValue( component, out componentRSeries ) )
             return;
-        foreach ( IRenderableSeries serie in componentRSeries )
+        foreach ( IChartSeriesViewModel serie in componentRSeries )
             _advanceChartRenderableSeries.Remove( serie );
         _chartUIRSeries.Remove( component );
     }
@@ -1316,150 +1317,136 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
         myAction( _param1 );
     }
 
-    
-
-    
-
-    //private sealed class PrivateSealedClass_3Ins_1Met
-    //{
-    //    public ScichartSurfaceMVVM _variableSome3535;
-    //    public IChartAxis _IChartAxis_098;
-    //    public ICollection<IAxis> _ICollection_IAxis_098;
-
-    //    //public void OnGuiAsyncDoStuff()
-    //    //{
-    //    //    if ( _variableSome3535.Chart == null )
-    //    //        return;
-    //    //    AxisBase axF9ZgQ7NbH9KsEjd = _IChartAxis_098.InitAndSetBinding(_variableSome3535.ParentViewModel?.RemoveAxisCommand, _variableSome3535.ResetAxisTimeZoneCommand, _variableSome3535.Chart);
-    //    //    axF9ZgQ7NbH9KsEjd.PropertyChanged += new PropertyChangedEventHandler( _variableSome3535.OnTargetPropertyChanged308 );
-    //    //    _ICollection_IAxis_098.Add( ( IAxis ) axF9ZgQ7NbH9KsEjd );
-    //    //    if ( _ICollection_IAxis_098 != _variableSome3535.XAxises )
-    //    //        return;
-    //    //    _variableSome3535.SetupAxisBindings();
-    //    //}
-    //}
-
-    //[Serializable]
-    //private new sealed class SomeClass34343383
-    //{
-    //    public static readonly ScichartSurfaceMVVM.SomeClass34343383 SomeMethond0343 = new ScichartSurfaceMVVM.SomeClass34343383();
-    //    public static Action<ChartAxis> pubStatic_Action_ChartAxis_;
-    //    public static Func<ChartComponentViewModel, bool> m_public_static_Func_ChartComponentViewModel_bool_;
-    //    public static Action<CategoryDateTimeAxis> public_static_Action_CategoryDateTimeAxis_009;
-    //    public static Action<ChartComponentViewModel> public_static_Action_ChartComponentViewModel_008;
-    //    public static Func<IRenderableSeries, bool> _public_static_Func_IRenderableSeries_bool_003;
-    //    public static Func<IRenderableSeries, int> m_public_static_Func_IRenderableSeries__nt_;
-    //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_bool_;
-    //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, IChartComponent> public_static_Func_KeyValuePair_IChartComponent_ChartComponentViewModel_IChartComponent_;
-    //    public static Func<IChartElementUiDomain, bool> Func_IDrawableChartElement_bool_098;
-    //    public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel_bool_003;
-    //    public static Func<KeyValuePair<IChartComponent, ChartComponentViewModel>, bool> _Func_KeyValuePair_IChartComponent_ChartComponentViewModel__bool_;
-    //    public static Func<IChartElementUiDomain, bool> __Func_IDrawableChartElement__bool__903;
-    //    public static Func<DrawableChartComponentBaseViewModel, bool> __Func_DrawableChartElementBaseViewModel__bool__003;
-    //    public static Action<IChartAxis> _Action_IChartAxis_0932;
-    //    public static Action<IChartAxis> _Action_IChartAxis_0932323;
 
 
+    #region ----------------------------- Tony's new Implementation ----------------------------- 
+    public void AddRenderableSeriesToChartSurface( IChartComponent elementXY, IChartSeriesViewModel rs )
+    {        
+        if ( !_chartUIRSeries.TryGetValue( elementXY, out var rSeriesList ) )
+        {
+            _chartUIRSeries[elementXY] = rSeriesList = new List<IChartSeriesViewModel>( );
+        }
 
-    //    public bool SomeMEthod03852(
-    //      ChartComponentViewModel _param1 )
-    //    {
-    //        return _param1 != null;
-    //    }
+        if ( !rSeriesList.Contains( rs ) )
+        {
+            rSeriesList.Add( rs );
+        }
 
-    //    public void SomeMEthod03853(
-    //      CategoryDateTimeAxis _param1 )
-    //    {
-    //        if ( !( _param1.Tag is ChartAxis tag ) )
-    //            return;
-    //        tag.DataPointWidth = _param1.CurrentDatapointPixelSize;
-    //    }
+        OnChartComponentPropertiesChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
+    }
 
-    //    public void SomeMEthod03854(
-    //      ChartComponentViewModel _param1 )
-    //    {
-    //        _param1.UpdateYAxisMarker();
-    //    }
+    public void Remove( IChartComponent elementXY )
+    {        
+        if ( !_chartUIRSeries.TryGetValue( elementXY, out var rSeriesList ) )
+        {
+            return;
+        }
 
-    //    public bool SomeMEthod03855(
-    //      IRenderableSeries _param1 )
-    //    {
-    //        return _param1.IsVisible;
-    //    }
+        foreach ( var rSerie in rSeriesList )
+        {
+            _advanceChartRenderableSeries.Remove( rSerie );
+        }
 
-    //    public int public_int_Method_IRenderableSeries_(
-    //      IRenderableSeries _param1 )
-    //    {
-    //        var dataSeries = _param1.get_DataSeries();
-    //        return dataSeries == null ? 0 : dataSeries.get_Count();
-    //    }
-
-    //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel(
-    //      KeyValuePair<IChartComponent, ChartComponentViewModel> _param1 )
-    //    {
-    //        return _param1.Value == null;
-    //    }
-
-    //    public IChartComponent public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_033(
-    //      KeyValuePair<IChartComponent, ChartComponentViewModel> _param1 )
-    //    {
-    //        return _param1.Key;
-    //    }
-
-    //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_0352(
-    //      IChartElementUiDomain _param1 )
-    //    {
-    //        return !_param1.DontDraw;
-    //    }
-
-    //    public bool public_bool_Method_KeyValuePair_IChartComponent_ChartComponentViewModel_4353(
-    //      DrawableChartComponentBaseViewModel _param1 )
-    //    {
-    //        return _param1 != null;
-    //    }
-
-    //    public bool public_bool_Method_0983(
-    //      KeyValuePair<IChartComponent, ChartComponentViewModel> p )
-    //    {
-    //        return p.Key is IChartCandleElement;
-    //    }
-
-    //    public bool public_bool_Method_0983333(
-    //      IChartElementUiDomain e )
-    //    {
-    //        return !e.DontDraw;
-    //    }
-
-    //    public bool public_bool_Method_5498751(
-    //      DrawableChartComponentBaseViewModel _param1 )
-    //    {
-    //        return _param1 != null;
-    //    }
-
-    //    public void public_bool_Method_303403( IChartAxis _param1 )
-    //    {
-    //        _param1.IsVisible = true;
-    //    }
-
-    //    public void public_bool_Method_938745( IChartAxis _param1 )
-    //    {
-    //        _param1.IsVisible = true;
-    //    }
-    //}
-
-    //private sealed class SomeSealClass0833352
-    //{
-    //    public string _someString0382;
-
-    //    public bool bool_Method02_IChartAxis_( IChartAxis p )
-    //    {
-    //        return p.Id == _someString0382;
-    //    }
-    //}
+        _chartUIRSeries.Remove( elementXY );
+    }
 
 
+    /// <summary>
+    /// Handles the PropertyChanged event of the XYAxis element.  Directly copy the code from
+    /// StockSharp.Charting.IChartExtensions because I still haven't change my namespace from StockSharp.Xaml.Charting
+    /// to Stocksharp.xaml.Charting
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void OnChartComponentPropertiesChanged( object sender, PropertyChangedEventArgs e )
+    {
+        IChartComponent elementXY = (IChartComponent)sender;
 
-    
+        if ( e.PropertyName != "XAxis" && e.PropertyName != "YAxis" )
+        {
+            return;
+        }
 
-    
+        IChart chart = Chart;
+
+        if ( chart != null )
+        {
+            Ecng.Xaml.XamlHelper.EnsureUIThread( chart );
+        }        
+
+        ChartAxis xAxis = null;
+        ChartAxis yAxis = null;
+
+        if ( _chartUIRSeries.TryGetValue( elementXY, out var rSeriesList ) )
+        {
+            // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
+            xAxis = ( ChartAxis ) elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.XAxises.FirstOrDefault(
+                xa => xa.Id == elementXY.XAxisId );
+
+            // Directly used the code from StockSharp.Charting.IChartExtensions.TryGetXAxis
+            yAxis = ( ChartAxis ) elementXY.CheckOnNull( nameof( elementXY ) ).ChartArea?.YAxises.FirstOrDefault(
+                xa => xa.Id == elementXY.YAxisId );
+
+            if ( xAxis != null || yAxis != null )
+            {
+                foreach ( var rSerie in rSeriesList )
+                {
+                    if ( !_advanceChartRenderableSeries.Contains( rSerie ) )
+                    {
+                        _advanceChartRenderableSeries.Add( rSerie );
+                    }
+                }
+            }
+            else
+            {
+                foreach ( var rSerie in rSeriesList )
+                {
+                    _advanceChartRenderableSeries.Remove( rSerie );
+                }
+            }
+        }
+
+        
+        if ( !_topChartElmentAnnotationMap.TryGetValue( elementXY, out var dictionary ) )
+        {
+            return;
+        }
+
+        if ( xAxis != null || yAxis != null )
+        {
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            {
+                if ( !_annotationCollection.Contains( keyValuePair.Value ) )
+                {
+                    _annotationCollection.Add( keyValuePair.Value );
+                }
+            }
+        }
+        else
+        {
+            foreach ( KeyValuePair<object, IAnnotation> keyValuePair in dictionary )
+            {
+                _annotationCollection.Remove( keyValuePair.Value );
+            }
+        }
+    }
+
+    public bool HasMultipleBarsHighlighted
+    {
+        get
+        {
+            return _dataPointSelector.HasMultipleBarsHighlighted;
+        }
+    }
+
+    public PooledList<long> HighlightedBarLinxTime
+    {
+        get
+        {
+            return _dataPointSelector.HighlightedBarLinuxTime;
+        }
+    }
+    #endregion
 }
+
+    

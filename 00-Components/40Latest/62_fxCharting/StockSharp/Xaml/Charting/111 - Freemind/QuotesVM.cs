@@ -24,8 +24,8 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
     private readonly XyDataSeries<DateTime, double> _askLine;
     private readonly XyDataSeries<DateTime, double> _bidLine;
 
-    private QuoteRenderableSeries _askLineRSerie = null;
-    private QuoteRenderableSeries _bidLineRSerie = null;
+    private ChartSeriesViewModel _askLineRSerieVM = null;
+    private ChartSeriesViewModel _bidLineRSerieVM = null;
 
     private bool _doneInit = false;
 
@@ -56,45 +56,55 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
     protected override void Init( )
     {
         base.Init( );
+
+        // There are 4 types of draw styles for the Quote lines
         DrawStyles[ ] lineStyle = new DrawStyles[ 4 ] {
-                                                                                    DrawStyles.Line,
-                                                                                    DrawStyles.NoGapLine,
-                                                                                    DrawStyles.StepLine,
-                                                                                    DrawStyles.DashedLine
-                                                                                  };
-        AddDrawStylePropertyChanging( ChartComponentView.BidLine, "Style", lineStyle );
-        AddDrawStylePropertyChanging( ChartComponentView.AskLine, "Style", lineStyle );
+                                                        DrawStyles.Line,
+                                                        DrawStyles.NoGapLine,
+                                                        DrawStyles.StepLine,
+                                                        DrawStyles.DashedLine
+                                                      };
+
+        // Validate that Bid Line and Ask Line have a style that is one of the lineDrawStyle
+        ValidateDrawStylePropertyChanging( ChartComponentView.BidLine, "Style", lineStyle );
+        ValidateDrawStylePropertyChanging( ChartComponentView.AskLine, "Style", lineStyle );
 
         string[ ] strArray = new string[ 2 ] { "Color", "AdditionalColor" };
 
-        ChartViewModel.AddChild( _bidLineVM = new ChartElementViewModel( ChartComponentView.BidLine, new Func<SeriesInfo, Color>( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
-        ChartViewModel.AddChild( _askLineVM = new ChartElementViewModel( ChartComponentView.AskLine, new Func<SeriesInfo, Color>( LowerAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        // The Quote UI is composed of two lines - ask and bid
+        ChartComponentUiDomain.AddChild( _bidLineVM = new ChartElementViewModel( ChartComponentView.BidLine, new Func<SeriesInfo, Color>( HigherAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
+        ChartComponentUiDomain.AddChild( _askLineVM = new ChartElementViewModel( ChartComponentView.AskLine, new Func<SeriesInfo, Color>( LowerAlphaColor ), ( s => s.FormattedYValue ), strArray ) );
 
         AddPropertyEvents( ChartComponentView.BidLine );
         AddPropertyEvents( ChartComponentView.AskLine );
-        
-        _askLineRSerie = CreateQuoteRSeriesAndBinding( _askLineRSerie, ChartComponentView.BidLine, _bidLineVM );
-        _bidLineRSerie = CreateQuoteRSeriesAndBinding( _bidLineRSerie, ChartComponentView.AskLine, _askLineVM );
+
+        // The following code will create renderableSeries for
+        //
+        //      - Bid Line
+        //      - Ask Line
+        //
+        CreateQuoteRSeriesAndBinding( _askLineRSerieVM, ChartComponentView.BidLine, _bidLineVM );
+        CreateQuoteRSeriesAndBinding( _bidLineRSerieVM, ChartComponentView.AskLine, _askLineVM );
 
         ChartComponentView.BidLine.ShowAxisMarker = true;
 
 
-        SetupAxisMarkerAndBinding( _askLineRSerie, ChartComponentView.AskLine, "ShowAxisMarker", "Color" );
-        SetupAxisMarkerAndBinding( _bidLineRSerie, ChartComponentView.BidLine, "ShowAxisMarker", "Color" );        
+        SetupAxisMarkerAndBinding( _askLineRSerieVM.RenderSeries, ChartComponentView.AskLine, "ShowAxisMarker", "Color" );
+        SetupAxisMarkerAndBinding( _bidLineRSerieVM.RenderSeries, ChartComponentView.BidLine, "ShowAxisMarker", "Color" );
 
-        //TODO: need to add this back to ScichartMVVM
-        //if ( _askLineRSerie != null )
-        //{
-        //    _askLineRSerie.DataSeries = _askLine;
-        //}
 
-        //if ( _bidLineRSerie != null )
-        //{
-        //    _bidLineRSerie.DataSeries = _bidLine;
-        //}
+        if ( _askLineRSerieVM != null )
+        {
+            _askLineRSerieVM.DataSeries = _askLine;
+        }
 
-        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _askLineRSerie );
-        //DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _bidLineRSerie );        
+        if ( _bidLineRSerieVM != null )
+        {
+            _bidLineRSerieVM.DataSeries = _bidLine;
+        }
+
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _askLineRSerieVM );
+        DrawingSurface.AddRenderableSeriesToChartSurface( RootElem, _bidLineRSerieVM );
 
         SetIncludeSeries( );        
     }
@@ -103,64 +113,58 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
     {   
         // We won't to only display the two line, so we would disable the other modifier.
 
-        SetIncludeSeries( _askLineRSerie, false );
+        SetIncludeSeries( _askLineRSerieVM.RenderSeries, false );
 
-        SeriesValueModifier.SetIncludeSeries( _askLineRSerie, true );
+        BaseRenderableSeries baseSeries = ( BaseRenderableSeries )_askLineRSerieVM.RenderSeries;
 
-        SetIncludeSeries( _bidLineRSerie, false );        
+        SeriesValueModifier.SetIncludeSeries( baseSeries, true );
+
+        SetIncludeSeries( _bidLineRSerieVM.RenderSeries, false );        
     }    
 
-    private QuoteRenderableSeries CreateQuoteRSeriesAndBinding( IRenderableSeries lineSeries, ChartLineElement line, ChartElementViewModel viewModel )
+    private void CreateQuoteRSeriesAndBinding( ChartSeriesViewModel lineSeriesVM, ChartLineElement line, ChartElementViewModel viewModel )
     {
-        // Tony 4:
+        var quoteSeries = lineSeriesVM.RenderSeries as QuoteRenderableSeries;
 
-        throw new NotImplementedException();
+        if ( quoteSeries == null )
+        {
+            ChartElementViewModel[ ] childViewModels = new ChartElementViewModel[ 1 ] { viewModel };
 
-        //var fastLineSeries = lineSeries as QuoteRenderableSeries;
+            quoteSeries = CreateRenderableSeries<QuoteRenderableSeries>( childViewModels );
 
-        //if ( fastLineSeries == null )
-        //{
-        //    ChartElementViewModel[ ] childViewModels = new ChartElementViewModel[ 1 ] { viewModel };
+            quoteSeries.SetBindings( BaseRenderableSeries.StrokeProperty, line, "Color", BindingMode.TwoWay, null, null );
+            quoteSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate",    BindingMode.TwoWay, null, null );
+            quoteSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, line, "StrokeThickness", BindingMode.TwoWay, null, null );
+            quoteSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty, line, "AntiAliasing", BindingMode.TwoWay, null, null );
 
-        //    fastLineSeries = CreateRenderableSeries<QuoteRenderableSeries>( childViewModels );
+            var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
+            var cnvt = new BackgroundBorderBrushMultiConverter( );
+            cnvt.Value = true;
 
-        //    fastLineSeries.SetBindings( BaseRenderableSeries.StrokeProperty,                 line, "Color",           BindingMode.TwoWay, null, null );
-        //    //fastLineSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate",    BindingMode.TwoWay, null, null );
-        //    fastLineSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty,        line, "StrokeThickness", BindingMode.TwoWay, null, null );
-        //    fastLineSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty,           line, "AntiAliasing",    BindingMode.TwoWay, null, null );
+            Binding[ ] bindingArray = new Binding[ 3 ]
+                                                        {
+                                                            new Binding( "IsVisible" )
+                                                            {
+                                                                Source = line
+                                                            },
+                                                            new Binding( "IsVisible" )
+                                                            {
+                                                                Source = ChartComponentView
+                                                            },
+                                                            new Binding( "IsVisible" )
+                                                            {
+                                                                Source = ( ( IChartComponent ) ChartComponentView ).RootElement
+                                                            }
+                                                        };
+            quoteSeries.SetMultiBinding( isVisibleProperty, cnvt, bindingArray );
+        }
 
-        //    var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
-        //    var cnvt = new BackgroundBorderBrushMultiConverter( );
-        //    cnvt.Value = true;
-
-        //    Binding[ ] bindingArray = new Binding[ 3 ]
-        //                                                {
-        //                                                    new Binding( "IsVisible" )
-        //                                                    {
-        //                                                        Source =    line
-        //                                                    },
-        //                                                    new Binding( "IsVisible" )
-        //                                                    {
-        //                                                        Source =    ChartComponent
-        //                                                    },
-        //                                                    new Binding( "IsVisible" )
-        //                                                    {
-        //                                                        Source =    ( ( IChartComponent ) ChartComponent ).ElementWithXYAxes
-        //                                                    }
-        //                                                };
-        //    fastLineSeries.SetMultiBinding( isVisibleProperty, cnvt,  bindingArray );
-        //}
-        
-        //fastLineSeries.StrokeDashArray = new double[ 2 ] { 1.0, 3.0 };
-
-
-        //return fastLineSeries;
+        quoteSeries.StrokeDashArray = new double[2] { 1.0, 3.0 };        
     }
 
     protected override void Clear( )
-    {
-        throw new NotImplementedException();
-        //DrawingSurface.Remove( RootElem );
+    {        
+        DrawingSurface.Remove( RootElem );
     }
 
     protected override void UpdateUi( )
@@ -245,14 +249,14 @@ internal sealed class QuotesVM : ChartCompentWpfUiDomain<QuotesUI>, IFastQuotes
         return true;
     }
 
-    protected override void RootElementPropertyChanged( IChartComponent elementXY, string propName )
+    protected override void RootElementPropertyChanged( IChartComponent comp, string propName )
     {
-        base.RootElementPropertyChanged( elementXY, propName );
+        base.RootElementPropertyChanged( comp, propName );
 
         if ( propName == "Style" )
         {            
-            _askLineRSerie = CreateQuoteRSeriesAndBinding( _askLineRSerie, ChartComponentView.BidLine, _bidLineVM );
-            _bidLineRSerie = CreateQuoteRSeriesAndBinding( _bidLineRSerie, ChartComponentView.AskLine, _askLineVM );
+            CreateQuoteRSeriesAndBinding( _askLineRSerieVM, ChartComponentView.BidLine, _bidLineVM );
+            CreateQuoteRSeriesAndBinding( _bidLineRSerieVM, ChartComponentView.AskLine, _askLineVM );
         }
         if ( !( propName == "Style" ) )
         {

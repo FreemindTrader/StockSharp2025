@@ -781,6 +781,17 @@ public sealed class ChartViewModel : DependencyObject
     {
         return true;
     }
+
+    private static int staticChartCount;
+
+    public int _instanceCount = ++staticChartCount;
+    public int InstanceCount
+    {
+        get
+        {
+            return _instanceCount;
+        }
+    }
     #endregion Tony Added
 
 }

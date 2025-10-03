@@ -49,6 +49,13 @@ public class MyFastLineRenderableSeries : FastLineRenderableSeries
         }
     }
 
+    protected override bool GetIsValidForDrawing( )
+    {
+        if ( !base.GetIsValidForDrawing( ) )
+            return false;
+        return this.Stroke.A != 0 && this.StrokeThickness > 0 || this.PointMarker != null;
+    }
+
     protected override void InternalDraw( IRenderContext2D rc, IRenderPassData renderPassData )
     {
         base.InternalDraw( rc, renderPassData );        

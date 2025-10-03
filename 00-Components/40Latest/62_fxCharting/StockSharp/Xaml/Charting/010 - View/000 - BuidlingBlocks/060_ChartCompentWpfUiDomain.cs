@@ -120,7 +120,7 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
         RootElementPropertyChanged( ( IChartComponent )sender, e.PropertyName );
     }
 
-    protected void AddDrawStylePropertyChanging< U >( IChartComponent com, string style, U[ ] drawStyles )
+    protected void ValidateDrawStylePropertyChanging< U >( IChartComponent com, string style, U[ ] drawStyles )
     {
         com.PropertyValueChanging += ( x, s, y ) =>
         {
@@ -151,20 +151,20 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
         }
 
         // Create an instance of the renderable series
-        U instance = new U( );
+        U rendearableSeries = new U( );
 
 
         // If this is the toppest ChartComponent, then we just need to bind to its IsVisible property
         if ( ChartComponentView.RootElement == ChartComponentView )
         {
-            instance.SetBindings( BaseRenderableSeries.IsVisibleProperty, ChartComponentView, "IsVisible" );
+            rendearableSeries.SetBindings( BaseRenderableSeries.IsVisibleProperty, ChartComponentView, "IsVisible" );
         }
         else
         {
             // if this is not the toppest ChartComponent, then we need to bind to both its IsVisible property and its RootElement's IsVisible property
             var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
             var converter         = new BoolAllConverter( );
-            converter.Value = true;
+            converter.Value       = true;
 
             Binding[ ] bindingArray = new Binding[ 2 ]
             {
@@ -178,36 +178,36 @@ public abstract class ChartCompentWpfUiDomain< T > : ChartElementUiDomain where 
                 }
             };
 
-            instance.SetMultiBinding( isVisibleProperty, converter, bindingArray );
+            rendearableSeries.SetMultiBinding( isVisibleProperty, converter, bindingArray );
         }
 
         // Set the binding for XAxisId and YAxisId
-        instance.SetBindings( BaseRenderableSeries.XAxisIdProperty, RootElem, "XAxisId" );
-        instance.SetBindings( BaseRenderableSeries.YAxisIdProperty, RootElem, "YAxisId" );
+        rendearableSeries.SetBindings( BaseRenderableSeries.XAxisIdProperty, RootElem, "XAxisId" );
+        rendearableSeries.SetBindings( BaseRenderableSeries.YAxisIdProperty, RootElem, "YAxisId" );
 
         if ( !( ChartComponentView is ChartBandElement ) && !( ChartComponentView is IChartTransactionElement ) )
         {
             // If this is not a band or not TransactionElement, then we need to bind to its StrokeThickness and AntiAliasing property
-            instance.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
-            instance.SetBindings( BaseRenderableSeries.AntiAliasingProperty,    ChartComponentView, "AntiAliasing" );
+            rendearableSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, ChartComponentView, "StrokeThickness" );
+            rendearableSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty,    ChartComponentView, "AntiAliasing" );
         }
 
         // Set the Tag property, so that we can get to its children's ViewModel from the renderable series
         // For example, CandleStick will have OHLC children view model.
-        instance.Tag = ( childviewmodel == null || childviewmodel.Length == 0 ) ? null : Tuple.Create( this, childviewmodel );
-        ChartViewModel.ClearChildViewModels();
+        rendearableSeries.Tag = ( childviewmodel == null || childviewmodel.Length == 0 ) ? null : Tuple.Create( this, childviewmodel );
+        ChartComponentUiDomain.ClearChildViewModels();
         
-        return instance;
+        return rendearableSeries;
     }
 
     protected void SetIncludeSeries( IRenderableSeries series, bool shouldIncludeSeries )
     {
-        BaseRenderableSeries quoteRSeries = ( BaseRenderableSeries )series;
+        BaseRenderableSeries baseSeries = ( BaseRenderableSeries )series;
 
 
-        RolloverModifier.SetIncludeSeries( quoteRSeries, shouldIncludeSeries );
-        CursorModifier.SetIncludeSeries( quoteRSeries, shouldIncludeSeries );
-        TooltipModifier.SetIncludeSeries( quoteRSeries, shouldIncludeSeries );
-        VerticalSliceModifier.SetIncludeSeries( quoteRSeries, shouldIncludeSeries );        
+        RolloverModifier.SetIncludeSeries( baseSeries, shouldIncludeSeries );
+        CursorModifier.SetIncludeSeries( baseSeries, shouldIncludeSeries );
+        TooltipModifier.SetIncludeSeries( baseSeries, shouldIncludeSeries );
+        VerticalSliceModifier.SetIncludeSeries( baseSeries, shouldIncludeSeries );        
     }
 }

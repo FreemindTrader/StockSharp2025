@@ -155,15 +155,15 @@ namespace StockSharp.Xaml.Charting
                 "DownFillColor"
             };
 
-            ChartViewModel.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
-            ChartViewModel.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
-            ChartViewModel.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
-            ChartViewModel.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
-            ChartViewModel.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
+            ChartComponentUiDomain.AddChild( _openViewModel = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
+            ChartComponentUiDomain.AddChild( _highViewModel = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
+            ChartComponentUiDomain.AddChild( _lowViewModel = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
+            ChartComponentUiDomain.AddChild( _closeViewModel = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
+            ChartComponentUiDomain.AddChild( _lineViewModel = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetLegendColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
             //ChartViewModel.AddChild( _volumeViewModel = new ChildrenChartViewModel( "Vol", ChartComponent, new Func< SeriesInfo, Color >( GetCandleColor ), ( s => ( s as TimeframeSegmentSeriesInfo )?.Volume.ToString( ) ), strArray ) );
 
             GuiInitSeries( );
-            AddDrawStylePropertyChanging( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[ 10 ]
+            ValidateDrawStylePropertyChanging( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[ 10 ]
                                                                                                                         {
                                                                                                                             ChartCandleDrawStyles.CandleStick,
                                                                                                                             ChartCandleDrawStyles.Ohlc,

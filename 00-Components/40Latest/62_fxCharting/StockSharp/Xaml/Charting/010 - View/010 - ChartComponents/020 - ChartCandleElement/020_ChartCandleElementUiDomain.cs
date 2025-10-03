@@ -117,12 +117,12 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
           "DownFillColor"
         };
 
-        ChartViewModel.AddChild( _openViewModel   = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
-        ChartViewModel.AddChild( _highViewModel   = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
-        ChartViewModel.AddChild( _lowViewModel    = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
-        ChartViewModel.AddChild( _closeViewModel  = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
-        ChartViewModel.AddChild( _lineViewModel   = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
-        ChartViewModel.AddChild( _volumeViewModel = new ChartElementViewModel( "Vol", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s =>
+        ChartComponentUiDomain.AddChild( _openViewModel   = new ChartElementViewModel( "O", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedOpenValue ), strArray ) );
+        ChartComponentUiDomain.AddChild( _highViewModel   = new ChartElementViewModel( "H", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedHighValue ), strArray ) );
+        ChartComponentUiDomain.AddChild( _lowViewModel    = new ChartElementViewModel( "L", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedLowValue ), strArray ) );
+        ChartComponentUiDomain.AddChild( _closeViewModel  = new ChartElementViewModel( "C", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s => ( s as OhlcSeriesInfo )?.FormattedCloseValue ), strArray ) );
+        ChartComponentUiDomain.AddChild( _lineViewModel   = new ChartElementViewModel( "Line", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), new Func<SeriesInfo, string>( SetLineViewModelName ), strArray ) );
+        ChartComponentUiDomain.AddChild( _volumeViewModel = new ChartElementViewModel( "Vol", ChartComponentView, new Func<SeriesInfo, Color>( GetSereisInfoColor ), ( s =>
                                                                                                                                                                     {
                                                                                                                                                                         var plc = s as OhlCPLSeriesInfo;
                                                                                                                                                                         if ( plc != null )
@@ -144,7 +144,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
 
         // The following code will add the DrawStyle property to the Candlestick UI
         // And whenever the DrawStyle property is changed, the event handler will be called to redraw the candle
-        AddDrawStylePropertyChanging<ChartCandleDrawStyles>( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
+        ValidateDrawStylePropertyChanging<ChartCandleDrawStyles>( ChartComponentView, "DrawStyle", new ChartCandleDrawStyles[10]
         {
               ChartCandleDrawStyles.CandleStick,
               ChartCandleDrawStyles.Ohlc,
@@ -501,7 +501,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     private void NewChartSeries()
     {
         _chartSeriesViewModel = new ChartSeriesViewModel( GetDataSeriesByDrawStyle(), ( IRenderableSeries ) CreateRenderableSeriesAndBinding() );
-        DrawingSurface.AddSeriesViewModelsToRoot( RootElem, ( IRenderableSeries ) _chartSeriesViewModel );
+        DrawingSurface.AddSeriesViewModelsToRoot( RootElem, ( IChartSeriesViewModel ) _chartSeriesViewModel );
         ClearAll();
         SetupAxisMarkerAndBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
     }

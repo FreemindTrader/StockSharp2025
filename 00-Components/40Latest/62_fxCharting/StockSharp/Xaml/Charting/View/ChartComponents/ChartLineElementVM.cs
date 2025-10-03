@@ -54,7 +54,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfUiDomain< ChartLi
     protected override void Init( )
     {
         base.Init( );
-        AddDrawStylePropertyChanging( ChartComponentView, "Style", new DrawStyles[ 9 ]  {
+        ValidateDrawStylePropertyChanging( ChartComponentView, "Style", new DrawStyles[ 9 ]  {
                                                                                                 DrawStyles.Line,
                                                                                                 DrawStyles.NoGapLine,
                                                                                                 DrawStyles.StepLine,
@@ -83,7 +83,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfUiDomain< ChartLi
 
         _childrenChartViewModels = new ChartElementViewModel( ChartComponentView, getColorFunc, s => s.FormattedYValue, strArray );
 
-        ChartViewModel.AddChild( _childrenChartViewModels );
+        ChartComponentUiDomain.AddChild( _childrenChartViewModels );
 
         _lineData             = _xyzDataSeries;        
         SetupLineExtraProperties( );

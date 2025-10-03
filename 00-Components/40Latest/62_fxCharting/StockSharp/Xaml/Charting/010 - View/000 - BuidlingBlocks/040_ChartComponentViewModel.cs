@@ -264,7 +264,7 @@ public abstract class ChartComponentViewModel<T> :  ChartPart<T>,
             throw new InvalidOperationException( "duplicate element" );
         }
             
-        ( ( IChartComponent ) element ).SetParent(this );
+        ( ( IChartComponent ) element ).SetParent( this );
         ( ( IChartComponent ) element ).DontDraw = dontDraw;
     }
 

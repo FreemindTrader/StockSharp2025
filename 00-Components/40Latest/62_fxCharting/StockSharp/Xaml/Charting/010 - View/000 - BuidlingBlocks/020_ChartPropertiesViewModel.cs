@@ -11,6 +11,11 @@ namespace StockSharp.Xaml.Charting;
 /// <summary>
 /// Base class for chart related view models. It mainly contains methods for the properties including Setting property value and the event that get triggered
 /// when the property is changed.
+/// 
+/// Original name is as follows: 
+/// 
+///         public class ChartBaseViewModel : NotifiableObject
+///         
 /// </summary>
 public class ChartPropertiesViewModel : NotifiableObject
 {
