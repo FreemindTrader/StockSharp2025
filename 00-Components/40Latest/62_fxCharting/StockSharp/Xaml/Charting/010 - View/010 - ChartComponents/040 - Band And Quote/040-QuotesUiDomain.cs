@@ -182,7 +182,17 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
         return UpdateDataSeries( drawValues.Cast<ChartDrawData.sxTuple<TimeSpan>>( ).ToEx( drawValues.Count ) );
     }
 
-    public bool UpdateDataSeries<TX1>( IEnumerableEx<ChartDrawData.sxTuple<TX1>> drawData ) where TX1 : struct, IComparable
+    /// <summary>
+    /// Update the DataSeries for the Ask Line and Bid Line 
+    /// 
+    /// Since Ask and Bid are always drawn together, we will use a sxTuple to represent the two values
+    /// AskLine is XyDataSeries<DateTime, double> which is the dataset used in Scichart to update the Ask Line
+    /// 
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="drawData"></param>
+    /// <returns></returns>
+    public bool UpdateDataSeries<T>( IEnumerableEx<ChartDrawData.sxTuple<T>> drawData ) where T : struct, IComparable
     {
         if ( drawData == null )
         {
@@ -290,8 +300,12 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
         return ChartElementViewModel.GetHigherAlphaColor( ChartComponentView.AskLine.Color, ChartComponentView.AskLine.AdditionalColor );
     }
 
-    
 
+    /// <summary>
+    /// This function will be called to update the latest bid and ask values on the chart.
+    /// </summary>
+    /// <param name="bid"></param>
+    /// <param name="ask"></param>
     public void UpdateQuotes( double bid, double ask )
     {
         if( !_doneInit )
