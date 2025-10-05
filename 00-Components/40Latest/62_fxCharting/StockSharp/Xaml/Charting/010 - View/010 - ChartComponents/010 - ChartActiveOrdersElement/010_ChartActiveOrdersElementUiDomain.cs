@@ -52,7 +52,7 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
 
     protected override void UpdateUi()
     {
-        PerformUiAction( new Action( RemoveActiveOrdersInfo ), true );
+        PerformUiActionSync( new Action( RemoveActiveOrdersInfo ), true );
     }
 
 
@@ -115,7 +115,7 @@ internal sealed class ChartActiveOrdersElementUiDomain : ChartCompentWpfUiDomain
     {
         if ( !IsUiThread() )
         {
-            PerformUiAction( new Action( () => DrawActiveOrder( order ) ), true );
+            PerformUiActionSync( new Action( () => DrawActiveOrder( order ) ), true );
         }
         else
         {

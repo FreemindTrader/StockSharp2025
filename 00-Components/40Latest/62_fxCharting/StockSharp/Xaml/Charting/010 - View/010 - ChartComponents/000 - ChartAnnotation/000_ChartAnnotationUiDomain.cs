@@ -24,7 +24,7 @@ internal sealed class ChartAnnotationUiDomain : ChartCompentWpfUiDomain<ChartAnn
 
     public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> e )
     {
-        PerformUIAction2( () => DrawingSurface.AnnotationModifier.Draw( ChartComponentView, e.Cast<ChartDrawData.AnnotationData>().Single() ), true );
+        PerformUIActionAsync( () => DrawingSurface.AnnotationModifier.Draw( ChartComponentView, e.Cast<ChartDrawData.AnnotationData>().Single() ), true );
 
         return true;
     }

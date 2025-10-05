@@ -30,7 +30,7 @@ internal sealed class TransactionVM<T> : ChartCompentWpfUiDomain<T> where T : Tr
 
     protected override void UpdateUi( )
     {
-        PerformUiAction( new Action( Remove ), true );
+        PerformUiActionSync( new Action( Remove ), true );
     }
 
     public override bool Draw( IEnumerableEx<ChartDrawData.IDrawValue> drawValues )

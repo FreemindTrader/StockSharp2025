@@ -101,11 +101,13 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
         //      - Line Two
         //
         CreateFastBandSeriesAndSetupBinding( );
-        CreateFastLineSeriesAndBinding( _lineOneSeriesVM, ChartComponentView.Line1, _lineOneViewModel );
-        CreateFastLineSeriesAndBinding( _lineTwoSeriesVM, ChartComponentView.Line2, _lineTwoViewModel );
+        CreateFastLineSeriesAndSetupBinding( _lineOneSeriesVM, ChartComponentView.Line1, _lineOneViewModel );
+        CreateFastLineSeriesAndSetupBinding( _lineTwoSeriesVM, ChartComponentView.Line2, _lineTwoViewModel );
 
-        SetupAxisMarkerAndBinding( _lineOneSeriesVM.RenderSeries, ChartComponentView.Line1, "ShowAxisMarker", "Color" );
-        SetupAxisMarkerAndBinding( _lineTwoSeriesVM.RenderSeries, ChartComponentView.Line2, "ShowAxisMarker", "Color" );
+        // Setup the X-Axis and Y-Axis marker and the bindings for line 1
+        CreateAxisMarkerAndSetupBinding( _lineOneSeriesVM.RenderSeries, ChartComponentView.Line1, "ShowAxisMarker", "Color" );
+        // Setup the X-Axis and Y-Axis marker and the bindings for line 2
+        CreateAxisMarkerAndSetupBinding( _lineTwoSeriesVM.RenderSeries, ChartComponentView.Line2, "ShowAxisMarker", "Color" );
 
         if ( _wholeBandSeriesVM != null )
         {
@@ -171,7 +173,17 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
         _wholeBandSeriesVM.RenderSeries = ( IRenderableSeries ) rs;
     }
 
-    private void CreateFastLineSeriesAndBinding( ChartSeriesViewModel lineSeriesVM, ChartLineElement lineUI, ChartElementViewModel viewModel )
+    /// <summary>
+    /// Create a new MyFastLineRenderableSeries and bind to the ChartLineElement LineUI properties
+    /// 
+    /// The line's visibility property is multi-bound to the following three properties
+    /// 
+    /// 
+    /// </summary>
+    /// <param name="lineSeriesVM"></param>
+    /// <param name="lineUI"></param>
+    /// <param name="viewModel"></param>
+    private void CreateFastLineSeriesAndSetupBinding( ChartSeriesViewModel lineSeriesVM, ChartLineElement lineUI, ChartElementViewModel viewModel )
     {
         if ( !( lineSeriesVM.RenderSeries is MyFastLineRenderableSeries fastLine ) )
         {
@@ -179,25 +191,25 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
             
             fastLine = CreateRenderableSeries<MyFastLineRenderableSeries>( viewModelArray );
             lineSeriesVM.RenderSeries = ( IRenderableSeries ) fastLine;
-            XamlHelper.SetBindings( fastLine, BaseRenderableSeries.StrokeProperty,                 lineUI, "Color", BindingMode.TwoWay, ( IValueConverter ) null,  null );
-            XamlHelper.SetBindings( fastLine, BaseRenderableSeries.RolloverMarkerTemplateProperty, lineUI, "DrawTemplate", BindingMode.TwoWay, ( IValueConverter ) null,  null );
+            XamlHelper.SetBindings( fastLine, BaseRenderableSeries.StrokeProperty,                 lineUI, "Color",           BindingMode.TwoWay, ( IValueConverter ) null,  null );
+            XamlHelper.SetBindings( fastLine, BaseRenderableSeries.RolloverMarkerTemplateProperty, lineUI, "DrawTemplate",    BindingMode.TwoWay, ( IValueConverter ) null,  null );
             XamlHelper.SetBindings( fastLine, BaseRenderableSeries.StrokeThicknessProperty,        lineUI, "StrokeThickness", BindingMode.TwoWay, ( IValueConverter ) null,  null );
-            XamlHelper.SetBindings( fastLine, BaseRenderableSeries.AntiAliasingProperty,           lineUI, "AntiAliasing", BindingMode.TwoWay, ( IValueConverter ) null,  null );
+            XamlHelper.SetBindings( fastLine, BaseRenderableSeries.AntiAliasingProperty,           lineUI, "AntiAliasing",    BindingMode.TwoWay, ( IValueConverter ) null,  null );
             
-            var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
-            var boolAllConverter = new BoolAllConverter();
+            var isVisibleProperty  = BaseRenderableSeries.IsVisibleProperty;
+            var boolAllConverter   = new BoolAllConverter();
             boolAllConverter.Value = true;
-            var bindingArray = new Binding[3]
+            var bindingArray       = new Binding[3]
                                     {
-                                    new Binding("IsVisible") { Source = lineUI },
-                                    new Binding("IsVisible") { Source = ChartComponentView },
-                                    new Binding("IsVisible") { Source = ChartComponentView.RootElement }
+                                        new Binding("IsVisible") { Source = lineUI },                           // This specific line
+                                        new Binding("IsVisible") { Source = ChartComponentView },               // The chartBand Component
+                                        new Binding("IsVisible") { Source = ChartComponentView.RootElement }    // Its parent element if existed
                                     };
             XamlHelper.SetMultiBinding( fastLine, isVisibleProperty, ( IMultiValueConverter ) boolAllConverter, bindingArray );
         }
 
         fastLine.StrokeDashArray = null;
-        fastLine.IsDigitalLine = false;
+        fastLine.IsDigitalLine   = false;
         
         if ( lineUI.Style == DrawStyles.DashedLine )
         {
@@ -207,6 +219,8 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
         {
             if ( lineUI.Style != DrawStyles.StepLine )
                 return;
+
+            // Only DrawStyles.StepLine is digital line
             fastLine.IsDigitalLine = true;
         }        
     }
@@ -233,13 +247,15 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
     {
         if ( drawData == null )
             return false;
-        var count = ((IEnumerableEx) drawData).Count;
+
+        var count    = drawData.Count;
         var lastBand = _lastDrawValueObject;
-        int index = -1;
-        T[] myBand = new T[count];
-        double[] bandOne = new double[count];
-        double[] bandTwo = new double[count];
-        foreach ( ChartDrawData.sxTuple<TX1> band in ( IEnumerable<ChartDrawData.sxTuple<TX1>> ) drawData )
+        int index    = -1;
+        var myBand   = new T[count];
+        var bandOne  = new double[count];
+        var bandTwo  = new double[count];
+
+        foreach ( var band in drawData )
         {
             T property = (T) (ValueType) band.Property();
 
@@ -274,7 +290,7 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
         _bandData.Append( myBand, bandOne, bandTwo);
 
         // The following is not in the SS code.
-        PerformUiAction( ( ) =>
+        PerformUiActionSync( ( ) =>
                                 {
                                     _lineOneData.InvalidateParentSurface( RangeMode.None, true );
                                     _lineTwoData.InvalidateParentSurface( RangeMode.None, true );
@@ -347,7 +363,7 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
         _lineTwoData.Append( myBand, bandTwo );
         _bandData.Append( myBand, bandOne, bandTwo );
 
-        PerformUiAction( ( ) =>
+        PerformUiActionSync( ( ) =>
                                 {
                                     _lineOneData.InvalidateParentSurface( RangeMode.None, true );
                                     _lineTwoData.InvalidateParentSurface( RangeMode.None, true );
@@ -370,8 +386,8 @@ internal sealed class ChartBandElementUiDomain<T> : ChartCompentWpfUiDomain<Char
             CreateFastBandSeriesAndSetupBinding( );
 
             // Here we recreate the two lines and setup their binding
-            CreateFastLineSeriesAndBinding( _lineOneSeriesVM, ChartComponentView.Line1, _lineOneViewModel );
-            CreateFastLineSeriesAndBinding( _lineTwoSeriesVM, ChartComponentView.Line2, _lineTwoViewModel );
+            CreateFastLineSeriesAndSetupBinding( _lineOneSeriesVM, ChartComponentView.Line1, _lineOneViewModel );
+            CreateFastLineSeriesAndSetupBinding( _lineTwoSeriesVM, ChartComponentView.Line2, _lineTwoViewModel );
         }
 
         if ( propName != "Style" )

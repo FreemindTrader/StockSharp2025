@@ -234,7 +234,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
     {
         if ( !IsUiThread() )
         {
-            PerformUiAction( new Action( GuiInitSeries ), true );
+            PerformUiActionSync( new Action( GuiInitSeries ), true );
         }
         else
         {
@@ -269,7 +269,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
                 {
                     _chartSeriesViewModel.RenderSeries = ( IRenderableSeries ) CreateRenderableSeriesAndBinding();
                     ClearAll();
-                    SetupAxisMarkerAndBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
+                    CreateAxisMarkerAndSetupBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
                 }
             }
         }
@@ -495,7 +495,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         _lastCandleTime         = new DateTime();
         _pnfBoxSize          = new Decimal?();
         _dateTime2ColorMap.Clear();
-        PerformUiAction( new Action( Reset ), true );
+        PerformUiActionSync( new Action( Reset ), true );
     }
 
     private void NewChartSeries()
@@ -503,7 +503,7 @@ public sealed class ChartCandleElementUiDomain( ChartCandleElement candle ) : Ch
         _chartSeriesViewModel = new ChartSeriesViewModel( GetDataSeriesByDrawStyle(), ( IRenderableSeries ) CreateRenderableSeriesAndBinding() );
         DrawingSurface.AddSeriesViewModelsToRoot( RootElem, ( IChartSeriesViewModel ) _chartSeriesViewModel );
         ClearAll();
-        SetupAxisMarkerAndBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
+        CreateAxisMarkerAndSetupBinding( _chartSeriesViewModel.RenderSeries, ( IChartComponent ) ChartComponentView, "ShowAxisMarker", ( string ) null );
     }
 
 

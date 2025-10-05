@@ -88,9 +88,9 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
 
         ChartComponentView.BidLine.ShowAxisMarker = true;
 
-
-        SetupAxisMarkerAndBinding( _askLineRSerieVM.RenderSeries, ChartComponentView.AskLine, "ShowAxisMarker", "Color" );
-        SetupAxisMarkerAndBinding( _bidLineRSerieVM.RenderSeries, ChartComponentView.BidLine, "ShowAxisMarker", "Color" );
+        // Setup the X-Axis and Y-Axis marker and the bindings for Ask line and Bid line
+        CreateAxisMarkerAndSetupBinding( _askLineRSerieVM.RenderSeries, ChartComponentView.AskLine, "ShowAxisMarker", "Color" );
+        CreateAxisMarkerAndSetupBinding( _bidLineRSerieVM.RenderSeries, ChartComponentView.BidLine, "ShowAxisMarker", "Color" );
 
 
         if ( _askLineRSerieVM != null )
@@ -111,7 +111,7 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
 
     private void SetIncludeSeries( )
     {   
-        // We won't to only display the two line, so we would disable the other modifier.
+        // We want to only display the two line, so we would disable the other modifier.
 
         SetIncludeSeries( _askLineRSerieVM.RenderSeries, false );
 
@@ -120,9 +120,15 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
         SeriesValueModifier.SetIncludeSeries( baseSeries, true );
 
         SetIncludeSeries( _bidLineRSerieVM.RenderSeries, false );        
-    }    
+    }
 
-    private void CreateQuoteRSeriesAndBinding( ChartSeriesViewModel lineSeriesVM, ChartLineElement line, ChartElementViewModel viewModel )
+    /// <summary>
+    /// Create a QuoteRenderableSeries and bind the properties from the ChartLineElement to the QuoteRenderableSeries
+    /// </summary>
+    /// <param name="lineSeriesVM"></param>
+    /// <param name="lineUI"></param>
+    /// <param name="viewModel"></param>
+    private void CreateQuoteRSeriesAndBinding( ChartSeriesViewModel lineSeriesVM, ChartLineElement lineUI, ChartElementViewModel viewModel )
     {
         var quoteSeries = lineSeriesVM.RenderSeries as QuoteRenderableSeries;
 
@@ -132,30 +138,27 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
 
             quoteSeries = CreateRenderableSeries<QuoteRenderableSeries>( childViewModels );
 
-            quoteSeries.SetBindings( BaseRenderableSeries.StrokeProperty, line, "Color", BindingMode.TwoWay, null, null );
-            quoteSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, line, "DrawTemplate",    BindingMode.TwoWay, null, null );
-            quoteSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty, line, "StrokeThickness", BindingMode.TwoWay, null, null );
-            quoteSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty, line, "AntiAliasing", BindingMode.TwoWay, null, null );
+            quoteSeries.SetBindings( BaseRenderableSeries.StrokeProperty,                 lineUI, "Color",           BindingMode.TwoWay, null, null );
+            //
+            // Summary:
+            //     Gets a cached Framework Element which is used as a Rollover Marker. This is generated
+            //     from a ControlTemplate in xaml via the SciChart.Charting.Visuals.RenderableSeries.BaseRenderableSeries.RolloverMarkerTemplateProperty
+            //     DependencyProperty
+            quoteSeries.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, lineUI, "DrawTemplate",    BindingMode.TwoWay, null, null );
+            quoteSeries.SetBindings( BaseRenderableSeries.StrokeThicknessProperty,        lineUI, "StrokeThickness", BindingMode.TwoWay, null, null );
+            quoteSeries.SetBindings( BaseRenderableSeries.AntiAliasingProperty,           lineUI, "AntiAliasing",    BindingMode.TwoWay, null, null );
 
             var isVisibleProperty = BaseRenderableSeries.IsVisibleProperty;
-            var cnvt = new BackgroundBorderBrushMultiConverter( );
-            cnvt.Value = true;
+            var cnvt              = new SetValueConverter( );
+            cnvt.Value            = true;
 
-            Binding[ ] bindingArray = new Binding[ 3 ]
-                                                        {
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source = line
-                                                            },
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source = ChartComponentView
-                                                            },
-                                                            new Binding( "IsVisible" )
-                                                            {
-                                                                Source = ( ( IChartComponent ) ChartComponentView ).RootElement
-                                                            }
-                                                        };
+            var bindingArray = new Binding[3]
+                                   {
+                                        new Binding("IsVisible") { Source = lineUI },                           // This specific line
+                                        new Binding("IsVisible") { Source = ChartComponentView },               // The chartBand Component
+                                        new Binding("IsVisible") { Source = ChartComponentView.RootElement }    // Its parent element if existed
+                                   };
+
             quoteSeries.SetMultiBinding( isVisibleProperty, cnvt, bindingArray );
         }
 
@@ -164,7 +167,7 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
 
     protected override void Clear( )
     {        
-        DrawingSurface.Remove( RootElem );
+        DrawingSurface.RemoveChartComponent( RootElem );
     }
 
     protected override void UpdateUi( )
@@ -179,21 +182,21 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
         return UpdateDataSeries( drawValues.Cast<ChartDrawData.sxTuple<TimeSpan>>( ).ToEx( drawValues.Count ) );
     }
 
-    public bool UpdateDataSeries<TX1>( IEnumerableEx<ChartDrawData.sxTuple<TX1>> drawValues ) where TX1 : struct, IComparable
+    public bool UpdateDataSeries<TX1>( IEnumerableEx<ChartDrawData.sxTuple<TX1>> drawData ) where TX1 : struct, IComparable
     {
-        if ( drawValues == null )
+        if ( drawData == null )
         {
             return false;
         }
 
-        int count = drawValues.Count;
-        IComparable lastBand = _lastDrawValueObject;
-        int index = -1;
-        DateTime[ ] myBand = new DateTime[ count ];
-        double[ ] bandOne = new double[ count ];
-        double[ ] bandTwo = new double[ count ];
+        var count    = drawData.Count;
+        var lastBand = _lastDrawValueObject;
+        int index    = -1;
+        var myBand   = new DateTime[ count ];
+        var bandOne  = new double[ count ];
+        var bandTwo  = new double[ count ];
 
-        foreach ( ChartDrawData.sxTuple<TX1> band in drawValues )
+        foreach ( var band in drawData )
         {
             DateTime x = ( DateTime )( ValueType )band.Property( );
 
@@ -237,7 +240,7 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
         _askLine.Append( myBand, bandOne );
         _bidLine.Append( myBand, bandTwo );        
 
-        PerformUiAction( ( ) =>
+        PerformUiActionSync( ( ) =>
                             {
                                 _askLine.InvalidateParentSurface( RangeMode.None, true );
                                 _bidLine.InvalidateParentSurface( RangeMode.None, true );            
@@ -258,10 +261,12 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
             CreateQuoteRSeriesAndBinding( _askLineRSerieVM, ChartComponentView.BidLine, _bidLineVM );
             CreateQuoteRSeriesAndBinding( _bidLineRSerieVM, ChartComponentView.AskLine, _askLineVM );
         }
+
         if ( propName != "Style" )
         {
             return;
         }
+
         SetIncludeSeries( );
     }
 

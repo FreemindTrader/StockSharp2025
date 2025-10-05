@@ -185,7 +185,7 @@ namespace StockSharp.Xaml.Charting
         {
             if ( !IsUiThread( ) )
             {
-                PerformUiAction( new Action( GuiInitSeries ), true );
+                PerformUiActionSync( new Action( GuiInitSeries ), true );
             }
             else
             {
@@ -216,7 +216,7 @@ namespace StockSharp.Xaml.Charting
 
                         ClearAll( );
 
-                        SetupAxisMarkerAndBinding( _candlestickSeries, ChartComponentView, "ShowAxisMarker", null );
+                        CreateAxisMarkerAndSetupBinding( _candlestickSeries, ChartComponentView, "ShowAxisMarker", null );
                     }
                     else
                     {
@@ -371,7 +371,7 @@ namespace StockSharp.Xaml.Charting
             _isPnfBoxSizeSet               = false;
             _pnfBoxSize                    = 0.2;
 
-            PerformUiAction( new Action( Reset ), true );
+            PerformUiActionSync( new Action( Reset ), true );
         }
 
         private void NewChartSeries( )
@@ -642,7 +642,7 @@ namespace StockSharp.Xaml.Charting
 
 
             // Tony: After update of the Candles, we need to notify the binding that our datasource has changed and need to rerender.
-            PerformUiAction( () =>
+            PerformUiActionSync( () =>
                                     {
                                         _ohlcDataSeries.InvalidateParentSurface( RangeMode.None, true );
                                         _xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
@@ -671,7 +671,7 @@ namespace StockSharp.Xaml.Charting
                 _ohlcDataSeries.Update( bar.Index, bar.Open, bar.High, bar.Low, bar.Close, bar );
             }
 
-            PerformUiAction( () =>
+            PerformUiActionSync( () =>
                                     {
                                         _ohlcDataSeries.InvalidateParentSurface( RangeMode.None, true );
                                         _xyDataSeries.InvalidateParentSurface( RangeMode.None, true );
@@ -791,7 +791,7 @@ namespace StockSharp.Xaml.Charting
 
 
             // Tony: After update of the Candles, we need to notify the binding that our datasource has changed and need to rerender.
-            PerformUiAction( ( ) =>
+            PerformUiActionSync( ( ) =>
                                     {
                                         _ohlcDataSeries.InvalidateParentSurface( RangeMode.None, true );
                                         _xyDataSeries.InvalidateParentSurface( RangeMode.None, true );

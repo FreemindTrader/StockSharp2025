@@ -222,7 +222,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfUiDomain< ChartLi
         visualSereis.SetBindings( BaseRenderableSeries.RolloverMarkerTemplateProperty, ChartComponentView, "DrawTemplate", BindingMode.TwoWay, null, null );
         visualSereis.PaletteProvider = this;
         
-        SetupAxisMarkerAndBinding( visualSereis, ChartComponentView, "ShowAxisMarker", "Color" );
+        CreateAxisMarkerAndSetupBinding( visualSereis, ChartComponentView, "ShowAxisMarker", "Color" );
         _lineSeries = visualSereis;
 
         if ( _lineData != null )
@@ -352,7 +352,7 @@ internal sealed class ChartLineElementVM< T > : ChartCompentWpfUiDomain< ChartLi
         Array.Resize( ref lineTwo, count );
         _xyzDataSeries.Append( myLine, lineOne, lineTwo );
 
-        PerformUiAction( ( ) => _xyzDataSeries.InvalidateParentSurface( RangeMode.None, true ), true );
+        PerformUiActionSync( ( ) => _xyzDataSeries.InvalidateParentSurface( RangeMode.None, true ), true );
 
         _lastDrawValueObject = lastLine;
         return true;

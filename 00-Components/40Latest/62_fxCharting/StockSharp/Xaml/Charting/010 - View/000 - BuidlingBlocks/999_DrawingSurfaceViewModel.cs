@@ -971,15 +971,37 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
         XYAxisId_PropertyChanged( ( object ) component, new PropertyChangedEventArgs( "XAxisId" ) );
     }
 
+    /// <summary>
+    /// Remove the root and the underlying chartElement from the chart
+    /// </summary>
+    /// <param name="component"></param>
     public void RemoveChartComponent( IChartComponent component )
-    {
-        List<IChartSeriesViewModel> componentRSeries;
-        if ( !_chartUIRSeries.TryGetValue( component, out componentRSeries ) )
+    {        
+        if ( !_chartUIRSeries.TryGetValue( component, out var componentRSeries ) )
             return;
-        foreach ( IChartSeriesViewModel serie in componentRSeries )
+
+        foreach ( var serie in componentRSeries )
+        {
             _advanceChartRenderableSeries.Remove( serie );
+        }
+            
         _chartUIRSeries.Remove( component );
     }
+
+    //public void RemoveChartComponent2( IChartComponent elementXY )
+    //{
+    //    if ( !_chartUIRSeries.TryGetValue( elementXY, out var rSeriesList ) )
+    //    {
+    //        return;
+    //    }
+
+    //    foreach ( var rSerie in rSeriesList )
+    //    {
+    //        _advanceChartRenderableSeries.Remove( rSerie );
+    //    }
+
+    //    _chartUIRSeries.Remove( elementXY );
+    //}
 
     public void Refresh()
     {
@@ -1335,20 +1357,7 @@ public sealed class ScichartSurfaceMVVM : ChartPropertiesViewModel, IDisposable,
         OnChartComponentPropertiesChanged( elementXY, new PropertyChangedEventArgs( "XAxis" ) );
     }
 
-    public void Remove( IChartComponent elementXY )
-    {        
-        if ( !_chartUIRSeries.TryGetValue( elementXY, out var rSeriesList ) )
-        {
-            return;
-        }
-
-        foreach ( var rSerie in rSeriesList )
-        {
-            _advanceChartRenderableSeries.Remove( rSerie );
-        }
-
-        _chartUIRSeries.Remove( elementXY );
-    }
+    
 
 
     /// <summary>

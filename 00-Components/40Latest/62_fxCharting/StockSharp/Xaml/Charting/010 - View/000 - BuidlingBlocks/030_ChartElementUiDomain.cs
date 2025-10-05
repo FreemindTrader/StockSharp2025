@@ -83,6 +83,14 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 
     protected static bool IsUiThread( )
     {
+        //
+        // Summary:
+        //     Determines whether the calling thread is the thread associated with this System.Windows.Threading.Dispatcher.
+        //
+        //
+        // Returns:
+        //     true if the calling thread is the thread associated with this System.Windows.Threading.Dispatcher;
+        //     otherwise, false.
         return GetDispatcher( ).CheckAccess( );
     }
 
@@ -105,12 +113,12 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
     public void Reset( )
     {
         UpdateUi( );
-        PerformUiAction( new Action( ResetY1Annotation ), true );
+        PerformUiActionSync( new Action( ResetY1Annotation ), true );
     }
 
     public virtual void GuiUpdateAndClear( )
     {
-        PerformUiAction( new Action( UpdateAndClear ), true );
+        PerformUiActionSync( new Action( UpdateAndClear ), true );
     }
 
     protected virtual void RootElementPropertyChanging( IChartComponent interface5_0, string string_0, object obj )
@@ -192,10 +200,10 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
     /// <param name="chartComponent"></param>
     /// <param name="showAxisMakerStr"></param>
     /// <param name="colorStr"></param>
-    protected void SetupAxisMarkerAndBinding( IRenderableSeries rs,
-                                              IChartComponent chartComponent,
-                                              string showAxisMakerStr,
-                                              string colorStr )
+    protected void CreateAxisMarkerAndSetupBinding( IRenderableSeries rs,
+                                                    IChartComponent chartComponent,
+                                                    string showAxisMakerStr,
+                                                    string colorStr )
     {
         var axisMarker        = new AxisMarkerAnnotation( );
         axisMarker.FontSize   = 11.0;
@@ -206,13 +214,12 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
 
         axisMarker.SetBindings( AnnotationBase.XAxisIdProperty, chartComponent, "XAxisId", BindingMode.TwoWay, null, null );
         axisMarker.SetBindings( AnnotationBase.YAxisIdProperty, chartComponent, "YAxisId", BindingMode.TwoWay, null, null );
-
-        //AxisMarkerAnnotation markerAnnotation3 = axisMarker;
+        
         var isHiddenProperty = AnnotationBase.IsHiddenProperty;
         var converter        = new BoolAnyConverter( );
         converter.Value      = false;
 
-        Binding[ ] bindingArray = new Binding[ 2 ]
+        var bindingArray     = new Binding[ 2 ]
         {
             new Binding( showAxisMakerStr ) { Source = chartComponent },
             new Binding( )
@@ -237,16 +244,35 @@ public abstract class ChartElementUiDomain : ChartPropertiesViewModel
         }
     }
 
-    protected void PerformUIAction2( Action toBeDone, bool checkDisposed )
+    /// <summary>
+    /// Perform the UI action asynchronously
+    /// </summary>
+    /// <param name="toBeDone"></param>
+    /// <param name="checkDisposed"></param>
+    protected void PerformUIActionAsync( Action toBeDone, bool checkDisposed )
     {
         ExecuteAction( new Action< Action >( ( GetDispatcher( ) ).GuiAsync ), toBeDone, checkDisposed );
     }
 
-    protected void PerformUiAction( Action toBeDone, bool checkDisposed )
+
+    /// <summary>
+    /// Perform the UI action synchronously
+    /// </summary>
+    /// <param name="toBeDone"></param>
+    /// <param name="checkDisposed"></param>
+    protected void PerformUiActionSync( Action toBeDone, bool checkDisposed )
     {
         ExecuteAction( new Action< Action >( ( GetDispatcher( ) ).GuiSync ), toBeDone, checkDisposed );
     }
 
+    /// <summary>
+    /// Execute the UI action. If we are already on the UI thread, just execute it directly.
+    /// 
+    /// The method will make sure that we will exit the method if the chart is already disposed.
+    /// </summary>
+    /// <param name="UIAction"></param>
+    /// <param name="tobeDone"></param>
+    /// <param name="checkDisposed"></param>
     private void ExecuteAction( Action< Action > UIAction, Action tobeDone, bool checkDisposed )
     {
         var checkDisposedAction = new Action( ( ) =>
