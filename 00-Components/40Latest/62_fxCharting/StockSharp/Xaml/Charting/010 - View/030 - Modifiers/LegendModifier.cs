@@ -178,14 +178,14 @@ namespace StockSharp.Xaml.Charting
                 {
                     throw new InvalidOperationException( "invalid series" );
                 }
-                s.SeriesName = other.SeriesName;
-                s.YValue = other.YValue;
-                s.XValue = other.XValue;
-                s.Stroke = other.Stroke;
-                s.DataSeriesType = other.DataSeriesType;
-                s.Value = other.Value;
-                s.XyCoordinate = other.XyCoordinate;
-                s.IsHit = other.IsHit;
+                s.SeriesName      = other.SeriesName;
+                s.YValue          = other.YValue;
+                s.XValue          = other.XValue;
+                s.Stroke          = other.Stroke;
+                s.DataSeriesType  = other.DataSeriesType;
+                s.Value           = other.Value;
+                s.XyCoordinate    = other.XyCoordinate;
+                s.IsHit           = other.IsHit;
                 s.DataSeriesIndex = other.DataSeriesIndex;
 
                 if ( s is OhlcSeriesInfo && other is OhlcSeriesInfo )

@@ -229,7 +229,7 @@ internal sealed class QuotesUiDomain : ChartCompentWpfUiDomain<QuotesUI>, IFastQ
                 default:
                 {
                     ++index;
-                    myBand[ index ] = x;
+                    myBand[ index ]  = x;
                     bandOne[ index ] = band.ValueOne( );
                     bandTwo[ index ] = band.ValueTwo( );
                 }

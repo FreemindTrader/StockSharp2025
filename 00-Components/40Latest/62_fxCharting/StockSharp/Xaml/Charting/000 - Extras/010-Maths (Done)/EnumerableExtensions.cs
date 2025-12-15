@@ -533,13 +533,13 @@ public static class EnumerableExtensions
             {
                 HitTestInfo hitTestInfo = new HitTestInfo()
                 {
-                    YValue = current.Y1Value,
-                    Y1Value = current.YValue,
-                    HitTestPoint = current.Xy1Coordinate,
-                    XValue = current.XValue,
+                    YValue          = current.Y1Value,
+                    Y1Value         = current.YValue,
+                    HitTestPoint    = current.Xy1Coordinate,
+                    XValue          = current.XValue,
                     DataSeriesIndex = current.DataSeriesIndex,
-                    DataSeriesType = current.DataSeriesType,
-                    IsHit = current.IsHit
+                    DataSeriesType  = current.DataSeriesType,
+                    IsHit           = current.IsHit
                 };
                 yield return (SeriesInfo) new BandSeriesInfo(current.RenderableSeries, hitTestInfo)
                 {

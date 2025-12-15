@@ -23,6 +23,8 @@ using Color = System.Windows.Media.Color;
 using Point = System.Windows.Point;
 using Size = System.Windows.Size;
 
+namespace StockSharp.Xaml.Charting;
+
 
 /// <summary>
 /// TimeframeSegmentRenderableSeries is used for volume profile data for a certain time period.
@@ -40,23 +42,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
         HitTestProvider = new TfsHitTestProvider(this);
     }
 
-    /// <summary>
-    /// I am using this metadata class to provide additional information when user clicks on a TimeframeSegmentRenderableSeries
-    /// 
-    /// The one piece of specific info is CandlePriceLevel.
-    /// </summary>
-    public class MyMetadata : IPointMetadata
-    {
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public MyMetadata(CandlePriceLevel level )
-        {
-            CandlePriceLevel = level;
-        }
-
-        public bool IsSelected { get; set; }
-        public CandlePriceLevel CandlePriceLevel { get; set; }
-    }
+    
 
     //public class TFSegmentDrawingProvider : CustomSeriesDrawingProvider
     //{
@@ -152,7 +138,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
                 ht2.DataSeriesName = dataSeries.SeriesName;
                 ht2.DataSeriesType = dataSeries.DataSeriesType;
                 ht2.YValue         = (IComparable)yRounded;
-                ht2.Metadata       = new MyMetadata(  doubleCandlePriceLevels.Item2 );
+                ht2.Metadata       = new TfsMetadata(  doubleCandlePriceLevels.Item2 );
                 ht2.IsHit          = true;
                 ht2.HitTestPoint   = new Point(doubleCandlePriceLevels.Item1, yCalc.GetCoordinate(yRounded));
                 return ht2;
@@ -174,7 +160,7 @@ public class TimeframeSegmentRenderableSeries : CustomRenderableSeries
             ht.XValue          = (IComparable) segment.Time;
             ht.YValue          = (IComparable)yRounded;
             ht.DataSeriesIndex = index;
-            ht.Metadata        = new MyMetadata(candlePriceLevel);            
+            ht.Metadata        = new TfsMetadata(candlePriceLevel);            
             ht.IsHit           = true;
             ht.HitTestPoint    = new Point(xCalc.GetCoordinate((double)index), yCalc.GetCoordinate(yRounded));
             ht.OpenValue       = (IComparable) segment.OpenPrice;

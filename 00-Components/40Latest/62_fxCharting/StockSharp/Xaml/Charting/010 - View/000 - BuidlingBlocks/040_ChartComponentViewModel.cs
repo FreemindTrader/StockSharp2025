@@ -26,8 +26,14 @@ namespace StockSharp.Xaml.Charting;
 /// This involves things like filtering, sorting, or combining data from multiple sources.
 /// Handling user events: It responds to user actions from the view, such as a button click, and decides what business logic to call in the layers below.
 /// </summary>
+/// 
+/// The original definition is as follows:
+/// public abstract class ChartElement<T> : 
+/// 
 /// <typeparam name="T">The chart element type.</typeparam>
 [TypeConverter( typeof( ExpandableObjectConverter ) )]
+
+//+++ public abstract class ChartElement<T> : ChartPart<T>,
 public abstract class ChartComponentViewModel<T> :  ChartPart<T>,
                                                     IChartElement,
                                                     IChartPart<IChartElement>,

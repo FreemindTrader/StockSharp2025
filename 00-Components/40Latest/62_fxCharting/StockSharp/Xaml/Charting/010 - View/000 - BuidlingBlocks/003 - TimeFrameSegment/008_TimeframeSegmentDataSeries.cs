@@ -32,7 +32,7 @@ namespace StockSharp.Xaml.Charting;
 /// TimeframeSegmentPointSeries is like the line representation of the TimeframeSegment
 /// 
 /// </summary>
-public class TimeframeSegmentDataSeries : BindableObject100, IDataSeries<DateTime, double>, ISuspendable, IDataSeries, ITimeframe
+public class TimeframeSegmentDataSeries : BindableObject, IDataSeries<DateTime, double>, ISuspendable, IDataSeries, ITimeframe
 {
     public const Decimal                           _MinPriceStep  = 0.000001M;
     public static readonly TimeSpan                _MaxTimeframe  = TimeSpan.FromDays(30.0);

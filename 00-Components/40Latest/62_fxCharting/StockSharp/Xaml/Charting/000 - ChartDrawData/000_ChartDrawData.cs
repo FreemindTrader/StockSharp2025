@@ -159,7 +159,7 @@ public partial class ChartDrawData : IChartDrawData
         public System.Windows.Media.Color? Color => _candleColor;
     }
 
-    internal readonly struct sActiveOrder : IDrawValue
+    public readonly struct sActiveOrder : IDrawValue
     {
 
         private readonly Order _order;
@@ -253,7 +253,7 @@ public partial class ChartDrawData : IChartDrawData
         public IIndicatorValue Value => _indicatorValue;
     }
 
-    internal sealed class sTrade : IDrawValue
+    public sealed class sTrade : IDrawValue
     {
 
         private string _transactionString;
@@ -314,14 +314,11 @@ public partial class ChartDrawData : IChartDrawData
 
         public long Volume => _volume;
 
-        public string ErrorMessage( )
-        {
-            return _errorMessage;
-        }
-
+        public string ErrorMessage => _errorMessage;
+        
         public bool IsOrderFilled( ) => _isOrderFilled;
 
-        public bool IsError => !StringHelper.IsEmptyOrWhiteSpace( ErrorMessage( ) );
+        public bool IsError => !StringHelper.IsEmptyOrWhiteSpace( ErrorMessage );
 
         public override string ToString( )
         {

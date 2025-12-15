@@ -2,8 +2,7 @@
 using SciChart.Charting.Visuals.RenderableSeries;
 using StockSharp.Messages;
 using System.Diagnostics;
-using static TimeframeSegmentRenderableSeries;
-
+namespace StockSharp.Xaml.Charting;
 #nullable disable
 public sealed class OhlCPLSeriesInfo : OhlcSeriesInfo
 {
@@ -12,7 +11,7 @@ public sealed class OhlCPLSeriesInfo : OhlcSeriesInfo
 
     public OhlCPLSeriesInfo( IRenderableSeries rs, HitTestInfo ht ) : base( rs, ht )
     {
-        MyMetadata myMeta = ht.Metadata as MyMetadata;
+        TfsMetadata myMeta = ht.Metadata as TfsMetadata;
         this.Level = myMeta.CandlePriceLevel;
     }
 
